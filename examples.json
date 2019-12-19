@@ -249,4 +249,41 @@ https://minionmasters.gamepedia.com/api.php?action=query&list=allimages&iiprop=u
             },
 
 
+            
+            
+            
+            
+            
+            
+            
+            https://minionmasters.gamepedia.com/api.php?action=query&titles=Arcane%20Golem&prop=revisions&rvprop=content
+            
+            
+            {
+    "batchcomplete": "",
+    "warnings": {
+        "main": {
+            "*": "Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/mailman/listinfo/mediawiki-api-announce> for notice of API deprecations and breaking changes."
+        },
+        "revisions": {
+            "*": "Because \"rvslots\" was not specified, a legacy format has been used for the output. This format is deprecated, and in the future the new format will always be used."
+        }
+    },
+    "query": {
+        "pages": {
+            "1638": {
+                "pageid": 1638,
+                "ns": 0,
+                "title": "Arcane Golem",
+                "revisions": [
+                    {
+                        "contentformat": "text/x-wiki",
+                        "contentmodel": "wikitext",
+                        "*": "{{Infobox cards\n|name=Arcane Golem\n|image=ArcaneGolem.png\n\n|manacost=3\n|rarity=Perk\n|faction=Crystal Elf\n|type=Minion\n|description=Mystical ranged unit fueled by magic. When its Master casts a spell, it gains +40 Health and +6 Damage.  \n\n|count=1\n|targets=All\n|health=300\n|attackspeed=1.3\n|damage=40\n|speed=3\n|range=8\n|isRanged=Yes\n|flying=no\n}}\n'''Arcane Golem''' is a perk for [[Milloween]].  It is only available to Milloween.  \n\n== Mechanics ==\nThe card is added to Milloween's deck automatically every 30 seconds during a match after reaching level 1, as the next available card.   \n\nAfter being summoned, it gains +40 Health and +6 Damage whenever the master that summoned it casts a spell. Arcane Golem capped at 10 stacks of this buff.   \n\nIn 2v2, spells cast by the other Master do not count.  <br />\nThe health gain adds to both its current health and maximum health pool.  \n{| class=\"wikitable\" style=\"text-align: center\"\n!Spells<br />Cast\n!Health\n!Damage\n! style=\"width: 25%;\" |DPS\n|-\n|0 ||300 ||40 || style=\"text-align:right;\" |30.77\n|-\n|1 ||340 ||46|| style=\"text-align:right;\" |35.38\n|-\n|2 ||380 ||52|| style=\"text-align:right;\" |40.00\n|-\n|3 ||420 ||58|| style=\"text-align:right;\" |44.61\n|-\n|4 ||460 ||64|| style=\"text-align:right;\" |49.23\n|-\n|5* ||500 ||70|| style=\"text-align:right;\" |53.85\n|-\n|6 ||540 ||76|| style=\"text-align:right;\" |58.46\n|-\n|7 ||580 ||82|| style=\"text-align:right;\" |63.07\n|-\n|8 ||620 ||88|| style=\"text-align:right;\" |67.69\n|-\n|9 ||660 ||94|| style=\"text-align:right;\" |72.30\n|-\n|10 ||700 ||100|| style=\"text-align:right;\" |76.23\n|-\n| colspan=\"4\" |* Spawns at level 5 after perk 3\n|}\n\n== History ==\n* Arcane Golem entered the game along with its master, [[Milloween]], in Update 22 - A Mysterious Portal! (29 Mar, 2017) \n* In Update 55 - Jingle spells, jingle spells...(14 Dec, 2017) Arcane golem was rescaled :\n** Health up from 100 to 300  \n** Health grow per spell cast down from +100 to +30  \n** Damage up from 10 to 40   \n** Damage increase per spell cast down from +10 to +5  \n** Attack speed reduced from 1.5s to 1.3s  \n** Max stacks capped at 10 (previously no cap)\n* In Update 67 - Give it up for House Valor! (31 May, 2018) Arcane golem received the following changes:\n** Health grow per spell cast up from +30 to +40\n** Damage increase per spell cast up from +5 to +6\n* In Update 1.6 (16 Oct, 2019) Arcane Golem's speed was increased from 2 to 3.\n\n[[Category:Perks]][[Category:Minions]][[Category:Cards]]"
+                    }
+                ]
+            }
+        }
+    }
+}
 
