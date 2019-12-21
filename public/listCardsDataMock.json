@@ -1,0 +1,21 @@
+{
+    "batchcomplete": "",
+    "continue": {
+        "cmcontinue": "page|42414e4e4552204d414e|671",
+        "continue": "-||extracts"
+    },
+    "query": {
+        "categorymembers": [
+            {
+                "pageid": 1389,
+                "ns": 0,
+                "title": "\"Armored\" Scrats"
+            },
+            {
+                "pageid": 1663,
+                "ns": 0,
+                "title": "A.I.M. Bot"
+            }
+          ]
+        }
+      }
