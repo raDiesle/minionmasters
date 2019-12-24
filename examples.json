@@ -226,7 +226,8 @@ https://minionmasters.gamepedia.com/api.php?action=query&prop=images&pageids=176
 
 
 
-
+https://minionmasters.gamepedia.com/Special:Redirect/file?wptype=file&wpvalue=AIMBot.jpg
+-> the binary image redirect url
 
 https://minionmasters.gamepedia.com/api.php?action=query&list=allimages&iiprop=url
     "warnings": {

@@ -1,8 +1,6 @@
 const fetch = require("node-fetch");
 const fs = require('fs');
 
-const cardsDataUrlMock = "http://localhost:3000/listCardsDataMock.json"; 
-
 async function fetchCards (cmcontinue = "") {
 let categoryCardsUrl = "https://minionmasters.gamepedia.com/api.php?action=query&list=categorymembers&prop=extracts&cmtitle=Category:Cards&format=json";
   // MOCK
@@ -16,9 +14,7 @@ let categoryCardsUrl = "https://minionmasters.gamepedia.com/api.php?action=query
 }
 
 (async () => {
-  const initialData = await fetchCards();
-  console.log(initialData);
-  
+  const initialData = await fetchCards();  
   let overallCategoryPageids = [...[], ...initialData.query.categorymembers.map(category => category.pageid)];
   
   let cmContinue = initialData.continue.cmcontinue;
@@ -30,5 +26,9 @@ let categoryCardsUrl = "https://minionmasters.gamepedia.com/api.php?action=query
     console.log(cmContinue);
   }
 
-  fs.writeFileSync("categories.json", JSON.stringify(overallCategoryPageids));
+  const unobtainedCardPageId = 1952;
+  const removedCardPageId = 1951;
+  const overallCategoryPageidsFiltered = overallCategoryPageids.filter(pageId => ![unobtainedCardPageId, removedCardPageId].includes(pageId));
+
+  fs.writeFileSync("jobCardPageIds.json", JSON.stringify());
 })();

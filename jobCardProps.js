@@ -7,6 +7,7 @@ async function asyncForEach(array, callback) {
   }
 }
 
+
 async function fetchPageContent (pageId) {
     let categoryCardsUrl = ` https://minionmasters.gamepedia.com/api.php?action=query&pageids=${pageId}&prop=revisions&rvprop=content&rvslots=main&format=json`;
   const response = await fetch(categoryCardsUrl);
@@ -15,38 +16,33 @@ async function fetchPageContent (pageId) {
 }
 
 (async () => {
-  const cardPageIds = JSON.parse(fs.readFileSync("categories.json"));
+  const cardPageIds = JSON.parse(fs.readFileSync("jobCardPageIds.json"));
  
   let overallCardData = [];
-  
-  let i = 0;
 
   const fetchAll = async() => {
 
-  
-  await asyncForEach(cardPageIds, async (pageId) => {
-    
-    if(i > 5){
-      return;
-    }
-    i++;
+  await asyncForEach(cardPageIds, async (pageId) => { 
+   
     const cardData = await fetchPageContent(pageId);
 
     const propsAsArrayString = cardData.query.pages[pageId].revisions[0].slots.main['*'].match(/(?<=\|+)(.*\=*)/g);
-    const propsAsArrayMap = propsAsArrayString.map(str => {
+    if(!propsAsArrayString){
+      console.log("error on: " + pageId);
+      return;
+    }
+    const propsAsMap = propsAsArrayString.reduce((map, str) => {
         const [key, value] = str.split("=");
-        return {
-            [key]: value
-        }; 
-    });
-    const mappedCardData = {
-      props : propsAsArrayMap 
-    };
-      
-    overallCardData = [...overallCardData, ...[mappedCardData]];
+        map[key] = value;
+        return map; 
+    }, {});
+    propsAsMap.pageId = pageId;
+    const mappedCardData = [propsAsMap];
+    console.log(pageId);  
+    overallCardData = [...overallCardData, ...mappedCardData];
   });
 
-  fs.writeFileSync("cardProps.json", JSON.stringify(overallCardData, null, 4));
+  fs.writeFileSync("jobCardProps.json", JSON.stringify(overallCardData, null, 4));
 // 
 }
 
