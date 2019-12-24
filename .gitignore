@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+/public/img
+/public/img_sharp
+/public/img_c
+/public/img_rz
