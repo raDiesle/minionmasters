@@ -1,35 +1,55 @@
 import React, {useEffect, useState} from 'react';
-import {Flipped, Flipper} from "react-flip-toolkit";
+import {useHistory, useLocation} from "react-router-dom";
+import {Flipper} from "react-flip-toolkit";
 import * as qs from "qs";
+import {Card, CardContainer} from "./CardContainer";
+import {Route} from "react-router";
 
 const defaultState = {
     filter: "",
     display: "grid",
     sort: "ascending"
+};
+
+async function fetchCards() {
+    const response = await fetch("/jobCardProps.json");
+    const data = response.json();
+    return data;
 }
 
-const sortByCosts = (keys, sort) => {
-    if (sort === "ascending") {
-        return [...keys].sort((a, b) => {
-            if (cards[a].length < cards[b].length) return -1
-            else if (cards[b].length < cards[a].length) return 1
-            else return 0
-        })
-    } else {
-        return [...keys].sort((a, b) => {
-            if (cards[a].length > cards[b].length) return -1
-            else if (cards[b].length > cards[a].length) return 1
-            else return 0
-        })
-    }
-}
+function IndexPage() {
+    const history = useHistory();
+    const location = useLocation();
 
-function IndexPage({history}) {
+    const [focused, setFocused] = useState(false);
+
+    let [cards, setCards] = useState([]);
+    useEffect(() => {
+        fetchCards().then(data => {
+            setCards(data);
+        });
+    }, []);
+
+    const sortByCosts = (keys, sort) => {
+        if (sort === "ascending") {
+            return [...keys].sort((a, b) => {
+                if (cards[a].length < cards[b].length) return -1
+                else if (cards[b].length < cards[a].length) return 1
+                else return 0
+            })
+        } else {
+            return [...keys].sort((a, b) => {
+                if (cards[a].length > cards[b].length) return -1
+                else if (cards[b].length > cards[a].length) return 1
+                else return 0
+            })
+        }
+    };
 
     const updateQueryParam = obj => {
         history.push({
             search: `?${qs.stringify({
-                ...qs.parse(this.props.location.search.replace("?", "")),
+                ...qs.parse(location.search.replace("?", "")),
                 ...obj
             })}`
         })
@@ -38,23 +58,9 @@ function IndexPage({history}) {
     const navigate = set => {
         history.push({
             pathname: `/${set.replace(/\s/g, "-")}`,
-            search: this.props.location.search
+            search: location.search
         })
     };
-
-
-    async function fetchCards() {
-        const response = await fetch("/jobCardProps.json");
-        const data = response.json();
-        return data;
-    }
-
-    let [cards, setCards] = useState([]);
-    useEffect(() => {
-        fetchCards().then(data => {
-            setCards(data);
-        });
-    }, []);
 
     const [filterName, setFilterName] = useState("");
 
@@ -68,21 +74,25 @@ function IndexPage({history}) {
         setCards((cCards) => cCards.filter(card => card.name.startsWith(value)));
     };
 
-    const focusedSet = this.props.location.pathname.split(/\//g)[1];
-
     const queryParamState = {
         ...defaultState,
-        ...qs.parse(this.props.location.search.replace("?", ""))
+        ...qs.parse(location.search.replace("?", ""))
     };
 
     const visiblecardsets = sortByCosts(
-        cards.map(card => cost),
+        cards.map(card => card.manacost),
         queryParamState.sort
     ).filter(set =>
         queryParamState.filter
             ? set.match(new RegExp("^" + queryParamState.filter))
             : true
     );
+
+    const onClick = index => {
+        console.log(index);
+        setFocused(focused => focused === index ? null : index);
+    };
+
 
     return (
         <div>
@@ -91,22 +101,23 @@ function IndexPage({history}) {
                 value={filterName}
                 onChange={event => onFilterByName(event.target.value)}
             />
-            <Flipper flipKey={filterName}>
+            <Flipper flipKey={filterName}
+                     spring="gentle"
+                     staggerConfig={{
+                         card: {
+                             reverse: focused !== null
+                         }
+                     }}
+                     decisionData={focused}
+            >
                 <ul style={{listStyleType: "none", display: "flex", flexWrap: "wrap"}}>
-                    {cards.map(({pageId, image}) => (
-
-                        <Flipped key={pageId} flipId={pageId}>
-                            <li style={{width: "100px"}}>
-                                <img
-                                    style={{width: "100%"}}
-                                    src={
-                                        "/img_sharp/" +
-                                        image
-                                    }
-                                    alt={image}
-                                />
-                            </li>
-                        </Flipped>
+                    {cards.map(card => (
+                        <CardContainer
+                            key={card.pageId}
+                            card={card}
+                            focused={focused}
+                            onClick={onClick}
+                        />
                     ))}
                 </ul>
             </Flipper>
