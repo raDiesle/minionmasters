@@ -77,13 +77,8 @@ const App = () => (
                                         <div
                                             style={{width: "20px", marginRight: ".5rem"}}
                                         />
-                                        <h1> Icon Demo App</h1>
+                                        <h1> MinionMasters</h1>
                                     </Link>
-                                </div>
-                                <div>
-                                    <StyledLink href="https://github.com/aholachek/react-flip-toolkit">
-                                        React-Flip-Toolkit
-                                    </StyledLink>
                                 </div>
                             </FlexContents>
                         </Header>
@@ -93,7 +88,7 @@ const App = () => (
             }}
         />
     </Router>
-)
+);
 
 
 export default App;
