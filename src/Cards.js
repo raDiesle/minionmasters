@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
+import orderBy from "lodash/orderBy";
 
 async function fetchCards() {
     const response = await fetch("/jobCardProps.json");
@@ -8,9 +9,10 @@ async function fetchCards() {
     return data;
 }
 
-const CardStyle = styled.div`
+const CardsStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 `;
 
 export default function Cards() {
@@ -21,7 +23,11 @@ export default function Cards() {
         });
     }, []);
 
-    return <CardStyle>
-        {cards.map(card => <Card card={card}/>)}
-    </CardStyle>
+    let sortOrder = "asc";
+    return <CardsStyle>
+        {
+            orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder).map(card => <Card key={card.pageId}
+                                                                                            card={card}/>)
+        }
+    </CardsStyle>
 }
