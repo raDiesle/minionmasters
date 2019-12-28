@@ -6,6 +6,8 @@ import {Contents} from "./BaseComponents"
 import "./App.css";
 
 import Cards from "./Cards";
+import {Filters} from "./Filters";
+
 
 const Header = styled.header`
   padding: 0.75rem 1rem;
@@ -46,6 +48,7 @@ const App = () => (
                 </div>
             </FlexContents>
         </Header>
+        <Filters/>
         <Cards/>
     </div>
 
