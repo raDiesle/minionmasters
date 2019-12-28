@@ -9,10 +9,20 @@ import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
 import VoidBourneIcon from "./faction/VoidbourneIcon";
 import ScratIcon from "./faction/ScratIcon";
 import {faGavel} from "@fortawesome/free-solid-svg-icons/faGavel";
+import {faYinYang} from "@fortawesome/free-solid-svg-icons/faYinYang";
+import OutlanderIcon from "./faction/OutladerIcon";
+import SlitherIcon from "./faction/SlitherIcon";
+import EmpyrianIcon from "./faction/EmpyrianIcon";
+import {faHatWizard} from "@fortawesome/free-solid-svg-icons/faHatWizard";
+import CrystalElfIcon from "./faction/CrystalElfIcon";
+import AccursedIcon from "./faction/AccursedIcon";
+import GroundIcon from "./attack/GroudIcon";
+import AirIcon from "./attack/AirIcon";
+import GroundAndAirIcon from "./attack/GroundAndAirIcon";
 
 const CardContainerStyle = styled.div`
     width: 100px;
-    margin-right: 2px;
+    margin-right: 1px;
     margin-top: 2px;
     border: 1px solid black;
 `;
@@ -24,6 +34,7 @@ const CardContentStyle = styled.div`
 const CardImageStyle = styled.img`
     width: 100%;
 `;
+
 
 const ManacostStyle = styled.samp`
     position: absolute;
@@ -76,14 +87,16 @@ const TopLeftCornerStyle = styled.div`
 
 const factionMapping = {
     Voidborne: <VoidBourneIcon/>,
-    Accursed: "acc",
+    Accursed: <AccursedIcon/>,
     Scrat: <ScratIcon/>,
-    "Crystal Elf": "elf",
-    "Puff": "Special",
-    "Zen-Chi": "Zen",
-    "Slither": "Slither",
-    "Outlander": <FontAwesomeIcon icon={faGavel} size={"s"}/>,
-    "Empyrean": "Empyrean"
+    "Crystal Elf": <CrystalElfIcon/>,
+    "Puff": <FontAwesomeIcon icon={faHatWizard} size={"s"}/>,
+    "Zen-Chi": <FontAwesomeIcon icon={faYinYang} size={"s"}/>,
+    "Slither": <SlitherIcon/>,
+    "Outlander": <OutlanderIcon/>,
+    "Empyrean": <EmpyrianIcon/>,
+    "Stoutheart": <FontAwesomeIcon icon={faGavel} size={"s"}/>
+
 };
 const FactionStyle = styled.div`
     position: absolute;
@@ -105,8 +118,32 @@ const BottomLeftCornerStyle = styled.div`
     border-bottom: 30px solid rgba(0,0,0, 0.5);
 `;
 
+const attackTypeMapping = {
+    "Air": <AirIcon/>,
+    "Ground": <GroundIcon/>,
+    "Ground & Air": <GroundAndAirIcon/>
+};
+const AttackTypeStyle = styled.div`
+ position: absolute;
+    bottom: -4px;
+    right: 0px;
+    
+    & > svg {
+        fill: #FFFFFF;     
+        color: #FFFFFF;
+    }
+`;
+const BottomRightCornerStyle = styled.div`
+    position: absolute;
+    bottom: 0px;
+    right: 0px;   
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-bottom: 30px solid rgba(0,0,0, 0.5);
+`;
 
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction}}) {
+export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}}) {
     const [focused, setFocused] = useState(false);
 
     return <CardContainerStyle>
@@ -120,6 +157,11 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
             <BottomLeftCornerStyle/>
             <FactionStyle>{factionMapping[faction]}</FactionStyle>
+
+            {attackTypeMapping[targets]
+            && <BottomRightCornerStyle/>
+            && <AttackTypeStyle>{attackTypeMapping[targets]}</AttackTypeStyle>}
+
 
         </CardContentStyle>
 
