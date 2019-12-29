@@ -24,6 +24,4 @@ yarn-error.log*
 
 
 /public/img
-/public/img_sharp
-/public/img_c
-/public/img_rz
+/generated

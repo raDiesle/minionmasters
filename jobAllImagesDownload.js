@@ -33,10 +33,20 @@ async function fetchImageData() {
     return data;
 }
 
+let GENERATED_FOLDER = './generated';
+let IMG_FOLDER = '/img/';
+let generatedImFolder = GENERATED_FOLDER + IMG_FOLDER;
+
+if (!fs.existsSync(generatedImFolder)) {
+    fs.mkdirSync(GENERATED_FOLDER);
+    fs.mkdirSync(generatedImFolder);
+}
 (async () => {
     const allImageData = await fetchImageData();
     await asyncForEach(allImageData.query.allimages, async (imageData) => {
         console.log(imageData.timestamp + imageData.name);
-        await download(imageData.url.replace("https", "http"), "./public/img/" + imageData.name)
+        await download(imageData.url.replace("https", "http"), generatedImFolder + imageData.name)
     });
 })();
+
+module.exports.generatedImFolder = generatedImFolder;

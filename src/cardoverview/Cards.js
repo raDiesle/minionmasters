@@ -4,7 +4,7 @@ import {Card} from "./Card";
 import orderBy from "lodash/orderBy";
 
 async function fetchCards() {
-    const response = await fetch("/jobCardProps.json");
+    const response = await fetch("jobCardProps.json");
     const data = response.json();
     return data;
 }
@@ -15,7 +15,7 @@ const CardsStyle = styled.div`
     justify-content: space-around;
 `;
 
-export default function Cards() {
+export default function Cards({setLastSelectedCard}) {
     let [cards, setCards] = useState([]);
     useEffect(() => {
         fetchCards().then(data => {
@@ -26,8 +26,10 @@ export default function Cards() {
     let sortOrder = "asc";
     return <CardsStyle>
         {
-            orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder).map(card => <Card key={card.pageId}
-                                                                                            card={card}/>)
+            orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
+                .map(card =>
+                    <Card key={card.pageId} card={card} setLastSelectedCard={setLastSelectedCard}/>
+                )
         }
     </CardsStyle>
 }
