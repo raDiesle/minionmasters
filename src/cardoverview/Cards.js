@@ -1,13 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
 import orderBy from "lodash/orderBy";
-
-async function fetchCards() {
-    const response = await fetch("jobCardProps.json");
-    const data = response.json();
-    return data;
-}
 
 const CardsStyle = styled.div`
     display: flex;
@@ -15,14 +9,7 @@ const CardsStyle = styled.div`
     justify-content: space-around;
 `;
 
-export default function Cards({setLastSelectedCard}) {
-    let [cards, setCards] = useState([]);
-    useEffect(() => {
-        fetchCards().then(data => {
-            setCards(data);
-        });
-    }, []);
-
+export default function Cards({cards}) {
     let sortOrder = "asc";
 
     return (
@@ -32,7 +19,7 @@ export default function Cards({setLastSelectedCard}) {
                 {
                     orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
                         .map(card =>
-                            <Card key={card.pageId} card={card} setLastSelectedCard={setLastSelectedCard}/>
+                            <Card key={card.pageId} card={card}/>
                         )
                 }
 

@@ -1,13 +1,27 @@
 import {Filters} from "./Filters";
 import Cards from "./Cards";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {CardDeck} from "./carddeck/CardDeck";
 
+async function fetchCards() {
+    const response = await fetch("jobCardProps.json");
+    const data = response.json();
+    return data;
+}
+
 export function CardOverview() {
+    let [cards, setCards] = useState([]);
+    useEffect(() => {
+        fetchCards().then(data => {
+            setCards(data);
+        });
+    }, []);
+
     return <>
-        <CardDeck/>
+        <CardDeck allCardsData={cards}/>
         <h3>All cards</h3>
+
         <Filters/>
-        <Cards/>
+        <Cards cards={cards}/>
     </>;
 }
