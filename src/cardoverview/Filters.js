@@ -17,8 +17,9 @@ import {faSquare} from "@fortawesome/free-solid-svg-icons/faSquare";
 export function Filters() {
 
     const FilterContainerStyle = styled.div`
-        display: flex;
-        padding: 20px 10px;
+        display: flex;   
+        flex-wrap: wrap;     
+        padding: 0 10px 10px 10px;
         
         & > div {
             padding-right: 20px;

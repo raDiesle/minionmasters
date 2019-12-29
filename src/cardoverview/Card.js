@@ -16,20 +16,28 @@ import {rarityMapping} from "../rarity/rarityMapping";
 import {AttackTypeOverlay} from "./AttackTypeOverlay";
 import {typeMapping} from "../cardtype/typeMapping";
 import {useDrag} from "react-dnd";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons/faArrowRight";
+
 
 const CardContainerStyle = styled.div`
     width: 100px;
     margin-right: 1px;
     margin-top: 2px;
-    border: 1px solid black;
+    border-color: black;
+    border-width: 1px;
+    opacity: ${({dragging, isShowDragHelp}) => dragging || isShowDragHelp ? 0.4 : 1.0};
+    border-style: ${({dragging, isShowDragHelp}) => dragging || isShowDragHelp ? "dotted" : "solid"};
 `;
 
 const CardContentStyle = styled.div`
     position: relative;
+    &:hover {
+      cursor: grab;
+    }
 `;
 
 const CardImageStyle = styled.img`
-    width: 100%;
+    width: 100%;   
 `;
 
 const ManacostStyle = styled.samp`
@@ -101,38 +109,44 @@ const BottomLeftCornerStyle = styled.div`
     border-bottom: 30px solid rgba(0,0,0, 0.5);
 `;
 
+const DragHelpOverlayStyle = styled.div`
+  position:fixed;
+  z-index: 100;
+  top: 40%;
+  right: 5px;
+`;
+
 
 export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card}) {
     const [focused, setFocused] = useState(false);
 
-    const [{opacity}, drag] = useDrag({
+    const [{dragging}, drag] = useDrag({
         item: {type: "card", card: {...card}},
+        begin(monitor) {
+            setIsShowDragHelp(false);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        },
         end(item, monitor) {
         },
-        collect: monitor => ({
-            opacity: monitor.isDragging() ? 0.4 : 1,
-        }),
+        collect: monitor => {
+            return ({
+                dragging: monitor.isDragging(),
+            })
+        },
     });
-
 
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
 
-    return <CardContainerStyle ref={drag} style={{opacity}}>
-        <CardContentStyle>
-            <CardImageStyle src={`img/${imageNormalized}`} alt={image} onClick={() => setFocused(true)}/>
-            <RightCornerStyle rarity={rarity}/>
-            <ManacostStyle>{manacost}</ManacostStyle>
 
-            <TopLeftCornerStyle/>
-            <GroundAirStyle><FontAwesomeIcon icon={typeMapping[type]} size={"xs"}/></GroundAirStyle>
+    const [isShowDragHelp, setIsShowDragHelp] = useState(false);
 
-            <BottomLeftCornerStyle/>
-            <FactionStyle>{factionMapping[faction]}</FactionStyle>
-
-            <AttackTypeOverlay targets={targets}/>
-
-        </CardContentStyle>
-
+    return <>
+        {isShowDragHelp && <DragHelpOverlayStyle>
+            <FontAwesomeIcon icon={faArrowRight} size={"10x"} color={"#EEEEEE"}/>
+        </DragHelpOverlayStyle>}
         <ReactModal
             isOpen={
                 focused
@@ -162,5 +176,30 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                 </ul>
             </div>
         </ReactModal>
-    </CardContainerStyle>;
+
+        <CardContainerStyle ref={drag} dragging={dragging} isShowDragHelp={isShowDragHelp} onTouchStart={() => {
+            setIsShowDragHelp(true);
+        }}>
+            <CardContentStyle>
+                <CardImageStyle src={`img/${imageNormalized}`} alt={image} onClick={() => {
+                    setIsShowDragHelp(false);
+                    setFocused(true);
+                }}/>
+                <RightCornerStyle rarity={rarity}/>
+                <ManacostStyle>{manacost}</ManacostStyle>
+
+                <TopLeftCornerStyle/>
+                <GroundAirStyle><FontAwesomeIcon icon={typeMapping[type]} size={"xs"}/></GroundAirStyle>
+
+                <BottomLeftCornerStyle/>
+                <FactionStyle>{factionMapping[faction]}</FactionStyle>
+
+                <AttackTypeOverlay targets={targets}/>
+
+            </CardContentStyle>
+
+
+        </CardContainerStyle>
+    </>
+        ;
 }
