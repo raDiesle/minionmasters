@@ -24,12 +24,18 @@ export default function Cards({setLastSelectedCard}) {
     }, []);
 
     let sortOrder = "asc";
-    return <CardsStyle>
-        {
-            orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
-                .map(card =>
-                    <Card key={card.pageId} card={card} setLastSelectedCard={setLastSelectedCard}/>
-                )
-        }
-    </CardsStyle>
+
+    return (
+        <div>
+
+            <CardsStyle>
+                {
+                    orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
+                        .map(card =>
+                            <Card key={card.pageId} card={card} setLastSelectedCard={setLastSelectedCard}/>
+                        )
+                }
+
+            </CardsStyle>
+        </div>);
 }

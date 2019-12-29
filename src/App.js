@@ -1,7 +1,9 @@
 import React from "react";
 import {DndProvider} from "react-dnd";
 import MultiBackend from 'react-dnd-multi-backend';
-import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
+import HTML5Backend from 'react-dnd-html5-backend';
+import TouchBackend from 'react-dnd-touch-backend';
+import {MouseTransition, TouchTransition} from 'dnd-multi-backend';
 
 
 import styled from "styled-components"
@@ -35,6 +37,22 @@ const FlexContents = styled(Contents)`
   justify-content: space-between;
 `;
 
+
+const HTML5toTouch = {
+    backends: [{
+        backend: HTML5Backend,
+        transition: MouseTransition
+    }, {
+        backend: TouchBackend,
+        options: {
+            enableMouseEvents: true,
+            delay: 0,
+            scrollAngleRanges: [{start: 30, end: 150}, {start: 210, end: 330}]
+        },
+        preview: true,
+        transition: TouchTransition
+    }]
+};
 
 const App = () => (
     <div>
