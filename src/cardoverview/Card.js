@@ -2,23 +2,20 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import ReactModal from 'react-modal';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faDove} from "@fortawesome/free-solid-svg-icons/faDove";
-import {faShoePrints} from "@fortawesome/free-solid-svg-icons/faShoePrints";
-import {faMagic} from "@fortawesome/free-solid-svg-icons/faMagic";
-import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
-import VoidBourneIcon from "./faction/VoidbourneIcon";
-import ScratIcon from "./faction/ScratIcon";
+import VoidBourneIcon from "../faction/VoidbourneIcon";
+import ScratIcon from "../faction/ScratIcon";
 import {faGavel} from "@fortawesome/free-solid-svg-icons/faGavel";
 import {faYinYang} from "@fortawesome/free-solid-svg-icons/faYinYang";
-import OutlanderIcon from "./faction/OutladerIcon";
-import SlitherIcon from "./faction/SlitherIcon";
-import EmpyrianIcon from "./faction/EmpyrianIcon";
+import OutlanderIcon from "../faction/OutladerIcon";
+import SlitherIcon from "../faction/SlitherIcon";
+import EmpyrianIcon from "../faction/EmpyrianIcon";
 import {faHatWizard} from "@fortawesome/free-solid-svg-icons/faHatWizard";
-import CrystalElfIcon from "./faction/CrystalElfIcon";
-import AccursedIcon from "./faction/AccursedIcon";
-import GroundIcon from "./attack/GroudIcon";
-import AirIcon from "./attack/AirIcon";
-import GroundAndAirIcon from "./attack/GroundAndAirIcon";
+import CrystalElfIcon from "../faction/CrystalElfIcon";
+import AccursedIcon from "../faction/AccursedIcon";
+import {rarityMapping} from "../rarity/rarityMapping";
+import {AttackTypeOverlay} from "./AttackTypeOverlay";
+import {typeMapping} from "../cardtype/typeMapping";
+import {useDrag} from "react-dnd";
 
 const CardContainerStyle = styled.div`
     width: 100px;
@@ -35,21 +32,12 @@ const CardImageStyle = styled.img`
     width: 100%;
 `;
 
-
 const ManacostStyle = styled.samp`
     position: absolute;
     top: -4px;
     right: 1px;
     font-weight: bold;   
 `;
-
-const rarityMapping = {
-    Legendary: "rgba(255, 215, 0.6)",
-    Supreme: "rgba(153, 51, 255,0.6)",
-    Rare: "rgba(51, 153, 255, 0.6)",
-    Common: "rgba(0, 153, 0, 0.6)",
-    Perk: "rgba(255, 255, 255, 0.6)"
-};
 const RightCornerStyle = styled.div`
     position: absolute;
     top: 0px;
@@ -69,12 +57,7 @@ const GroundAirStyle = styled.div`
         color: #FFFFFF;
     }
 `;
-const typeMapping = {
-    "Flying Minion": faDove,
-    "Minion": faShoePrints,
-    "Spell": faMagic,
-    "Building": faHome
-};
+
 const TopLeftCornerStyle = styled.div`
     position: absolute;
     top: 0px;
@@ -90,12 +73,12 @@ const factionMapping = {
     Accursed: <AccursedIcon/>,
     Scrat: <ScratIcon/>,
     "Crystal Elf": <CrystalElfIcon/>,
-    "Puff": <FontAwesomeIcon icon={faHatWizard} size={"s"}/>,
-    "Zen-Chi": <FontAwesomeIcon icon={faYinYang} size={"s"}/>,
+    "Puff": <FontAwesomeIcon icon={faHatWizard} size={"xs"}/>,
+    "Zen-Chi": <FontAwesomeIcon icon={faYinYang} size={"xs"}/>,
     "Slither": <SlitherIcon/>,
     "Outlander": <OutlanderIcon/>,
     "Empyrean": <EmpyrianIcon/>,
-    "Stoutheart": <FontAwesomeIcon icon={faGavel} size={"s"}/>
+    "Stoutheart": <FontAwesomeIcon icon={faGavel} size={"xs"}/>
 
 };
 const FactionStyle = styled.div`
@@ -118,37 +101,25 @@ const BottomLeftCornerStyle = styled.div`
     border-bottom: 30px solid rgba(0,0,0, 0.5);
 `;
 
-const attackTypeMapping = {
-    "Air": <AirIcon/>,
-    "Ground": <GroundIcon/>,
-    "Ground & Air": <GroundAndAirIcon/>
-};
-const AttackTypeStyle = styled.div`
- position: absolute;
-    bottom: -4px;
-    right: 0px;
-    
-    & > svg {
-        fill: #FFFFFF;     
-        color: #FFFFFF;
-    }
-`;
-const BottomRightCornerStyle = styled.div`
-    position: absolute;
-    bottom: 0px;
-    right: 0px;   
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-bottom: 30px solid rgba(0,0,0, 0.5);
-`;
 
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}}) {
+export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card}) {
     const [focused, setFocused] = useState(false);
 
-    return <CardContainerStyle>
+    const [{opacity}, drag] = useDrag({
+        item: {type: "card", card: {...card}},
+        end(item, monitor) {
+        },
+        collect: monitor => ({
+            opacity: monitor.isDragging() ? 0.4 : 1,
+        }),
+    });
+
+
+    const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
+
+    return <CardContainerStyle ref={drag} style={{opacity}}>
         <CardContentStyle>
-            <CardImageStyle src={`/img/${image}`} alt={image} onClick={() => setFocused(true)}/>
+            <CardImageStyle src={`img/${imageNormalized}`} alt={image} onClick={() => setFocused(true)}/>
             <RightCornerStyle rarity={rarity}/>
             <ManacostStyle>{manacost}</ManacostStyle>
 
@@ -158,10 +129,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
             <BottomLeftCornerStyle/>
             <FactionStyle>{factionMapping[faction]}</FactionStyle>
 
-            {attackTypeMapping[targets]
-            && <BottomRightCornerStyle/>
-            && <AttackTypeStyle>{attackTypeMapping[targets]}</AttackTypeStyle>}
-
+            <AttackTypeOverlay targets={targets}/>
 
         </CardContentStyle>
 

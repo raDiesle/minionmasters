@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
+const {generatedImFolder} = require(`./jobAllImagesDownload`);
 
 function readFilesSync(dir) {
     const files = [];
@@ -24,12 +25,19 @@ function readFilesSync(dir) {
     return files;
 }
 
-const files = readFilesSync('public/img/');
+
+const FOLDER_PUBLIC_IMG = './public/img/';
+
+if (!fs.existsSync(FOLDER_PUBLIC_IMG)) {
+    fs.mkdirSync(FOLDER_PUBLIC_IMG);
+}
+
+const files = readFilesSync(generatedImFolder);
 files.forEach(file => {
     console.log(file.name + file.ext);
     sharp(file.filepath)
         .resize({height: 128})
-        .toFile('./public/img_sharp/' + file.name + file.ext, function (err, info) {
+        .toFile(FOLDER_PUBLIC_IMG + file.name + file.ext, function (err, info) {
             if (err) {
                 console.log("error:");
                 console.log(err);
