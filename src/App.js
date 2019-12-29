@@ -14,7 +14,6 @@ import {CardOverview} from "./cardoverview/CardOverview";
 
 
 const Header = styled.header`
-  padding: 0.75rem 1rem;
   border-bottom: 1px solid black;
   width: 100%;
   background-color: #f1f1f1;
@@ -54,24 +53,26 @@ const HTML5toTouch = {
     }]
 };
 
-const App = () => (
-    <div>
-        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-            <Header>
-                <FlexContents>
-                    <div>
-                        <div
-                            style={{width: "20px", marginRight: ".5rem"}}
-                        />
-                        <h1> MinionMasters</h1>
-                    </div>
-                </FlexContents>
-            </Header>
-            <CardOverview/>
-        </DndProvider>
-    </div>
+const App = () => {
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    }, false);
+    return (
+        <div>
+            <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+                <Header>
+                    <FlexContents>
+                        <div>
+                            <h1> MinionMasters</h1>
+                        </div>
+                    </FlexContents>
+                </Header>
+                <CardOverview/>
+            </DndProvider>
+        </div>
 
-);
+    );
+}
 
 
 export default App;

@@ -87,7 +87,6 @@ const factionMapping = {
     "Outlander": <OutlanderIcon/>,
     "Empyrean": <EmpyrianIcon/>,
     "Stoutheart": <FontAwesomeIcon icon={faGavel} size={"xs"}/>
-
 };
 const FactionStyle = styled.div`
     position: absolute;
@@ -124,10 +123,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
         item: {type: "card", card: {...card}},
         begin(monitor) {
             setIsShowDragHelp(false);
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+         //   window.scrollTo(0, 0);
         },
         end(item, monitor) {
         },
@@ -177,14 +173,15 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
             </div>
         </ReactModal>
 
-        <CardContainerStyle ref={drag} dragging={dragging} isShowDragHelp={isShowDragHelp} onTouchStart={() => {
-            setIsShowDragHelp(true);
-        }}>
+        <CardContainerStyle ref={drag} dragging={dragging} isShowDragHelp={isShowDragHelp}
+
+                            onClick={() => {
+                                setIsShowDragHelp(false);
+                                setFocused(true);
+                            }}
+        >
             <CardContentStyle>
-                <CardImageStyle src={`img/${imageNormalized}`} alt={image} onClick={() => {
-                    setIsShowDragHelp(false);
-                    setFocused(true);
-                }}/>
+                <CardImageStyle src={`img/${imageNormalized}`} alt={image}/>
                 <RightCornerStyle rarity={rarity}/>
                 <ManacostStyle>{manacost}</ManacostStyle>
 
