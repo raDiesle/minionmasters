@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/minionmasters/precache-manifest.2614e1e4a7a501973e5e15e38c0478c6.js"
+  "/minionmasters/precache-manifest.a92619daabce2bf11f8298f66c876626.js"
 );
 
 self.addEventListener('message', (event) => {
