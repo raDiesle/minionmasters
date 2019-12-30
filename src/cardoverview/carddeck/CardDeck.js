@@ -5,6 +5,7 @@ import {FacebookIcon, FacebookShareButton} from 'react-share';
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {CardDeckPrefillFromUrl} from "./CardDeckPrefillFromUrl";
 
 const CardDeckStyle = styled.div`
     display: flex;
@@ -40,7 +41,7 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}})
 
     let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].pageId === selectedCardId : selectedCardId === 0;
 
-    if (!isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.pageId === lastSelectedCards[currentSelectedSlot]?.pageId) {
+    if (selectedCardId !== 0 && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.pageId === lastSelectedCards[currentSelectedSlot]?.pageId) {
         const nextFirstFreeSlot = findFirstNextFreeSlot() + 1;
         const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
         const newLastSelectedCards = [...lastSelectedCards];
@@ -49,24 +50,11 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}})
         setCurrentSelectedSlot(nextFirstFreeSlot);
     }
 
-    /*
-    useEffect(() => {
-        if (!allCardsData) {
-            return;
-        }
-        let selectedPageIdsFromUrl = qs.parse(window.location.search, {ignoreQueryPrefix: true}).pageId;
-        if (selectedPageIdsFromUrl && !Array.isArray(selectedPageIdsFromUrl)) {
-            selectedPageIdsFromUrl = [selectedPageIdsFromUrl];
-        }
-        const selectedPageIdsNormalized = selectedPageIdsFromUrl ? selectedPageIdsFromUrl.map(pageId => parseInt(pageId)) : [];
-        const prefillSelectedCardsWithData = allCardsData.filter(({pageId}) => selectedPageIdsNormalized.includes(pageId));
 
-        setLastSelectedCards(prefillSelectedCardsWithData);
-    }, [allCardsData]);
-*/
 
     return <div>
         <h3>Your Deck</h3>
+        <CardDeckPrefillFromUrl allCardsData={allCardsData} setLastSelectedCards={setLastSelectedCards}/>
         <CardDeckStyle>
             {
                 Slots.map((slotPos) =>
