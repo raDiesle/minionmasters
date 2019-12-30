@@ -10,6 +10,8 @@ async function fetchCards() {
 }
 
 export function CardOverview() {
+    const [selectedCardId, setSelectedCardId] = useState(0);
+
     let [cards, setCards] = useState([]);
     useEffect(() => {
         fetchCards().then(data => {
@@ -18,10 +20,10 @@ export function CardOverview() {
     }, []);
 
     return <>
-        <CardDeck allCardsData={cards}/>
+        <CardDeck allCardsData={cards} selectedCardId={selectedCardId}/>
         <h3>All cards</h3>
 
         <Filters/>
-        <Cards cards={cards}/>
+        <Cards cards={cards} setSelectedCardId={setSelectedCardId}/>
     </>;
 }
