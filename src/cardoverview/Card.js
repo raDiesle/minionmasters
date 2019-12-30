@@ -15,6 +15,8 @@ import AccursedIcon from "../faction/AccursedIcon";
 import {rarityMapping} from "../rarity/rarityMapping";
 import {AttackTypeOverlay} from "./AttackTypeOverlay";
 import {typeMapping} from "../cardtype/typeMapping";
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
+import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 
 const CardContainerStyle = styled.div`
     width: 100px;
@@ -105,6 +107,38 @@ const BottomLeftCornerStyle = styled.div`
     border-bottom: 30px solid rgba(0,0,0, 0.5);
 `;
 
+const OverlayActionBackground = styled.div`
+    background-color: rgba(0,0,0, 0.5);
+    border: 1px dotted rgba(0,0,0, 0.5);
+`;
+
+const InfoDetailsOverlay = styled.div`
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    padding: 15px 0 15px 15px;
+    &:hover{
+      cursor: pointer;
+    }
+`;
+const InfoDetailsIconStyle = styled(OverlayActionBackground)`
+  padding-right: 2px;
+`;
+
+
+const AddCardToDeckOverlay = styled.div`
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    padding: 15px 15px 15px 0;    
+    &:hover{
+      cursor: pointer;
+    }
+`;
+const AddToDeckIconStyle = styled(OverlayActionBackground)`
+  padding-left: 2px;
+`;
+
 export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, onClick}) {
     const [focused, setFocused] = useState(false);
 
@@ -156,6 +190,20 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
                 <AttackTypeOverlay targets={targets}/>
 
+
+                <AddCardToDeckOverlay>
+                    <InfoDetailsIconStyle>
+                        <FontAwesomeIcon icon={faPlusCircle} inverse={true}/>
+                    </InfoDetailsIconStyle>
+                </AddCardToDeckOverlay>
+                <InfoDetailsOverlay onClick={(event) => {
+                    setFocused(true);
+                    event.stopPropagation();
+                }}>
+                    <AddToDeckIconStyle>
+                        <FontAwesomeIcon icon={faInfoCircle} inverse={true}/>
+                    </AddToDeckIconStyle>
+                </InfoDetailsOverlay>
             </CardContentStyle>
 
 
