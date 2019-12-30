@@ -10,7 +10,7 @@ async function fetchCards() {
 }
 
 export function CardOverview() {
-    const [selectedCardId, setSelectedCardId] = useState(0);
+    const [selectedCard, setSelectedCard] = useState({pageId: 0});
 
     let [cards, setCards] = useState([]);
     useEffect(() => {
@@ -20,10 +20,10 @@ export function CardOverview() {
     }, []);
 
     return <>
-        <CardDeck allCardsData={cards} selectedCardId={selectedCardId}/>
+        <CardDeck allCardsData={cards} selectedCard={selectedCard}/>
         <h3>All cards</h3>
 
         <Filters/>
-        <Cards cards={cards} setSelectedCardId={setSelectedCardId}/>
+        <Cards cards={cards} setSelectedCard={setSelectedCard}/>
     </>;
 }

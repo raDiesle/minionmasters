@@ -9,7 +9,7 @@ const CardsStyle = styled.div`
     justify-content: space-around;
 `;
 
-export default function Cards({cards, setSelectedCardId}) {
+export default function Cards({cards, setSelectedCard}) {
     let sortOrder = "asc";
 
     return (
@@ -20,8 +20,9 @@ export default function Cards({cards, setSelectedCardId}) {
                     orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
                         .map(card =>
                             <Card key={card.pageId} card={card} onClick={() => {
-                                console.log("selected");
-                                setSelectedCardId(card.pageId);
+                                setSelectedCard({
+                                    pageId: card.pageId
+                                });
                             }}/>
                         )
                 }

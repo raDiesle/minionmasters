@@ -18,7 +18,7 @@ const CardContainerStyle = styled.div`
 export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot}) {
     return (
         <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
-            {lastSelectedCard ? <Card card={lastSelectedCard}/> :
+            {lastSelectedCard.pageId !== 0 ? <Card card={lastSelectedCard}/> :
                 <CardContainerStyle>{isSelectedSlot ? "Select a card" : ""}</CardContainerStyle>}
         </CardDeckSlotStyle>
     );

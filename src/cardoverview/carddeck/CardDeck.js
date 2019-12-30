@@ -5,7 +5,6 @@ import {FacebookIcon, FacebookShareButton} from 'react-share';
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import * as qs from "qs";
 
 const CardDeckStyle = styled.div`
     display: flex;
@@ -25,46 +24,32 @@ const useTraceableState = initialValue => {
     return [prevValue, value, setValue];
 };
 
-export function CardDeck({allCardsData, selectedCardId}) {
-    const [lastSelectedCards, setLastSelectedCards] = useState([]);
+export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}}) {
+    let Slots = [...Array(11).keys()];
+    const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
+        return {pageId: 0}
+    }));
 
     const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({pageId}) => pageId);
     const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
     let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?pageId=${pageIdsToParam}`;
 
-    let Slots = [...Array(11).keys()];
-    const findFirstNextFreeSlot = () => Slots.find(slotPosition => !lastSelectedCards[slotPosition]);
+    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].pageId === 0);
 
     const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(findFirstNextFreeSlot);
 
-    let isCardAlreadyOnSelectedSlot = lastSelectedCards.length === 0 ? false : lastSelectedCards.findIndex(({pageId}) => {
-        return pageId === selectedCardId;
-    }) === currentSelectedSlot;
-    let isCurrentSelectedSlotEmpty = !lastSelectedCards[currentSelectedSlot];
+    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].pageId === selectedCardId : selectedCardId === 0;
 
-    const firstNextFreeSlot = Slots.find(slotPosition => !lastSelectedCards[slotPosition]);
-    let isSameSlot = firstNextFreeSlot === currentSelectedSlot;
-
-
-    let isNotInitialized = selectedCardId !== 0;
-    // isSameSlot && (isCardAlreadyOnSelectedSlot || isCurrentSelectedSlotEmpty && isNotInitialized)
-    if (selectedCardId === 0 && !isSameSlot) {
-        setCurrentSelectedSlot(firstNextFreeSlot);
-    } else if (!isNotInitialized) {
-        // do nothing
-    } else {
-        if (!isCardAlreadyOnSelectedSlot && prevSelectedSlot !== firstNextFreeSlot - 1) {
-            const cardToAddData = allCardsData.find(({pageId}) => pageId === selectedCardId);
-            const newLastSelectedCards = [...lastSelectedCards];
-            newLastSelectedCards[currentSelectedSlot] = cardToAddData;
-            setLastSelectedCards(newLastSelectedCards);
-
-            const nextFirstFreeSlot = firstNextFreeSlot + 1;
-            setCurrentSelectedSlot(nextFirstFreeSlot);
-
-        }
+    if (!isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.pageId === lastSelectedCards[currentSelectedSlot]?.pageId) {
+        const nextFirstFreeSlot = findFirstNextFreeSlot() + 1;
+        const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
+        const newLastSelectedCards = [...lastSelectedCards];
+        newLastSelectedCards[currentSelectedSlot] = cardToAddData;
+        setLastSelectedCards(newLastSelectedCards);
+        setCurrentSelectedSlot(nextFirstFreeSlot);
     }
 
+    /*
     useEffect(() => {
         if (!allCardsData) {
             return;
@@ -78,7 +63,7 @@ export function CardDeck({allCardsData, selectedCardId}) {
 
         setLastSelectedCards(prefillSelectedCardsWithData);
     }, [allCardsData]);
-
+*/
 
     return <div>
         <h3>Your Deck</h3>
