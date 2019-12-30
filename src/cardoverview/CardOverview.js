@@ -20,7 +20,7 @@ export function CardOverview() {
     }, []);
 
     return <>
-        <CardDeck allCardsData={cards} selectedCard={selectedCard}/>
+        <CardDeck allCardsData={cards} selectedCard={selectedCard} setSelectedCard={setSelectedCard}/>
         <h3>All cards</h3>
 
         <Filters/>

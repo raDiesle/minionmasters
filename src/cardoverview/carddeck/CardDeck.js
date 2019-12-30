@@ -25,7 +25,7 @@ const useTraceableState = initialValue => {
     return [prevValue, value, setValue];
 };
 
-export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}}) {
+export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}, setSelectedCard}) {
     let Slots = [...Array(11).keys()];
     const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
         return {pageId: 0}
@@ -42,15 +42,24 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}})
     let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].pageId === selectedCardId : selectedCardId === 0;
 
     if (selectedCardId !== 0 && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.pageId === lastSelectedCards[currentSelectedSlot]?.pageId) {
-        const nextFirstFreeSlot = findFirstNextFreeSlot() + 1;
+
         const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
         const newLastSelectedCards = [...lastSelectedCards];
         newLastSelectedCards[currentSelectedSlot] = cardToAddData;
         setLastSelectedCards(newLastSelectedCards);
-        setCurrentSelectedSlot(nextFirstFreeSlot);
+
+        const nextFreeSlot = newLastSelectedCards.findIndex(({pageId}) => pageId === 0);
+        setCurrentSelectedSlot(nextFreeSlot);
     }
 
-
+    const handleRemoveCard = (slotPos) => setLastSelectedCards((prevSelectedCards) => {
+        const selectedCardsWithRemovedCard = [...prevSelectedCards];
+        selectedCardsWithRemovedCard[slotPos] = {pageId: 0};
+        setSelectedCard({pageId: 0});
+        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({pageId}) => pageId === 0);
+        setCurrentSelectedSlot(nextFreeSlot);
+        return selectedCardsWithRemovedCard;
+    });
 
     return <div>
         <h3>Your Deck</h3>
@@ -58,8 +67,12 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}})
         <CardDeckStyle>
             {
                 Slots.map((slotPos) =>
-                    <CardDeckSlot key={slotPos} number={slotPos} isSelectedSlot={findFirstNextFreeSlot() === slotPos}
-                                  lastSelectedCard={lastSelectedCards[slotPos]}/>)
+                    <CardDeckSlot key={slotPos}
+                                  number={slotPos}
+                                  isSelectedSlot={currentSelectedSlot === slotPos}
+                                  lastSelectedCard={lastSelectedCards[slotPos]}
+                                  handleOnClick={handleRemoveCard}
+                    />)
             }
         </CardDeckStyle>
 

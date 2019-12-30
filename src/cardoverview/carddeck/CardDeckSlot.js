@@ -15,10 +15,12 @@ const CardContainerStyle = styled.div`
     margin-top: 2px;    
 `;
 
-export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot}) {
+export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOnClick}) {
+
     return (
         <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
-            {lastSelectedCard.pageId !== 0 ? <Card card={lastSelectedCard}/> :
+            {lastSelectedCard.pageId !== 0 ?
+                <Card card={lastSelectedCard} onClick={() => handleOnClick(number)} isDeckCard/> :
                 <CardContainerStyle>{isSelectedSlot ? "Select a card" : ""}</CardContainerStyle>}
         </CardDeckSlotStyle>
     );
