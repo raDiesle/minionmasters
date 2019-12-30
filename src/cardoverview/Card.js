@@ -17,6 +17,8 @@ import {AttackTypeOverlay} from "./AttackTypeOverlay";
 import {typeMapping} from "../cardtype/typeMapping";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
+import {faMinusCircle} from "@fortawesome/free-solid-svg-icons/faMinusCircle";
+
 
 const CardContainerStyle = styled.div`
     width: 100px;
@@ -110,6 +112,7 @@ const BottomLeftCornerStyle = styled.div`
 const OverlayActionBackground = styled.div`
     background-color: rgba(0,0,0, 0.5);
     border: 1px dotted rgba(0,0,0, 0.5);
+  color: #fff;
 `;
 
 const InfoDetailsOverlay = styled.div`
@@ -117,6 +120,7 @@ const InfoDetailsOverlay = styled.div`
     top: 35px;
     right: 0px;
     padding: 15px 0 15px 15px;
+   
     &:hover{
       cursor: pointer;
     }
@@ -124,7 +128,6 @@ const InfoDetailsOverlay = styled.div`
 const InfoDetailsIconStyle = styled(OverlayActionBackground)`
   padding-right: 2px;
 `;
-
 
 const AddCardToDeckOverlay = styled.div`
     position: absolute;
@@ -139,7 +142,7 @@ const AddToDeckIconStyle = styled(OverlayActionBackground)`
   padding-left: 2px;
 `;
 
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, onClick}) {
+export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, onClick, isDeckCard = false}) {
     const [focused, setFocused] = useState(false);
 
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
@@ -190,10 +193,9 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
                 <AttackTypeOverlay targets={targets}/>
 
-
                 <AddCardToDeckOverlay>
                     <InfoDetailsIconStyle>
-                        <FontAwesomeIcon icon={faPlusCircle} inverse={true}/>
+                        <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"}/>
                     </InfoDetailsIconStyle>
                 </AddCardToDeckOverlay>
                 <InfoDetailsOverlay onClick={(event) => {
@@ -201,7 +203,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                     event.stopPropagation();
                 }}>
                     <AddToDeckIconStyle>
-                        <FontAwesomeIcon icon={faInfoCircle} inverse={true}/>
+                        <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
                     </AddToDeckIconStyle>
                 </InfoDetailsOverlay>
             </CardContentStyle>
