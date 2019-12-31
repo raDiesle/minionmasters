@@ -1,6 +1,6 @@
 import React from "react";
 
-function VoidBourneIcon() {
+function VoidborneIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -13,4 +13,4 @@ function VoidBourneIcon() {
     );
 }
 
-export default VoidBourneIcon;
+export default VoidborneIcon;

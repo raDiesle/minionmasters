@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import ReactModal from 'react-modal';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import VoidBourneIcon from "../faction/VoidbourneIcon";
+import VoidborneIcon from "../faction/VoidborneIcon";
 import ScratIcon from "../faction/ScratIcon";
 import {faGavel} from "@fortawesome/free-solid-svg-icons/faGavel";
 import {faYinYang} from "@fortawesome/free-solid-svg-icons/faYinYang";
@@ -78,7 +78,7 @@ const TopLeftCornerStyle = styled.div`
 `;
 
 const factionMapping = {
-    Voidborne: <VoidBourneIcon/>,
+    Voidborne: <VoidborneIcon/>,
     Accursed: <AccursedIcon/>,
     Scrat: <ScratIcon/>,
     "Crystal Elf": <CrystalElfIcon/>,

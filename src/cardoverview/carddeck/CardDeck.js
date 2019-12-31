@@ -63,7 +63,8 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}, 
 
     return <div>
         <h3>Your Deck</h3>
-        <CardDeckPrefillFromUrl allCardsData={allCardsData} setLastSelectedCards={setLastSelectedCards}/>
+        <CardDeckPrefillFromUrl allCardsData={allCardsData} setLastSelectedCards={setLastSelectedCards}
+                                setCurrentSelectedSlot={setCurrentSelectedSlot}/>
         <CardDeckStyle>
             {
                 Slots.map((slotPos) =>
