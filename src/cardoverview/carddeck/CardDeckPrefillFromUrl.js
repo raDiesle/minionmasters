@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import qs from "qs";
 
-export function CardDeckPrefillFromUrl({allCardsData, setLastSelectedCards}) {
+export function CardDeckPrefillFromUrl({allCardsData, setLastSelectedCards, setCurrentSelectedSlot}) {
 
     useEffect(() => {
         if (allCardsData.length === 0) {
@@ -20,13 +20,12 @@ export function CardDeckPrefillFromUrl({allCardsData, setLastSelectedCards}) {
             return typeof selectedCardData === 'undefined' ? {pageId: 0} : selectedCardData;
         });
 
-
-        let oldWithNewSelectedMergeCards = (initialSelectedCards) => {
-            const merged = initialSelectedCards.map((card, index) => prefillSelectedCardsWithData[index] || card);
-            debugger;
-            return merged;
-        }
-        setLastSelectedCards(oldWithNewSelectedMergeCards);
+        setLastSelectedCards((initialSelectedCards) => {
+            const normalized = initialSelectedCards.map((card, index) => prefillSelectedCardsWithData[index] || card);
+            const nextFreeSlot = normalized.findIndex(({pageId}) => pageId === 0);
+            setCurrentSelectedSlot(nextFreeSlot);
+            return normalized;
+        });
     }, [allCardsData]);
 
     return null;
