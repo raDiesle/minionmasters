@@ -21,7 +21,7 @@ import {faMinusCircle} from "@fortawesome/free-solid-svg-icons/faMinusCircle";
 
 
 const CardContainerStyle = styled.div`
-    width: 100px;
+    width: ${({zoom}) => zoom * 20}px;
     margin-right: 1px;
     margin-top: 2px;
     border-color: black;
@@ -112,7 +112,7 @@ const BottomLeftCornerStyle = styled.div`
 const OverlayActionBackground = styled.div`
     background-color: rgba(0,0,0, 0.5);
     border: 1px dotted rgba(0,0,0, 0.5);
-  color: #fff;
+    color: #fff;
 `;
 
 const InfoDetailsOverlay = styled.div`
@@ -142,7 +142,7 @@ const AddToDeckIconStyle = styled(OverlayActionBackground)`
   padding-left: 2px;
 `;
 
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, onClick, isDeckCard = false}) {
+export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, onClick, isDeckCard = false, zoom}) {
     const [focused, setFocused] = useState(false);
 
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
@@ -179,6 +179,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
         </ReactModal>
 
         <CardContainerStyle onClick={onClick}
+                            zoom={zoom}
         >
             <CardContentStyle>
                 <CardImageStyle src={`img/${imageNormalized}`} alt={image}/>

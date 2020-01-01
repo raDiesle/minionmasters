@@ -9,7 +9,7 @@ const CardsStyle = styled.div`
     justify-content: flex-start;
 `;
 
-export default function Cards({cards, setSelectedCard}) {
+export default function Cards({cards, setSelectedCard, zoom}) {
     let sortOrder = "asc";
 
     return (
@@ -19,11 +19,16 @@ export default function Cards({cards, setSelectedCard}) {
                 {
                     orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
                         .map(card =>
-                            <Card key={card.pageId} card={card} onClick={() => {
-                                setSelectedCard({
-                                    pageId: card.pageId
-                                });
-                            }}/>
+                            <Card
+                                key={card.pageId}
+                                card={card}
+                                onClick={() => {
+                                    setSelectedCard({
+                                        pageId: card.pageId
+                                    });
+                                }}
+                                zoom={zoom}
+                            />
                         )
                 }
 

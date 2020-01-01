@@ -6,6 +6,7 @@ import {CopyToClipboard} from "react-copy-to-clipboard";
 import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {CardDeckPrefillFromUrl} from "./CardDeckPrefillFromUrl";
+import {toast} from 'react-toastify';
 
 const CardDeckStyle = styled.div`
     display: flex;
@@ -60,7 +61,6 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}, 
         setCurrentSelectedSlot(nextFreeSlot);
         return selectedCardsWithRemovedCard;
     });
-
     return <div>
         <h3>Your Deck</h3>
         <CardDeckPrefillFromUrl allCardsData={allCardsData} setLastSelectedCards={setLastSelectedCards}
@@ -77,9 +77,11 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}, 
             }
         </CardDeckStyle>
 
+
+        <b>Share deck</b>
         <div style={{display: "flex"}}>
             <FacebookShareButton
-                url={""}
+                url={url}
                 className="Demo__some-network__share-button">
                 <FacebookIcon
                     size={32}
@@ -89,7 +91,7 @@ export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}, 
             <CopyToClipboard
                 text={url}
                 onCopy={() => {
-                    // Stuff to run once the user has copied...
+                    toast("Link copied to clipboard");
                 }}
                 title="Copy link"
             >

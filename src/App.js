@@ -5,6 +5,7 @@ import {Contents} from "./BaseComponents"
 
 import "./App.css";
 import {CardOverview} from "./cardoverview/CardOverview";
+import {toast} from 'react-toastify';
 
 
 const Header = styled.header`
@@ -31,6 +32,8 @@ const FlexContents = styled(Contents)`
 `;
 
 const App = () => {
+    toast.configure();
+
     return (
         <div>
             <Header>
