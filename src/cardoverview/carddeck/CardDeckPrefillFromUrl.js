@@ -26,7 +26,7 @@ export function CardDeckPrefillFromUrl({allCardsData, setLastSelectedCards, setC
             setCurrentSelectedSlot(nextFreeSlot);
             return normalized;
         });
-    }, [allCardsData]);
+    }, [allCardsData, setCurrentSelectedSlot, setLastSelectedCards]);
 
     return null;
 

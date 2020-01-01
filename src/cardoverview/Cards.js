@@ -6,7 +6,7 @@ import orderBy from "lodash/orderBy";
 const CardsStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 `;
 
 export default function Cards({cards, setSelectedCard}) {

@@ -1,0 +1,1 @@
+export const FACTIONS = ["Accursed", "Crystal Elf", "Empyrian", "Outlander", "Scrat", "Slither", "Voidborne"];
