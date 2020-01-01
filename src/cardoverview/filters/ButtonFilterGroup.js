@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, {useEffect} from "react";
+import React from "react";
 
 const ButtonGroupStyle = styled.div`                  
       & > button {
@@ -35,33 +35,17 @@ const ButtonInGroupStyle = styled.button`
   background-color: ${({isButtonActive}) => isButtonActive ? "#111" : "#444"};
 `;
 
-export function ButtonGroup({children, model, setModel}) {
-    const buttonKeys = [];
-    React.Children.forEach(children, element => {
-        buttonKeys.push(element.props.btnKey);
-    });
-
-    useEffect(() => {
-        if (model.length > 0) {
-            return;
-        }
-        setModel(children.map((content, key) => {
-            return {
-                buttonKey: [buttonKeys[key]],
-                isActive: false
-            }
-        }));
-
-    }, []);
+export function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
 
     return <ButtonGroupStyle>
         {children.map((buttonContent, position) =>
-            <ButtonInGroupStyle onClick={() => (setModel((prevState) => {
-                const newState = [...prevState];
-                newState[position].isActive = !prevState[position].isActive;
-                return newState;
-            }))}
-                                isButtonActive={model[position]?.isActive}
+            <ButtonInGroupStyle key={position} onClick={() => (
+                setFilters((prevFilters) => {
+                    const newFilters = {...prevFilters};
+                    newFilters[btnkey][position].isActive = !prevFilters[btnkey][position].isActive;
+                    return newFilters;
+                }))}
+                                isButtonActive={filters[position].isActive}
             >
                 {buttonContent}
             </ButtonInGroupStyle>
