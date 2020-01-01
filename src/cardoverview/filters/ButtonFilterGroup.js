@@ -35,7 +35,7 @@ const ButtonInGroupStyle = styled.button`
   background-color: ${({isButtonActive}) => isButtonActive ? "#111" : "#444"};
 `;
 
-export function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
+function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
 
     return <ButtonGroupStyle>
         {children.map((buttonContent, position) =>
@@ -52,3 +52,5 @@ export function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
         )}
     </ButtonGroupStyle>
 }
+
+export {ButtonGroupStyle, ButtonInGroupStyle, ButtonFilterGroup};
