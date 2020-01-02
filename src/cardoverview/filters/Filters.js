@@ -18,11 +18,29 @@ import PlusIcon from "./PlusIcon";
 import {MANACOST} from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 
-export function Filters({filters, setFilters, zoom, setZoom}) {
 
+const FilterByNameInput = ({name, setFilters}) => <input
+    type="text"
+    name="thename"
+    value={name}
+    onChange={(event) => {
+        event.persist();
+        setFilters((prevFilters) => {
+            const newFilters = {...prevFilters};
+
+            newFilters.name = event.target.value;
+            console.log(newFilters.name);
+            return newFilters;
+        })
+    }}
+
+/>;
+
+export function Filters({filters, setFilters, zoom, setZoom}) {
     const FilterContainerStyle = styled.div`
         display: flex;   
-        flex-wrap: wrap;     
+        flex-wrap: wrap;  
+        align-items: flex-end;   
         padding: 0 10px 10px 10px;
         
         & > div {
@@ -31,6 +49,11 @@ export function Filters({filters, setFilters, zoom, setZoom}) {
     `;
 
     return <FilterContainerStyle>
+
+        <div>
+            <div>Name</div>
+            <FilterByNameInput name={filters.name} setFilters={setFilters}/>
+        </div>
         <div>
             Faction
             <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
@@ -86,6 +109,5 @@ export function Filters({filters, setFilters, zoom, setZoom}) {
                 <ButtonInGroupStyle onClick={() => setZoom((prevZoom) => prevZoom + 1)}><PlusIcon/></ButtonInGroupStyle>
             </ButtonGroupStyle>
         </div>
-
     </FilterContainerStyle>
 }
