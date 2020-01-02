@@ -26,45 +26,70 @@ const useTraceableState = initialValue => {
     return [prevValue, value, setValue];
 };
 
-export function CardDeck({allCardsData, selectedCard: {pageId: selectedCardId}, setSelectedCard}) {
+// refactor to only pass selectedCardId
+export function CardDeck({
+                             allCardsData,
+                             prevSelectedCardEvent: {eventId: prevSelectedEventId} = {eventId: 0},
+                             selectedCardEvent: {eventId: cardSelectedEventId, card: {pageId: selectedCardId}},
+                             setSelectedCardEvent
+                         }
+) {
     let Slots = [...Array(11).keys()];
     const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
-        return {pageId: 0}
+        return {
+            eventId: 0,
+            card: {
+                pageId: 0
+            }
+        }
     }));
 
-    const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({pageId}) => pageId);
+    const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({card: {pageId}}) => pageId);
     const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
     let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?pageId=${pageIdsToParam}`;
 
-    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].pageId === 0);
+    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.pageId === 0);
 
     const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(findFirstNextFreeSlot);
 
-    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].pageId === selectedCardId : selectedCardId === 0;
+    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.pageId === selectedCardId : selectedCardId === 0;
 
-    if (selectedCardId !== 0 && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.pageId === lastSelectedCards[currentSelectedSlot]?.pageId) {
-
+    if (cardSelectedEventId !== 0 && prevSelectedEventId !== cardSelectedEventId && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.eventId === lastSelectedCards[currentSelectedSlot]?.eventId) {
         const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
         const newLastSelectedCards = [...lastSelectedCards];
-        newLastSelectedCards[currentSelectedSlot] = cardToAddData;
+        newLastSelectedCards[currentSelectedSlot] = {
+            eventId: cardSelectedEventId,
+            card: cardToAddData
+        };
         setLastSelectedCards(newLastSelectedCards);
 
-        const nextFreeSlot = newLastSelectedCards.findIndex(({pageId}) => pageId === 0);
+        const nextFreeSlot = newLastSelectedCards.findIndex(({card: {pageId}}) => pageId === 0);
         setCurrentSelectedSlot(nextFreeSlot);
     }
 
     const handleRemoveCard = (slotPos) => setLastSelectedCards((prevSelectedCards) => {
         const selectedCardsWithRemovedCard = [...prevSelectedCards];
-        selectedCardsWithRemovedCard[slotPos] = {pageId: 0};
-        setSelectedCard({pageId: 0});
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({pageId}) => pageId === 0);
+        selectedCardsWithRemovedCard[slotPos] = {
+            eventId: Math.random(),
+            card: {
+                pageId: 0
+            }
+        };
+        setSelectedCardEvent({
+                eventId: Math.random(),
+                card: {pageId: 0}
+            }
+        );
+        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {pageId}}) => pageId === 0);
         setCurrentSelectedSlot(nextFreeSlot);
         return selectedCardsWithRemovedCard;
     });
     return <div>
         <h3>Your Deck</h3>
-        <CardDeckPrefillFromUrl allCardsData={allCardsData} setLastSelectedCards={setLastSelectedCards}
-                                setCurrentSelectedSlot={setCurrentSelectedSlot}/>
+        <CardDeckPrefillFromUrl allCardsData={allCardsData}
+                                setLastSelectedCards={setLastSelectedCards}
+                                setCurrentSelectedSlot={setCurrentSelectedSlot}
+        />
         <CardDeckStyle>
             {
                 Slots.map((slotPos) =>
