@@ -42,6 +42,7 @@ export function CardOverview() {
             };
         };
         return {
+            name: "",
             faction: FACTIONS.map(setFilterState),
             manacost: MANACOST.map(setFilterState),
             rarity: Object.keys(rarityMapping).map(setFilterState),
@@ -55,6 +56,7 @@ export function CardOverview() {
     const filteredCardsDataWithManacost = filters.manacost.every(({isActive}) => !isActive) ? filteredCardsDataFaction : filteredCardsDataFaction.filter(({manacost}) => filters.manacost.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(parseInt(manacost)));
     const filteredCardsDataWithRarity = filters.rarity.every(({isActive}) => !isActive) ? filteredCardsDataWithManacost.filter(({rarity}) => rarity !== 'Perk') : filteredCardsDataWithManacost.filter(({rarity}) => filters.rarity.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(rarity));
     const filteredCardsDataWithType = filters.type.every(({isActive}) => !isActive) ? filteredCardsDataWithRarity : filteredCardsDataWithRarity.filter(({type}) => filters.type.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(type));
+    const filteredCardsDataWithName = filters.name === "" ? filteredCardsDataWithType : filteredCardsDataWithType.filter(({name}) => name.toLowerCase().startsWith(filters.name.toLowerCase()));
 
     useEffect(() => {
         setIsDirtyFilter((prevDirtyCount) => prevDirtyCount + 1);
@@ -68,7 +70,7 @@ export function CardOverview() {
         <h3>All cards</h3>
 
         <Filters setFilters={setFilters} filters={filters} zoom={zoom} setZoom={setZoom}/>
-        <Cards cards={isDirtyFilter < 2 ? cardDataInitialFiltered : filteredCardsDataWithType}
+        <Cards cards={isDirtyFilter < 2 ? cardDataInitialFiltered : filteredCardsDataWithName}
                setSelectedCardEvent={setSelectedCardEvent} zoom={zoom}/>
     </>;
 }

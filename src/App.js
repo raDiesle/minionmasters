@@ -1,9 +1,6 @@
 import React from "react";
-
 import styled from "styled-components"
-import {Contents} from "./BaseComponents"
 
-import "./App.css";
 import {CardOverview} from "./cardoverview/CardOverview";
 import {toast} from 'react-toastify';
 
@@ -20,10 +17,15 @@ const Header = styled.header`
     }
   }
   h1 {
-    font-weight: normal;
-    font-size: 1rem;
     display: inline;
   }
+`;
+
+const Contents = styled.div`
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 const FlexContents = styled(Contents)`
@@ -33,14 +35,15 @@ const FlexContents = styled(Contents)`
 
 const App = () => {
     toast.configure();
-
     return (
         <div>
             <Header>
                 <FlexContents>
-                    <div>
-                        <h1> MinionMasters</h1>
-                    </div>
+
+                    <h1> MinionMasters</h1>
+
+                    <h3><a href="https://github.com/raDiesle/minionmasters/issues">Ideas for new features?</a></h3>
+
                 </FlexContents>
             </Header>
             <CardOverview/>

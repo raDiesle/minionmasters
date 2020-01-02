@@ -103,7 +103,7 @@ export function CardDeck({
         </CardDeckStyle>
 
 
-        <b>Share deck</b>
+        <b>Share configured deck</b>
         <div style={{display: "flex"}}>
             <FacebookShareButton
                 url={url}
