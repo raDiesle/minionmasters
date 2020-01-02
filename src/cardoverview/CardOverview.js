@@ -1,5 +1,5 @@
 import Cards from "./Cards";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {CardDeck} from "./carddeck/CardDeck";
 import {Filters} from "./filters/Filters";
 import cardData from "../jobCardProps";
@@ -8,8 +8,28 @@ import {rarityMapping} from "../rarity/rarityMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 import {MANACOST} from "../manacost/manacost";
 
+const usePreviousValue = value => {
+    const ref = useRef();
+    useEffect(() => {
+        ref.current = value;
+    });
+    return ref.current;
+};
+const useTraceableState = initialValue => {
+    const [value, setValue] = useState(initialValue);
+    const prevValue = usePreviousValue(value);
+    return [prevValue, value, setValue];
+};
+
 export function CardOverview() {
-    const [selectedCard, setSelectedCard] = useState({pageId: 0});
+    const [prevSelectedCardEvent, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
+        eventId: 0,
+        card: {
+            pageId: 0
+        }
+    });
+
+
     const [isDirtyFilter, setIsDirtyFilter] = useState(0);
 
     const [zoom, setZoom] = useState(5);
@@ -29,24 +49,26 @@ export function CardOverview() {
         };
     }
 
-    const cardDataInitialFiltered = cardData.filter(({rarity}) => rarity !== 'Perk');
 
     const [filters, setFilters] = useState(setAllFilterStates(false));
-    const filteredCardsDataFaction = isDirtyFilter < 2 ? [] : filters.faction.every(({isActive}) => !isActive) ? cardDataInitialFiltered : cardDataInitialFiltered.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
+    const filteredCardsDataFaction = isDirtyFilter < 2 ? [] : filters.faction.every(({isActive}) => !isActive) ? cardData : cardData.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
     const filteredCardsDataWithManacost = filters.manacost.every(({isActive}) => !isActive) ? filteredCardsDataFaction : filteredCardsDataFaction.filter(({manacost}) => filters.manacost.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(parseInt(manacost)));
-    const filteredCardsDataWithRarity = filters.rarity.every(({isActive}) => !isActive) ? filteredCardsDataWithManacost : filteredCardsDataWithManacost.filter(({rarity}) => filters.rarity.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(rarity));
+    const filteredCardsDataWithRarity = filters.rarity.every(({isActive}) => !isActive) ? filteredCardsDataWithManacost.filter(({rarity}) => rarity !== 'Perk') : filteredCardsDataWithManacost.filter(({rarity}) => filters.rarity.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(rarity));
     const filteredCardsDataWithType = filters.type.every(({isActive}) => !isActive) ? filteredCardsDataWithRarity : filteredCardsDataWithRarity.filter(({type}) => filters.type.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(type));
 
     useEffect(() => {
         setIsDirtyFilter((prevDirtyCount) => prevDirtyCount + 1);
     }, [filters]);
 
+
+    const cardDataInitialFiltered = cardData.filter(({rarity}) => rarity !== 'Perk');
     return <>
-        <CardDeck allCardsData={cardData} selectedCard={selectedCard} setSelectedCard={setSelectedCard}/>
+        <CardDeck allCardsData={cardData} prevSelectedCardEvent={prevSelectedCardEvent}
+                  selectedCardEvent={selectedCardEvent} setSelectedCardEvent={setSelectedCardEvent}/>
         <h3>All cards</h3>
 
         <Filters setFilters={setFilters} filters={filters} zoom={zoom} setZoom={setZoom}/>
         <Cards cards={isDirtyFilter < 2 ? cardDataInitialFiltered : filteredCardsDataWithType}
-               setSelectedCard={setSelectedCard} zoom={zoom}/>
+               setSelectedCardEvent={setSelectedCardEvent} zoom={zoom}/>
     </>;
 }

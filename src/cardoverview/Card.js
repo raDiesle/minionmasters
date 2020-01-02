@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import ReactModal from 'react-modal';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import VoidborneIcon from "../faction/VoidborneIcon";
 import ScratIcon from "../faction/ScratIcon";
@@ -18,6 +17,7 @@ import {typeMapping} from "../cardtype/typeMapping";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import {faMinusCircle} from "@fortawesome/free-solid-svg-icons/faMinusCircle";
+import CardDetailsModal from "./CardDetailsModal";
 
 
 const CardContainerStyle = styled.div`
@@ -142,41 +142,16 @@ const AddToDeckIconStyle = styled(OverlayActionBackground)`
   padding-left: 2px;
 `;
 
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, onClick, isDeckCard = false, zoom}) {
-    const [focused, setFocused] = useState(false);
+export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom}) {
+    const [isOpenDetails, setIsOpenDetails] = useState(false);
 
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
 
     return <>
-        <ReactModal
-            isOpen={
-                focused
-            }
-            onRequestClose={() => setFocused(false)}
-        >
-            <div>
-                <h2>
-                    {name}
-                </h2>
-                <ul>
-                    <li>
-                        <img src="minion.jpg" alt="minion"/>
-                    </li>
-                    <li>
-                        PageId: {pageId}
-                    </li>
-                    <li>
-                        rarity: {rarity}
-                    </li>
-                    <li>
-                        {description}
-                    </li>
-                    <li>
-                        Manacost: {manacost}
-                    </li>
-                </ul>
-            </div>
-        </ReactModal>
+        <CardDetailsModal isOpenDetails={isOpenDetails}
+                          setIsOpenDetails={setIsOpenDetails}
+                          card={card}
+        />
 
         <CardContainerStyle onClick={onClick}
                             zoom={zoom}
@@ -200,7 +175,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                     </InfoDetailsIconStyle>
                 </AddCardToDeckOverlay>
                 <InfoDetailsOverlay onClick={(event) => {
-                    setFocused(true);
+                    setIsOpenDetails(true);
                     event.stopPropagation();
                 }}>
                     <AddToDeckIconStyle>
