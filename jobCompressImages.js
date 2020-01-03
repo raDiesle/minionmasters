@@ -26,7 +26,7 @@ function readFilesSync(dir) {
 }
 
 
-const FOLDER_PUBLIC_IMG = './public/img/';
+const FOLDER_PUBLIC_IMG = './public/generated/img/';
 
 if (!fs.existsSync(FOLDER_PUBLIC_IMG)) {
     fs.mkdirSync(FOLDER_PUBLIC_IMG);

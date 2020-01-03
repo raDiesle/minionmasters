@@ -7,7 +7,6 @@ async function asyncForEach(array, callback) {
     }
 }
 
-
 async function fetchPageContent(pageId) {
     let categoryCardsUrl = ` https://minionmasters.gamepedia.com/api.php?action=query&pageids=${pageId}&prop=revisions&rvprop=content&rvslots=main&format=json`;
     const response = await fetch(categoryCardsUrl);
@@ -43,8 +42,8 @@ async function fetchPageContent(pageId) {
         });
 
         fs.writeFileSync("jobCardProps.json", JSON.stringify(overallCardData, null, 4));
-// 
-    }
+//
+    };
 
     fetchAll();
 
