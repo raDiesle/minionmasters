@@ -23,5 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 
-/public/img
-/generated
+/public/generated/
+/public/generated/*.*
+
+/generated/
