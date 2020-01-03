@@ -157,7 +157,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                             zoom={zoom}
         >
             <CardContentStyle>
-                <CardImageStyle src={`img/${imageNormalized}`} alt={image}/>
+                <CardImageStyle src={`generated/img/${imageNormalized}`} alt={image}/>
                 <RightCornerStyle rarity={rarity}/>
                 <ManacostStyle>{manacost}</ManacostStyle>
 
