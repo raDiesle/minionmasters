@@ -60,7 +60,7 @@ function mapDataFromOneResponse(nextPageData) {
             overallCardData = [...overallCardData, ...mapDataFromOneResponse(nextPageData)];
         }
 
-        fs.writeFileSync("public/generated/jobCardProps.json", JSON.stringify(overallCardData, null, 4));
+        fs.writeFileSync("src/generated/jobCardProps.json", JSON.stringify(overallCardData, null, 4));
     };
 
     fetchAll();
