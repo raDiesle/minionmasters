@@ -1,5 +1,5 @@
 import Cards from "./Cards";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {CardDeck} from "./carddeck/CardDeck";
 import {Filters} from "./filters/Filters";
 import cardData from "../jobCardProps";
@@ -21,6 +21,22 @@ const useTraceableState = initialValue => {
     return [prevValue, value, setValue];
 };
 
+function setAllFilterStates(isActive) {
+    const setFilterState = (key) => {
+        return {
+            btnkey: key,
+            isActive: isActive
+        };
+    };
+    return {
+        name: "",
+        faction: FACTIONS.map(setFilterState),
+        manacost: MANACOST.map(setFilterState),
+        rarity: Object.keys(rarityMapping).map(setFilterState),
+        type: Object.keys(typeMapping).map(setFilterState)
+    };
+}
+
 export function CardOverview() {
     const [prevSelectedCardEvent, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
         eventId: 0,
@@ -29,48 +45,22 @@ export function CardOverview() {
         }
     });
 
-
-    const [isDirtyFilter, setIsDirtyFilter] = useState(0);
-
     const [zoom, setZoom] = useState(5);
-
-    function setAllFilterStates(isActive) {
-        const setFilterState = (key) => {
-            return {
-                btnkey: key,
-                isActive: isActive
-            };
-        };
-        return {
-            name: "",
-            faction: FACTIONS.map(setFilterState),
-            manacost: MANACOST.map(setFilterState),
-            rarity: Object.keys(rarityMapping).map(setFilterState),
-            type: Object.keys(typeMapping).map(setFilterState)
-        };
-    }
-
-
     const [filters, setFilters] = useState(setAllFilterStates(false));
-    const filteredCardsDataFaction = isDirtyFilter < 2 ? [] : filters.faction.every(({isActive}) => !isActive) ? cardData : cardData.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
+    const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
+
+    const filteredCardsDataFaction = filters.faction.every(({isActive}) => !isActive) ? cardData : cardData.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
     const filteredCardsDataWithManacost = filters.manacost.every(({isActive}) => !isActive) ? filteredCardsDataFaction : filteredCardsDataFaction.filter(({manacost}) => filters.manacost.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(parseInt(manacost)));
     const filteredCardsDataWithRarity = filters.rarity.every(({isActive}) => !isActive) ? filteredCardsDataWithManacost.filter(({rarity}) => rarity !== 'Perk') : filteredCardsDataWithManacost.filter(({rarity}) => filters.rarity.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(rarity));
     const filteredCardsDataWithType = filters.type.every(({isActive}) => !isActive) ? filteredCardsDataWithRarity : filteredCardsDataWithRarity.filter(({type}) => filters.type.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(type));
     const filteredCardsDataWithName = filters.name === "" ? filteredCardsDataWithType : filteredCardsDataWithType.filter(({name}) => name.toLowerCase().startsWith(filters.name.toLowerCase()));
 
-    useEffect(() => {
-        setIsDirtyFilter((prevDirtyCount) => prevDirtyCount + 1);
-    }, [filters]);
-
-
-    const cardDataInitialFiltered = cardData.filter(({rarity}) => rarity !== 'Perk');
     return <>
         <CardDeck allCardsData={cardData} prevSelectedCardEvent={prevSelectedCardEvent}
                   selectedCardEvent={selectedCardEvent} setSelectedCardEvent={setSelectedCardEvent}/>
         <h3>All cards</h3>
-
-        <Filters setFilters={setFilters} filters={filters} zoom={zoom} setZoom={setZoom}/>
-        <Cards cards={isDirtyFilter < 2 ? cardDataInitialFiltered : filteredCardsDataWithName}
+        <Filters setFilters={setFiltersMemoized} filters={filters} zoom={zoom} setZoom={setZoom}/>
+        <Cards cards={filteredCardsDataWithName}
                setSelectedCardEvent={setSelectedCardEvent} zoom={zoom}/>
     </>;
 }

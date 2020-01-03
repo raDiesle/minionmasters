@@ -19,24 +19,24 @@ import {MANACOST} from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 
 
-const FilterByNameInput = ({name, setFilters}) => <input
-    type="text"
-    name="thename"
-    value={name}
-    onChange={(event) => {
-        event.persist();
-        setFilters((prevFilters) => {
-            const newFilters = {...prevFilters};
+function FilterByNameInput({nameValue, setFilters}) {
 
-            newFilters.name = event.target.value;
-            console.log(newFilters.name);
-            return newFilters;
-        })
-    }}
+    return (
+        <input
+            type="text"
+            value={nameValue}
+            onChange={(event) => {
+                event.persist();
+                setFilters((prevFilters) => {
+                    const newFilters = {...prevFilters};
+                    newFilters.name = event.target.value;
+                    return newFilters;
+                });
+            }}
+        />)
+}
 
-/>;
-
-export function Filters({filters, setFilters, zoom, setZoom}) {
+export function Filters({filters, setFilters, setZoom}) {
     const FilterContainerStyle = styled.div`
         display: flex;   
         flex-wrap: wrap;  
@@ -52,7 +52,7 @@ export function Filters({filters, setFilters, zoom, setZoom}) {
 
         <div>
             <div>Name</div>
-            <FilterByNameInput name={filters.name} setFilters={setFilters}/>
+            <FilterByNameInput nameValue={filters.name} setFilters={setFilters}/>
         </div>
         <div>
             Faction
