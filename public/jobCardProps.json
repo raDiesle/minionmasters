@@ -1,44 +1,5 @@
 [
     {
-        "name": "\"Armored\" Scrats",
-        "image": "Armored-Scrats.jpg",
-        "manacost": "3",
-        "rarity": "Common",
-        "faction": "Scrat",
-        "type": "Minion",
-        "description": "These Scrats are surprisingly hardy. Maybe they're not just regular Scrats wearing a barrel.",
-        "count": "4",
-        "targets": "Ground",
-        "health": "60",
-        "attackspeed": "1.00",
-        "attackdelay": "0.4",
-        "damage": "20",
-        "range": "0.4",
-        "speed": "5",
-        "isRanged": "No",
-        "flying": "No",
-        "pageId": 1389
-    },
-    {
-        "name": "A.I.M Bot",
-        "image": "AIMBot.jpg",
-        "manacost": "5",
-        "rarity": "Rare",
-        "faction": "Outlander",
-        "type": "Minion",
-        "description": "This [[Drone Walker]] has the Automated Intelligent Murder system pre-loaded to gain '''Marksmanship''' and '''Shield'''. Now a solid ranged attacker with no fear and no mercy.",
-        "targets": "All",
-        "health": "150",
-        "attackspeed": "1.1",
-        "attackdelay": "0.2",
-        "damage": "45",
-        "isRanged": "Yes",
-        "range": "8",
-        "speed": "5",
-        "flying": "no",
-        "pageId": 1663
-    },
-    {
         "name": "Annihilator",
         "image": "DroneContenderHeavy.jpg",
         "manacost": "5",
@@ -57,20 +18,76 @@
         "isAOE": "yes",
         "flying": "No",
         "isRanged": "Yes",
-        "pageId": 668
+        "pageId": "668"
     },
     {
-        "name": "Arcane Bolt",
-        "image": "ArcanePrison.jpg",
-        "manacost": "5",
-        "rarity": "Legendary",
+        "name": "Assassin",
+        "image": "Assassin.png",
+        "manacost": "4",
+        "faction": "Voidborne",
+        "rarity": "Rare",
+        "type": "Minion",
+        "description": "The Assassin stays invisible while not attacking or taking damage. Deals triple damage when he attacks from invisibility.",
+        "targets": "Ground",
+        "health": "130",
+        "attackspeed": "1",
+        "attackdelay": "0.6",
+        "damage": "70",
+        "range": "0.4",
+        "isRanged": "no",
+        "flying": "no",
+        "speed": "5",
+        "pageId": "670"
+    },
+    {
+        "name": "AtG Drone x8",
+        "image": "Atg.jpg",
+        "manacost": "6",
+        "faction": "Outlander",
+        "rarity": "Rare",
+        "type": "Flying Minion",
+        "description": "A though but slow flier with only Air-to-Ground weaponry. Shoots at all nearby targets.",
+        "targets": "Ground",
+        "health": "275",
+        "attackspeed": "1",
+        "attackdelay": "0.4",
+        "damage": "30",
+        "range": "4",
+        "speed": "4",
+        "radius": "6",
+        "flying": "yes",
+        "isRanged": "yes",
+        "pageId": "1386"
+    },
+    {
+        "name": "\"Armored\" Scrats",
+        "image": "Armored-Scrats.jpg",
+        "manacost": "3",
+        "rarity": "Common",
+        "faction": "Scrat",
+        "type": "Minion",
+        "description": "These Scrats are surprisingly hardy. Maybe they're not just regular Scrats wearing a barrel.",
+        "count": "4",
+        "targets": "Ground",
+        "health": "60",
+        "attackspeed": "1.00",
+        "attackdelay": "0.4",
+        "damage": "20",
+        "range": "0.4",
+        "speed": "5",
+        "isRanged": "No",
+        "flying": "No",
+        "pageId": "1389"
+    },
+    {
+        "name": "Arcane Missiles",
+        "image": "\tArcaneMissiles.png",
+        "manacost": "0",
+        "rarity": "Perk",
         "faction": "Crystal Elf",
         "type": "Spell",
-        "description": "'''Destroy''' the highest health Ground Minion in the area if it has 500 or less health. Else '''Stun''' it and gain 1 mana instead.",
-        "duration": "9",
-        "delay": "1.5",
-        "radius": "4.5",
-        "pageId": 1763
+        "description": "Fires 5 arcane missiles in the selected direction. Each missile hits the first enemy in its way and deals 30 damage.",
+        "pageId": "1637"
     },
     {
         "name": "Arcane Golem",
@@ -102,17 +119,26 @@
         "9 ||660 ||94|| style": "\"text-align:right;\" |72.30",
         "10 ||700 ||100|| style": "\"text-align:right;\" |76.23",
         " colspan": "\"4\" |* Spawns at level 5 after perk 3",
-        "pageId": 1638
+        "pageId": "1638"
     },
     {
-        "name": "Arcane Missiles",
-        "image": "\tArcaneMissiles.png",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Crystal Elf",
-        "type": "Spell",
-        "description": "Fires 5 arcane missiles in the selected direction. Each missile hits the first enemy in its way and deals 30 damage.",
-        "pageId": 1637
+        "name": "A.I.M Bot",
+        "image": "AIMBot.jpg",
+        "manacost": "5",
+        "rarity": "Rare",
+        "faction": "Outlander",
+        "type": "Minion",
+        "description": "This [[Drone Walker]] has the Automated Intelligent Murder system pre-loaded to gain '''Marksmanship''' and '''Shield'''. Now a solid ranged attacker with no fear and no mercy.",
+        "targets": "All",
+        "health": "150",
+        "attackspeed": "1.1",
+        "attackdelay": "0.2",
+        "damage": "45",
+        "isRanged": "Yes",
+        "range": "8",
+        "speed": "5",
+        "flying": "no",
+        "pageId": "1663"
     },
     {
         "name": "Armored Escort",
@@ -122,46 +148,20 @@
         "rarity": "Supreme",
         "type": "Spell",
         "description": "Summons 2 [[Crystal Sentry|Crystal Sentries]] with '''Mana Surge''' to escort the next Ranged Minion you play. No, not that kind of escort!",
-        "pageId": 1762
+        "pageId": "1762"
     },
     {
-        "name": "Assassin",
-        "image": "Assassin.png",
-        "manacost": "4",
-        "faction": "Voidborne",
-        "rarity": "Rare",
-        "type": "Minion",
-        "description": "The Assassin stays invisible while not attacking or taking damage. Deals triple damage when he attacks from invisibility.",
-        "targets": "Ground",
-        "health": "130",
-        "attackspeed": "1",
-        "attackdelay": "0.6",
-        "damage": "70",
-        "range": "0.4",
-        "isRanged": "no",
-        "flying": "no",
-        "speed": "5",
-        "pageId": 670
-    },
-    {
-        "name": "AtG Drone x8",
-        "image": "Atg.jpg",
-        "manacost": "6",
-        "faction": "Outlander",
-        "rarity": "Rare",
-        "type": "Flying Minion",
-        "description": "A though but slow flier with only Air-to-Ground weaponry. Shoots at all nearby targets.",
-        "targets": "Ground",
-        "health": "275",
-        "attackspeed": "1",
-        "attackdelay": "0.4",
-        "damage": "30",
-        "range": "4",
-        "speed": "4",
-        "radius": "6",
-        "flying": "yes",
-        "isRanged": "yes",
-        "pageId": 1386
+        "name": "Arcane Bolt",
+        "image": "ArcanePrison.jpg",
+        "manacost": "5",
+        "rarity": "Legendary",
+        "faction": "Crystal Elf",
+        "type": "Spell",
+        "description": "'''Destroy''' the highest health Ground Minion in the area if it has 500 or less health. Else '''Stun''' it and gain 1 mana instead.",
+        "duration": "9",
+        "delay": "1.5",
+        "radius": "4.5",
+        "pageId": "1763"
     },
     {
         "name": "Bahra the Witchwolf",
@@ -183,7 +183,7 @@
         "flying": "no",
         "isAOE": "yes",
         "isRanged": "yes",
-        "pageId": 1784
+        "pageId": "1784"
     },
     {
         "name": "Banner Man",
@@ -202,54 +202,7 @@
         "isRanged": "no",
         "speed": "5",
         "flying": "no",
-        "pageId": 671
-    },
-    {
-        "name": "Bats Bats Bats!",
-        "image": "BatSwarm.jpg",
-        "manacost": "4",
-        "faction": "Voidborne",
-        "rarity": "Rare",
-        "type": "Spell",
-        "description": "For the next 5 seconds summon 1 [[Nether Bat]] for each mana you spend. Playing it again prolongs duration, not effect.",
-        "duration": "5 Sec.",
-        "pageId": 1780
-    },
-    {
-        "name": "Battle Shi-Hou",
-        "image": "AwarenessMonk.jpg",
-        "manacost": "5",
-        "faction": "Zen-Chi",
-        "rarity": "Common",
-        "type": "Minion",
-        "description": "A fierce fighter who attacks faster when surrounded by enemies(Max 450% bonus). Also a big fan of monkey business",
-        "targets": "Ground",
-        "health": "450",
-        "attackspeed": "1.8",
-        "attackdelay": "1.1",
-        "damage": "75",
-        "range": "0.4",
-        "isRanged": "no",
-        "speed": "7",
-        "flying": "no",
-        "class": "\"wikitable\" style",
-        "pageId": 1285
-    },
-    {
-        "name": "Bazooka Scrat",
-        "image": "BazookaScrat.jpg",
-        "manacost": "3",
-        "faction": "Scrat",
-        "rarity": "Common",
-        "type": "Minion",
-        "description": "Light ranged Minion that deals heavy damage to buildings only.",
-        "targets": "Buildings",
-        "health": "65",
-        "attackspeed": "3 Sec.",
-        "damage": "225 (DPS: 75)",
-        "range": "12",
-        "speed": "5",
-        "pageId": 1269
+        "pageId": "671"
     },
     {
         "name": "Beam of DOOM!",
@@ -262,7 +215,7 @@
         "damage": "600",
         "radius": "3",
         "duration": "2.8 Sec.}}{{SemanticCardData| Beam of DOOM! }}",
-        "pageId": 674
+        "pageId": "674"
     },
     {
         "name": "Black Hole",
@@ -274,17 +227,7 @@
         "description": "Suck up ALL minions in an area, removing them from the board for the rest of the spell's duration.",
         "radius": "5",
         "duration": "6 Sec.",
-        "pageId": 675
-    },
-    {
-        "name": "Blast Entry",
-        "image": "\tBlastEntry.png",
-        "manacost": "2",
-        "rarity": "Perk",
-        "faction": "Outlander",
-        "type": "Spell",
-        "description": "[[Settsu (Minion)|Settsu]] enters the battlefield dealing 50 damage on impact and gaining a 300 health shield.",
-        "pageId": 1643
+        "pageId": "675"
     },
     {
         "name": "Blastmancer",
@@ -300,7 +243,7 @@
         "damage": "4 (DPS: 13.33)",
         "range": "10",
         "speed": "5",
-        "pageId": 678
+        "pageId": "678"
     },
     {
         "name": "Blind Date",
@@ -314,7 +257,7 @@
         "fields": "_pageName",
         "limit": "999",
         "order by": "manacost ASC",
-        "pageId": 680
+        "pageId": "680"
     },
     {
         "name": "Blood Imps",
@@ -334,7 +277,64 @@
         "isRanged": "no",
         "speed": "5",
         "flying": "no",
-        "pageId": 682
+        "pageId": "682"
+    },
+    {
+        "name": "Bazooka Scrat",
+        "image": "BazookaScrat.jpg",
+        "manacost": "3",
+        "faction": "Scrat",
+        "rarity": "Common",
+        "type": "Minion",
+        "description": "Light ranged Minion that deals heavy damage to buildings only.",
+        "targets": "Buildings",
+        "health": "65",
+        "attackspeed": "3 Sec.",
+        "damage": "225 (DPS: 75)",
+        "range": "12",
+        "speed": "5",
+        "pageId": "1269"
+    },
+    {
+        "name": "Battle Shi-Hou",
+        "image": "AwarenessMonk.jpg",
+        "manacost": "5",
+        "faction": "Zen-Chi",
+        "rarity": "Common",
+        "type": "Minion",
+        "description": "A fierce fighter who attacks faster when surrounded by enemies(Max 450% bonus). Also a big fan of monkey business",
+        "targets": "Ground",
+        "health": "450",
+        "attackspeed": "1.8",
+        "attackdelay": "1.1",
+        "damage": "75",
+        "range": "0.4",
+        "isRanged": "no",
+        "speed": "7",
+        "flying": "no",
+        "class": "\"wikitable\" style",
+        "pageId": "1285"
+    },
+    {
+        "name": "Blast Entry",
+        "image": "\tBlastEntry.png",
+        "manacost": "2",
+        "rarity": "Perk",
+        "faction": "Outlander",
+        "type": "Spell",
+        "description": "[[Settsu (Minion)|Settsu]] enters the battlefield dealing 50 damage on impact and gaining a 300 health shield.",
+        "pageId": "1643"
+    },
+    {
+        "name": "Bats Bats Bats!",
+        "image": "BatSwarm.jpg",
+        "manacost": "4",
+        "faction": "Voidborne",
+        "rarity": "Rare",
+        "type": "Spell",
+        "description": "For the next 5 seconds summon 1 [[Nether Bat]] for each mana you spend. Playing it again prolongs duration, not effect.",
+        "duration": "5 Sec.",
+        "pageId": "1780"
     },
     {
         "name": "Blue Golem",
@@ -350,33 +350,7 @@
         "damage": "200 (DPS: 100)",
         "range": "Melee",
         "speed": "2",
-        "pageId": 684
-    },
-    {
-        "name": "Book of the Dead",
-        "image": "LichQueenBook.jpg",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Replace your hand with pages from Book of the Dead.",
-        "pageId": 1902
-    },
-    {
-        "name": "Boom Buggy",
-        "image": "BoomBuggy.jpg",
-        "manacost": "5",
-        "rarity": "Supreme",
-        "faction": "Scrat",
-        "type": "Minion",
-        "description": "Rains a barrage of 6 missiles at random targets within range.",
-        "targets": "Ground & Air",
-        "health": "180",
-        "attackspeed": "5 Sec",
-        "damage": "210 (DPS: 42)",
-        "range": "10",
-        "speed": "3",
-        "pageId": 1923
+        "pageId": "684"
     },
     {
         "name": "Boomer",
@@ -392,18 +366,7 @@
         "range": "Special",
         "speed": "5",
         "radius": "6",
-        "pageId": 686
-    },
-    {
-        "name": "Border Patrol",
-        "image": "BorderPatrol.jpg",
-        "manacost": "6",
-        "rarity": "Rare",
-        "faction": "Crystal Elf",
-        "type": "Minion",
-        "description": "Summon 1 [[Crystal Sentry]] and 1 [[Crystal Arcanist]].",
-        "count": "1 Crystal Sentry, 1 Crystal Arcanist",
-        "pageId": 1877
+        "pageId": "686"
     },
     {
         "name": "Bounty Sniper",
@@ -419,17 +382,7 @@
         "damage": "100 (DPS: 25)",
         "range": "16",
         "speed": "5",
-        "pageId": 688
-    },
-    {
-        "name": "Bridge Buddies",
-        "image": "ScratAmbush.jpg",
-        "manacost": "2",
-        "rarity": "Supreme",
-        "faction": "Scrat",
-        "type": "Spell",
-        "description": "Summon an [[\"Armored\" Scrats|Armored Scrat]] on both bridges.",
-        "pageId": 1654
+        "pageId": "688"
     },
     {
         "name": "Bridge Shrine",
@@ -442,7 +395,33 @@
         "health": "300",
         "productionspeed": "4 sec",
         "duration": "60 Sec.",
-        "pageId": 690
+        "pageId": "690"
+    },
+    {
+        "name": "Bridge Buddies",
+        "image": "ScratAmbush.jpg",
+        "manacost": "2",
+        "rarity": "Supreme",
+        "faction": "Scrat",
+        "type": "Spell",
+        "description": "Summon an [[\"Armored\" Scrats|Armored Scrat]] on both bridges.",
+        "pageId": "1654"
+    },
+    {
+        "name": "Brutish Betrayer",
+        "image": "BetrayerRammer.jpg",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "'''Turncoat''', '''Rage'''",
+        "targets": "Buildings",
+        "health": "350",
+        "attackspeed": "3 Sec.",
+        "damage": "180 (DPS: 60)",
+        "range": "Melee",
+        "speed": "10",
+        "pageId": "1680"
     },
     {
         "name": "Brothers of Light",
@@ -459,62 +438,44 @@
         "damage": "140 (DPS: 46.7)",
         "range": "Melee",
         "speed": "4",
-        "pageId": 1838
+        "pageId": "1838"
     },
     {
-        "name": "Brutish Betrayer",
-        "image": "BetrayerRammer.jpg",
-        "manacost": "3",
+        "name": "Border Patrol",
+        "image": "BorderPatrol.jpg",
+        "manacost": "6",
         "rarity": "Rare",
-        "faction": "Voidborne",
+        "faction": "Crystal Elf",
         "type": "Minion",
-        "description": "'''Turncoat''', '''Rage'''",
-        "targets": "Buildings",
-        "health": "350",
-        "attackspeed": "3 Sec.",
-        "damage": "180 (DPS: 60)",
-        "range": "Melee",
-        "speed": "10",
-        "pageId": 1680
+        "description": "Summon 1 [[Crystal Sentry]] and 1 [[Crystal Arcanist]].",
+        "count": "1 Crystal Sentry, 1 Crystal Arcanist",
+        "pageId": "1877"
     },
     {
-        "name": "Burn The Bridges",
-        "image": "\tBurnthebridges.png",
+        "name": "Book of the Dead",
+        "image": "LichQueenBook.jpg",
         "manacost": "0",
         "rarity": "Perk",
-        "faction": "Empyrean",
+        "faction": "Accursed",
         "type": "Spell",
-        "description": "Both bridges get covered in flames, dealing 40 damage per sec to unfortunate ground enemies.  Lasts 5 sec.",
-        "duration": "5 Sec.|delay",
-        "pageId": 1645
+        "description": "Replace your hand with pages from Book of the Dead.",
+        "pageId": "1902"
     },
     {
-        "name": "Caeleth Dawnhammer",
-        "image": "caelethdawnhammer.jpg",
-        "manacost": "8",
-        "rarity": "Legendary",
-        "faction": "Empyrean",
+        "name": "Boom Buggy",
+        "image": "BoomBuggy.jpg",
+        "manacost": "5",
+        "rarity": "Supreme",
+        "faction": "Scrat",
         "type": "Minion",
-        "description": "The fabled commander of the elite VI regiment. His '''Armor of Light''' also creates a '''Divine Shield'''.  ",
-        "targets": "Ground",
-        "health": "600",
-        "attackspeed": "3 Sec.",
-        "damage": "140 (DPS: 46.7)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1836
-    },
-    {
-        "name": "Caged Prowler",
-        "image": "CagedProwler.jpg",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Slither",
-        "type": "Building",
-        "description": "After 20 seconds the cage releases the [[Prowler]] and falls apart.",
-        "health": "300",
-        "duration": "30 Sec.",
-        "pageId": 1920
+        "description": "Rains a barrage of 6 missiles at random targets within range.",
+        "targets": "Ground & Air",
+        "health": "180",
+        "attackspeed": "5 Sec",
+        "damage": "210 (DPS: 42)",
+        "range": "10",
+        "speed": "3",
+        "pageId": "1923"
     },
     {
         "name": "Call To Arms",
@@ -524,7 +485,7 @@
         "faction": "Empyrean",
         "type": "Spell",
         "description": "Replace each of your non-master Buildings with a [[Warrior]].",
-        "pageId": 693
+        "pageId": "693"
     },
     {
         "name": "Cannon Roller",
@@ -540,40 +501,7 @@
         "damage": "120 (DPS: 60.)",
         "range": "6",
         "speed": "5",
-        "pageId": 695
-    },
-    {
-        "name": "Chain Lightning",
-        "image": "LightningBounces.png",
-        "manacost": "4",
-        "rarity": "Common",
-        "faction": "Zen-Chi",
-        "type": "Spell",
-        "description": "A roaring streak of lightning that deals damage and '''stuns'''. It jumps to the nearest enemy until there are none left within range.",
-        "damage": "100",
-        "radius": "7",
-        "duration": "2 sec}}{{SemanticCardData| Chain Lightning }}",
-        "pageId": 1277
-    },
-    {
-        "name": "Cheese Date",
-        "image": "CheeseDate.jpg",
-        "manacost": "3",
-        "faction": "Scrat",
-        "rarity": "Common",
-        "type": "Spell",
-        "description": "Summons a random 3-mana Scrat Minion card and gives it '''Rage'''.",
-        "pageId": 1703
-    },
-    {
-        "name": "Clear Skies",
-        "image": "ClearSkies.jpg",
-        "manacost": "3",
-        "rarity": "Legendary",
-        "faction": "Empyrean",
-        "type": "Spell",
-        "description": "A soothing wind clears the arena healing all Minions and Masters 250 health and removes '''Shield''' and '''Rage'''",
-        "pageId": 1705
+        "pageId": "695"
     },
     {
         "name": "Cleaver",
@@ -592,7 +520,7 @@
         "speed": "10",
         "isRanged": "no",
         "flying": "no",
-        "pageId": 698
+        "pageId": "698"
     },
     {
         "name": "Colossus",
@@ -609,52 +537,79 @@
         "range": "Melee",
         "speed": "2",
         "radius": "5.5",
-        "pageId": 699
+        "pageId": "699"
     },
     {
-        "name": "Combustion",
-        "image": "Combustion.jpg",
-        "manacost": "2",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
+        "name": "Chain Lightning",
+        "image": "LightningBounces.png",
+        "manacost": "4",
+        "rarity": "Common",
+        "faction": "Zen-Chi",
         "type": "Spell",
-        "description": "'''Stun''' affected friendly Minions. After a delay they explode, dealing damage to themselves and enarby Enemies.",
-        "damage": "150",
-        "radius": "3",
-        "duration": "2.5 Sec.",
-        "pageId": 1660
+        "description": "A roaring streak of lightning that deals damage and '''stuns'''. It jumps to the nearest enemy until there are none left within range.",
+        "damage": "100",
+        "radius": "7",
+        "duration": "2 sec}}{{SemanticCardData| Chain Lightning }}",
+        "pageId": "1277"
     },
     {
-        "name": "Commander Azali",
-        "image": "DemonCommanderShield.jpg",
-        "manacost": "8",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "Big and strong, the Commander will show the way!",
-        "targets": "Ground",
-        "health": "800",
-        "attackspeed": "2.3 Sec.",
-        "damage": "150 (DPS: 65.3)",
-        "range": "Melee",
-        "speed": "3",
-        "pageId": 1690
+        "name": "Burn The Bridges",
+        "image": "\tBurnthebridges.png",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Empyrean",
+        "type": "Spell",
+        "description": "Both bridges get covered in flames, dealing 40 damage per sec to unfortunate ground enemies.  Lasts 5 sec.",
+        "duration": "5 Sec.|delay",
+        "pageId": "1645"
     },
     {
-        "name": "Crakgul Doomcleaver",
-        "image": "crakguldoomcleaver.jpg",
+        "name": "Cheese Date",
+        "image": "CheeseDate.jpg",
+        "manacost": "3",
+        "faction": "Scrat",
+        "rarity": "Common",
+        "type": "Spell",
+        "description": "Summons a random 3-mana Scrat Minion card and gives it '''Rage'''.",
+        "pageId": "1703"
+    },
+    {
+        "name": "Clear Skies",
+        "image": "ClearSkies.jpg",
+        "manacost": "3",
+        "rarity": "Legendary",
+        "faction": "Empyrean",
+        "type": "Spell",
+        "description": "A soothing wind clears the arena healing all Minions and Masters 250 health and removes '''Shield''' and '''Rage'''",
+        "pageId": "1705"
+    },
+    {
+        "name": "Caeleth Dawnhammer",
+        "image": "caelethdawnhammer.jpg",
         "manacost": "8",
         "rarity": "Legendary",
-        "faction": "Voidborne",
+        "faction": "Empyrean",
         "type": "Minion",
-        "description": "Crakgul inspires his demon brethren with a celebration of killing. Whenever killing a Minion or hitting the enemy tower, he reduces the mana cost of a random voidborne card in hand by 1 until it is played.",
+        "description": "The fabled commander of the elite VI regiment. His '''Armor of Light''' also creates a '''Divine Shield'''.  ",
         "targets": "Ground",
-        "health": "550",
-        "attackspeed": "5 Sec.",
-        "damage": "300 (DPS: 60)",
+        "health": "600",
+        "attackspeed": "3 Sec.",
+        "damage": "140 (DPS: 46.7)",
         "range": "Melee",
-        "speed": "10",
-        "pageId": 1837
+        "speed": "4",
+        "pageId": "1836"
+    },
+    {
+        "name": "Caged Prowler",
+        "image": "CagedProwler.jpg",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Slither",
+        "type": "Building",
+        "description": "After 20 seconds the cage releases the [[Prowler]] and falls apart.",
+        "health": "300",
+        "duration": "30 Sec.",
+        "pageId": "1920"
     },
     {
         "name": "Crossbow Dudes",
@@ -671,7 +626,7 @@
         "damage": "15 (DPS: 10.8)",
         "range": "8",
         "speed": "5",
-        "pageId": 687
+        "pageId": "687"
     },
     {
         "name": "Crossbow Guild",
@@ -684,40 +639,36 @@
         "health": "400",
         "productionspeed": "4.8 sec",
         "duration": "60 Sec.",
-        "pageId": 702
+        "pageId": "702"
     },
     {
-        "name": "Crossbow Trap",
-        "image": "Diona_CrossbowTrap.jpg",
-        "manacost": "1",
-        "rarity": "Perk",
-        "faction": "Empyrean",
-        "type": "Building",
-        "description": "Stealth. Fires bolts at nearby minions.",
-        "targets": "Ground & Air",
-        "health": "100",
-        "attackspeed": "0.5 Sec.",
-        "damage": "15 (DPS: 30)",
-        "range": "8",
-        "duration": "15 Sec.",
-        "pageId": 1793
+        "name": "Combustion",
+        "image": "Combustion.jpg",
+        "manacost": "2",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
+        "type": "Spell",
+        "description": "'''Stun''' affected friendly Minions. After a delay they explode, dealing damage to themselves and enarby Enemies.",
+        "damage": "150",
+        "radius": "3",
+        "duration": "2.5 Sec.",
+        "pageId": "1660"
     },
     {
-        "name": "Crystal Arcanist",
-        "image": "CrystalMage.jpg",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Crystal Elf",
+        "name": "Commander Azali",
+        "image": "DemonCommanderShield.jpg",
+        "manacost": "8",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
         "type": "Minion",
-        "description": "'''Mana Surge'''",
-        "targets": "Ground & Air",
-        "health": "45",
-        "attackspeed": "2 Sec.",
-        "damage": "40 (DPS: 20)",
-        "range": "10",
-        "speed": "4",
-        "radius": "2.5",
-        "pageId": 1761
+        "description": "Big and strong, the Commander will show the way!",
+        "targets": "Ground",
+        "health": "800",
+        "attackspeed": "2.3 Sec.",
+        "damage": "150 (DPS: 65.3)",
+        "range": "Melee",
+        "speed": "3",
+        "pageId": "1690"
     },
     {
         "name": "Crystal Archers",
@@ -734,7 +685,7 @@
         "damage": "25 (DPS: 12.5)",
         "range": "10",
         "speed": "4",
-        "pageId": 1758
+        "pageId": "1758"
     },
     {
         "name": "Crystal Construct",
@@ -750,7 +701,7 @@
         "damage": "80 (DPS: 13.4)",
         "range": "Melee",
         "speed": "4",
-        "pageId": 1759
+        "pageId": "1759"
     },
     {
         "name": "Crystal Sentry",
@@ -766,34 +717,56 @@
         "damage": "60 (DPS: 35.3)",
         "range": "4",
         "speed": "4",
-        "pageId": 1760
+        "pageId": "1760"
     },
     {
-        "name": "Cursebearer",
-        "image": "CursedSkeleton.jpg",
+        "name": "Crystal Arcanist",
+        "image": "CrystalMage.jpg",
         "manacost": "3",
-        "rarity": "Supreme",
-        "faction": "Accursed",
+        "rarity": "Rare",
+        "faction": "Crystal Elf",
         "type": "Minion",
-        "description": "'''Spectral Essence'''",
-        "targets": "Ground",
-        "health": "300",
+        "description": "'''Mana Surge'''",
+        "targets": "Ground & Air",
+        "health": "45",
         "attackspeed": "2 Sec.",
-        "damage": "60 (DPS: 30)",
-        "range": "Melee",
+        "damage": "40 (DPS: 20)",
+        "range": "10",
         "speed": "4",
-        "pageId": 1650
+        "radius": "2.5",
+        "pageId": "1761"
     },
     {
-        "name": "Cursed Fireball",
-        "image": "CursedFireball.jpg",
-        "manacost": "4",
-        "rarity": "Rare",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "All enemy Minions in the impact area are '''Cursed'''.",
-        "radius": "4.5",
-        "pageId": 1854
+        "name": "Crossbow Trap",
+        "image": "Diona_CrossbowTrap.jpg",
+        "manacost": "1",
+        "rarity": "Perk",
+        "faction": "Empyrean",
+        "type": "Building",
+        "description": "Stealth. Fires bolts at nearby minions.",
+        "targets": "Ground & Air",
+        "health": "100",
+        "attackspeed": "0.5 Sec.",
+        "damage": "15 (DPS: 30)",
+        "range": "8",
+        "duration": "15 Sec.",
+        "pageId": "1793"
+    },
+    {
+        "name": "Crakgul Doomcleaver",
+        "image": "crakguldoomcleaver.jpg",
+        "manacost": "8",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "Crakgul inspires his demon brethren with a celebration of killing. Whenever killing a Minion or hitting the enemy tower, he reduces the mana cost of a random voidborne card in hand by 1 until it is played.",
+        "targets": "Ground",
+        "health": "550",
+        "attackspeed": "5 Sec.",
+        "damage": "300 (DPS: 60)",
+        "range": "Melee",
+        "speed": "10",
+        "pageId": "1837"
     },
     {
         "name": "Daggerfall",
@@ -806,19 +779,7 @@
         "damage": "80",
         "radius": "8",
         "delay": "2.0",
-        "pageId": 703
-    },
-    {
-        "name": "Decoy Trap",
-        "image": "Diona_DecoyTrap.jpg",
-        "manacost": "1",
-        "rarity": "Perk",
-        "faction": "Empyrean",
-        "type": "Building",
-        "description": "Taunts nearby enemy minions.",
-        "health": "300",
-        "duration": "15 Sec.",
-        "pageId": 1794
+        "pageId": "703"
     },
     {
         "name": "Defenso Chopper",
@@ -834,7 +795,7 @@
         "damage": "50 (DPS: 17.86)",
         "range": "Melee",
         "speed": "4",
-        "pageId": 706
+        "pageId": "706"
     },
     {
         "name": "Demon Warrior",
@@ -851,20 +812,7 @@
         "range": "Melee",
         "speed": "4",
         "class": "\"wikitable\" style",
-        "pageId": 709
-    },
-    {
-        "name": "Disruptor Puff",
-        "image": "DisruptorPuff.png",
-        "manacost": "1",
-        "rarity": "Rare",
-        "faction": "Puff",
-        "type": "Minion",
-        "description": "When reaching a bridge and every 6 seconds thereafter, teleport to the other bridge.",
-        "count": "1",
-        "health": "10",
-        "speed": "5",
-        "pageId": 1950
+        "pageId": "709"
     },
     {
         "name": "Divine Warrior",
@@ -880,7 +828,35 @@
         "damage": "70 (DPS: 35)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 712
+        "pageId": "712"
+    },
+    {
+        "name": "Dragon Nest",
+        "image": "DragonNest.png",
+        "manacost": "4",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
+        "type": "Building",
+        "description": "Summons a [[Flightless Dragons|Flightless Dragon Whelp]] whenever its Master plays a Spell. Summons a [[Dragon Whelp]] instead if the spell costs 5+ mana.",
+        "health": "350",
+        "duration": "35 Sec.",
+        "pageId": "715"
+    },
+    {
+        "name": "Cursebearer",
+        "image": "CursedSkeleton.jpg",
+        "manacost": "3",
+        "rarity": "Supreme",
+        "faction": "Accursed",
+        "type": "Minion",
+        "description": "'''Spectral Essence'''",
+        "targets": "Ground",
+        "health": "300",
+        "attackspeed": "2 Sec.",
+        "damage": "60 (DPS: 30)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1650"
     },
     {
         "name": "Dragon Ball",
@@ -893,19 +869,32 @@
         "damage": "170",
         "radius": "4.5",
         "delay": "2.5",
-        "pageId": 1692
+        "pageId": "1692"
     },
     {
-        "name": "Dragon Nest",
-        "image": "DragonNest.png",
-        "manacost": "4",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
+        "name": "Decoy Trap",
+        "image": "Diona_DecoyTrap.jpg",
+        "manacost": "1",
+        "rarity": "Perk",
+        "faction": "Empyrean",
         "type": "Building",
-        "description": "Summons a [[Flightless Dragons|Flightless Dragon Whelp]] whenever its Master plays a Spell. Summons a [[Dragon Whelp]] instead if the spell costs 5+ mana.",
-        "health": "350",
-        "duration": "35 Sec.",
-        "pageId": 715
+        "description": "Taunts nearby enemy minions.",
+        "health": "300",
+        "duration": "15 Sec.",
+        "pageId": "1794"
+    },
+    {
+        "name": "Disruptor Puff",
+        "image": "DisruptorPuff.png",
+        "manacost": "1",
+        "rarity": "Rare",
+        "faction": "Puff",
+        "type": "Minion",
+        "description": "When reaching a bridge and every 6 seconds thereafter, teleport to the other bridge.",
+        "count": "1",
+        "health": "10",
+        "speed": "5",
+        "pageId": "1950"
     },
     {
         "name": "Dragon Pack",
@@ -922,7 +911,7 @@
         "damage": "50 (DPS: 50)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 718
+        "pageId": "718"
     },
     {
         "name": "Dragon Whelp",
@@ -938,49 +927,7 @@
         "damage": "50 (DPS: 50)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 721
-    },
-    {
-        "name": "Drain Life",
-        "image": "LichBook_Drain.jpg",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Drain 100 health from the closest enemy Minion, transferring it to Morellia.",
-        "pageId": 1905
-    },
-    {
-        "name": "Drone Buzzers",
-        "image": "DroneBuzzers.jpg",
-        "manacost": "4",
-        "rarity": "Common",
-        "faction": "Outlander",
-        "type": "Flying Minion",
-        "description": "Known as Buzzers because they're small and irritating, and a good sway takes care of them.",
-        "count": "2",
-        "targets": "Ground & Air",
-        "health": "60",
-        "attackspeed": "1.1 Sec.",
-        "damage": "20 (DPS: 18.2)",
-        "range": "8",
-        "speed": "7",
-        "pageId": 1371
-    },
-    {
-        "name": "Drone Force One",
-        "image": "AntiAirDrone.png",
-        "manacost": "8",
-        "rarity": "Supreme",
-        "type": "Flying Minion",
-        "description": "Powerful, but the firing crew left to become fishermen, so the pilot is busy.",
-        "targets": "Ground & Air",
-        "health": "200",
-        "attackspeed": "5 Sec.",
-        "damage": "200 (DPS: 40)",
-        "range": "18",
-        "speed": "2",
-        "pageId": 722
+        "pageId": "721"
     },
     {
         "name": "Drone Walker",
@@ -996,39 +943,19 @@
         "damage": "45 (DPS: 41)",
         "range": "8",
         "speed": "5",
-        "pageId": 723
+        "pageId": "723"
     },
     {
-        "name": "Elite Swarmer",
-        "image": "EliteSwarmer.jpg",
-        "manacost": "2",
+        "name": "Fireball",
+        "image": "Explosion.png",
+        "manacost": "4",
         "rarity": "Common",
         "faction": "Voidborne",
-        "type": "Minion",
-        "description": "A fast and somewhat durable monster. The armor plating does it.",
-        "targets": "Ground",
-        "health": "225",
-        "attackspeed": "1.1 Sec.",
-        "damage": "25 (DPS: 22.8)",
-        "range": "Melee",
-        "speed": "7",
-        "pageId": 1338
-    },
-    {
-        "name": "Empowered Soul Stealer",
-        "image": "EmpoweredSoulStealer.jpg",
-        "manacost": "7",
-        "rarity": "Supreme",
-        "faction": "Slither",
-        "type": "Flying Minion",
-        "description": "The Empowered [[Soul Stealer]] starts with 2 souls. Starts with 4 souls instead if a friendly minions has '''Rage'''",
-        "targets": "Ground & Air",
-        "health": "180",
-        "attackspeed": "1.5 Sec.",
-        "damage": "50 (DPS: 33.3)",
-        "range": "8",
-        "speed": "5",
-        "pageId": 1709
+        "type": "Spell",
+        "description": "Great against groups of low to medium health enemies.",
+        "damage": "170",
+        "radius": "4.5",
+        "pageId": "726"
     },
     {
         "name": "Fire Imp",
@@ -1045,19 +972,141 @@
         "range": "8",
         "speed": "5",
         "radius": "3",
-        "pageId": 1330
+        "pageId": "1330"
     },
     {
-        "name": "Fireball",
-        "image": "Explosion.png",
-        "manacost": "4",
+        "name": "Elite Swarmer",
+        "image": "EliteSwarmer.jpg",
+        "manacost": "2",
         "rarity": "Common",
         "faction": "Voidborne",
+        "type": "Minion",
+        "description": "A fast and somewhat durable monster. The armor plating does it.",
+        "targets": "Ground",
+        "health": "225",
+        "attackspeed": "1.1 Sec.",
+        "damage": "25 (DPS: 22.8)",
+        "range": "Melee",
+        "speed": "7",
+        "pageId": "1338"
+    },
+    {
+        "name": "Drone Buzzers",
+        "image": "DroneBuzzers.jpg",
+        "manacost": "4",
+        "rarity": "Common",
+        "faction": "Outlander",
+        "type": "Flying Minion",
+        "description": "Known as Buzzers because they're small and irritating, and a good sway takes care of them.",
+        "count": "2",
+        "targets": "Ground & Air",
+        "health": "60",
+        "attackspeed": "1.1 Sec.",
+        "damage": "20 (DPS: 18.2)",
+        "range": "8",
+        "speed": "7",
+        "pageId": "1371"
+    },
+    {
+        "name": "Empowered Soul Stealer",
+        "image": "EmpoweredSoulStealer.jpg",
+        "manacost": "7",
+        "rarity": "Supreme",
+        "faction": "Slither",
+        "type": "Flying Minion",
+        "description": "The Empowered [[Soul Stealer]] starts with 2 souls. Starts with 4 souls instead if a friendly minions has '''Rage'''",
+        "targets": "Ground & Air",
+        "health": "180",
+        "attackspeed": "1.5 Sec.",
+        "damage": "50 (DPS: 33.3)",
+        "range": "8",
+        "speed": "5",
+        "pageId": "1709"
+    },
+    {
+        "name": "Drain Life",
+        "image": "LichBook_Drain.jpg",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Accursed",
         "type": "Spell",
-        "description": "Great against groups of low to medium health enemies.",
-        "damage": "170",
-        "radius": "4.5",
-        "pageId": 726
+        "description": "Drain 100 health from the closest enemy Minion, transferring it to Morellia.",
+        "pageId": "1905"
+    },
+    {
+        "name": "Future Past",
+        "image": "FuturePast.png",
+        "manacost": "4",
+        "rarity": "Supreme",
+        "faction": "Slither",
+        "type": "Spell",
+        "description": "When used, it permanently replaces itself with another random 1-cost or higher card and reduces that card's mana cost by 1.",
+        "where": "type",
+        "fields": "_pageName",
+        "limit": "999",
+        "order by": "manacost ASC",
+        "pageId": "727"
+    },
+    {
+        "name": "Gax the World Bomb",
+        "image": "Gax.png",
+        "manacost": "5",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "Hatches from an egg after a short delay. On contact or death, he blows up to deal damage to EVERYTHING.",
+        "targets": "Ground",
+        "health": "25",
+        "worlddamage": "200",
+        "range": "Special",
+        "speed": "5",
+        "radius": "Global",
+        "pageId": "730"
+    },
+    {
+        "name": "Ghost",
+        "image": "Ghost.png",
+        "manacost": "4",
+        "rarity": "Legendary",
+        "faction": "Accursed",
+        "type": "Flying Minion",
+        "description": "Possesses an enemy, turning it to your side. The enemy becomes '''Cursed''' and gains '''Spectral Essence'''",
+        "targets": "Ground & Air",
+        "health": "100",
+        "attackspeed": "3.5 Sec.",
+        "range": "Melee",
+        "speed": "5",
+        "pageId": "732"
+    },
+    {
+        "name": "Ghost Turret",
+        "image": "GhostTurret.png",
+        "manacost": "3",
+        "rarity": "Common",
+        "faction": "Accursed",
+        "type": "Building",
+        "description": "'''Spectral Essence'''",
+        "targets": "Ground",
+        "health": "325",
+        "attackspeed": "0.8 Sec.",
+        "damage": "50 (DPS: 62.5)",
+        "range": "6",
+        "duration": "30 Sec.",
+        "pageId": "733"
+    },
+    {
+        "name": "Future Present",
+        "image": "FuturePresent.jpg",
+        "manacost": "8",
+        "rarity": "Supreme",
+        "faction": "Slither",
+        "type": "Spell",
+        "description": "When used, it permanently replaces itself with another random 2-cost or higher card and reduces that card's mana cost by 2.",
+        "where": "type",
+        "fields": "_pageName",
+        "limit": "999",
+        "order by": "manacost ASC",
+        "pageId": "1325"
     },
     {
         "name": "Flightless Dragons",
@@ -1074,45 +1123,7 @@
         "damage": "50 (DPS: 50)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 1588
-    },
-    {
-        "name": "Forbidden Knowledge",
-        "image": "LichBook_Mana.jpg",
-        "manacost": "1",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "2 of Morellia's 4+ mana spells cost 1 less until played. Does not Stack.",
-        "pageId": 1906
-    },
-    {
-        "name": "Future Past",
-        "image": "FuturePast.png",
-        "manacost": "4",
-        "rarity": "Supreme",
-        "faction": "Slither",
-        "type": "Spell",
-        "description": "When used, it permanently replaces itself with another random 1-cost or higher card and reduces that card's mana cost by 1.",
-        "where": "type",
-        "fields": "_pageName",
-        "limit": "999",
-        "order by": "manacost ASC",
-        "pageId": 727
-    },
-    {
-        "name": "Future Present",
-        "image": "FuturePresent.jpg",
-        "manacost": "8",
-        "rarity": "Supreme",
-        "faction": "Slither",
-        "type": "Spell",
-        "description": "When used, it permanently replaces itself with another random 2-cost or higher card and reduces that card's mana cost by 2.",
-        "where": "type",
-        "fields": "_pageName",
-        "limit": "999",
-        "order by": "manacost ASC",
-        "pageId": 1325
+        "pageId": "1588"
     },
     {
         "name": "Gambler's Ball",
@@ -1122,54 +1133,7 @@
         "faction": "Empyrean",
         "type": "Spell",
         "description": "Casts either a [[Healing Fireball]], [[Fireball]] or in rare cases, both!",
-        "pageId": 1656
-    },
-    {
-        "name": "Gax the World Bomb",
-        "image": "Gax.png",
-        "manacost": "5",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "Hatches from an egg after a short delay. On contact or death, he blows up to deal damage to EVERYTHING.",
-        "targets": "Ground",
-        "health": "25",
-        "worlddamage": "200",
-        "range": "Special",
-        "speed": "5",
-        "radius": "Global",
-        "pageId": 730
-    },
-    {
-        "name": "Ghost",
-        "image": "Ghost.png",
-        "manacost": "4",
-        "rarity": "Legendary",
-        "faction": "Accursed",
-        "type": "Flying Minion",
-        "description": "Possesses an enemy, turning it to your side. The enemy becomes '''Cursed''' and gains '''Spectral Essence'''",
-        "targets": "Ground & Air",
-        "health": "100",
-        "attackspeed": "3.5 Sec.",
-        "range": "Melee",
-        "speed": "5",
-        "pageId": 732
-    },
-    {
-        "name": "Ghost Turret",
-        "image": "GhostTurret.png",
-        "manacost": "3",
-        "rarity": "Common",
-        "faction": "Accursed",
-        "type": "Building",
-        "description": "'''Spectral Essence'''",
-        "targets": "Ground",
-        "health": "325",
-        "attackspeed": "0.8 Sec.",
-        "damage": "50 (DPS: 62.5)",
-        "range": "6",
-        "duration": "30 Sec.",
-        "pageId": 733
+        "pageId": "1656"
     },
     {
         "name": "Gor'Rakk Brutes",
@@ -1180,7 +1144,7 @@
         "type": "Minion",
         "description": "Summons a [[Cleaver]], but if the last card you played was a 3-mana spell, also summons a [[Rammer]]",
         "count": "1 Rammer, 1 Cleaver",
-        "pageId": 1688
+        "pageId": "1688"
     },
     {
         "name": "Gor'Rakk Gate",
@@ -1190,32 +1154,17 @@
         "rarity": "Supreme",
         "type": "Spell",
         "description": "Open a portal to the void and Summon either of the following with '''Turncout''':",
-        "pageId": 1831
+        "pageId": "1831"
     },
     {
-        "name": "Gor'Rakk Sacrifice",
-        "image": "SummoningRitual.jpg",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Voidborne",
-        "type": "Spell",
-        "description": "Disables a random friendly Minion for 5 seconds, then kills it to summon a [[Cleaver]]",
-        "pageId": 1693
-    },
-    {
-        "name": "Grasping Thorns",
-        "image": "GraspingThorns.jpg",
-        "manacost": "3",
-        "rarity": "Supreme",
+        "name": "Forbidden Knowledge",
+        "image": "LichBook_Mana.jpg",
+        "manacost": "1",
+        "rarity": "Perk",
         "faction": "Accursed",
-        "type": "Building",
-        "description": "'''Untargetable'''.",
-        "health": "75",
-        "duration": "20 Sec.",
-        "damage": "4(DPS: 20)",
-        "attackspeed": "0.2 Sec.",
-        "radius": "2.7",
-        "pageId": 1783
+        "type": "Spell",
+        "description": "2 of Morellia's 4+ mana spells cost 1 less until played. Does not Stack.",
+        "pageId": "1906"
     },
     {
         "name": "Grenadier",
@@ -1232,7 +1181,30 @@
         "range": "8",
         "speed": "5",
         "radius": "3",
-        "pageId": 734
+        "pageId": "734"
+    },
+    {
+        "name": "Heal Puff",
+        "image": "HealPuff.png",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Puff",
+        "type": "Minion",
+        "description": "When on a bridge it heals its Master by 25 health per sec.",
+        "health": "10",
+        "speed": "5",
+        "pageId": "737"
+    },
+    {
+        "name": "Healing Fireball",
+        "image": "HealingFireball.png",
+        "manacost": "3",
+        "rarity": "Common",
+        "faction": "Zen-Chi",
+        "type": "Spell",
+        "description": "Heals all friendly minions by 400. Yes, it is a HEALING fireball...",
+        "radius": "6",
+        "pageId": "740"
     },
     {
         "name": "Guardian",
@@ -1248,7 +1220,21 @@
         "damage": "80 (DPS: 13.4)",
         "range": "Melee",
         "speed": "4",
-        "pageId": 1513
+        "pageId": "1513"
+    },
+    {
+        "name": "Healing Shrine",
+        "image": "HealingShrine.png",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Zen-Chi",
+        "type": "Building",
+        "description": "Heals all nearby friendly minions over time.",
+        "health": "50",
+        "healingpersecond": "50",
+        "duration": "12 Sec.",
+        "range": "8 (special)",
+        "pageId": "1515"
     },
     {
         "name": "Harbinger",
@@ -1264,7 +1250,32 @@
         "damage": "250 (DPS: 50)",
         "range": "14",
         "speed": "4",
-        "pageId": 1677
+        "pageId": "1677"
+    },
+    {
+        "name": "Gor'Rakk Sacrifice",
+        "image": "SummoningRitual.jpg",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Voidborne",
+        "type": "Spell",
+        "description": "Disables a random friendly Minion for 5 seconds, then kills it to summon a [[Cleaver]]",
+        "pageId": "1693"
+    },
+    {
+        "name": "Grasping Thorns",
+        "image": "GraspingThorns.jpg",
+        "manacost": "3",
+        "rarity": "Supreme",
+        "faction": "Accursed",
+        "type": "Building",
+        "description": "'''Untargetable'''.",
+        "health": "75",
+        "duration": "20 Sec.",
+        "damage": "4(DPS: 20)",
+        "attackspeed": "0.2 Sec.",
+        "radius": "2.7",
+        "pageId": "1783"
     },
     {
         "name": "Haunting Hugger",
@@ -1280,44 +1291,7 @@
         "attackspeed": "2 Sec.",
         "range": "Melee",
         "speed": "5",
-        "pageId": 1878
-    },
-    {
-        "name": "Heal Puff",
-        "image": "HealPuff.png",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Puff",
-        "type": "Minion",
-        "description": "When on a bridge it heals its Master by 25 health per sec.",
-        "health": "10",
-        "speed": "5",
-        "pageId": 737
-    },
-    {
-        "name": "Healing Fireball",
-        "image": "HealingFireball.png",
-        "manacost": "3",
-        "rarity": "Common",
-        "faction": "Zen-Chi",
-        "type": "Spell",
-        "description": "Heals all friendly minions by 400. Yes, it is a HEALING fireball...",
-        "radius": "6",
-        "pageId": 740
-    },
-    {
-        "name": "Healing Shrine",
-        "image": "HealingShrine.png",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Zen-Chi",
-        "type": "Building",
-        "description": "Heals all nearby friendly minions over time.",
-        "health": "50",
-        "healingpersecond": "50",
-        "duration": "12 Sec.",
-        "range": "8 (special)",
-        "pageId": 1515
+        "pageId": "1878"
     },
     {
         "name": "Herald Ah'Mun",
@@ -1333,29 +1307,7 @@
         "damage": "200 (DPS: 66.7)",
         "range": "Melee",
         "speed": "4",
-        "pageId": 1924
-    },
-    {
-        "name": "Howling Moon",
-        "image": "HowlingMoon.jpg",
-        "manacost": "7",
-        "rarity": "Legendary",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Reduce all Minions to 50% health, and summon 2 [[Werewolf|Werewolfs]]",
-        "pageId": 1781
-    },
-    {
-        "name": "Hypnotize",
-        "image": "Hypnotize.jpg",
-        "manacost": "4",
-        "rarity": "Legendary",
-        "faction": "Slither",
-        "type": "Spell",
-        "description": "After a short delay, enemy minions caught in the area are hypnotized and join your side for 5 seconds.",
-        "radius": "4.5",
-        "duration": "5 Sec.",
-        "pageId": 1372
+        "pageId": "1924"
     },
     {
         "name": "Illusory Cleaver",
@@ -1371,23 +1323,7 @@
         "range": "Special",
         "speed": "10",
         "radius": "2.5",
-        "pageId": 741
-    },
-    {
-        "name": "Incubus",
-        "image": "Incubus.png",
-        "manacost": "5",
-        "rarity": "Supreme",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "This fearless demon teleports at any ranged attacker using his area attack to create destruction.",
-        "targets": "Ground",
-        "health": "300",
-        "attackspeed": "1 Sec.",
-        "damage": "60 (DPS: 60)",
-        "range": "Melee",
-        "speed": "5",
-        "pageId": 1661
+        "pageId": "741"
     },
     {
         "name": "Infiltration",
@@ -1397,34 +1333,7 @@
         "faction": "Outlander",
         "type": "Spell",
         "description": "Summon 4 [[Plasma Marines]] wherever you want!",
-        "pageId": 743
-    },
-    {
-        "name": "Jolo the Hero Scrat",
-        "image": "HeroScrat.jpg",
-        "manacost": "3",
-        "rarity": "Legendary",
-        "faction": "Scrat",
-        "type": "Minion",
-        "description": "50% chance to avoid any damage.",
-        "count": "1",
-        "targets": "Ground",
-        "health": "90",
-        "attackspeed": "1 Sec.",
-        "damage": "40 (DPS: 40)",
-        "range": "Melee",
-        "speed": "7",
-        "pageId": 1880
-    },
-    {
-        "name": "Jungle Jumble",
-        "image": "JungleRumble.jpg",
-        "manacost": "7",
-        "rarity": "Supreme",
-        "faction": "Zen-Chi",
-        "type": "Spell",
-        "description": "Remove this card and shuffle 3 Zen-Chi cards into your deck.",
-        "pageId": 1865
+        "pageId": "743"
     },
     {
         "name": "Laser Turret",
@@ -1440,7 +1349,7 @@
         "damage": "40 (DPS: 33.33)",
         "range": "11",
         "duration": "30 Sec.",
-        "pageId": 745
+        "pageId": "745"
     },
     {
         "name": "Last Stand",
@@ -1450,7 +1359,7 @@
         "faction": "Empyrean",
         "type": "Spell",
         "description": "Summons 5 [[Legionnaires]], but 7 if your opponent controls both bridges!",
-        "pageId": 748
+        "pageId": "748"
     },
     {
         "name": "Legionnaires",
@@ -1467,7 +1376,72 @@
         "damage": "30 (DPS: 20)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 751
+        "pageId": "751"
+    },
+    {
+        "name": "Hypnotize",
+        "image": "Hypnotize.jpg",
+        "manacost": "4",
+        "rarity": "Legendary",
+        "faction": "Slither",
+        "type": "Spell",
+        "description": "After a short delay, enemy minions caught in the area are hypnotized and join your side for 5 seconds.",
+        "radius": "4.5",
+        "duration": "5 Sec.",
+        "pageId": "1372"
+    },
+    {
+        "name": "Incubus",
+        "image": "Incubus.png",
+        "manacost": "5",
+        "rarity": "Supreme",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "This fearless demon teleports at any ranged attacker using his area attack to create destruction.",
+        "targets": "Ground",
+        "health": "300",
+        "attackspeed": "1 Sec.",
+        "damage": "60 (DPS: 60)",
+        "range": "Melee",
+        "speed": "5",
+        "pageId": "1661"
+    },
+    {
+        "name": "Howling Moon",
+        "image": "HowlingMoon.jpg",
+        "manacost": "7",
+        "rarity": "Legendary",
+        "faction": "Accursed",
+        "type": "Spell",
+        "description": "Reduce all Minions to 50% health, and summon 2 [[Werewolf|Werewolfs]]",
+        "pageId": "1781"
+    },
+    {
+        "name": "Jungle Jumble",
+        "image": "JungleRumble.jpg",
+        "manacost": "7",
+        "rarity": "Supreme",
+        "faction": "Zen-Chi",
+        "type": "Spell",
+        "description": "Remove this card and shuffle 3 Zen-Chi cards into your deck.",
+        "pageId": "1865"
+    },
+    {
+        "name": "Jolo the Hero Scrat",
+        "image": "HeroScrat.jpg",
+        "manacost": "3",
+        "rarity": "Legendary",
+        "faction": "Scrat",
+        "type": "Minion",
+        "description": "50% chance to avoid any damage.",
+        "count": "1",
+        "targets": "Ground",
+        "health": "90",
+        "attackspeed": "1 Sec.",
+        "damage": "40 (DPS: 40)",
+        "range": "Melee",
+        "speed": "7",
+        "pageId": "1880"
     },
     {
         "name": "Lightning Bolt",
@@ -1477,7 +1451,7 @@
         "faction": "Zen-Chi",
         "type": "Spell",
         "description": "'''Destroy''' a random enemy Minion or Building.",
-        "pageId": 753
+        "pageId": "753"
     },
     {
         "name": "Living Statue",
@@ -1493,56 +1467,48 @@
         "damage": "140 (DPS: 46.7)",
         "range": "Melee",
         "speed": "2",
-        "pageId": 755
+        "pageId": "755"
     },
     {
-        "name": "Lone Scout",
-        "image": "LoneRanger.jpg",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Crystal Elf",
+        "name": "Mana Puff",
+        "image": "ManaPuff.png",
+        "manacost": "1",
+        "rarity": "Rare",
+        "faction": "Puff",
         "type": "Minion",
-        "description": "'''Mana Surge'''",
-        "targets": "Ground & Air",
-        "health": "45",
-        "attackspeed": "2 Sec.",
-        "damage": "25 (DPS: 12.5)",
-        "range": "10",
-        "speed": "4",
-        "pageId": 1879
-    },
-    {
-        "name": "Lone Wolf",
-        "image": "LoneWolf.jpg",
-        "manacost": "5",
-        "rarity": "Supreme",
-        "faction": "Accursed",
-        "type": "Minion",
-        "description": "'''Rage'''",
-        "count": "1",
-        "targets": "Ground",
-        "health": "400",
-        "attackspeed": "2 Sec.",
-        "damage": "70 (DPS: 35)",
-        "range": "Melee",
+        "description": "When on a bridge it generates 1 mana every 10 sec.",
+        "health": "10",
         "speed": "5",
-        "pageId": 1782
+        "pageId": "757"
     },
     {
-        "name": "Lord-Sentinel Thelec",
-        "image": "CrystalCommander.jpg",
-        "manacost": "10",
-        "rarity": "Legendary",
-        "faction": "Crystal Elf",
-        "type": "Minion",
-        "description": "'''Mana Surge.'''",
-        "targets": "Ground",
-        "health": "600",
-        "attackspeed": "1.3 Sec.",
-        "damage": "70 (DPS: 53.8)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1764
+        "name": "Magma Storm",
+        "image": "MagmaStorm.jpg",
+        "manacost": "5",
+        "rarity": "Common",
+        "faction": "Voidborne",
+        "type": "Spell",
+        "description": "Call down 10 magma rocks in a large area. Magma rocks deal damage to ANYTHING.",
+        "damage": "200",
+        "radius": "9",
+        "duration": "5 Sec.",
+        "pageId": "1301"
+    },
+    {
+        "name": "Magma Cannon",
+        "image": "BurstCannon.png",
+        "manacost": "4",
+        "rarity": "Rare",
+        "faction": "Empyrean",
+        "type": "Building",
+        "description": "This cannon fires flaming balls of magma at any enemies in range. For when you need more firepower.",
+        "targets": "Ground & Air",
+        "health": "350",
+        "attackspeed": "1.2 Sec.",
+        "damage": "75 (DPS: 62.5)",
+        "range": "8",
+        "duration": "30 Sec.",
+        "pageId": "1649"
     },
     {
         "name": "Lost Legionnaires",
@@ -1559,48 +1525,7 @@
         "damage": "30 (DPS: 20)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 1655
-    },
-    {
-        "name": "Magma Cannon",
-        "image": "BurstCannon.png",
-        "manacost": "4",
-        "rarity": "Rare",
-        "faction": "Empyrean",
-        "type": "Building",
-        "description": "This cannon fires flaming balls of magma at any enemies in range. For when you need more firepower.",
-        "targets": "Ground & Air",
-        "health": "350",
-        "attackspeed": "1.2 Sec.",
-        "damage": "75 (DPS: 62.5)",
-        "range": "8",
-        "duration": "30 Sec.",
-        "pageId": 1649
-    },
-    {
-        "name": "Magma Storm",
-        "image": "MagmaStorm.jpg",
-        "manacost": "5",
-        "rarity": "Common",
-        "faction": "Voidborne",
-        "type": "Spell",
-        "description": "Call down 10 magma rocks in a large area. Magma rocks deal damage to ANYTHING.",
-        "damage": "200",
-        "radius": "9",
-        "duration": "5 Sec.",
-        "pageId": 1301
-    },
-    {
-        "name": "Mana Puff",
-        "image": "ManaPuff.png",
-        "manacost": "1",
-        "rarity": "Rare",
-        "faction": "Puff",
-        "type": "Minion",
-        "description": "When on a bridge it generates 1 mana every 10 sec.",
-        "health": "10",
-        "speed": "5",
-        "pageId": 757
+        "pageId": "1655"
     },
     {
         "name": "Mana Puff Madness",
@@ -1610,17 +1535,56 @@
         "faction": "Puff",
         "type": "Spell",
         "description": "Summons 4 [[Mana Puff|Mana Puffs]] at the Master Tower for each team. ",
-        "pageId": 1757
+        "pageId": "1757"
     },
     {
-        "name": "More Dakka!",
-        "image": "\tMoreDakka.png",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Scrat",
-        "type": "Spell",
-        "description": "Ratbo Charges up for 1 sec. then shoots the nearest enemy for 40 damage per friendly Minion on the field. Reduced damage to Master Towers.",
-        "pageId": 1640
+        "name": "Lord-Sentinel Thelec",
+        "image": "CrystalCommander.jpg",
+        "manacost": "10",
+        "rarity": "Legendary",
+        "faction": "Crystal Elf",
+        "type": "Minion",
+        "description": "'''Mana Surge.'''",
+        "targets": "Ground",
+        "health": "600",
+        "attackspeed": "1.3 Sec.",
+        "damage": "70 (DPS: 53.8)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1764"
+    },
+    {
+        "name": "Lone Wolf",
+        "image": "LoneWolf.jpg",
+        "manacost": "5",
+        "rarity": "Supreme",
+        "faction": "Accursed",
+        "type": "Minion",
+        "description": "'''Rage'''",
+        "count": "1",
+        "targets": "Ground",
+        "health": "400",
+        "attackspeed": "2 Sec.",
+        "damage": "70 (DPS: 35)",
+        "range": "Melee",
+        "speed": "5",
+        "pageId": "1782"
+    },
+    {
+        "name": "Lone Scout",
+        "image": "LoneRanger.jpg",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Crystal Elf",
+        "type": "Minion",
+        "description": "'''Mana Surge'''",
+        "targets": "Ground & Air",
+        "health": "45",
+        "attackspeed": "2 Sec.",
+        "damage": "25 (DPS: 12.5)",
+        "range": "10",
+        "speed": "4",
+        "pageId": "1879"
     },
     {
         "name": "Morgrul the Swarmer King",
@@ -1637,24 +1601,7 @@
         "range": "Melee",
         "speed": "7",
         "radius": "5",
-        "pageId": 1509
-    },
-    {
-        "name": "Morgrul's Ragers",
-        "image": "morgrulsragers.jpg",
-        "manacost": "5",
-        "rarity": "Common",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "The savagery of [[Morgrul the Swarmer King|Morgrul]]'s elites inspires others to murder a little harder.",
-        "count": "2",
-        "targets": "Ground",
-        "health": "225",
-        "attackspeed": "1.1 Sec.",
-        "damage": "25 (DPS: 22.8)",
-        "range": "Melee",
-        "speed": "7",
-        "pageId": 1833
+        "pageId": "1509"
     },
     {
         "name": "Musketeer",
@@ -1670,7 +1617,29 @@
         "damage": "65 (DPS: 65)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 1510
+        "pageId": "1510"
+    },
+    {
+        "name": "More Dakka!",
+        "image": "\tMoreDakka.png",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Scrat",
+        "type": "Spell",
+        "description": "Ratbo Charges up for 1 sec. then shoots the nearest enemy for 40 damage per friendly Minion on the field. Reduced damage to Master Towers.",
+        "pageId": "1640"
+    },
+    {
+        "name": "Netherstep",
+        "image": "Phase.jpg",
+        "manacost": "3",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
+        "type": "Spell",
+        "description": "Teleports friendly Minions in the area along the path to the enemy Master.",
+        "radius": "3",
+        "range": "10",
+        "pageId": "1691"
     },
     {
         "name": "Nether Bat",
@@ -1687,19 +1656,48 @@
         "damage": "20 (DPS: 18.2)",
         "range": "Melee",
         "speed": "10",
-        "pageId": 1776
+        "pageId": "1776"
     },
     {
-        "name": "Netherstep",
-        "image": "Phase.jpg",
-        "manacost": "3",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
+        "name": "Once Bitten",
+        "image": "OnceBitten.jpg",
+        "manacost": "2",
+        "rarity": "Rare",
+        "faction": "Accursed",
         "type": "Spell",
-        "description": "Teleports friendly Minions in the area along the path to the enemy Master.",
+        "description": "Give a random friendly ground Minion in the area '''Lycanthropy'''. Can only be played in your own arena.",
+        "radius": "4",
+        "pageId": "1777"
+    },
+    {
+        "name": "Morgrul's Ragers",
+        "image": "morgrulsragers.jpg",
+        "manacost": "5",
+        "rarity": "Common",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "The savagery of [[Morgrul the Swarmer King|Morgrul]]'s elites inspires others to murder a little harder.",
+        "count": "2",
+        "targets": "Ground",
+        "health": "225",
+        "attackspeed": "1.1 Sec.",
+        "damage": "25 (DPS: 22.8)",
+        "range": "Melee",
+        "speed": "7",
+        "pageId": "1833"
+    },
+    {
+        "name": "Nyrvir's Breath",
+        "image": "NyrvirsBreath.jpg",
+        "manacost": "6",
+        "rarity": "Supreme",
+        "faction": "Accursed",
+        "type": "Spell",
+        "description": "[[Nyrvir the Fallen|Nyrvir]] swoops down and covers a large area with spiritfire, which burns all ground enemies.",
+        "damage": "300",
         "radius": "3",
-        "range": "10",
-        "pageId": 1691
+        "duration": "4 Sec.",
+        "pageId": "1881"
     },
     {
         "name": "Nyrvir Slumbers",
@@ -1711,7 +1709,7 @@
         "damage": "80",
         "radius": "3",
         "duration": " 4 Sec.",
-        "pageId": 1883
+        "pageId": "1883"
     },
     {
         "name": "Nyrvir the Fallen",
@@ -1728,31 +1726,7 @@
         "range": "4",
         "speed": "4",
         "radius": "3",
-        "pageId": 1884
-    },
-    {
-        "name": "Nyrvir's Breath",
-        "image": "NyrvirsBreath.jpg",
-        "manacost": "6",
-        "rarity": "Supreme",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "[[Nyrvir the Fallen|Nyrvir]] swoops down and covers a large area with spiritfire, which burns all ground enemies.",
-        "damage": "300",
-        "radius": "3",
-        "duration": "4 Sec.",
-        "pageId": 1881
-    },
-    {
-        "name": "Once Bitten",
-        "image": "OnceBitten.jpg",
-        "manacost": "2",
-        "rarity": "Rare",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Give a random friendly ground Minion in the area '''Lycanthropy'''. Can only be played in your own arena.",
-        "radius": "4",
-        "pageId": 1777
+        "pageId": "1884"
     },
     {
         "name": "Plasma Marines",
@@ -1769,19 +1743,7 @@
         "damage": "15 (DPS: 16.7)",
         "range": "8",
         "speed": "5",
-        "pageId": 758
-    },
-    {
-        "name": "Poison Strike",
-        "image": "PoisonStrike.jpg",
-        "manacost": "3",
-        "rarity": "Common",
-        "faction": "Slither",
-        "type": "Spell",
-        "description": "Showers enemy Minions in the area with the noxious fluids of Akinlep the Tainted, inflicting '''Poison'''.",
-        "duration": "6 Sec.",
-        "radius": "6",
-        "pageId": 1921
+        "pageId": "758"
     },
     {
         "name": "Priestess",
@@ -1797,24 +1759,33 @@
         "damage": "20 (DPS: 14.3)",
         "range": "6",
         "speed": "2",
-        "pageId": 759
+        "pageId": "759"
     },
     {
-        "name": "Propeller Horde",
-        "image": "PropellerHorde.jpg",
+        "name": "Rammer",
+        "image": "Rammer.png",
+        "manacost": "4",
+        "rarity": "Rare",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "Moves fast towards buildings (he hates them), efficient at deconstruction!",
+        "targets": "Buildings",
+        "health": "350",
+        "attackspeed": "3 Sec.",
+        "damage": "180 (DPS: 60)",
+        "range": "Melee",
+        "speed": "10",
+        "pageId": "761"
+    },
+    {
+        "name": "Raging Reinforcements",
+        "image": "RagingReinforcements.png",
         "manacost": "4",
         "rarity": "Common",
-        "faction": "Scrat",
-        "type": "Flying Minion",
-        "description": "If a friendly Minion has '''Rage''', summon 5 more.",
-        "count": "5 (10)",
-        "targets": "Ground & Air",
-        "health": "15",
-        "attackspeed": "1 Sec.",
-        "damage": "10 (DPS: 10)",
-        "range": "Melee",
-        "speed": "7",
-        "pageId": 1706
+        "faction": "Empyrean",
+        "type": "Spell",
+        "description": "Summons a [[Dragon Whelp]] or a [[Warrior]] or 4 [[Crossbow Dudes]] and gives them '''Rage!'''",
+        "pageId": "1253"
     },
     {
         "name": "Propeller Scrats",
@@ -1831,7 +1802,7 @@
         "damage": "10 (DPS: 10)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 1271
+        "pageId": "1271"
     },
     {
         "name": "Prowler",
@@ -1848,17 +1819,24 @@
         "damage": "85 (DPS: 56.7)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 1489
+        "pageId": "1489"
     },
     {
-        "name": "Queen's Dragon",
-        "image": "NyrvirQueensDragon.jpg",
-        "manacost": "8",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Summons [[Nyrvir the Fallen]] who breathes spiritfire on the battlefield before she lands.",
-        "pageId": 1907
+        "name": "Propeller Horde",
+        "image": "PropellerHorde.jpg",
+        "manacost": "4",
+        "rarity": "Common",
+        "faction": "Scrat",
+        "type": "Flying Minion",
+        "description": "If a friendly Minion has '''Rage''', summon 5 more.",
+        "count": "5 (10)",
+        "targets": "Ground & Air",
+        "health": "15",
+        "attackspeed": "1 Sec.",
+        "damage": "10 (DPS: 10)",
+        "range": "Melee",
+        "speed": "7",
+        "pageId": "1706"
     },
     {
         "name": "Rabid Prowler",
@@ -1875,33 +1853,29 @@
         "damage": "85 (DPS: 56.7)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 1708
+        "pageId": "1708"
     },
     {
-        "name": "Raging Reinforcements",
-        "image": "RagingReinforcements.png",
-        "manacost": "4",
-        "rarity": "Common",
-        "faction": "Empyrean",
+        "name": "Queen's Dragon",
+        "image": "NyrvirQueensDragon.jpg",
+        "manacost": "8",
+        "rarity": "Perk",
+        "faction": "Accursed",
         "type": "Spell",
-        "description": "Summons a [[Dragon Whelp]] or a [[Warrior]] or 4 [[Crossbow Dudes]] and gives them '''Rage!'''",
-        "pageId": 1253
+        "description": "Summons [[Nyrvir the Fallen]] who breathes spiritfire on the battlefield before she lands.",
+        "pageId": "1907"
     },
     {
-        "name": "Rammer",
-        "image": "Rammer.png",
-        "manacost": "4",
-        "rarity": "Rare",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "Moves fast towards buildings (he hates them), efficient at deconstruction!",
-        "targets": "Buildings",
-        "health": "350",
-        "attackspeed": "3 Sec.",
-        "damage": "180 (DPS: 60)",
-        "range": "Melee",
-        "speed": "10",
-        "pageId": 761
+        "name": "Poison Strike",
+        "image": "PoisonStrike.jpg",
+        "manacost": "3",
+        "rarity": "Common",
+        "faction": "Slither",
+        "type": "Spell",
+        "description": "Showers enemy Minions in the area with the noxious fluids of Akinlep the Tainted, inflicting '''Poison'''.",
+        "duration": "6 Sec.",
+        "radius": "6",
+        "pageId": "1921"
     },
     {
         "name": "Rampage",
@@ -1912,115 +1886,7 @@
         "type": "Spell",
         "description": "Gives friendly Minions '''Rage'''",
         "radius": "6",
-        "pageId": 763
-    },
-    {
-        "name": "Ravenous Swarmers",
-        "image": "CannibalSwarmers.jpg",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "A few [[Swarmers]], but if the last card you played was a spell, they gain '''Rage''' and '''Frenzy'''.",
-        "count": "2",
-        "targets": "Ground",
-        "health": "35",
-        "attackspeed": "1.1 Sec.",
-        "damage": "20 (DPS: 18.2)",
-        "range": "Melee",
-        "speed": "10",
-        "pageId": 1678
-    },
-    {
-        "name": "Re-boomer",
-        "image": "ReBoomer.png",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "Hatches from an egg after a short delay.  As a boomer it explodes on contact or death, but turns back into an egg.",
-        "targets": "Ground",
-        "health": "25",
-        "attackspeed": "1.2 Sec.",
-        "damage": "250 (DPS: 208)",
-        "range": "Special",
-        "speed": "5",
-        "radius": "6",
-        "pageId": 781
-    },
-    {
-        "name": "Red Golem",
-        "image": "RedGolem.png",
-        "manacost": "9",
-        "rarity": "Supreme",
-        "faction": "Zen-Chi",
-        "type": "Minion",
-        "description": "When played, it gains double health if it's Master is below 50% health",
-        "targets": "Ground",
-        "health": "800",
-        "attackspeed": "2 Sec.",
-        "damage": "200 (DPS: 100)",
-        "range": "Melee",
-        "speed": "2",
-        "pageId": 1260
-    },
-    {
-        "name": "Ritual of Servitude",
-        "image": "RitualOfServitude.jpg",
-        "manacost": "4",
-        "rarity": "Legendary",
-        "faction": "Slither",
-        "type": "Spell",
-        "description": "Summon a random Minion Card with Mana cost equal to the lowest cost card that started in your deck other than this card, including other versions of this card. (Max 6 Mana Minion cards can be summoned)",
-        "pageId": 1922
-    },
-    {
-        "name": "Rock Rivals",
-        "image": "RockRivals.jpg",
-        "manacost": "6",
-        "rarity": "Common",
-        "faction": "Zen-Chi",
-        "type": "Minion",
-        "description": "'''Taunt'''",
-        "targets": "Ground",
-        "health": "800",
-        "attackspeed": "2 Sec.",
-        "damage": "200 (DPS: 100)",
-        "range": "Melee",
-        "speed": "2",
-        "pageId": 1863
-    },
-    {
-        "name": "S.T.INT",
-        "image": "SingleTrackInterceptor.jpg",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Outlander",
-        "type": "Minion",
-        "description": "The Single-Track Interceptor - or S.T.INT - is fast, agile and packs quite a punch for its size.  Can't take too much punishment though.",
-        "targets": "Ground & Air",
-        "health": "80",
-        "attackspeed": "1.1 Sec.",
-        "damage": "25 (DPS: 22.8)",
-        "range": "6",
-        "speed": "7",
-        "pageId": 1506
-    },
-    {
-        "name": "Scott The Sensitive Savage",
-        "image": "SaltyBarbarian.png",
-        "manacost": "5",
-        "rarity": "Legendary",
-        "faction": "Empyrean",
-        "type": "Minion",
-        "description": "Though a fierce fighter, Scott is also a little emotional. He needs a cood '''Cry''' when half his health is gone. Don't worry though, he'll be ok and back in the fight soon enough!",
-        "targets": "Ground",
-        "health": "600",
-        "attackspeed": "0.7 Sec.",
-        "damage": "65 (DPS: 92.8)",
-        "range": "Melee",
-        "speed": "6",
-        "pageId": 1596
+        "pageId": "763"
     },
     {
         "name": "Scrat Horde",
@@ -2037,7 +1903,24 @@
         "damage": "10 (DPS: 10)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 765
+        "pageId": "765"
+    },
+    {
+        "name": "Re-boomer",
+        "image": "ReBoomer.png",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "Hatches from an egg after a short delay.  As a boomer it explodes on contact or death, but turns back into an egg.",
+        "targets": "Ground",
+        "health": "25",
+        "attackspeed": "1.2 Sec.",
+        "damage": "250 (DPS: 208)",
+        "range": "Special",
+        "speed": "5",
+        "radius": "6",
+        "pageId": "781"
     },
     {
         "name": "Scrat Launcher",
@@ -2054,7 +1937,98 @@
         "range": "25",
         "duration": "30 Sec.",
         " Scrat Launcher }}": "",
-        "pageId": 1197
+        "pageId": "1197"
+    },
+    {
+        "name": "Red Golem",
+        "image": "RedGolem.png",
+        "manacost": "9",
+        "rarity": "Supreme",
+        "faction": "Zen-Chi",
+        "type": "Minion",
+        "description": "When played, it gains double health if it's Master is below 50% health",
+        "targets": "Ground",
+        "health": "800",
+        "attackspeed": "2 Sec.",
+        "damage": "200 (DPS: 100)",
+        "range": "Melee",
+        "speed": "2",
+        "pageId": "1260"
+    },
+    {
+        "name": "S.T.INT",
+        "image": "SingleTrackInterceptor.jpg",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Outlander",
+        "type": "Minion",
+        "description": "The Single-Track Interceptor - or S.T.INT - is fast, agile and packs quite a punch for its size.  Can't take too much punishment though.",
+        "targets": "Ground & Air",
+        "health": "80",
+        "attackspeed": "1.1 Sec.",
+        "damage": "25 (DPS: 22.8)",
+        "range": "6",
+        "speed": "7",
+        "pageId": "1506"
+    },
+    {
+        "name": "Scott The Sensitive Savage",
+        "image": "SaltyBarbarian.png",
+        "manacost": "5",
+        "rarity": "Legendary",
+        "faction": "Stoutheart",
+        "type": "Minion",
+        "description": "Though a fierce fighter, Scott is also a little emotional. He needs a cood '''Cry''' when half his health is gone. Don't worry though, he'll be ok and back in the fight soon enough!",
+        "targets": "Ground",
+        "health": "600",
+        "attackspeed": "0.7 Sec.",
+        "damage": "65 (DPS: 92.8)",
+        "range": "Melee",
+        "speed": "6",
+        "pageId": "1596"
+    },
+    {
+        "name": "Ravenous Swarmers",
+        "image": "CannibalSwarmers.jpg",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "A few [[Swarmers]], but if the last card you played was a spell, they gain '''Rage''' and '''Frenzy'''.",
+        "count": "2",
+        "targets": "Ground",
+        "health": "35",
+        "attackspeed": "1.1 Sec.",
+        "damage": "20 (DPS: 18.2)",
+        "range": "Melee",
+        "speed": "10",
+        "pageId": "1678"
+    },
+    {
+        "name": "Rock Rivals",
+        "image": "RockRivals.jpg",
+        "manacost": "6",
+        "rarity": "Common",
+        "faction": "Zen-Chi",
+        "type": "Minion",
+        "description": "'''Taunt'''",
+        "targets": "Ground",
+        "health": "800",
+        "attackspeed": "2 Sec.",
+        "damage": "200 (DPS: 100)",
+        "range": "Melee",
+        "speed": "2",
+        "pageId": "1863"
+    },
+    {
+        "name": "Ritual of Servitude",
+        "image": "RitualOfServitude.jpg",
+        "manacost": "4",
+        "rarity": "Legendary",
+        "faction": "Slither",
+        "type": "Spell",
+        "description": "Summon a random Minion Card with Mana cost equal to the lowest cost card that started in your deck other than this card, including other versions of this card. (Max 6 Mana Minion cards can be summoned)",
+        "pageId": "1922"
     },
     {
         "name": "Scrat Pack",
@@ -2071,7 +2045,7 @@
         "damage": "10 (DPS: 10)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 768
+        "pageId": "768"
     },
     {
         "name": "Scrat Tank",
@@ -2087,35 +2061,30 @@
         "damage": "60 (DPS: 30)",
         "range": "Melee",
         "speed": "4",
-        "pageId": 1503
+        "pageId": "1503"
     },
     {
-        "name": "Scrat Turret",
-        "image": "ScratTurret.png",
-        "manacost": "1",
-        "rarity": "Common",
-        "faction": "Scrat",
+        "name": "Shield Totem",
+        "image": "ShieldTotem.png",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Slither",
         "type": "Building",
-        "targets": "Ground",
-        "health": "150",
-        "attackspeed": "0.5 Sec.",
-        "damage": "20(DPS: 40)",
-        "range": "8",
-        "duration": "15 Sec.",
-        "pageId": 1856
+        "description": "Summon a Shield Totem that makes the Master's Tower immune to damage as long as its alive.",
+        "health": "200",
+        "duration": "10 Sec.",
+        "pageId": "1634"
     },
     {
-        "name": "Scratillery",
-        "image": "ScratStorm.jpg",
-        "manacost": "5",
-        "rarity": "Rare",
-        "faction": "Scrat",
-        "type": "Spell",
-        "description": "Fires 5 furry rockets that each summon a [[Scrat Pack|Scrat]] on impact.",
-        "damage": "40",
-        "radius": "3.5",
-        "duration": "3 Sec.",
-        "pageId": 1928
+        "name": "Shars'Rakk Twins",
+        "image": "SharsrakkTwins.jpg",
+        "manacost": "8",
+        "rarity": "Supreme",
+        "faction": "Voidborne",
+        "type": "Minion",
+        "description": "Summon an [[Incubus]], if you played a 5 mana spell just before this card, also summon a [[Succubus]]",
+        "count": "1 Succubus, 1 Incubus",
+        "pageId": "1689"
     },
     {
         "name": "Screaming Scrat",
@@ -2130,23 +2099,7 @@
         "health": "60",
         "range": "Special",
         "speed": "7",
-        "pageId": 1702
-    },
-    {
-        "name": "Sewer Scrat",
-        "image": "SewerScrat.jpg",
-        "manacost": "1",
-        "rarity": "Common",
-        "faction": "Scrat",
-        "type": "Minion",
-        "description": "When Sewer Scrat is hit by melee attackers, it inflicts '''Poison''' for 5 seconds.",
-        "targets": "Ground",
-        "health": "15",
-        "attackspeed": "1 Sec.",
-        "damage": "10 (DPS: 10)",
-        "range": "Melee",
-        "speed": "7",
-        "pageId": 1930
+        "pageId": "1702"
     },
     {
         "name": "Shadow Whelp",
@@ -2162,18 +2115,7 @@
         "damage": "50 (DPS: 50)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 1834
-    },
-    {
-        "name": "Shars'Rakk Twins",
-        "image": "SharsrakkTwins.jpg",
-        "manacost": "8",
-        "rarity": "Supreme",
-        "faction": "Voidborne",
-        "type": "Minion",
-        "description": "Summon an [[Incubus]], if you played a 5 mana spell just before this card, also summon a [[Succubus]]",
-        "count": "1 Succubus, 1 Incubus",
-        "pageId": 1689
+        "pageId": "1834"
     },
     {
         "name": "Shen Stormstrike",
@@ -2189,19 +2131,81 @@
         "damage": "200 (DPS: 105.3)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 1864
+        "pageId": "1864"
     },
     {
-        "name": "Shield Totem",
-        "image": "ShieldTotem.png",
-        "manacost": "0",
-        "rarity": "Perk",
+        "name": "Scratillery",
+        "image": "ScratStorm.jpg",
+        "manacost": "5",
+        "rarity": "Rare",
+        "faction": "Scrat",
+        "type": "Spell",
+        "description": "Fires 5 furry rockets that each summon a [[Scrat Pack|Scrat]] on impact.",
+        "damage": "40",
+        "radius": "3.5",
+        "duration": "3 Sec.",
+        "pageId": "1928"
+    },
+    {
+        "name": "Sewer Scrat",
+        "image": "SewerScrat.jpg",
+        "manacost": "1",
+        "rarity": "Common",
+        "faction": "Scrat",
+        "type": "Minion",
+        "description": "When Sewer Scrat is hit by melee attackers, it inflicts '''Poison''' for 5 seconds.",
+        "targets": "Ground",
+        "health": "15",
+        "attackspeed": "1 Sec.",
+        "damage": "10 (DPS: 10)",
+        "range": "Melee",
+        "speed": "7",
+        "pageId": "1930"
+    },
+    {
+        "name": "Shock Rock",
+        "image": "StunThunder.png",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Zen-Chi",
+        "type": "Spell",
+        "description": "Drop a stunning stone on your enemies, which '''stuns''' and damages them.",
+        "damage": "40",
+        "radius": "3",
+        "duration": "2 Sec.",
+        "pageId": "770"
+    },
+    {
+        "name": "Snake Druid",
+        "image": "SpiritLeecher.png",
+        "manacost": "3",
+        "rarity": "Legendary",
         "faction": "Slither",
-        "type": "Building",
-        "description": "Summon a Shield Totem that makes the Master's Tower immune to damage as long as its alive.",
-        "health": "200",
-        "duration": "10 Sec.",
-        "pageId": 1634
+        "type": "Flying Minion",
+        "description": "'''Call Slitherbound'''",
+        "targets": "Ground",
+        "health": "80",
+        "attackspeed": "1 Sec.",
+        "damage": "25 (DPS: 25)",
+        "range": "8",
+        "speed": "2",
+        "pageId": "773"
+    },
+    {
+        "name": "Sniper Scrat",
+        "image": "SniperRat.png",
+        "manacost": "3",
+        "rarity": "Common",
+        "faction": "Scrat",
+        "type": "Minion",
+        "description": "A Scrat with a sniper rifle.  Very long range and good damage, but takes a while to aim.",
+        "targets": "Ground & Air",
+        "health": "50",
+        "attackspeed": "3.5 Sec.",
+        "damage": "100 (DPS: 25)",
+        "range": "16",
+        "speed": "5",
+        "pageId": "774"
     },
     {
         "name": "Shielded Crossbow Dudes",
@@ -2218,116 +2222,7 @@
         "damage": "15 (DPS: 10.8)",
         "range": "8",
         "speed": "5",
-        "pageId": 1335
-    },
-    {
-        "name": "Shieldguard of Light",
-        "image": "shieldguard.jpg",
-        "manacost": "7",
-        "rarity": "Supreme",
-        "faction": "Empyrean",
-        "type": "Minion",
-        "description": "Having an '''Armor of Light''' doesn't stop this Brother from bringing a shield into battle, making him hardier than his fellow warriors. He also uses it to charge nearby enemies!",
-        "targets": "Ground",
-        "health": "800",
-        "attackspeed": "2 Sec.",
-        "damage": "70 (DPS: 35)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1835
-    },
-    {
-        "name": "Shock Rock",
-        "image": "StunThunder.png",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Zen-Chi",
-        "type": "Spell",
-        "description": "Drop a stunning stone on your enemies, which '''stuns''' and damages them.",
-        "damage": "40",
-        "radius": "3",
-        "duration": "2 Sec.",
-        "pageId": 770
-    },
-    {
-        "name": "Skeleton Horde",
-        "image": "SkeletonHorde.jpg",
-        "manacost": "4",
-        "rarity": "Common",
-        "faction": "Accursed",
-        "type": "Minion",
-        "description": "When summoned, collect 1 '''Spectral Essence'''",
-        "count": "8",
-        "targets": "Ground",
-        "health": "50",
-        "attackspeed": "2 Sec.",
-        "damage": "25 (DPS: 12.5)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1882
-    },
-    {
-        "name": "Skeletons",
-        "image": "LichBook_Skeletons.jpg",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Summon 4 skeletons",
-        "pageId": 1903
-    },
-    {
-        "name": "Slitherbound",
-        "image": "Slitherbound.jpg",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Slither",
-        "type": "Minion",
-        "description": "Summon 1 [[Slitherbound Lancer]] and 1 [[Slitherbound Darter]].",
-        "count": "1 Slitherbound Darter, 1 Slitherbound Lancer",
-        "pageId": 1925
-    },
-    {
-        "name": "Slithering Summons",
-        "image": "SlitheringSummons.jpg",
-        "manacost": "6",
-        "rarity": "Supreme",
-        "faction": "Slither",
-        "type": "Spell",
-        "description": "Summon a [[Living Statue]], [[Prowler]] or [[Soul Stealer]].",
-        "pageId": 1931
-    },
-    {
-        "name": "Snake Druid",
-        "image": "SpiritLeecher.png",
-        "manacost": "3",
-        "rarity": "Legendary",
-        "faction": "Slither",
-        "type": "Flying Minion",
-        "description": "'''Call Slitherbound'''",
-        "targets": "Ground",
-        "health": "80",
-        "attackspeed": "1 Sec.",
-        "damage": "25 (DPS: 25)",
-        "range": "8",
-        "speed": "2",
-        "pageId": 773
-    },
-    {
-        "name": "Sniper Scrat",
-        "image": "SniperRat.png",
-        "manacost": "3",
-        "rarity": "Common",
-        "faction": "Scrat",
-        "type": "Minion",
-        "description": "A Scrat with a sniper rifle.  Very long range and good damage, but takes a while to aim.",
-        "targets": "Ground & Air",
-        "health": "50",
-        "attackspeed": "3.5 Sec.",
-        "damage": "100 (DPS: 25)",
-        "range": "16",
-        "speed": "5",
-        "pageId": 774
+        "pageId": "1335"
     },
     {
         "name": "Sniper Squad",
@@ -2344,7 +2239,71 @@
         "damage": "100 (DPS: 25)",
         "range": "16",
         "speed": "5",
-        "pageId": 1662
+        "pageId": "1662"
+    },
+    {
+        "name": "Shieldguard of Light",
+        "image": "shieldguard.jpg",
+        "manacost": "7",
+        "rarity": "Supreme",
+        "faction": "Empyrean",
+        "type": "Minion",
+        "description": "Having an '''Armor of Light''' doesn't stop this Brother from bringing a shield into battle, making him hardier than his fellow warriors. He also uses it to charge nearby enemies!",
+        "targets": "Ground",
+        "health": "800",
+        "attackspeed": "2 Sec.",
+        "damage": "70 (DPS: 35)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1835"
+    },
+    {
+        "name": "Skeleton Horde",
+        "image": "SkeletonHorde.jpg",
+        "manacost": "4",
+        "rarity": "Common",
+        "faction": "Accursed",
+        "type": "Minion",
+        "description": "When summoned, collect 1 '''Spectral Essence'''",
+        "count": "8",
+        "targets": "Ground",
+        "health": "50",
+        "attackspeed": "2 Sec.",
+        "damage": "25 (DPS: 12.5)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1882"
+    },
+    {
+        "name": "Skeletons",
+        "image": "LichBook_Skeletons.jpg",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Accursed",
+        "type": "Spell",
+        "description": "Summon 4 skeletons",
+        "pageId": "1903"
+    },
+    {
+        "name": "Slitherbound",
+        "image": "Slitherbound.jpg",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Slither",
+        "type": "Minion",
+        "description": "Summon 1 [[Slitherbound Lancer]] and 1 [[Slitherbound Darter]].",
+        "count": "1 Slitherbound Darter, 1 Slitherbound Lancer",
+        "pageId": "1925"
+    },
+    {
+        "name": "Slithering Summons",
+        "image": "SlitheringSummons.jpg",
+        "manacost": "6",
+        "rarity": "Supreme",
+        "faction": "Slither",
+        "type": "Spell",
+        "description": "Summon a [[Living Statue]], [[Prowler]] or [[Soul Stealer]].",
+        "pageId": "1931"
     },
     {
         "name": "Soul Stealer",
@@ -2361,18 +2320,51 @@
         "range": "8",
         "speed": "5",
         "class": "\"wikitable\" style",
-        "pageId": 776
+        "pageId": "776"
     },
     {
-        "name": "Spawn of Fury",
-        "image": "SpawnofFury.png",
+        "name": "Stun Blast",
+        "image": "Freeze.png",
         "manacost": "3",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
+        "rarity": "Rare",
+        "faction": "Outlander",
         "type": "Spell",
-        "description": "'''Stun''' a random friendly minion within the area, reduce it's max health by 50%, then summon a copy of it.",
-        "duration": "3 Sec.",
-        "pageId": 1887
+        "description": "A large '''stun''' explosion, that leaves your enemies vulnerable.",
+        "radius": "5",
+        "duration": "5 Sec.",
+        "pageId": "779"
+    },
+    {
+        "name": "Spiritmancer",
+        "image": "Necromancer.jpg",
+        "manacost": "5",
+        "rarity": "Supreme",
+        "faction": "Accursed",
+        "type": "Minion",
+        "description": "'''Spectral Essence'''",
+        "targets": "Ground & Air",
+        "health": "200",
+        "attackspeed": "0.3 Sec.",
+        "damage": "4 (DPS: 13.33)",
+        "range": "10",
+        "speed": "5",
+        "pageId": "1255"
+    },
+    {
+        "name": "Spirit Vessel",
+        "image": "SpiritVessel.jpg",
+        "manacost": "2",
+        "rarity": "Rare",
+        "faction": "Accursed",
+        "type": "Minion",
+        "description": "This [[Skeletons|Skeleton]] gives a random friendly Minion '''Spirit''' on death.",
+        "targets": "Ground",
+        "health": "50",
+        "attackspeed": "2 Sec.",
+        "damage": "25 (DPS: 12.5)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1261"
     },
     {
         "name": "Spear Throwers",
@@ -2389,17 +2381,7 @@
         "damage": "15 (DPS: 10)",
         "range": "Both (8 / Melee)",
         "speed": "5",
-        "pageId": 1280
-    },
-    {
-        "name": "Spirit",
-        "image": "LichBook_Spirit.jpg",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Spell",
-        "description": "Give a random friendly Minion '''Spirit'''",
-        "pageId": 1904
+        "pageId": "1280"
     },
     {
         "name": "Spirit Infusion",
@@ -2409,39 +2391,7 @@
         "faction": "Accursed",
         "type": "Spell",
         "description": "Summons 3 Spirits over 9 seconds. Each Spirit flies to a random friendly Minion and gives it '''Spirit'''",
-        "pageId": 1369
-    },
-    {
-        "name": "Spirit Vessel",
-        "image": "SpiritVessel.jpg",
-        "manacost": "2",
-        "rarity": "Rare",
-        "faction": "Accursed",
-        "type": "Minion",
-        "description": "This [[Skeletons|Skeleton]] gives a random friendly Minion '''Spirit''' on death.",
-        "targets": "Ground",
-        "health": "50",
-        "attackspeed": "2 Sec.",
-        "damage": "25 (DPS: 12.5)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1261
-    },
-    {
-        "name": "Spiritmancer",
-        "image": "Necromancer.jpg",
-        "manacost": "5",
-        "rarity": "Supreme",
-        "faction": "Accursed",
-        "type": "Minion",
-        "description": "'''Spectral Essence'''",
-        "targets": "Ground & Air",
-        "health": "200",
-        "attackspeed": "0.3 Sec.",
-        "damage": "4 (DPS: 13.33)",
-        "range": "10",
-        "speed": "5",
-        "pageId": 1255
+        "pageId": "1369"
     },
     {
         "name": "Squire Puff",
@@ -2451,7 +2401,7 @@
         "faction": "Puff",
         "type": "Spell",
         "description": "Once on the bridge, Squire Puff gives '''Rage''' to 5 random Friendly Minions, and then puffs out of play.",
-        "pageId": 1832
+        "pageId": "1832"
     },
     {
         "name": "Stormy",
@@ -2467,19 +2417,28 @@
         "damage": "100 (DPS: 28.6)",
         "range": "6",
         "speed": "5",
-        "pageId": 1851
+        "pageId": "1851"
     },
     {
-        "name": "Stun Blast",
-        "image": "Freeze.png",
+        "name": "Spawn of Fury",
+        "image": "SpawnofFury.png",
         "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Outlander",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
         "type": "Spell",
-        "description": "A large '''stun''' explosion, that leaves your enemies vulnerable.",
-        "radius": "5",
-        "duration": "5 Sec.",
-        "pageId": 779
+        "description": "'''Stun''' a random friendly minion within the area, reduce it's max health by 50%, then summon a copy of it.",
+        "duration": "3 Sec.",
+        "pageId": "1887"
+    },
+    {
+        "name": "Spirit",
+        "image": "LichBook_Spirit.jpg",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Accursed",
+        "type": "Spell",
+        "description": "Give a random friendly Minion '''Spirit'''",
+        "pageId": "1904"
     },
     {
         "name": "Stun Lancers",
@@ -2496,7 +2455,7 @@
         "damage": "30 (DPS: 15)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 782
+        "pageId": "782"
     },
     {
         "name": "Styxi",
@@ -2512,7 +2471,7 @@
         "damage": "100 (DPS: 50)",
         "range": "22",
         "speed": "5",
-        "pageId": 784
+        "pageId": "784"
     },
     {
         "name": "Succubus",
@@ -2528,20 +2487,7 @@
         "damage": "50 (DPS: 55.6)",
         "range": "6",
         "speed": "5",
-        "pageId": 787
-    },
-    {
-        "name": "Sun Burn",
-        "image": "SunBurn.jpg",
-        "manacost": "3",
-        "rarity": "Supreme",
-        "faction": "Empyrean",
-        "type": "Spell",
-        "description": "Give all Minions in a small area '''Rage''' and deal 10 damage 10 times to enemies.",
-        "damage": "100",
-        "radius": "3",
-        "duration": "1 Sec.",
-        "pageId": 1707
+        "pageId": "787"
     },
     {
         "name": "Swarmer Totem",
@@ -2555,7 +2501,7 @@
         "productionspeed": "7 sec",
         "duration": "50 Sec.",
         "count": "3",
-        "pageId": 788
+        "pageId": "788"
     },
     {
         "name": "Swarmers",
@@ -2572,7 +2518,35 @@
         "damage": "20 (DPS: 18.2)",
         "range": "Melee",
         "speed": "10",
-        "pageId": 790
+        "pageId": "790"
+    },
+    {
+        "name": "Tranquil Shi-Hou",
+        "image": "PrayingShiHou.jpg",
+        "manacost": "4",
+        "rarity": "Rare",
+        "faction": "Zen-Chi",
+        "type": "Minion",
+        "description": "An old but durable fighter that heals itself when no enemies are near. Not a big fan of monkey business",
+        "targets": "Ground",
+        "health": "420",
+        "attackspeed": "1.6 Sec.",
+        "damage": "60 (DPS: 37.5)",
+        "range": "Melee",
+        "speed": "5",
+        "pageId": "1299"
+    },
+    {
+        "name": "Tombstone",
+        "image": "Tombstone.png",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Accursed",
+        "type": "Building",
+        "description": "Resurrects the next friendly minion that dies.",
+        "health": "400",
+        "duration": "40 Sec.",
+        "pageId": "1639"
     },
     {
         "name": "Tantrum Throwers",
@@ -2589,7 +2563,20 @@
         "damage": "15 (DPS: 10)",
         "range": "Both (8 / Melee)",
         "speed": "5",
-        "pageId": 1704
+        "pageId": "1704"
+    },
+    {
+        "name": "Sun Burn",
+        "image": "SunBurn.jpg",
+        "manacost": "3",
+        "rarity": "Supreme",
+        "faction": "Empyrean",
+        "type": "Spell",
+        "description": "Give all Minions in a small area '''Rage''' and deal 10 damage 10 times to enemies.",
+        "damage": "100",
+        "radius": "3",
+        "duration": "1 Sec.",
+        "pageId": "1707"
     },
     {
         "name": "Toll of the Dead",
@@ -2599,53 +2586,14 @@
         "faction": "Accursed",
         "type": "Spell",
         "description": "Summon an [[Undying Skeleton]].",
-        "pageId": 1876
-    },
-    {
-        "name": "Tombstone",
-        "image": "Tombstone.png",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Accursed",
-        "type": "Building",
-        "description": "Resurrects the next friendly minion that dies.",
-        "health": "400",
-        "duration": "40 Sec.",
-        "pageId": 1639
-    },
-    {
-        "name": "Tranquil Shi-Hou",
-        "image": "PrayingShiHou.jpg",
-        "manacost": "4",
-        "rarity": "Rare",
-        "faction": "Zen-Chi",
-        "type": "Minion",
-        "description": "An old but durable fighter that heals itself when no enemies are near. Not a big fan of monkey business",
-        "targets": "Ground",
-        "health": "420",
-        "attackspeed": "1.6 Sec.",
-        "damage": "60 (DPS: 37.5)",
-        "range": "Melee",
-        "speed": "5",
-        "pageId": 1299
-    },
-    {
-        "name": "Trick Swap",
-        "image": "TrickSwap.png",
-        "manacost": "0",
-        "rarity": "Perk",
-        "faction": "Puff",
-        "type": "Spell",
-        "description": "Swaps the location of ALL minions on both bridges and stuns enemies for 4 sec.",
-        "duration": "4 Sec.}}",
-        "pageId": 1635
+        "pageId": "1876"
     },
     {
         "name": "Troubadour",
         "image": "Troubadour.png",
         "manacost": "8",
         "rarity": "Legendary",
-        "faction": "Empyrean",
+        "faction": "Stoutheart",
         "type": "Minion",
         "description": "He only ever learned one song, but to compensate he plays it constantly. This '''Taunts''' all nearby enemies, making them want to end the miserable auditory assault!",
         "targets": "Buildings",
@@ -2654,51 +2602,7 @@
         "damage": "300 (DPS: 66.66)",
         "range": "Melee",
         "speed": "2",
-        "pageId": 792
-    },
-    {
-        "name": "Undying Skeleton",
-        "image": "UndyingSkeleton.jpg",
-        "manacost": "4",
-        "rarity": "Rare",
-        "faction": "Accursed",
-        "type": "Minion",
-        "description": "'''Spectral Essence'''",
-        "targets": "Ground",
-        "health": "300",
-        "attackspeed": "2 Sec.",
-        "damage": "60 (DPS: 30)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1218
-    },
-    {
-        "name": "Walking Blind Date",
-        "image": "WalkingBlindDate.png",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Empyrean",
-        "type": "Minion",
-        "description": "'''Rush.'''",
-        "health": "2",
-        "speed": "5",
-        "where": "type",
-        "fields": "_pageName",
-        "limit": "999",
-        "order by": "manacost ASC",
-        "pageId": 1222
-    },
-    {
-        "name": "Wall",
-        "image": "Wall.png",
-        "manacost": "2",
-        "rarity": "Common",
-        "faction": "Empyrean",
-        "type": "Building",
-        "description": "Plenty of health, no attack. A perfect distraction for building haters",
-        "health": "600",
-        "duration": "20 Sec.",
-        "pageId": 1223
+        "pageId": "792"
     },
     {
         "name": "Warrior",
@@ -2714,19 +2618,7 @@
         "damage": "70 (DPS: 35)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 794
-    },
-    {
-        "name": "Wheel Of Doom",
-        "image": "WheelOfDoom.jpg",
-        "manacost": "4",
-        "rarity": "Legendary",
-        "faction": "Voidborne",
-        "type": "Spell",
-        "description": "Hits every ground target in a line 2 times for 150 damage. If something survives both hits, the Wheel breaks. ",
-        "damage": "300",
-        "radius": "2.5",
-        "pageId": 1766
+        "pageId": "794"
     },
     {
         "name": "Whirly Scrat",
@@ -2743,7 +2635,7 @@
         "range": "Melee",
         "speed": "5",
         "radius": "5",
-        "pageId": 795
+        "pageId": "795"
     },
     {
         "name": "Wizard Puff",
@@ -2759,7 +2651,74 @@
         "damage": "60 (DPS: 37.5)",
         "range": "8",
         "speed": "5",
-        "pageId": 796
+        "pageId": "796"
+    },
+    {
+        "name": "Undying Skeleton",
+        "image": "UndyingSkeleton.jpg",
+        "manacost": "4",
+        "rarity": "Rare",
+        "faction": "Accursed",
+        "type": "Minion",
+        "description": "'''Spectral Essence'''",
+        "targets": "Ground",
+        "health": "300",
+        "attackspeed": "2 Sec.",
+        "damage": "60 (DPS: 30)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1218"
+    },
+    {
+        "name": "Walking Blind Date",
+        "image": "WalkingBlindDate.png",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Empyrean",
+        "type": "Minion",
+        "description": "'''Rush.'''",
+        "health": "2",
+        "speed": "5",
+        "where": "type",
+        "fields": "_pageName",
+        "limit": "999",
+        "order by": "manacost ASC",
+        "pageId": "1222"
+    },
+    {
+        "name": "Wall",
+        "image": "Wall.png",
+        "manacost": "2",
+        "rarity": "Common",
+        "faction": "Empyrean",
+        "type": "Building",
+        "description": "Plenty of health, no attack. A perfect distraction for building haters",
+        "health": "600",
+        "duration": "20 Sec.",
+        "pageId": "1223"
+    },
+    {
+        "name": "Trick Swap",
+        "image": "TrickSwap.png",
+        "manacost": "0",
+        "rarity": "Perk",
+        "faction": "Puff",
+        "type": "Spell",
+        "description": "Swaps the location of ALL minions on both bridges and stuns enemies for 4 sec.",
+        "duration": "4 Sec.}}",
+        "pageId": "1635"
+    },
+    {
+        "name": "Wheel Of Doom",
+        "image": "WheelOfDoom.jpg",
+        "manacost": "4",
+        "rarity": "Legendary",
+        "faction": "Voidborne",
+        "type": "Spell",
+        "description": "Hits every ground target in a line 2 times for 150 damage. If something survives both hits, the Wheel breaks. ",
+        "damage": "300",
+        "radius": "2.5",
+        "pageId": "1766"
     },
     {
         "name": "Wolf Among Sheep",
@@ -2776,54 +2735,7 @@
         "damage": "30 (DPS: 20)",
         "range": "Melee",
         "speed": "5",
-        "pageId": 1779
-    },
-    {
-        "name": "Wreckinator 9000",
-        "image": "Wreckinator.jpg",
-        "manacost": "7",
-        "rarity": "Legendary",
-        "faction": "Scrat",
-        "type": "Minion",
-        "description": "This metal monster will first '''slice and dice''', then '''slam and bam'''. At least until it '''Self-Destruct'''s.",
-        "targets": "Ground",
-        "health": "900",
-        "attackspeed": "0.3 Sec",
-        "damage": "17 (DPS: 56.7)",
-        "range": "Melee",
-        "speed": "4",
-        "pageId": 1929
-    },
-    {
-        "name": "Xiao Long",
-        "image": "TinyDragon.jpg",
-        "manacost": "3",
-        "rarity": "Legendary",
-        "faction": "Zen-Chi",
-        "type": "Flying Minion",
-        "description": "Every time an opponent casts a spell, Xiao Long gains '''Rage''','''Frenzy''' and '''Shield'''",
-        "targets": "Ground & Air",
-        "health": "80",
-        "attackspeed": "1.3 Sec.",
-        "damage": "20 (DPS: 15.4)",
-        "range": "8",
-        "speed": "7",
-        "pageId": 1284
-    },
-    {
-        "name": "Zap Shrine",
-        "image": "ZapShrine.jpg",
-        "manacost": "3",
-        "rarity": "Rare",
-        "faction": "Zen-Chi",
-        "type": "Building",
-        "description": "A thousand lightning strikes have imbued this stone with the ability to '''stun'''  the closest enemy for 2 seconds.",
-        "health": "75",
-        "attackspeed": "4 Sec.",
-        "targets": "Ground & Air",
-        "duration": "25 Sec.",
-        "range": "25",
-        "pageId": 1862
+        "pageId": "1779"
     },
     {
         "name": "Zeppelin Bomber",
@@ -2839,6 +2751,53 @@
         "damage": "250 (DPS: 41.7)",
         "range": "Melee",
         "speed": "7",
-        "pageId": 1219
+        "pageId": "1219"
+    },
+    {
+        "name": "Xiao Long",
+        "image": "TinyDragon.jpg",
+        "manacost": "3",
+        "rarity": "Legendary",
+        "faction": "Zen-Chi",
+        "type": "Flying Minion",
+        "description": "Every time an opponent casts a spell, Xiao Long gains '''Rage''','''Frenzy''' and '''Shield'''",
+        "targets": "Ground & Air",
+        "health": "80",
+        "attackspeed": "1.3 Sec.",
+        "damage": "20 (DPS: 15.4)",
+        "range": "8",
+        "speed": "7",
+        "pageId": "1284"
+    },
+    {
+        "name": "Zap Shrine",
+        "image": "ZapShrine.jpg",
+        "manacost": "3",
+        "rarity": "Rare",
+        "faction": "Zen-Chi",
+        "type": "Building",
+        "description": "A thousand lightning strikes have imbued this stone with the ability to '''stun'''  the closest enemy for 2 seconds.",
+        "health": "75",
+        "attackspeed": "4 Sec.",
+        "targets": "Ground & Air",
+        "duration": "25 Sec.",
+        "range": "25",
+        "pageId": "1862"
+    },
+    {
+        "name": "Wreckinator 9000",
+        "image": "Wreckinator.jpg",
+        "manacost": "7",
+        "rarity": "Legendary",
+        "faction": "Scrat",
+        "type": "Minion",
+        "description": "This metal monster will first '''slice and dice''', then '''slam and bam'''. At least until it '''Self-Destruct'''s.",
+        "targets": "Ground",
+        "health": "900",
+        "attackspeed": "0.3 Sec",
+        "damage": "17 (DPS: 56.7)",
+        "range": "Melee",
+        "speed": "4",
+        "pageId": "1929"
     }
 ]

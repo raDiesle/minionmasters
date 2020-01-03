@@ -17,23 +17,27 @@ import MinusIcon from "./MinusIcon";
 import PlusIcon from "./PlusIcon";
 import {MANACOST} from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
-
+import FocusLock, {AutoFocusInside} from 'react-focus-lock';
 
 function FilterByNameInput({nameValue, setFilters}) {
-
     return (
-        <input
-            type="text"
-            value={nameValue}
-            onChange={(event) => {
-                event.persist();
-                setFilters((prevFilters) => {
-                    const newFilters = {...prevFilters};
-                    newFilters.name = event.target.value;
-                    return newFilters;
-                });
-            }}
-        />)
+        <FocusLock>
+            <AutoFocusInside>
+                <input
+                    type="text"
+                    value={nameValue}
+                    onChange={(event) => {
+                        event.persist();
+                        setFilters((prevFilters) => {
+                            const newFilters = {...prevFilters};
+                            newFilters.name = event.target.value;
+                            return newFilters;
+                        });
+                    }}
+                />
+            </AutoFocusInside>
+        </FocusLock>
+    )
 }
 
 export function Filters({filters, setFilters, setZoom}) {
@@ -47,6 +51,7 @@ export function Filters({filters, setFilters, setZoom}) {
             padding-right: 20px;
         }
     `;
+
 
     return <FilterContainerStyle>
 
