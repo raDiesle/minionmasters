@@ -2,7 +2,7 @@ import Cards from "./Cards";
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import {CardDeck} from "./carddeck/CardDeck";
 import {Filters} from "./filters/Filters";
-import cardData from "../jobCardProps";
+import cardData from "../generated/jobCardProps";
 import {FACTIONS} from "../faction/Factions";
 import {rarityMapping} from "../rarity/rarityMapping";
 import {typeMapping} from "../cardtype/typeMapping";
