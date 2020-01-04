@@ -33,7 +33,6 @@ const CardContainerStyle = styled.div`
 const CardContentStyle = styled.div`
     position: relative;
     &:hover {
-
     }
 `;
 
@@ -142,9 +141,8 @@ const AddToDeckIconStyle = styled(OverlayActionBackground)`
   padding-left: 2px;
 `;
 
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom}) {
+export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
     const [isOpenDetails, setIsOpenDetails] = useState(false);
-
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
 
     return <>
@@ -153,8 +151,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                           card={card}
         />
 
-        <CardContainerStyle onClick={onClick}
-                            zoom={zoom}
+        <CardContainerStyle zoom={zoom}
         >
             <CardContentStyle>
                 <CardImageStyle src={`generated/img/${imageNormalized}`} alt={image}/>
@@ -169,11 +166,14 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
                 <AttackTypeOverlay targets={targets}/>
 
-                <AddCardToDeckOverlay>
+                {showDeck &&
+                <AddCardToDeckOverlay onClick={onClick}>
                     <InfoDetailsIconStyle>
                         <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"}/>
                     </InfoDetailsIconStyle>
                 </AddCardToDeckOverlay>
+                }
+
                 <InfoDetailsOverlay onClick={(event) => {
                     setIsOpenDetails(true);
                     event.stopPropagation();

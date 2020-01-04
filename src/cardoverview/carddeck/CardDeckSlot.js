@@ -21,7 +21,7 @@ export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOn
         <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
 
             {lastSelectedCard.card.pageId !== 0 ?
-                <Card card={lastSelectedCard.card} onClick={() => handleOnClick(number)} isDeckCard/> :
+                <Card card={lastSelectedCard.card} onClick={() => handleOnClick(number)} isDeckCard showDeck/> :
                 <CardContainerStyle>{isSelectedSlot ? "Select a card" : ""}</CardContainerStyle>}
 
 

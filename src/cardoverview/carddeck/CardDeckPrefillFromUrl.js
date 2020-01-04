@@ -1,12 +1,12 @@
 import {useEffect} from "react";
 import qs from "qs";
+import allCardsData from "../../generated/jobCardProps";
 
-export function CardDeckPrefillFromUrl({allCardsData, setLastSelectedCards, setCurrentSelectedSlot}) {
+export function CardDeckPrefillFromUrl({setLastSelectedCards, setCurrentSelectedSlot}) {
 
     useEffect(() => {
-        if (allCardsData.length === 0) {
-            return;
-        }
+
+
         let selectedPageIdsFromUrl = qs.parse(window.location.search, {ignoreQueryPrefix: true}).pageId;
         if (selectedPageIdsFromUrl && !Array.isArray(selectedPageIdsFromUrl)) {
             selectedPageIdsFromUrl = [selectedPageIdsFromUrl];
@@ -16,17 +16,19 @@ export function CardDeckPrefillFromUrl({allCardsData, setLastSelectedCards, setC
         }
         const selectedPageIdsNormalized = selectedPageIdsFromUrl ? selectedPageIdsFromUrl.map(pageId => parseInt(pageId)) : [];
         const prefillSelectedCardsWithData = selectedPageIdsNormalized.map(selectedPageId => {
-            const selectedCardData = allCardsData.find(({pageId}) => selectedPageId === pageId);
+            const selectedCardData = allCardsData.find(({pageId}) => selectedPageId === parseInt(pageId));
             return typeof selectedCardData === 'undefined' ? {pageId: 0} : selectedCardData;
+        }).map(card => {
+            return {eventId: 0, card}
         });
-
+        debugger;
         setLastSelectedCards((initialSelectedCards) => {
             const normalized = initialSelectedCards.map((card, index) => prefillSelectedCardsWithData[index] || card);
-            const nextFreeSlot = normalized.findIndex(({pageId}) => pageId === 0);
-            setCurrentSelectedSlot(nextFreeSlot);
+            // TODO const nextFreeSlot = normalized.findIndex(({pageId}) => pageId === 0);
+            // TODO setCurrentSelectedSlot(nextFreeSlot);
             return normalized;
         });
-    }, [allCardsData, setCurrentSelectedSlot, setLastSelectedCards]);
+    }, []);
 
     return null;
 

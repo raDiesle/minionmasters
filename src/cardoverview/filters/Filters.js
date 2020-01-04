@@ -17,31 +17,43 @@ import MinusIcon from "./MinusIcon";
 import PlusIcon from "./PlusIcon";
 import {MANACOST} from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
-import FocusLock, {AutoFocusInside} from 'react-focus-lock';
+import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
+import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
+
+const InputTextStyle = styled.input`
+  color: #444;
+  border: 1px solid #444;
+  font-weight: bold;
+  width: 100px;
+`;
+
+const InputLabelStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+`;
 
 function FilterByNameInput({nameValue, setFilters}) {
     return (
-        <FocusLock>
-            <AutoFocusInside>
-                <input
-                    type="text"
-                    value={nameValue}
-                    onChange={(event) => {
-                        event.persist();
-                        setFilters((prevFilters) => {
-                            const newFilters = {...prevFilters};
-                            newFilters.name = event.target.value;
-                            return newFilters;
-                        });
-                    }}
-                />
-            </AutoFocusInside>
-        </FocusLock>
+        <InputTextStyle
+            type="text"
+            value={nameValue}
+            onChange={(event) => {
+                event.persist();
+                setFilters((prevFilters) => {
+                    const newFilters = {...prevFilters};
+                    newFilters.name = event.target.value;
+                    return newFilters;
+                });
+
+
+            }}
+        />
     )
 }
 
-export function Filters({filters, setFilters, setZoom}) {
-    const FilterContainerStyle = styled.div`
+const FilterContainerStyle = styled.div`
         display: flex;   
         flex-wrap: wrap;  
         align-items: flex-end;   
@@ -52,9 +64,9 @@ export function Filters({filters, setFilters, setZoom}) {
         }
     `;
 
+export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNames}) {
 
     return <FilterContainerStyle>
-
         <div>
             <div>Name</div>
             <FilterByNameInput nameValue={filters.name} setFilters={setFilters}/>
@@ -114,5 +126,16 @@ export function Filters({filters, setFilters, setZoom}) {
                 <ButtonInGroupStyle onClick={() => setZoom((prevZoom) => prevZoom + 1)}><PlusIcon/></ButtonInGroupStyle>
             </ButtonGroupStyle>
         </div>
+
+        <InputLabelStyle>
+            Show Names
+            <ButtonGroupStyle>
+                <ButtonInGroupStyle onClick={() => setIsShowNames(prevShowNames => !prevShowNames)}>
+                    <FontAwesomeIcon icon={isShowNames ? faCheckSquare : faSquareFull}/>
+                </ButtonInGroupStyle>
+            </ButtonGroupStyle>
+        </InputLabelStyle>
+
+
     </FilterContainerStyle>
 }

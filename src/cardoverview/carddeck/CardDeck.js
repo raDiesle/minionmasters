@@ -1,12 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import {CardDeckSlot} from "./CardDeckSlot";
 import styled from "styled-components";
-import {FacebookIcon, FacebookShareButton} from 'react-share';
-import {CopyToClipboard} from "react-copy-to-clipboard";
-import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {CardDeckPrefillFromUrl} from "./CardDeckPrefillFromUrl";
-import {toast} from 'react-toastify';
+import allCardsData from "../../generated/jobCardProps";
 
 const CardDeckStyle = styled.div`
     display: flex;
@@ -28,44 +23,36 @@ const useTraceableState = initialValue => {
 
 // refactor to only pass selectedCardId
 export function CardDeck({
-                             allCardsData,
-                             prevSelectedCardEvent: {eventId: prevSelectedEventId} = {eventId: 0},
                              selectedCardEvent: {eventId: cardSelectedEventId, card: {pageId: selectedCardId}},
-                             setSelectedCardEvent
+                             setSelectedCardEvent,
+                             setLastSelectedCards,
+                             lastSelectedCards
                          }
 ) {
-    let Slots = [...Array(11).keys()];
-    const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
-        return {
-            eventId: 0,
-            card: {
-                pageId: 0
-            }
-        }
-    }));
 
-    const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({card: {pageId}}) => pageId);
-    const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
-    let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?pageId=${pageIdsToParam}`;
+    let Slots = [...Array(10).keys()];
 
-    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.pageId === 0);
-
+    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.pageId == 0);
     const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(findFirstNextFreeSlot);
 
-    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.pageId === selectedCardId : selectedCardId === 0;
+    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.pageId === selectedCardId : selectedCardId == 0;
+    const [prevSelectedEventId, setPrevSelectedCardEvent] = useState(0);
 
-    if (cardSelectedEventId !== 0 && prevSelectedEventId !== cardSelectedEventId && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.eventId === lastSelectedCards[currentSelectedSlot]?.eventId) {
-        const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
-        const newLastSelectedCards = [...lastSelectedCards];
-        newLastSelectedCards[currentSelectedSlot] = {
-            eventId: cardSelectedEventId,
-            card: cardToAddData
-        };
-        setLastSelectedCards(newLastSelectedCards);
+    useEffect(() => {
+        if (cardSelectedEventId !== 0 && prevSelectedEventId !== cardSelectedEventId && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.eventId === lastSelectedCards[currentSelectedSlot]?.eventId) {
+            const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
+            const newLastSelectedCards = [...lastSelectedCards];
+            newLastSelectedCards[currentSelectedSlot] = {
+                eventId: cardSelectedEventId,
+                card: cardToAddData
+            };
+            setLastSelectedCards(newLastSelectedCards);
+            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {pageId}}) => pageId == 0);
+            setCurrentSelectedSlot(nextFreeSlot);
+            setPrevSelectedCardEvent(cardSelectedEventId);
+        }
+    });
 
-        const nextFreeSlot = newLastSelectedCards.findIndex(({card: {pageId}}) => pageId === 0);
-        setCurrentSelectedSlot(nextFreeSlot);
-    }
 
     const handleRemoveCard = (slotPos) => setLastSelectedCards((prevSelectedCards) => {
         const selectedCardsWithRemovedCard = [...prevSelectedCards];
@@ -80,16 +67,11 @@ export function CardDeck({
                 card: {pageId: 0}
             }
         );
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {pageId}}) => pageId === 0);
+        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {pageId}}) => pageId == 0);
         setCurrentSelectedSlot(nextFreeSlot);
         return selectedCardsWithRemovedCard;
     });
     return <div>
-        <h3>Your Deck</h3>
-        <CardDeckPrefillFromUrl allCardsData={allCardsData}
-                                setLastSelectedCards={setLastSelectedCards}
-                                setCurrentSelectedSlot={setCurrentSelectedSlot}
-        />
         <CardDeckStyle>
             {
                 Slots.map((slotPos) =>
@@ -100,31 +82,9 @@ export function CardDeck({
                                   handleOnClick={handleRemoveCard}
                     />)
             }
+
         </CardDeckStyle>
 
 
-        <b>Share configured deck</b>
-        <div style={{display: "flex"}}>
-            <FacebookShareButton
-                url={url}
-                className="Demo__some-network__share-button">
-                <FacebookIcon
-                    size={32}
-                    round/>
-            </FacebookShareButton>
-
-            <CopyToClipboard
-                text={url}
-                onCopy={() => {
-                    toast("Link copied to clipboard");
-                }}
-                title="Copy link"
-            >
-                <button>
-                    <FontAwesomeIcon icon={faLink}/>
-                </button>
-            </CopyToClipboard>
-        </div>
-
-    </div>;
+    </div>
 }
