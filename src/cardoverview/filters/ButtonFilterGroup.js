@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 
 const ButtonGroupStyle = styled.div`                  
-      & > button {
+      & > * {
         
           border: 1px solid #000000;          
           color: white;           
@@ -10,17 +10,17 @@ const ButtonGroupStyle = styled.div`
           float: left; 
         }
         
-        & > button:first-child {           
+        & > *:first-child {           
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
         }
         
-        & > button:last-child {           
+        & > *:last-child {           
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
         
-        & > button:not(:last-child) {
+        & > *:not(:last-child) {
           border-right: none; 
         }
         

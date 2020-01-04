@@ -4,6 +4,6 @@ import {faPlusSquare} from "@fortawesome/free-solid-svg-icons/faPlusSquare";
 import React from "react";
 
 export default function PlusIcon() {
-  return <FontAwesomeIcon icon={faPlusSquare}/>;
+    return <FontAwesomeIcon icon={faPlusSquare}/>;
 }
 

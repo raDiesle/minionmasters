@@ -10,30 +10,38 @@ const CardsStyle = styled.div`
     justify-content: flex-start;
 `;
 
-export default function Cards({cards, setSelectedCardEvent, zoom}) {
+const CardNameStyle = styled.div`
+  font-size: 11px;
+  text-align: center;
+`;
+
+export default function Cards({cards, setSelectedCardEvent, zoom, isShowNames, showDeck}) {
     let sortOrder = "asc";
 
     return (
         <div>
-
             <CardsStyle>
                 {
                     orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
                         .map(card =>
-                            <Card
-                                key={card.pageId}
-                                card={card}
-                                onClick={() => {
-                                    setSelectedCardEvent({
-                                        eventId: Math.random(),
-                                        card: {
-                                            pageId: card.pageId
-                                        }
-                                    });
-                                    toast("Card added to Deck");
-                                }}
-                                zoom={zoom}
-                            />
+                            <div key={card.pageId}>
+
+                                <Card
+                                    card={card}
+                                    onClick={() => {
+                                        setSelectedCardEvent({
+                                            eventId: Math.random(),
+                                            card: {
+                                                pageId: card.pageId
+                                            }
+                                        });
+                                        toast("Card added to Deck");
+                                    }}
+                                    zoom={zoom}
+                                    showDeck={showDeck}
+                                />
+                                <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
+                            </div>
                         )
                 }
 
