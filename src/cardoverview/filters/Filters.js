@@ -19,6 +19,7 @@ import {MANACOST} from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
 import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
+import {targetsMapping} from "../../attack/targetsMapping";
 
 const InputTextStyle = styled.input`
   color: #444;
@@ -109,12 +110,25 @@ export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNam
                 {
                     Object.keys(typeMapping).map(type =>
                         <div key={type}>
-                            <FontAwesomeIcon icon={typeMapping[type]} size={"xs"}/>
-                        </div>)
+                            <FontAwesomeIcon icon={typeMapping[type]} size="xs"/>
+                        </div>
+                    )
                 }
             </ButtonFilterGroup>
         </div>
 
+        <div>
+            Attack
+            <ButtonFilterGroup btnkey="targets" filters={filters.targets} setFilters={setFilters}>
+                {
+                    Object.keys(targetsMapping).map(target =>
+                        <div key={target}>
+                            {targetsMapping[target]}
+                        </div>
+                    )
+                }
+            </ButtonFilterGroup>
+        </div>
         <div>
             Size
             <ButtonGroupStyle>

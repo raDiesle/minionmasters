@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import React from "react";
-import {attackTypeMapping} from "../attack/attackTypeMapping";
+import {targetsMapping} from "../attack/targetsMapping";
 
-export function AttackTypeOverlay({targets}) {
+export function TargetsOverlay({targets}) {
 
     const AttackTypeStyle = styled.div`
     position: absolute;
@@ -24,10 +24,10 @@ export function AttackTypeOverlay({targets}) {
     border-bottom: 30px solid rgba(0,0,0, 0.5);
 `;
 
-    if (!attackTypeMapping[targets]) {
+    if (!targetsMapping[targets]) {
         return <></>;
     } else {
-        return <><BottomRightCornerStyle/> <AttackTypeStyle>{attackTypeMapping[targets]}</AttackTypeStyle></>;
+        return <><BottomRightCornerStyle/> <AttackTypeStyle>{targetsMapping[targets]}</AttackTypeStyle></>;
     }
 
 }
