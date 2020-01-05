@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a9ecab0dddb7f2b05aa2865dea36685",
+    "revision": "ac85de045c36d212e9b535123f63b134",
     "url": "/minionmasters/index.html"
   },
   {
-    "revision": "41422965a691b0743dcc",
+    "revision": "494a5d38c6347eeedfe6",
     "url": "/minionmasters/static/css/2.ad91305a.chunk.css"
   },
   {
-    "revision": "92227e3d362bea07c552",
+    "revision": "c5204d8a7d3613c65287",
     "url": "/minionmasters/static/css/main.d498bfb3.chunk.css"
   },
   {
-    "revision": "41422965a691b0743dcc",
-    "url": "/minionmasters/static/js/2.f6f88bee.chunk.js"
+    "revision": "494a5d38c6347eeedfe6",
+    "url": "/minionmasters/static/js/2.260b60f2.chunk.js"
   },
   {
     "revision": "692575e60ca5abcd0a19a7e54f916aba",
-    "url": "/minionmasters/static/js/2.f6f88bee.chunk.js.LICENSE"
+    "url": "/minionmasters/static/js/2.260b60f2.chunk.js.LICENSE"
   },
   {
-    "revision": "92227e3d362bea07c552",
-    "url": "/minionmasters/static/js/main.201d81ff.chunk.js"
+    "revision": "c5204d8a7d3613c65287",
+    "url": "/minionmasters/static/js/main.9cfd9f37.chunk.js"
   },
   {
     "revision": "d5d6d85cbc6f414e06a9",
