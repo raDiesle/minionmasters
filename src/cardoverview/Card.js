@@ -12,7 +12,7 @@ import {faHatWizard} from "@fortawesome/free-solid-svg-icons/faHatWizard";
 import CrystalElfIcon from "../faction/CrystalElfIcon";
 import AccursedIcon from "../faction/AccursedIcon";
 import {rarityMapping} from "../rarity/rarityMapping";
-import {AttackTypeOverlay} from "./AttackTypeOverlay";
+import {TargetsOverlay} from "./TargetsOverlay";
 import {typeMapping} from "../cardtype/typeMapping";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
@@ -164,7 +164,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                 <BottomLeftCornerStyle/>
                 <FactionStyle>{factionMapping[faction]}</FactionStyle>
 
-                <AttackTypeOverlay targets={targets}/>
+                <TargetsOverlay targets={targets}/>
 
                 {showDeck &&
                 <AddCardToDeckOverlay onClick={onClick}>
