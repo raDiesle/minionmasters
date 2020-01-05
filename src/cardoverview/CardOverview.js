@@ -78,6 +78,7 @@ export function CardOverview() {
                            setShowDeck={setShowDeck}
         />
 
+
         <Filters setFilters={setFiltersMemoized} filters={filters} setZoom={setZoom} isShowNames={isShowNames}
                  setIsShowNames={setIsShowNames}/>
         <Cards cards={filteredCardsDataWithTargets}

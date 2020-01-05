@@ -23,6 +23,13 @@ const InputTextStyle = styled.input`
   height: 24px;
 `;
 
+const MissingCardStyle = styled.span`
+  font-weight: bold;
+`;
+
+const MissingCardMessage = (({nameExtracted}) => <><MissingCardStyle>{nameExtracted}</MissingCardStyle> is missing in
+    gamepedia wiki and will be skipped</>);
+
 
 export default function CarddeckPlaceholder({setShowDeck, setLastSelectedCards}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
@@ -36,7 +43,17 @@ export default function CarddeckPlaceholder({setShowDeck, setLastSelectedCards})
             const heroName = value.substring(0, endOfHeroNamePos);
             const cardNamesValue = value.substring(endOfHeroNamePos + 2);
             const cardNames = cardNamesValue.split(", ");
-            const cards = cardNames.map((nameExtracted) => cardData.find(({name}) => name === nameExtracted));
+            const cards = cardNames.map((nameExtracted) => {
+                const matchedCardData = cardData.find(({name}) => name === nameExtracted);
+                if (matchedCardData === undefined) {
+                    toast(<MissingCardMessage nameExtracted={nameExtracted}/>);
+                    return {
+                        pageId: 0
+                    };
+                } else {
+                    return matchedCardData;
+                }
+            });
             const cardsOnDeckSlots = cards.map(card => {
                 return {eventId: 0, card}
             });
@@ -47,7 +64,7 @@ export default function CarddeckPlaceholder({setShowDeck, setLastSelectedCards})
             setShowDeck(true);
             setLastSelectedCards(cardsOnDeckSlots);
         } catch (e) {
-            toast("Could not copy paste from game.    Please read the info.")
+            toast("Could not copy paste from game.    Please read the info.");
         }
     };
 

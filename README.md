@@ -1,3 +1,15 @@
+
+
+
+# getting started
+npm install
+npm run generate
+npm start
+npm run deploy
+
+# old tool from another guy:
+ https://steamcommunity.com/app/489520/discussions/0/1474222595297615799/?ctp=2
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -12,7 +12,7 @@ export default function CardDeckContainer({
                                               setShowDeck
                                           }) {
 
-    let Slots = [...Array(11).keys()];
+    let Slots = [...Array(10).keys()];
     const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
         return {
             eventId: 0,
