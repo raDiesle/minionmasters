@@ -143,6 +143,7 @@ const AddToDeckIconStyle = styled(OverlayActionBackground)`
 
 export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
     const [isOpenDetails, setIsOpenDetails] = useState(false);
+    debugger;
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
 
     return <>
