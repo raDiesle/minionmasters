@@ -22,7 +22,7 @@ const SKIP_SPECIAL_PAGES = [1951, 1952];
 const SKIP_REMOVED_UNMAINTAINED_CARDS = [722, 1854, 1856];
 
 function mapDataFromOneResponse(nextPageData) {
-    let mappedWithinResponse = [];
+     let mappedCardDataOfFullResponse = [];
     Object.keys(nextPageData.query.pages).forEach(pageId => {
         if (SKIP_SPECIAL_PAGES.includes(parseInt(pageId)) || SKIP_REMOVED_UNMAINTAINED_CARDS.includes(parseInt(pageId))) {
             return;
@@ -38,11 +38,30 @@ function mapDataFromOneResponse(nextPageData) {
             return map;
         }, {});
         propsAsMap.pageId = pageId;
+        const PROPS_PARSE_TO_INT = ["pageId", "health", "attackspeed", "attackdelay", "duration", "range", "speed", "damage", "manacost", "radius", "count"];
+        PROPS_PARSE_TO_INT.forEach(prop => {
+            let currentPropValue = propsAsMap[prop];
+            if (typeof currentPropValue !== 'undefined') {
+                let isToConvertMeleeToNumeric = prop === "range" && currentPropValue === "Melee";
+                if (isToConvertMeleeToNumeric) {
+                    propsAsMap[prop] = 0;
+                    return;
+                }
+                if (isNaN(currentPropValue)) {
+                    console.error(`cannot parse:${currentPropValue} of ${propsAsMap.pageId}`);
+                } else {
+                    propsAsMap[prop] = parseInt(currentPropValue);
+                }
+
+            }
+        });
+
         const mappedCardData = [propsAsMap];
+
         console.log(pageId);
-        mappedWithinResponse = [...mappedWithinResponse, ...mappedCardData];
+        mappedCardDataOfFullResponse = [...mappedCardDataOfFullResponse, ...mappedCardData];
     });
-    return mappedWithinResponse;
+    return mappedCardDataOfFullResponse;
 }
 
 
@@ -63,5 +82,7 @@ function mapDataFromOneResponse(nextPageData) {
         fs.writeFileSync("src/generated/jobCardProps.json", JSON.stringify(overallCardData, null, 4));
     };
 
-    fetchAll();
+    await fetchAll();
+
+    console.log("Fetch from jobCardPropsGenerator was successful");
 })();

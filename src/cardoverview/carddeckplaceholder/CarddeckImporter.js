@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
 import React, {useState} from "react";
 import styled from "styled-components";
@@ -9,6 +10,7 @@ import CopyFromGameInfoModal from "./CopyFromGameInfoModal";
 
 const CardeckPlaceholderStyle = styled.div`
   display: flex;
+  flex-wrap: wrap;
   & > * {
     padding-right: 10px;
   }
@@ -18,7 +20,6 @@ const InputTextStyle = styled.input`
   color: #444;
   background-color: #fff;
   border: 1px solid #444;
-  font-weight: bold;
   width: 170px;
   height: 24px;
 `;
@@ -31,7 +32,7 @@ const MissingCardMessage = (({nameExtracted}) => <><MissingCardStyle>{nameExtrac
     gamepedia wiki and will be skipped</>);
 
 
-export default function CarddeckPlaceholder({setShowDeck, setLastSelectedCards}) {
+export default function CarddeckImporter({setLastSelectedCards}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
 // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
@@ -57,39 +58,35 @@ export default function CarddeckPlaceholder({setShowDeck, setLastSelectedCards})
             const cardsOnDeckSlots = cards.map(card => {
                 return {eventId: 0, card}
             });
-            debugger;
+
             if (endOfHeroNamePos === -1 || cards.length === 0 || cardNames[0] === "" || cardsOnDeckSlots.length === 0) {
-                throw ("could not parse from game");
+                throw new Error("could not parse from game");
             }
-            setShowDeck(true);
             setLastSelectedCards(cardsOnDeckSlots);
         } catch (e) {
             toast("Could not copy paste from game.    Please read the info.");
         }
     };
 
-    return (<CardeckPlaceholderStyle>
-        <ButtonGroupStyle>
-            <ButtonInGroupStyle onClick={() => setShowDeck(true)}>
-                Add Deck and share it
-            </ButtonInGroupStyle>
-        </ButtonGroupStyle>
-        <ButtonGroupStyle>
-            <ButtonInGroupStyle>
-                <InputTextStyle value="" placeholder="Copy from game" onInput={handleCopyPasteFromGame}
-                                onChange={(event) => {
-                                }}/>
-            </ButtonInGroupStyle>
-            <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
-                <FontAwesomeIcon icon={faInfoCircle}/>
-            </ButtonInGroupStyle>
-        </ButtonGroupStyle>
-        <hr style={{
-            color: '#000000',
-            backgroundColor: '#000000',
-            height: .5,
-            borderColor: '#000000'
-        }}/>
-        <CopyFromGameInfoModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
-    </CardeckPlaceholderStyle>);
+    return (<div>
+            <CardeckPlaceholderStyle>
+                <div>
+                    <div>Import from Game</div>
+                    <ButtonGroupStyle>
+                        <ButtonInGroupStyle>
+                            <InputTextStyle value=""
+                                            placeholder="Copy from game"
+                                            onInput={handleCopyPasteFromGame}
+                                            onChange={() => {
+                                            }}/>
+                        </ButtonInGroupStyle>
+                        <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
+                            <FontAwesomeIcon icon={faInfoCircle}/>
+                        </ButtonInGroupStyle>
+                    </ButtonGroupStyle>
+                </div>
+                <CopyFromGameInfoModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
+            </CardeckPlaceholderStyle>
+        </div>
+    );
 }

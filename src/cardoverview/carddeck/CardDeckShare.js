@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {FacebookIcon, FacebookShareButton} from "react-share";
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import {toast} from "react-toastify";
@@ -6,12 +6,20 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import styled from "styled-components";
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 
-const CardShareWithGameStyle = styled.img`
-  height: 20px;
+import ImportInGameInfoModal from "./ImportInGameInfoModal";
+
+const ExportStyle = styled.div`
+  display: flex;
+  & > * {
+    margin-right: 20px;
+  }
 `;
 
 export default function CardDeckShare({lastSelectedCards}) {
+    const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
+
     const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({card: {pageId}}) => pageId);
     const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
     let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?pageId=${pageIdsToParam}`;
@@ -21,40 +29,45 @@ export default function CardDeckShare({lastSelectedCards}) {
 
     return (
         <div>
-            <b>Share configured deck</b>
-            <ButtonGroupStyle>
-                <ButtonInGroupStyle>
-                    <FacebookShareButton url={url}>
-                        <FacebookIcon size={24} round/>
-                    </FacebookShareButton>
-                </ButtonInGroupStyle>
-                <ButtonInGroupStyle>
-                    <CopyToClipboard
-                        text={url}
-                        onCopy={() => {
-                            toast("Link copied to clipboard");
-                        }}
-                        title="Copy link"
-                    >
-                        <FontAwesomeIcon icon={faLink} size="xs"/>
-                    </CopyToClipboard>
-                </ButtonInGroupStyle>
+            <div>Share configured deck</div>
+            <ExportStyle>
+                <ButtonGroupStyle>
+                    <ButtonInGroupStyle>
+                        <FacebookShareButton url={url}>
+                            <FacebookIcon size={24} round/>
+                        </FacebookShareButton>
+                    </ButtonInGroupStyle>
+                    <ButtonInGroupStyle>
+                        <CopyToClipboard
+                            text={url}
+                            onCopy={() => {
+                                toast("Link copied to clipboard");
+                            }}
+                            title="Copy link"
+                        >
+                            <FontAwesomeIcon icon={faLink} size="xs"/>
+                        </CopyToClipboard>
+                    </ButtonInGroupStyle>
+                </ButtonGroupStyle>
+                <ButtonGroupStyle>
+                    <ButtonInGroupStyle>
+                        <CopyToClipboard
+                            text={cardShareWithGame}
+                            onCopy={() => {
+                                toast("Deck copied to clipboard. STRG+V in Minionmasters chat");
+                            }}
+                            title="Export for game"
+                        >
+                            <div>Export to game</div>
+                        </CopyToClipboard>
+                    </ButtonInGroupStyle>
+                    <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
+                        <FontAwesomeIcon icon={faInfoCircle}/>
+                    </ButtonInGroupStyle>
+                </ButtonGroupStyle>
 
-                <ButtonInGroupStyle>
-                    <CopyToClipboard
-                        text={cardShareWithGame}
-                        onCopy={() => {
-                            toast("Deck copied to clipboard. Write '/sd STRG+V' in Minionmasters chat");
-                        }}
-                        title="Export for game"
-                    >
-                        <CardShareWithGameStyle
-                            src="https://gamepedia.cursecdn.com/minionmasters_gamepedia_en/thumb/d/dc/MinionMasters_Logo.png/300px-MinionMasters_Logo.png?version=60c9a126af63c994ad0f5a733491a34d"
-                            alt="minionmasters game"
-                        />
-                    </CopyToClipboard>
-                </ButtonInGroupStyle>
-            </ButtonGroupStyle>
+            </ExportStyle>
+            <ImportInGameInfoModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
         </div>
     );
 }
