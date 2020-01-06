@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {useEffect} from "react";
 import qs from "qs";
 import allCardsData from "../../generated/jobCardProps";
+import {toast} from "react-toastify";
 
-export function CardDeckPrefillFromUrl({setLastSelectedCards, setCurrentSelectedSlot}) {
+export function CardDeckPrefillFromUrl({setLastSelectedCards}) {
 
     useEffect(() => {
-
 
         let selectedPageIdsFromUrl = qs.parse(window.location.search, {ignoreQueryPrefix: true}).pageId;
         if (selectedPageIdsFromUrl && !Array.isArray(selectedPageIdsFromUrl)) {
@@ -21,14 +22,16 @@ export function CardDeckPrefillFromUrl({setLastSelectedCards, setCurrentSelected
         }).map(card => {
             return {eventId: 0, card}
         });
-        debugger;
+
         setLastSelectedCards((initialSelectedCards) => {
             const normalized = initialSelectedCards.map((card, index) => prefillSelectedCardsWithData[index] || card);
             // TODO const nextFreeSlot = normalized.findIndex(({pageId}) => pageId === 0);
             // TODO setCurrentSelectedSlot(nextFreeSlot);
             return normalized;
         });
-    }, []);
+
+        toast("Deck was loaded from link.");
+    }, []); // eslint-disable-line  react-hooks/exhaustive-deps
 
     return null;
 

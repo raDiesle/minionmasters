@@ -1,16 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import VoidborneIcon from "../faction/VoidborneIcon";
-import ScratIcon from "../faction/ScratIcon";
-import {faGavel} from "@fortawesome/free-solid-svg-icons/faGavel";
-import {faYinYang} from "@fortawesome/free-solid-svg-icons/faYinYang";
-import OutlanderIcon from "../faction/OutladerIcon";
-import SlitherIcon from "../faction/SlitherIcon";
-import EmpyrianIcon from "../faction/EmpyrianIcon";
-import {faHatWizard} from "@fortawesome/free-solid-svg-icons/faHatWizard";
-import CrystalElfIcon from "../faction/CrystalElfIcon";
-import AccursedIcon from "../faction/AccursedIcon";
+
 import {rarityMapping} from "../rarity/rarityMapping";
 import {TargetsOverlay} from "./TargetsOverlay";
 import {typeMapping} from "../cardtype/typeMapping";
@@ -18,6 +9,8 @@ import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import {faMinusCircle} from "@fortawesome/free-solid-svg-icons/faMinusCircle";
 import CardDetailsModal from "./CardDetailsModal";
+
+import {factionMapping} from "../faction/Factions";
 
 
 const CardContainerStyle = styled.div`
@@ -76,18 +69,6 @@ const TopLeftCornerStyle = styled.div`
     border-top: 30px solid rgba(0,0,0, 0.5);
 `;
 
-const factionMapping = {
-    Voidborne: <VoidborneIcon/>,
-    Accursed: <AccursedIcon/>,
-    Scrat: <ScratIcon/>,
-    "Crystal Elf": <CrystalElfIcon/>,
-    "Puff": <FontAwesomeIcon icon={faHatWizard} size={"xs"}/>,
-    "Zen-Chi": <FontAwesomeIcon icon={faYinYang} size={"xs"}/>,
-    "Slither": <SlitherIcon/>,
-    "Outlander": <OutlanderIcon/>,
-    "Empyrean": <EmpyrianIcon/>,
-    "Stoutheart": <FontAwesomeIcon icon={faGavel} size={"xs"}/>
-};
 const FactionStyle = styled.div`
     position: absolute;
     bottom: -4px;
@@ -143,7 +124,6 @@ const AddToDeckIconStyle = styled(OverlayActionBackground)`
 
 export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
     const [isOpenDetails, setIsOpenDetails] = useState(false);
-    debugger;
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
 
     return <>
@@ -167,13 +147,11 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
                 <TargetsOverlay targets={targets}/>
 
-                {showDeck &&
                 <AddCardToDeckOverlay onClick={onClick}>
                     <InfoDetailsIconStyle>
                         <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"}/>
                     </InfoDetailsIconStyle>
                 </AddCardToDeckOverlay>
-                }
 
                 <InfoDetailsOverlay onClick={(event) => {
                     setIsOpenDetails(true);

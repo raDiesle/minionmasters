@@ -1,12 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components"
-import AccursedIcon from "../../faction/AccursedIcon";
-import CrystalElfIcon from "../../faction/CrystalElfIcon";
-import EmpyrianIcon from "../../faction/EmpyrianIcon";
-import OutlanderIcon from "../../faction/OutladerIcon";
-import ScratIcon from "../../faction/ScratIcon";
-import SlitherIcon from "../../faction/SlitherIcon";
-import VoidBorneIcon from "../../faction/VoidborneIcon";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import {rarityMapping} from "../../rarity/rarityMapping";
@@ -20,6 +13,8 @@ import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
 import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
 import {targetsMapping} from "../../attack/targetsMapping";
+
+import {factionMapping} from "../../faction/Factions";
 
 const InputTextStyle = styled.input`
   color: #444;
@@ -67,6 +62,10 @@ const FilterContainerStyle = styled.div`
 
 export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNames}) {
 
+    useEffect(() => {
+        setIsShowNames(!!filters.name);
+    }, [filters.name, setIsShowNames]);
+
     return <FilterContainerStyle>
         <div>
             <div>Name</div>
@@ -75,13 +74,7 @@ export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNam
         <div>
             Faction
             <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
-                <AccursedIcon/>
-                <CrystalElfIcon/>
-                <EmpyrianIcon/>
-                <OutlanderIcon/>
-                <ScratIcon/>
-                <SlitherIcon/>
-                <VoidBorneIcon/>
+                {Object.values(factionMapping).map((icon) => icon)}
             </ButtonFilterGroup>
         </div>
 

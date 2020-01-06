@@ -3,12 +3,11 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 
 import {Filters} from "./filters/Filters";
 import cardData from "../generated/jobCardProps";
-import {FACTIONS} from "../faction/Factions";
+import {factionMapping} from "../faction/Factions";
 import {rarityMapping} from "../rarity/rarityMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 import {MANACOST} from "../manacost/manacost";
 import CardDeckContainer from "./carddeck/CardDeckContainer";
-import qs from "qs";
 import {targetsMapping} from "../attack/targetsMapping";
 
 
@@ -34,14 +33,13 @@ function setAllFilterStates(isActive) {
     };
     return {
         name: "",
-        faction: FACTIONS.map(setFilterState),
+        faction: Object.keys(factionMapping).map(setFilterState),
         manacost: MANACOST.map(setFilterState),
         rarity: Object.keys(rarityMapping).map(setFilterState),
         type: Object.keys(typeMapping).map(setFilterState),
         targets: Object.keys(targetsMapping).map(setFilterState)
     };
 }
-
 
 export function CardOverview() {
     const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
@@ -52,9 +50,6 @@ export function CardOverview() {
     });
 
 
-    let hasPrefillByUrl = qs.parse(window.location.search, {ignoreQueryPrefix: true}).pageId;
-
-    const [showDeck, setShowDeck] = useState(hasPrefillByUrl ? true : false);
     const [zoom, setZoom] = useState(5);
     const [isShowNames, setIsShowNames] = useState(false);
 
@@ -74,8 +69,6 @@ export function CardOverview() {
         <CardDeckContainer allCardsData={cardData}
                            selectedCardEvent={selectedCardEvent}
                            setSelectedCardEvent={setSelectedCardEvent}
-                           showDeck={showDeck}
-                           setShowDeck={setShowDeck}
         />
 
 
@@ -85,8 +78,10 @@ export function CardOverview() {
                setSelectedCardEvent={setSelectedCardEvent}
                zoom={zoom}
                isShowNames={isShowNames}
-               showDeck={showDeck}
+
         />
+
+        Count: {filteredCardsDataWithTargets.length}
 
     </div>;
 }

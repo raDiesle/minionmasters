@@ -1,10 +1,9 @@
-import AirIcon from "./AirIcon";
 import GroundIcon from "./GroudIcon";
-import GroundAndAirIcon from "./GroundAndAirIcon";
 import React from "react";
+import GroundAirTargetIcon from "./GroundAirTargetIcon";
 
 export const targetsMapping = {
     "Ground": <GroundIcon/>,
-    "Ground & Air": <GroundAndAirIcon/>,
-    "Air": <AirIcon/>
+    "Ground & Air": <GroundAirTargetIcon/>,
+    // "Air":  <GroundAndAirIcon/> switched icons
 };

@@ -6,6 +6,15 @@ import allCardsData from "../../generated/jobCardProps";
 const CardDeckStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+    
+    & > * {
+      margin-right: 2px;
+    }
 `;
 
 const usePreviousValue = value => {
@@ -32,10 +41,10 @@ export function CardDeck({
 
     let Slots = [...Array(10).keys()];
 
-    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.pageId == 0);
+    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.pageId === 0);
     const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(findFirstNextFreeSlot);
 
-    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.pageId === selectedCardId : selectedCardId == 0;
+    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.pageId === selectedCardId : selectedCardId === 0;
     const [prevSelectedEventId, setPrevSelectedCardEvent] = useState(0);
 
     useEffect(() => {
@@ -47,11 +56,11 @@ export function CardDeck({
                 card: cardToAddData
             };
             setLastSelectedCards(newLastSelectedCards);
-            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {pageId}}) => pageId == 0);
+            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {pageId}}) => pageId === 0);
             setCurrentSelectedSlot(nextFreeSlot);
             setPrevSelectedCardEvent(cardSelectedEventId);
         }
-    });
+    }, [cardSelectedEventId, prevSelectedEventId, isCardAlreadyOnSelectedSlot, lastSelectedCards, prevSelectedSlot, currentSelectedSlot, setLastSelectedCards, setCurrentSelectedSlot, selectedCardId]);
 
 
     const handleRemoveCard = (slotPos) => setLastSelectedCards((prevSelectedCards) => {
@@ -67,7 +76,7 @@ export function CardDeck({
                 card: {pageId: 0}
             }
         );
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {pageId}}) => pageId == 0);
+        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {pageId}}) => pageId === 0);
         setCurrentSelectedSlot(nextFreeSlot);
         return selectedCardsWithRemovedCard;
     });
