@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import cardData from "../../generated/jobCardProps";
 import {toast} from "react-toastify";
-import CopyFromGameInfoModal from "./CopyFromGameInfoModal";
+import ImportFromGameModal from "./ImportFromGameModal";
 
 const CardeckPlaceholderStyle = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ const MissingCardMessage = (({nameExtracted}) => <><MissingCardStyle>{nameExtrac
     gamepedia wiki and will be skipped</>);
 
 
-export default function CarddeckImporter({setLastSelectedCards}) {
+export default function ImportFromGame({setLastSelectedCards}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
 // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
@@ -75,7 +75,7 @@ export default function CarddeckImporter({setLastSelectedCards}) {
                     <ButtonGroupStyle>
                         <ButtonInGroupStyle>
                             <InputTextStyle value=""
-                                            placeholder="Copy from game"
+                                            placeholder="Paste here"
                                             onInput={handleCopyPasteFromGame}
                                             onChange={() => {
                                             }}/>
@@ -85,7 +85,7 @@ export default function CarddeckImporter({setLastSelectedCards}) {
                         </ButtonInGroupStyle>
                     </ButtonGroupStyle>
                 </div>
-                <CopyFromGameInfoModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
+                <ImportFromGameModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
             </CardeckPlaceholderStyle>
         </div>
     );

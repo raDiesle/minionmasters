@@ -8,7 +8,7 @@ import styled from "styled-components";
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 
-import ImportInGameInfoModal from "./ImportInGameInfoModal";
+import ExportToGameModal from "./ExportToGameModal";
 
 const ExportStyle = styled.div`
   display: flex;
@@ -17,15 +17,18 @@ const ExportStyle = styled.div`
   }
 `;
 
-export default function CardDeckShare({lastSelectedCards}) {
+export default function ExportActions({lastSelectedCards}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
+// Export to URL
     const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({card: {pageId}}) => pageId);
     const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
     let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?pageId=${pageIdsToParam}`;
 
-    let defaultHero = "Stormbringer: ";
-    const cardShareWithGame = defaultHero + lastSelectedCards.map(({card: {name}}) => name).join(", ");
+// Export to game
+    const mmImportCommand = "/setdeck ";
+    const defaultHero = "Stormbringer: ";
+    const cardShareWithGame = mmImportCommand + defaultHero + lastSelectedCards.map(({card: {name}}) => name).join(", ");
 
     return (
         <div>
@@ -67,7 +70,7 @@ export default function CardDeckShare({lastSelectedCards}) {
                 </ButtonGroupStyle>
 
             </ExportStyle>
-            <ImportInGameInfoModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
+            <ExportToGameModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
         </div>
     );
 }

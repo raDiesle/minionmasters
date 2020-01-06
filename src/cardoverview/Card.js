@@ -17,15 +17,22 @@ const CardContainerStyle = styled.div`
     width: ${({zoom}) => zoom * 20}px;
     margin-right: 1px;
     margin-top: 2px;
+    
+    &:hover {
+    
+    
     border-color: black;
     border-width: 1px;
-    opacity: ${({focused}) => focused ? 0.4 : 1.0};
-    border-style: ${({focused}) => focused ? "dotted" : "solid"};
+     opacity: ${({focused}) => focused ? 0.4 : 1.0};
+     border-style: ${({focused}) => focused ? "dotted" : "solid"};
+    }         
+    
 `;
 
 const CardContentStyle = styled.div`
     position: relative;
     &:hover {
+    
     }
 `;
 
