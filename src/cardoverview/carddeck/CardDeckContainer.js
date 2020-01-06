@@ -1,8 +1,8 @@
-import CarddeckImporter from "../carddeckplaceholder/CarddeckImporter";
-import {CardDeckPrefillFromUrl} from "./CardDeckPrefillFromUrl";
+import ImportFromGame from "../carddeckimport/ImportFromGame";
+import {ImportFromUrl} from "./ImportFromUrl";
 import React, {useState} from "react";
 import {CardDeck} from "./CardDeck";
-import CardDeckShare from "./CardDeckShare";
+import ExportActions from "./ExportActions";
 import styled from "styled-components";
 
 
@@ -37,16 +37,16 @@ export default function CardDeckContainer({
         return (
             <div>
                 <DeckOptionsStyle>
-                    <CarddeckImporter setShowDeck={setShowDeck} setSelectedCardEvent={setSelectedCardEvent}
-                                      setLastSelectedCards={setLastSelectedCards}/>
-                    <CardDeckShare lastSelectedCards={lastSelectedCards}/>
+                    <ImportFromGame setShowDeck={setShowDeck} setSelectedCardEvent={setSelectedCardEvent}
+                                    setLastSelectedCards={setLastSelectedCards}/>
+                    <ExportActions lastSelectedCards={lastSelectedCards}/>
                 </DeckOptionsStyle>
                 <CardDeck selectedCardEvent={selectedCardEvent}
                           setSelectedCardEvent={setSelectedCardEvent}
                           setLastSelectedCards={setLastSelectedCards}
                           lastSelectedCards={lastSelectedCards}
                 />
-                <CardDeckPrefillFromUrl setLastSelectedCards={setLastSelectedCards}
+                <ImportFromUrl setLastSelectedCards={setLastSelectedCards}
                 />
 
 

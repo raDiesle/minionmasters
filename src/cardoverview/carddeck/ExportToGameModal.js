@@ -1,7 +1,7 @@
 import ReactModal from "react-modal";
 import React from "react";
 
-export default function ImportInGameInfoModal({isOpenCopyInfo, setIsOpenCopyInfo}) {
+export default function ExportToGameModal({isOpenCopyInfo, setIsOpenCopyInfo}) {
     return <ReactModal
         isOpen={
             isOpenCopyInfo

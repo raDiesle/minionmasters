@@ -4,7 +4,7 @@ import qs from "qs";
 import allCardsData from "../../generated/jobCardProps";
 import {toast} from "react-toastify";
 
-export function CardDeckPrefillFromUrl({setLastSelectedCards}) {
+export function ImportFromUrl({setLastSelectedCards}) {
 
     useEffect(() => {
 
