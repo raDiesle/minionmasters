@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {CardDeckSlot} from "./CardDeckSlot";
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
+import MasterDeckSlot from "./MasterDeckSlot";
 
 const CardDeckStyle = styled.div`
     display: flex;
@@ -82,6 +83,7 @@ export function CardDeck({
     });
     return <div>
         <CardDeckStyle>
+            <MasterDeckSlot/>
             {
                 Slots.map((slotPos) =>
                     <CardDeckSlot key={slotPos}

@@ -9,6 +9,8 @@ import {typeMapping} from "../cardtype/typeMapping";
 import {MANACOST} from "../manacost/manacost";
 import CardDeckContainer from "./carddeck/CardDeckContainer";
 import {targetsMapping} from "../attack/targetsMapping";
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import MastersOverview from "./mastersoverview/MastersOverview";
 
 
 const usePreviousValue = value => {
@@ -41,7 +43,7 @@ function setAllFilterStates(isActive) {
     };
 }
 
-export function CardOverview() {
+export function Page() {
     const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
         eventId: 0,
         card: {
@@ -71,17 +73,27 @@ export function CardOverview() {
                            setSelectedCardEvent={setSelectedCardEvent}
         />
 
+        <Tabs>
+            <TabList>
+                <Tab>Cards</Tab>
+                <Tab>Masters</Tab>
+            </TabList>
+            <TabPanel>
+                <Filters setFilters={setFiltersMemoized} filters={filters} setZoom={setZoom} isShowNames={isShowNames}
+                         setIsShowNames={setIsShowNames}/>
 
-        <Filters setFilters={setFiltersMemoized} filters={filters} setZoom={setZoom} isShowNames={isShowNames}
-                 setIsShowNames={setIsShowNames}/>
-        <Cards cards={filteredCardsDataWithTargets}
-               setSelectedCardEvent={setSelectedCardEvent}
-               zoom={zoom}
-               isShowNames={isShowNames}
+                <Cards cards={filteredCardsDataWithTargets}
+                       setSelectedCardEvent={setSelectedCardEvent}
+                       zoom={zoom}
+                       isShowNames={isShowNames}
 
-        />
-
-        Count: {filteredCardsDataWithTargets.length}
+                />
+                Count: {filteredCardsDataWithTargets.length}
+            </TabPanel>
+            <TabPanel>
+                <MastersOverview/>
+            </TabPanel>
+        </Tabs>
 
     </div>;
 }

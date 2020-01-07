@@ -1,12 +1,6 @@
 const fetch = require("node-fetch");
 const fs = require('fs');
 
-async function asyncForEach(array, callback) {
-    for (let index = 0; index < array.length; index++) {
-        await callback(array[index], index, array);
-    }
-}
-
 // alternatively: https://minionmasters.gamepedia.com/api.php?action=query&generator=categorymembers&gcmtitle=Category:Cards&prop=revisions&rvprop=content&rvslots=main
 async function fetchPageContent(gcmcontinue = "") {
     let categoryCardsUrl = `https://minionmasters.gamepedia.com/api.php?action=query&generator=categorymembers&gcmtitle=Category:Cards&prop=revisions&rvprop=content&rvslots=main&format=json`;
@@ -21,8 +15,10 @@ async function fetchPageContent(gcmcontinue = "") {
 const SKIP_SPECIAL_PAGES = [1951, 1952];
 const SKIP_REMOVED_UNMAINTAINED_CARDS = [722, 1854, 1856];
 
+const errorList = [];
+
 function mapDataFromOneResponse(nextPageData) {
-     let mappedCardDataOfFullResponse = [];
+    let mappedCardDataOfFullResponse = [];
     Object.keys(nextPageData.query.pages).forEach(pageId => {
         if (SKIP_SPECIAL_PAGES.includes(parseInt(pageId)) || SKIP_REMOVED_UNMAINTAINED_CARDS.includes(parseInt(pageId))) {
             return;
@@ -37,7 +33,34 @@ function mapDataFromOneResponse(nextPageData) {
             map[key] = value;
             return map;
         }, {});
-        propsAsMap.pageId = pageId;
+
+        propsAsMap.pageId = parseInt(pageId);
+
+
+        const bugsPageIdToRangeMapperWikiBugsConfig = {
+            686: 100,
+            741: "Melee",
+            781: 100,
+            1702: "Melee",
+            1280: "Melee",
+            1704: "Melee"
+        };
+        const bugsPageIdToCountMapperWikiBugsConfig = {
+            1877: 2,
+            1688: 2,
+            1706: 5,
+            1689: 2,
+            1925: 2
+        };
+
+        if (Object.keys(bugsPageIdToRangeMapperWikiBugsConfig).includes("" + propsAsMap.pageId)) {
+            propsAsMap.range = bugsPageIdToRangeMapperWikiBugsConfig[propsAsMap.pageId];
+        }
+        if (Object.keys(bugsPageIdToCountMapperWikiBugsConfig).includes("" + propsAsMap.pageId)) {
+            propsAsMap.count = bugsPageIdToCountMapperWikiBugsConfig[propsAsMap.pageId];
+        }
+
+
         const PROPS_PARSE_TO_INT = ["pageId", "health", "attackspeed", "attackdelay", "duration", "range", "speed", "damage", "manacost", "radius", "count"];
         PROPS_PARSE_TO_INT.forEach(prop => {
             let currentPropValue = propsAsMap[prop];
@@ -47,8 +70,9 @@ function mapDataFromOneResponse(nextPageData) {
                     propsAsMap[prop] = 0;
                     return;
                 }
+
                 if (isNaN(currentPropValue)) {
-                    console.error(`cannot parse:${currentPropValue} of ${propsAsMap.pageId}`);
+                    errorList.push(`cannot parse:${currentPropValue} of ${propsAsMap.pageId}`);
                 } else {
                     propsAsMap[prop] = parseInt(currentPropValue);
                 }
@@ -63,7 +87,6 @@ function mapDataFromOneResponse(nextPageData) {
     });
     return mappedCardDataOfFullResponse;
 }
-
 
 (async () => {
     // const cardPageIds = JSON.parse(fs.readFileSync("jobCardPageIds.json"));
@@ -84,5 +107,9 @@ function mapDataFromOneResponse(nextPageData) {
 
     await fetchAll();
 
-    console.log("Fetch from jobCardPropsGenerator was successful");
+    if (errorList.length === 0) {
+        console.log("Fetch from jobCardPropsGenerator was successful");
+    } else {
+        console.error(JSON.stringify(errorList, null, 2));
+    }
 })();

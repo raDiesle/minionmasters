@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components"
 
-import {CardOverview} from "./cardoverview/CardOverview";
+import {Page} from "./page/Page";
 import {toast} from 'react-toastify';
 
 const Header = styled.header`
@@ -60,7 +60,7 @@ const App = () => {
                 </SubheaderLinkStyle>
 
             </Header>
-            <CardOverview/>
+            <Page/>
         </div>
     );
 };
