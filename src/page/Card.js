@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-import {rarityMapping} from "../rarity/rarityMapping";
+import {RARITY_KEYS, rarityMapping} from "../rarity/rarityMapping";
 import {TargetsOverlay} from "./TargetsOverlay";
 import {typeMapping} from "../cardtype/typeMapping";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
@@ -154,11 +154,13 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
                 <TargetsOverlay targets={targets}/>
 
+                {rarity !== RARITY_KEYS.Perk &&
                 <AddCardToDeckOverlay onClick={onClick}>
                     <InfoDetailsIconStyle>
                         <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"}/>
                     </InfoDetailsIconStyle>
                 </AddCardToDeckOverlay>
+                }
 
                 <InfoDetailsOverlay onClick={(event) => {
                     setIsOpenDetails(true);
