@@ -74,7 +74,7 @@ export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNam
         <div>
             Faction
             <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
-                {Object.values(factionMapping).map((icon) => icon)}
+                {Object.values(factionMapping).map((icon) => <div key={icon}>{icon}</div>)}
             </ButtonFilterGroup>
         </div>
 
