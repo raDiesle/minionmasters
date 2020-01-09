@@ -13,9 +13,6 @@ const CardDeckStyle = styled.div`
       justify-content: center;
     }
     
-    & > * {
-      margin-right: 2px;
-    }
 `;
 
 const usePreviousValue = value => {
@@ -35,6 +32,8 @@ const useTraceableState = initialValue => {
 export function CardDeck({
                              selectedCardEvent: {eventId: cardSelectedEventId, card: {pageId: selectedCardId}},
                              setSelectedCardEvent,
+                             selectedHero,
+                             setSelectedHero,
                              setLastSelectedCards,
                              lastSelectedCards
                          }
@@ -83,7 +82,9 @@ export function CardDeck({
     });
     return <div>
         <CardDeckStyle>
-            <MasterDeckSlot/>
+            <MasterDeckSlot selectedHero={selectedHero}
+                            setSelectedHero={setSelectedHero}
+            />
             {
                 Slots.map((slotPos) =>
                     <CardDeckSlot key={slotPos}

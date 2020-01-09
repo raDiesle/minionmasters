@@ -12,6 +12,8 @@ const CardDeckSlotStyle = styled.div`
       height: 71px;
       width: 60px;
     }
+    
+     margin-right: 2px;
 `;
 
 
@@ -64,11 +66,10 @@ export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOn
             {lastSelectedCard.card.pageId !== 0 ?
                 <Card card={lastSelectedCard.card} onClick={() => handleOnClick(number)} isDeckCard showDeck/> :
                 (isSelectedSlot ? <EmptyCardSlotSelectedStyle>
-                        Click
+                        Select Card by
 
 
                         <FontAwesomeIcon icon={faPlusCircle} size={"sm"}/>
-
 
                         below
                     </EmptyCardSlotSelectedStyle> :

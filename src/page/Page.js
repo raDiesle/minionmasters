@@ -7,10 +7,10 @@ import {factionMapping} from "../faction/Factions";
 import {rarityMapping} from "../rarity/rarityMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 import {MANACOST} from "../manacost/manacost";
-import CardDeckContainer from "./carddeck/CardDeckContainer";
+import CardDeckContainer from "./carddeck/DeckContainer";
 import {targetsMapping} from "../attack/targetsMapping";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import MastersOverview from "./mastersoverview/MastersOverview";
+import Masters from "./mastersoverview/Masters";
 
 
 const usePreviousValue = value => {
@@ -51,6 +51,7 @@ export function Page() {
         }
     });
 
+    const [selectedHero, setSelectedHero] = useState("");
 
     const [zoom, setZoom] = useState(5);
     const [isShowNames, setIsShowNames] = useState(false);
@@ -69,11 +70,14 @@ export function Page() {
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
         <CardDeckContainer allCardsData={cardData}
+                           selectedHero={selectedHero}
+                           setSelectedHero={setSelectedHero}
                            selectedCardEvent={selectedCardEvent}
                            setSelectedCardEvent={setSelectedCardEvent}
+
         />
 
-        <Tabs>
+        <Tabs style={{paddingTop: "20px"}}>
             <TabList>
                 <Tab>Cards</Tab>
                 <Tab>Masters</Tab>
@@ -91,7 +95,7 @@ export function Page() {
                 Count: {filteredCardsDataWithTargets.length}
             </TabPanel>
             <TabPanel>
-                <MastersOverview/>
+                <Masters setSelectedHero={setSelectedHero}/>
             </TabPanel>
         </Tabs>
 

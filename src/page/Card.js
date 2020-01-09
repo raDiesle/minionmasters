@@ -112,7 +112,7 @@ const InfoDetailsOverlay = styled.div`
       cursor: pointer;
     }
 `;
-const InfoDetailsIconStyle = styled(OverlayActionBackground)`
+const AddCardToDeckIconStyle = styled(OverlayActionBackground)`
   padding-right: 2px;
 `;
 
@@ -125,10 +125,11 @@ const AddCardToDeckOverlay = styled.div`
       cursor: pointer;
     }
 `;
-const AddToDeckIconStyle = styled(OverlayActionBackground)`
+const InfoIconStyle = styled(OverlayActionBackground)`
   padding-left: 2px;
 `;
 
+//onClick to be removed and setter go here
 export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
     const [isOpenDetails, setIsOpenDetails] = useState(false);
     const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
@@ -156,9 +157,9 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
 
                 {rarity !== RARITY_KEYS.Perk &&
                 <AddCardToDeckOverlay onClick={onClick}>
-                    <InfoDetailsIconStyle>
+                    <AddCardToDeckIconStyle>
                         <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"}/>
-                    </InfoDetailsIconStyle>
+                    </AddCardToDeckIconStyle>
                 </AddCardToDeckOverlay>
                 }
 
@@ -166,9 +167,9 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                     setIsOpenDetails(true);
                     event.stopPropagation();
                 }}>
-                    <AddToDeckIconStyle>
+                    <InfoIconStyle>
                         <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
-                    </AddToDeckIconStyle>
+                    </InfoIconStyle>
                 </InfoDetailsOverlay>
             </CardContentStyle>
 
