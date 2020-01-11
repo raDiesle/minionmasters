@@ -12,28 +12,29 @@ import ExportToGameModal from "./ExportToGameModal";
 
 const ExportStyle = styled.div`
   display: flex;
-  & > * {
-    margin-right: 20px;
-  }
+  flex-direction: column;
 `;
 
-export default function ExportActions({lastSelectedCards}) {
+const ExportInGameStyleContainer = styled.div`
+  padding-top: 20px;
+`;
+
+export default function ExportActions({lastSelectedCards, selectedHero}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
 // Export to URL
     const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({card: {pageId}}) => pageId);
     const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
-    let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?pageId=${pageIdsToParam}`;
+    const heroParam = `hero=${selectedHero}`;
+    let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?${heroParam}&pageId=${pageIdsToParam}`;
 
 // Export to game
-    const mmImportCommand = "/setdeck ";
-    const defaultHero = "Stormbringer: ";
-    const cardShareWithGame = mmImportCommand + defaultHero + lastSelectedCards.map(({card: {name}}) => name).join(", ");
+    const cardShareWithGame = `/setdeck ${selectedHero}: ${lastSelectedCards.map(({card: {name}}) => name).join(", ")}`;
 
     return (
         <div>
-            <div>Share configured deck</div>
             <ExportStyle>
+                <div>Share by Url</div>
                 <ButtonGroupStyle>
                     <ButtonInGroupStyle>
                         <FacebookShareButton url={url}>
@@ -52,22 +53,24 @@ export default function ExportActions({lastSelectedCards}) {
                         </CopyToClipboard>
                     </ButtonInGroupStyle>
                 </ButtonGroupStyle>
-                <ButtonGroupStyle>
-                    <ButtonInGroupStyle>
-                        <CopyToClipboard
-                            text={cardShareWithGame}
-                            onCopy={() => {
-                                toast("Deck copied to clipboard. STRG+V in Minionmasters chat");
-                            }}
-                            title="Export for game"
-                        >
-                            <div>Export to game</div>
-                        </CopyToClipboard>
-                    </ButtonInGroupStyle>
-                    <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
-                        <FontAwesomeIcon icon={faInfoCircle}/>
-                    </ButtonInGroupStyle>
-                </ButtonGroupStyle>
+                <ExportInGameStyleContainer>
+                    <ButtonGroupStyle>
+                        <ButtonInGroupStyle>
+                            <CopyToClipboard
+                                text={cardShareWithGame}
+                                onCopy={() => {
+                                    toast("Deck copied to clipboard. STRG+V in Minionmasters chat");
+                                }}
+                                title="Export for game"
+                            >
+                                <div>Export to game</div>
+                            </CopyToClipboard>
+                        </ButtonInGroupStyle>
+                        <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
+                            <FontAwesomeIcon icon={faInfoCircle}/>
+                        </ButtonInGroupStyle>
+                    </ButtonGroupStyle>
+                </ExportInGameStyleContainer>
 
             </ExportStyle>
             <ExportToGameModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>

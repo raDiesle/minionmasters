@@ -4,11 +4,16 @@ import qs from "qs";
 import allCardsData from "../../generated/jobCardProps";
 import {toast} from "react-toastify";
 
-export function ImportFromUrl({setLastSelectedCards}) {
+export function ImportFromUrl({setLastSelectedCards, setSelectedHero}) {
 
     useEffect(() => {
 
-        let selectedPageIdsFromUrl = qs.parse(window.location.search, {ignoreQueryPrefix: true}).pageId;
+        let urlParams = qs.parse(window.location.search, {ignoreQueryPrefix: true});
+        if (urlParams.hero) {
+            setSelectedHero(urlParams.hero);
+        }
+
+        let selectedPageIdsFromUrl = urlParams.pageId;
         if (selectedPageIdsFromUrl && !Array.isArray(selectedPageIdsFromUrl)) {
             selectedPageIdsFromUrl = [selectedPageIdsFromUrl];
         }
