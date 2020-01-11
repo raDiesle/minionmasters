@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
+import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
 import React, {useState} from "react";
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import cardData from "../../generated/jobCardProps";
+import cardData from "../../../generated/jobCardProps";
 import {toast} from "react-toastify";
 import ImportFromGameModal from "./ImportFromGameModal";
 
@@ -28,15 +28,19 @@ const MissingCardStyle = styled.span`
   font-weight: bold;
 `;
 
-const MissingCardMessage = (({nameExtracted}) => <><MissingCardStyle>{nameExtracted}</MissingCardStyle> is missing in
-    gamepedia wiki and will be skipped</>);
+const MissingCardMessage = (({nameExtracted}) => <>
+    <MissingCardStyle>{nameExtracted}</MissingCardStyle>
+    is missing in
+    gamepedia wiki and will be skipped
+</>);
 
 
-export default function ImportFromGame({setLastSelectedCards}) {
+export default function ImportFromGame({setLastSelectedCards, setSelectedHero}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
 // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     const handleCopyPasteFromGame = (event) => {
+
         try {
             let value = event.target.value;
             let endOfHeroNamePos = value.indexOf(":");
@@ -63,30 +67,31 @@ export default function ImportFromGame({setLastSelectedCards}) {
                 throw new Error("could not parse from game");
             }
             setLastSelectedCards(cardsOnDeckSlots);
+            setSelectedHero(heroName);
+            toast("Imported");
         } catch (e) {
             toast("Could not copy paste from game.    Please read the info.");
         }
     };
 
-    return (<div>
-            <CardeckPlaceholderStyle>
-                <div>
-                    <div>Import from Game</div>
-                    <ButtonGroupStyle>
-                        <ButtonInGroupStyle>
-                            <InputTextStyle value=""
-                                            placeholder="Paste here"
-                                            onInput={handleCopyPasteFromGame}
-                                            onChange={() => {
-                                            }}/>
-                        </ButtonInGroupStyle>
-                        <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
-                            <FontAwesomeIcon icon={faInfoCircle}/>
-                        </ButtonInGroupStyle>
-                    </ButtonGroupStyle>
-                </div>
-                <ImportFromGameModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
-            </CardeckPlaceholderStyle>
-        </div>
+    return (
+        <CardeckPlaceholderStyle>
+            <div>
+                <div>Import from Game</div>
+                <ButtonGroupStyle>
+                    <ButtonInGroupStyle>
+                        <InputTextStyle value=""
+                                        placeholder="Paste here"
+                                        onInput={handleCopyPasteFromGame}
+                                        onChange={() => {
+                                        }}/>
+                    </ButtonInGroupStyle>
+                    <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
+                        <FontAwesomeIcon icon={faInfoCircle}/>
+                    </ButtonInGroupStyle>
+                </ButtonGroupStyle>
+            </div>
+            <ImportFromGameModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
+        </CardeckPlaceholderStyle>
     );
 }
