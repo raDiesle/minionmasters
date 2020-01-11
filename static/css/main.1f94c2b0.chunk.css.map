@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAKA,KACI,cACJ","file":"main.1f94c2b0.chunk.css","sourcesContent":["@import '~sanitize.css';\r\n@import '~sanitize.css/forms.css';\r\n@import '~sanitize.css/typography.css';\r\n\r\n\r\nhtml {\r\n    font-size: 100%;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n\r\n}"]}
