@@ -5,16 +5,18 @@ import Master from "../mastersoverview/Master";
 
 const MasterDeckSlotStyle = styled.div`
     display: flex;
-  position: relative;
-    width: 128px;
-    height: 128px;
     
-    @media (max-width: 767px) {
-      height: 70px;
-      width: 70px;
-    }
-
-    margin-right: 20px;
+  position: relative;
+    
+    width: 100px;
+    height: 100px;
+    margin: 12px 3px 0 0;
+    
+    @media (max-width: 767px) {     
+      height: 60px;
+      width: 60px;
+      margin-top: 5px;
+    }   
 `;
 
 

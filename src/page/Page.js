@@ -52,10 +52,7 @@ export function Page() {
     });
 
     const [selectedHero, setSelectedHero] = useState("");
-
-    const [zoom, setZoom] = useState(5);
     const [isShowNames, setIsShowNames] = useState(false);
-
     const [filters, setFilters] = useState(setAllFilterStates(false));
     const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
 
@@ -83,12 +80,13 @@ export function Page() {
                 <Tab>Masters</Tab>
             </TabList>
             <TabPanel>
-                <Filters setFilters={setFiltersMemoized} filters={filters} setZoom={setZoom} isShowNames={isShowNames}
+                <Filters setFilters={setFiltersMemoized}
+                         filters={filters}
+                         isShowNames={isShowNames}
                          setIsShowNames={setIsShowNames}/>
 
                 <Cards cards={filteredCardsDataWithTargets}
                        setSelectedCardEvent={setSelectedCardEvent}
-                       zoom={zoom}
                        isShowNames={isShowNames}
 
                 />

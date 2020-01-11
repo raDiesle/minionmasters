@@ -6,8 +6,6 @@ import {rarityMapping} from "../../rarity/rarityMapping";
 import {typeMapping} from "../../cardtype/typeMapping";
 import {faSquare} from "@fortawesome/free-solid-svg-icons/faSquare";
 import {ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle} from "./ButtonFilterGroup";
-import MinusIcon from "./MinusIcon";
-import PlusIcon from "./PlusIcon";
 import {MANACOST} from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
@@ -60,7 +58,7 @@ const FilterContainerStyle = styled.div`
         }
     `;
 
-export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNames}) {
+export function Filters({filters, setFilters, isShowNames, setIsShowNames}) {
 
     useEffect(() => {
         setIsShowNames(!!filters.name);
@@ -122,17 +120,7 @@ export function Filters({filters, setFilters, setZoom, isShowNames, setIsShowNam
                 }
             </ButtonFilterGroup>
         </div>
-        <div>
-            Size
-            <ButtonGroupStyle>
-                <ButtonInGroupStyle
-                    onClick={() => setZoom((prevZoom) => prevZoom - 1)}><MinusIcon/></ButtonInGroupStyle>
-                <ButtonInGroupStyle onClick={() => setZoom(5)}>
-                    <div>normal</div>
-                </ButtonInGroupStyle>
-                <ButtonInGroupStyle onClick={() => setZoom((prevZoom) => prevZoom + 1)}><PlusIcon/></ButtonInGroupStyle>
-            </ButtonGroupStyle>
-        </div>
+
 
         <InputLabelStyle>
             Show Names

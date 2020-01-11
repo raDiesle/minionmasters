@@ -12,6 +12,7 @@ const CardDeckSlotStyle = styled.div`
       width: 60px;
     }
     
+    // margin-bottom: 5px;
      margin-right: 2px;
 `;
 
