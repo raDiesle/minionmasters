@@ -15,7 +15,7 @@ const CardNameStyle = styled.div`
   text-align: center;
 `;
 
-export default function Cards({cards, setSelectedCardEvent, zoom, isShowNames}) {
+export default function Cards({cards, setSelectedCardEvent, isShowNames}) {
     let sortOrder = "asc";
 
     return (
@@ -37,7 +37,6 @@ export default function Cards({cards, setSelectedCardEvent, zoom, isShowNames}) 
                                         });
                                         toast("Card added to Deck");
                                     }}
-                                    zoom={zoom}
                                 />
                                 <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
                             </div>

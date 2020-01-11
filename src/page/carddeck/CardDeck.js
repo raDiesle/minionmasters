@@ -7,10 +7,10 @@ import MasterDeckSlot from "./MasterDeckSlot";
 const CardDeckStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: start;
     
     @media (max-width: 767px) {
-      justify-content: center;
+      // justify-content: center;
     }
     
 `;

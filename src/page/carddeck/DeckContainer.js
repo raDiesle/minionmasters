@@ -30,39 +30,39 @@ export default function CardDeckContainer({
     }));
 
 
-        return (
-            <div>
-                <ImportFromUrl setLastSelectedCards={setLastSelectedCards} setSelectedHero={setSelectedHero}/>
+    return (
+        <div>
+            <ImportFromUrl setLastSelectedCards={setLastSelectedCards} setSelectedHero={setSelectedHero}/>
 
-                <Tabs style={{paddingTop: "20px"}}>
-                    <TabList>
-                        <Tab>Configured Deck</Tab>
-                        <Tab>Import</Tab>
-                        <Tab>Export</Tab>
-                    </TabList>
-                    <TabPanel>
-                        <CardDeck selectedCardEvent={selectedCardEvent}
-                                  setSelectedCardEvent={setSelectedCardEvent}
-                                  setLastSelectedCards={setLastSelectedCards}
-                                  selectedHero={selectedHero}
-                                  setSelectedHero={setSelectedHero}
-                                  lastSelectedCards={lastSelectedCards}
+            <Tabs style={{paddingTop: "20px"}}>
+                <TabList>
+                    <Tab>Configured Deck</Tab>
+                    <Tab>Import</Tab>
+                    <Tab>Export</Tab>
+                </TabList>
+                <TabPanel>
+                    <CardDeck selectedCardEvent={selectedCardEvent}
+                              setSelectedCardEvent={setSelectedCardEvent}
+                              setLastSelectedCards={setLastSelectedCards}
+                              selectedHero={selectedHero}
+                              setSelectedHero={setSelectedHero}
+                              lastSelectedCards={lastSelectedCards}
+                    />
+                </TabPanel>
+                <TabPanel>
+                    <DeckOptionsStyle>
+                        <ImportFromGame setShowDeck={setShowDeck}
+                                        setSelectedCardEvent={setSelectedCardEvent}
+                                        setLastSelectedCards={setLastSelectedCards}
+                                        setSelectedHero={setSelectedHero}
                         />
-                    </TabPanel>
-                    <TabPanel>
-                        <DeckOptionsStyle>
-                            <ImportFromGame setShowDeck={setShowDeck}
-                                            setSelectedCardEvent={setSelectedCardEvent}
-                                            setLastSelectedCards={setLastSelectedCards}
-                                            setSelectedHero={setSelectedHero}
-                            />
 
-                        </DeckOptionsStyle>
-                    </TabPanel>
-                    <TabPanel>
-                        <ExportActions lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
-                    </TabPanel>
-                </Tabs>
-            </div>
-        )
+                    </DeckOptionsStyle>
+                </TabPanel>
+                <TabPanel>
+                    <ExportActions lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
+                </TabPanel>
+            </Tabs>
+        </div>
+    )
 }

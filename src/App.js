@@ -44,16 +44,8 @@ const App = () => {
     return (
         <div>
             <Header>
-
-                <SubheaderLinkStyle href="https://minionmasters.gamepedia.com/Category:Cards">
-
-                    Wiki needs contributors
-
-                </SubheaderLinkStyle>
                 <PageHeaderStyle>
-
                     <CapitalLetterStyle>M</CapitalLetterStyle>inion <CapitalLetterStyle>M</CapitalLetterStyle>asters <CapitalLetterStyle>M</CapitalLetterStyle>anager
-
                 </PageHeaderStyle>
                 <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
                     Ideas for new features?
