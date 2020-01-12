@@ -4,7 +4,7 @@ import {Card} from "./Card";
 import orderBy from "lodash/orderBy";
 import {toast} from "react-toastify";
 
-const CardsStyle = styled.div`
+const CardsStyle = styled.a`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -19,29 +19,28 @@ export default function Cards({cards, setSelectedCardEvent, isShowNames}) {
     let sortOrder = "asc";
 
     return (
-        <div>
-            <CardsStyle>
-                {
-                    orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
-                        .map(card =>
-                            <div key={card.pageId}>
+        <CardsStyle name="cardsview">
+            {
+                orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
+                    .map(card =>
+                        <div key={card.pageId}>
 
-                                <Card
-                                    card={card}
-                                    onClick={() => {
-                                        setSelectedCardEvent({
-                                            eventId: Math.random(),
+                            <Card
+                                card={card}
+                                onClick={() => {
+                                    setSelectedCardEvent({
+                                        eventId: Math.random(),
                                             card: {
                                                 pageId: card.pageId
                                             }
-                                        });
-                                        toast("Card added to Deck");
-                                    }}
-                                />
-                                <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
-                            </div>
-                        )
-                }
-            </CardsStyle>
-        </div>);
+                                    });
+                                    toast("Card added to Deck");
+                                }}
+                            />
+                            <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
+                        </div>
+                    )
+            }
+        </CardsStyle>
+    );
 }

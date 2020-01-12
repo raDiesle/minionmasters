@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components"
 
 import {Page} from "./page/Page";
+import Modal from 'react-modal';
 import {toast} from 'react-toastify';
 
 const Header = styled.header`
@@ -41,6 +42,8 @@ const CapitalLetterStyle = styled.span`
 
 const App = () => {
     toast.configure();
+    Modal.setAppElement('body');
+
     return (
         <div>
             <Header>

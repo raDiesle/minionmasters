@@ -16,7 +16,8 @@ export default function CardDeckContainer({
                                               setSelectedCardEvent,
                                               selectedHero,
                                               setSelectedHero,
-                                              setShowDeck
+                                              setShowDeck,
+                                              setSelectedTabIndex
                                           }) {
 
     let Slots = [...Array(10).keys()];
@@ -47,6 +48,7 @@ export default function CardDeckContainer({
                               selectedHero={selectedHero}
                               setSelectedHero={setSelectedHero}
                               lastSelectedCards={lastSelectedCards}
+                              setSelectedTabIndex={setSelectedTabIndex}
                     />
                 </TabPanel>
                 <TabPanel>

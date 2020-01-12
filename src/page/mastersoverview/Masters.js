@@ -4,7 +4,7 @@ import {mastersMapping} from "./mastersMapping";
 import Master from "./Master";
 import styled from "styled-components";
 
-const MastersStyle = styled.div`
+const MastersStyle = styled.a`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -13,18 +13,16 @@ const MastersStyle = styled.div`
 export default function Masters({setSelectedHero}) {
 
     return (
-        <div>
-            <MastersStyle>
-                {
-                    Object.keys(mastersMapping).map(masterKey =>
-                        <div key={masterKey}>
-                            <Master masterKey={masterKey}
-                                    isMastersSelection
-                                    setSelectedHero={setSelectedHero}
-                            />
-                        </div>)
-                }
-            </MastersStyle>
-        </div>
+        <MastersStyle name="mastersview">
+            {
+                Object.keys(mastersMapping).map(masterKey =>
+                    <div key={masterKey}>
+                        <Master masterKey={masterKey}
+                                isMastersSelection
+                                setSelectedHero={setSelectedHero}
+                        />
+                    </div>)
+            }
+        </MastersStyle>
     );
 }

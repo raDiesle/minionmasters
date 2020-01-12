@@ -18,26 +18,31 @@ const MasterDeckSlotStyle = styled.div`
       width: 50px;
       //margin-top: 5px;
     }   
+    
+    
 `;
 
 
 const MasterContentStyle = styled.div`
  //   width: 100%;
  //   position: relative;
+   
 `;
 
-const MasterPlaceholder = styled.div`
-    width: 100%;
+const MasterPlaceholder = styled.a`
     display: flex;
+    width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
-    padding: 20% 15%;   
-   
+    padding: 20% 15%;  
+    cursor: pointer;
+    text-decoration: none; 
+     
       @media (max-width: 767px) {
         font-size: 0.6rem;     
       }
-         
+           
     &:before {
       position: absolute;
       content: '';
@@ -58,15 +63,15 @@ const MasterPlaceholder = styled.div`
 `;
 
 
-export default function MasterDeckSlot({selectedHero, setSelectedHero}) {
+export default function MasterDeckSlot({selectedHero, setSelectedHero, setSelectedTabIndex}) {
 
+    let MASTERS_TAB_INDEX = 1;
     return <MasterDeckSlotStyle>
-
         <MasterContentStyle>
             {
                 selectedHero ?
-                        <Master isMastersSelection={false} masterKey={selectedHero} setSelectedHero={setSelectedHero}/>
-                    : <MasterPlaceholder>
+                    <Master isMastersSelection={false} masterKey={selectedHero} setSelectedHero={setSelectedHero}/>
+                    : <MasterPlaceholder href="#mastersview" onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}>
                         Select Master
                     </MasterPlaceholder>}
         </MasterContentStyle>
