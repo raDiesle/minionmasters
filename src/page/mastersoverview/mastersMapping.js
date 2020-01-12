@@ -1,6 +1,15 @@
 import React from "react";
 import ApepContent from "./MasterDetails/ApepContent";
 import MoreillaContent from "./MasterDetails/MoreillaContent";
+import DionaContent from "./MasterDetails/DionaContent";
+import KingPuffContent from "./MasterDetails/KingPuffContent";
+import MilloweenContent from "./MasterDetails/MilloweenContent";
+import MordarContent from "./MasterDetails/MordarContent";
+import RatboContent from "./MasterDetails/RatboContent";
+import RavangerContent from "./MasterDetails/RavangerContent";
+import SettsuContent from "./MasterDetails/SettsuContent";
+import StormbringerContent from "./MasterDetails/StormbringerContent";
+import VolcoContent from "./MasterDetails/VolcoContent";
 
 export const mastersMapping = {
     "Apep": {
@@ -8,19 +17,19 @@ export const mastersMapping = {
         icon: "Apep_Portrait.jpg"
     },
     "Diona": {
-        content: <div>Apep</div>,
+        content: <DionaContent/>,
         icon: "Avatar_Diona.jpg"
     },
     "King Puff": {
-        content: <div>Apep</div>,
+        content: <KingPuffContent/>,
         icon: "Puff_Icon.png"
     },
     "Milloween": {
-        content: <div>Apep</div>,
+        content: <MilloweenContent/>,
         icon: "Milloween_Icon.png"
     },
     "Mordar": {
-        content: <div>Apep</div>,
+        content: <MordarContent/>,
         icon: "Mordar_Icon.png"
     },
     "Morellia": {
@@ -28,23 +37,23 @@ export const mastersMapping = {
         icon: "LichQueen_Portrait.jpg"
     },
     "Ratbo": {
-        content: <div>Apep</div>,
+        content: <RatboContent/>,
         icon: "Ratbo_Icon.png"
     },
     "Ravanger": {
-        content: <div>Apep</div>,
+        content: <RavangerContent/>,
         icon: "Ravager_Icon.png"
     },
     "Settsu": {
-        content: <div>Apep</div>,
+        content: <SettsuContent/>,
         icon: "Settsu_Icon.png"
     },
     "Stormbringer": {
-        content: <div>Apep</div>,
+        content: <StormbringerContent/>,
         icon: "Storm_Icon.png"
     },
     "Volco": {
-        content: <div>Apep</div>,
+        content: <VolcoContent/>,
         icon: "Volco_Icon.png"
     }
 };
