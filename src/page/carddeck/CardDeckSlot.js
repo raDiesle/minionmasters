@@ -4,23 +4,25 @@ import {Card} from "../Card";
 
 
 const CardDeckSlotStyle = styled.div`
-    width: 100px;
-    height: 128px;
+    width: 80px;
+    height: 95px;
     
     @media (max-width: 767px) {
-      height: 71px;
-      width: 60px;
+      height: 59px;
+      width: 50px;
     }
     
     // margin-bottom: 5px;
+     margin-top: 0;
+     margin-bottom: 6px;
      margin-right: 2px;
 `;
 
 
 const EmptyCardSlotUnselectedStyle = styled.div`
     width: 100%;
-    height: 100%;
-    
+    height: calc(100% + 2px);
+    margin-top: 1px;
     border: 1px solid #000000;
 `;
 
@@ -31,6 +33,7 @@ const EmptyCardSlotSelectedStyle = styled.div`
     flex-wrap: wrap;
     flex-direction: column;
     padding: 25% 15%;
+    margin-top: 2px;
     text-align: center;
     
   @media (max-width: 767px) {

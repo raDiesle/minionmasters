@@ -60,15 +60,23 @@ const RightCornerStyle = styled.div`
     right: 0px;   
     width: 0;
     height: 0;
-    border-left: 1.5rem solid transparent;
-    border-top: 1.5rem solid ${({rarity}) => rarityMapping[rarity]};        
+    border-left: 30px solid transparent;
+    border-top: 30px solid ${({rarity}) => rarityMapping[rarity]};
+    
+    @media (max-width: 767px) {
+        border-left-width: 17px;
+        border-top-width: 17px;
+      }        
 `;
 
 const GroundAirStyle = styled(IconStyleSize)`
     position: absolute;
-    top: -5px;
-    left: 1px;   
+    top: 0;
+    left: 0;
+    padding: 1px;
+            
      & > svg {
+        vertical-align: text-top;
         fill: #FFFFFF;     
         color: #FFFFFF;
     }
@@ -82,18 +90,14 @@ const TopLeftCornerStyle = styled.div`
     height: 0;
     border-right: 30px solid transparent;
     border-top: 30px solid rgba(0,0,0, 0.5);
+    
+    @media (max-width: 767px) {
+        border-right-width: 17px;
+        border-top-width: 17px;
+      }
 `;
 
-const FactionStyle = styled(IconStyleSize)`
-    position: absolute;
-    bottom: -4px;
-    left: 0px;
-    
-    & > svg {
-        fill: #FFFFFF;     
-        color: #FFFFFF;
-    }
-`;
+
 const BottomLeftCornerStyle = styled.div`
     position: absolute;
     bottom: 0;
@@ -102,12 +106,30 @@ const BottomLeftCornerStyle = styled.div`
     height: 0;
     border-right: 30px solid transparent;
     border-bottom: 30px solid rgba(0,0,0, 0.5);
+    
+      @media (max-width: 767px) {
+        border-right-width: 17px;
+        border-bottom-width: 17px;
+      }
 `;
 
 const OverlayActionBackground = styled(IconStyleSize)`
     background-color: rgba(0,0,0, 0.5);
     border: 1px dotted rgba(0,0,0, 0.5);
     color: #fff;
+`;
+
+const FactionStyle = styled(IconStyleSize)`
+    position: absolute;
+    left: 0;
+    bottom: 0;     
+    padding: 1px;
+    
+    & > svg {
+        vertical-align: bottom;
+        fill: #FFFFFF;     
+        color: #FFFFFF;
+    }
 `;
 
 const InfoDetailsOverlay = styled.div`
@@ -140,10 +162,12 @@ const AddCardToDeckOverlay = styled.div`
 
 const AttackTypeStyle = styled(IconStyleSize)`
     position: absolute;
-    bottom: -4px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
+    padding: 1px;
     
     & > svg {
+        vertical-align: bottom;
         fill: #FFFFFF;     
         color: #FFFFFF;
     }
@@ -156,6 +180,11 @@ const BottomRightCornerStyle = styled.div`
     height: 0;
     border-left: 30px solid transparent;
     border-bottom: 30px solid rgba(0,0,0, 0.5);
+    
+    @media (max-width: 767px) {
+        border-left-width: 17px;
+        border-bottom-width: 17px;
+      }
 `;
 
 //onClick to be removed and setter go here
