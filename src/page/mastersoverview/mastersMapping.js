@@ -1,8 +1,10 @@
 import React from "react";
+import ApepContent from "./MasterDetails/ApepContent";
+import MoreillaContent from "./MasterDetails/MoreillaContent";
 
 export const mastersMapping = {
     "Apep": {
-        content: <div>Apep</div>,
+        content: <ApepContent/>,
         icon: "Apep_Portrait.jpg"
     },
     "Diona": {
@@ -22,7 +24,7 @@ export const mastersMapping = {
         icon: "Mordar_Icon.png"
     },
     "Morellia": {
-        content: <div>Apep</div>,
+        content: <MoreillaContent/>,
         icon: "LichQueen_Portrait.jpg"
     },
     "Ratbo": {

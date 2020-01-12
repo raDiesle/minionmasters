@@ -35,7 +35,8 @@ export function CardDeck({
                              selectedHero,
                              setSelectedHero,
                              setLastSelectedCards,
-                             lastSelectedCards
+                             lastSelectedCards,
+                             setSelectedTabIndex
                          }
 ) {
 
@@ -84,6 +85,7 @@ export function CardDeck({
         <CardDeckStyle>
             <MasterDeckSlot selectedHero={selectedHero}
                             setSelectedHero={setSelectedHero}
+                            setSelectedTabIndex={setSelectedTabIndex}
             />
             {
                 Slots.map((slotPos) =>
@@ -92,6 +94,7 @@ export function CardDeck({
                                   isSelectedSlot={currentSelectedSlot === slotPos}
                                   lastSelectedCard={lastSelectedCards[slotPos]}
                                   handleOnClick={handleRemoveCard}
+                                  setSelectedTabIndex={setSelectedTabIndex}
                     />)
             }
 

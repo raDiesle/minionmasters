@@ -44,6 +44,7 @@ function setAllFilterStates(isActive) {
 }
 
 export function Page() {
+    const [selectedTabIndex, setSelectedTabIndex] = useState(0);
     const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
         eventId: 0,
         card: {
@@ -64,6 +65,7 @@ export function Page() {
     const filteredCardsDataWithTargets = filters.targets.every(({isActive}) => !isActive) ? filteredCardsDataWithName : filteredCardsDataWithName.filter(({targets}) => filters.targets.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(targets));
 
 
+
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
         <CardDeckContainer allCardsData={cardData}
@@ -71,10 +73,12 @@ export function Page() {
                            setSelectedHero={setSelectedHero}
                            selectedCardEvent={selectedCardEvent}
                            setSelectedCardEvent={setSelectedCardEvent}
+                           setSelectedTabIndex={setSelectedTabIndex}
 
         />
 
-        <Tabs style={{paddingTop: "20px"}}>
+        <Tabs style={{paddingTop: "20px"}} selectedIndex={selectedTabIndex}
+              onSelect={tabIndex => setSelectedTabIndex(tabIndex)}>
             <TabList>
                 <Tab>Cards</Tab>
                 <Tab>Masters</Tab>

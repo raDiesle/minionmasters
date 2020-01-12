@@ -26,7 +26,7 @@ const EmptyCardSlotUnselectedStyle = styled.div`
     border: 1px solid #000000;
 `;
 
-const EmptyCardSlotSelectedStyle = styled.div`
+const EmptyCardSlotSelectedStyle = styled.a`
     width: 100%;
     height: 100%;
     display: flex;
@@ -35,6 +35,8 @@ const EmptyCardSlotSelectedStyle = styled.div`
     padding: 25% 15%;
     margin-top: 2px;
     text-align: center;
+    text-decoration: none;
+    cursor: pointer;
     
   @media (max-width: 767px) {
       font-size: 9px;
@@ -63,14 +65,16 @@ const EmptyCardSlotSelectedStyle = styled.div`
           }
 `;
 
-export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOnClick}) {
+export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOnClick, setSelectedTabIndex}) {
 
 
+    let CARDS_TAB_INDEX = 0;
     return (
         <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
             {lastSelectedCard.card.pageId !== 0 ?
                 <Card card={lastSelectedCard.card} onClick={() => handleOnClick(number)} isDeckCard showDeck/> :
-                (isSelectedSlot ? <EmptyCardSlotSelectedStyle>
+                (isSelectedSlot ?
+                    <EmptyCardSlotSelectedStyle href="#cardsview" onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
                         Select Card
                     </EmptyCardSlotSelectedStyle> :
                     <EmptyCardSlotUnselectedStyle>&nbsp;</EmptyCardSlotUnselectedStyle>)

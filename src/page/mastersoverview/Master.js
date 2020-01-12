@@ -3,7 +3,7 @@ import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {mastersMapping} from "./mastersMapping";
 import React, {useState} from "react";
 import styled from "styled-components";
-import InfoMasterDetailsModal from "./InfoMasterDetailsModal";
+import MasterModal from "./MasterModal";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 
 const MasterContentStyle = styled.div`
@@ -69,12 +69,12 @@ const MasterSelectedContainer = styled.div`
 `;
 
 export default function Master({masterKey, selectedHero = "", isMastersSelection, setSelectedHero,}) {
-    const [isOpenDetails, setIsOpenDetails] = useState(false);
+    const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
     return <MasterSelectedContainer>
-        <InfoMasterDetailsModal isOpenDetails={isOpenDetails}
-                                setIsOpenDetails={setIsOpenDetails}
-                                masterKey={masterKey}
+        <MasterModal isOpenHeroModal={isOpenHeroModal}
+                     setIsOpenHeroModal={setIsOpenHeroModal}
+                     masterKey={masterKey}
         />
         <MasterContentStyle>
 
@@ -91,7 +91,7 @@ export default function Master({masterKey, selectedHero = "", isMastersSelection
                 </AddMasterToDeckOverlay>
             }
             <InfoMasterDetailsOverlay onClick={(event) => {
-                setIsOpenDetails(true);
+                setIsOpenHeroModal(true);
                 event.stopPropagation();
             }}>
                 <AddMasterToDeckIconStyle>
