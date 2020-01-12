@@ -8,14 +8,17 @@ import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 
 const MasterContentStyle = styled.div`
     position: relative;
-    margin-right: 2px;
+ //   margin-right: 2px;
 `;
 
 const InfoMasterDetailsOverlay = styled.div`
     position: absolute;
     top: 35px;
     right: 0px;
-    padding: 15px 0 15px 15px;
+ 
+  @media (max-width: 767px) {
+        top: 13px;
+      }
    
     &:hover{
       cursor: pointer;
@@ -36,16 +39,39 @@ const AddMasterToDeckOverlay = styled.div`
     position: absolute;
     top: 35px;
     left: 0px;
-    padding: 15px 15px 15px 0;    
+    
+      @media (max-width: 767px) {
+        top: 13px;
+      }
+    
+  //  padding: 15px 15px 15px 0;    
     &:hover{
       cursor: pointer;
     }
+    
+    
+`;
+
+const MasterImgStyle = styled.img`
+      width: 90px;
+      height: auto;
+  
+   @media (max-width: 767px) {
+      width: 50px;
+      height: auto;
+   }
+`;
+
+const MasterSelectedContainer = styled.div`
+  border: 2px groove #000;
+  border-radius: 50%;
+  overflow:hidden;
 `;
 
 export default function Master({masterKey, selectedHero = "", isMastersSelection, setSelectedHero,}) {
     const [isOpenDetails, setIsOpenDetails] = useState(false);
 
-    return <>
+    return <MasterSelectedContainer>
         <InfoMasterDetailsModal isOpenDetails={isOpenDetails}
                                 setIsOpenDetails={setIsOpenDetails}
                                 masterKey={masterKey}
@@ -72,8 +98,8 @@ export default function Master({masterKey, selectedHero = "", isMastersSelection
                     <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
                 </AddMasterToDeckIconStyle>
             </InfoMasterDetailsOverlay>
-            <img src={"generated/img/" + mastersMapping[masterKey].icon}
-                 alt={masterKey}/>
+            <MasterImgStyle src={"generated/img/" + mastersMapping[masterKey].icon}
+                            alt={masterKey}/>
         </MasterContentStyle>
-    </>
+    </MasterSelectedContainer>
 }
