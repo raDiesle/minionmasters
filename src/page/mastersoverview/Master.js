@@ -3,7 +3,7 @@ import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {mastersMapping} from "./mastersMapping";
 import React, {useState} from "react";
 import styled from "styled-components";
-import MasterModal from "./MasterModal";
+import {MasterModal} from "./MasterModal";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 
 const MasterContentStyle = styled.div`
