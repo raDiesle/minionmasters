@@ -4,6 +4,7 @@ import styled from "styled-components"
 import {Page} from "./page/Page";
 import Modal from 'react-modal';
 import {toast} from 'react-toastify';
+import './Modal.scss';
 
 const Header = styled.header`
  display: flex;
