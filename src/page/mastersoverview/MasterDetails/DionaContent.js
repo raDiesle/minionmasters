@@ -1,23 +1,48 @@
 import React from 'react';
+import {
+    MasterAbilityDescriptionStyle,
+    MasterAbilityHeaderStyle,
+    MasterAbilityImageStyle,
+    MasterHeaderStyle
+} from "../MasterModal";
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import IconDamage from "./icon-damage.png";
 
 export default function DionaContent() {
     return <div>
-        The Witch Hunter Diona uses a variety of traps to deal with any threat. Her trusty sidekick Ruffles fetches
-        useful items from the battlefield for his master.
+        <MasterHeaderStyle>Diona</MasterHeaderStyle>
+        <MasterAbilityDescriptionStyle>
+            The Witch Hunter Diona uses a variety of traps to deal with any threat. Her trusty sidekick Ruffles fetches
+            useful items from the battlefield for his master.
+            <div>
+                <a href="https://www.youtube.com/watch?v=5zafVoWXB34">Get to know Diona and Ruffles as they venture into
+                    the
+                    Pinewood</a>
+            </div>
+        </MasterAbilityDescriptionStyle>
 
-        <a href="https://www.youtube.com/watch?v=5zafVoWXB34">Get to know Diona and Ruffles as they venture into the
-            Pinewood</a>
-
-
-        Basic Attack
-        Rapidly fires bolts from her dual crossbows for 20 damage every 1 sec with a range of 10.
-        Lays a Bear Trap every 20 sec.
-
-        Bear Trap
-        Roots a unit in place for 4 seconds
-        Deals 50 Damage
-        Lasts 15 sec.
-
+        <Tabs>
+            <TabList>
+                <Tab>
+                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                </Tab>
+            </TabList>
+            <TabPanel>
+                Basic Attack
+                Rapidly fires bolts from her dual crossbows for 20 damage every 1 sec with a range of 10.
+                Lays a Bear Trap every 20 sec.
+            </TabPanel>
+            <TabPanel>
+                <MasterAbilityHeaderStyle>
+                    Bear Trap
+                </MasterAbilityHeaderStyle>
+                <MasterAbilityDescriptionStyle>
+                    Roots a unit in place for 4 seconds
+                    Deals 50 Damage
+                    Lasts 15 sec.
+                </MasterAbilityDescriptionStyle>
+            </TabPanel>
+        </Tabs>
 
         Art of the Hunt
         Add a Trap card to Diona's deck. The card alternates between Crossbow Trap and Decoy Trap with each draw.

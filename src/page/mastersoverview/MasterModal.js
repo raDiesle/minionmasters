@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import ReactModal from "react-modal";
 import {mastersMapping} from "./mastersMapping";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTimesCircle} from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 
 export const MasterHeaderStyle = styled.h3`
   padding-bottom: 0.5rem;
@@ -29,6 +31,21 @@ export const MasterAbilityDescriptionStyle = styled.div`
   padding-bottom: 20px;
 `;
 
+
+const ModalCloseStyle = styled.div`
+    display: flex;
+    justify-content: flex-end;
+  & > svg {
+    
+      
+      &:hover{
+        color: #a0a0a0;
+        filter:drop-shadow(1px 1px 1px #a0a0a0);
+        cursor: pointer;
+      }
+  }
+`;
+
 export function MasterModal({masterKey, isOpenHeroModal, setIsOpenHeroModal}) {
     return (<ReactModal
             className="modalContentStyle"
@@ -38,6 +55,8 @@ export function MasterModal({masterKey, isOpenHeroModal, setIsOpenHeroModal}) {
             onRequestClose={() => setIsOpenHeroModal(false)}
 
         >
+            <ModalCloseStyle><FontAwesomeIcon icon={faTimesCircle} size={"2x"}
+                                              onClick={() => setIsOpenHeroModal(false)}/> </ModalCloseStyle>
             <div>
                 {mastersMapping[masterKey].content}
             </div>
