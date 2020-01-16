@@ -42,8 +42,13 @@ export default function ApepContent() {
                     Basic Attack
                 </MasterAbilityHeaderStyle>
                 <MasterAbilityDescriptionStyle>
-                    Spits acid at enemies to deal 30 damage every 2.5 sec. Range: 10
-                    For each card that costs 5 or more in his hand, Apep gains +35% attack speed
+                    Spits acid at enemies to deal 30 damage every 2.5 sec.
+                    <div>
+                        Range: 10
+                    </div>
+                    <div>
+                        For each card that costs 5 or more in his hand, Apep gains +35% attack speed.
+                    </div>
                 </MasterAbilityDescriptionStyle>
             </TabPanel>
             <TabPanel>
