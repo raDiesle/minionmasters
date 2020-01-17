@@ -3,6 +3,7 @@ import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import IconDamage from "./icon-damage.png";
 import {
+    AbilityUlStyle,
     MasterAbilityDescriptionStyle,
     MasterAbilityHeaderStyle,
     MasterAbilityImageRoundedStyle,
@@ -41,15 +42,17 @@ export default function ApepContent() {
                 <MasterAbilityHeaderStyle>
                     Basic Attack
                 </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
-                    Spits acid at enemies to deal 30 damage every 2.5 sec.
-                    <div>
+                <AbilityUlStyle>
+                    <li>
+                        30 damage every 2.5 sec.
+                    </li>
+                    <li>
                         Range: 10
-                    </div>
-                    <div>
+                    </li>
+                    <li>
                         For each card that costs 5 or more in his hand, Apep gains +35% attack speed.
-                    </div>
-                </MasterAbilityDescriptionStyle>
+                    </li>
+                </AbilityUlStyle>
             </TabPanel>
             <TabPanel>
                 <MasterAbilityHeaderStyle>

@@ -22,15 +22,23 @@ export const MasterAbilityHeaderStyle = styled.div`
   font-size: 1.1rem;
 `;
 
+export const MasterAbilitySubHeader = styled.div`
+  font-size: 1.05rem;
+`;
+
 export const MasterAbilityUnlocksHeaderStyle = styled.div`
   font-size: 1.0rem;
 `;
+
 
 export const MasterAbilityDescriptionStyle = styled.div`
   font-size: 0.9rem;
   padding-bottom: 20px;
 `;
 
+export const AbilityUlStyle = styled.ul`
+
+`;
 
 const ModalCloseStyle = styled.div`
     display: flex;
