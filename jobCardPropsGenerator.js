@@ -1,6 +1,11 @@
 const fetch = require("node-fetch");
 const fs = require('fs');
 
+
+let cardDataFromGameRaw = fs.readFileSync('./CardData.JSON');
+let cardDataFromGame = JSON.parse(cardDataFromGameRaw);
+
+
 // alternatively: https://minionmasters.gamepedia.com/api.php?action=query&generator=categorymembers&gcmtitle=Category:Cards&prop=revisions&rvprop=content&rvslots=main
 async function fetchPageContent(gcmcontinue = "") {
     let categoryCardsUrl = `https://minionmasters.gamepedia.com/api.php?action=query&generator=categorymembers&gcmtitle=Category:Cards&prop=revisions&rvprop=content&rvslots=main&format=json`;
@@ -80,9 +85,68 @@ function mapDataFromOneResponse(nextPageData) {
             }
         });
 
+
+        // merge wiki data with game data
+        const specialMapConfigByName = {
+            "A.I.M Bot": "A.I.M. Bot",
+            "Brothers of Light": "Brothers Of Light",
+            "Disruptor Puff": "Disruptor Puffs",
+            "Mountainshaper": "",
+            "Queen's Dragon": "The Queen's Dragon",
+            "Re-boomer": "Re-Boomer",
+            "Shieldguard of Light": "Shieldguard Of Light",
+        };
+
+        const toIdMappingConfig = {
+            "Arcane Ring": 263, // missing
+            "Caber Tosser": 265, // missing Highland Logger
+            "Fergus Flagon Fighter": 267, // missing Highland Spinner
+            "Frostfeathers": 266, // missing
+            "Frostfeather Flyby": 269, // missing
+            "Gor'Rakk Brutes": 161, // missing  Dynamic Duo
+            "Glenn's Brew": 264, // missing  LegendaryBrew
+            "Leiliel's Vortex": 262, // missing  Crystal Vortex
+            "Shars'Rakk Twins": 169, // missing Deadly Twins
+            "Woodsman": 260, // missing HighlandWoodsman
+            "Mountainshaper": 268, // missing
+            "Slitherbound": 249, // missing SlitherSlaves
+            "Border Patrol": 239, // missing Forward Scouts
+            "High-Mage Leiliel": undefined, // missing
+            "Nyrvir Slumbers": undefined, // missing but linked
+            "Crossbow Trap": null, // master card
+            "Decoy Trap": null, // master card
+            "Blast Entry": null // master card
+        };
+
+        const matchedDataSetFromGame = cardDataFromGame.find(({name}) => propsAsMap.name === name);
+        if (typeof matchedDataSetFromGame !== 'undefined') {
+            propsAsMap.iD = parseInt(matchedDataSetFromGame.iD);
+        }
+
+        // match by name
+        const matchedDataFromGame = cardDataFromGame.find(({name}) => specialMapConfigByName[propsAsMap.name] === name);
+        if (typeof propsAsMap.iD === 'undefined' && matchedDataFromGame) {
+            propsAsMap.iD = parseInt(matchedDataFromGame.iD);
+            propsAsMap.name = matchedDataFromGame.name;
+        }
+
+        if (typeof propsAsMap.iD === 'undefined') {
+            propsAsMap.iD = toIdMappingConfig[propsAsMap.name];
+        }
+
+        // match by id manual
+        // toIdMappingConfig
+
+        if (typeof propsAsMap.iD === 'undefined') {
+            errorList.push("Cannot match data from:" + propsAsMap.name);
+        }
+        if (propsAsMap.iD === null) {
+            errorList.push("No mapping required:" + propsAsMap.name);
+        }
+
         const mappedCardData = [propsAsMap];
 
-        console.log(pageId);
+        console.log("loaded:" + propsAsMap.pageId);
         mappedCardDataOfFullResponse = [...mappedCardDataOfFullResponse, ...mappedCardData];
     });
     return mappedCardDataOfFullResponse;
@@ -96,6 +160,7 @@ function mapDataFromOneResponse(nextPageData) {
         const cardDataInitial = await fetchPageContent();
         let gcmcontinue = cardDataInitial.continue.gcmcontinue;
         overallCardData = [...overallCardData, ...mapDataFromOneResponse(cardDataInitial)];
+
         while (gcmcontinue) {
             const nextPageData = await fetchPageContent(gcmcontinue);
             gcmcontinue = nextPageData.continue && nextPageData.continue.gcmcontinue;
