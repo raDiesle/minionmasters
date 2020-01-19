@@ -190,7 +190,6 @@ const BottomRightCornerStyle = styled.div`
 //onClick to be removed and setter go here
 export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
     const [isOpenDetails, setIsOpenDetails] = useState(false);
-    const imageNormalized = image.charAt(0).toUpperCase() + image.slice(1);
 
     return <>
         <CardDetailsModal isOpenDetails={isOpenDetails}
@@ -201,7 +200,7 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
         <CardContainerStyle
         >
             <CardContentStyle>
-                <CardImageStyle src={`generated/img/${imageNormalized}`} alt={image}/>
+                <CardImageStyle src={`generated/img/${image}`} alt={image}/>
                 <RightCornerStyle rarity={rarity}/>
                 <ManacostStyle>{manacost}</ManacostStyle>
 

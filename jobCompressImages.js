@@ -36,7 +36,7 @@ const files = readFilesSync(generatedImFolder);
 files.forEach(file => {
     console.log(file.name + file.ext);
     sharp(file.filepath)
-        .resize({height: 128})
+        .resize({width: 80})
         .toFile(FOLDER_PUBLIC_IMG + file.name + file.ext, function (err, info) {
             if (err) {
                 console.log("error:");

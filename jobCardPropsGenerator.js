@@ -77,7 +77,8 @@ function mapDataFromOneResponse(nextPageData) {
                 }
 
                 if (isNaN(currentPropValue)) {
-                    errorList.push(`cannot parse:${currentPropValue} of ${propsAsMap.pageId}`);
+                    propsAsMap[prop] = currentPropValue.replace(/\D/g, '');
+                    errorList.push(`cheated to parse:${currentPropValue} to "${propsAsMap[prop]}" of "${propsAsMap.pageId}"`);
                 } else {
                     propsAsMap[prop] = parseInt(currentPropValue);
                 }
@@ -121,13 +122,17 @@ function mapDataFromOneResponse(nextPageData) {
         const matchedDataSetFromGame = cardDataFromGame.find(({name}) => propsAsMap.name === name);
         if (typeof matchedDataSetFromGame !== 'undefined') {
             propsAsMap.iD = parseInt(matchedDataSetFromGame.iD);
+            propsAsMap.description = matchedDataSetFromGame.description;
+
         }
+        propsAsMap.isGameDescr = typeof matchedDataSetFromGame !== 'undefined';
 
         // match by name
         const matchedDataFromGame = cardDataFromGame.find(({name}) => specialMapConfigByName[propsAsMap.name] === name);
         if (typeof propsAsMap.iD === 'undefined' && matchedDataFromGame) {
             propsAsMap.iD = parseInt(matchedDataFromGame.iD);
             propsAsMap.name = matchedDataFromGame.name;
+            propsAsMap.description = matchedDataFromGame.description;
         }
 
         if (typeof propsAsMap.iD === 'undefined') {
@@ -137,12 +142,24 @@ function mapDataFromOneResponse(nextPageData) {
         // match by id manual
         // toIdMappingConfig
 
+        if (propsAsMap.isGameDescr) {
+            propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/, "<a href='$1'>$2</a>");
+            // <link=\"actor_info:CrystalSentry>Crystal Sentries</link> with <link=\"plain_text:+50% Attack Speed while you have 6 or more Mana><b><color=orange>Mana Surge</color></b></link> to escort the next Ranged Minion you play. No, not <b>that</b> kind of escort!",
+            // <link="plain_text:+50% Damage><b><color=orange>Rage</color></b></link>.
+
+        }
+
+
         if (typeof propsAsMap.iD === 'undefined') {
             errorList.push("Cannot match data from:" + propsAsMap.name);
         }
         if (propsAsMap.iD === null) {
             errorList.push("No mapping required:" + propsAsMap.name);
         }
+
+
+        const imageNormalized = propsAsMap.image.charAt(0).toUpperCase() + propsAsMap.image.slice(1);
+        propsAsMap.image = imageNormalized;
 
         const mappedCardData = [propsAsMap];
 
