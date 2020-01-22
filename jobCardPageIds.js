@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 const fs = require('fs');
+
 /* untested */
 async function fetchCards(cmcontinue = "") {
     let categoryCardsUrl = "https://minionmasters.gamepedia.com/api.php?action=query&list=categorymembers&prop=extracts&cmtitle=Category:Cards&format=json";

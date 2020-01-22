@@ -43,6 +43,7 @@ function setAllFilterStates(isActive) {
     };
 }
 
+
 export function Page() {
     const [selectedTabIndex, setSelectedTabIndex] = useState(0);
     const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
@@ -65,10 +66,10 @@ export function Page() {
     const filteredCardsDataWithTargets = filters.targets.every(({isActive}) => !isActive) ? filteredCardsDataWithName : filteredCardsDataWithName.filter(({targets}) => filters.targets.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(targets));
 
 
-
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
-        <CardDeckContainer allCardsData={cardData}
+
+    <CardDeckContainer allCardsData={cardData}
                            selectedHero={selectedHero}
                            setSelectedHero={setSelectedHero}
                            selectedCardEvent={selectedCardEvent}

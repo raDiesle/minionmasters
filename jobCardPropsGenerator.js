@@ -123,7 +123,14 @@ function mapDataFromOneResponse(nextPageData) {
         if (typeof matchedDataSetFromGame !== 'undefined') {
             propsAsMap.iD = parseInt(matchedDataSetFromGame.iD);
             propsAsMap.description = matchedDataSetFromGame.description;
+            propsAsMap.unitToSummon = matchedDataSetFromGame.unitToSummon;
 
+            // match by id manual
+            // toIdMappingConfig
+            propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
+            propsAsMap.description = propsAsMap.description.replace(/\<link="actor_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
+            propsAsMap.description = propsAsMap.description.replace(/\<link="plain_text:(.*?)>(.*?)<\/link>/gm, "<span class='htmlTextRef' data-inline-text='$1'>$2</span>");
+            propsAsMap.description = propsAsMap.description.replace(/\<b\><color\=orange>(.*?)<\/color>\<\/b\>/gm, "<span class='htmlHighlight' data-highlight='$1'>$1</span>");
         }
         propsAsMap.isGameDescr = typeof matchedDataSetFromGame !== 'undefined';
 
@@ -137,16 +144,6 @@ function mapDataFromOneResponse(nextPageData) {
 
         if (typeof propsAsMap.iD === 'undefined') {
             propsAsMap.iD = toIdMappingConfig[propsAsMap.name];
-        }
-
-        // match by id manual
-        // toIdMappingConfig
-
-        if (propsAsMap.isGameDescr) {
-            propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/, "<a href='$1'>$2</a>");
-            // <link=\"actor_info:CrystalSentry>Crystal Sentries</link> with <link=\"plain_text:+50% Attack Speed while you have 6 or more Mana><b><color=orange>Mana Surge</color></b></link> to escort the next Ranged Minion you play. No, not <b>that</b> kind of escort!",
-            // <link="plain_text:+50% Damage><b><color=orange>Rage</color></b></link>.
-
         }
 
 
