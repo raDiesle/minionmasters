@@ -10,3 +10,15 @@ html {
 @media (max-width: 767px) {
 
 }
+
+.htmlCardRef {
+    color: red;
+}
+
+.htmlTextRef {
+
+}
+
+.htmlHighlight {
+    display: none;
+}

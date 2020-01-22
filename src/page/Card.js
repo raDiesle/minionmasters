@@ -192,10 +192,11 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
     const [isOpenDetails, setIsOpenDetails] = useState(false);
 
     return <>
-        <CardDetailsModal isOpenDetails={isOpenDetails}
-                          setIsOpenDetails={setIsOpenDetails}
-                          card={card}
-        />
+        {isOpenDetails ? <CardDetailsModal isOpenDetails={isOpenDetails}
+                                           setIsOpenDetails={setIsOpenDetails}
+                                           card={card}
+                                           key={card.pageId}
+        /> : null}
 
         <CardContainerStyle
         >

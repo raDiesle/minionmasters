@@ -30,9 +30,9 @@ export default function Cards({cards, setSelectedCardEvent, isShowNames}) {
                                 onClick={() => {
                                     setSelectedCardEvent({
                                         eventId: Math.random(),
-                                            card: {
-                                                pageId: card.pageId
-                                            }
+                                        card: {
+                                            pageId: card.pageId
+                                        }
                                     });
                                     toast("Card added to Deck");
                                 }}
