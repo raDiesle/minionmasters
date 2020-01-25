@@ -12,7 +12,9 @@ html {
 }
 
 .htmlCardRef {
-    color: red;
+    color: dodgerblue;
+    text-decoration-line: underline;
+
 }
 
 .htmlTextRef {
@@ -20,5 +22,6 @@ html {
 }
 
 .htmlHighlight {
-    display: none;
+    color: orange;
+    font-weight: bold;
 }

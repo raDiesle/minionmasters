@@ -69,7 +69,7 @@ export function Page() {
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
 
-    <CardDeckContainer allCardsData={cardData}
+        <CardDeckContainer allCardsData={cardData}
                            selectedHero={selectedHero}
                            setSelectedHero={setSelectedHero}
                            selectedCardEvent={selectedCardEvent}
