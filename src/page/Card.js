@@ -39,7 +39,7 @@ const CardContainerStyle = styled.div`
 const CardContentStyle = styled.div`
     position: relative;
     &:hover {
-    
+      
     }
 `;
 

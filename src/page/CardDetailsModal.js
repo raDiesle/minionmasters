@@ -6,42 +6,26 @@ import cardData from "../generated/jobCardProps";
 import _dropRight from "lodash.dropright";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
+import {typeMapping} from "../cardtype/typeMapping";
+import {factionMapping} from "../faction/Factions";
+import {targetsMapping} from "../attack/targetsMapping";
+import {rarityMapping} from "../rarity/rarityMapping";
 
 
-const CardPropertyUlStyle = styled.ul`
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-inline-start: 0;
+const ModalContainerStyle = styled.div`
+   position: relative;
     
-    & > li {
-      margin: 1rem;
-    }
+`;
+
+const ModalAlignCloseStyle = styled.div`
+  position: absolute;
+  right: 17px;
+  top: -15px;
+`;
+
+const ModalCloseStyle = styled.div`  
+    position: fixed;
     
-    
-    @media (max-width: 950px) {
-        flex-direction: column;   
-        align-items: flex-start;   
-    }
-`;
-
-const CardPropertyKeyStyle = styled.div`
-  font-weight: bold;
-`;
-
-const CardPropertyLiStyle = styled.li`
-
-`;
-
-const CardImageStyle = styled.img`
-    width: 60px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-`;
-
-const ModalCloseStyle = styled.div`
-    display: flex;
-    justify-content: flex-end;
   & > svg {
     
       
@@ -53,20 +37,85 @@ const ModalCloseStyle = styled.div`
   }
 `;
 
+const CardHeaderStyle = styled.h2`
+  margin-top: 0;
+`;
+
+
+const CardPropertyUlStyle = styled.div`
+    padding-top: 30px;
+    
+    display: grid;
+    grid-auto-flow: column;
+    grid-row-gap: 25px;
+    grid-column-gap: 10px;
+    align-items: center;
+    text-align: center;
+    list-style-type: none;
+    padding-inline-start: 0;
+    
+    & > div {
+    //  margin: 1rem;
+    }
+    
+    
+    @media (max-width: 950px) {
+        grid-auto-flow: unset;
+        grid-template-columns: auto auto auto;   
+    }
+`;
+
+const CardPropertyKeyStyle = styled.div`
+  font-weight: bold;
+`;
+
+const CardPropertyLiStyle = styled.div`
+
+`;
+
+const CardImageStyle = styled.img`
+    width: 60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`;
+
+
+const DescriptionStyle = styled.div`
+  padding-top: 40px;
+`;
+
+const RarityStyle = styled.div`
+  color: ${({rarity}) => rarityMapping[rarity]};
+`;
+
+const CardGlossaryUlStyle = styled.div`
+  padding-top: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-inline-start: 0;
+`;
+
+const CardGlossaryStyle = styled.div`
+    color: orange;
+    font-weight: bold;
+`;
 
 export default function CardDetailsModal({card: {image, attackdelay, attackspeed, damage, description, faction, flying, health, manacost, name, range, rarity, speed, targets, type}, isOpenDetails, setIsOpenDetails}) {
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
 
+    const descriptionStyled = description.replace(new RegExp(/\. /, 'g'), ". <br />");
+
     useEffect(() => {
         setTimeout(() => {
-
+            const $cardRootContainer = `div[data-name="${name}"] `;
 
 // expects that both have same size
-            let inlineItemItems = document.querySelectorAll('span[data-inline-text]:not([data-inline-text=""]');
+            let inlineItemItems = document.querySelectorAll(`${$cardRootContainer} span[data-inline-text]:not([data-inline-text=""]`);
             const inlineItemItemss = [...inlineItemItems].map(inlineNode => inlineNode.getAttribute("data-inline-text"));
 
-            let inlineItemTitles = document.querySelectorAll('span[data-highlight]:not([data-highlight=""]');
+            let inlineItemTitles = document.querySelectorAll(`${$cardRootContainer} span[data-highlight]:not([data-highlight=""]`);
             const inlineItemTits = [...inlineItemTitles].map(inlineNode => inlineNode.getAttribute("data-highlight"));
 
             const result = inlineItemTits.map((title, index) => (
@@ -77,16 +126,18 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
 
             setGlossary(result);
 
-            [...document.querySelectorAll('span[data-card]:not([data-card=""]')].map(foundItem => {
-                    foundItem.addEventListener('click', function (e) {
-                        const clickedInfo = this.getAttribute("data-card");
-                        // card.name is hack and means it is a small. cannot be mapped easy
-                        const card = cardData.find(card => card.unitToSummon === clickedInfo || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase());
+            [...document.querySelectorAll(`${$cardRootContainer}span[data-card]:not([data-card=""]`)].map(foundItem => {
+                foundItem.addEventListener('click', function (e) {
+                    const clickedInfo = this.getAttribute("data-card");
+                    // card.name is hack and means it is a small. cannot be mapped easy
+                    const card = cardData.find(card => card.unitToSummon === clickedInfo || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase());
 
+                    if (typeof card !== "undefined") {
                         setModals((modals) => [...modals,
                             card,
                         ]);
-                    });
+                    }
+                });
                 }
             );
 
@@ -110,18 +161,21 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                     isOpenDetails
                 }
                 onRequestClose={() => setIsOpenDetails(false)}
+                className="modalContentStyle"
             >
-                <div>
-                    <ModalCloseStyle>
-                        <FontAwesomeIcon icon={faTimesCircle}
-                                         size={"2x"}
-                                         onClick={() => setIsOpenDetails(false)}
-                        />
-                    </ModalCloseStyle>
+                <ModalContainerStyle data-name={name}>
+                    <ModalAlignCloseStyle>
+                        <ModalCloseStyle>
+                            <FontAwesomeIcon icon={faTimesCircle}
+                                             size={"2x"}
+                                             onClick={() => setIsOpenDetails(false)}
+                            />
+                        </ModalCloseStyle>
+                    </ModalAlignCloseStyle>
 
-                    <h2>
+                    <CardHeaderStyle>
                         {name}
-                    </h2>
+                    </CardHeaderStyle>
 
 
                     <CardPropertyUlStyle>
@@ -150,7 +204,7 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                                 Faction
                             </CardPropertyKeyStyle>
                             <div>
-                                {faction}
+                                {factionMapping[faction]} {faction}
                             </div>
                         </CardPropertyLiStyle>
 
@@ -158,9 +212,9 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                             <CardPropertyKeyStyle>
                                 Rarity
                             </CardPropertyKeyStyle>
-                            <div>
+                            <RarityStyle rarity={rarity}>
                                 {rarity}
-                            </div>
+                            </RarityStyle>
                         </CardPropertyLiStyle>
 
                         <CardPropertyLiStyle>
@@ -168,7 +222,7 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                                 Type
                             </CardPropertyKeyStyle>
                             <div>
-                                {type}
+                                <FontAwesomeIcon icon={typeMapping[type]} size={"xs"}/> {type}
                             </div>
                         </CardPropertyLiStyle>
 
@@ -177,12 +231,14 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                                 Targets
                             </CardPropertyKeyStyle>
                             <div>
-                                {targets}
+                                {targetsMapping[targets] && <>
+                                    {targetsMapping[targets]} {targets}
+                                </>}
                             </div>
                         </CardPropertyLiStyle>
                         }
 
-                        {health &&
+                        {!isNaN(health) &&
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
                                 Health
@@ -193,9 +249,9 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                         </CardPropertyLiStyle>
                         }
 
-                        {attackspeed && <CardPropertyLiStyle>
+                        {!isNaN(attackspeed) && <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
-                                Attackspeed
+                                Attack Speed
                             </CardPropertyKeyStyle>
                             <div>
                                 {attackspeed}
@@ -203,10 +259,10 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                         </CardPropertyLiStyle>
                         }
 
-                        {attackdelay &&
+                        {!isNaN(attackdelay) &&
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
-                                Attackdelay
+                                Attack Delay
                             </CardPropertyKeyStyle>
                             <div>
                                 {attackdelay}
@@ -214,7 +270,7 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                         </CardPropertyLiStyle>
                         }
 
-                        {damage &&
+                        {!isNaN(damage) &&
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
                                 Damage
@@ -225,10 +281,10 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                         </CardPropertyLiStyle>
                         }
 
-                        {range &&
+                        {!isNaN(range) &&
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
-                                range
+                                Range
                             </CardPropertyKeyStyle>
                             <div>
                                 {range}
@@ -262,25 +318,23 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                     </CardPropertyUlStyle>
 
 
-                </div>
+                    <DescriptionStyle dangerouslySetInnerHTML={{__html: descriptionStyled}}/>
 
-                <div dangerouslySetInnerHTML={{__html: description}}/>
 
-                <div>
-                    <CardPropertyUlStyle>
+                    <CardGlossaryUlStyle>
                         {
                             glossary.length > 0 && glossary.map(({title, text}) =>
                                 <CardPropertyLiStyle key={title}>
-                                    <CardPropertyKeyStyle>
+                                    <CardGlossaryStyle>
                                         {title}
-                                    </CardPropertyKeyStyle>
-                                    <div>
-                                        {text}
-                                    </div>
+                                    </CardGlossaryStyle>
+                                    <div dangerouslySetInnerHTML={{__html: text}}></div>
                                 </CardPropertyLiStyle>
                             )}
-                    </CardPropertyUlStyle>
-                </div>
+                    </CardGlossaryUlStyle>
+
+
+                </ModalContainerStyle>
             </ReactModal>
         </div>
     );
