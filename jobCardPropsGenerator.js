@@ -125,6 +125,7 @@ function mapDataFromOneResponse(nextPageData) {
             propsAsMap.description = matchedDataSetFromGame.description;
             propsAsMap.unitToSummon = matchedDataSetFromGame.unitToSummon;
 
+
             // match by id manual
             // toIdMappingConfig
             propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
@@ -146,7 +147,6 @@ function mapDataFromOneResponse(nextPageData) {
             propsAsMap.iD = toIdMappingConfig[propsAsMap.name];
         }
 
-
         if (typeof propsAsMap.iD === 'undefined') {
             errorList.push("Cannot match data from:" + propsAsMap.name);
         }
@@ -154,6 +154,13 @@ function mapDataFromOneResponse(nextPageData) {
             errorList.push("No mapping required:" + propsAsMap.name);
         }
 
+        if (propsAsMap.iD === 183) {
+            propsAsMap.description = 'Summon 2 Spear Throwsers, If you do not control any bridges summon 1 extra. They all gain Rage.';
+        } else if (propsAsMap.iD === 21) {
+            propsAsMap.description = 'Generates 15 XP over 45 sec - regards, XP INC. When in Mana Frenzy the shrine overheats and takes 3x decay damage.';
+        } else if (propsAsMap.iD === 184) {
+            propsAsMap.description = 'If a friendly minion has Rage, summon 5 more.';
+        }
 
         const imageNormalized = propsAsMap.image.charAt(0).toUpperCase() + propsAsMap.image.slice(1);
         propsAsMap.image = imageNormalized;

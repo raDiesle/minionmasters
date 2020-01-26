@@ -10,7 +10,7 @@ import {typeMapping} from "../cardtype/typeMapping";
 import {factionMapping} from "../faction/Factions";
 import {targetsMapping} from "../attack/targetsMapping";
 import {rarityMapping} from "../rarity/rarityMapping";
-
+import sortBy from "lodash.sortby";
 
 const ModalContainerStyle = styled.div`
    position: relative;
@@ -105,7 +105,8 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
 
-    const descriptionStyled = description.replace(new RegExp(/\. /, 'g'), ". <br />");
+    let descriptionStyled = description.replace(new RegExp(/\./, 'g'), ".<br />");
+    descriptionStyled = description.replace(new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>");
 
     useEffect(() => {
         setTimeout(() => {
@@ -127,17 +128,24 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
             setGlossary(result);
 
             [...document.querySelectorAll(`${$cardRootContainer}span[data-card]:not([data-card=""]`)].map(foundItem => {
-                foundItem.addEventListener('click', function (e) {
-                    const clickedInfo = this.getAttribute("data-card");
-                    // card.name is hack and means it is a small. cannot be mapped easy
-                    const card = cardData.find(card => card.unitToSummon === clickedInfo || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase());
+                    foundItem.addEventListener('click', function (e) {
+                        const clickedInfo = this.getAttribute("data-card");
+                        // to find card.name is a hack. If sort by iD, it will likely find the card to summon
+                        const card = sortBy(cardData, ["iD"]).find(card => {
+                            return (
+                                card.unitToSummon === clickedInfo
+                                || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase()
+                            )
+                        });
 
-                    if (typeof card !== "undefined") {
-                        setModals((modals) => [...modals,
-                            card,
-                        ]);
-                    }
-                });
+                        if (typeof card !== "undefined") {
+                            setModals((modals) => [...modals,
+                                card,
+                            ]);
+                        }
+                    });
+
+                    return true;
                 }
             );
 

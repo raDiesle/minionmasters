@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
-import orderBy from "lodash/orderBy";
 import {toast} from "react-toastify";
 
 const CardsStyle = styled.a`
@@ -16,15 +15,12 @@ const CardNameStyle = styled.div`
 `;
 
 export default function Cards({cards, setSelectedCardEvent, isShowNames}) {
-    let sortOrder = "asc";
-
     return (
-        <CardsStyle name="cardsview">
-            {
-                orderBy(cards, ({manacost}) => parseInt(manacost), sortOrder)
-                    .map(card =>
+        <div>
+            <CardsStyle name="cardsview">
+                {
+                    cards.map(card =>
                         <div key={card.pageId}>
-
                             <Card
                                 card={card}
                                 onClick={() => {
@@ -40,7 +36,9 @@ export default function Cards({cards, setSelectedCardEvent, isShowNames}) {
                             <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
                         </div>
                     )
-            }
-        </CardsStyle>
+                }
+            </CardsStyle>
+            Count: {cards.length}
+        </div>
     );
 }

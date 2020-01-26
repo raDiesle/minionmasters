@@ -13,6 +13,8 @@ import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
 import {targetsMapping} from "../../attack/targetsMapping";
 
 import {factionMapping} from "../../faction/Factions";
+import {faSortAmountUp} from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
+import {faSortAmountDown} from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
 
 const InputTextStyle = styled.input`
   color: #444;
@@ -58,7 +60,7 @@ const FilterContainerStyle = styled.div`
         }
     `;
 
-export function Filters({filters, setFilters, isShowNames, setIsShowNames}) {
+export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortByMana, setSortByMana}) {
 
     useEffect(() => {
         setIsShowNames(!!filters.name);
@@ -76,12 +78,28 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames}) {
             </ButtonFilterGroup>
         </div>
 
-        <div>
+        <div style={{paddingRight: 0}}>
             Manacost
             <ButtonFilterGroup btnkey="manacost" filters={filters.manacost} setFilters={setFilters}>
                 {MANACOST.map((number) => <div key={number}>{number}</div>)}
             </ButtonFilterGroup>
         </div>
+
+        <ButtonGroupStyle>
+            <ButtonInGroupStyle
+                isButtonActive={sortByMana === 'asc'}
+                onClick={() => setSortByMana("asc")}
+            >
+                <FontAwesomeIcon icon={faSortAmountUp}/>
+            </ButtonInGroupStyle>
+            <ButtonInGroupStyle
+                isButtonActive={sortByMana === 'desc'}
+                onClick={() => setSortByMana("desc")}
+            >
+                <FontAwesomeIcon icon={faSortAmountDown}/>
+            </ButtonInGroupStyle>
+        </ButtonGroupStyle>
+
 
         <div>
             Rare
