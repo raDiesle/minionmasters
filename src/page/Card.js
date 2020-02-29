@@ -1,13 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-import {RARITY_KEYS, rarityMapping} from "../rarity/rarityMapping";
+import {rarityMapping} from "../rarity/rarityMapping";
 import {typeMapping} from "../cardtype/typeMapping";
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
-import {faMinusCircle} from "@fortawesome/free-solid-svg-icons/faMinusCircle";
-import CardDetailsModal from "./CardDetailsModal";
 
 import {factionMapping} from "../faction/Factions";
 import {targetsMapping} from "../attack/targetsMapping";
@@ -113,11 +109,6 @@ const BottomLeftCornerStyle = styled.div`
       }
 `;
 
-const OverlayActionBackground = styled(IconStyleSize)`
-    background-color: rgba(0,0,0, 0.5);
-    border: 1px dotted rgba(0,0,0, 0.5);
-    color: #fff;
-`;
 
 const FactionStyle = styled(IconStyleSize)`
     position: absolute;
@@ -132,33 +123,6 @@ const FactionStyle = styled(IconStyleSize)`
     }
 `;
 
-const InfoDetailsOverlay = styled.div`
-    position: absolute;
-    top: 30%;
-    right: 0px;
-    padding: 15% 0 15% 15%;
-   
-    &:hover{
-      cursor: pointer;
-    }
-`;
-const InfoIconStyle = styled(OverlayActionBackground)`
-  padding-left: 2px;
-`;
-
-const AddCardToDeckIconStyle = styled(OverlayActionBackground)`
-  padding-right: 2px;
-`;
-
-const AddCardToDeckOverlay = styled.div`
-    position: absolute;
-    top: 30%;
-    left: 0px;
-    padding: 15% 15% 15% 0;    
-    &:hover{
-      cursor: pointer;
-    }
-`;
 
 const AttackTypeStyle = styled(IconStyleSize)`
     position: absolute;
@@ -188,18 +152,9 @@ const BottomRightCornerStyle = styled.div`
 `;
 
 //onClick to be removed and setter go here
-export function Card({card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
-    const [isOpenDetails, setIsOpenDetails] = useState(false);
-
-    return <>
-        {isOpenDetails ? <CardDetailsModal isOpenDetails={isOpenDetails}
-                                           setIsOpenDetails={setIsOpenDetails}
-                                           card={card}
-                                           key={card.pageId}
-        /> : null}
-
-        <CardContainerStyle
-        >
+export function Card({children, card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
+    return <div>
+        <CardContainerStyle>
             <CardContentStyle>
                 <CardImageStyle src={`generated/img/${image}`} alt={image}/>
                 <RightCornerStyle rarity={rarity}/>
@@ -215,27 +170,9 @@ export function Card({card: {pageId, image, manacost, description, name, rarity,
                     <BottomRightCornerStyle/> <AttackTypeStyle>{targetsMapping[targets]}</AttackTypeStyle>
                 </>}
 
-
-                {rarity !== RARITY_KEYS.Perk &&
-                <AddCardToDeckOverlay onClick={onClick}>
-                    <AddCardToDeckIconStyle>
-                        <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"}/>
-                    </AddCardToDeckIconStyle>
-                </AddCardToDeckOverlay>
-                }
-
-                <InfoDetailsOverlay onClick={(event) => {
-                    setIsOpenDetails(true);
-                    event.stopPropagation();
-                }}>
-                    <InfoIconStyle>
-                        <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
-                    </InfoIconStyle>
-                </InfoDetailsOverlay>
+                {children}
             </CardContentStyle>
-
-
         </CardContainerStyle>
-    </>
+    </div>
         ;
 }
