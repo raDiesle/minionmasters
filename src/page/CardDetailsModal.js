@@ -11,6 +11,7 @@ import {factionMapping} from "../faction/Factions";
 import {targetsMapping} from "../attack/targetsMapping";
 import {rarityMapping} from "../rarity/rarityMapping";
 import sortBy from "lodash.sortby";
+import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";
 
 const ModalContainerStyle = styled.div`
    position: relative;
@@ -102,7 +103,7 @@ const CardGlossaryStyle = styled.div`
     font-weight: bold;
 `;
 
-export default function CardDetailsModal({card: {image, attackdelay, attackspeed, damage, description, faction, flying, health, manacost, name, range, rarity, speed, targets, type}, isOpenDetails, setIsOpenDetails}) {
+export default function CardDetailsModal({card: {pageId, image, attackdelay, attackspeed, damage, description, faction, flying, health, manacost, name, range, rarity, speed, targets, type}, isOpenDetails, setIsOpenDetails}) {
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
 
@@ -344,6 +345,8 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
                             )}
                     </CardGlossaryUlStyle>
 
+
+                    <CardDetailsGoodBadAgainst pageId={pageId}/>
 
                 </ModalContainerStyle>
             </ReactModal>

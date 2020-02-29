@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {Card} from "../Card";
+import EmptyCardSlotSelected from "../../EmptyCardSlotSelected";
 
 
 const CardDeckSlotStyle = styled.div`
@@ -26,45 +27,6 @@ const EmptyCardSlotUnselectedStyle = styled.div`
     border: 1px solid #000000;
 `;
 
-const EmptyCardSlotSelectedStyle = styled.a`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 25% 15%;
-    margin-top: 2px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    
-  @media (max-width: 767px) {
-      font-size: 9px;
-   }
-
-          background: 
-            linear-gradient(90deg, #000 50%, transparent 50%),
-            linear-gradient(0deg, #000 50%, transparent 50%),
-            linear-gradient(90deg, #000 50%, transparent 50%),
-            linear-gradient(0deg, #000 50%, transparent 50%);
-          background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
-          background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px;
-          background-position: left top, right top, left bottom, left top;
-          animation: border-dance 4s infinite linear;
-        }
-        
-        @keyframes border-dance 
-        {
-          0%
-          {
-            background-position: left top, right top, right bottom, left bottom;
-          }
-          100% 
-          {
-            background-position: right top, right bottom, left bottom, left top;
-          }
-`;
-
 export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOnClick, setSelectedTabIndex}) {
 
 
@@ -74,9 +36,9 @@ export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOn
             {lastSelectedCard.card.pageId !== 0 ?
                 <Card card={lastSelectedCard.card} onClick={() => handleOnClick(number)} isDeckCard showDeck/> :
                 (isSelectedSlot ?
-                    <EmptyCardSlotSelectedStyle href="#cardsview" onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
+                    <EmptyCardSlotSelected href="#cardsview" onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
                         Select Card
-                    </EmptyCardSlotSelectedStyle> :
+                    </EmptyCardSlotSelected> :
                     <EmptyCardSlotUnselectedStyle>&nbsp;</EmptyCardSlotUnselectedStyle>)
             }
         </CardDeckSlotStyle>
