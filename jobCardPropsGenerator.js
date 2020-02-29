@@ -120,6 +120,7 @@ function mapDataFromOneResponse(nextPageData) {
         };
 
         const matchedDataSetFromGame = cardDataFromGame.find(({name}) => propsAsMap.name === name);
+        propsAsMap.isGameDescr = typeof matchedDataSetFromGame !== 'undefined';
         if (typeof matchedDataSetFromGame !== 'undefined') {
             propsAsMap.iD = parseInt(matchedDataSetFromGame.iD);
             propsAsMap.description = matchedDataSetFromGame.description;
@@ -132,8 +133,18 @@ function mapDataFromOneResponse(nextPageData) {
             propsAsMap.description = propsAsMap.description.replace(/\<link="actor_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
             propsAsMap.description = propsAsMap.description.replace(/\<link="plain_text:(.*?)>(.*?)<\/link>/gm, "<span class='htmlTextRef' data-inline-text='$1'>$2</span>");
             propsAsMap.description = propsAsMap.description.replace(/\<b\><color\=orange>(.*?)<\/color>\<\/b\>/gm, "<span class='htmlHighlight' data-highlight='$1'>$1</span>");
+        } else {
+            propsAsMap.description = propsAsMap.description.replace(/[[(.*?)]]/gm, "<span className='htmlCardRef' data-card='$1'>$1</span>");
         }
-        propsAsMap.isGameDescr = typeof matchedDataSetFromGame !== 'undefined';
+
+        const werewolveInlineInfo = `Accursed - Minion
+        - 400 health.
+        - 40 damage (DPS: 36,4).
+        - 1,1 sec. attackspeed.
+        - Melee.
+        - speed: 8.
+        `;
+        propsAsMap.description = propsAsMap.description.replace(/\<span class\=\'htmlCardRef\' data\-card\=\'Werewolf\'>Werewolf\<\/span\>/gm, `<span class='htmlTextRef' data-inline-text='${werewolveInlineInfo}'><span class='htmlHighlight' data-highlight='Werewolf'>Werewolf</span></span>`);
 
         // match by name
         const matchedDataFromGame = cardDataFromGame.find(({name}) => specialMapConfigByName[propsAsMap.name] === name);
@@ -160,6 +171,12 @@ function mapDataFromOneResponse(nextPageData) {
             propsAsMap.description = 'Generates 15 XP over 45 sec - regards, XP INC. When in Mana Frenzy the shrine overheats and takes 3x decay damage.';
         } else if (propsAsMap.iD === 184) {
             propsAsMap.description = 'If a friendly minion has Rage, summon 5 more.';
+        } else if (propsAsMap.iD === 115) {
+            propsAsMap.name = "Armored Scrat";
+        } else if (propsAsMap.iD === 249) {
+            propsAsMap.description = "Summon 1 Slitherbound Lancer and 1 Slitherbound Darter";
+        } else if (propsAsMap.iD === 214) {
+            propsAsMap.description = propsAsMap.description.replace(/class\=\'htmlCardRef\' data\-card\=\'SquirePuff\'/gm, "");
         }
 
         const imageNormalized = propsAsMap.image.charAt(0).toUpperCase() + propsAsMap.image.slice(1);
