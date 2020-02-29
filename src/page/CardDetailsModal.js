@@ -81,6 +81,7 @@ const CardImageStyle = styled.img`
 
 const DescriptionStyle = styled.div`
   padding-top: 40px;
+  line-height: 2rem;
 `;
 
 const RarityStyle = styled.div`
@@ -105,8 +106,10 @@ export default function CardDetailsModal({card: {image, attackdelay, attackspeed
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
 
-    let descriptionStyled = description.replace(new RegExp(/\./, 'g'), ".<br />");
-    descriptionStyled = description.replace(new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>");
+    let descriptionStyled = description.replace(new RegExp(/\. /, 'g'), ".<br />");
+
+    descriptionStyled = descriptionStyled.replace(new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>");
+    descriptionStyled = descriptionStyled.replace(new RegExp(/\'\'\'Mana Freeze\(1\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 1 Mana Crystal. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(1)'>Mana Freeze(1)</span></span>");
 
     useEffect(() => {
         setTimeout(() => {

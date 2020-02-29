@@ -2,7 +2,7 @@
   "name": "minionmasters",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://radiesle.github.io/minionmasters",
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-regular-svg-icons": "^5.12.0",
@@ -12,7 +12,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.1.2",
     "animejs": "^3.1.0",
-    "gh-pages": "^2.1.1",
+    "firebase": "^7.9.3",
     "lodash": "^4.17.15",
     "lodash.dropright": "^4.1.1",
     "lodash.sortby": "^4.7.0",
@@ -30,9 +30,10 @@
     "styled-components": "^4.4.1"
   },
   "scripts": {
-    "generate": "node jobCardPropsGenerator && node jobAllImagesDownload && node jobCompressImages",
+    "generate": "node jobCardPropsGenerator && node jobCompressImages",
+    "downloadOriginalImages": "node jobAllImagesDownload",
+    "deploy": "firebase deploy  --only hosting",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

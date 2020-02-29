@@ -29,6 +29,5 @@ yarn-error.log*
 /src/generated/
 /src/generated/*.*
 
-/generated/
-/generated/*.*
-
+*iml
+*.log
