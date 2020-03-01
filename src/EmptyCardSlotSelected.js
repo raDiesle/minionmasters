@@ -3,7 +3,6 @@ import React from "react";
 
 export default function EmptyCardSlotSelected({children, onClick}) {
 
-
     const EmptyCardSlotSelectedStyle = styled.a`
     width: 100%;
     height: 100%;

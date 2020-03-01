@@ -2,22 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Card} from "../Card";
 import EmptyCardSlotSelected from "../../EmptyCardSlotSelected";
-
-
-const CardDeckSlotStyle = styled.div`
-    width: 80px;
-    height: 95px;
-    
-    @media (max-width: 767px) {
-      height: 59px;
-      width: 50px;
-    }
-    
-    // margin-bottom: 5px;
-     margin-top: 0;
-     margin-bottom: 6px;
-     margin-right: 2px;
-`;
+import CardDeckSlotStyle from "../../CardDeckSlotStyle";
 
 
 const EmptyCardSlotUnselectedStyle = styled.div`
@@ -28,7 +13,6 @@ const EmptyCardSlotUnselectedStyle = styled.div`
 `;
 
 export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOnClick, setSelectedTabIndex}) {
-
 
     let CARDS_TAB_INDEX = 0;
     return (
