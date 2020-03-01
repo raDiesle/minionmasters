@@ -11,7 +11,6 @@ export default function CardActionAddCardToDeck({card, isDeckCard, onClick}) {
 
     const [isOpenDetails, setIsOpenDetails] = useState(false);
 
-
     const IconStyleSize = styled.div`
         @media (max-width: 767px) {
             font-size: 0.6rem;

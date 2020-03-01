@@ -10,7 +10,8 @@ import {typeMapping} from "../cardtype/typeMapping";
 import {targetsMapping} from "../attack/targetsMapping";
 
 
-export default function FiltersWithCards({setSelectedCardEvent}) {
+export default function FiltersWithCards({cardActionWrapper}) {
+
     function setAllFilterStates(isActive) {
         const setFilterState = (key) => {
             return {
@@ -54,8 +55,8 @@ export default function FiltersWithCards({setSelectedCardEvent}) {
         />
 
         <Cards cards={sortedByManaCards}
-               setSelectedCardEvent={setSelectedCardEvent}
                isShowNames={isShowNames}
+               cardActionWrapper={cardActionWrapper}
         />
     </div>;
 }

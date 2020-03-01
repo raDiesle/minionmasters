@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
-import {toast} from "react-toastify";
-import CardActionAddCardToDeck from "./CardActionAddCardToDeck";
 
 const CardsStyle = styled.a`
     display: flex;
@@ -15,28 +13,18 @@ const CardNameStyle = styled.div`
   text-align: center;
 `;
 
-export default function Cards({cards, setSelectedCardEvent, isShowNames}) {
+export default function Cards({cards, isShowNames, cardActionWrapper}) {
     return (
         <div>
             <CardsStyle name="cardsview">
                 {
                     cards.map(card =>
                         <div key={card.pageId}>
+
                             <Card card={card}>
-                                <CardActionAddCardToDeck
-                                    card={card}
-                                    onClick={() => {
-                                        setSelectedCardEvent({
-                                            eventId: Math.random(),
-                                            card: {
-                                                pageId: card.pageId
-                                            }
-                                        });
-                                        toast("Card added to Deck");
-                                    }}
-                                    card={card}
-                                />
+                                {cardActionWrapper(card)}
                             </Card>
+
                             <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
                         </div>
                     )
