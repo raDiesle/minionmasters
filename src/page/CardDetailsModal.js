@@ -103,7 +103,7 @@ const CardGlossaryStyle = styled.div`
     font-weight: bold;
 `;
 
-export default function CardDetailsModal({card: {pageId, image, attackdelay, attackspeed, damage, description, faction, flying, health, manacost, name, range, rarity, speed, targets, type}, isOpenDetails, setIsOpenDetails}) {
+export default function CardDetailsModal({card, card: {image, attackdelay, attackspeed, damage, description, faction, flying, health, manacost, name, range, rarity, speed, targets, type}, isOpenDetails, setIsOpenDetails}) {
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
 
@@ -346,7 +346,7 @@ export default function CardDetailsModal({card: {pageId, image, attackdelay, att
                     </CardGlossaryUlStyle>
 
 
-                    <CardDetailsGoodBadAgainst pageId={pageId}/>
+                    <CardDetailsGoodBadAgainst card={card}/>
 
                 </ModalContainerStyle>
             </ReactModal>

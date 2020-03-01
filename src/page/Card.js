@@ -152,7 +152,7 @@ const BottomRightCornerStyle = styled.div`
 `;
 
 //onClick to be removed and setter go here
-export function Card({children, card: {pageId, image, manacost, description, name, rarity, type, faction, targets}, card, onClick, isDeckCard = false, zoom, showDeck}) {
+export function Card({children, card: {image, manacost, rarity, type, faction, targets}}) {
     return <div>
         <CardContainerStyle>
             <CardContentStyle>
