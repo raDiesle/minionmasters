@@ -4,6 +4,8 @@ import CardDeckContainer from "./carddeck/DeckContainer";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import Masters from "./mastersoverview/Masters";
 import FiltersWithCards from "./FiltersWithCards";
+import CardActionAddCardToDeck from "./CardActionAddCardToDeck";
+import {toast} from "react-toastify";
 
 const usePreviousValue = value => {
     const ref = useRef();
@@ -51,9 +53,19 @@ export function Page() {
                 <Tab>Masters</Tab>
             </TabList>
             <TabPanel>
-                <FiltersWithCards setSelectedCardEvent={setSelectedCardEvent}/>
-
-
+                <FiltersWithCards cardActionWrapper={(card) =>
+                    <CardActionAddCardToDeck
+                        onClick={() => {
+                            setSelectedCardEvent({
+                                eventId: Math.random(),
+                                card: {
+                                    pageId: card.pageId
+                                }
+                            });
+                            toast("Card added to Deck");
+                        }}
+                        card={card}
+                    />}/>
             </TabPanel>
             <TabPanel>
                 <Masters setSelectedHero={setSelectedHero}/>

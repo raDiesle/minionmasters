@@ -5,7 +5,6 @@ import {Page} from "./page/Page";
 import Modal from 'react-modal';
 import {toast} from 'react-toastify';
 import './Modal.scss';
-import {db} from "./firestore";
 
 
 const Header = styled.header`
@@ -46,19 +45,6 @@ const CapitalLetterStyle = styled.span`
 const App = () => {
     toast.configure();
     Modal.setAppElement('body');
-
-    // Add a new document in collection "cities"
-    db.collection("cities").doc("LA").set({
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA"
-    })
-        .then(function () {
-            console.log("Document successfully written!");
-        })
-        .catch(function (error) {
-            console.error("Error writing document: ", error);
-        });
 
     return (
         <div>
