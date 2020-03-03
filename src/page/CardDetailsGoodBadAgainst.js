@@ -3,32 +3,28 @@ import React, {useEffect, useState} from "react";
 import firebase from 'firebase/app';
 
 import FiltersWithCards from "./FiltersWithCards";
-import EmptyCardSlotSelected from "../EmptyCardSlotSelected";
+
 import {toast} from "react-toastify";
 import {db} from "../firestore";
-import {Card} from "./Card";
 import cardData from "../generated/jobCardProps";
-import CardDeckSlotStyle from "../CardDeckSlotStyle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faThumbsUp} from "@fortawesome/free-regular-svg-icons/faThumbsUp";
-import {faThumbsDown} from "@fortawesome/free-regular-svg-icons/faThumbsDown";
+import AgainstCards from "./AgainstCards";
 
 
 const GoodBadStyle = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-grow: 1;
 `;
 
 const CardRelationStyle = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-
-const CardsStyle = styled.div`
-  display: flex;
   
+   & > div {
+   padding-left: 20px;
+   }
 `;
+
 
 const ActionEventListenerStyle = styled.div`
    position: absolute;
@@ -39,110 +35,126 @@ const ActionEventListenerStyle = styled.div`
    z-index: 1000;
 `;
 
+const AgainstGoodHeaderStyle = styled.div`
+  color: darkgreen;
+  font-weight: bold;
+`;
+
+const AgainstBadHeaderStyle = styled.div`
+  color: darkred;
+  font-weight: bold;
+`;
+
+
+const fetchAgainstCards = (iD, goodorBadAgainstRef) => {
+    return goodorBadAgainstRef.orderBy("votes", "desc").get().then((querySnapshot) => {
+        return querySnapshot.docs.map((doc) => {
+            const card = cardData.find(({iD}) => iD === parseInt(doc.id));
+
+            return ({
+                    votedCardiD: doc.id,
+                    votes: doc.data().votes,
+                    card
+                }
+            )
+        });
+    });
+};
+
 
 export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
-
-    const [isShowCardToSuggestView, setShowCardToSuggestView] = useState(false);
-    const [goodAgainstCards, setGoodAgainstCards] = useState([]);
-
     const goodAgainstRef = db.collection("cards").doc(String(iD)).collection("goodAgainst");
+    const badAgainstRef = db.collection("cards").doc(String(iD)).collection("badAgainst");
 
-    function fetchGoodCards() {
-        goodAgainstRef.get().then((querySnapshot) => {
-            const voteGoodCards = querySnapshot.docs.map((doc) => {
-                const card = cardData.find(({iD}) => iD === parseInt(doc.id));
+    const [selectionState, setSelectionState] = useState("NONE");
 
-                return ({
-                        goodAgainstId: doc.id,
-                        votes: doc.data().votes,
-                        card
-                    }
-                )
-            });
-            setGoodAgainstCards(voteGoodCards);
+    const [goodAgainstVotedCards, setGoodAgainstVotedCards] = useState([]);
+    const triggerDataRefreshGoodAgainst = () => {
+        fetchAgainstCards(iD, goodAgainstRef).then(data => {
+            setGoodAgainstVotedCards(data);
         });
-    }
+    };
+    useEffect(() => {
+        triggerDataRefreshGoodAgainst();
+    }, []);
 
-    const handleSelectCard = (iD) => {
-        goodAgainstRef.doc(String(iD)).set({
+
+    const [badAgainstVotedCards, setBadAgainstVotedCards] = useState([]);
+    const triggerDataRefreshBadAgainst = () => {
+        fetchAgainstCards(iD, badAgainstRef).then(data => {
+            setBadAgainstVotedCards(data);
+        });
+    };
+    useEffect(() => {
+        triggerDataRefreshBadAgainst();
+    }, []);
+
+    const updateUpvoteSelection = (goodOrBadAgainstRefVotedCardId) => {
+        setSelectionState("NONE");
+        return goodOrBadAgainstRefVotedCardId.set({
             votes: firebase.firestore.FieldValue.increment(1)
         }, {merge: true})
             .then(function () {
-                toast("Card suggested for good");
-                fetchGoodCards();
+                toast("Saved");
+                return Promise.resolve();
             })
             .catch(function (error) {
                 console.error(error);
-                toast("Error to suggest the card.");
+                toast("Error");
+                return Promise.resolve();
             });
-
-        setShowCardToSuggestView(false);
     };
 
-    const handleCardDeckSlotClick = () => {
-        setShowCardToSuggestView(true);
-    };
+    const handleSelectCard = (iD) => {
+        const refGoodOrBad = selectionState === "GOOD_AGAINST" ? goodAgainstRef : badAgainstRef;
+        const goodOrBadAgainstRefVotedCardId = refGoodOrBad.doc(String(iD));
 
-    useEffect(() => {
-        fetchGoodCards();
-    }, []);
-
-    const upVote = (iD) => {
-        handleSelectCard(iD);
-    };
-
-    const downVote = (iD, votes) => {
-        if (votes === 0) {
-            toast("card has no votes.");
-            return;
-        }
-        goodAgainstRef.doc(String(iD)).set({
-            votes: firebase.firestore.FieldValue.increment(-1)
-        }, {merge: true})
-            .then(function () {
-                toast("Card suggested less importance for good ");
-                fetchGoodCards();
-            })
-            .catch(function (error) {
-                console.error(error);
-                toast("Error to suggest the card.");
-            });
+        updateUpvoteSelection(goodOrBadAgainstRefVotedCardId).then(_ => {
+            selectionState === "GOOD_AGAINST" ? triggerDataRefreshGoodAgainst() : triggerDataRefreshBadAgainst();
+        });
+        setSelectionState("NONE");
     };
 
     return <div>
         <GoodBadStyle>
             <CardRelationStyle>
-                Good against
-                <CardsStyle>
+                <AgainstGoodHeaderStyle>
+                    Good against
+                </AgainstGoodHeaderStyle>
+                {
+                    selectionState === "NONE" &&
+                    <AgainstCards
+                        triggerDataRefresh={triggerDataRefreshGoodAgainst}
+                        goodorBadAgainstRef={goodAgainstRef}
+                        votedCards={goodAgainstVotedCards}
+                        setSelectionState={setSelectionState}
+                        updateUpvoteSelection={updateUpvoteSelection}
+                        handleEmptyCardDeckSlotClick={() => setSelectionState("GOOD_AGAINST")}
+                    />
+                }
 
-                    {
-                        !isShowCardToSuggestView && goodAgainstCards.map(({goodAgainstId, votes, card}) =>
-                            <div>
-                                <Card key={goodAgainstId} card={card}></Card>
-                                <FontAwesomeIcon icon={faThumbsUp} color={"green"} onClick={() => upVote(card.iD)}/>
-                                {votes}
-                                <FontAwesomeIcon icon={faThumbsDown} color={"red"}
-                                                 onClick={() => downVote(card.iD, votes)}/>
-                            </div>
-                        )}
-
-                    {
-                        !isShowCardToSuggestView &&
-                        <CardDeckSlotStyle>
-                            <EmptyCardSlotSelected onClick={() => handleCardDeckSlotClick()}>
-                                Suggest Card
-                            </EmptyCardSlotSelected>
-                        </CardDeckSlotStyle>
-                    }
-                </CardsStyle>
             </CardRelationStyle>
             <CardRelationStyle>
-                Bad against
+                <AgainstBadHeaderStyle>
+                    Bad against
+                </AgainstBadHeaderStyle>
+
+                {
+                    selectionState === "NONE" &&
+                    <AgainstCards
+                        triggerDataRefresh={triggerDataRefreshBadAgainst}
+                        goodorBadAgainstRef={badAgainstRef}
+                        votedCards={badAgainstVotedCards}
+                        setSelectionState={setSelectionState}
+                        updateUpvoteSelection={updateUpvoteSelection}
+                        handleEmptyCardDeckSlotClick={() => setSelectionState("BAD_AGAINST")}
+                    />
+                }
             </CardRelationStyle>
         </GoodBadStyle>
 
         {
-            isShowCardToSuggestView && <FiltersWithCards cardActionWrapper={(card) =>
+            selectionState !== "NONE" && <FiltersWithCards cardActionWrapper={(card) =>
                 <ActionEventListenerStyle
                     onClick={() => handleSelectCard(card.iD)}
                 >
@@ -150,5 +162,7 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
             }>
             </FiltersWithCards>
         }
+
+
     </div>;
 }

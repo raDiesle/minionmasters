@@ -9,6 +9,9 @@ export default function EmptyCardSlotSelected({children, onClick}) {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     padding: 25% 15%;
     margin-top: 2px;
     text-align: center;
