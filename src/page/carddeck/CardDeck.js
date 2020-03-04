@@ -3,6 +3,7 @@ import {CardDeckSlot} from "./CardDeckSlot";
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
 import MasterDeckSlot from "./MasterDeckSlot";
+import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
 
 const CardDeckStyle = styled.div`
     display: flex;
@@ -93,7 +94,16 @@ export function CardDeck({
                                   number={slotPos}
                                   isSelectedSlot={currentSelectedSlot === slotPos}
                                   lastSelectedCard={lastSelectedCards[slotPos]}
-                                  handleOnClick={handleRemoveCard}
+                                  cardActionWrapper={(card) =>
+                                      <CardActionAddCardToDeck
+                                          onClick={() => {
+                                              debugger;
+                                              handleRemoveCard(slotPos);
+                                          }}
+                                          card={card}
+                                          isDeckCard
+                                      />
+                                  }
                                   setSelectedTabIndex={setSelectedTabIndex}
                     />)
             }
