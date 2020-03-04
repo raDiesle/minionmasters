@@ -12,13 +12,15 @@ const EmptyCardSlotUnselectedStyle = styled.div`
     border: 1px solid #000000;
 `;
 
-export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, handleOnClick, setSelectedTabIndex}) {
+export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, cardActionWrapper, setSelectedTabIndex}) {
 
     let CARDS_TAB_INDEX = 0;
     return (
         <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
             {lastSelectedCard.card.pageId !== 0 ?
-                <Card card={lastSelectedCard.card} onClick={() => handleOnClick(number)} isDeckCard showDeck/> :
+                <Card card={lastSelectedCard.card} isDeckCard showDeck>
+                    {cardActionWrapper(lastSelectedCard.card)}
+                </Card> :
                 (isSelectedSlot ?
                     <EmptyCardSlotSelected href="#cardsview" onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
                         Select Card

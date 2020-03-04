@@ -11,6 +11,7 @@ import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 
 import firebase from "firebase";
 import {toast} from "react-toastify";
+import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
 
 const CardsStyle = styled.div`
   display: flex;
@@ -19,7 +20,13 @@ const CardsStyle = styled.div`
 const VotingStyle = styled.div`
   display: flex;
   justify-content: center;
+  align-items: baseline;
   line-height: 16px;
+`;
+
+const SingleVoteStyle = styled.div`
+  cursor: pointer;
+  padding: 2px 8px;
 `;
 
 
@@ -31,8 +38,11 @@ export default function AgainstCards({goodorBadAgainstRef, votedCards, triggerDa
     };
 
     const updateDownvote = (iD, votes) => {
-        if (votes === 0) {
-            toast("card has no votes.");
+        if (votes < 1) {
+            goodorBadAgainstRef.doc(String(iD)).delete().then(() => {
+                toast("card was removed from votes.");
+                triggerDataRefresh();
+            });
             return;
         }
         goodorBadAgainstRef.doc(String(iD)).set({
@@ -60,10 +70,15 @@ export default function AgainstCards({goodorBadAgainstRef, votedCards, triggerDa
                     <div key={votedCardiD}>
                         <Card card={card}></Card>
                         <VotingStyle>
-                            <FontAwesomeIcon icon={faArrowUp} color={"green"} onClick={() => handleUpVote(card.iD)}/>
+                            <SingleVoteStyle>
+                                <FontAwesomeIcon icon={faArrowUp} color={"green"}
+                                                 onClick={() => handleUpVote(card.iD)}/>
+                            </SingleVoteStyle>
                             {votes}
-                            <FontAwesomeIcon icon={faArrowDown} color={"red"}
-                                             onClick={() => handleDownVote(card.iD, votes)}/>
+                            <SingleVoteStyle>
+                                <FontAwesomeIcon icon={votes > 1 ? faArrowDown : faTrashAlt} color={"red"}
+                                                 onClick={() => handleDownVote(card.iD, votes)}/>
+                            </SingleVoteStyle>
                         </VotingStyle>
                     </div>
                 )

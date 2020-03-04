@@ -13,7 +13,12 @@ import AgainstCards from "./AgainstCards";
 const GoodBadStyle = styled.div`
   display: flex;
   justify-content: flex-start;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  
+  & > div {
+  flex: 50%;
+   padding-right: 10px;
+  }
 `;
 
 const CardRelationStyle = styled.div`
@@ -116,31 +121,28 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
     };
 
     return <div>
-        <GoodBadStyle>
-            <CardRelationStyle>
-                <AgainstGoodHeaderStyle>
-                    Good against
-                </AgainstGoodHeaderStyle>
-                {
-                    selectionState === "NONE" &&
+        {
+            selectionState === "NONE" &&
+            <GoodBadStyle>
+                <CardRelationStyle>
+                    <AgainstGoodHeaderStyle>
+                        Good against
+                    </AgainstGoodHeaderStyle>
+
                     <AgainstCards
                         triggerDataRefresh={triggerDataRefreshGoodAgainst}
                         goodorBadAgainstRef={goodAgainstRef}
                         votedCards={goodAgainstVotedCards}
                         setSelectionState={setSelectionState}
                         updateUpvoteSelection={updateUpvoteSelection}
-                        handleEmptyCardDeckSlotClick={() => setSelectionState("GOOD_AGAINST")}
-                    />
-                }
+                        handleEmptyCardDeckSlotClick={() => setSelectionState("GOOD_AGAINST")}/>
 
-            </CardRelationStyle>
-            <CardRelationStyle>
-                <AgainstBadHeaderStyle>
-                    Bad against
-                </AgainstBadHeaderStyle>
+                </CardRelationStyle>
+                <CardRelationStyle>
+                    <AgainstBadHeaderStyle>
+                        Bad against
+                    </AgainstBadHeaderStyle>
 
-                {
-                    selectionState === "NONE" &&
                     <AgainstCards
                         triggerDataRefresh={triggerDataRefreshBadAgainst}
                         goodorBadAgainstRef={badAgainstRef}
@@ -149,18 +151,25 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                         updateUpvoteSelection={updateUpvoteSelection}
                         handleEmptyCardDeckSlotClick={() => setSelectionState("BAD_AGAINST")}
                     />
-                }
-            </CardRelationStyle>
-        </GoodBadStyle>
 
+                </CardRelationStyle>
+            </GoodBadStyle>
+        }
         {
-            selectionState !== "NONE" && <FiltersWithCards cardActionWrapper={(card) =>
-                <ActionEventListenerStyle
-                    onClick={() => handleSelectCard(card.iD)}
-                >
-                </ActionEventListenerStyle>
-            }>
-            </FiltersWithCards>
+            selectionState !== "NONE" &&
+            (
+                <div>
+                    {selectionState === "GOOD_AGAINST" ? <AgainstGoodHeaderStyle>Good against</AgainstGoodHeaderStyle> :
+                        <AgainstBadHeaderStyle>Bad against</AgainstBadHeaderStyle>}
+                    <FiltersWithCards cardActionWrapper={(card) =>
+                        <ActionEventListenerStyle
+                            onClick={() => handleSelectCard(card.iD)}
+                        >
+                        </ActionEventListenerStyle>
+                    }>
+                    </FiltersWithCards>
+                </div>
+            )
         }
 
 

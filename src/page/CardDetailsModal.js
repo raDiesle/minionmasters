@@ -155,6 +155,8 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
 
         }, 0);
 
+        document.body.style.overflow = 'hidden';
+        return () => document.body.style.overflow = 'unset';
     }, []);
 
 
