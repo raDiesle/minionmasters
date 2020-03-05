@@ -24,7 +24,7 @@ const GoodBadStyle = styled.div`
 const CardRelationStyle = styled.div`
   display: flex;
   flex-direction: column;
-  
+  flex-wrap: wrap;
    & > div {
    padding-left: 20px;
    }

@@ -15,6 +15,7 @@ import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
 
 const CardsStyle = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 const VotingStyle = styled.div`
@@ -38,7 +39,7 @@ export default function AgainstCards({goodorBadAgainstRef, votedCards, triggerDa
     };
 
     const updateDownvote = (iD, votes) => {
-        if (votes < 1) {
+        if (votes <= 1) {
             goodorBadAgainstRef.doc(String(iD)).delete().then(() => {
                 toast("card was removed from votes.");
                 triggerDataRefresh();

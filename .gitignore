@@ -22,12 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
-/public/generated/
-/public/generated/*.*
-
-/src/generated/
-/src/generated/*.*
-
 *iml
 *.log
