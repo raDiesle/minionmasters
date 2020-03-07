@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowUp} from "@fortawesome/free-solid-svg-icons/faArrowUp";
-import {faArrowDown} from "@fortawesome/free-solid-svg-icons/faArrowDown";
 import CardDeckSlotStyle from "../CardDeckSlotStyle";
 import EmptyCardSlotSelected from "../EmptyCardSlotSelected";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
@@ -12,22 +10,28 @@ import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import firebase from "firebase";
 import {toast} from "react-toastify";
 import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons/faArrowRight";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 
 const CardsStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
 `;
 
 const VotingStyle = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: baseline;
   line-height: 16px;
 `;
 
 const SingleVoteStyle = styled.div`
   cursor: pointer;
-  padding: 2px 8px;
 `;
 
 
@@ -72,12 +76,12 @@ export default function AgainstCards({goodorBadAgainstRef, votedCards, triggerDa
                         <Card card={card}></Card>
                         <VotingStyle>
                             <SingleVoteStyle>
-                                <FontAwesomeIcon icon={faArrowUp} color={"green"}
+                                <FontAwesomeIcon icon={faArrowLeft} color={"green"}
                                                  onClick={() => handleUpVote(card.iD)}/>
                             </SingleVoteStyle>
                             {votes}
                             <SingleVoteStyle>
-                                <FontAwesomeIcon icon={votes > 1 ? faArrowDown : faTrashAlt} color={"red"}
+                                <FontAwesomeIcon icon={votes > 1 ? faArrowRight : faTrashAlt} color={"red"}
                                                  onClick={() => handleDownVote(card.iD, votes)}/>
                             </SingleVoteStyle>
                         </VotingStyle>
