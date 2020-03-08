@@ -6,6 +6,7 @@ import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
 export const typeMapping = {
     "Flying Minion": faDove,
     "Minion": faShoePrints,
-    "Spell": faMagic,
+    "Spell": faMagic, // old from wiki
+    "DefensiveSpell": faMagic,
     "Building": faHome
 };
