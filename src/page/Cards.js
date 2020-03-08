@@ -19,7 +19,7 @@ export default function Cards({cards, isShowNames, cardActionWrapper}) {
             <CardsStyle name="cardsview">
                 {
                     cards.map(card =>
-                        <div key={card.pageId}>
+                        <div key={card.iD}>
 
                             <Card card={card}>
                                 {cardActionWrapper(card)}

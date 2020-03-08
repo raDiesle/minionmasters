@@ -7,6 +7,7 @@ import {typeMapping} from "../cardtype/typeMapping";
 
 import {factionMapping} from "../faction/Factions";
 import {targetsMapping} from "../attack/targetsMapping";
+import {faCircle} from "@fortawesome/free-regular-svg-icons/faCircle";
 
 
 const IconStyleSize = styled.div`
@@ -73,6 +74,7 @@ const GroundAirStyle = styled(IconStyleSize)`
             
      & > svg {
         vertical-align: text-top;
+        
         fill: #FFFFFF;     
         color: #FFFFFF;
     }
@@ -161,7 +163,7 @@ export function Card({children, card: {image, manacost, rarity, type, faction, t
                 <ManacostStyle>{manacost}</ManacostStyle>
 
                 <TopLeftCornerStyle/>
-                <GroundAirStyle><FontAwesomeIcon icon={typeMapping[type]} size={"xs"}/></GroundAirStyle>
+                <GroundAirStyle><FontAwesomeIcon icon={typeMapping[type] || faCircle} size={"xs"}/></GroundAirStyle>
 
                 <BottomLeftCornerStyle/>
                 <FactionStyle>{factionMapping[faction]}</FactionStyle>
