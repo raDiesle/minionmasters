@@ -5,13 +5,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CardDeckSlotStyle from "../CardDeckSlotStyle";
 import EmptyCardSlotSelected from "../EmptyCardSlotSelected";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
-
-
-import firebase from "firebase";
-import {toast} from "react-toastify";
 import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import {db} from "../firestore";
+import cardData from "../generated/jobCardProps";
 
 const CardsStyle = styled.div`
     display: flex;
@@ -34,55 +32,65 @@ const SingleVoteStyle = styled.div`
   cursor: pointer;
 `;
 
+const swapArrayElements = (arr, x, y) => {
+    if (arr[x] === undefined || arr[y] === undefined) {
+        return arr
+    }
+    const a = x > y ? y : x;
+    const b = x > y ? x : y;
+    return [
+        ...arr.slice(0, a),
+        arr[b],
+        ...arr.slice(a + 1, b),
+        arr[a],
+        ...arr.slice(b + 1)
+    ]
+};
 
-export default function AgainstCards({goodorBadAgainstRef, votedCards, triggerDataRefresh, handleEmptyCardDeckSlotClick, updateUpvoteSelection}) {
+export default function AgainstCards({cardModalId, againstKey, votedCards: votedCardiDs, triggerDataRefresh, handleEmptyCardDeckSlotClick, updateUpvoteSelection}) {
 
     const handleUpVote = (iD) => {
-        updateUpvoteSelection(goodorBadAgainstRef.doc(String(iD)))
+        updateUpvoteSelection(againstKey, iD)
             .then(_ => triggerDataRefresh());
     };
 
-    const updateDownvote = (iD, votes) => {
-        if (votes <= 1) {
-            goodorBadAgainstRef.doc(String(iD)).delete().then(() => {
-                toast("card was removed from votes.");
-                triggerDataRefresh();
-            });
-            return;
-        }
-        goodorBadAgainstRef.doc(String(iD)).set({
-            votes: firebase.firestore.FieldValue.increment(-1)
+    const handleDownVote = (iD, idx) => {
+        const lastPosition = votedCardiDs.length - 1;
+        const newOrderedOrRemovedCards = idx === lastPosition ? votedCardiDs.filter((_, index) => index !== lastPosition) : swapArrayElements(votedCardiDs, idx, idx + 1);
+
+        const againstRef = db.collection("cards").doc(String(cardModalId));
+        againstRef.set({
+            [againstKey]: newOrderedOrRemovedCards
         }, {merge: true})
-            .then(function () {
-                toast("Card suggested less importance for good ");
+            .then(() => {
                 triggerDataRefresh();
-            })
-            .catch(function (error) {
-                console.error(error);
-                toast("Error to suggest the card.");
             });
     };
 
-    const handleDownVote = (iD, votes) => {
-        updateDownvote(iD, votes);
-    };
 
+    const votedCardsData = votedCardiDs.map((votedCardiD) => {
+        const matchedData = cardData.find(({iD: cdId}) => votedCardiD === cdId);
+        return matchedData;
+    });
 
     return <div>
         <CardsStyle>
             {
-                votedCards.map(({votedCardiD, votes, card}) =>
-                    <div key={votedCardiD}>
-                        <Card card={card}></Card>
+                votedCardsData.map((votedCardData, idx) =>
+                    <div key={votedCardData.iD}>
+                        <Card card={votedCardData}></Card>
                         <VotingStyle>
                             <SingleVoteStyle>
-                                <FontAwesomeIcon icon={faArrowLeft} color={"green"}
-                                                 onClick={() => handleUpVote(card.iD)}/>
+                                <FontAwesomeIcon icon={faArrowLeft} color={idx === 0 ? "white" : "green"}
+                                                 onClick={() => {
+                                                     idx > 0 && handleUpVote(votedCardData.iD)
+                                                 }}/>
                             </SingleVoteStyle>
-                            {votes}
+
                             <SingleVoteStyle>
-                                <FontAwesomeIcon icon={votes > 1 ? faArrowRight : faTrashAlt} color={"red"}
-                                                 onClick={() => handleDownVote(card.iD, votes)}/>
+                                <FontAwesomeIcon icon={idx < votedCardiDs.length - 1 ? faArrowRight : faTrashAlt}
+                                                 color={"red"}
+                                                 onClick={() => handleDownVote(votedCardData.iD, idx)}/>
                             </SingleVoteStyle>
                         </VotingStyle>
                     </div>

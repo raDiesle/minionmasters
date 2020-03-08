@@ -83,6 +83,12 @@ function normalizeGameCardData(propsAsMap) {
     propsAsMap.description = propsAsMap.description.replace(/\<b\><color\=orange>(.*?)<\/color>\<\/b\>/gm, "<span class='htmlHighlight' data-highlight='$1'>$1</span>");
     propsAsMap.description = propsAsMap.description.replace(/ERROR_/, '');
 
+
+    propsAsMap.description = propsAsMap.description.replace(new RegExp(/\. /, 'g'), ".<br />");
+
+    propsAsMap.description = propsAsMap.description.replace(new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>");
+    propsAsMap.description = propsAsMap.description.replace(new RegExp(/\'\'\'Mana Freeze\(1\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 1 Mana Crystal. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(1)'>Mana Freeze(1)</span></span>");
+
     const propsAsMapParsedValues = _mapValues(propsAsMap, val => {
         if (val === "True") {
             return true;
