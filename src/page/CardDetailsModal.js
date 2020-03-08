@@ -107,16 +107,14 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
 
-    let descriptionStyled = description.replace(new RegExp(/\. /, 'g'), ".<br />");
 
-    descriptionStyled = descriptionStyled.replace(new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>");
-    descriptionStyled = descriptionStyled.replace(new RegExp(/\'\'\'Mana Freeze\(1\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 1 Mana Crystal. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(1)'>Mana Freeze(1)</span></span>");
 
     useEffect(() => {
         setTimeout(() => {
             const $cardRootContainer = `div[data-name="${name}"] `;
 
-// expects that both have same size
+            /* Should be moved to batch jobs to prepare data */
+// expects that both have same size.
             let inlineItemItems = document.querySelectorAll(`${$cardRootContainer} span[data-inline-text]:not([data-inline-text=""]`);
             const inlineItemItemss = [...inlineItemItems].map(inlineNode => inlineNode.getAttribute("data-inline-text"));
 
@@ -127,17 +125,18 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                 {
                     text: inlineItemItemss[index],
                     title
-                }));
+                }))
+                .filter(({text}) => text); // because description is missing in gameData
 
             setGlossary(result);
 
             [...document.querySelectorAll(`${$cardRootContainer}span[data-card]:not([data-card=""]`)].map(foundItem => {
-                    foundItem.addEventListener('click', function (e) {
-                        const clickedInfo = this.getAttribute("data-card");
-                        // to find card.name is a hack. If sort by iD, it will likely find the card to summon
-                        const card = sortBy(cardData, ["iD"]).find(card => {
-                            return (
-                                card.unitToSummon === clickedInfo
+                foundItem.addEventListener('click', function (e) {
+                    const clickedInfo = this.getAttribute("data-card");
+                    // to find card.name is a hack. If sort by iD, it will likely find the card to summon
+                    const card = sortBy(cardData, ["iD"]).find(card => {
+                        return (
+                            card.unitToSummon === clickedInfo
                                 || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase()
                             )
                         });
@@ -332,7 +331,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                     </CardPropertyUlStyle>
 
 
-                    <DescriptionStyle dangerouslySetInnerHTML={{__html: descriptionStyled}}/>
+                    <DescriptionStyle dangerouslySetInnerHTML={{__html: description}}/>
 
 
                     <CardGlossaryUlStyle>

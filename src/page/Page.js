@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import cardData from "../generated/jobCardProps";
 import CardDeckContainer from "./carddeck/DeckContainer";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import Masters from "./mastersoverview/Masters";
@@ -37,12 +36,12 @@ export function Page() {
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
 
-        <CardDeckContainer allCardsData={cardData}
-                           selectedHero={selectedHero}
-                           setSelectedHero={setSelectedHero}
-                           selectedCardEvent={selectedCardEvent}
-                           setSelectedCardEvent={setSelectedCardEvent}
-                           setSelectedTabIndex={setSelectedTabIndex}
+        <CardDeckContainer
+            selectedHero={selectedHero}
+            setSelectedHero={setSelectedHero}
+            selectedCardEvent={selectedCardEvent}
+            setSelectedCardEvent={setSelectedCardEvent}
+            setSelectedTabIndex={setSelectedTabIndex}
 
         />
 

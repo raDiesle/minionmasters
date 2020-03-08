@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import React, {useEffect, useState} from "react";
-import firebase from 'firebase/app';
 
 import FiltersWithCards from "./FiltersWithCards";
 
 import {toast} from "react-toastify";
 import {db} from "../firestore";
-import cardData from "../generated/jobCardProps";
 import AgainstCards from "./AgainstCards";
 
 
@@ -51,53 +49,76 @@ const AgainstBadHeaderStyle = styled.div`
 `;
 
 
-const fetchAgainstCards = (iD, goodorBadAgainstRef) => {
-    return goodorBadAgainstRef.orderBy("votes", "desc").get().then((querySnapshot) => {
-        return querySnapshot.docs.map((doc) => {
-            const card = cardData.find(({iD}) => iD === parseInt(doc.id));
+const swapArrayElements = (arr, x, y) => {
+    if (arr[x] === undefined || arr[y] === undefined) {
+        return arr
+    }
+    const a = x > y ? y : x;
+    const b = x > y ? x : y;
+    return [
+        ...arr.slice(0, a),
+        arr[b],
+        ...arr.slice(a + 1, b),
+        arr[a],
+        ...arr.slice(b + 1)
+    ]
+};
 
-            return ({
-                    votedCardiD: doc.id,
-                    votes: doc.data().votes,
-                    card
-                }
-            )
-        });
+const fetchAgainstCards = (iD) => {
+    const againstRef = db.collection("cards").doc(String(iD));
+    return againstRef.get().then((querySnapshot) => {
+
+        const defaultData = {
+            goodAgainst: [],
+            badAgainst: []
+        };
+        if (!querySnapshot.exists) {
+            return defaultData
+        }
+        const data = querySnapshot.data();
+        return {
+            goodAgainst: data.goodAgainst || [],
+            badAgainst: data.badAgainst || []
+        }
     });
 };
 
 
 export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
-    const goodAgainstRef = db.collection("cards").doc(String(iD)).collection("goodAgainst");
-    const badAgainstRef = db.collection("cards").doc(String(iD)).collection("badAgainst");
+    const againstRef = db.collection("cards").doc(String(iD));
+
+    const badAgainstKey = "badAgainst";
+    const goodAgainstKey = "goodAgainst";
 
     const [selectionState, setSelectionState] = useState("NONE");
 
-    const [goodAgainstVotedCards, setGoodAgainstVotedCards] = useState([]);
-    const triggerDataRefreshGoodAgainst = () => {
-        fetchAgainstCards(iD, goodAgainstRef).then(data => {
-            setGoodAgainstVotedCards(data);
-        });
+    const [cardDbData, setCardDbData] = useState({
+        goodAgainst: [],
+        badAgainst: []
+    });
+
+    const triggerDataRefreshAgainst = () => {
+        fetchAgainstCards(iD, againstRef)
+            .then(data => {
+                setCardDbData(data);
+            });
     };
     useEffect(() => {
-        triggerDataRefreshGoodAgainst();
+        triggerDataRefreshAgainst();
     }, []);
 
 
-    const [badAgainstVotedCards, setBadAgainstVotedCards] = useState([]);
-    const triggerDataRefreshBadAgainst = () => {
-        fetchAgainstCards(iD, badAgainstRef).then(data => {
-            setBadAgainstVotedCards(data);
-        });
-    };
-    useEffect(() => {
-        triggerDataRefreshBadAgainst();
-    }, []);
-
-    const updateUpvoteSelection = (goodOrBadAgainstRefVotedCardId) => {
+    const updateUpvoteSelection = (goodOrBadKey, currentVotedCardiD) => {
         setSelectionState("NONE");
-        return goodOrBadAgainstRefVotedCardId.set({
-            votes: firebase.firestore.FieldValue.increment(1)
+
+        const againstVotedCards = [...cardDbData[goodOrBadKey]];
+        const votedPosition = againstVotedCards.findIndex(val => val === currentVotedCardiD);
+        const isAddedNewToList = votedPosition === -1;
+        const newOrderedVotes = isAddedNewToList ? [...againstVotedCards, currentVotedCardiD] : swapArrayElements(againstVotedCards, votedPosition, votedPosition - 1);
+
+        const againstRef = db.collection("cards").doc(String(iD));
+        return againstRef.set({
+            [goodOrBadKey]: newOrderedVotes
         }, {merge: true})
             .then(function () {
                 toast("Saved");
@@ -110,12 +131,11 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
             });
     };
 
-    const handleSelectCard = (iD) => {
-        const refGoodOrBad = selectionState === "GOOD_AGAINST" ? goodAgainstRef : badAgainstRef;
-        const goodOrBadAgainstRefVotedCardId = refGoodOrBad.doc(String(iD));
+    const handleSelectCard = (currentVotedCardiD) => {
+        const goodOrBadKey = selectionState === "GOOD_AGAINST" ? goodAgainstKey : badAgainstKey;
 
-        updateUpvoteSelection(goodOrBadAgainstRefVotedCardId).then(_ => {
-            selectionState === "GOOD_AGAINST" ? triggerDataRefreshGoodAgainst() : triggerDataRefreshBadAgainst();
+        updateUpvoteSelection(goodOrBadKey, currentVotedCardiD).then(_ => {
+            selectionState === "GOOD_AGAINST" ? triggerDataRefreshAgainst() : triggerDataRefreshAgainst();
         });
         setSelectionState("NONE");
     };
@@ -130,9 +150,10 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                     </AgainstGoodHeaderStyle>
 
                     <AgainstCards
-                        triggerDataRefresh={triggerDataRefreshGoodAgainst}
-                        goodorBadAgainstRef={goodAgainstRef}
-                        votedCards={goodAgainstVotedCards}
+                        triggerDataRefresh={triggerDataRefreshAgainst}
+                        cardModalId={iD}
+                        againstKey={"goodAgainst"}
+                        votedCards={cardDbData.goodAgainst}
                         setSelectionState={setSelectionState}
                         updateUpvoteSelection={updateUpvoteSelection}
                         handleEmptyCardDeckSlotClick={() => setSelectionState("GOOD_AGAINST")}/>
@@ -144,9 +165,10 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                     </AgainstBadHeaderStyle>
 
                     <AgainstCards
-                        triggerDataRefresh={triggerDataRefreshBadAgainst}
-                        goodorBadAgainstRef={badAgainstRef}
-                        votedCards={badAgainstVotedCards}
+                        triggerDataRefresh={triggerDataRefreshAgainst}
+                        cardModalId={iD}
+                        againstKey={"badAgainst"}
+                        votedCards={cardDbData.badAgainst}
                         setSelectionState={setSelectionState}
                         updateUpvoteSelection={updateUpvoteSelection}
                         handleEmptyCardDeckSlotClick={() => setSelectionState("BAD_AGAINST")}
