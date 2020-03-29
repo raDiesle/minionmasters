@@ -6,6 +6,8 @@ import Modal from 'react-modal';
 import {toast} from 'react-toastify';
 import './Modal.scss';
 
+import LoginLogout from "./LoginLogout";
+
 
 const Header = styled.header`
  display: flex;
@@ -52,12 +54,13 @@ const App = () => {
                 <PageHeaderStyle>
                     <CapitalLetterStyle>M</CapitalLetterStyle>inion <CapitalLetterStyle>M</CapitalLetterStyle>asters <CapitalLetterStyle>M</CapitalLetterStyle>anager
                 </PageHeaderStyle>
-                <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
-                    Ideas for new features?
-                </SubheaderLinkStyle>
-
+                <LoginLogout/>
             </Header>
+
             <Page/>
+            <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
+                Ideas for new features?
+            </SubheaderLinkStyle>
         </div>
     );
 };

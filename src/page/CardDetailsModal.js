@@ -12,6 +12,8 @@ import {targetsMapping} from "../attack/targetsMapping";
 import {rarityMapping} from "../rarity/rarityMapping";
 import sortBy from "lodash.sortby";
 import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";
+import {faHeart as faHeartSolid} from "@fortawesome/free-solid-svg-icons/faHeart";
+import {faHeart as faHeartRegular} from "@fortawesome/free-regular-svg-icons/faHeart";
 
 const ModalContainerStyle = styled.div`
    position: relative;
@@ -103,11 +105,22 @@ const CardGlossaryStyle = styled.div`
     font-weight: bold;
 `;
 
+const PortraitStyle = styled.div`
+  color: gold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+`;
+
+const LikeStyle = styled.div`
+ // display: flex;
+ // justify-content: center;
+`;
+
 export default function CardDetailsModal({card, card: {image, attackdelay, attackspeed, damage, description, faction, flying, health, manacost, name, range, rarity, speed, targets, type}, isOpenDetails, setIsOpenDetails}) {
     const [modals, setModals] = useState([]);
     const [glossary, setGlossary] = useState([]);
-
-
 
     useEffect(() => {
         setTimeout(() => {
@@ -137,16 +150,16 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                     const card = sortBy(cardData, ["iD"]).find(card => {
                         return (
                             card.unitToSummon === clickedInfo
-                                || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase()
-                            )
-                        });
-
-                        if (typeof card !== "undefined") {
-                            setModals((modals) => [...modals,
-                                card,
-                            ]);
-                        }
+                            || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase()
+                        )
                     });
+
+                    if (typeof card !== "undefined") {
+                        setModals((modals) => [...modals,
+                            card,
+                        ]);
+                    }
+                });
 
                     return true;
                 }
@@ -167,7 +180,6 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                                                      setIsOpenDetails={() => (setModals((currentModals) => _dropRight(currentModals)))}/>
                 )
             }
-
 
             <ReactModal
                 isOpen={
@@ -197,11 +209,27 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                             <CardPropertyKeyStyle>
 
                             </CardPropertyKeyStyle>
-                            <div>
+                            <PortraitStyle>
+                                <LikeStyle>
+                                    <FontAwesomeIcon icon={faHeartSolid} size={"xs"}/><FontAwesomeIcon
+                                    icon={faHeartSolid} size={"xs"}/>
+                                    <FontAwesomeIcon icon={faHeartRegular} size={"xs"}/><FontAwesomeIcon
+                                    icon={faHeartRegular} size={"xs"}/><FontAwesomeIcon icon={faHeartRegular}
+                                                                                        size={"xs"}/>
+                                </LikeStyle>
                                 <CardImageStyle src={`generated/img/${image}`} alt={image}/>
-                            </div>
+                            </PortraitStyle>
                         </CardPropertyLiStyle>
 
+                        {image === "BloodImps.jpg" && <CardPropertyLiStyle>
+                            <PortraitStyle>
+                                <LikeStyle>
+                                    <FontAwesomeIcon icon={faHeartSolid} size={"xs"} color={"transparent"}/>
+                                </LikeStyle>
+                                <img src="bloodimp_inline.jpg" width="60px"/>
+                            </PortraitStyle>
+                        </CardPropertyLiStyle>
+                        }
 
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>

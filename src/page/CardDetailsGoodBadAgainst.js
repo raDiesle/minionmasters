@@ -1,12 +1,11 @@
-import styled from "styled-components";
 import React, {useEffect, useState} from "react";
+import styled from "styled-components";
 
 import FiltersWithCards from "./FiltersWithCards";
 
 import {toast} from "react-toastify";
-import {db} from "../firestore";
+import {db, dbErrorHandlerPromise} from "../firestore";
 import AgainstCards from "./AgainstCards";
-
 
 const GoodBadStyle = styled.div`
   display: flex;
@@ -80,7 +79,7 @@ const fetchAgainstCards = (iD) => {
             goodAgainst: data.goodAgainst || [],
             badAgainst: data.badAgainst || []
         }
-    });
+    }).catch(dbErrorHandlerPromise);
 };
 
 
@@ -101,7 +100,7 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
         fetchAgainstCards(iD, againstRef)
             .then(data => {
                 setCardDbData(data);
-            });
+            }).catch(dbErrorHandlerPromise);
     };
     useEffect(() => {
         triggerDataRefreshAgainst();
@@ -124,11 +123,7 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                 toast("Saved");
                 return Promise.resolve();
             })
-            .catch(function (error) {
-                console.error(error);
-                toast("Error");
-                return Promise.resolve();
-            });
+            .catch(dbErrorHandlerPromise);
     };
 
     const handleSelectCard = (currentVotedCardiD) => {
@@ -136,7 +131,7 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
 
         updateUpvoteSelection(goodOrBadKey, currentVotedCardiD).then(_ => {
             selectionState === "GOOD_AGAINST" ? triggerDataRefreshAgainst() : triggerDataRefreshAgainst();
-        });
+        }).catch(dbErrorHandlerPromise);
         setSelectionState("NONE");
     };
 

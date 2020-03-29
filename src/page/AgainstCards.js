@@ -8,8 +8,9 @@ import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons/faArrowLeft";
-import {db} from "../firestore";
+import {db, dbErrorHandlerPromise} from "../firestore";
 import cardData from "../generated/jobCardProps";
+import InfoDetailsCardOverlay from "./InfoDetailsCardOverlay";
 
 const CardsStyle = styled.div`
     display: flex;
@@ -47,11 +48,29 @@ const swapArrayElements = (arr, x, y) => {
     ]
 };
 
+const OrderOverlayStyle = styled.div`
+    position: absolute;
+    top: 15%;
+    right: 40%;
+    padding: 15% 0 15% 15%;
+    
+    font-size: 30px;
+    
+    color: rgba(255,255,255, 0.7);
+    font-weight: bolder;
+   
+    &:hover{
+      cursor: pointer;
+    }
+`;
+
+
 export default function AgainstCards({cardModalId, againstKey, votedCards: votedCardiDs, triggerDataRefresh, handleEmptyCardDeckSlotClick, updateUpvoteSelection}) {
 
     const handleUpVote = (iD) => {
         updateUpvoteSelection(againstKey, iD)
-            .then(_ => triggerDataRefresh());
+            .then(_ => triggerDataRefresh())
+            .catch(dbErrorHandlerPromise);
     };
 
     const handleDownVote = (iD, idx) => {
@@ -64,7 +83,8 @@ export default function AgainstCards({cardModalId, againstKey, votedCards: voted
         }, {merge: true})
             .then(() => {
                 triggerDataRefresh();
-            });
+            })
+            .catch(dbErrorHandlerPromise);
     };
 
 
@@ -78,7 +98,12 @@ export default function AgainstCards({cardModalId, againstKey, votedCards: voted
             {
                 votedCardsData.map((votedCardData, idx) =>
                     <div key={votedCardData.iD}>
-                        <Card card={votedCardData}></Card>
+                        <Card card={votedCardData}>
+                            <InfoDetailsCardOverlay card={votedCardData}/>
+                            <OrderOverlayStyle>
+                                {idx + 1}
+                            </OrderOverlayStyle>
+                        </Card>
                         <VotingStyle>
                             <SingleVoteStyle>
                                 <FontAwesomeIcon icon={faArrowLeft} color={idx === 0 ? "white" : "green"}
