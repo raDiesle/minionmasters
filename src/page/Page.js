@@ -5,6 +5,7 @@ import Masters from "./mastersoverview/Masters";
 import FiltersWithCards from "./FiltersWithCards";
 import CardActionAddCardToDeck from "./CardActionAddCardToDeck";
 import {toast} from "react-toastify";
+import InfoDetailsCardOverlay from "./InfoDetailsCardOverlay";
 
 const usePreviousValue = value => {
     const ref = useRef();
@@ -53,18 +54,22 @@ export function Page() {
             </TabList>
             <TabPanel>
                 <FiltersWithCards cardActionWrapper={(card) =>
-                    <CardActionAddCardToDeck
-                        onClick={() => {
-                            setSelectedCardEvent({
-                                eventId: Math.random(),
-                                card: {
-                                    pageId: card.pageId
-                                }
-                            });
-                            toast("Card added to Deck");
-                        }}
-                        card={card}
-                    />}/>
+                    <>
+                        <CardActionAddCardToDeck
+                            onClick={() => {
+                                setSelectedCardEvent({
+                                    eventId: Math.random(),
+                                    card: {
+                                        pageId: card.pageId
+                                    }
+                                });
+                                toast("Card added to Deck");
+                            }}
+                            card={card}
+                        />
+                        <InfoDetailsCardOverlay card={card}/>
+                    </>
+                }/>
             </TabPanel>
             <TabPanel>
                 <Masters setSelectedHero={setSelectedHero}/>

@@ -1,6 +1,6 @@
-import firebase from 'firebase/app'
-import 'firebase/app'
+import firebase from 'firebase';
 import 'firebase/firestore'
+import {toast} from "react-toastify";
 
 
 const config = {
@@ -15,4 +15,13 @@ const config = {
 };
 const firebaseApp = firebase.initializeApp(config);
 const db = firebaseApp.firestore();
-export {db};
+const auth = firebase.auth();
+
+const dbErrorHandlerPromise = (error) => {
+    console.error(error);
+    const errorMessage = "You must be logged in to edit data.";
+    toast(errorMessage);
+    return Promise.reject();
+};
+
+export {db, auth, firebaseApp, dbErrorHandlerPromise};
