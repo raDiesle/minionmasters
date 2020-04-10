@@ -6,6 +6,7 @@ import FiltersWithCards from "./FiltersWithCards";
 import CardActionAddCardToDeck from "./CardActionAddCardToDeck";
 import {toast} from "react-toastify";
 import InfoDetailsCardOverlay from "./InfoDetailsCardOverlay";
+import CardDiscussions from "./CardDiscussions";
 
 const usePreviousValue = value => {
     const ref = useRef();
@@ -37,13 +38,14 @@ export function Page() {
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
 
+        <CardDiscussions/>
+
         <CardDeckContainer
             selectedHero={selectedHero}
             setSelectedHero={setSelectedHero}
             selectedCardEvent={selectedCardEvent}
             setSelectedCardEvent={setSelectedCardEvent}
             setSelectedTabIndex={setSelectedTabIndex}
-
         />
 
         <Tabs style={{paddingTop: "20px"}} selectedIndex={selectedTabIndex}
