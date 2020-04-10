@@ -14,6 +14,7 @@ import sortBy from "lodash.sortby";
 import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";
 import {faHeart as faHeartSolid} from "@fortawesome/free-solid-svg-icons/faHeart";
 import {faHeart as faHeartRegular} from "@fortawesome/free-regular-svg-icons/faHeart";
+import CardDiscussions from "./CardDiscussions";
 
 const ModalContainerStyle = styled.div`
    position: relative;
@@ -144,22 +145,22 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
             setGlossary(result);
 
             [...document.querySelectorAll(`${$cardRootContainer}span[data-card]:not([data-card=""]`)].map(foundItem => {
-                foundItem.addEventListener('click', function (e) {
-                    const clickedInfo = this.getAttribute("data-card");
-                    // to find card.name is a hack. If sort by iD, it will likely find the card to summon
-                    const card = sortBy(cardData, ["iD"]).find(card => {
-                        return (
-                            card.unitToSummon === clickedInfo
-                            || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase()
-                        )
-                    });
+                    foundItem.addEventListener('click', function (e) {
+                        const clickedInfo = this.getAttribute("data-card");
+                        // to find card.name is a hack. If sort by iD, it will likely find the card to summon
+                        const card = sortBy(cardData, ["iD"]).find(card => {
+                            return (
+                                card.unitToSummon === clickedInfo
+                                || card.name.toLowerCase().replace(/\s/g, "") === clickedInfo.toLowerCase()
+                            )
+                        });
 
-                    if (typeof card !== "undefined") {
-                        setModals((modals) => [...modals,
-                            card,
-                        ]);
-                    }
-                });
+                        if (typeof card !== "undefined") {
+                            setModals((modals) => [...modals,
+                                card,
+                            ]);
+                        }
+                    });
 
                     return true;
                 }
@@ -374,6 +375,8 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                             )}
                     </CardGlossaryUlStyle>
 
+
+                    <CardDiscussions/>
 
                     <CardDetailsGoodBadAgainst card={card}/>
 

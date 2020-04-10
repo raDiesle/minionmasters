@@ -7,6 +7,7 @@ import {toast} from 'react-toastify';
 import './Modal.scss';
 
 import LoginLogout from "./LoginLogout";
+import {BrowserRouter} from "react-router-dom";
 
 
 const Header = styled.header`
@@ -57,7 +58,9 @@ const App = () => {
                 <LoginLogout/>
             </Header>
 
-            <Page/>
+            <BrowserRouter>
+                <Page/>
+            </BrowserRouter>
             <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
                 Ideas for new features?
             </SubheaderLinkStyle>

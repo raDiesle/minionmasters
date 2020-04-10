@@ -6,9 +6,8 @@ import WikiEditor from "./wikiEditor/WikiEditor";
 
 
 function listenUserAuth(setCurrentUsername) {
-    auth.onAuthStateChanged((user) => {
+    return auth.onAuthStateChanged((user) => {
         setCurrentUsername(auth.currentUser?.displayName);
-
     });
 }
 
@@ -18,8 +17,8 @@ export default function CardDiscussions() {
 
 
     useEffect(() => {
-        listenUserAuth(setCurrentUsername);
-        return () => listenUserAuth()
+        const listen = listenUserAuth(setCurrentUsername);
+        return () => listen()
     }, []);
 
     return <div>
