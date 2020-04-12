@@ -6,13 +6,39 @@ import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
 import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import * as firebase from "firebase";
-import {dbErrorHandlerPromise} from "../../firestore";
+import {auth, dbErrorHandlerPromise} from "../../firestore";
 import {toast} from "react-toastify";
 
 const EditorStyle = styled.div`
-  border: 1px dotted grey;
+  //border: 1px dotted grey;
   padding: 5px 10px;
   margin: 5px 0;
+  max-width: 600px;
+  ${({isEditable}) => isEditable && (
+    `
+  background: 
+            linear-gradient(90deg, #000 50%, transparent 50%),
+            linear-gradient(0deg, #000 50%, transparent 50%),
+            linear-gradient(90deg, #000 50%, transparent 50%),
+            linear-gradient(0deg, #000 50%, transparent 50%);
+          background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+          background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px;
+          background-position: left top, right top, left bottom, left top;
+          animation: border-dance 20s infinite linear;
+        }
+        
+        @keyframes border-dance 
+        {
+          0%
+          {
+            background-position: left top, right top, right bottom, left bottom;
+          }
+          100% 
+          {
+            background-position: right top, right bottom, left bottom, left top;
+          }
+  `)
+}
 `;
 
 
@@ -22,7 +48,18 @@ const HistorySelectStyle = styled.select`
   background-color: #444;
 `;
 
+function listenUserAuth(setCurrentUsername) {
+    return auth.onAuthStateChanged((user) => {
+        setCurrentUsername(auth.currentUser?.displayName);
+    });
+}
+
 export default function WikiEditorActive({setInEditMode, dbRef}) {
+    const [currentUsername, setCurrentUsername] = useState("");
+    useEffect(() => {
+        const listen = listenUserAuth(setCurrentUsername);
+        return () => listen()
+    }, []);
 
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
     const [isDisabledInput, setIsDisabledInput] = useState(false);
@@ -61,10 +98,13 @@ export default function WikiEditorActive({setInEditMode, dbRef}) {
         const dataToSaveBackend = JSON.stringify(convertToRaw(currentContent));
         dbRef.add({
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            createdBy: currentUsername,
             val: dataToSaveBackend
-        }).then(() => toast("saved"))
+        }).then(() => {
+            toast("saved");
+            setInEditMode(false);
+        })
             .catch(dbErrorHandlerPromise);
-        setInEditMode(false);
     };
 
     const onChange = (currentEditorState) => {
@@ -84,7 +124,7 @@ export default function WikiEditorActive({setInEditMode, dbRef}) {
     };
 
     return <div>
-        <EditorStyle>
+        <EditorStyle isEditable={!isDisabledInput}>
             <Editor ref={editor}
                     editorState={editorState}
                     onChange={onChange}

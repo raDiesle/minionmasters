@@ -59,6 +59,10 @@ function normalizeWikiData(propsAsMap) {
         }
     });
 
+    if (propsAsMap.type === "DefensiveSpell") {
+        propsAsMap.type = "Spell";
+    }
+
     propsAsMap.description = propsAsMap.description.replace(/[[(.*?)]]/gm, "<span className='htmlCardRef' data-card='$1'>$1</span>");
 
     // might be obsolete
@@ -70,6 +74,7 @@ function normalizeWikiData(propsAsMap) {
         - speed: 8.
         `;
     propsAsMap.description = propsAsMap.description.replace(/\<span class\=\'htmlCardRef\' data\-card\=\'Werewolf\'>Werewolf\<\/span\>/gm, `<span class='htmlTextRef' data-inline-text='${werewolveInlineInfo}'><span class='htmlHighlight' data-highlight='Werewolf'>Werewolf</span></span>`);
+
     return propsAsMap;
 }
 
@@ -77,10 +82,34 @@ function normalizeGameCardData(propsAsMap) {
     // match by id manual
     // wikiNameToGameIDMappingConfig
     propsAsMap.iD = parseInt(propsAsMap.iD);
+
     propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
     propsAsMap.description = propsAsMap.description.replace(/\<link="actor_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
     propsAsMap.description = propsAsMap.description.replace(/\<link="plain_text:(.*?)>(.*?)<\/link>/gm, "<span class='htmlTextRef' data-inline-text='$1'>$2</span>");
     propsAsMap.description = propsAsMap.description.replace(/\<b\><color\=orange>(.*?)<\/color>\<\/b\>/gm, "<span class='htmlHighlight' data-highlight='$1'>$1</span>");
+
+
+    function mapInlineWordInfo(word, description) {
+        const regex = new RegExp(`\\<span class\\=\\'htmlHighlight\\' data\\-highlight\\=\\'${word}\\'\\>${word}\\<\\/span\\>`, 'gm');
+
+        propsAsMap.description = propsAsMap.description.replace(
+            regex,
+            `
+        <span class='htmlTextRef' data-inline-text='${description}'>
+            <span class='htmlHighlight' data-highlight='${word}'>${word}</span>
+         </span>
+         `
+        );
+    }
+
+    mapInlineWordInfo("Taunt", `All nearby Enemies will target this Minion. Radius 5.`);
+    mapInlineWordInfo("Explodes", `Detonates shortly after being summoned and deals damage to all nearby Units.`);
+    mapInlineWordInfo("Netherstep", `Instantly jump through the nether to a different location. Cooldown 1, Teleport Distance 8.`);
+    mapInlineWordInfo("Poison", `Deals damage over time to a Minion`);
+    mapInlineWordInfo("Voidborne Wound", `If a Voidborne Minion deals damage to enemy Master while this card is in your hand`);
+    mapInlineWordInfo("Stuns", `Stunned Units are unable to move or attack.`);
+
+
     propsAsMap.description = propsAsMap.description.replace(/ERROR_/, '');
 
 
@@ -88,6 +117,17 @@ function normalizeGameCardData(propsAsMap) {
 
     propsAsMap.description = propsAsMap.description.replace(new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>");
     propsAsMap.description = propsAsMap.description.replace(new RegExp(/\'\'\'Mana Freeze\(1\)\'\'\'/, 'g'), "<span class='htmlTextRef' data-inline-text='Lock 1 Mana Crystal. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(1)'>Mana Freeze(1)</span></span>");
+
+
+    /* fix new inline syntax */
+    propsAsMap.description = propsAsMap.description.replace(/\[actorinfo\:(.*?)\,\[r\:(.*?)\]\]/gm, `<span className='htmlCardRef' data-card='$1'>$1</span>`);
+
+
+    propsAsMap.description = propsAsMap.description.replace(/\[cv\:DeadlyTwins\.AdditionalUnitTriggerVariable\]/gm, `5`);
+    propsAsMap.description = propsAsMap.description.replace(/\[math\:\[av\:Jahun\.Damage\]\/2]/gm, `75`);
+
+    propsAsMap.description = propsAsMap.description.replace(/\[spellinfo:(.*?)\,\[r:(.*?)\]\]/gm, `<span className='htmlCardRef' data-card='$1'>$1</span>`);
+
 
     const propsAsMapParsedValues = _mapValues(propsAsMap, val => {
         if (val === "True") {
