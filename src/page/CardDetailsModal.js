@@ -13,8 +13,9 @@ import {rarityMapping} from "../rarity/rarityMapping";
 import sortBy from "lodash.sortby";
 import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";
 import {faHeart as faHeartSolid} from "@fortawesome/free-solid-svg-icons/faHeart";
-import {faHeart as faHeartRegular} from "@fortawesome/free-regular-svg-icons/faHeart";
 import CardDiscussions from "./CardDiscussions";
+import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
+import {faCheck} from "@fortawesome/free-solid-svg-icons/faCheck";
 
 const ModalContainerStyle = styled.div`
    position: relative;
@@ -173,6 +174,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
     }, []);
 
 
+    const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
     return (<div>
             {
                 modals.map(card => <CardDetailsModal key={card.pageId}
@@ -211,6 +213,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
 
                             </CardPropertyKeyStyle>
                             <PortraitStyle>
+                                { /*
                                 <LikeStyle>
                                     <FontAwesomeIcon icon={faHeartSolid} size={"xs"}/><FontAwesomeIcon
                                     icon={faHeartSolid} size={"xs"}/>
@@ -218,6 +221,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                                     icon={faHeartRegular} size={"xs"}/><FontAwesomeIcon icon={faHeartRegular}
                                                                                         size={"xs"}/>
                                 </LikeStyle>
+                                */}
                                 <CardImageStyle src={`generated/img/${image}`} alt={image}/>
                             </PortraitStyle>
                         </CardPropertyLiStyle>
@@ -268,7 +272,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                             </div>
                         </CardPropertyLiStyle>
 
-                        {targets && <CardPropertyLiStyle>
+                        {isAttacking && <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
                                 Targets
                             </CardPropertyKeyStyle>
@@ -291,12 +295,12 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                         </CardPropertyLiStyle>
                         }
 
-                        {!isNaN(attackspeed) && <CardPropertyLiStyle>
+                        {isAttacking && <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
                                 Attack Speed
                             </CardPropertyKeyStyle>
                             <div>
-                                {attackspeed}
+                                {attackspeed / 1000} s
                             </div>
                         </CardPropertyLiStyle>
                         }
@@ -318,18 +322,29 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                                 Damage
                             </CardPropertyKeyStyle>
                             <div>
-                                {damage}
+                                {damage === 0 ? <FontAwesomeIcon icon={faTimes}/> : damage}
                             </div>
                         </CardPropertyLiStyle>
                         }
 
-                        {!isNaN(range) &&
+                        {isAttacking &&
+                        <CardPropertyLiStyle>
+                            <CardPropertyKeyStyle>
+                                DPS
+                            </CardPropertyKeyStyle>
+                            <div>
+                                {Math.round(damage / attackspeed * 10000) / 10}
+                            </div>
+                        </CardPropertyLiStyle>
+                        }
+
+                        {isAttacking &&
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
                                 Range
                             </CardPropertyKeyStyle>
                             <div>
-                                {range}
+                                {range / 1000}
                             </div>
                         </CardPropertyLiStyle>
                         }
@@ -345,13 +360,13 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                         </CardPropertyLiStyle>
                         }
 
-                        {flying &&
+                        {[true, false].includes(flying) &&
                         <CardPropertyLiStyle>
                             <CardPropertyKeyStyle>
                                 Flying
                             </CardPropertyKeyStyle>
                             <div>
-                                {flying}
+                                <FontAwesomeIcon icon={flying ? faCheck : faTimes}/>
                             </div>
                         </CardPropertyLiStyle>
                         }
@@ -376,8 +391,9 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                     </CardGlossaryUlStyle>
 
 
-                    <CardDiscussions/>
+                    <CardDiscussions card={card}/>
 
+                    <hr/>
                     <CardDetailsGoodBadAgainst card={card}/>
 
                 </ModalContainerStyle>
