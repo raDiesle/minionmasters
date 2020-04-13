@@ -40,7 +40,7 @@ export default function InfoDetailsCardOverlay({card}) {
         {isOpenDetails ? <CardDetailsModal isOpenDetails={isOpenDetails}
                                            setIsOpenDetails={setIsOpenDetails}
                                            card={card}
-                                           key={card.pageId}/>
+                                           key={card.iD}/>
             : null
         }
 

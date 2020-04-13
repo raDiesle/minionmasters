@@ -23,10 +23,10 @@ export default function ExportActions({lastSelectedCards, selectedHero}) {
     const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
 // Export to URL
-    const lastSelectedCardPageIds = lastSelectedCards.filter(Boolean).map(({card: {pageId}}) => pageId);
-    const pageIdsToParam = lastSelectedCardPageIds.join("&pageId=");
+    const lastSelectedCardiDs = lastSelectedCards.filter(Boolean).map(({card: {iD}}) => iD);
+    const iDsToParam = lastSelectedCardiDs.join("&iD=");
     const heroParam = `hero=${selectedHero}`;
-    let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?${heroParam}&pageId=${pageIdsToParam}`;
+    let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?${heroParam}&iD=${iDsToParam}`;
 
 // Export to game
     const cardShareWithGame = `/setdeck ${selectedHero}: ${lastSelectedCards.map(({card: {name}}) => name).join(", ")}`;

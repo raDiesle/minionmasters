@@ -128,7 +128,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
         setTimeout(() => {
             const $cardRootContainer = `div[data-name="${name}"] `;
 
-            /* Should be moved to batch jobs to prepare data */
+            /* TODO Should be moved to batch jobs to prepare data */
 // expects that both have same size.
             let inlineItemItems = document.querySelectorAll(`${$cardRootContainer} span[data-inline-text]:not([data-inline-text=""]`);
             const inlineItemItemss = [...inlineItemItems].map(inlineNode => inlineNode.getAttribute("data-inline-text"));
@@ -177,7 +177,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
     const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
     return (<div>
             {
-                modals.map(card => <CardDetailsModal key={card.pageId}
+                modals.map(card => <CardDetailsModal key={card.iD}
                                                      card={card}
                                                      isOpenDetails={true}
                                                      setIsOpenDetails={() => (setModals((currentModals) => _dropRight(currentModals)))}/>

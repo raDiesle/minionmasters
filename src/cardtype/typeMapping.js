@@ -7,6 +7,6 @@ export const typeMapping = {
     "Flying Minion": faDove,
     "Minion": faShoePrints,
     "Spell": faMagic, // old from wiki
-    "DefensiveSpell": faMagic,
+    // "DefensiveSpell": faMagic, information was normalized in batch job
     "Building": faHome
 };
