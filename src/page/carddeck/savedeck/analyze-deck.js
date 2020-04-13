@@ -1,12 +1,11 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import React from "react";
+import AnalysisData from "./analysis-data";
 
 export default function AnalyzeDeck({relevantCards, selectedHero}) {
 
-    const avgMana = relevantCards.reduce((accumulator, currentValue) => {
-        return (accumulator + currentValue.manacost) / relevantCards.length;
-    }, 0);
+
     const maxNumberOfCards = 10;
 
 
@@ -26,9 +25,7 @@ export default function AnalyzeDeck({relevantCards, selectedHero}) {
                 </div>
             }
 
-            <div>
-                Average Mana : {avgMana}
-            </div>
+            <AnalysisData cards={relevantCards}/>
         </div>
     );
 }

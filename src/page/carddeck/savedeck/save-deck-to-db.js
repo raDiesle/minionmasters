@@ -2,7 +2,8 @@ import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGr
 import React, {useState} from "react";
 import styled from "styled-components";
 import * as firebase from "firebase";
-import {db} from "../../../firestore";
+import {db, dbErrorHandlerPromise} from "../../../firestore";
+import {toast} from "react-toastify";
 
 
 const InputGroupStyle = styled.div`
@@ -19,16 +20,24 @@ export default function SaveDeckToDb({relevantCards, selectedHero}) {
     const dbRef = db.collection("decks");
 
     const handleSaveButton = () => {
+        const cardIds = relevantCards.map(({iD}) => iD);
+
+
         dbRef.add({
             deckname,
-            cards: relevantCards,
+            cards: cardIds,
             hero: selectedHero,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         })
+            .then((result) => {
+                toast("saved");
+                debugger;
+            })
+            .catch(dbErrorHandlerPromise)
     };
 
     return <div>
-        <form>
+        <div>
             <InputGroupStyle>
                 <label htmlFor="deckname">Deckname *</label>
                 <input type="text" name="deckname" onChange={(e) => setDeckname(e.currentTarget.value)}
@@ -40,6 +49,6 @@ export default function SaveDeckToDb({relevantCards, selectedHero}) {
                     Save
                 </ButtonInGroupStyle>
             </ButtonGroupStyle>
-        </form>
+        </div>
     </div>
 }

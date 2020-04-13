@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import Master from "../mastersoverview/Master";
+import Master from "../mastersoverview/master";
 
 
 const MasterDeckSlotStyle = styled.div`
