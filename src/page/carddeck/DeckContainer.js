@@ -5,6 +5,11 @@ import {CardDeck} from "./CardDeck";
 import ExportActions from "./ExportActions";
 import styled from "styled-components";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import SaveDeckContainer from "./savedeck/save-deck-container";
+import FiltersWithCards from "../FiltersWithCards";
+import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
+import {toast} from "react-toastify";
+import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
 
 
 const DeckOptionsStyle = styled.div`
@@ -25,7 +30,7 @@ export default function CardDeckContainer({
         return {
             eventId: 0,
             card: {
-                pageId: 0
+                iD: 0
             }
         }
     }));
@@ -35,22 +40,45 @@ export default function CardDeckContainer({
         <div>
             <ImportFromUrl setLastSelectedCards={setLastSelectedCards} setSelectedHero={setSelectedHero}/>
 
+            <CardDeck selectedCardEvent={selectedCardEvent}
+                      setSelectedCardEvent={setSelectedCardEvent}
+                      setLastSelectedCards={setLastSelectedCards}
+                      selectedHero={selectedHero}
+                      setSelectedHero={setSelectedHero}
+                      lastSelectedCards={lastSelectedCards}
+                      setSelectedTabIndex={setSelectedTabIndex}
+            />
+
             <Tabs style={{paddingTop: "20px"}}>
                 <TabList>
-                    <Tab>Configured Deck</Tab>
+                    <Tab>Select cards</Tab>
+                    <Tab>Analyze & Save</Tab>
                     <Tab>Import</Tab>
                     <Tab>Export</Tab>
                 </TabList>
                 <TabPanel>
-                    <CardDeck selectedCardEvent={selectedCardEvent}
-                              setSelectedCardEvent={setSelectedCardEvent}
-                              setLastSelectedCards={setLastSelectedCards}
-                              selectedHero={selectedHero}
-                              setSelectedHero={setSelectedHero}
-                              lastSelectedCards={lastSelectedCards}
-                              setSelectedTabIndex={setSelectedTabIndex}
-                    />
+                    <FiltersWithCards cardActionWrapper={(card) =>
+                        <>
+                            <CardActionAddCardToDeck
+                                onClick={() => {
+                                    setSelectedCardEvent({
+                                        eventId: Math.random(),
+                                        card: {
+                                            pageId: card.pageId
+                                        }
+                                    });
+                                    toast("Card added to Deck");
+                                }}
+                                card={card}
+                            />
+                            <InfoDetailsCardOverlay card={card}/>
+                        </>
+                    }/>
                 </TabPanel>
+                <TabPanel>
+                    <SaveDeckContainer lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
+                </TabPanel>
+
                 <TabPanel>
                     <DeckOptionsStyle>
                         <ImportFromGame setShowDeck={setShowDeck}

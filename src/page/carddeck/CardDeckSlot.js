@@ -17,7 +17,7 @@ export function CardDeckSlot({number, lastSelectedCard, isSelectedSlot, cardActi
     let CARDS_TAB_INDEX = 0;
     return (
         <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
-            {lastSelectedCard.card.pageId !== 0 ?
+            {lastSelectedCard.card.iD !== 0 ?
                 <Card card={lastSelectedCard.card} isDeckCard showDeck>
                     {cardActionWrapper(lastSelectedCard.card)}
                 </Card> :

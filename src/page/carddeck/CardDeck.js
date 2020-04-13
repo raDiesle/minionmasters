@@ -31,7 +31,7 @@ const useTraceableState = initialValue => {
 
 // refactor to only pass selectedCardId
 export function CardDeck({
-                             selectedCardEvent: {eventId: cardSelectedEventId, card: {pageId: selectedCardId}},
+                             selectedCardEvent: {eventId: cardSelectedEventId, card: {iD: selectedCardId}},
                              setSelectedCardEvent,
                              selectedHero,
                              setSelectedHero,
@@ -43,22 +43,22 @@ export function CardDeck({
 
     let Slots = [...Array(10).keys()];
 
-    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.pageId === 0);
+    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.iD === 0);
     const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(findFirstNextFreeSlot);
 
-    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.pageId === selectedCardId : selectedCardId === 0;
+    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.iD === selectedCardId : selectedCardId === 0;
     const [prevSelectedEventId, setPrevSelectedCardEvent] = useState(0);
 
     useEffect(() => {
         if (cardSelectedEventId !== 0 && prevSelectedEventId !== cardSelectedEventId && !isCardAlreadyOnSelectedSlot && lastSelectedCards[prevSelectedSlot]?.eventId === lastSelectedCards[currentSelectedSlot]?.eventId) {
-            const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.pageId === selectedCardId);
+            const cardToAddData = allCardsData.find((cardsData) => cardsData && cardsData.iD === selectedCardId);
             const newLastSelectedCards = [...lastSelectedCards];
             newLastSelectedCards[currentSelectedSlot] = {
                 eventId: cardSelectedEventId,
                 card: cardToAddData
             };
             setLastSelectedCards(newLastSelectedCards);
-            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {pageId}}) => pageId === 0);
+            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {iD}}) => iD === 0);
             setCurrentSelectedSlot(nextFreeSlot);
             setPrevSelectedCardEvent(cardSelectedEventId);
         }
@@ -70,15 +70,15 @@ export function CardDeck({
         selectedCardsWithRemovedCard[slotPos] = {
             eventId: Math.random(),
             card: {
-                pageId: 0
+                iD: 0
             }
         };
         setSelectedCardEvent({
                 eventId: Math.random(),
-                card: {pageId: 0}
+            card: {iD: 0}
             }
         );
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {pageId}}) => pageId === 0);
+        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {iD}}) => iD === 0);
         setCurrentSelectedSlot(nextFreeSlot);
         return selectedCardsWithRemovedCard;
     });

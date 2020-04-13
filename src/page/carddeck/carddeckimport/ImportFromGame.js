@@ -53,7 +53,7 @@ export default function ImportFromGame({setLastSelectedCards, setSelectedHero}) 
                 if (matchedCardData === undefined) {
                     toast(<MissingCardMessage nameExtracted={nameExtracted}/>);
                     return {
-                        pageId: 0
+                        iD: 0
                     };
                 } else {
                     return matchedCardData;
