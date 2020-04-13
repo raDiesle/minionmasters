@@ -58,6 +58,7 @@ export function CardDeck({
                 card: cardToAddData
             };
             setLastSelectedCards(newLastSelectedCards);
+
             const nextFreeSlot = newLastSelectedCards.findIndex(({card: {iD}}) => iD === 0);
             setCurrentSelectedSlot(nextFreeSlot);
             setPrevSelectedCardEvent(cardSelectedEventId);
@@ -97,7 +98,6 @@ export function CardDeck({
                                   cardActionWrapper={(card) =>
                                       <CardActionAddCardToDeck
                                           onClick={() => {
-                                              debugger;
                                               handleRemoveCard(slotPos);
                                           }}
                                           card={card}

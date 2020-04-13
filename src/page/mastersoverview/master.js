@@ -1,10 +1,18 @@
+import React, {useState} from "react";
+import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {mastersMapping} from "./mastersMapping";
-import React, {useState} from "react";
-import styled from "styled-components";
 import {MasterModal} from "./MasterModal";
-import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
+
+const OverlayActionBackground = styled.div`
+    background-color: rgba(0,0,0, 0.5);
+    border: 1px dotted rgba(0,0,0, 0.5);
+    color: #fff;     
+`;
+const IconStyle = styled(OverlayActionBackground)`
+  padding-left: 2px;
+`;
 
 const MasterContentStyle = styled.div`
     position: relative;
@@ -25,32 +33,6 @@ const InfoMasterDetailsOverlay = styled.div`
     }
 `;
 
-const OverlayActionBackground = styled.div`
-    background-color: rgba(0,0,0, 0.5);
-    border: 1px dotted rgba(0,0,0, 0.5);
-    color: #fff;
-`;
-
-const AddMasterToDeckIconStyle = styled(OverlayActionBackground)`
-  padding-left: 2px;
-`;
-
-const AddMasterToDeckOverlay = styled.div`
-    position: absolute;
-    top: 35px;
-    left: 0px;
-    
-      @media (max-width: 767px) {
-        top: 13px;
-      }
-    
-  //  padding: 15px 15px 15px 0;    
-    &:hover{
-      cursor: pointer;
-    }
-    
-    
-`;
 
 const MasterImgStyle = styled.img`
       width: 90px;
@@ -68,7 +50,7 @@ const MasterSelectedContainer = styled.div`
   overflow:hidden;
 `;
 
-export default function Master({masterKey, selectedHero = "", isMastersSelection, setSelectedHero,}) {
+export default function Master({masterKey, actionRegistrationComponent}) {
     const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
     return <MasterSelectedContainer>
@@ -78,26 +60,19 @@ export default function Master({masterKey, selectedHero = "", isMastersSelection
         />
         <MasterContentStyle>
 
-            {
-                isMastersSelection &&
-                <AddMasterToDeckOverlay
-
-                    onClick={() => {
-                        setSelectedHero(masterKey);
-                    }}>
-                    <AddMasterToDeckIconStyle>
-                        <FontAwesomeIcon icon={faPlusCircle} size={"sm"}/>
-                    </AddMasterToDeckIconStyle>
-                </AddMasterToDeckOverlay>
-            }
             <InfoMasterDetailsOverlay onClick={(event) => {
                 setIsOpenHeroModal(true);
                 event.stopPropagation();
             }}>
-                <AddMasterToDeckIconStyle>
+                <IconStyle>
                     <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
-                </AddMasterToDeckIconStyle>
+                </IconStyle>
             </InfoMasterDetailsOverlay>
+
+            { // to unregister on rerender bug
+                actionRegistrationComponent && actionRegistrationComponent(masterKey)
+            }
+
             <MasterImgStyle src={"generated/img/" + mastersMapping[masterKey].icon}
                             alt={masterKey}/>
         </MasterContentStyle>

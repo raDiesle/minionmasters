@@ -14,7 +14,6 @@ export default function SaveDeckContainer({lastSelectedCards, selectedHero}) {
 
         <AnalyzeDeck relevantCards={relevantCards} selectedHero={selectedHero}/>
 
-
         <SaveDeckToDb relevantCards={relevantCards} selectedHero={selectedHero}/>
     </div>
 }

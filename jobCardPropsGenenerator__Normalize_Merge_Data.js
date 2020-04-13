@@ -59,10 +59,6 @@ function normalizeWikiData(propsAsMap) {
         }
     });
 
-    if (propsAsMap.type === "DefensiveSpell") {
-        propsAsMap.type = "Spell";
-    }
-
     propsAsMap.description = propsAsMap.description.replace(/[[(.*?)]]/gm, "<span className='htmlCardRef' data-card='$1'>$1</span>");
 
     // might be obsolete
@@ -82,6 +78,10 @@ function normalizeGameCardData(propsAsMap) {
     // match by id manual
     // wikiNameToGameIDMappingConfig
     propsAsMap.iD = parseInt(propsAsMap.iD);
+
+    if (propsAsMap.type === "DefensiveSpell") {
+        propsAsMap.type = "Spell";
+    }
 
     propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
     propsAsMap.description = propsAsMap.description.replace(/\<link="actor_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");

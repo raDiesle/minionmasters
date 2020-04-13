@@ -1,7 +1,7 @@
 import React from "react";
 import {mastersMapping} from "./mastersMapping";
 
-import Master from "./Master";
+import Master from "./master";
 import styled from "styled-components";
 
 const MastersStyle = styled.a`
@@ -10,7 +10,7 @@ const MastersStyle = styled.a`
     justify-content: flex-start;
 `;
 
-export default function Masters({setSelectedHero}) {
+export default function Masters({actionRegistrationComponent}) {
 
     return (
         <MastersStyle name="mastersview">
@@ -18,8 +18,7 @@ export default function Masters({setSelectedHero}) {
                 Object.keys(mastersMapping).map(masterKey =>
                     <div key={masterKey}>
                         <Master masterKey={masterKey}
-                                isMastersSelection
-                                setSelectedHero={setSelectedHero}
+                                actionRegistrationComponent={actionRegistrationComponent}
                         />
                     </div>)
             }

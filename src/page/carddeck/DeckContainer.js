@@ -5,11 +5,14 @@ import {CardDeck} from "./CardDeck";
 import ExportActions from "./ExportActions";
 import styled from "styled-components";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import SaveDeckContainer from "./savedeck/save-deck-container";
+import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
 import FiltersWithCards from "../FiltersWithCards";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
 import {toast} from "react-toastify";
 import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
+import Masters from "../mastersoverview/Masters";
+
+import AddMasterToDeck from "../mastersoverview/AddMasterToDeck";
 
 
 const DeckOptionsStyle = styled.div`
@@ -25,7 +28,7 @@ export default function CardDeckContainer({
                                               setSelectedTabIndex
                                           }) {
 
-    let Slots = [...Array(10).keys()];
+    const Slots = [...Array(10).keys()];
     const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
         return {
             eventId: 0,
@@ -52,6 +55,7 @@ export default function CardDeckContainer({
             <Tabs style={{paddingTop: "20px"}}>
                 <TabList>
                     <Tab>Select cards</Tab>
+                    <Tab>Select master</Tab>
                     <Tab>Analyze & Save</Tab>
                     <Tab>Import</Tab>
                     <Tab>Export</Tab>
@@ -64,7 +68,7 @@ export default function CardDeckContainer({
                                     setSelectedCardEvent({
                                         eventId: Math.random(),
                                         card: {
-                                            pageId: card.pageId
+                                            iD: card.iD
                                         }
                                     });
                                     toast("Card added to Deck");
@@ -76,7 +80,15 @@ export default function CardDeckContainer({
                     }/>
                 </TabPanel>
                 <TabPanel>
-                    <SaveDeckContainer lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
+                    <Masters actionRegistrationComponent={(selectedHeroKey) =>
+                        <AddMasterToDeck setSelectedHero={setSelectedHero}
+                                         masterKey={selectedHeroKey}
+                        />
+                    }
+                    />
+                </TabPanel>
+                <TabPanel>
+                    <AnalyzeAndSaveDeckContainer lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
                 </TabPanel>
 
                 <TabPanel>

@@ -23,9 +23,7 @@ export function Page() {
                 <BuildDeckContainer/>
             </TabPanel>
             <TabPanel>
-                <TabPanel>
-                    <ListOfDecks/>
-                </TabPanel>
+                <ListOfDecks/>
             </TabPanel>
 
         </Tabs>
