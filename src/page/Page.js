@@ -1,9 +1,10 @@
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import BuildDeckContainer from "./BuildDeckContainer";
 
 import ListOfDecks from "./carddeck/ListOfDecks/ListOfDecks";
-import BuildDeckContainer from "./BuildDeckContainer";
 import DiscussOnCards from "./discussion/discuss-on-cards";
+import Masters from "./mastersoverview/Masters";
 
 
 export function Page() {
@@ -12,12 +13,19 @@ export function Page() {
     return <div style={{padding: "5px"}}>
         <Tabs style={{paddingTop: "20px"}}>
             <TabList>
-                <Tab>Cards</Tab>
-                <Tab>Build deck</Tab>
-                <Tab>List of Decks</Tab>
+                <Tab>Cards Info</Tab>
+                <Tab>Masters Info</Tab>
+                <Tab>Deck Manager</Tab>
+                <Tab>Decks</Tab>
             </TabList>
             <TabPanel>
                 <DiscussOnCards/>
+            </TabPanel>
+            <TabPanel>
+                <Masters actionRegistrationComponent={(selectedHeroKey) =>
+                    <></>
+                }
+                />
             </TabPanel>
             <TabPanel>
                 <BuildDeckContainer/>

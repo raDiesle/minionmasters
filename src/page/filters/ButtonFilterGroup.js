@@ -1,13 +1,21 @@
-import styled from "styled-components";
 import React from "react";
+import styled from "styled-components";
 
-const ButtonGroupStyle = styled.div`                  
+const ButtonColor = styled.div`
       & > * {
-        
-          border: 1px solid #000000;          
-          color: white;           
-          cursor: pointer; 
+          color: white;               
           float: left; 
+        }
+        
+        & > *:hover {
+          color: yellow;
+        }
+`;
+
+const ButtonGroupStyle = styled(ButtonColor)`                  
+        
+        & > * {
+          border: 1px solid #000000;                  
         }
         
         & > *:first-child {           
@@ -20,8 +28,8 @@ const ButtonGroupStyle = styled.div`
             border-bottom-right-radius: 10px;
         }
         
-        & > *:not(:last-child) {
-          border-right: none; 
+        & > *:not(:last-child):not(:hover) {
+          border-right-color: #444; 
         }
         
         &:after {
@@ -33,6 +41,11 @@ const ButtonGroupStyle = styled.div`
 
 const ButtonInGroupStyle = styled.button`
   background-color: ${({isButtonActive}) => isButtonActive ? "#111" : "#444"};
+  cursor: pointer; 
+  border: 1px solid #111;
+  &:hover {
+    border-color: yellow;
+  }
 `;
 
 function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
@@ -53,4 +66,4 @@ function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
     </ButtonGroupStyle>
 }
 
-export {ButtonGroupStyle, ButtonInGroupStyle, ButtonFilterGroup};
+export {ButtonGroupStyle, ButtonInGroupStyle, ButtonFilterGroup, ButtonColor};

@@ -3,8 +3,8 @@ const _mapValues = require('lodash.mapvalues');
 const fs = require('fs');
 
 const SRC_GAMEDATA = './batch_jobs/CardData.JSON';
-const SRC_WIKI = './batch_jobs/generated/jobCardPropsGenerator.json';
-const TARGET_FILE = "./batch_jobs/generated/jobCardProps.json";
+const SRC_WIKI = './batch_jobs/generated/jobFetchRawDataFromWiki.json';
+const TARGET_FILE = "./src/generated/jobCardProps.json";
 
 // https://drive.google.com/open?id=0B-3hJBoCehBpQVBUYVdxZDVNSms
 const cardDataFromGameRaw = fs.readFileSync(SRC_GAMEDATA);
@@ -85,6 +85,29 @@ function normalizeGameCardData(propsAsMap) {
     if (propsAsMap.type === "DefensiveSpell") {
         propsAsMap.type = "Spell";
     }
+
+    const iDsMasterAbilitySpells = [
+        103, // arcane missiles
+        244, // drain live
+        245, // spirit
+        246, // skelettons
+        247, // fobidden knowledge
+        248, // book of death
+        55, // trick swap
+        58, // burn the bridges
+        59, // tombstone
+        88, // shield totem
+        89, // blast entry
+        116, // more dakka
+        207, // crossbow trap
+        208, // decoy trap
+        243 // queen dragon
+    ];
+
+    if (iDsMasterAbilitySpells.includes(propsAsMap.iD)) {
+        propsAsMap.rarity = "Perk";
+    }
+
 
     propsAsMap.description = propsAsMap.description.replace(/\<link="spell_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
     propsAsMap.description = propsAsMap.description.replace(/\<link="actor_info:(.*?)>(.*?)<\/link>/gm, "<span class='htmlCardRef' data-card='$1'>$2</span>");
@@ -186,7 +209,6 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
         cardDataFromGame.image = matchedDataFromWikiById.image;
         cardDataFromGame.targets = matchedDataFromWikiById.targets; // to be replaced with hitsTarget, when fixed in dataset
         cardDataFromGame.faction = matchedDataFromWikiById.faction;
-
     } else {
         const gameIdToCustomImage = {
             270: "Malshar.jpg",

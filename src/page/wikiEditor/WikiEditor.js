@@ -1,25 +1,26 @@
-import React, {useEffect, useRef, useState} from "react";
-import styled from "styled-components";
-import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEdit} from "@fortawesome/free-regular-svg-icons/faEdit";
-import WikiEditorActive from "./WikiEditorActive";
-import {db, dbErrorHandlerPromise} from "../../firestore";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import {convertFromRaw, Editor, EditorState} from "draft-js";
+import React, {useEffect, useRef, useState} from "react";
+import styled from "styled-components";
+import {db, dbErrorHandlerPromise} from "../../firestore";
+import {ButtonColor, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
+import WikiEditorActive from "./WikiEditorActive";
 
 const EditorStyle = styled.div`
   border: 1px solid lightgray;
+  border-right: 0;
   padding: 8px;
-`;
-
-const EditButtonStyle = styled.div`
-  padding-top: 4px;
 `;
 
 const LastEditedStyle = styled.div`
   font-size: 8px;
 `;
+
+const EditWithButtonStyle = styled.div`
+  display: flex;
+`
 
 export default function WikiEditor({card: {iD}, discussionType}) {
     const editor = useRef();
@@ -55,24 +56,24 @@ export default function WikiEditor({card: {iD}, discussionType}) {
     } else {
         return (
             <div>
-                <EditorStyle>
-                    {currentWikiData.createdAt ? <Editor ref={editor}
-                                                         editorState={currentWikiData.val}
-                                                         readOnly={true}
-                    /> : <div> There is no wiki data added, yet. Want to be the first one?</div>
-                    }
-                </EditorStyle>
+                <EditWithButtonStyle>
+                    <EditorStyle>
+                        {currentWikiData.createdAt ? <Editor ref={editor}
+                                                             editorState={currentWikiData.val}
+                                                             readOnly={true}
+                        /> : <div>&nbsp;&nbsp;&nbsp;Noone added, yet.&nbsp;&nbsp;&nbsp;</div>
+                        }
+                    </EditorStyle>
+                    <ButtonInGroupStyle onClick={() => setInEditMode(true)}>
+                        <ButtonColor>
+                            <FontAwesomeIcon icon={faEdit}/>
+                        </ButtonColor>
+                    </ButtonInGroupStyle>
+                </EditWithButtonStyle>
                 <LastEditedStyle>
                     {currentWikiData.createdAt &&
                     <div>last edit: {currentWikiData.createdAt.toLocaleString()} - {currentWikiData.createdBy}</div>}
                 </LastEditedStyle>
-                <EditButtonStyle>
-                    <ButtonGroupStyle>
-                        <ButtonInGroupStyle onClick={() => setInEditMode(true)}>
-                            <FontAwesomeIcon icon={faEdit}/> Edit
-                        </ButtonInGroupStyle>
-                    </ButtonGroupStyle>
-                </EditButtonStyle>
             </div>
         );
     }

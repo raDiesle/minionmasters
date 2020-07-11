@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const fs = require('fs');
 
-const TARGET_FILE = "./batch_jobs/generated/jobCardPropsGenerator.json";
+const TARGET_FILE = "./batch_jobs/generated/jobFetchRawDataFromWiki.json";
 
 // alternatively: https://minionmasters.gamepedia.com/api.php?action=query&generator=categorymembers&gcmtitle=Category:Cards&prop=revisions&rvprop=content&rvslots=main
 async function fetchPageContent(gcmcontinue = "") {

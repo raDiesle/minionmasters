@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-
-import FiltersWithCards from "./FiltersWithCards";
 
 import {toast} from "react-toastify";
+import styled from "styled-components";
 import {db, dbErrorHandlerPromise} from "../firestore";
 import AgainstCards from "./AgainstCards";
+import CardDiscussion from "./discussion/CardDiscussion";
+
+import FiltersWithCards from "./FiltersWithCards";
 
 const GoodBadStyle = styled.div`
   display: flex;
@@ -144,6 +145,9 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                         Good against
                     </AgainstGoodHeaderStyle>
 
+
+                    <CardDiscussion card={card} discussionType="goodAgainst"/>
+
                     <AgainstCards
                         triggerDataRefresh={triggerDataRefreshAgainst}
                         cardModalId={iD}
@@ -158,6 +162,8 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                     <AgainstBadHeaderStyle>
                         Bad against
                     </AgainstBadHeaderStyle>
+
+                    <CardDiscussion card={card} discussionType="badAgainst"/>
 
                     <AgainstCards
                         triggerDataRefresh={triggerDataRefreshAgainst}

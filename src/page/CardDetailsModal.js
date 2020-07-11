@@ -1,21 +1,20 @@
-import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-import ReactModal from "react-modal";
-import cardData from "../generated/jobCardProps";
+import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
+import {faCheck} from "@fortawesome/free-solid-svg-icons/faCheck";
+import {faHeart as faHeartSolid} from "@fortawesome/free-solid-svg-icons/faHeart";
+import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import _dropRight from "lodash.dropright";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
+import sortBy from "lodash.sortby";
+import React, {useEffect, useState} from "react";
+import ReactModal from "react-modal";
+import styled from "styled-components";
+import {targetsMapping} from "../attack/targetsMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 import {factionMapping} from "../faction/Factions";
-import {targetsMapping} from "../attack/targetsMapping";
+import cardData from "../generated/jobCardProps";
 import {rarityMapping} from "../rarity/rarityMapping";
-import sortBy from "lodash.sortby";
-import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";
-import {faHeart as faHeartSolid} from "@fortawesome/free-solid-svg-icons/faHeart";
 import CardDiscussions from "./CardDiscussions";
-import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
-import {faCheck} from "@fortawesome/free-solid-svg-icons/faCheck";
 
 const ModalContainerStyle = styled.div`
    position: relative;
@@ -392,9 +391,6 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
 
 
                     <CardDiscussions card={card}/>
-
-                    <hr/>
-                    <CardDetailsGoodBadAgainst card={card}/>
 
                 </ModalContainerStyle>
             </ReactModal>
