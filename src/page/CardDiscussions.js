@@ -1,6 +1,7 @@
-import React, {useState} from "react";
 import 'draft-js/dist/Draft.css';
+import React, {useState} from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";
 
 import CardDiscussion from "./discussion/CardDiscussion";
 
@@ -15,19 +16,15 @@ export default function CardDiscussions({card}) {
               }}
         >
             <TabList>
-                <Tab>Mechanics</Tab>
                 <Tab>Tips</Tab>
-                <Tab>Bugs</Tab>
-                <Tab>Opinion</Tab>
+                <Tab>Cards Against</Tab>
+                <Tab>Opinions</Tab>
             </TabList>
             <TabPanel>
                 <CardDiscussion card={card} discussionType="mechanics"/>
             </TabPanel>
             <TabPanel>
-                <CardDiscussion card={card} discussionType="tips"/>
-            </TabPanel>
-            <TabPanel>
-                <CardDiscussion card={card} discussionType="bugs"/>
+                <CardDetailsGoodBadAgainst card={card}/>
             </TabPanel>
             <TabPanel>
                 <CardDiscussion card={card} discussionType="opinion"/>

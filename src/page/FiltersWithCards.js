@@ -1,13 +1,13 @@
-import {Filters} from "./filters/Filters";
-import Cards from "./Cards";
-import React, {useCallback, useState} from "react";
-import cardData from "../generated/jobCardProps";
 import orderBy from "lodash/orderBy";
+import React, {useCallback, useState} from "react";
+import {targetsMapping} from "../attack/targetsMapping";
+import {typeMapping} from "../cardtype/typeMapping";
 import {factionMapping} from "../faction/Factions";
+import cardData from "../generated/jobCardProps";
 import {MANACOST} from "../manacost/manacost";
 import {rarityMapping} from "../rarity/rarityMapping";
-import {typeMapping} from "../cardtype/typeMapping";
-import {targetsMapping} from "../attack/targetsMapping";
+import Cards from "./Cards";
+import {Filters} from "./filters/Filters";
 
 
 export default function FiltersWithCards({cardActionWrapper}) {
@@ -36,9 +36,7 @@ export default function FiltersWithCards({cardActionWrapper}) {
     const [filters, setFilters] = useState(setAllFilterStates(false));
     const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
 
-    const filteredNonAbilityCards = cardData.filter(({catagory}) => catagory !== "AbilityCard");
-
-    const filteredCardsDataFaction = filters.faction.every(({isActive}) => !isActive) ? filteredNonAbilityCards : filteredNonAbilityCards.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
+    const filteredCardsDataFaction = filters.faction.every(({isActive}) => !isActive) ? cardData : cardData.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
     const filteredCardsDataWithManacost = filters.manacost.every(({isActive}) => !isActive) ? filteredCardsDataFaction : filteredCardsDataFaction.filter(({manacost}) => filters.manacost.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(parseInt(manacost)));
     const filteredCardsDataWithRarity = filters.rarity.every(({isActive}) => !isActive) ? filteredCardsDataWithManacost.filter(({rarity}) => rarity !== 'Perk') : filteredCardsDataWithManacost.filter(({rarity}) => filters.rarity.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(rarity));
     const filteredCardsDataWithType = filters.type.every(({isActive}) => !isActive) ? filteredCardsDataWithRarity : filteredCardsDataWithRarity.filter(({type}) => filters.type.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(type));
