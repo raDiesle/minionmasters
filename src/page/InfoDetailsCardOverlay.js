@@ -1,8 +1,8 @@
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useState} from "react";
 import styled from "styled-components";
 import CardDetailsModal from "./CardDetailsModal";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 
 export default function InfoDetailsCardOverlay({card}) {
 

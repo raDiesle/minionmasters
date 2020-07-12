@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {Card} from "../Card";
-import EmptyCardSlotSelected from "../../EmptyCardSlotSelected";
 import CardDeckSlotStyle from "../../CardDeckSlotStyle";
+import EmptyCardSlotSelected from "../../EmptyCardSlotSelected";
+import {Card} from "../Card";
 
 
 const EmptyCardSlotUnselectedStyle = styled.div`

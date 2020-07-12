@@ -1,18 +1,18 @@
 import React, {useState} from "react";
-import ImportFromGame from "./carddeckimport/ImportFromGame";
-import {ImportFromUrl} from "./ImportFromUrl";
-import {CardDeck} from "./CardDeck";
-import ExportActions from "./ExportActions";
-import styled from "styled-components";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
-import FiltersWithCards from "../FiltersWithCards";
-import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
 import {toast} from "react-toastify";
+import styled from "styled-components";
+import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
+import FiltersWithCards from "../FiltersWithCards";
 import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
-import Masters from "../mastersoverview/Masters";
 
 import AddMasterToDeck from "../mastersoverview/AddMasterToDeck";
+import Masters from "../mastersoverview/Masters";
+import {CardDeck} from "./CardDeck";
+import ImportFromGame from "./carddeckimport/ImportFromGame";
+import ExportActions from "./ExportActions";
+import {ImportFromUrl} from "./ImportFromUrl";
+import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
 
 
 const DeckOptionsStyle = styled.div`

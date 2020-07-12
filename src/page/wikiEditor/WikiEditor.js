@@ -1,17 +1,35 @@
 import {faEdit} from "@fortawesome/free-regular-svg-icons/faEdit";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-import {convertFromRaw, Editor, EditorState} from "draft-js";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
+
 import styled from "styled-components";
 import {db, dbErrorHandlerPromise} from "../../firestore";
 import {ButtonColor, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
 import WikiEditorActive from "./WikiEditorActive";
+import WikiEditorReadOnly from "./WikiEditorReadOnly";
+
 
 const EditorStyle = styled.div`
-  border: 1px solid lightgray;
+  // border: 1px solid lightgray;
   border-right: 0;
-  padding: 8px;
+  padding-right: 5px;
+  //padding: 8px;
+  /*
+  // border: 1px solid lightgray;
+  border-right: 0;
+  // padding: 8px;
+  
+  //    box-sizing: border-box;
+    border: 1px solid #ddd;
+    cursor: text;
+    padding: 16px;
+    border-radius: 2px;
+    // margin-bottom: 2em;
+    box-shadow: inset 0px 1px 8px -3px #ABABAB;
+    background: #fefefe;
+    
+   */
 `;
 
 const LastEditedStyle = styled.div`
@@ -23,14 +41,13 @@ const EditWithButtonStyle = styled.div`
 `
 
 export default function WikiEditor({card: {iD}, discussionType}) {
-    const editor = useRef();
 
     const dbRef = db.collection("cards").doc(String(iD)).collection(discussionType);
 
     const [currentWikiData, setCurrentWikiData] = useState({
         createdAt: "",
         createdBy: "",
-        val: EditorState.createEmpty()
+        val: ""
     });
 
     const [isInEditMode, setInEditMode] = useState(false);
@@ -45,23 +62,22 @@ export default function WikiEditor({card: {iD}, discussionType}) {
                 setCurrentWikiData({
                     createdAt: doc.createdAt.toDate(),
                     createdBy: doc.createdBy,
-                    val: EditorState.createWithContent(convertFromRaw(JSON.parse(doc.val)))
+                    val: doc.val
                 });
             }
         }).catch(dbErrorHandlerPromise);
     }, [isInEditMode]);
 
     if (isInEditMode) {
-        return <WikiEditorActive setInEditMode={setInEditMode} dbRef={dbRef}/>
+        return <WikiEditorActive setInEditMode={setInEditMode} dbRef={dbRef}
+                                 placeholder="Type @ to reference a master or card."/>
     } else {
         return (
             <div>
                 <EditWithButtonStyle>
                     <EditorStyle>
-                        {currentWikiData.createdAt ? <Editor ref={editor}
-                                                             editorState={currentWikiData.val}
-                                                             readOnly={true}
-                        /> : <div>&nbsp;&nbsp;&nbsp;Noone added, yet.&nbsp;&nbsp;&nbsp;</div>
+                        {currentWikiData.createdAt ? <WikiEditorReadOnly value={currentWikiData.val}/> :
+                            <WikiEditorReadOnly value={currentWikiData.val} placeholder="None added, yet."/>
                         }
                     </EditorStyle>
                     <ButtonInGroupStyle onClick={() => setInEditMode(true)}>

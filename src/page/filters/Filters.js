@@ -1,20 +1,20 @@
+import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
+import {faSortAmountDown} from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
+import {faSortAmountUp} from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
+import {faSquare} from "@fortawesome/free-solid-svg-icons/faSquare";
+import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect} from "react";
 import styled from "styled-components"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-
-import {rarityMapping} from "../../rarity/rarityMapping";
-import {typeMapping} from "../../cardtype/typeMapping";
-import {faSquare} from "@fortawesome/free-solid-svg-icons/faSquare";
-import {ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle} from "./ButtonFilterGroup";
-import {MANACOST} from "../../manacost/manacost";
-import PerkHeroIcon from "../../rarity/PerkHeroIcon";
-import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
-import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
 import {targetsMapping} from "../../attack/targetsMapping";
+import {typeMapping} from "../../cardtype/typeMapping";
 
 import {factionMapping} from "../../faction/Factions";
-import {faSortAmountUp} from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
-import {faSortAmountDown} from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
+import {MANACOST} from "../../manacost/manacost";
+import PerkHeroIcon from "../../rarity/PerkHeroIcon";
+
+import {rarityMapping} from "../../rarity/rarityMapping";
+import {ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle} from "./ButtonFilterGroup";
 
 const InputTextStyle = styled.input`
   color: #444;

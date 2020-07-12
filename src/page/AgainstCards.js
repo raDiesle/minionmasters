@@ -1,15 +1,15 @@
+import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons/faArrowRight";
+import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import {Card} from "./Card";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import CardDeckSlotStyle from "../CardDeckSlotStyle";
 import EmptyCardSlotSelected from "../EmptyCardSlotSelected";
-import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
-import {faTrashAlt} from "@fortawesome/free-regular-svg-icons";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons/faArrowRight";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import {db, dbErrorHandlerPromise} from "../firestore";
 import cardData from "../generated/jobCardProps";
+import {Card} from "./Card";
 import InfoDetailsCardOverlay from "./InfoDetailsCardOverlay";
 
 const CardsStyle = styled.div`

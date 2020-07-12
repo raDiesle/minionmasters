@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import * as firebase from "firebase";
-import {auth, firebaseApp} from "./firestore";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons/faTimesCircle";
+import {faSignInAlt} from "@fortawesome/free-solid-svg-icons/faSignInAlt";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import * as firebase from "firebase";
+import React, {useState} from "react";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import {faSignInAlt} from "@fortawesome/free-solid-svg-icons/faSignInAlt";
+import {auth, firebaseApp} from "./firestore";
 
 
 export default function LoginLogout() {

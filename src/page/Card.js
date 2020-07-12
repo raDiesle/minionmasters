@@ -1,13 +1,13 @@
+import {faCircle} from "@fortawesome/free-regular-svg-icons/faCircle";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-
-import {rarityMapping} from "../rarity/rarityMapping";
+import {targetsMapping} from "../attack/targetsMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 
 import {factionMapping} from "../faction/Factions";
-import {targetsMapping} from "../attack/targetsMapping";
-import {faCircle} from "@fortawesome/free-regular-svg-icons/faCircle";
+
+import {rarityMapping} from "../rarity/rarityMapping";
 
 
 const IconStyleSize = styled.div`

@@ -1,50 +1,21 @@
-import {convertFromRaw, convertToRaw, Editor, EditorState} from "draft-js";
-import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
 import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
-import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
-import styled from "styled-components";
+import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import * as firebase from "firebase";
-import {auth, dbErrorHandlerPromise} from "../../firestore";
+import React, {useEffect, useRef, useState} from "react";
 import {toast} from "react-toastify";
+import styled from "styled-components";
+import {auth, dbErrorHandlerPromise} from "../../firestore";
 
-const EditorStyle = styled.div`
-  //border: 1px dotted grey;
-  padding: 5px 10px;
-  margin: 5px 0;
-  max-width: 600px;
-  ${({isEditable}) => isEditable && (
-    `
-  background: 
-            linear-gradient(90deg, #000 50%, transparent 50%),
-            linear-gradient(0deg, #000 50%, transparent 50%),
-            linear-gradient(90deg, #000 50%, transparent 50%),
-            linear-gradient(0deg, #000 50%, transparent 50%);
-          background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
-          background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px;
-          background-position: left top, right top, left bottom, left top;
-          animation: border-dance 20s infinite linear;
-        }
-        
-        @keyframes border-dance 
-        {
-          0%
-          {
-            background-position: left top, right top, right bottom, left bottom;
-          }
-          100% 
-          {
-            background-position: right top, right bottom, left bottom, left top;
-          }
-  `)
-}
-`;
+import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
 
+
+import TextareaEditor from "./textarea-editor";
 
 const HistorySelectStyle = styled.select`
-  height: 24px;
-  font-size: 12px;
+  height: 18px;
+  font-size: 10px;
   background-color: #444;
 `;
 
@@ -54,21 +25,19 @@ function listenUserAuth(setCurrentUsername) {
     });
 }
 
-export default function WikiEditorActive({setInEditMode, dbRef}) {
+export default function WikiEditorActive({setInEditMode, dbRef, placeholder}) {
     const [currentUsername, setCurrentUsername] = useState("");
+    const [value, setValue] = useState("");
+    const editorRef = useRef();
+
     useEffect(() => {
         const listen = listenUserAuth(setCurrentUsername);
         return () => listen()
     }, []);
 
-    const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
     const [isDisabledInput, setIsDisabledInput] = useState(false);
     const [history, setHistory] = useState([]);
-    const editor = useRef();
-
-    useLayoutEffect(() => {
-        editor.current.focus();
-    }, []);
 
     useEffect(() => {
         dbRef.orderBy("createdAt", "desc").get().then((documentSnapshots) => {
@@ -82,20 +51,34 @@ export default function WikiEditorActive({setInEditMode, dbRef}) {
                 return ({
                     id,
                     createdAt: createdAt.toDate(),
-                    val: JSON.parse(val)
+                    val: val
                 });
             });
             setHistory(normalizedHistory);
 
             if (normalizedHistory.length > 0) {
-                setEditorState(EditorState.createWithContent(convertFromRaw(normalizedHistory[0].val)));
+                setValue(normalizedHistory[0].val)
             }
         });
     }, []);
 
+    const onHistorySelect = ({target: {value: dbKey}}) => {
+        const mappedHistoryData = history.find(({id}) => id === dbKey);
+        const loadedHistoryState = mappedHistoryData.val;
+        const isLatest = history[0].id === mappedHistoryData.id;
+        setIsDisabledInput(!isLatest);
+
+        setValue(loadedHistoryState);
+    };
+
+    const addCard = () => {
+        setValue(value => value + " @");
+        editorRef.current.focus();
+    };
+
     const onSave = () => {
-        const currentContent = editorState.getCurrentContent();
-        const dataToSaveBackend = JSON.stringify(convertToRaw(currentContent));
+        const dataToSaveBackend = value;
+
         dbRef.add({
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             createdBy: currentUsername,
@@ -107,51 +90,53 @@ export default function WikiEditorActive({setInEditMode, dbRef}) {
             .catch(dbErrorHandlerPromise);
     };
 
-    const onChange = (currentEditorState) => {
-        setEditorState(currentEditorState);
-    };
-
-    const onHistorySelect = ({target: {value: dbKey}}) => {
-        console.log(dbKey);
-        const mappedHistoryData = history.find(({id}) => id === dbKey);
-
-        const loadedHistoryState = EditorState.createWithContent(convertFromRaw(mappedHistoryData.val));
-
-        const isLatest = history[0].id === mappedHistoryData.id;
-        setIsDisabledInput(!isLatest);
-
-        setEditorState(loadedHistoryState);
-    };
-
     return <div>
-        <EditorStyle isEditable={!isDisabledInput}>
-            <Editor ref={editor}
-                    editorState={editorState}
-                    onChange={onChange}
-                    readOnly={isDisabledInput}
-            />
-        </EditorStyle>
 
-        <ButtonGroupStyle>
-            <>
-                <ButtonInGroupStyle onClick={() => setInEditMode(false)}>
-                    <FontAwesomeIcon icon={faTimesCircle}/> Discard
-                </ButtonInGroupStyle>
-                <ButtonInGroupStyle onClick={(editorStateEvent) => onSave(editorStateEvent)}>
-                    <FontAwesomeIcon icon={faSave}/> Save
-                </ButtonInGroupStyle>
+        <div style={{
+            width: "600px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            fontSize: "10px"
+        }}>
+            <ButtonGroupStyle>
+                <ButtonInGroupStyle onClick={() => addCard()}><FontAwesomeIcon
+                    icon={faLink}/></ButtonInGroupStyle>
+            </ButtonGroupStyle>
+
+            <ButtonGroupStyle>
                 <ButtonInGroupStyle>
                     <HistorySelectStyle defaultValue="" onChange={(dbKey) => onHistorySelect(dbKey)}>
 
                         {
                             history.map((hist, idx) => <option value={hist.id}
-                                                               key={hist.id}>{hist.createdAt.toLocaleString()} {idx === 0 && "current"}</option>)
+                                                               key={hist.id}>{hist.createdAt.toLocaleString()} {idx === 0 && "latest"}</option>)
                         }
                     </HistorySelectStyle>
-
                 </ButtonInGroupStyle>
-            </>
+            </ButtonGroupStyle>
+        </div>
 
-        </ButtonGroupStyle>
+        <TextareaEditor value={value} setValue={setValue} isDisabledInput={isDisabledInput} placeholder={placeholder}
+                        editorRef={editorRef}/>
+
+        <div style={{display: "flex", justifyContent: "space-between", width: "600px"}}>
+
+
+            <ButtonGroupStyle>
+                <>
+                    <ButtonInGroupStyle onClick={() => setInEditMode(false)}>
+                        <FontAwesomeIcon icon={faTimesCircle}/> Discard
+                    </ButtonInGroupStyle>
+                    <ButtonInGroupStyle onClick={(editorStateEvent) => onSave(editorStateEvent)}
+                                        disabled={isDisabledInput} isButtonActive={isDisabledInput}>
+                        <FontAwesomeIcon icon={faSave}/> Save
+                    </ButtonInGroupStyle>
+                </>
+
+            </ButtonGroupStyle>
+
+
+        </div>
     </div>
 }

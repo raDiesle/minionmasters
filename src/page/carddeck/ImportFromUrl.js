@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {useEffect} from "react";
 import qs from "qs";
-import allCardsData from "../../generated/jobCardProps";
+import {useEffect} from "react";
 import {toast} from "react-toastify";
+import allCardsData from "../../generated/jobCardProps";
 
 export function ImportFromUrl({setLastSelectedCards, setSelectedHero}) {
 

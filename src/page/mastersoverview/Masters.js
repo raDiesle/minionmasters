@@ -1,8 +1,8 @@
 import React from "react";
-import {mastersMapping} from "./mastersMapping";
+import styled from "styled-components";
 
 import Master from "./master";
-import styled from "styled-components";
+import {mastersMapping} from "./mastersMapping";
 
 const MastersStyle = styled.a`
     display: flex;

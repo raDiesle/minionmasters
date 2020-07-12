@@ -1,5 +1,5 @@
-import CardDeckContainer from "./carddeck/DeckContainer";
 import React, {useEffect, useRef, useState} from "react";
+import CardDeckContainer from "./carddeck/DeckContainer";
 
 const usePreviousValue = value => {
     const ref = useRef();

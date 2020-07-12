@@ -7,7 +7,7 @@ const ButtonColor = styled.div`
           float: left; 
         }
         
-        & > *:hover {
+        & > *:hover:not(:disabled) {
           color: yellow;
         }
 `;
@@ -37,9 +37,12 @@ const ButtonGroupStyle = styled(ButtonColor)`
           clear: both;
           display: table;
         };
-        `;
+`;
 
 const ButtonInGroupStyle = styled.button`
+  &:disabled {
+    background-color: grey;
+  }
   background-color: ${({isButtonActive}) => isButtonActive ? "#111" : "#444"};
   cursor: pointer; 
   border: 1px solid #111;

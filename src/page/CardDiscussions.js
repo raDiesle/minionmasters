@@ -1,4 +1,3 @@
-import 'draft-js/dist/Draft.css';
 import React, {useState} from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import CardDetailsGoodBadAgainst from "./CardDetailsGoodBadAgainst";

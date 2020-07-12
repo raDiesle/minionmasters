@@ -1,9 +1,9 @@
+import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useState} from "react";
 import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import {mastersMapping} from "./mastersMapping";
 import {MasterModal} from "./MasterModal";
+import {mastersMapping} from "./mastersMapping";
 
 const OverlayActionBackground = styled.div`
     background-color: rgba(0,0,0, 0.5);

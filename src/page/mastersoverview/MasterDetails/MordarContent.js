@@ -1,3 +1,5 @@
+import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {
@@ -10,8 +12,6 @@ import {
     MasterHeaderStyle
 } from "../MasterModal";
 import IconDamage from "./icon-damage.png";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 
 export default function MordarContent() {
     return <div>
