@@ -321,7 +321,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                                 Damage
                             </CardPropertyKeyStyle>
                             <div>
-                                {damage === 0 ? <FontAwesomeIcon icon={faTimes}/> : damage}
+                                {damage === 0 ? "-" : damage}
                             </div>
                         </CardPropertyLiStyle>
                         }

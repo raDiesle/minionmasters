@@ -1,5 +1,5 @@
-import ReactModal from "react-modal";
 import React from "react";
+import ReactModal from "react-modal";
 
 export default function ExportToGameModal({isOpenCopyInfo, setIsOpenCopyInfo}) {
     return <ReactModal

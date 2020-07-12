@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import 'react-toastify/dist/ReactToastify.css';
 import 'react-tabs/style/react-tabs.css';
+import 'react-toastify/dist/ReactToastify.css';
+import App from './App';
+import './index.css';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

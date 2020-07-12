@@ -11,7 +11,8 @@ export function Page() {
 
     // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     return <div style={{padding: "5px"}}>
-        <Tabs style={{paddingTop: "20px"}}>
+
+    <Tabs style={{paddingTop: "20px"}}>
             <TabList>
                 <Tab>Cards Info</Tab>
                 <Tab>Masters Info</Tab>

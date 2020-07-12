@@ -1,9 +1,9 @@
-import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
-import React, {useState} from "react";
-import styled from "styled-components";
 import * as firebase from "firebase";
-import {db, dbErrorHandlerPromise} from "../../../firestore";
+import React, {useState} from "react";
 import {toast} from "react-toastify";
+import styled from "styled-components";
+import {db, dbErrorHandlerPromise} from "../../../firestore";
+import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
 
 
 const InputGroupStyle = styled.div`

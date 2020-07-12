@@ -25,3 +25,9 @@ html {
     color: orange;
     font-weight: bold;
 }
+
+figure {
+    display: inline;
+    background-color: red;
+    width: auto;
+}

@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import ReactModal from "react-modal";
-import {mastersMapping} from "./mastersMapping";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons/faTimesCircle";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React from "react";
+import ReactModal from "react-modal";
+import styled from "styled-components";
+import {mastersMapping} from "./mastersMapping";
 
 export const MasterHeaderStyle = styled.h3`
   padding-bottom: 0.5rem;

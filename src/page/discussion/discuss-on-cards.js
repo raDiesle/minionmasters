@@ -1,7 +1,7 @@
 import React from "react";
+import FiltersWithCards from "../FiltersWithCards";
 
 import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
-import FiltersWithCards from "../FiltersWithCards";
 
 export default function DiscussOnCards() {
     return (

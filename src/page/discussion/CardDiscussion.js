@@ -1,5 +1,5 @@
-import WikiEditor from "../wikiEditor/WikiEditor";
 import React from "react";
+import WikiEditor from "../wikiEditor/WikiEditor";
 
 export default function CardDiscussion({card, discussionType}) {
 

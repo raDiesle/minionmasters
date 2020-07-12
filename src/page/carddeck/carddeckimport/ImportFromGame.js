@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
-import React, {useState} from "react";
-import styled from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import cardData from "../../../generated/jobCardProps";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React, {useState} from "react";
 import {toast} from "react-toastify";
+import styled from "styled-components";
+import cardData from "../../../generated/jobCardProps";
+import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
 import ImportFromGameModal from "./ImportFromGameModal";
 
 const CardeckPlaceholderStyle = styled.div`

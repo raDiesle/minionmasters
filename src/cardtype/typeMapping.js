@@ -1,7 +1,7 @@
 import {faDove} from "@fortawesome/free-solid-svg-icons/faDove";
-import {faShoePrints} from "@fortawesome/free-solid-svg-icons/faShoePrints";
-import {faMagic} from "@fortawesome/free-solid-svg-icons/faMagic";
 import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
+import {faMagic} from "@fortawesome/free-solid-svg-icons/faMagic";
+import {faShoePrints} from "@fortawesome/free-solid-svg-icons/faShoePrints";
 
 export const typeMapping = {
     "Flying Minion": faDove,
