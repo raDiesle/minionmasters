@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {IDENTIFIER_FOR_EMPTY_SLOT} from "page/carddeck/DeckContainer";
 import React, {useState} from "react";
 import {toast} from "react-toastify";
 import styled from "styled-components";
@@ -53,7 +54,7 @@ export default function ImportFromGame({setLastSelectedCards, setSelectedHero}) 
                 if (matchedCardData === undefined) {
                     toast(<MissingCardMessage nameExtracted={nameExtracted}/>);
                     return {
-                        iD: 0
+                        iD: IDENTIFIER_FOR_EMPTY_SLOT
                     };
                 } else {
                     return matchedCardData;

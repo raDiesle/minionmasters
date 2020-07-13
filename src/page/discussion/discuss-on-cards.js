@@ -8,9 +8,10 @@ export default function DiscussOnCards() {
         <div>
             <FiltersWithCards cardActionWrapper={(card) =>
                 <>
-                    <InfoDetailsCardOverlay card={card}/>
+                    <InfoDetailsCardOverlay card={card} isFullWidthClickable={true}/>
                 </>
-            }/>
+            } isFullWidthClickable={true}
+            />
         </div>
     );
 }

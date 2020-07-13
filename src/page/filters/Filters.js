@@ -17,10 +17,20 @@ import {rarityMapping} from "../../rarity/rarityMapping";
 import {ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle} from "./ButtonFilterGroup";
 
 const InputTextStyle = styled.input`
-  color: #444;
-  border: 1px solid #444;
+  color: #fff;
+  border: 1px solid #000;
   font-weight: bold;
   width: 100px;
+  background-color: #444;
+  
+  &:hover{
+    border-color: yellow;
+    outline: none;
+  }
+  
+  &:focus, &:active {
+    background-color: #111;
+  }
 `;
 
 const InputLabelStyle = styled.div`
@@ -74,7 +84,15 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
         <div>
             Faction
             <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
-                {Object.values(factionMapping).map((icon) => <div key={icon}>{icon}</div>)}
+                {
+                    Object.keys(factionMapping).map((faction) =>
+                        <div className="tooltip">
+                            <div key={factionMapping[faction]}>{factionMapping[faction]}</div>
+                            <span className="tooltiptext">
+                            {faction}
+                        </span>
+                        </div>)
+                }
             </ButtonFilterGroup>
         </div>
 
@@ -90,24 +108,39 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
                 isButtonActive={sortByMana === 'asc'}
                 onClick={() => setSortByMana("asc")}
             >
-                <FontAwesomeIcon icon={faSortAmountUp}/>
+                <div className="tooltip">
+                    <FontAwesomeIcon icon={faSortAmountUp}/>
+                    <span className="tooltiptext">
+                    Sort Mana Ascending
+                </span>
+                </div>
             </ButtonInGroupStyle>
             <ButtonInGroupStyle
                 isButtonActive={sortByMana === 'desc'}
                 onClick={() => setSortByMana("desc")}
             >
-                <FontAwesomeIcon icon={faSortAmountDown}/>
+                <div className="tooltip">
+                    <FontAwesomeIcon icon={faSortAmountDown}/>
+                    <span className="tooltiptext">
+                        Sort Mana Ascending
+                    </span>
+                </div>
             </ButtonInGroupStyle>
         </ButtonGroupStyle>
 
 
         <div>
-            Rare
+            Rarity
             <ButtonFilterGroup btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
                 {
                     Object.keys(rarityMapping).map(rarity =>
-                        <div key={rarity} style={{color: rarityMapping[rarity]}}>
-                            {rarity !== 'Perk' ? <FontAwesomeIcon icon={faSquare} size={"xs"}/> : <PerkHeroIcon/>}
+                        <div className="tooltip">
+                            <div key={rarity} style={{color: rarityMapping[rarity]}}>
+                                {rarity !== 'Perk' ? <FontAwesomeIcon icon={faSquare} size={"xs"}/> : <PerkHeroIcon/>}
+                                <span className="tooltiptext">
+                                    {rarity}
+                                </span>
+                            </div>
                         </div>)
                 }
             </ButtonFilterGroup>
@@ -118,8 +151,11 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
             <ButtonFilterGroup btnkey="type" filters={filters.type} setFilters={setFilters}>
                 {
                     Object.keys(typeMapping).map(type =>
-                        <div key={type}>
-                            <FontAwesomeIcon icon={typeMapping[type]} size="xs"/>
+                        <div className="tooltip">
+                            <div key={type}>
+                                <FontAwesomeIcon icon={typeMapping[type]} size="xs"/>
+                            </div>
+                            <span className="tooltiptext">{type}</span>
                         </div>
                     )
                 }
@@ -131,8 +167,11 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
             <ButtonFilterGroup btnkey="targets" filters={filters.targets} setFilters={setFilters}>
                 {
                     Object.keys(targetsMapping).map(target =>
-                        <div key={target}>
-                            {targetsMapping[target]}
+                        <div className="tooltip">
+                            <div key={target}>
+                                {targetsMapping[target]}
+                            </div>
+                            <span className="tooltiptext">{target}</span>
                         </div>
                     )
                 }

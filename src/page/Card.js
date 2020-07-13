@@ -24,12 +24,13 @@ const CardContainerStyle = styled.div`
     @media (max-width: 767px) {
       width: 50px;     
     }
-    
+      
+  border-width: 1px;
+  border-color: black;
+  border-style: ${({focused}) => focused ? "dotted" : "solid"};
     &:hover {
-    border-color: black;
-    border-width: 1px;
-     opacity: ${({focused}) => focused ? 0.4 : 1.0};
-     border-style: ${({focused}) => focused ? "dotted" : "solid"};
+      opacity: ${({focused}) => focused ? 0.4 : 1.0};
+      ${({isFullWidthClickable}) => isFullWidthClickable && "border-color: yellow;"}        
     }         
 `;
 
@@ -154,9 +155,9 @@ const BottomRightCornerStyle = styled.div`
 `;
 
 //onClick to be removed and setter go here
-export function Card({children, card: {image, manacost, rarity, type, faction, targets}}) {
+export function Card({children, card: {image, manacost, rarity, type, faction, targets}, isFullWidthClickable = false}) {
     return <div>
-        <CardContainerStyle>
+        <CardContainerStyle isFullWidthClickable={isFullWidthClickable}>
             <CardContentStyle>
                 <CardImageStyle src={`generated/img/${image}`} alt={image}/>
                 <RightCornerStyle rarity={rarity}/>

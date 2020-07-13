@@ -49,6 +49,11 @@ const ButtonInGroupStyle = styled.button`
   &:hover {
     border-color: yellow;
   }
+  
+  &:focus {
+    outline: none;
+    // background-color: #375a7f;
+  }
 `;
 
 function ButtonFilterGroup({children, btnkey, filters, setFilters}) {

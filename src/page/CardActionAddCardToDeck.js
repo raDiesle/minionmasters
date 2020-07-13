@@ -14,24 +14,31 @@ export default function CardActionAddCardToDeck({card, isDeckCard, onClick}) {
     `;
 
     const OverlayActionBackground = styled(IconStyleSize)`
-    background-color: rgba(0,0,0, 0.5);
-    border: 1px dotted rgba(0,0,0, 0.5);
-    color: #fff;
-`;
+        background-color: rgba(0,0,0, 0.5);
+        border: 1px dotted rgba(0,0,0, 0.5);
+        color: #fff;
+    `;
 
     const AddCardToDeckIconStyle = styled(OverlayActionBackground)`
-  padding-right: 2px;
-`;
+      padding-right: 2px;
+    `;
 
     const AddCardToDeckOverlay = styled.div`
-    position: absolute;
-    top: 30%;
-    left: 0px;
-    padding: 15% 15% 15% 0;    
-    &:hover{
-      cursor: pointer;
-    }
-`;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        padding: 50% 30% 36% 0;
+        
+        &:hover{
+          cursor: pointer;
+        }
+        &:hover > div {
+          color: yellow;
+        }  
+        &:active > div {
+          color: #375a7f;
+        }
+    `;
 
     return <div>
         {card.rarity !== RARITY_KEYS.Perk &&

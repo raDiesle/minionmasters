@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function EmptyCardSlotSelected({children, onClick}) {
 
-    const EmptyCardSlotSelectedStyle = styled.a`
+    const EmptyCardSlotSelectedStyle = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
@@ -16,17 +16,17 @@ export default function EmptyCardSlotSelected({children, onClick}) {
     margin-top: 2px;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+    cursor: default;
     
   @media (max-width: 767px) {
       font-size: 9px;
    }
 
       background: 
-        linear-gradient(90deg, #000 50%, transparent 50%),
-        linear-gradient(0deg, #000 50%, transparent 50%),
-        linear-gradient(90deg, #000 50%, transparent 50%),
-        linear-gradient(0deg, #000 50%, transparent 50%);
+        linear-gradient(90deg, #fff 50%, transparent 50%),
+        linear-gradient(0deg, #fff 50%, transparent 50%),
+        linear-gradient(90deg, #fff 50%, transparent 50%),
+        linear-gradient(0deg, #fff 50%, transparent 50%);
       background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
       background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px;
       background-position: left top, right top, left bottom, left top;
