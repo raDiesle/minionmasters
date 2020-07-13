@@ -189,6 +189,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                 }
                 onRequestClose={() => setIsOpenDetails(false)}
                 className="modalContentStyle"
+                overlayClassName="modalOverlayStyle"
             >
                 <ModalContainerStyle data-name={name}>
                     <ModalAlignCloseStyle>

@@ -57,6 +57,7 @@ const ModalCloseStyle = styled.div`
 export function MasterModal({masterKey, isOpenHeroModal, setIsOpenHeroModal}) {
     return (<ReactModal
             className="modalContentStyle"
+            overlayClassName="modalOverlayStyle"
             isOpen={
                 isOpenHeroModal
             }
