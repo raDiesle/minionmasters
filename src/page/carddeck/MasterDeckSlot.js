@@ -17,26 +17,23 @@ const MasterDeckSlotStyle = styled.div`
       height: 50px;
       width: 50px;
       //margin-top: 5px;
-    }   
-    
-    
+    }    
 `;
 
 
 const MasterContentStyle = styled.div`
  //   width: 100%;
  //   position: relative;
-   
 `;
 
-const MasterPlaceholder = styled.a`
+const MasterPlaceholder = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
     padding: 20% 15%;  
-    cursor: pointer;
+    cursor: default;
     text-decoration: none; 
      
       @media (max-width: 767px) {
@@ -48,7 +45,7 @@ const MasterPlaceholder = styled.a`
       content: '';
       height: 100%; 
       width: 100%; 
-      border: 2px dashed #000;
+      border: 2px dashed #fff;
       top: 0px;
       left: 0px;
       border-radius: 50%;

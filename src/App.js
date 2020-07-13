@@ -11,16 +11,17 @@ import {Page} from "./page/Page";
 
 
 const Header = styled.header`
- display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
   width: 100%;
-  background-color: #f1f1f1;
-  padding: 20px 5px;
+  background-color: #375a7f;
+  color: white;
+  padding: 20px 10px;
 
   a {
-    color: black;
+    color: #fff;
    
   }
   h1 {
@@ -39,6 +40,7 @@ const PageHeaderStyle = styled.h1`
 const SubheaderLinkStyle = styled.a`
   font-size: 100%;
   line-height: 1;
+  padding-left: 5px;
 `;
 
 const CapitalLetterStyle = styled.span`

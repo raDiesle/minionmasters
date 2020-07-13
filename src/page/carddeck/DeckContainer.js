@@ -14,6 +14,7 @@ import ExportActions from "./ExportActions";
 import {ImportFromUrl} from "./ImportFromUrl";
 import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
 
+export const IDENTIFIER_FOR_EMPTY_SLOT = 999999;
 
 const DeckOptionsStyle = styled.div`
 
@@ -33,7 +34,7 @@ export default function CardDeckContainer({
         return {
             eventId: 0,
             card: {
-                iD: 0
+                iD: IDENTIFIER_FOR_EMPTY_SLOT
             }
         }
     }));

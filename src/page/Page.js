@@ -23,10 +23,7 @@ export function Page() {
                 <DiscussOnCards/>
             </TabPanel>
             <TabPanel>
-                <Masters actionRegistrationComponent={(selectedHeroKey) =>
-                    <></>
-                }
-                />
+                <Masters/>
             </TabPanel>
             <TabPanel>
                 <BuildDeckContainer/>
@@ -36,7 +33,5 @@ export function Page() {
             </TabPanel>
 
         </Tabs>
-
-
     </div>;
 }

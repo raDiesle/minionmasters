@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Card} from "./Card";
 
-const CardsStyle = styled.a`
+const CardsStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -13,7 +13,7 @@ const CardNameStyle = styled.div`
   text-align: center;
 `;
 
-export default function Cards({cards, isShowNames, cardActionWrapper}) {
+export default function Cards({cards, isShowNames, cardActionWrapper, fullCount, isFullWidthClickable}) {
     return (
         <div>
             <CardsStyle name="cardsview">
@@ -21,7 +21,7 @@ export default function Cards({cards, isShowNames, cardActionWrapper}) {
                     cards.map(card =>
                         <div key={card.iD}>
 
-                            <Card card={card}>
+                            <Card card={card} isFullWidthClickable={isFullWidthClickable}>
                                 {cardActionWrapper(card)}
                             </Card>
 
@@ -30,7 +30,7 @@ export default function Cards({cards, isShowNames, cardActionWrapper}) {
                     )
                 }
             </CardsStyle>
-            Count: {cards.length}
+            Count: {cards.length}/{fullCount}
         </div>
     );
 }

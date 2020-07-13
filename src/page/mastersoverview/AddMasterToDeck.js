@@ -16,16 +16,21 @@ const AddMasterToDeckIconStyle = styled(OverlayActionBackground)`
 
 const AddMasterToDeckOverlay = styled.div`
     position: absolute;
-    top: 36px;
+    top: 0;
+    padding: 35px 35px 35px 0;
     left: 0px;
     
       @media (max-width: 767px) {
-        top: 13px;
+        padding: 11px 11px 11px 0; 
       }
     
   //  padding: 15px 15px 15px 0;    
     &:hover{
       cursor: pointer;
+    }
+    
+     &:hover > div {
+      color: yellow;
     }
 `;
 

@@ -18,7 +18,7 @@ import CardDiscussions from "./CardDiscussions";
 
 const ModalContainerStyle = styled.div`
    position: relative;
-    
+  
 `;
 
 const ModalAlignCloseStyle = styled.div`

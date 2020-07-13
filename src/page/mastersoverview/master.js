@@ -21,15 +21,20 @@ const MasterContentStyle = styled.div`
 
 const InfoMasterDetailsOverlay = styled.div`
     position: absolute;
-    top: 35px;
+    top: 0px;
+    padding: 35px 0 35px ${({actionRegistrationComponent}) => actionRegistrationComponent === null ? "90px" : "35px"};
     right: 0px;
  
-  @media (max-width: 767px) {
-        top: 13px;
-      }
+    @media (max-width: 767px) {
+        padding: 11px 0 11px ${({actionRegistrationComponent}) => actionRegistrationComponent === null ? "50px" : "11px"};
+    }
    
     &:hover{
       cursor: pointer;
+    }
+    
+    &:hover > div {
+      color: yellow;
     }
 `;
 
@@ -48,9 +53,13 @@ const MasterSelectedContainer = styled.div`
   border: 2px groove #000;
   border-radius: 50%;
   overflow:hidden;
+  
+  &:hover{
+    border-color: yellow;
+  }
 `;
 
-export default function Master({masterKey, actionRegistrationComponent}) {
+export default function Master({masterKey, actionRegistrationComponent = null}) {
     const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
     return <MasterSelectedContainer>
@@ -60,13 +69,19 @@ export default function Master({masterKey, actionRegistrationComponent}) {
         />
         <MasterContentStyle>
 
-            <InfoMasterDetailsOverlay onClick={(event) => {
-                setIsOpenHeroModal(true);
-                event.stopPropagation();
-            }}>
-                <IconStyle>
-                    <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
-                </IconStyle>
+            <InfoMasterDetailsOverlay
+                actionRegistrationComponent={actionRegistrationComponent}
+                onClick={(event) => {
+                    setIsOpenHeroModal(true);
+                    event.stopPropagation();
+                }}
+            >
+
+                {
+                    actionRegistrationComponent !== null && <IconStyle>
+                        <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
+                    </IconStyle>
+                }
             </InfoMasterDetailsOverlay>
 
             { // to unregister on rerender bug

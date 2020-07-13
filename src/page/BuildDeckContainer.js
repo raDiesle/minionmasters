@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import CardDeckContainer from "./carddeck/DeckContainer";
+import CardDeckContainer, {IDENTIFIER_FOR_EMPTY_SLOT} from "./carddeck/DeckContainer";
 
 const usePreviousValue = value => {
     const ref = useRef();
@@ -24,7 +24,7 @@ export default function BuildDeckContainer() {
     const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
         eventId: 0,
         card: {
-            iD: 0
+            iD: IDENTIFIER_FOR_EMPTY_SLOT
         }
     });
 

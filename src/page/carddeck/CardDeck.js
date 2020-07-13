@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
+import {IDENTIFIER_FOR_EMPTY_SLOT} from "../carddeck/DeckContainer";
 import {CardDeckSlot} from "./CardDeckSlot";
 import MasterDeckSlot from "./MasterDeckSlot";
 
@@ -43,10 +44,10 @@ export function CardDeck({
 
     let Slots = [...Array(10).keys()];
 
-    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.iD === 0);
+    const findFirstNextFreeSlot = () => Slots.find(slotPosition => lastSelectedCards[slotPosition].card.iD === IDENTIFIER_FOR_EMPTY_SLOT);
     const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(findFirstNextFreeSlot);
 
-    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.iD === selectedCardId : selectedCardId === 0;
+    let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot] ? lastSelectedCards[currentSelectedSlot].card.iD === selectedCardId : selectedCardId === IDENTIFIER_FOR_EMPTY_SLOT;
     const [prevSelectedEventId, setPrevSelectedCardEvent] = useState(0);
 
     useEffect(() => {
@@ -59,7 +60,7 @@ export function CardDeck({
             };
             setLastSelectedCards(newLastSelectedCards);
 
-            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {iD}}) => iD === 0);
+            const nextFreeSlot = newLastSelectedCards.findIndex(({card: {iD}}) => iD === IDENTIFIER_FOR_EMPTY_SLOT);
             setCurrentSelectedSlot(nextFreeSlot);
             setPrevSelectedCardEvent(cardSelectedEventId);
         }
@@ -71,15 +72,15 @@ export function CardDeck({
         selectedCardsWithRemovedCard[slotPos] = {
             eventId: Math.random(),
             card: {
-                iD: 0
+                iD: IDENTIFIER_FOR_EMPTY_SLOT
             }
         };
         setSelectedCardEvent({
                 eventId: Math.random(),
-            card: {iD: 0}
+            card: {iD: IDENTIFIER_FOR_EMPTY_SLOT}
             }
         );
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {iD}}) => iD === 0);
+        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(({card: {iD}}) => iD === IDENTIFIER_FOR_EMPTY_SLOT);
         setCurrentSelectedSlot(nextFreeSlot);
         return selectedCardsWithRemovedCard;
     });
