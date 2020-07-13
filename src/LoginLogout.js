@@ -65,6 +65,7 @@ export default function LoginLogout() {
                         icon={faSignInAlt}/></SignInLinkStyle>
                     <ReactModal
                         className="modalContentStyle"
+                        overlayClassName="modalOverlayStyle"
                         isOpen={
                             isLoginModalShown
                         }
