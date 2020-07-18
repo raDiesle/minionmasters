@@ -16,11 +16,11 @@ export const factionMapping = {
     Voidborne: <VoidborneIcon/>,
     Accursed: <AccursedIcon/>,
     Scrat: <ScratIcon/>,
-    "Crystal Elf": <CrystalElfIcon/>,
+    "CrystalElf": <CrystalElfIcon/>,
     "Puff": <FontAwesomeIcon icon={faHatWizard} size={"xs"}/>,
-    "Zen-Chi": <FontAwesomeIcon icon={faYinYang} size={"xs"}/>,
+    "ZenChi": <FontAwesomeIcon icon={faYinYang} size={"xs"}/>,
     "Slither": <SlitherIcon/>,
     "Outlander": <OutlanderIcon/>,
     "Empyrean": <EmpyrianIcon/>,
-    "Stoutheart": <StoutheartIcon/>
+    "Highlander": <StoutheartIcon/>
 };
