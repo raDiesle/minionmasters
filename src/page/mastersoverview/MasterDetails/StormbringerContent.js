@@ -30,15 +30,15 @@ export default function StormbringerContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_Sniper.png"
+                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_Sniper_78.webp"
                                                     alt="Stormbringer Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_Aerodynamics.png"
+                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_Aerodynamics_78.webp"
                                                     alt="Stormbringer Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_LightningReflexes.png"
+                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_LightningReflexes_78.webp"
                                                     alt="Stormbringer Perk3"/>
                 </Tab>
             </TabList>

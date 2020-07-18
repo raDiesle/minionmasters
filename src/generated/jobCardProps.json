@@ -25,9 +25,9 @@
     "dps": 60,
     "iD": 0,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 698,
-    "image": "Cleaver",
-    "targets": "Ground"
+    "image": "Cleaver"
   },
   {
     "catagory": "Standard",
@@ -55,9 +55,9 @@
     "dps": 35,
     "iD": 1,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 794,
-    "image": "Warrior",
-    "targets": "Ground"
+    "image": "Warrior"
   },
   {
     "catagory": "Standard",
@@ -85,9 +85,9 @@
     "dps": 16.66667,
     "iD": 2,
     "faction": "Outlander",
+    "targets": "Ground & Air",
     "pageId": 758,
-    "image": "DroneContender",
-    "targets": "Ground & Air"
+    "image": "DroneContender"
   },
   {
     "catagory": "Standard",
@@ -116,9 +116,9 @@
     "dps": 19.04762,
     "iD": 3,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 734,
-    "image": "GrenadierRat",
-    "targets": "Ground"
+    "image": "GrenadierRat"
   },
   {
     "catagory": "Standard",
@@ -166,9 +166,9 @@
     "dps": 46.66667,
     "iD": 5,
     "faction": "Slither",
+    "targets": "Buildings",
     "pageId": 755,
-    "image": "LivingStatue",
-    "targets": "Buildings"
+    "image": "LivingStatue"
   },
   {
     "catagory": "Standard",
@@ -196,9 +196,9 @@
     "dps": 45.45454,
     "iD": 6,
     "faction": "Voidborne",
+    "targets": "Ground & Air",
     "pageId": 721,
-    "image": "DragonWhelp",
-    "targets": "Ground & Air"
+    "image": "DragonWhelp"
   },
   {
     "catagory": "Standard",
@@ -226,9 +226,9 @@
     "dps": 10,
     "iD": 7,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 768,
-    "image": "GangOfRats",
-    "targets": "Ground"
+    "image": "GangOfRats"
   },
   {
     "catagory": "Standard",
@@ -256,9 +256,9 @@
     "dps": 62.5,
     "iD": 8,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 733,
-    "image": "GhostTurret",
-    "targets": "Ground"
+    "image": "GhostTurret"
   },
   {
     "catagory": "Standard",
@@ -307,9 +307,9 @@
     "dps": 25,
     "iD": 10,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 686,
-    "image": "Boomer",
-    "targets": "Ground"
+    "image": "Boomer"
   },
   {
     "catagory": "Standard",
@@ -337,9 +337,9 @@
     "dps": 18.18182,
     "iD": 11,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 790,
-    "image": "SwarmerHorde",
-    "targets": "Ground"
+    "image": "SwarmerHorde"
   },
   {
     "catagory": "Standard",
@@ -367,9 +367,9 @@
     "dps": 55.55556,
     "iD": 12,
     "faction": "Voidborne",
+    "targets": "Ground & Air",
     "pageId": 787,
-    "image": "Summoner",
-    "targets": "Ground & Air"
+    "image": "Summoner"
   },
   {
     "catagory": "Standard",
@@ -426,9 +426,9 @@
     "dps": 50,
     "iD": 14,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 709,
-    "image": "DemonCommander",
-    "targets": "Ground"
+    "image": "DemonCommander"
   },
   {
     "catagory": "Standard",
@@ -456,9 +456,9 @@
     "dps": 66.66667,
     "iD": 15,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 695,
-    "image": "ShockRoller",
-    "targets": "Ground"
+    "image": "ShockRoller"
   },
   {
     "catagory": "Standard",
@@ -486,9 +486,9 @@
     "dps": 0,
     "iD": 16,
     "faction": "Accursed",
+    "targets": "Ground & Air",
     "pageId": 732,
-    "image": "Ghost",
-    "targets": "Ground & Air"
+    "image": "Ghost"
   },
   {
     "catagory": "Standard",
@@ -536,9 +536,9 @@
     "dps": 28.57143,
     "iD": 19,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 774,
-    "image": "SniperRat",
-    "targets": "Ground & Air"
+    "image": "SniperRat"
   },
   {
     "catagory": "Standard",
@@ -566,9 +566,9 @@
     "dps": 33.33333,
     "iD": 20,
     "faction": "Slither",
+    "targets": "Ground & Air",
     "pageId": 776,
-    "image": "SpiritLeech",
-    "targets": "Ground & Air"
+    "image": "SpiritLeech"
   },
   {
     "catagory": "Standard",
@@ -625,9 +625,9 @@
     "dps": 70,
     "iD": 22,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 670,
-    "image": "Assassin",
-    "targets": "Ground"
+    "image": "Assassin"
   },
   {
     "catagory": "Standard",
@@ -675,9 +675,9 @@
     "dps": 35,
     "iD": 24,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 712,
-    "image": "DivineWarrior",
-    "targets": "Ground"
+    "image": "DivineWarrior"
   },
   {
     "catagory": "Standard",
@@ -705,9 +705,9 @@
     "dps": 10,
     "iD": 25,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 765,
-    "image": "RatArmy",
-    "targets": "Ground"
+    "image": "RatArmy"
   },
   {
     "catagory": "Standard",
@@ -764,9 +764,9 @@
     "dps": 17.85714,
     "iD": 27,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 706,
-    "image": "DefensoChopper2",
-    "targets": "Ground"
+    "image": "DefensoChopper2"
   },
   {
     "catagory": "Standard",
@@ -794,9 +794,9 @@
     "dps": 15,
     "iD": 28,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 671,
-    "image": "BannerMan",
-    "targets": "Ground"
+    "image": "BannerMan"
   },
   {
     "catagory": "Standard",
@@ -884,9 +884,9 @@
     "dps": 37.5,
     "iD": 32,
     "faction": "Puff",
+    "targets": "Ground & Air",
     "pageId": 796,
-    "image": "WizardPuff",
-    "targets": "Ground & Air"
+    "image": "WizardPuff"
   },
   {
     "catagory": "Standard",
@@ -914,9 +914,9 @@
     "dps": 14.28571,
     "iD": 33,
     "faction": "Empyrean",
+    "targets": "Ground & Air",
     "pageId": 759,
-    "image": "Priestess",
-    "targets": "Ground & Air"
+    "image": "Priestess"
   },
   {
     "catagory": "Standard",
@@ -945,9 +945,9 @@
     "dps": 25,
     "iD": 34,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 781,
-    "image": "ReBoomer",
-    "targets": "Ground"
+    "image": "ReBoomer"
   },
   {
     "catagory": "Standard",
@@ -976,9 +976,9 @@
     "dps": 68.75,
     "iD": 35,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 699,
-    "image": "Colossus",
-    "targets": "Ground"
+    "image": "Colossus"
   },
   {
     "catagory": "Standard",
@@ -1026,9 +1026,9 @@
     "dps": 33.33333,
     "iD": 37,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 745,
-    "image": "LaserTurret",
-    "targets": "Ground & Air"
+    "image": "LaserTurret"
   },
   {
     "catagory": "Standard",
@@ -1057,9 +1057,9 @@
     "dps": 36.66667,
     "iD": 38,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 795,
-    "image": "WhirlyRat",
-    "targets": "Ground"
+    "image": "WhirlyRat"
   },
   {
     "catagory": "Standard",
@@ -1088,9 +1088,9 @@
     "dps": 0,
     "iD": 39,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 741,
-    "image": "IllusoryCleaver",
-    "targets": "Ground"
+    "image": "IllusoryCleaver"
   },
   {
     "catagory": "Standard",
@@ -1119,9 +1119,9 @@
     "dps": 66.66666,
     "iD": 40,
     "faction": "Highlander",
+    "targets": "Buildings",
     "pageId": 792,
-    "image": "Troubadour",
-    "targets": "Buildings"
+    "image": "Troubadour"
   },
   {
     "catagory": "Standard",
@@ -1149,9 +1149,9 @@
     "dps": 25,
     "iD": 41,
     "faction": "Slither",
+    "targets": "Ground",
     "pageId": 773,
-    "image": "SpiritLeecher",
-    "targets": "Ground"
+    "image": "SpiritLeecher"
   },
   {
     "catagory": "Standard",
@@ -1179,9 +1179,9 @@
     "dps": 45.45454,
     "iD": 42,
     "faction": "Voidborne",
+    "targets": "Ground & Air",
     "pageId": 718,
-    "image": "DragonWhelps",
-    "targets": "Ground & Air"
+    "image": "DragonWhelps"
   },
   {
     "catagory": "Standard",
@@ -1209,9 +1209,9 @@
     "dps": 33.33333,
     "iD": 43,
     "faction": "Scrat",
+    "targets": "Buildings",
     "pageId": 1197,
-    "image": "SiegeTurret",
-    "targets": "Buildings"
+    "image": "SiegeTurret"
   },
   {
     "catagory": "Standard",
@@ -1239,9 +1239,9 @@
     "dps": 40.90909,
     "iD": 44,
     "faction": "Outlander",
+    "targets": "Ground & Air",
     "pageId": 723,
-    "image": "DroneWalker",
-    "targets": "Ground & Air"
+    "image": "DroneWalker"
   },
   {
     "catagory": "Standard",
@@ -1269,9 +1269,9 @@
     "dps": 20,
     "iD": 45,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 751,
-    "image": "Legionairs",
-    "targets": "Ground"
+    "image": "Legionairs"
   },
   {
     "catagory": "Standard",
@@ -1299,9 +1299,9 @@
     "dps": 50,
     "iD": 46,
     "faction": "Slither",
+    "targets": "Ground & Air",
     "pageId": 1677,
-    "image": "Harbinger",
-    "targets": "Ground & Air"
+    "image": "Harbinger"
   },
   {
     "catagory": "Standard",
@@ -1330,9 +1330,9 @@
     "dps": 38.09524,
     "iD": 47,
     "faction": "Outlander",
+    "targets": "All",
     "pageId": 668,
-    "image": "DroneContenderHeavy",
-    "targets": "All"
+    "image": "DroneContenderHeavy"
   },
   {
     "catagory": "Standard",
@@ -1360,9 +1360,9 @@
     "dps": 15,
     "iD": 48,
     "faction": "Slither",
+    "targets": "Ground",
     "pageId": 782,
-    "image": "StunLancer",
-    "targets": "Ground"
+    "image": "StunLancer"
   },
   {
     "catagory": "Standard",
@@ -1517,9 +1517,9 @@
     "dps": 18.88889,
     "iD": 54,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 682,
-    "image": "BloodImps",
-    "targets": "Ground"
+    "image": "BloodImps"
   },
   {
     "catagory": "AbilityCard",
@@ -1567,9 +1567,9 @@
     "dps": 10.71429,
     "iD": 56,
     "faction": "Empyrean",
+    "targets": "Ground & Air",
     "pageId": 687,
-    "image": "CrossbowMan",
-    "targets": "Ground & Air"
+    "image": "CrossbowMan"
   },
   {
     "catagory": "Standard",
@@ -1703,9 +1703,9 @@
     "dps": 28.57143,
     "iD": 62,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 688,
-    "image": "BountySniper",
-    "targets": "Ground & Air"
+    "image": "BountySniper"
   },
   {
     "catagory": "Standard",
@@ -1734,9 +1734,9 @@
     "dps": 13.33333,
     "iD": 63,
     "faction": "Accursed",
+    "targets": "Ground & Air",
     "pageId": 678,
-    "image": "Blastmancer",
-    "targets": "Ground & Air"
+    "image": "Blastmancer"
   },
   {
     "catagory": "Standard",
@@ -1764,9 +1764,9 @@
     "dps": 50,
     "iD": 64,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 784,
-    "image": "Styxi",
-    "targets": "Ground & Air"
+    "image": "Styxi"
   },
   {
     "catagory": "Standard",
@@ -1795,9 +1795,9 @@
     "dps": 20,
     "iD": 65,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 730,
-    "image": "Gax",
-    "targets": "Ground"
+    "image": "Gax"
   },
   {
     "catagory": "Standard",
@@ -1825,9 +1825,9 @@
     "dps": 60,
     "iD": 66,
     "faction": "Voidborne",
+    "targets": "Buildings",
     "pageId": 761,
-    "image": "Rammer",
-    "targets": "Buildings"
+    "image": "Rammer"
   },
   {
     "catagory": "Standard",
@@ -1855,9 +1855,9 @@
     "dps": 33.33333,
     "iD": 67,
     "faction": "Scrat",
+    "targets": "Buildings",
     "pageId": 1219,
-    "image": "ZeppelinBomber",
-    "targets": "Buildings"
+    "image": "ZeppelinBomber"
   },
   {
     "catagory": "Standard",
@@ -1885,9 +1885,9 @@
     "dps": 100,
     "iD": 68,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 684,
-    "image": "BlueGolem",
-    "targets": "Ground"
+    "image": "BlueGolem"
   },
   {
     "catagory": "Standard",
@@ -1965,9 +1965,9 @@
     "dps": 0,
     "iD": 71,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 1260,
-    "image": "RedGolem",
-    "targets": "Ground"
+    "image": "RedGolem"
   },
   {
     "catagory": "Standard",
@@ -1995,9 +1995,9 @@
     "dps": 30,
     "iD": 72,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 1503,
-    "image": "ScratTank",
-    "targets": "Ground"
+    "image": "ScratTank"
   },
   {
     "catagory": "Standard",
@@ -2074,9 +2074,9 @@
     "dps": 13.33333,
     "iD": 76,
     "faction": "Accursed",
+    "targets": "Ground & Air",
     "pageId": 1255,
-    "image": "Necromancer",
-    "targets": "Ground & Air"
+    "image": "Necromancer"
   },
   {
     "catagory": "Standard",
@@ -2105,9 +2105,9 @@
     "dps": 0,
     "iD": 77,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 1218,
-    "image": "UndyingSkeleton",
-    "targets": "Ground"
+    "image": "UndyingSkeleton"
   },
   {
     "catagory": "Standard",
@@ -2164,9 +2164,9 @@
     "dps": 10,
     "iD": 79,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 1271,
-    "image": "PropellerScrats",
-    "targets": "Ground & Air"
+    "image": "PropellerScrats"
   },
   {
     "catagory": "Standard",
@@ -2194,9 +2194,9 @@
     "dps": 37.5,
     "iD": 80,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 1299,
-    "image": "PrayingShiHou",
-    "targets": "Ground"
+    "image": "PrayingShiHou"
   },
   {
     "catagory": "Standard",
@@ -2224,9 +2224,9 @@
     "dps": 41.66667,
     "iD": 81,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 1285,
-    "image": "AwarenessMonk",
-    "targets": "Ground"
+    "image": "AwarenessMonk"
   },
   {
     "catagory": "Standard",
@@ -2274,9 +2274,9 @@
     "dps": 10,
     "iD": 84,
     "faction": "Empyrean",
+    "targets": "All/Ground",
     "pageId": 1280,
-    "image": "SpearThrowers",
-    "targets": "All/Ground"
+    "image": "SpearThrowers"
   },
   {
     "catagory": "Standard",
@@ -2305,9 +2305,9 @@
     "dps": 13.33333,
     "iD": 87,
     "faction": "CrystalElf",
+    "targets": "Ground",
     "pageId": 1513,
-    "image": "\tGuardian",
-    "targets": "Ground"
+    "image": "\tGuardian"
   },
   {
     "catagory": "AbilityCard",
@@ -2382,9 +2382,9 @@
     "dps": 0,
     "iD": 90,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 1261,
-    "image": "SpiritVessel",
-    "targets": "Ground"
+    "image": "SpiritVessel"
   },
   {
     "catagory": "Standard",
@@ -2412,9 +2412,9 @@
     "dps": 15.38462,
     "iD": 91,
     "faction": "ZenChi",
+    "targets": "Ground & Air",
     "pageId": 1284,
-    "image": "TinyDragon",
-    "targets": "Ground & Air"
+    "image": "TinyDragon"
   },
   {
     "catagory": "Standard",
@@ -2442,9 +2442,9 @@
     "dps": 75,
     "iD": 93,
     "faction": "Scrat",
+    "targets": "Buildings",
     "pageId": 1269,
-    "image": "BazookaScrat",
-    "targets": "Buildings"
+    "image": "BazookaScrat"
   },
   {
     "catagory": "Standard",
@@ -2552,9 +2552,9 @@
     "dps": 23.07692,
     "iD": 104,
     "faction": "CrystalElf",
+    "targets": "All",
     "pageId": 1638,
-    "image": "ArcaneGolem",
-    "targets": "All"
+    "image": "ArcaneGolem"
   },
   {
     "catagory": "Standard",
@@ -2583,9 +2583,9 @@
     "dps": 50,
     "iD": 105,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1330,
-    "image": "FireImp",
-    "targets": "Ground"
+    "image": "FireImp"
   },
   {
     "catagory": "Standard",
@@ -2633,9 +2633,9 @@
     "dps": 10.71429,
     "iD": 108,
     "faction": "Empyrean",
+    "targets": "Ground & Air",
     "pageId": 1335,
-    "image": "ShieldedCrossbowDudes",
-    "targets": "Ground & Air"
+    "image": "ShieldedCrossbowDudes"
   },
   {
     "catagory": "Standard",
@@ -2663,9 +2663,9 @@
     "dps": 56.66667,
     "iD": 111,
     "faction": "Slither",
+    "targets": "Ground",
     "pageId": 1489,
-    "image": "Prowler",
-    "targets": "Ground"
+    "image": "Prowler"
   },
   {
     "catagory": "Standard",
@@ -2693,9 +2693,9 @@
     "dps": 22.72727,
     "iD": 112,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1338,
-    "image": "EliteSwarmer",
-    "targets": "Ground"
+    "image": "EliteSwarmer"
   },
   {
     "catagory": "Standard",
@@ -2723,9 +2723,9 @@
     "dps": 22.72727,
     "iD": 113,
     "faction": "Outlander",
+    "targets": "Ground & Air",
     "pageId": 1506,
-    "image": "SingleTrackInterceptor",
-    "targets": "Ground & Air"
+    "image": "SingleTrackInterceptor"
   },
   {
     "catagory": "Standard",
@@ -2753,9 +2753,9 @@
     "dps": 18.18182,
     "iD": 114,
     "faction": "Outlander",
+    "targets": "Ground & Air",
     "pageId": 1371,
-    "image": "DroneBuzzers",
-    "targets": "Ground & Air"
+    "image": "DroneBuzzers"
   },
   {
     "catagory": "Standard",
@@ -2784,9 +2784,9 @@
     "dps": 0,
     "iD": 115,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 1389,
-    "image": "Armored-Scrats",
-    "targets": "Ground"
+    "image": "Armored-Scrats"
   },
   {
     "catagory": "AbilityCard",
@@ -2834,9 +2834,9 @@
     "dps": 65.21739,
     "iD": 117,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1690,
-    "image": "DemonCommanderShield",
-    "targets": "Ground"
+    "image": "DemonCommanderShield"
   },
   {
     "catagory": "Standard",
@@ -2865,9 +2865,9 @@
     "dps": 70,
     "iD": 119,
     "faction": "Outlander",
+    "targets": "Ground",
     "pageId": 1386,
-    "image": "Atg",
-    "targets": "Ground"
+    "image": "Atg"
   },
   {
     "catagory": "Standard",
@@ -2944,9 +2944,9 @@
     "dps": 65,
     "iD": 125,
     "faction": "Slither",
+    "targets": "Ground",
     "pageId": 1510,
-    "image": "\tMusketeer",
-    "targets": "Ground"
+    "image": "\tMusketeer"
   },
   {
     "catagory": "Standard",
@@ -2975,9 +2975,9 @@
     "dps": 22.72727,
     "iD": 128,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1509,
-    "image": "\tSwarmerKing",
-    "targets": "Ground"
+    "image": "\tSwarmerKing"
   },
   {
     "catagory": "Standard",
@@ -3005,9 +3005,9 @@
     "dps": 92.85715,
     "iD": 129,
     "faction": "Highlander",
+    "targets": "Ground",
     "pageId": 1596,
-    "image": "SaltyBarbarian",
-    "targets": "Ground"
+    "image": "SaltyBarbarian"
   },
   {
     "catagory": "Standard",
@@ -3036,9 +3036,9 @@
     "dps": 0,
     "iD": 133,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1588,
-    "image": "ClippedDragons",
-    "targets": "Ground"
+    "image": "ClippedDragons"
   },
   {
     "catagory": "Standard",
@@ -3107,9 +3107,9 @@
     "dps": 0,
     "iD": 139,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 1650,
-    "image": "CursedSkeleton",
-    "targets": "Ground"
+    "image": "CursedSkeleton"
   },
   {
     "catagory": "Standard",
@@ -3137,9 +3137,9 @@
     "dps": 62.5,
     "iD": 140,
     "faction": "Voidborne",
+    "targets": "Ground & Air",
     "pageId": 1649,
-    "image": "BurstCannon",
-    "targets": "Ground & Air"
+    "image": "BurstCannon"
   },
   {
     "catagory": "Standard",
@@ -3167,9 +3167,9 @@
     "dps": 20,
     "iD": 142,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 1655,
-    "image": "TwoLegionnaires",
-    "targets": "Ground"
+    "image": "TwoLegionnaires"
   },
   {
     "catagory": "Standard",
@@ -3217,9 +3217,9 @@
     "dps": 18.18182,
     "iD": 149,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1678,
-    "image": "CannibalSwarmers",
-    "targets": "Ground"
+    "image": "CannibalSwarmers"
   },
   {
     "catagory": "Standard",
@@ -3247,9 +3247,9 @@
     "dps": 0,
     "iD": 158,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 1702,
-    "image": "ScreamingScrat",
-    "targets": "Ground"
+    "image": "ScreamingScrat"
   },
   {
     "catagory": "Standard",
@@ -3326,9 +3326,9 @@
     "dps": 60,
     "iD": 163,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1661,
-    "image": "Incubus",
-    "targets": "Ground"
+    "image": "Incubus"
   },
   {
     "catagory": "Standard",
@@ -3356,9 +3356,9 @@
     "dps": 60,
     "iD": 164,
     "faction": "Voidborne",
+    "targets": "Buildings",
     "pageId": 1680,
-    "image": "BetrayerRammer",
-    "targets": "Buildings"
+    "image": "BetrayerRammer"
   },
   {
     "catagory": "Standard",
@@ -3432,9 +3432,9 @@
     "dps": 40.90909,
     "iD": 172,
     "faction": "Outlander",
+    "targets": "All",
     "pageId": 1663,
-    "image": "AIMBot",
-    "targets": "All"
+    "image": "AIMBot"
   },
   {
     "catagory": "Standard",
@@ -3462,9 +3462,9 @@
     "dps": 28.57143,
     "iD": 173,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 1662,
-    "image": "SniperSquad",
-    "targets": "Ground & Air"
+    "image": "SniperSquad"
   },
   {
     "catagory": "Standard",
@@ -3552,9 +3552,9 @@
     "dps": 56.66667,
     "iD": 182,
     "faction": "Slither",
+    "targets": "Ground",
     "pageId": 1708,
-    "image": "RabidProwler",
-    "targets": "Ground"
+    "image": "RabidProwler"
   },
   {
     "catagory": "Standard",
@@ -3582,9 +3582,9 @@
     "dps": 10,
     "iD": 183,
     "faction": "Empyrean",
+    "targets": "All/Ground",
     "pageId": 1704,
-    "image": "RageThrowers",
-    "targets": "All/Ground"
+    "image": "RageThrowers"
   },
   {
     "catagory": "Standard",
@@ -3612,9 +3612,9 @@
     "dps": 10,
     "iD": 184,
     "faction": "Scrat",
+    "targets": "All",
     "pageId": 1706,
-    "image": "PropellerHorde",
-    "targets": "All"
+    "image": "PropellerHorde"
   },
   {
     "catagory": "Standard",
@@ -3642,9 +3642,9 @@
     "dps": 33.33333,
     "iD": 185,
     "faction": "Slither",
+    "targets": "Ground & Air",
     "pageId": 1709,
-    "image": "EmpoweredSoulStealer",
-    "targets": "Ground & Air"
+    "image": "EmpoweredSoulStealer"
   },
   {
     "catagory": "Standard",
@@ -3672,9 +3672,9 @@
     "dps": 12.5,
     "iD": 186,
     "faction": "CrystalElf",
+    "targets": "Ground & Air",
     "pageId": 1758,
-    "image": "CrystalArcher",
-    "targets": "Ground & Air"
+    "image": "CrystalArcher"
   },
   {
     "catagory": "Standard",
@@ -3702,9 +3702,9 @@
     "dps": 20,
     "iD": 187,
     "faction": "CrystalElf",
+    "targets": "Ground & Air",
     "pageId": 1761,
-    "image": "CrystalMage",
-    "targets": "Ground & Air"
+    "image": "CrystalMage"
   },
   {
     "catagory": "Standard",
@@ -3752,9 +3752,9 @@
     "dps": 35.29412,
     "iD": 191,
     "faction": "CrystalElf",
+    "targets": "Ground & Air",
     "pageId": 1760,
-    "image": "CrystalSentry",
-    "targets": "Ground & Air"
+    "image": "CrystalSentry"
   },
   {
     "catagory": "Standard",
@@ -3802,9 +3802,9 @@
     "dps": 13.33333,
     "iD": 193,
     "faction": "CrystalElf",
+    "targets": "Ground",
     "pageId": 1759,
-    "image": "CrystalConstruct",
-    "targets": "Ground"
+    "image": "CrystalConstruct"
   },
   {
     "catagory": "Standard",
@@ -3832,9 +3832,9 @@
     "dps": 42.30769,
     "iD": 194,
     "faction": "CrystalElf",
+    "targets": "Ground",
     "pageId": 1764,
-    "image": "CrystalCommander",
-    "targets": "Ground"
+    "image": "CrystalCommander"
   },
   {
     "catagory": "Standard",
@@ -3902,9 +3902,9 @@
     "dps": 31.81818,
     "iD": 197,
     "faction": "Voidborne",
+    "targets": "Ground & Air",
     "pageId": 1776,
-    "image": "BlinkBat",
-    "targets": "Ground & Air"
+    "image": "BlinkBat"
   },
   {
     "catagory": "Standard",
@@ -3932,9 +3932,9 @@
     "dps": 20,
     "iD": 199,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 1779,
-    "image": "WolfAmongSheep",
-    "targets": "Ground"
+    "image": "WolfAmongSheep"
   },
   {
     "catagory": "Standard",
@@ -4022,9 +4022,9 @@
     "dps": 35,
     "iD": 204,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 1782,
-    "image": "LoneWolf",
-    "targets": "Ground"
+    "image": "LoneWolf"
   },
   {
     "catagory": "AbilityCard",
@@ -4052,9 +4052,9 @@
     "dps": 30,
     "iD": 207,
     "faction": "Empyrean",
+    "targets": "Ground & Air",
     "pageId": 1793,
-    "image": "Diona_CrossbowTrap",
-    "targets": "Ground & Air"
+    "image": "Diona_CrossbowTrap"
   },
   {
     "catagory": "AbilityCard",
@@ -4131,9 +4131,9 @@
     "dps": 100,
     "iD": 210,
     "faction": "Accursed",
+    "targets": "All",
     "pageId": 1784,
-    "image": "WitchWolf",
-    "targets": "All"
+    "image": "WitchWolf"
   },
   {
     "catagory": "Standard",
@@ -4161,9 +4161,9 @@
     "dps": 35,
     "iD": 211,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 1835,
-    "image": "Shieldguard",
-    "targets": "Ground"
+    "image": "Shieldguard"
   },
   {
     "catagory": "Standard",
@@ -4191,9 +4191,9 @@
     "dps": 50,
     "iD": 212,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 1838,
-    "image": "Brothersoflight",
-    "targets": "Ground"
+    "image": "Brothersoflight"
   },
   {
     "catagory": "Standard",
@@ -4270,9 +4270,9 @@
     "dps": 60,
     "iD": 216,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1837,
-    "image": "Crakguldoomcleaver",
-    "targets": "Ground"
+    "image": "Crakguldoomcleaver"
   },
   {
     "catagory": "Standard",
@@ -4300,9 +4300,9 @@
     "dps": 22.72727,
     "iD": 218,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1833,
-    "image": "Morgrulsragers",
-    "targets": "Ground"
+    "image": "Morgrulsragers"
   },
   {
     "catagory": "Standard",
@@ -4331,9 +4331,9 @@
     "dps": 0,
     "iD": 219,
     "faction": "Voidborne",
+    "targets": "Ground & Air",
     "pageId": 1834,
-    "image": "Shadowwhelp",
-    "targets": "Ground & Air"
+    "image": "Shadowwhelp"
   },
   {
     "catagory": "Standard",
@@ -4361,9 +4361,9 @@
     "dps": 50,
     "iD": 220,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 1836,
-    "image": "Caelethdawnhammer",
-    "targets": "Ground"
+    "image": "Caelethdawnhammer"
   },
   {
     "catagory": "Standard",
@@ -4391,9 +4391,9 @@
     "dps": 25,
     "iD": 221,
     "faction": "ZenChi",
+    "targets": "Ground & Air",
     "pageId": 1851,
-    "image": "Stormy",
-    "targets": "Ground & Air"
+    "image": "Stormy"
   },
   {
     "catagory": "Standard",
@@ -4421,9 +4421,9 @@
     "dps": 92.10526,
     "iD": 222,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 1864,
-    "image": "ShenStormstrike",
-    "targets": "Ground"
+    "image": "ShenStormstrike"
   },
   {
     "catagory": "Standard",
@@ -4491,9 +4491,9 @@
     "dps": 0,
     "iD": 228,
     "faction": "ZenChi",
+    "targets": "Ground & Air",
     "pageId": 1862,
-    "image": "ZapShrine",
-    "targets": "Ground & Air"
+    "image": "ZapShrine"
   },
   {
     "catagory": "Standard",
@@ -4521,9 +4521,9 @@
     "dps": 100,
     "iD": 229,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 1863,
-    "image": "RockRivals",
-    "targets": "Ground"
+    "image": "RockRivals"
   },
   {
     "catagory": "Standard",
@@ -4551,9 +4551,9 @@
     "dps": 12.5,
     "iD": 234,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 1882,
-    "image": "SkeletonHorde",
-    "targets": "Ground"
+    "image": "SkeletonHorde"
   },
   {
     "catagory": "Standard",
@@ -4582,9 +4582,9 @@
     "dps": 0,
     "iD": 235,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 1880,
-    "image": "HeroScrat",
-    "targets": "Ground"
+    "image": "HeroScrat"
   },
   {
     "catagory": "Standard",
@@ -4652,9 +4652,9 @@
     "dps": 12.5,
     "iD": 238,
     "faction": "CrystalElf",
+    "targets": "Ground & Air",
     "pageId": 1879,
-    "image": "LoneRanger",
-    "targets": "Ground & Air"
+    "image": "LoneRanger"
   },
   {
     "catagory": "Standard",
@@ -4711,9 +4711,9 @@
     "dps": 20,
     "iD": 240,
     "faction": "Accursed",
+    "targets": "Ground & Air",
     "pageId": 1878,
-    "image": "HauntingHugger",
-    "targets": "Ground & Air"
+    "image": "HauntingHugger"
   },
   {
     "catagory": "Standard",
@@ -4741,9 +4741,9 @@
     "dps": 40,
     "iD": 241,
     "faction": "Accursed",
+    "targets": "All",
     "pageId": 1884,
-    "image": "NyrvirAwakens",
-    "targets": "All"
+    "image": "NyrvirAwakens"
   },
   {
     "catagory": "Standard",
@@ -4949,9 +4949,9 @@
     "dps": 56.66666,
     "iD": 251,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 1929,
-    "image": "Wreckinator",
-    "targets": "Ground"
+    "image": "Wreckinator"
   },
   {
     "catagory": "Standard",
@@ -5028,9 +5028,9 @@
     "dps": 66.66666,
     "iD": 254,
     "faction": "Slither",
+    "targets": "Ground & Air",
     "pageId": 1924,
-    "image": "HeraldAhmun",
-    "targets": "Ground & Air"
+    "image": "HeraldAhmun"
   },
   {
     "catagory": "Standard",
@@ -5059,9 +5059,9 @@
     "dps": 0,
     "iD": 255,
     "faction": "Scrat",
+    "targets": "Ground",
     "pageId": 1930,
-    "image": "SewerScrat",
-    "targets": "Ground"
+    "image": "SewerScrat"
   },
   {
     "catagory": "Standard",
@@ -5106,9 +5106,9 @@
     "dps": 48,
     "iD": 258,
     "faction": "Scrat",
+    "targets": "Ground & Air",
     "pageId": 1923,
-    "image": "BoomBuggy",
-    "targets": "Ground & Air"
+    "image": "BoomBuggy"
   },
   {
     "catagory": "Standard",
@@ -5156,9 +5156,9 @@
     "dps": 45,
     "iD": 260,
     "faction": "Highlander",
+    "targets": "Ground",
     "pageId": 1961,
-    "image": "Woodsman",
-    "targets": "Ground"
+    "image": "Woodsman"
   },
   {
     "catagory": "Standard",
@@ -5186,9 +5186,9 @@
     "dps": 20,
     "iD": 261,
     "faction": "CrystalElf",
+    "targets": "Ground & Air",
     "pageId": 1967,
-    "image": "CrystalElfLeiliel",
-    "targets": "Ground & Air"
+    "image": "CrystalElfLeiliel"
   },
   {
     "catagory": "Standard",
@@ -5277,9 +5277,9 @@
     "dps": 0,
     "iD": 265,
     "faction": "Highlander",
+    "targets": "Ground",
     "pageId": 1959,
-    "image": "CaberTosser",
-    "targets": "Ground"
+    "image": "CaberTosser"
   },
   {
     "catagory": "Standard",
@@ -5307,9 +5307,9 @@
     "dps": 10,
     "iD": 266,
     "faction": "Highlander",
+    "targets": "Ground & Air",
     "pageId": 1957,
-    "image": "Frostfeathers",
-    "targets": "Ground & Air"
+    "image": "Frostfeathers"
   },
   {
     "catagory": "Standard",
@@ -5337,9 +5337,9 @@
     "dps": 100,
     "iD": 267,
     "faction": "Highlander",
+    "targets": "Ground",
     "pageId": 1954,
-    "image": "FergusFlagonFighter",
-    "targets": "Ground"
+    "image": "FergusFlagonFighter"
   },
   {
     "catagory": "Standard",
@@ -5407,9 +5407,9 @@
     "dps": 70,
     "iD": 270,
     "faction": "Voidborne",
+    "targets": "Ground",
     "pageId": 1986,
-    "image": "Malshar",
-    "targets": "Ground"
+    "image": "Malshar"
   },
   {
     "catagory": "Standard",
@@ -5437,9 +5437,9 @@
     "dps": 10,
     "iD": 271,
     "faction": "ZenChi",
+    "targets": "Ground & Air",
     "pageId": 2000,
-    "image": "JadeFlingers",
-    "targets": "Ground & Air"
+    "image": "JadeFlingers"
   },
   {
     "catagory": "Standard",
@@ -5467,9 +5467,9 @@
     "dps": 47.36842,
     "iD": 272,
     "faction": "ZenChi",
+    "targets": "Ground & Air",
     "pageId": 2003,
-    "image": "TingTengTung",
-    "targets": "Ground & Air"
+    "image": "TingTengTung"
   },
   {
     "catagory": "Standard",
@@ -5497,9 +5497,9 @@
     "dps": 54,
     "iD": 273,
     "faction": "Empyrean",
+    "targets": "Ground & Air",
     "pageId": 2005,
-    "image": "HiArdera",
-    "targets": "Ground & Air"
+    "image": "HiArdera"
   },
   {
     "catagory": "Standard",
@@ -5527,9 +5527,9 @@
     "dps": 50,
     "iD": 274,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 2004,
-    "image": "BrotherOfTheBurningFist",
-    "targets": "Ground"
+    "image": "BrotherOfTheBurningFist"
   },
   {
     "catagory": "Standard",
@@ -5557,9 +5557,9 @@
     "dps": 30,
     "iD": 275,
     "faction": "ZenChi",
+    "targets": "Ground & Air",
     "pageId": 2011,
-    "image": "Jahun",
-    "targets": "Ground & Air"
+    "image": "Jahun"
   },
   {
     "catagory": "Standard",
@@ -5657,9 +5657,9 @@
     "dps": 0,
     "iD": 279,
     "faction": "ZenChi",
+    "targets": "Ground",
     "pageId": 1999,
-    "image": "Windwalker",
-    "targets": "Ground"
+    "image": "Windwalker"
   },
   {
     "catagory": "Standard",
@@ -5708,9 +5708,9 @@
     "dps": 0,
     "iD": 285,
     "faction": "Empyrean",
+    "targets": "Ground",
     "pageId": 1988,
-    "image": "BurningFistZealots",
-    "targets": "Ground"
+    "image": "BurningFistZealots"
   },
   {
     "catagory": "Standard",
@@ -5738,9 +5738,9 @@
     "dps": 40,
     "iD": 288,
     "faction": "CrystalElf",
+    "targets": "Ground",
     "pageId": 2020,
-    "image": "LordFanriel",
-    "targets": "Ground"
+    "image": "LordFanriel"
   },
   {
     "catagory": "Standard",
@@ -5769,9 +5769,9 @@
     "dps": 0,
     "iD": 289,
     "faction": "CrystalElf",
+    "targets": "Ground",
     "pageId": 2022,
-    "image": "DormantDefenders",
-    "targets": "Ground"
+    "image": "DormantDefenders"
   },
   {
     "catagory": "Standard",
@@ -5819,9 +5819,9 @@
     "dps": 12.5,
     "iD": 294,
     "faction": "Accursed",
+    "targets": "Ground",
     "pageId": 2032,
-    "image": "Skeletons",
-    "targets": "Ground"
+    "image": "Skeletons"
   },
   {
     "catagory": "Standard",
@@ -5870,8 +5870,8 @@
     "dps": 0,
     "iD": 297,
     "faction": "CrystalElf",
+    "targets": "All",
     "pageId": 2031,
-    "image": "LadyInfray",
-    "targets": "All"
+    "image": "LadyInfray"
   }
 ]

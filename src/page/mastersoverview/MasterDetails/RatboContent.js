@@ -32,13 +32,13 @@ export default function RatboContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_Rats.png" alt="Ratbo Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_Rats_78.webp" alt="Ratbo Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_moreDakka.png" alt="Ratbo Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_moreDakka_78.webp" alt="Ratbo Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_RatsRats.png" alt="Ratbo Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_RatsRats_78.webp" alt="Ratbo Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>

@@ -11,7 +11,6 @@ import SlitherIcon from "./SlitherIcon";
 import StoutheartIcon from "./StoutheartIcon";
 import VoidborneIcon from "./VoidborneIcon";
 
-
 export const factionMapping = {
     Voidborne: <VoidborneIcon/>,
     Accursed: <AccursedIcon/>,

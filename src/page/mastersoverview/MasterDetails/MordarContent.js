@@ -29,10 +29,10 @@ export default function MordarContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone.png" alt="Mordar Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone_78.webp" alt="Mordar Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone02.png" alt="Mordar Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone02_78.webp" alt="Mordar Perk2"/>
                 </Tab>
                 <Tab>
                     <MasterAbilityImageRoundedStyle src="generated/img/Tombstonemaster_78.webp" alt="Mordar Perk3"/>

@@ -1,0 +1,147 @@
+@import './IconStyleSize.module';
+
+.CardContainerStyle {
+  width: 80px;
+  margin-right: 1px;
+  margin-top: 2px;
+
+  @media (max-width: 767px) {
+    width: 50px;
+  }
+
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+
+  &:hover {
+    opacity: 1.0;
+  }
+}
+
+.CardContainerStyleFullWidth {
+  &:hover {
+    border-color: yellow;
+  }
+}
+
+.CardContentStyle {
+  position: relative;
+}
+
+.ManacostStyle {
+  @extend %IconStyleSize;
+  position: absolute;
+  top: -3px;
+  right: 2px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.RightCornerStyle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-top-width: 30px;
+  border-top-style: solid;
+
+  @media (max-width: 767px) {
+    border-left-width: 17px;
+    border-top-width: 17px;
+  }
+}
+
+.GroundAirStyle {
+  @extend %IconStyleSize;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px;
+
+  & > svg {
+    vertical-align: text-top;
+
+    fill: #FFFFFF;
+    color: #FFFFFF;
+  }
+}
+
+.TopLeftCornerStyle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-right: 30px solid transparent;
+  border-top: 30px solid rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 767px) {
+    border-right-width: 17px;
+    border-top-width: 17px;
+  }
+}
+
+
+.BottomLeftCornerStyle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 767px) {
+    border-right-width: 17px;
+    border-bottom-width: 17px;
+  }
+}
+
+
+.FactionStyle {
+  @extend %IconStyleSize;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 1px;
+
+  & > svg {
+    vertical-align: bottom;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+  }
+
+}
+
+
+.AttackTypeStyle {
+  @extend %IconStyleSize;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1px;
+
+  & > svg {
+    vertical-align: bottom;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+  }
+}
+
+
+.BottomRightCornerStyle {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 767px) {
+    border-left-width: 17px;
+    border-bottom-width: 17px;
+  }
+}
