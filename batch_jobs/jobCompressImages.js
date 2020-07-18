@@ -33,12 +33,14 @@ if (!fs.existsSync(TARGET_FOLDER)) {
     fs.mkdirSync(TARGET_FOLDER);
 }
 
+const FILE_EXT = ".webp";
+
 const files = readFilesSync(SRC_FOLDER);
 files.forEach(file => {
     console.log(file.name + file.ext);
     sharp(file.filepath)
-        .resize({width: 80})
-        .toFile(TARGET_FOLDER + file.name + file.ext, function (err, info) {
+        .resize({width: 78})
+        .toFile(TARGET_FOLDER + file.name + FILE_EXT, function (err, info) {
             if (err) {
                 console.log("error:");
                 console.log(err);

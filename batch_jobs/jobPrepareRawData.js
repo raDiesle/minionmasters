@@ -257,6 +257,10 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
     if (cardDataFromGame.image) {
         const imageNormalized = cardDataFromGame.image.charAt(0).toUpperCase() + cardDataFromGame.image.slice(1);
         cardDataFromGame.image = imageNormalized;
+
+        const imageSrc = cardDataFromGame.image.split(".");
+        const OVERRIDE_FORMAT = "webp";
+        cardDataFromGame.image = imageSrc[0] + "." + OVERRIDE_FORMAT;
     } else {
         errorList.push("could not find image for: " + cardDataFromGame.name);
     }

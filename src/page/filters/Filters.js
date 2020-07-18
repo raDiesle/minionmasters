@@ -89,7 +89,7 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
             <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
                 {
                     Object.keys(factionMapping).map((faction) =>
-                            <div key={factionMapping[faction]}>{factionMapping[faction]}</div>
+                        <div key={factionMapping[faction]}>{factionMapping[faction]}</div>
                     )
                 }
             </ButtonFilterGroup>
@@ -130,9 +130,9 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
             <ButtonFilterGroup btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
                 {
                     Object.keys(rarityMapping).map(rarity =>
-                            <div key={rarity} style={{color: rarityMapping[rarity]}}>
-                                {rarity !== 'Perk' ? <FontAwesomeIcon icon={faSquare} size={"xs"}/> : <PerkHeroIcon/>}
-                            </div>
+                        <div key={rarity} style={{color: rarityMapping[rarity]}}>
+                            {rarity !== 'Perk' ? <FontAwesomeIcon icon={faSquare} size={"xs"}/> : <PerkHeroIcon/>}
+                        </div>
                     )
                 }
             </ButtonFilterGroup>
@@ -143,9 +143,9 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
             <ButtonFilterGroup btnkey="type" filters={filters.type} setFilters={setFilters}>
                 {
                     Object.keys(typeMapping).map(type =>
-                            <div key={type}>
-                                <FontAwesomeIcon icon={typeMapping[type]} size="xs"/>
-                            </div>
+                        <div key={type}>
+                            <FontAwesomeIcon icon={typeMapping[type]} size="xs"/>
+                        </div>
                     )
                 }
             </ButtonFilterGroup>
@@ -156,9 +156,9 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
             <ButtonFilterGroup btnkey="targets" filters={filters.targets} setFilters={setFilters}>
                 {
                     Object.keys(targetsMapping).map(target =>
-                            <div key={target}>
-                                {targetsMapping[target]}
-                            </div>
+                        <div key={target}>
+                            {targetsMapping[target]}
+                        </div>
                     )
                 }
             </ButtonFilterGroup>
