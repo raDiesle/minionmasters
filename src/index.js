@@ -1,3 +1,4 @@
+import 'rc-tooltip/assets/bootstrap_white.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'react-tabs/style/react-tabs.css';

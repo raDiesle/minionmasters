@@ -1,3 +1,4 @@
+import Tooltip from "rc-tooltip/es";
 import React from "react";
 import styled from "styled-components";
 
@@ -56,20 +57,27 @@ const ButtonInGroupStyle = styled.button`
   }
 `;
 
+/* might be rewritten to something easier to set and identify filters */
 function ButtonFilterGroup({children, btnkey, filters, setFilters}) {
 
     return <ButtonGroupStyle>
         {children.map((buttonContent, position) =>
-            <ButtonInGroupStyle key={position} onClick={() => (
-                setFilters((prevFilters) => {
-                    const newFilters = {...prevFilters};
-                    newFilters[btnkey][position].isActive = !prevFilters[btnkey][position].isActive;
-                    return newFilters;
-                }))}
-                                isButtonActive={filters[position].isActive}
-            >
-                {buttonContent}
-            </ButtonInGroupStyle>
+
+            <Tooltip key={position}
+                     placement="bottomRight"
+                     overlay={<span>{filters[position].btnkey}</span>}>
+                <ButtonInGroupStyle
+                    onClick={() => (
+                        setFilters((prevFilters) => {
+                            const newFilters = {...prevFilters};
+                            newFilters[btnkey][position].isActive = !prevFilters[btnkey][position].isActive;
+                            return newFilters;
+                        }))}
+                    isButtonActive={filters[position].isActive}
+                >
+                    {buttonContent}
+                </ButtonInGroupStyle>
+            </Tooltip>
         )}
     </ButtonGroupStyle>
 }
