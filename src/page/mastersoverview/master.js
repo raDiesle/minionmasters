@@ -1,5 +1,6 @@
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Tooltip from "rc-tooltip/es";
 import React, {useState} from "react";
 import styled from "styled-components";
 import {MasterModal} from "./MasterModal";
@@ -67,29 +68,31 @@ export default function Master({masterKey, actionRegistrationComponent = null}) 
                      setIsOpenHeroModal={setIsOpenHeroModal}
                      masterKey={masterKey}
         />
-        <MasterContentStyle>
 
-            <InfoMasterDetailsOverlay
-                actionRegistrationComponent={actionRegistrationComponent}
-                onClick={(event) => {
-                    setIsOpenHeroModal(true);
-                    event.stopPropagation();
-                }}
-            >
+        <Tooltip placement="top"
+                 overlay={<span>{masterKey}</span>}>
+            <MasterContentStyle>
+                <InfoMasterDetailsOverlay
+                    actionRegistrationComponent={actionRegistrationComponent}
+                    onClick={(event) => {
+                        setIsOpenHeroModal(true);
+                        event.stopPropagation();
+                    }}
+                >
 
-                {
-                    actionRegistrationComponent !== null && <IconStyle>
-                        <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
-                    </IconStyle>
+                    {
+                        actionRegistrationComponent !== null && <IconStyle>
+                            <FontAwesomeIcon icon={faInfoCircle} size={"sm"}/>
+                        </IconStyle>
+                    }
+                </InfoMasterDetailsOverlay>
+
+                { // to unregister on rerender bug
+                    actionRegistrationComponent && actionRegistrationComponent(masterKey)
                 }
-            </InfoMasterDetailsOverlay>
-
-            { // to unregister on rerender bug
-                actionRegistrationComponent && actionRegistrationComponent(masterKey)
-            }
-
-            <MasterImgStyle src={"generated/img/" + mastersMapping[masterKey].icon}
-                            alt={masterKey}/>
-        </MasterContentStyle>
+                <MasterImgStyle src={"generated/img/" + mastersMapping[masterKey].icon}
+                                alt={masterKey}/>
+            </MasterContentStyle>
+        </Tooltip>
     </MasterSelectedContainer>
 }

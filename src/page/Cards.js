@@ -20,11 +20,9 @@ export default function Cards({cards, isShowNames, cardActionWrapper, fullCount,
                 {
                     cards.map(card =>
                         <div key={card.iD}>
-
                             <Card card={card} isFullWidthClickable={isFullWidthClickable}>
                                 {cardActionWrapper(card)}
                             </Card>
-
                             <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
                         </div>
                     )

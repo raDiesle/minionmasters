@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {toast} from "react-toastify";
 import styled from "styled-components";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
 import FiltersWithCards from "../FiltersWithCards";
@@ -35,7 +34,8 @@ export default function CardDeckContainer({
             eventId: 0,
             card: {
                 iD: IDENTIFIER_FOR_EMPTY_SLOT
-            }
+            },
+            count: 0
         }
     }));
 
@@ -72,7 +72,6 @@ export default function CardDeckContainer({
                                             iD: card.iD
                                         }
                                     });
-                                    toast("Card added to Deck");
                                 }}
                                 card={card}
                             />

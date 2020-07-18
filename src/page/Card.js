@@ -1,5 +1,6 @@
 import {faCircle} from "@fortawesome/free-regular-svg-icons/faCircle";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Tooltip from "rc-tooltip/es";
 import React from "react";
 import styled from "styled-components";
 import {targetsMapping} from "../attack/targetsMapping";
@@ -155,8 +156,9 @@ const BottomRightCornerStyle = styled.div`
 `;
 
 //onClick to be removed and setter go here
-export function Card({children, card: {image, manacost, rarity, type, faction, targets}, isFullWidthClickable = false}) {
-    return <div>
+export function Card({children, card: {image, manacost, rarity, type, faction, targets, name}, isFullWidthClickable = false}) {
+    return <Tooltip placement="top"
+                    overlay={<span>{name}</span>}>
         <CardContainerStyle isFullWidthClickable={isFullWidthClickable}>
             <CardContentStyle>
                 <CardImageStyle src={`generated/img/${image}`} alt={image}/>
@@ -176,6 +178,6 @@ export function Card({children, card: {image, manacost, rarity, type, faction, t
                 {children}
             </CardContentStyle>
         </CardContainerStyle>
-    </div>
+    </Tooltip>
         ;
 }
