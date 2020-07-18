@@ -30,13 +30,14 @@ export default function SettsuContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_BlastEntry.jpg" alt="Settsu Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_BlastEntry_78.webp" alt="Settsu Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_CombatReload.jpg" alt="Settsu Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_CombatReload_78.webp" alt="Settsu Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_HighPoweredLaser.jpg" alt="Settsu Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_HighPoweredLaser_78.webp"
+                                                    alt="Settsu Perk3"/>
                 </Tab>
 
             </TabList>

@@ -42,10 +42,6 @@ const CardContentStyle = styled.div`
     }
 `;
 
-const CardImageStyle = styled.img`
-    width: 100%;   
-`;
-
 const ManacostStyle = styled(IconStyleSize)`
     position: absolute;
     top: -3px;
@@ -157,11 +153,15 @@ const BottomRightCornerStyle = styled.div`
 
 //onClick to be removed and setter go here
 export function Card({children, card: {image, manacost, rarity, type, faction, targets, name}, isFullWidthClickable = false}) {
+    const IMG_FOLDER = "generated/img/";
+    const FILE_ENDING = ".webp";
+    const IMG_PATH = IMG_FOLDER + image;
+
     return <Tooltip placement="top"
                     overlay={<span>{name}</span>}>
         <CardContainerStyle isFullWidthClickable={isFullWidthClickable}>
             <CardContentStyle>
-                <CardImageStyle src={`generated/img/${image}`} alt={image}/>
+                <img src={`${IMG_PATH}_78${FILE_ENDING}`} alt={image}/>
                 <RightCornerStyle rarity={rarity}/>
                 <ManacostStyle>{manacost}</ManacostStyle>
 

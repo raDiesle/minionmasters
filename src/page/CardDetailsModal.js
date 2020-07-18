@@ -174,6 +174,12 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
 
 
     const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
+
+    const IMG_FOLDER = "generated/img/";
+    const FILE_ENDING = ".webp";
+    const WIDTH = "_78";
+    const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
+
     return (<div>
             {
                 modals.map(card => <CardDetailsModal key={card.iD}
@@ -222,7 +228,7 @@ export default function CardDetailsModal({card, card: {image, attackdelay, attac
                                                                                         size={"xs"}/>
                                 </LikeStyle>
                                 */}
-                                <CardImageStyle src={`generated/img/${image}`} alt={image}/>
+                                <CardImageStyle src={IMG_PATH} alt={image}/>
                             </PortraitStyle>
                         </CardPropertyLiStyle>
 

@@ -1,6 +1,6 @@
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
 import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
-import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
+import {faPlus} from "@fortawesome/free-solid-svg-icons/faPlus";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import * as firebase from "firebase";
 import React, {useEffect, useRef, useState} from "react";
@@ -9,7 +9,6 @@ import styled from "styled-components";
 import {auth, dbErrorHandlerPromise} from "../../firestore";
 
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
-
 
 import TextareaEditor from "./textarea-editor";
 
@@ -97,11 +96,12 @@ export default function WikiEditorActive({setInEditMode, dbRef, placeholder}) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            fontSize: "10px"
+            fontSize: "10px",
+            paddingBottom: "2px"
         }}>
             <ButtonGroupStyle>
                 <ButtonInGroupStyle onClick={() => addCard()}><FontAwesomeIcon
-                    icon={faLink}/></ButtonInGroupStyle>
+                    icon={faPlus}/> Reference Card</ButtonInGroupStyle>
             </ButtonGroupStyle>
 
             <ButtonGroupStyle>
@@ -120,23 +120,18 @@ export default function WikiEditorActive({setInEditMode, dbRef, placeholder}) {
         <TextareaEditor value={value} setValue={setValue} isDisabledInput={isDisabledInput} placeholder={placeholder}
                         editorRef={editorRef}/>
 
-        <div style={{display: "flex", justifyContent: "space-between", width: "600px"}}>
-
-
+        <div style={{display: "flex", width: "600px", paddingTop: "10px", alignItems: "center"}}>
             <ButtonGroupStyle>
                 <>
-                    <ButtonInGroupStyle onClick={() => setInEditMode(false)}>
-                        <FontAwesomeIcon icon={faTimesCircle}/> Discard
-                    </ButtonInGroupStyle>
                     <ButtonInGroupStyle onClick={(editorStateEvent) => onSave(editorStateEvent)}
                                         disabled={isDisabledInput} isButtonActive={isDisabledInput}>
                         <FontAwesomeIcon icon={faSave}/> Save
                     </ButtonInGroupStyle>
                 </>
-
             </ButtonGroupStyle>
-
-
+            <a style={{paddingLeft: "8px"}} onClick={() => setInEditMode(false)}>
+                <FontAwesomeIcon icon={faTimesCircle}/> Discard
+            </a>
         </div>
     </div>
 }

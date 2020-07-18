@@ -26,13 +26,13 @@ export default function MiloweenContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Arcane_Golem.jpg" alt="Miloween Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Arcane_Golem_78.webp" alt="Miloween Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Arcane_Missiles.jpg" alt="Miloween Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Arcane_Missiles_78.webp" alt="Miloween Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Tome_of_Lore.jpg" alt="Miloween Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Tome_of_Lore_78.webp" alt="Miloween Perk3"/>
                 </Tab>
             </TabList>
 
