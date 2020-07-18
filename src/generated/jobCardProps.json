@@ -19,14 +19,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Cleaver",
+    "UnitId": "14",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 60,
     "iD": 0,
+    "faction": "Voidborne",
     "pageId": 698,
     "image": "Cleaver.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -48,14 +49,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Warrior",
+    "UnitId": "15",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 35,
     "iD": 1,
+    "faction": "Empyrean",
     "pageId": 794,
     "image": "Warrior.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -77,14 +79,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "PlasmaMarine",
+    "UnitId": "49",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 16.66667,
     "iD": 2,
+    "faction": "Outlander",
     "pageId": 758,
     "image": "DroneContender.jpg",
-    "targets": "Ground & Air",
-    "faction": "Outlander"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -106,15 +109,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Grenadier",
+    "UnitId": "13",
     "aOERange": 3000,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 19.04762,
     "iD": 3,
+    "faction": "Scrat",
     "pageId": 734,
     "image": "GrenadierRat.png",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -132,9 +136,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 4,
+    "faction": "ZenChi",
     "pageId": 753,
-    "image": "LightningBolt.png",
-    "faction": "Zen-Chi"
+    "image": "LightningBolt.png"
   },
   {
     "catagory": "Standard",
@@ -156,20 +160,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "LivingStatue",
+    "UnitId": "16",
     "attackOnlyStationary": true,
     "speed": 2,
     "dps": 46.66667,
     "iD": 5,
+    "faction": "Slither",
     "pageId": 755,
     "image": "LivingStatue.png",
-    "targets": "Buildings",
-    "faction": "Slither"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
     "name": "Dragon Whelp",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "DragonWhelp",
     "description": "Can fly, which is good against melee ground Minions.<size=20><color=#808080>Part dragon.<br />Part demon.<br />All cuteness.</color></size>",
@@ -185,14 +190,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "DragonWhelp",
+    "UnitId": "17",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 45.45454,
     "iD": 6,
+    "faction": "Voidborne",
     "pageId": 721,
     "image": "DragonWhelp.png",
-    "targets": "Ground & Air",
-    "faction": "Voidborne"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -214,20 +220,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "MeleeScrat",
+    "UnitId": "11",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 10,
     "iD": 7,
+    "faction": "Scrat",
     "pageId": 768,
     "image": "GangOfRats.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Ghost Turret",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Common",
     "imageName": "GhostTurret",
     "description": "Defensive Building with good damage and attack speed.On death, give a random friendly Minion <link=\"actor_skill:SpiritBuff><span class='htmlHighlight' data-highlight='Spirit'>Spirit</span></link>.",
@@ -243,14 +250,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "GhostTurret",
+    "UnitId": "22",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 62.5,
     "iD": 8,
+    "faction": "Accursed",
     "pageId": 733,
     "image": "GhostTurret.png",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -268,9 +276,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 9,
+    "faction": "Voidborne",
     "pageId": 726,
-    "image": "Explosion.png",
-    "faction": "Voidborne"
+    "image": "Explosion.png"
   },
   {
     "catagory": "Standard",
@@ -292,15 +300,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Boomer",
+    "UnitId": "21",
     "aOERange": 6000,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 25,
     "iD": 10,
+    "faction": "Voidborne",
     "pageId": 686,
     "image": "Boomer.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -322,14 +331,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Swarmer",
+    "UnitId": "19",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 18.18182,
     "iD": 11,
+    "faction": "Voidborne",
     "pageId": 790,
     "image": "SwarmerHorde.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -351,20 +361,21 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Succubus",
+    "UnitId": "18",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 55.55556,
     "iD": 12,
+    "faction": "Voidborne",
     "pageId": 787,
     "image": "Summoner.png",
-    "targets": "Ground & Air",
-    "faction": "Voidborne"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Swarmer Totem",
     "manacost": 5,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Common",
     "imageName": "SpawnerShrine",
     "description": "Summons groups of <span class='htmlCardRef' data-card='Swarmer'>Swarmers</span> over time.",
@@ -380,13 +391,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "SpawnerShrine",
+    "UnitId": "24",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 13,
+    "faction": "Voidborne",
     "pageId": 788,
-    "image": "SpawnerShrine.png",
-    "faction": "Voidborne"
+    "image": "SpawnerShrine.png"
   },
   {
     "catagory": "Standard",
@@ -408,14 +420,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "DemonWarrior",
+    "UnitId": "20",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 50,
     "iD": 14,
+    "faction": "Voidborne",
     "pageId": 709,
     "image": "DemonCommander.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -437,20 +450,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CannonRoller",
+    "UnitId": "23",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 66.66667,
     "iD": 15,
+    "faction": "Scrat",
     "pageId": 695,
     "image": "ShockRoller.png",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Ghost",
     "manacost": 4,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Legendary",
     "imageName": "Ghost",
     "description": "Possesses an enemy, turning it to your side.<br />The enemy becomes <link=\"actor_skill:CursedBuff><span class='htmlHighlight' data-highlight='Cursed'>Cursed</span></link>.",
@@ -466,14 +480,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "Ghost",
+    "UnitId": "25",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 16,
+    "faction": "Accursed",
     "pageId": 732,
     "image": "Ghost.png",
-    "targets": "Ground & Air",
-    "faction": "Accursed"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -491,9 +506,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 17,
+    "faction": "Empyrean",
     "pageId": 748,
-    "image": "Clone.png",
-    "faction": "Empyrean"
+    "image": "Clone.png"
   },
   {
     "catagory": "Standard",
@@ -515,20 +530,21 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Sniper",
+    "UnitId": "27",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 28.57143,
     "iD": 19,
+    "faction": "Scrat",
     "pageId": 774,
     "image": "SniperRat.png",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Soul Stealer",
     "manacost": 5,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Supreme",
     "imageName": "SpiritLeech",
     "description": "<link=\"actor_skill:SoulStealBuff><span class='htmlHighlight' data-highlight='Soul Steal'>Soul Steal</span></link>.<size=20><color=#808080>Only the most fanatical Slitherbound are granted insight into the cruel arts of the Slither Lords.</color></size>",
@@ -544,20 +560,21 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "SoulStealer",
+    "UnitId": "28",
     "attackOnlyStationary": "",
     "speed": 6,
     "dps": 33.33333,
     "iD": 20,
+    "faction": "Slither",
     "pageId": 776,
     "image": "SpiritLeech.png",
-    "targets": "Ground & Air",
-    "faction": "Slither"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Bridge Shrine",
     "manacost": 4,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "PowerShrine",
     "description": "Generates [math:[av:BridgeShrine.LifeTime]/[math:[v:GeneratePowerOverTime.POWER_DELAY]/1000]] XP over [av:BridgeShrine.LifeTime] seconds.When in Mana Frenzy the shrine takes [v:TakeDamageOverTimeExtraDuringManaFrenzy.OVERHEAT_MULTIPLIER]x decay damage.",
@@ -573,13 +590,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BridgeShrine",
+    "UnitId": "29",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 21,
+    "faction": "Empyrean",
     "pageId": 690,
-    "image": "PowerShrine.png",
-    "faction": "Empyrean"
+    "image": "PowerShrine.png"
   },
   {
     "catagory": "Standard",
@@ -601,14 +619,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Assassin",
+    "UnitId": "30",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 70,
     "iD": 22,
+    "faction": "Voidborne",
     "pageId": 670,
     "image": "Assassin.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -626,9 +645,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 23,
+    "faction": "Empyrean",
     "pageId": 680,
-    "image": "SpellPowerSummon.png",
-    "faction": "Empyrean"
+    "image": "SpellPowerSummon.png"
   },
   {
     "catagory": "Standard",
@@ -650,14 +669,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Warrior",
+    "UnitId": "15",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 35,
     "iD": 24,
+    "faction": "Empyrean",
     "pageId": 712,
     "image": "DivineWarrior.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -679,14 +699,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "MeleeScrat",
+    "UnitId": "11",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 10,
     "iD": 25,
+    "faction": "Scrat",
     "pageId": 765,
     "image": "RatArmy.png",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -708,13 +729,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ManaPuff",
+    "UnitId": "33",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 26,
+    "faction": "Puff",
     "pageId": 757,
-    "image": "ManaPuff.png",
-    "faction": "Puff"
+    "image": "ManaPuff.png"
   },
   {
     "catagory": "Standard",
@@ -727,7 +749,7 @@
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 1,
-    "health": 450,
+    "health": 500,
     "attackspeed": 2800,
     "attackDelay": 600,
     "damage": 50,
@@ -736,14 +758,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "DefensoChopper",
+    "UnitId": "34",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 17.85714,
     "iD": 27,
+    "faction": "Scrat",
     "pageId": 706,
     "image": "DefensoChopper2.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -765,14 +788,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BannerMan",
+    "UnitId": "36",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 15,
     "iD": 28,
+    "faction": "Empyrean",
     "pageId": 671,
     "image": "BannerMan.png",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -790,9 +814,9 @@
     "radius": 6000,
     "travelSpeed": 0,
     "iD": 29,
+    "faction": "ZenChi",
     "pageId": 740,
-    "image": "HealingFireball.png",
-    "faction": "Zen-Chi"
+    "image": "HealingFireball.png"
   },
   {
     "catagory": "Standard",
@@ -810,9 +834,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 30,
+    "faction": "ZenChi",
     "pageId": 770,
-    "image": "StunThunder.png",
-    "faction": "Zen-Chi"
+    "image": "StunThunder.png"
   },
   {
     "catagory": "Standard",
@@ -830,9 +854,9 @@
     "radius": 5000,
     "travelSpeed": 0,
     "iD": 31,
+    "faction": "Outlander",
     "pageId": 779,
-    "image": "Freeze.png",
-    "faction": "Outlander"
+    "image": "Freeze.png"
   },
   {
     "catagory": "Standard",
@@ -854,14 +878,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "WizardPuff",
+    "UnitId": "37",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 37.5,
     "iD": 32,
+    "faction": "Puff",
     "pageId": 796,
     "image": "WizardPuff.png",
-    "targets": "Ground & Air",
-    "faction": "Puff"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -883,14 +908,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Priestess",
+    "UnitId": "39",
     "attackOnlyStationary": "",
     "speed": 2,
     "dps": 14.28571,
     "iD": 33,
+    "faction": "Empyrean",
     "pageId": 759,
     "image": "Priestess.jpg",
-    "targets": "Ground & Air",
-    "faction": "Empyrean"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -912,15 +938,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ReBoomer",
+    "UnitId": "40",
     "aOERange": 6000,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 25,
     "iD": 34,
+    "faction": "Voidborne",
     "pageId": 781,
     "image": "ReBoomer.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -942,15 +969,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Colossus",
+    "UnitId": "42",
     "aOERange": 5500,
     "attackOnlyStationary": "",
     "speed": 2,
     "dps": 68.75,
     "iD": 35,
+    "faction": "Voidborne",
     "pageId": 699,
     "image": "Colossus.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -968,15 +996,15 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 36,
+    "faction": "Outlander",
     "pageId": 674,
-    "image": "DoomBeam.png",
-    "faction": "Outlander"
+    "image": "DoomBeam.png"
   },
   {
     "catagory": "Standard",
     "name": "Laser Turret",
     "manacost": 5,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Common",
     "imageName": "LaserTurret",
     "description": "When staying on the same target, it fires faster and faster.",
@@ -992,14 +1020,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "LaserTurret",
+    "UnitId": "43",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 33.33333,
     "iD": 37,
+    "faction": "Scrat",
     "pageId": 745,
     "image": "LaserTurret.png",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1021,15 +1050,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "WhirlyScrat",
+    "UnitId": "44",
     "aOERange": 5000,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 36.66667,
     "iD": 38,
+    "faction": "Scrat",
     "pageId": 795,
     "image": "WhirlyRat.png",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1051,15 +1081,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "IllusoryCleaver",
+    "UnitId": "45",
     "aOERange": 0,
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 0,
     "iD": 39,
+    "faction": "Voidborne",
     "pageId": 741,
     "image": "IllusoryCleaver.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1081,21 +1112,22 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Troubadour",
+    "UnitId": "46",
     "aOERange": 0,
     "attackOnlyStationary": true,
     "speed": 2,
     "dps": 66.66666,
     "iD": 40,
+    "faction": "Highlander",
     "pageId": 792,
     "image": "Troubadour.jpg",
-    "targets": "Buildings",
-    "faction": "Stoutheart"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
     "name": "Snake Druid",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Legendary",
     "imageName": "SpiritLeecher",
     "description": "<link=\"actor_skill:Cohort><span class='htmlHighlight' data-highlight='Call Slitherbound'>Call Slitherbound</span></link>.His attacks immobilize enemies for 6 seconds.",
@@ -1111,20 +1143,21 @@
     "flying": true,
     "hitsFlying": "",
     "unitToSummon": "SnakeDruid",
+    "UnitId": "47",
     "attackOnlyStationary": "",
     "speed": 3,
     "dps": 25,
     "iD": 41,
+    "faction": "Slither",
     "pageId": 773,
     "image": "SpiritLeecher.png",
-    "targets": "Ground",
-    "faction": "Slither"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Dragon Pack",
     "manacost": 7,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "DragonWhelps",
     "description": "3 Dragon Whelps.<br />Highly effective against melee ground Minions.<size=20><color=#808080>A devastating pack of flying evil.<br />And cuteness</color></size>",
@@ -1140,20 +1173,21 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "DragonWhelp",
+    "UnitId": "17",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 45.45454,
     "iD": 42,
+    "faction": "Voidborne",
     "pageId": 718,
     "image": "DragonWhelps.png",
-    "targets": "Ground & Air",
-    "faction": "Voidborne"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Scrat Launcher",
     "manacost": 5,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Common",
     "imageName": "SiegeTurret",
     "description": "Massive range, always shoots at the nearest enemy building.<size=20><color=#808080>Scrats go in; screaming, rocket-powered balls of fur come out.</color></size>",
@@ -1169,14 +1203,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "ScratLauncher",
+    "UnitId": "48",
     "attackOnlyStationary": true,
     "speed": 0,
     "dps": 33.33333,
     "iD": 43,
+    "faction": "Scrat",
     "pageId": 1197,
     "image": "SiegeTurret.png",
-    "targets": "Buildings",
-    "faction": "Scrat"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
@@ -1198,14 +1233,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "DroneWalker",
+    "UnitId": "59",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 40.90909,
     "iD": 44,
+    "faction": "Outlander",
     "pageId": 723,
     "image": "DroneWalker.jpg",
-    "targets": "Ground & Air",
-    "faction": "Outlander"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1227,20 +1263,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Legionair",
+    "UnitId": "50",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 20,
     "iD": 45,
+    "faction": "Empyrean",
     "pageId": 751,
     "image": "Legionairs.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Harbinger",
     "manacost": 7,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Supreme",
     "imageName": "Harbinger",
     "description": "Has an extremely long range and causes knock-back.<size=20><color=#808080>Wields the most powerful magic of the Slither Lords, but his slavedriving days have taught him to let others do the rushing.</color></size>",
@@ -1256,14 +1293,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "DroneForceOne",
+    "UnitId": "51",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 50,
     "iD": 46,
+    "faction": "Slither",
     "pageId": 1677,
     "image": "Harbinger.jpg",
-    "targets": "Ground & Air",
-    "faction": "Slither"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1285,15 +1323,16 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Annihilator",
+    "UnitId": "52",
     "aOERange": 3000,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 38.09524,
     "iD": 47,
+    "faction": "Outlander",
     "pageId": 668,
     "image": "DroneContenderHeavy.jpg",
-    "targets": "All",
-    "faction": "Outlander"
+    "targets": "All"
   },
   {
     "catagory": "Standard",
@@ -1315,14 +1354,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "StunLancer",
+    "UnitId": "53",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 15,
     "iD": 48,
+    "faction": "Slither",
     "pageId": 782,
     "image": "StunLancer.jpg",
-    "targets": "Ground",
-    "faction": "Slither"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1344,19 +1384,20 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "DisruptorPuff",
+    "UnitId": "54",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 49,
+    "faction": "Puff",
     "pageId": 1950,
-    "image": "DisruptorPuff.png",
-    "faction": "Puff"
+    "image": "DisruptorPuff.png"
   },
   {
     "catagory": "Standard",
     "name": "Dragon Nest",
     "manacost": 4,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Legendary",
     "imageName": "DragonNest",
     "description": "Summons a <span class='htmlCardRef' data-card='FlightlessDragon'>Flightless Dragon</span> when you play a Spell.Summons a <span class='htmlCardRef' data-card='DragonWhelp'>Dragon Whelp</span> instead if the Spell cost 4+ mana.",
@@ -1372,19 +1413,20 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "DragonNest",
+    "UnitId": "55",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 50,
+    "faction": "Voidborne",
     "pageId": 715,
-    "image": "DragonNest.jpg",
-    "faction": "Voidborne"
+    "image": "DragonNest.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Crossbow Guild",
     "manacost": 6,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "CrossbowGuild",
     "description": "Summons <span class='htmlCardRef' data-card='CrossbowDude'>Crossbow Dudes</span> over time.",
@@ -1400,13 +1442,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CrossbowGuild",
+    "UnitId": "56",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 51,
+    "faction": "Empyrean",
     "pageId": 702,
-    "image": "CrossbowGuild.png",
-    "faction": "Empyrean"
+    "image": "CrossbowGuild.png"
   },
   {
     "catagory": "Standard",
@@ -1424,9 +1467,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 52,
+    "faction": "Slither",
     "pageId": 727,
-    "image": "FuturePast.png",
-    "faction": "Slither"
+    "image": "FuturePast.png"
   },
   {
     "catagory": "Standard",
@@ -1444,9 +1487,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 53,
+    "faction": "Empyrean",
     "pageId": 693,
-    "image": "CallToArms.jpg",
-    "faction": "Empyrean"
+    "image": "CallToArms.jpg"
   },
   {
     "catagory": "Standard",
@@ -1462,20 +1505,21 @@
     "health": 30,
     "attackspeed": 900,
     "attackDelay": 800,
-    "damage": 15,
+    "damage": 17,
     "range": 400,
     "isRanged": "",
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BloodImp",
+    "UnitId": "57",
     "attackOnlyStationary": "",
     "speed": 5,
-    "dps": 16.66667,
+    "dps": 18.88889,
     "iD": 54,
+    "faction": "Voidborne",
     "pageId": 682,
     "image": "BloodImps.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "AbilityCard",
@@ -1493,9 +1537,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 55,
+    "faction": "Puff",
     "pageId": 1635,
-    "image": "TrickSwap.png",
-    "faction": "Puff"
+    "image": "TrickSwap.png"
   },
   {
     "catagory": "Standard",
@@ -1517,14 +1561,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrossbowDude",
+    "UnitId": "12",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 10.71429,
     "iD": 56,
+    "faction": "Empyrean",
     "pageId": 687,
     "image": "CrossbowMan.png",
-    "targets": "Ground & Air",
-    "faction": "Empyrean"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1537,14 +1582,14 @@
     "isAOE": true,
     "ExcludeFromRandom": false,
     "damage": 0,
-    "delay": 0,
-    "duration": 1500,
+    "delay": 200,
+    "duration": 1800,
     "radius": 5000,
     "travelSpeed": 0,
     "iD": 57,
+    "faction": "Voidborne",
     "pageId": 675,
-    "image": "BlackHole.jpg",
-    "faction": "Voidborne"
+    "image": "BlackHole.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -1562,15 +1607,15 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 58,
+    "faction": "Empyrean",
     "pageId": 1645,
-    "image": "\tBurnthebridges.png",
-    "faction": "Empyrean"
+    "image": "\tBurnthebridges.png"
   },
   {
     "catagory": "AbilityCard",
     "name": "Tombstone",
     "manacost": 0,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Perk",
     "imageName": "tombstone",
     "description": "Place a Tombstone that resurrects the next minion under your command that dies, after a delay.",
@@ -1586,19 +1631,20 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Tombstone",
+    "UnitId": "58",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 59,
+    "faction": "Accursed",
     "pageId": 1639,
-    "image": "Tombstone.png",
-    "faction": "Accursed"
+    "image": "Tombstone.png"
   },
   {
     "catagory": "Standard",
     "name": "Infiltration",
     "manacost": 5,
-    "type": "SummonSpell",
+    "type": "Spell",
     "rarity": "Supreme",
     "imageName": "Infiltrators",
     "description": "Summon 4 <span class='htmlCardRef' data-card='PlasmaMarine'>Plasma Marines</span> anywhere in the Arena.",
@@ -1607,9 +1653,9 @@
     "radius": 0,
     "delay": 0,
     "iD": 60,
+    "faction": "Outlander",
     "pageId": 743,
-    "image": "Infiltrators.jpg",
-    "faction": "Outlander"
+    "image": "Infiltrators.jpg"
   },
   {
     "catagory": "Standard",
@@ -1627,9 +1673,9 @@
     "radius": 8000,
     "travelSpeed": 0,
     "iD": 61,
+    "faction": "Slither",
     "pageId": 703,
-    "image": "Barrage.png",
-    "faction": "Slither"
+    "image": "Barrage.png"
   },
   {
     "catagory": "Standard",
@@ -1651,14 +1697,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "BountySniper",
+    "UnitId": "61",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 28.57143,
     "iD": 62,
+    "faction": "Scrat",
     "pageId": 688,
     "image": "BountySniper.png",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1680,15 +1727,16 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Blastmancer",
+    "UnitId": "62",
     "aOERange": 0,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 13.33333,
     "iD": 63,
+    "faction": "Accursed",
     "pageId": 678,
     "image": "Blastmancer.png",
-    "targets": "Ground & Air",
-    "faction": "Accursed"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1710,14 +1758,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Styxi",
+    "UnitId": "63",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 50,
     "iD": 64,
+    "faction": "Scrat",
     "pageId": 784,
     "image": "Styxi.png",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -1739,15 +1788,16 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Gax",
+    "UnitId": "64",
     "aOERange": -1,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 20,
     "iD": 65,
+    "faction": "Voidborne",
     "pageId": 730,
     "image": "Gax.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1769,20 +1819,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Rammer",
+    "UnitId": "65",
     "attackOnlyStationary": true,
     "speed": 10,
     "dps": 60,
     "iD": 66,
+    "faction": "Voidborne",
     "pageId": 761,
     "image": "Rammer.png",
-    "targets": "Buildings",
-    "faction": "Voidborne"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
     "name": "Zeppelin Bomber",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "AcidDrake",
     "description": "Flies over the battlefield towards enemy Master Tower and drops bombs every 3 seconds along the way.",
@@ -1798,14 +1849,15 @@
     "flying": true,
     "hitsFlying": "",
     "unitToSummon": "ZeppelinBomber",
+    "UnitId": "66",
     "attackOnlyStationary": true,
     "speed": 5,
     "dps": 33.33333,
     "iD": 67,
+    "faction": "Scrat",
     "pageId": 1219,
     "image": "ZeppelinBomber.png",
-    "targets": "Buildings",
-    "faction": "Scrat"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
@@ -1827,14 +1879,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BlueGolem",
+    "UnitId": "67",
     "attackOnlyStationary": "",
     "speed": 2,
     "dps": 100,
     "iD": 68,
+    "faction": "ZenChi",
     "pageId": 684,
     "image": "BlueGolem.jpg",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1852,9 +1905,9 @@
     "radius": 6000,
     "travelSpeed": 0,
     "iD": 69,
+    "faction": "Voidborne",
     "pageId": 763,
-    "image": "Rampage.jpg",
-    "faction": "Voidborne"
+    "image": "Rampage.jpg"
   },
   {
     "catagory": "Standard",
@@ -1876,13 +1929,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "HealPuff",
+    "UnitId": "68",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 70,
+    "faction": "Puff",
     "pageId": 737,
-    "image": "HealPuff.png",
-    "faction": "Puff"
+    "image": "HealPuff.png"
   },
   {
     "catagory": "Standard",
@@ -1895,23 +1949,25 @@
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 1,
-    "health": 1200,
+    "health": 1400,
     "attackspeed": 0,
     "attackDelay": 0,
-    "damage": 300,
+    "damage": 350,
     "range": 0,
     "isRanged": "",
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "RedGolem",
+    "UnitId": "71",
+    "InheritFromId": "67",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 71,
+    "faction": "ZenChi",
     "pageId": 1260,
     "image": "RedGolem.png",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1933,14 +1989,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ScratTank",
+    "UnitId": "35",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 30,
     "iD": 72,
+    "faction": "Scrat",
     "pageId": 1503,
     "image": "ScratTank.png",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -1958,15 +2015,15 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 73,
+    "faction": "Empyrean",
     "pageId": 1253,
-    "image": "RagingReinforcements.png",
-    "faction": "Empyrean"
+    "image": "RagingReinforcements.png"
   },
   {
     "catagory": "Standard",
     "name": "Wall",
     "manacost": 2,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Common",
     "imageName": "Wall",
     "description": "Lots of health, but no attack.<size=20><color=#808080>A perfect distraction for building haters.</color></size>",
@@ -1982,13 +2039,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Wall",
+    "UnitId": "73",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 74,
+    "faction": "Empyrean",
     "pageId": 1223,
-    "image": "Wall.png",
-    "faction": "Empyrean"
+    "image": "Wall.png"
   },
   {
     "catagory": "Standard",
@@ -2010,14 +2068,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Spiritmancer",
+    "UnitId": "75",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 13.33333,
     "iD": 76,
+    "faction": "Accursed",
     "pageId": 1255,
     "image": "Necromancer.jpg",
-    "targets": "Ground & Air",
-    "faction": "Accursed"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -2039,14 +2098,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "UndyingSkeletonResummon",
+    "UnitId": "76",
+    "InheritFromId": "70",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 77,
+    "faction": "Accursed",
     "pageId": 1218,
     "image": "UndyingSkeleton.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2068,19 +2129,20 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "WalkingBlindDate",
+    "UnitId": "77",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 78,
+    "faction": "Empyrean",
     "pageId": 1222,
-    "image": "WalkingBlindDate.png",
-    "faction": "Empyrean"
+    "image": "WalkingBlindDate.png"
   },
   {
     "catagory": "Standard",
     "name": "Propeller Scrats",
     "manacost": 2,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "PropellerScrats",
     "description": "Quick and weak flying melee Minions.<size=20><color=#808080>Just like normal Scrats - except they tied propellers to their tails!</color></size>",
@@ -2096,14 +2158,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "PropellerScrat",
+    "UnitId": "78",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 10,
     "iD": 79,
+    "faction": "Scrat",
     "pageId": 1271,
     "image": "PropellerScrats.jpg",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -2125,14 +2188,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "TranquilShiHou",
+    "UnitId": "79",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 37.5,
     "iD": 80,
+    "faction": "ZenChi",
     "pageId": 1299,
     "image": "PrayingShiHou.jpg",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2141,11 +2205,11 @@
     "type": "Minion",
     "rarity": "Common",
     "imageName": "AwarenessMonk",
-    "description": "Attacks faster for each enemy within range (Max 250% bonus for 5 enemies).<size=20><color=#808080>A big fan of monkey business.</color></size>",
+    "description": "Attacks faster for each enemy within range (Max 350% bonus for 5 enemies).<size=20><color=#808080>A big fan of monkey business.</color></size>",
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 1,
-    "health": 450,
+    "health": 420,
     "attackspeed": 1800,
     "attackDelay": 900,
     "damage": 75,
@@ -2154,14 +2218,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BattleShiHou",
+    "UnitId": "80",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 41.66667,
     "iD": 81,
+    "faction": "ZenChi",
     "pageId": 1285,
     "image": "AwarenessMonk.jpg",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2179,9 +2244,9 @@
     "radius": 7000,
     "travelSpeed": 0,
     "iD": 83,
+    "faction": "ZenChi",
     "pageId": 1277,
-    "image": "LightningBounces.png",
-    "faction": "Zen-Chi"
+    "image": "LightningBounces.png"
   },
   {
     "catagory": "Standard",
@@ -2203,14 +2268,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "SpearThrowers",
+    "UnitId": "82",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 10,
     "iD": 84,
+    "faction": "Empyrean",
     "pageId": 1280,
     "image": "SpearThrowers.jpg",
-    "targets": "All/Ground",
-    "faction": "Empyrean"
+    "targets": "All/Ground"
   },
   {
     "catagory": "Standard",
@@ -2232,21 +2298,22 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Guardian",
+    "UnitId": "85",
     "aOERange": 0,
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 13.33333,
     "iD": 87,
+    "faction": "CrystalElf",
     "pageId": 1513,
     "image": "\tGuardian.png",
-    "targets": "Ground",
-    "faction": "Crystal Elf"
+    "targets": "Ground"
   },
   {
     "catagory": "AbilityCard",
     "name": "Shield Totem",
     "manacost": 0,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Perk",
     "imageName": "ShieldTotem",
     "description": "Summon a Shield Totem that makes the Master Tower immune to damage.",
@@ -2262,19 +2329,20 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ShieldTotem",
+    "UnitId": "86",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 88,
+    "faction": "Slither",
     "pageId": 1634,
-    "image": "ShieldTotem.png",
-    "faction": "Slither"
+    "image": "ShieldTotem.png"
   },
   {
     "catagory": "AbilityCard",
     "name": "Blast Entry",
     "manacost": 2,
-    "type": "SummonSpell",
+    "type": "Spell",
     "rarity": "Perk",
     "imageName": "BlastEntry",
     "description": "Settsu enters the battlefield and deals damage to nearby enemies on impact.Damage: [sv:BlastEntry.Damage]Shield Health: [av:SettsuMinion.MaxHealth]",
@@ -2283,9 +2351,9 @@
     "radius": 4500,
     "delay": 4000,
     "iD": 89,
+    "faction": "Outlander",
     "pageId": 1643,
-    "image": "\tBlastEntry.png",
-    "faction": "Outlander"
+    "image": "\tBlastEntry.png"
   },
   {
     "catagory": "Standard",
@@ -2307,20 +2375,22 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "SpiritVessel",
+    "UnitId": "69",
+    "InheritFromId": "164",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 90,
+    "faction": "Accursed",
     "pageId": 1261,
     "image": "SpiritVessel.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Xiao Long",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Legendary",
     "imageName": "TinyDragon",
     "description": "Each time an opponent casts a Spell, Xiao Long gains <link=\"actor_skill:RageBuff><span class='htmlHighlight' data-highlight='Rage'>Rage</span></link>, <link=\"actor_skill:FrenzyBuff><span class='htmlHighlight' data-highlight='Haste'>Haste</span></link> and <link=\"actor_skill:SingleShieldBuff><span class='htmlHighlight' data-highlight='Shield'>Shield</span></link>.",
@@ -2336,14 +2406,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "XiaoLong",
+    "UnitId": "88",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 15.38462,
     "iD": 91,
+    "faction": "ZenChi",
     "pageId": 1284,
     "image": "TinyDragon.jpg",
-    "targets": "Ground & Air",
-    "faction": "Zen-Chi"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -2365,14 +2436,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "BazookaScrat",
+    "UnitId": "89",
     "attackOnlyStationary": true,
     "speed": 5,
     "dps": 75,
     "iD": 93,
+    "faction": "Scrat",
     "pageId": 1269,
     "image": "BazookaScrat.jpg",
-    "targets": "Buildings",
-    "faction": "Scrat"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
@@ -2390,9 +2462,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 96,
+    "faction": "Slither",
     "pageId": 1372,
-    "image": "Hypnotize.jpg",
-    "faction": "Slither"
+    "image": "Hypnotize.jpg"
   },
   {
     "catagory": "Standard",
@@ -2410,9 +2482,9 @@
     "radius": 9000,
     "travelSpeed": 0,
     "iD": 99,
+    "faction": "Voidborne",
     "pageId": 1301,
-    "image": "MagmaStorm.jpg",
-    "faction": "Voidborne"
+    "image": "MagmaStorm.jpg"
   },
   {
     "catagory": "Standard",
@@ -2421,7 +2493,7 @@
     "type": "Spell",
     "rarity": "Rare",
     "imageName": "emergencySpleen",
-    "description": "Gives 3 random friendly Minions <link=\"actor_skill:SpiritBuff><span class='htmlHighlight' data-highlight='Spirit'>Spirit</span></link> over 9 seconds.<link=\"actor_skill:AccursedAffinity><span class='htmlHighlight' data-highlight='Accursed Ascension'>Accursed Ascension</span></link>: Gives an extra Spirit.",
+    "description": "Gives 3 random friendly Minions <link=\"actor_skill:SpiritBuff><span class='htmlHighlight' data-highlight='Spirit'>Spirit</span></link> over 6 seconds.<link=\"actor_skill:AccursedAffinity><span class='htmlHighlight' data-highlight='Accursed Ascension'>Accursed Ascension</span></link>: Gives an extra Spirit.",
     "isAOE": false,
     "ExcludeFromRandom": false,
     "damage": 0,
@@ -2430,9 +2502,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 100,
+    "faction": "Accursed",
     "pageId": 1369,
-    "image": "SpiritInfusion.jpg",
-    "faction": "Accursed"
+    "image": "SpiritInfusion.jpg"
   },
   {
     "catagory": "Standard",
@@ -2450,38 +2522,39 @@
     "radius": 1000,
     "travelSpeed": 25000,
     "iD": 103,
+    "faction": "CrystalElf",
     "pageId": 1637,
-    "image": "\tArcaneMissiles.png",
-    "faction": "Crystal Elf"
+    "image": "\tArcaneMissiles.png"
   },
   {
     "catagory": "Standard",
     "name": "Arcane Golem",
-    "manacost": 3,
+    "manacost": 2,
     "type": "Minion",
     "rarity": "Common",
     "imageName": "ArcaneGolem",
-    "description": "When you cast a spell, it gains +40 health and +6 damage",
+    "description": "When you cast a spell, it gains +30 health and +5 damage",
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 1,
-    "health": 300,
+    "health": 250,
     "attackspeed": 1300,
     "attackDelay": 600,
-    "damage": 40,
+    "damage": 30,
     "range": 8000,
     "isRanged": true,
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "ArcaneGolem",
+    "UnitId": "91",
     "attackOnlyStationary": "",
     "speed": 3,
-    "dps": 30.76923,
+    "dps": 23.07692,
     "iD": 104,
+    "faction": "CrystalElf",
     "pageId": 1638,
     "image": "ArcaneGolem.png",
-    "targets": "All",
-    "faction": "Crystal Elf"
+    "targets": "All"
   },
   {
     "catagory": "Standard",
@@ -2503,15 +2576,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "FireImp",
+    "UnitId": "92",
     "aOERange": 3000,
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 50,
     "iD": 105,
+    "faction": "Voidborne",
     "pageId": 1330,
     "image": "FireImp.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2529,9 +2603,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 106,
+    "faction": "Slither",
     "pageId": 1325,
-    "image": "FuturePresent.jpg",
-    "faction": "Slither"
+    "image": "FuturePresent.jpg"
   },
   {
     "catagory": "Standard",
@@ -2553,14 +2627,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrossbowDude",
+    "UnitId": "12",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 10.71429,
     "iD": 108,
+    "faction": "Empyrean",
     "pageId": 1335,
     "image": "ShieldedCrossbowDudes.jpg",
-    "targets": "Ground & Air",
-    "faction": "Empyrean"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -2582,14 +2657,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Prowler",
+    "UnitId": "93",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 56.66667,
     "iD": 111,
+    "faction": "Slither",
     "pageId": 1489,
     "image": "Prowler.jpg",
-    "targets": "Ground",
-    "faction": "Slither"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2611,14 +2687,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "EliteSwarmer",
+    "UnitId": "95",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 22.72727,
     "iD": 112,
+    "faction": "Voidborne",
     "pageId": 1338,
     "image": "EliteSwarmer.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2640,20 +2717,21 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Stint",
+    "UnitId": "100",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 22.72727,
     "iD": 113,
+    "faction": "Outlander",
     "pageId": 1506,
     "image": "SingleTrackInterceptor.jpg",
-    "targets": "Ground & Air",
-    "faction": "Outlander"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Drone Buzzers",
     "manacost": 4,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "DroneBuzzers",
     "description": "Versatile but weak flying Minions.<size=20><color=#808080>Known as Buzzers because they're small and irritating, and a good swat takes care of them.</color></size>",
@@ -2669,14 +2747,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "DroneBuzzer",
+    "UnitId": "97",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 18.18182,
     "iD": 114,
+    "faction": "Outlander",
     "pageId": 1371,
     "image": "DroneBuzzers.jpg",
-    "targets": "Ground & Air",
-    "faction": "Outlander"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -2698,19 +2777,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ArmoredScrat",
+    "UnitId": "96",
+    "InheritFromId": "11",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 115,
+    "faction": "Scrat",
     "pageId": 1389,
     "image": "Armored-Scrats.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "AbilityCard",
     "name": "More Dakka!",
-    "manacost": 0,
+    "manacost": 1,
     "type": "Spell",
     "rarity": "Perk",
     "imageName": "MoreDakka",
@@ -2723,9 +2804,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 116,
+    "faction": "Scrat",
     "pageId": 1640,
-    "image": "\tMoreDakka.png",
-    "faction": "Scrat"
+    "image": "\tMoreDakka.png"
   },
   {
     "catagory": "Standard",
@@ -2747,20 +2828,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "DemonCommanderShield",
+    "UnitId": "104",
     "attackOnlyStationary": "",
     "speed": 3,
     "dps": 65.21739,
     "iD": 117,
+    "faction": "Voidborne",
     "pageId": 1690,
     "image": "DemonCommanderShield.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "AtG Drone x8",
     "manacost": 6,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Rare",
     "imageName": "Ufo",
     "description": "A tough but slow flier with only Air-to-Ground weaponry.<br />Shoots 7 projectiles at random nearby targets.",
@@ -2776,21 +2858,22 @@
     "flying": true,
     "hitsFlying": "",
     "unitToSummon": "Ufo",
+    "UnitId": "106",
     "aOERange": 0,
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 70,
     "iD": 119,
+    "faction": "Outlander",
     "pageId": 1386,
     "image": "Atg.jpg",
-    "targets": "Ground",
-    "faction": "Outlander"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Healing Shrine",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "HealingShrine",
     "description": "Heals all nearby friendly minions over time.",
@@ -2806,13 +2889,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "HealingShrine",
+    "UnitId": "109",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 122,
+    "faction": "ZenChi",
     "pageId": 1515,
-    "image": "HealingShrine.png",
-    "faction": "Zen-Chi"
+    "image": "HealingShrine.png"
   },
   {
     "catagory": "Standard",
@@ -2821,18 +2905,18 @@
     "type": "Spell",
     "rarity": "Legendary",
     "imageName": "Combustion",
-    "description": "Stun affected friendly Minions.<br />After a delay they explode, dealing damage to themselves and nearby Enemies.",
+    "description": "After a delay, friendly minions explode, dealing 50 damage to themselves and nearby Enemies every 0.2 seconds, up to 5 times.",
     "isAOE": false,
     "ExcludeFromRandom": false,
-    "damage": 150,
+    "damage": 50,
     "delay": 500,
     "duration": 2500,
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 123,
+    "faction": "Voidborne",
     "pageId": 1660,
-    "image": "Combustion.jpg",
-    "faction": "Voidborne"
+    "image": "Combustion.jpg"
   },
   {
     "catagory": "Standard",
@@ -2854,14 +2938,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Musketeer",
+    "UnitId": "110",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 65,
     "iD": 125,
+    "faction": "Slither",
     "pageId": 1510,
     "image": "\tMusketeer.png",
-    "targets": "Ground",
-    "faction": "Slither"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2883,15 +2968,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Morgrul",
+    "UnitId": "112",
     "aOERange": 0,
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 22.72727,
     "iD": 128,
+    "faction": "Voidborne",
     "pageId": 1509,
     "image": "\tSwarmerKing.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2913,14 +2999,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ScottTheSensitiveSavage",
+    "UnitId": "111",
     "attackOnlyStationary": "",
     "speed": 6,
     "dps": 92.85715,
     "iD": 129,
+    "faction": "Highlander",
     "pageId": 1596,
     "image": "SaltyBarbarian.jpg",
-    "targets": "Ground",
-    "faction": "Stoutheart"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2942,14 +3029,16 @@
     "flying": false,
     "hitsFlying": false,
     "unitToSummon": "FlightlessDragon",
+    "UnitId": "117",
+    "InheritFromId": "17",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 133,
+    "faction": "Voidborne",
     "pageId": 1588,
     "image": "ClippedDragons.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -2967,9 +3056,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 135,
+    "faction": "Voidborne",
     "pageId": 1693,
-    "image": "SummoningRitual.jpg",
-    "faction": "Voidborne"
+    "image": "SummoningRitual.jpg"
   },
   {
     "catagory": "Standard",
@@ -2987,9 +3076,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 138,
+    "faction": "Scrat",
     "pageId": 1654,
-    "image": "ScratAmbush.jpg",
-    "faction": "Scrat"
+    "image": "ScratAmbush.jpg"
   },
   {
     "catagory": "Standard",
@@ -3011,20 +3100,22 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CursedSkeleton",
+    "UnitId": "126",
+    "InheritFromId": "76",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 139,
+    "faction": "Accursed",
     "pageId": 1650,
     "image": "CursedSkeleton.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Magma Cannon",
     "manacost": 4,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "BurstCannon",
     "description": "Fires flaming balls of magma at enemies in range.<size=20><color=#808080>For when you need more firepower.</color></size>",
@@ -3040,14 +3131,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "MagmaCannon",
+    "UnitId": "127",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 62.5,
     "iD": 140,
+    "faction": "Voidborne",
     "pageId": 1649,
     "image": "BurstCannon.png",
-    "targets": "Ground & Air",
-    "faction": "Empyrean"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3069,14 +3161,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Legionair",
+    "UnitId": "50",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 20,
     "iD": 142,
+    "faction": "Empyrean",
     "pageId": 1655,
     "image": "TwoLegionnaires.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3094,9 +3187,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 143,
+    "faction": "Empyrean",
     "pageId": 1656,
-    "image": "GamblersBall.png",
-    "faction": "Empyrean"
+    "image": "GamblersBall.png"
   },
   {
     "catagory": "Standard",
@@ -3118,14 +3211,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Swarmer",
+    "UnitId": "19",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 18.18182,
     "iD": 149,
+    "faction": "Voidborne",
     "pageId": 1678,
     "image": "CannibalSwarmers.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3147,20 +3241,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ScreamingScrat",
+    "UnitId": "132",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 0,
     "iD": 158,
+    "faction": "Scrat",
     "pageId": 1702,
     "image": "ScreamingScrat.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Gor'Rakk Brutes",
     "manacost": 8,
-    "type": "MultiMinion",
+    "type": "Minion",
     "rarity": "Supreme",
     "imageName": "DestructiveDemonDuo",
     "description": "Summons a <span className='htmlCardRef' data-card='Cleaver'>Cleaver</span>, but if the last card you played was a [cv:DynamicDuo.AdditionalUnitTriggerVariable]-mana Spell, also summons a <span className='htmlCardRef' data-card='Rammer'>Rammer</span>.",
@@ -3176,13 +3271,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Cleaver",
+    "UnitId": "14",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 60,
     "iD": 161,
+    "faction": "Voidborne",
     "pageId": 1688,
-    "image": "DestructiveDemonDuo.jpg",
-    "faction": "Voidborne"
+    "image": "DestructiveDemonDuo.jpg"
   },
   {
     "catagory": "Standard",
@@ -3200,9 +3296,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 162,
+    "faction": "Voidborne",
     "pageId": 1691,
-    "image": "Phase.jpg",
-    "faction": "Voidborne"
+    "image": "Phase.jpg"
   },
   {
     "catagory": "Standard",
@@ -3224,14 +3320,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Incubus",
+    "UnitId": "129",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 60,
     "iD": 163,
+    "faction": "Voidborne",
     "pageId": 1661,
     "image": "Incubus.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3253,20 +3350,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Rammer",
+    "UnitId": "65",
     "attackOnlyStationary": true,
     "speed": 10,
     "dps": 60,
     "iD": 164,
+    "faction": "Voidborne",
     "pageId": 1680,
     "image": "BetrayerRammer.jpg",
-    "targets": "Buildings",
-    "faction": "Voidborne"
+    "targets": "Buildings"
   },
   {
     "catagory": "Standard",
     "name": "Shars'Rakk Twins",
     "manacost": 8,
-    "type": "MultiMinion",
+    "type": "Minion",
     "rarity": "Supreme",
     "imageName": "SharsrakkTwins",
     "description": "Summon an <span className='htmlCardRef' data-card='Incubus'>Incubus</span>.<br />If the last card you played was a 5+ Mana Spell, also summon a <span className='htmlCardRef' data-card='Succubus'>Succubus</span>.",
@@ -3282,19 +3380,20 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Incubus",
+    "UnitId": "129",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 60,
     "iD": 169,
+    "faction": "Voidborne",
     "pageId": 1689,
-    "image": "SharsrakkTwins.jpg",
-    "faction": "Voidborne"
+    "image": "SharsrakkTwins.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Dragon Ball",
     "manacost": 6,
-    "type": "SummonSpell",
+    "type": "Spell",
     "rarity": "Common",
     "imageName": "dragonBall",
     "description": "It's a fireball, but if the last card you played was a Minion of cost 5 or more, it also summons a <span class='htmlCardRef' data-card='DragonWhelp'>Dragon Whelp</span> where it lands!",
@@ -3303,9 +3402,9 @@
     "radius": 4500,
     "delay": 2000,
     "iD": 170,
+    "faction": "Voidborne",
     "pageId": 1692,
-    "image": "DragonBall.jpg",
-    "faction": "Voidborne"
+    "image": "DragonBall.jpg"
   },
   {
     "catagory": "Standard",
@@ -3327,14 +3426,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "DroneWalker",
+    "UnitId": "59",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 40.90909,
     "iD": 172,
+    "faction": "Outlander",
     "pageId": 1663,
     "image": "AIMBot.jpg",
-    "targets": "All",
-    "faction": "Outlander"
+    "targets": "All"
   },
   {
     "catagory": "Standard",
@@ -3356,14 +3456,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Sniper",
+    "UnitId": "27",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 28.57143,
     "iD": 173,
+    "faction": "Scrat",
     "pageId": 1662,
     "image": "SniperSquad.png",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3381,9 +3482,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 175,
+    "faction": "Scrat",
     "pageId": 1703,
-    "image": "CheeseDate.jpg",
-    "faction": "Scrat"
+    "image": "CheeseDate.jpg"
   },
   {
     "catagory": "Standard",
@@ -3401,9 +3502,9 @@
     "radius": 4000,
     "travelSpeed": 0,
     "iD": 178,
+    "faction": "Empyrean",
     "pageId": 1707,
-    "image": "SunBurn.jpg",
-    "faction": "Empyrean"
+    "image": "SunBurn.jpg"
   },
   {
     "catagory": "Standard",
@@ -3421,9 +3522,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 180,
+    "faction": "Empyrean",
     "pageId": 1705,
-    "image": "ClearSkies.jpg",
-    "faction": "Empyrean"
+    "image": "ClearSkies.jpg"
   },
   {
     "catagory": "Standard",
@@ -3445,14 +3546,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Prowler",
+    "UnitId": "93",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 56.66667,
     "iD": 182,
+    "faction": "Slither",
     "pageId": 1708,
     "image": "RabidProwler.jpg",
-    "targets": "Ground",
-    "faction": "Slither"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3474,20 +3576,21 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "SpearThrowers",
+    "UnitId": "82",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 10,
     "iD": 183,
+    "faction": "Empyrean",
     "pageId": 1704,
     "image": "RageThrowers.jpg",
-    "targets": "All/Ground",
-    "faction": "Empyrean"
+    "targets": "All/Ground"
   },
   {
     "catagory": "Standard",
     "name": "Propeller Horde",
     "manacost": 4,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "PropellerHorde",
     "description": "If a friendly minion has [actorskillinfo:RageBuff,[mec:[r:RageBuff]]], summon [cv:PropellerHorde.SummonAmounts*0] more.",
@@ -3503,20 +3606,21 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "PropellerScrat",
+    "UnitId": "78",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 10,
     "iD": 184,
+    "faction": "Scrat",
     "pageId": 1706,
     "image": "PropellerHorde.jpg",
-    "targets": "All",
-    "faction": "Scrat"
+    "targets": "All"
   },
   {
     "catagory": "Standard",
     "name": "Empowered Soul Stealer",
     "manacost": 7,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Supreme",
     "imageName": "EmpoweredSoulStealer",
     "description": "<link=\"actor_skill:SoulStealBuff><span class='htmlHighlight' data-highlight='Soul Steal'>Soul Steal</span></link>,<link=\"actor_skill:Cohort><span class='htmlHighlight' data-highlight='Call Slitherbound'>Call Slitherbound</span></link>.Starts with 2 Souls.If a friendly Minion has <link=\"actor_skill:RageBuff><span class='htmlHighlight' data-highlight='Rage'>Rage</span></link>, gain 2 more.",
@@ -3532,14 +3636,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "SoulStealer",
+    "UnitId": "28",
     "attackOnlyStationary": "",
     "speed": 6,
     "dps": 33.33333,
     "iD": 185,
+    "faction": "Slither",
     "pageId": 1709,
     "image": "EmpoweredSoulStealer.jpg",
-    "targets": "Ground & Air",
-    "faction": "Slither"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3561,14 +3666,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrystalArcher",
+    "UnitId": "133",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 12.5,
     "iD": 186,
+    "faction": "CrystalElf",
     "pageId": 1758,
     "image": "CrystalArcher.jpg",
-    "targets": "Ground & Air",
-    "faction": "Crystal Elf"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3590,14 +3696,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrystalMage",
+    "UnitId": "135",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 20,
     "iD": 187,
+    "faction": "CrystalElf",
     "pageId": 1761,
     "image": "CrystalMage.jpg",
-    "targets": "Ground & Air",
-    "faction": "Crystal Elf"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3615,9 +3722,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 188,
+    "faction": "CrystalElf",
     "pageId": 1763,
-    "image": "ArcanePrison.jpg",
-    "faction": "Crystal Elf"
+    "image": "ArcanePrison.jpg"
   },
   {
     "catagory": "Standard",
@@ -3639,14 +3746,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrystalSentry",
+    "UnitId": "136",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 35.29412,
     "iD": 191,
+    "faction": "CrystalElf",
     "pageId": 1760,
     "image": "CrystalSentry.jpg",
-    "targets": "Ground & Air",
-    "faction": "Crystal Elf"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3664,9 +3772,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 192,
+    "faction": "CrystalElf",
     "pageId": 1762,
-    "image": "ArmoredEscort.jpg",
-    "faction": "Crystal Elf"
+    "image": "ArmoredEscort.jpg"
   },
   {
     "catagory": "Standard",
@@ -3688,14 +3796,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CrystalConstruct",
+    "UnitId": "137",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 13.33333,
     "iD": 193,
+    "faction": "CrystalElf",
     "pageId": 1759,
     "image": "CrystalConstruct.jpg",
-    "targets": "Ground",
-    "faction": "Crystal Elf"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3717,14 +3826,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CrystalCommander",
+    "UnitId": "138",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 42.30769,
     "iD": 194,
+    "faction": "CrystalElf",
     "pageId": 1764,
     "image": "CrystalCommander.jpg",
-    "targets": "Ground",
-    "faction": "Crystal Elf"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3742,9 +3852,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 195,
+    "faction": "Puff",
     "pageId": 1757,
-    "image": "ManaPuffMadness.jpg",
-    "faction": "Puff"
+    "image": "ManaPuffMadness.jpg"
   },
   {
     "catagory": "Standard",
@@ -3762,15 +3872,15 @@
     "radius": 2500,
     "travelSpeed": 25000,
     "iD": 196,
+    "faction": "Voidborne",
     "pageId": 1766,
-    "image": "WheelOfDoom.jpg",
-    "faction": "Voidborne"
+    "image": "WheelOfDoom.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Nether Bat",
     "manacost": 2,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "BlinkBat",
     "description": "Will sometimes <link=\"actor_skill:SuccubusTeleport>\n        <span class='htmlTextRef' data-inline-text='Instantly jump through the nether to a different location.<br />Cooldown 1, Teleport Distance 8.'>\n            <span class='htmlHighlight' data-highlight='Netherstep'>Netherstep</span>\n         </span>\n         </link> towards a random enemy Minion.<size=20><color=#808080>In the void, their sense of direction is impeccable.</color></size>",
@@ -3786,14 +3896,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "BlinkBat",
+    "UnitId": "139",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 31.81818,
     "iD": 197,
+    "faction": "Voidborne",
     "pageId": 1776,
     "image": "BlinkBat.jpg",
-    "targets": "Ground & Air",
-    "faction": "Voidborne"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -3815,14 +3926,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Legionair",
+    "UnitId": "50",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 20,
     "iD": 199,
+    "faction": "Accursed",
     "pageId": 1779,
     "image": "WolfAmongSheep.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -3840,9 +3952,9 @@
     "radius": 4000,
     "travelSpeed": 0,
     "iD": 201,
+    "faction": "Accursed",
     "pageId": 1777,
-    "image": "OnceBitten.jpg",
-    "faction": "Accursed"
+    "image": "OnceBitten.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -3860,9 +3972,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 202,
+    "faction": "Voidborne",
     "pageId": 1780,
-    "image": "BatSwarm.jpg",
-    "faction": "Voidborne"
+    "image": "BatSwarm.jpg"
   },
   {
     "catagory": "Standard",
@@ -3874,15 +3986,15 @@
     "description": "Slows enemies to 2 speed and deals damage in an area.Can only be cast in your own arena.",
     "isAOE": false,
     "ExcludeFromRandom": false,
-    "damage": 170,
+    "damage": 200,
     "delay": 500,
     "duration": 8000,
     "radius": 2500,
     "travelSpeed": 0,
     "iD": 203,
+    "faction": "Accursed",
     "pageId": 1783,
-    "image": "GraspingThorns.jpg",
-    "faction": "Accursed"
+    "image": "GraspingThorns.jpg"
   },
   {
     "catagory": "Standard",
@@ -3904,20 +4016,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Warrior",
+    "UnitId": "15",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 35,
     "iD": 204,
+    "faction": "Accursed",
     "pageId": 1782,
     "image": "LoneWolf.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "AbilityCard",
     "name": "Crossbow Trap",
     "manacost": 1,
-    "type": "Trap",
+    "type": "Building",
     "rarity": "Perk",
     "imageName": "Diona_CrossbowTrap",
     "description": "Fires bolts at nearby minions.DPS: [math:[av:CrossbowTrap.Damage]/[av:CrossbowTrap.AttackCooldown]]Health: [av:CrossbowTrap.MaxHealth]Duration: [av:CrossbowTrap.LifeTime] secondsWhen used, this card becomes a [r:DionaDecoyTrap]",
@@ -3933,20 +4046,21 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrossbowTrap",
+    "UnitId": "144",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 30,
     "iD": 207,
+    "faction": "Empyrean",
     "pageId": 1793,
     "image": "Diona_CrossbowTrap.jpg",
-    "targets": "Ground & Air",
-    "faction": "Empyrean"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "AbilityCard",
     "name": "Decoy Trap",
     "manacost": 1,
-    "type": "Trap",
+    "type": "Building",
     "rarity": "Perk",
     "imageName": "Diona_DecoyTrap",
     "description": "Taunts nearby minionsHealth: [av:DecoyTrap.MaxHealth]Duration: [av:DecoyTrap.LifeTime] secWhen used, this card becomes a [r:DionaCrossBowTrap].",
@@ -3962,13 +4076,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "DecoyTrap",
+    "UnitId": "145",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 208,
+    "faction": "Empyrean",
     "pageId": 1794,
-    "image": "Diona_DecoyTrap.jpg",
-    "faction": "Empyrean"
+    "image": "Diona_DecoyTrap.jpg"
   },
   {
     "catagory": "Standard",
@@ -3986,9 +4101,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 209,
+    "faction": "Accursed",
     "pageId": 1781,
-    "image": "HowlingMoon.jpg",
-    "faction": "Accursed"
+    "image": "HowlingMoon.jpg"
   },
   {
     "catagory": "Standard",
@@ -4010,14 +4125,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "WitchWolf",
+    "UnitId": "147",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 100,
     "iD": 210,
+    "faction": "Accursed",
     "pageId": 1784,
     "image": "WitchWolf.jpg",
-    "targets": "All",
-    "faction": "Accursed"
+    "targets": "All"
   },
   {
     "catagory": "Standard",
@@ -4039,14 +4155,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ShieldguardOfLight",
+    "UnitId": "153",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 35,
     "iD": 211,
+    "faction": "Empyrean",
     "pageId": 1835,
     "image": "Shieldguard.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4068,14 +4185,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BrotherOfLight",
+    "UnitId": "154",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 50,
     "iD": 212,
+    "faction": "Empyrean",
     "pageId": 1838,
     "image": "Brothersoflight.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4097,13 +4215,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "SquirePuff",
+    "UnitId": "152",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 0,
     "iD": 214,
+    "faction": "Puff",
     "pageId": 1832,
-    "image": "Squirepuff.jpg",
-    "faction": "Puff"
+    "image": "Squirepuff.jpg"
   },
   {
     "catagory": "Standard",
@@ -4121,9 +4240,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 215,
+    "faction": "Voidborne",
     "pageId": 1831,
-    "image": "Gorrakkgate.jpg",
-    "faction": "Voidborne"
+    "image": "Gorrakkgate.jpg"
   },
   {
     "catagory": "Standard",
@@ -4145,14 +4264,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CrakgulDoomcleaver",
+    "UnitId": "151",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 60,
     "iD": 216,
+    "faction": "Voidborne",
     "pageId": 1837,
     "image": "Crakguldoomcleaver.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4174,20 +4294,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "EliteSwarmer",
+    "UnitId": "95",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 22.72727,
     "iD": 218,
+    "faction": "Voidborne",
     "pageId": 1833,
     "image": "Morgrulsragers.jpg",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Shadow Whelp",
     "manacost": 5,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Rare",
     "imageName": "ShadowWhelp",
     "description": "<link=\"actor_skill:StealthBuff><span class='htmlHighlight' data-highlight='Stealth'>Stealth</span></link>.Deals triple damage when attacking while Stealthed.",
@@ -4203,14 +4324,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ShadowWhelp",
+    "UnitId": "149",
+    "InheritFromId": "17",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 219,
+    "faction": "Voidborne",
     "pageId": 1834,
     "image": "Shadowwhelp.jpg",
-    "targets": "Ground & Air",
-    "faction": "Voidborne"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -4232,23 +4355,24 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CaelethDawnhammer",
+    "UnitId": "155",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 50,
     "iD": 220,
+    "faction": "Empyrean",
     "pageId": 1836,
     "image": "Caelethdawnhammer.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Stormy",
     "manacost": 5,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Legendary",
     "imageName": "Stormy",
-    "description": "Shoots <span class='htmlCardRef' data-card='ChainLightning'>Chain Lightning</span> at enemies, damaging itself in the process.<link=\"actor_skill:ZenChiFlow><span class='htmlHighlight' data-highlight='Zen-Chi Flow'>Zen-Chi Flow</span></link>: Double Stormy's health.",
+    "description": "Shoots <span class='htmlCardRef' data-card='ChainLightning'>Chain Lightning</span> at enemies, damaging itself in the process.<link=\"actor_skill:ZenChiFlow><span class='htmlHighlight' data-highlight='Zen-Chi Flow'>Zen-Chi Flow</span></link>: Stormy gains +100 health.",
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 1,
@@ -4261,14 +4385,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "Stormy",
+    "UnitId": "156",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 25,
     "iD": 221,
+    "faction": "ZenChi",
     "pageId": 1851,
     "image": "Stormy.jpg",
-    "targets": "Ground & Air",
-    "faction": "Zen-Chi"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -4284,20 +4409,21 @@
     "health": 420,
     "attackspeed": 1900,
     "attackDelay": 1100,
-    "damage": 200,
+    "damage": 175,
     "range": 4000,
     "isRanged": "",
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ThunderShiHou",
+    "UnitId": "157",
     "attackOnlyStationary": "",
     "speed": 5,
-    "dps": 105.2632,
+    "dps": 92.10526,
     "iD": 222,
+    "faction": "ZenChi",
     "pageId": 1864,
     "image": "ShenStormstrike.jpg",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4315,14 +4441,14 @@
     "radius": 6000,
     "travelSpeed": 0,
     "iD": 224,
+    "faction": "Slither",
     "pageId": 1921,
-    "image": "PoisonStrike.jpg",
-    "faction": "Slither"
+    "image": "PoisonStrike.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Jungle Jumble",
-    "manacost": 7,
+    "manacost": 6,
     "type": "Spell",
     "rarity": "Supreme",
     "imageName": "JungleRumble",
@@ -4335,15 +4461,15 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 226,
+    "faction": "ZenChi",
     "pageId": 1865,
-    "image": "JungleRumble.jpg",
-    "faction": "Zen-Chi"
+    "image": "JungleRumble.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Zap Shrine",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "ZapShrine",
     "description": "<link=\"actor_skill:StunBuff>\n        <span class='htmlTextRef' data-inline-text='Stunned Units are unable to move or attack.'>\n            <span class='htmlHighlight' data-highlight='Stuns'>Stuns</span>\n         </span>\n         </link> the closest enemy for 2 seconds.<link=\"actor_skill:ZenChiFlow><span class='htmlHighlight' data-highlight='Zen-Chi Flow'>Zen-Chi Flow</span></link>: Stun all enemies within range for 3 seconds when played.",
@@ -4359,14 +4485,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "ThunderShrineClose",
+    "UnitId": "160",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 228,
+    "faction": "ZenChi",
     "pageId": 1862,
     "image": "ZapShrine.jpg",
-    "targets": "Ground & Air",
-    "faction": "Zen-Chi"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -4388,14 +4515,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "BlueGolem",
+    "UnitId": "67",
     "attackOnlyStationary": "",
     "speed": 2,
     "dps": 100,
     "iD": 229,
+    "faction": "ZenChi",
     "pageId": 1863,
     "image": "RockRivals.jpg",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4417,14 +4545,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Skeleton",
+    "UnitId": "164",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 12.5,
     "iD": 234,
+    "faction": "Accursed",
     "pageId": 1882,
     "image": "SkeletonHorde.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4446,14 +4575,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "HeroScrat",
+    "UnitId": "165",
+    "InheritFromId": "11",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 235,
+    "faction": "Scrat",
     "pageId": 1880,
     "image": "HeroScrat.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -4471,9 +4602,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 236,
+    "faction": "Accursed",
     "pageId": 1881,
-    "image": "NyrvirsBreath.jpg",
-    "faction": "Accursed"
+    "image": "NyrvirsBreath.jpg"
   },
   {
     "catagory": "Standard",
@@ -4491,9 +4622,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 237,
+    "faction": "Accursed",
     "pageId": 1876,
-    "image": "TollOfTheDead.jpg",
-    "faction": "Accursed"
+    "image": "TollOfTheDead.jpg"
   },
   {
     "catagory": "Standard",
@@ -4515,20 +4646,21 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrystalArcher",
+    "UnitId": "133",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 12.5,
     "iD": 238,
+    "faction": "CrystalElf",
     "pageId": 1879,
     "image": "LoneRanger.jpg",
-    "targets": "Ground & Air",
-    "faction": "Crystal Elf"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Border Patrol",
     "manacost": 6,
-    "type": "MultiMinion",
+    "type": "Minion",
     "rarity": "Rare",
     "imageName": "BorderPatrol",
     "description": "<link=\"actor_skill:Overload><span class='htmlHighlight' data-highlight='Mana Freeze (1)'>Mana Freeze (1)</span></link>.Summon 1 <span class='htmlCardRef' data-card='CrystalSentry'>Crystal Sentry</span> and 1 <span class='htmlCardRef' data-card='CrystalMage'>Crystal Arcanist</span>.If you have only Crystal Elf units under your command, Border Patrol gains <link=\"actor_skill:SingleShieldBuff><span class='htmlHighlight' data-highlight='Shield'>Shield</span></link>.",
@@ -4544,42 +4676,44 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "CrystalSentry",
+    "UnitId": "136",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 35.29412,
     "iD": 239,
+    "faction": "CrystalElf",
     "pageId": 1877,
-    "image": "BorderPatrol.jpg",
-    "faction": "Crystal Elf"
+    "image": "BorderPatrol.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Haunting Hugger",
     "manacost": 2,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Rare",
     "imageName": "CuteGhost",
-    "description": "Haunts its target, giving it <link=\"actor_skill:CursedBuff><span class='htmlHighlight' data-highlight='Cursed'>Cursed</span></link>.When the target dies, the Hugger reappears to find a new target.<size=20><color=#808080>All it wants in the afterlife is to give everyone a good haunting hug!</color></size>",
+    "description": "Give targets <link=\"actor_skill:CursedBuff><span class='htmlHighlight' data-highlight='Cursed'>Cursed</span></link>.When the target dies, the Hugger reappears to find a new target.Progress 1 toward Accursed Ascension with each kill.<size=20><color=#808080>Hint: Accursed Ascension makes certain Accursed cards stronger.</color></size>",
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 1,
     "health": 50,
-    "attackspeed": 2000,
-    "attackDelay": 2000,
+    "attackspeed": 2500,
+    "attackDelay": 2500,
     "damage": 50,
     "range": 1000,
     "isRanged": false,
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "HauntingHugger",
+    "UnitId": "166",
     "attackOnlyStationary": "",
     "speed": 5,
-    "dps": 25,
+    "dps": 20,
     "iD": 240,
+    "faction": "Accursed",
     "pageId": 1878,
     "image": "HauntingHugger.jpg",
-    "targets": "Ground & Air",
-    "faction": "Accursed"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -4601,14 +4735,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Nyrvir",
+    "UnitId": "163",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 40,
     "iD": 241,
+    "faction": "Accursed",
     "pageId": 1884,
     "image": "NyrvirAwakens.jpg",
-    "targets": "All",
-    "faction": "Accursed"
+    "targets": "All"
   },
   {
     "catagory": "Standard",
@@ -4626,9 +4761,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 242,
+    "faction": "Voidborne",
     "pageId": 1887,
-    "image": "SpawnofFury.png",
-    "faction": "Voidborne"
+    "image": "SpawnofFury.png"
   },
   {
     "catagory": "AbilityCard",
@@ -4646,9 +4781,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 243,
+    "faction": "Accursed",
     "pageId": 1907,
-    "image": "NyrvirQueensDragon.jpg",
-    "faction": "Accursed"
+    "image": "NyrvirQueensDragon.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -4666,9 +4801,9 @@
     "radius": 60000,
     "travelSpeed": 0,
     "iD": 244,
+    "faction": "Accursed",
     "pageId": 1905,
-    "image": "LichBook_Drain.jpg",
-    "faction": "Accursed"
+    "image": "LichBook_Drain.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -4686,15 +4821,15 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 245,
+    "faction": "Accursed",
     "pageId": 1904,
-    "image": "LichBook_Spirit.jpg",
-    "faction": "Accursed"
+    "image": "LichBook_Spirit.jpg"
   },
   {
     "catagory": "AbilityCard",
     "name": "Skeletons",
     "manacost": 0,
-    "type": "Minion",
+    "type": "Spell",
     "rarity": "Perk",
     "imageName": "LichBook_Skeletons",
     "description": "[r:WitchQueenBookEffect1DescriptionPerk1][mec:[r:WitchQueenPerk2]]: [r:WitchQueenBookEffect1DescriptionPerk2]",
@@ -4710,13 +4845,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Skeleton",
+    "UnitId": "164",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 12.5,
     "iD": 246,
+    "faction": "Accursed",
     "pageId": 1903,
-    "image": "LichBook_Skeletons.jpg",
-    "faction": "Accursed"
+    "image": "LichBook_Skeletons.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -4734,9 +4870,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 247,
+    "faction": "Accursed",
     "pageId": 1906,
-    "image": "LichBook_Mana.jpg",
-    "faction": "Accursed"
+    "image": "LichBook_Mana.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -4754,15 +4890,15 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 248,
+    "faction": "Accursed",
     "pageId": 1902,
-    "image": "LichQueenBook.jpg",
-    "faction": "Accursed"
+    "image": "LichQueenBook.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Slitherbound",
     "manacost": 2,
-    "type": "MultiMinion",
+    "type": "Minion",
     "rarity": "Common",
     "imageName": "Slitherbound",
     "description": "Summon 1 <span class='htmlCardRef' data-card='SlitherLancerSlave'>Slitherbound Lancer</span> and 1 <span class='htmlCardRef' data-card='SlitherDarterSlave'>Slitherbound Darter</span> that inflicts <link=\"actor_skill:PoisonBuff>\n        <span class='htmlTextRef' data-inline-text='Deals damage over time to a Minion'>\n            <span class='htmlHighlight' data-highlight='Poison'>Poison</span>\n         </span>\n         </link> for 3 seconds on attack.<size=20><color=#808080>Slitherbound get to choose their weapon, but not their chain mate.</color></size>",
@@ -4771,20 +4907,21 @@
     "count": 1,
     "health": 35,
     "attackspeed": 2000,
-    "attackDelay": 1000,
+    "attackDelay": 500,
     "damage": 10,
     "range": 3500,
     "isRanged": "",
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "SlitherLancerSlave",
+    "UnitId": "168",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 5,
     "iD": 249,
+    "faction": "Slither",
     "pageId": 1925,
-    "image": "Slitherbound.jpg",
-    "faction": "Slither"
+    "image": "Slitherbound.jpg"
   },
   {
     "catagory": "Standard",
@@ -4806,20 +4943,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ScratShredder",
+    "UnitId": "171",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 56.66666,
     "iD": 251,
+    "faction": "Scrat",
     "pageId": 1929,
     "image": "Wreckinator.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Caged Prowler",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "CagedProwler",
     "description": "After 20 seconds the cage releases the <span class='htmlCardRef' data-card='Prowler'>Prowler</span> and falls apart.<size=20><color=#808080>Preferring not to face the vicious beasts, Slitherbound typically just activate the cage and run away.<br />Fast.</color></size>",
@@ -4835,13 +4973,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CagedProwler",
+    "UnitId": "173",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 252,
+    "faction": "Slither",
     "pageId": 1920,
-    "image": "CagedProwler.jpg",
-    "faction": "Slither"
+    "image": "CagedProwler.jpg"
   },
   {
     "catagory": "Standard",
@@ -4859,15 +4998,15 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 253,
+    "faction": "Slither",
     "pageId": 1931,
-    "image": "SlitheringSummons.jpg",
-    "faction": "Slither"
+    "image": "SlitheringSummons.jpg"
   },
   {
     "catagory": "Standard",
     "name": "Herald Ah'Mun",
     "manacost": 8,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Legendary",
     "imageName": "HeraldAhmun",
     "description": "<link=\"actor_skill:CohortTwo><span class='htmlHighlight' data-highlight='Call Slitherbound (2)'>Call Slitherbound (2)</span></link>.When Ah'Mun is about to die for the first time, <link=\"actor_skill:SacrificeBuff><span class='htmlHighlight' data-highlight='Sacrifice'>Sacrifice</span></link>: Heal 75 health for each Slitherbound sacrificed instead.<size=20><color=#808080>The Eye of Xipetl grants its bearer eternal life.<br />At a cost...</color></size>",
@@ -4883,14 +5022,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "PlagueHeraldAhmun",
+    "UnitId": "174",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 66.66666,
     "iD": 254,
+    "faction": "Slither",
     "pageId": 1924,
     "image": "HeraldAhmun.jpg",
-    "targets": "Ground & Air",
-    "faction": "Slither"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -4912,20 +5052,22 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "SewerScrat",
+    "UnitId": "175",
+    "InheritFromId": "96",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 255,
+    "faction": "Scrat",
     "pageId": 1930,
     "image": "SewerScrat.jpg",
-    "targets": "Ground",
-    "faction": "Scrat"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Scratillery",
     "manacost": 5,
-    "type": "SummonSpell",
+    "type": "Spell",
     "rarity": "Rare",
     "imageName": "ScratStorm",
     "description": "Fires 5 furry rockets that each summon a <span class='htmlCardRef' data-card='MeleeScrat'>Scrat</span> on impact.<link=\"actor_skill:ScratSwarm><span class='htmlHighlight' data-highlight='Scrat Swarm'>Scrat Swarm</span></link>: Summoned Scrats gain <link=\"actor_skill:FrenzyBuff><span class='htmlHighlight' data-highlight='Haste'>Haste</span></link>.",
@@ -4934,9 +5076,9 @@
     "radius": 3500,
     "delay": 500,
     "iD": 257,
+    "faction": "Scrat",
     "pageId": 1928,
-    "image": "ScratStorm.jpg",
-    "faction": "Scrat"
+    "image": "ScratStorm.jpg"
   },
   {
     "catagory": "Standard",
@@ -4958,14 +5100,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "MissileTank",
+    "UnitId": "172",
     "attackOnlyStationary": "",
     "speed": 3,
     "dps": 48,
     "iD": 258,
+    "faction": "Scrat",
     "pageId": 1923,
     "image": "BoomBuggy.jpg",
-    "targets": "Ground & Air",
-    "faction": "Scrat"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -4983,9 +5126,9 @@
     "radius": 0,
     "travelSpeed": 0,
     "iD": 259,
+    "faction": "Slither",
     "pageId": 1922,
-    "image": "RitualOfServitude.jpg",
-    "faction": "Slither"
+    "image": "RitualOfServitude.jpg"
   },
   {
     "catagory": "Standard",
@@ -5007,14 +5150,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Woodsman",
+    "UnitId": "177",
     "attackOnlyStationary": "",
     "speed": 6,
     "dps": 45,
     "iD": 260,
+    "faction": "Highlander",
     "pageId": 1961,
     "image": "Woodsman.jpg",
-    "targets": "Ground",
-    "faction": "Stoutheart"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5036,14 +5180,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "HighMageLeiliel",
+    "UnitId": "179",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 20,
     "iD": 261,
+    "faction": "CrystalElf",
     "pageId": 1967,
     "image": "CrystalElfLeiliel.jpg",
-    "targets": "Ground & Air",
-    "faction": "Crystal Elf"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -5061,9 +5206,9 @@
     "radius": 7000,
     "travelSpeed": 0,
     "iD": 262,
+    "faction": "CrystalElf",
     "pageId": 1965,
-    "image": "LeilielsVortex.png",
-    "faction": "Crystal Elf"
+    "image": "LeilielsVortex.png"
   },
   {
     "catagory": "AbilityCard",
@@ -5081,9 +5226,9 @@
     "radius": 4000,
     "travelSpeed": 0,
     "iD": 263,
+    "faction": "CrystalElf",
     "pageId": 1955,
-    "image": "ArcaneRing.jpg",
-    "faction": "Crystal Elf"
+    "image": "ArcaneRing.jpg"
   },
   {
     "catagory": "Standard",
@@ -5101,9 +5246,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 264,
+    "faction": "Highlander",
     "pageId": 1963,
-    "image": "GlennsBrew.png",
-    "faction": "Stoutheart"
+    "image": "GlennsBrew.png"
   },
   {
     "catagory": "Standard",
@@ -5125,20 +5270,22 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CaberTosser",
+    "UnitId": "178",
+    "InheritFromId": "177",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 265,
+    "faction": "Highlander",
     "pageId": 1959,
     "image": "CaberTosser.jpg",
-    "targets": "Ground",
-    "faction": "Stoutheart"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Frostfeathers",
     "manacost": 3,
-    "type": "Minion",
+    "type": "Flying Minion",
     "rarity": "Common",
     "imageName": "HighlandOwls",
     "description": "Inflicts <link=\"actor_skill:AntiFrenzy><span class='htmlHighlight' data-highlight='Slow'>Slow</span></link> on attack.<size=20><color=#808080>These small pesky flyers barrage their victims with hail-like projectiles.</color></size>",
@@ -5154,14 +5301,15 @@
     "flying": true,
     "hitsFlying": true,
     "unitToSummon": "Frostfeather",
+    "UnitId": "180",
     "attackOnlyStationary": "",
     "speed": 10,
     "dps": 10,
     "iD": 266,
+    "faction": "Highlander",
     "pageId": 1957,
     "image": "Frostfeathers.jpg",
-    "targets": "Ground & Air",
-    "faction": "Stoutheart"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -5183,14 +5331,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "FergusFlagonFighter",
+    "UnitId": "181",
     "attackOnlyStationary": "",
     "speed": 6,
     "dps": 100,
     "iD": 267,
+    "faction": "Highlander",
     "pageId": 1954,
     "image": "FergusFlagonFighter.jpg",
-    "targets": "Ground",
-    "faction": "Stoutheart"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5208,9 +5357,9 @@
     "radius": 2000,
     "travelSpeed": 0,
     "iD": 268,
+    "faction": "Highlander",
     "pageId": 1969,
-    "image": "Mountainshaper.jpg",
-    "faction": "Stoutheart"
+    "image": "Mountainshaper.jpg"
   },
   {
     "catagory": "Standard",
@@ -5228,9 +5377,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 269,
+    "faction": "Highlander",
     "pageId": 1971,
-    "image": "FrostfeatherFlyby.jpg",
-    "faction": "Stoutheart"
+    "image": "FrostfeatherFlyby.jpg"
   },
   {
     "catagory": "Standard",
@@ -5252,14 +5401,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Malshar",
+    "UnitId": "183",
     "attackOnlyStationary": "",
     "speed": 5,
     "dps": 70,
     "iD": 270,
+    "faction": "Voidborne",
     "pageId": 1986,
     "image": "Malshar.png",
-    "targets": "Ground",
-    "faction": "Voidborne"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5281,14 +5431,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "RangedMonkey",
+    "UnitId": "184",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 10,
     "iD": 271,
+    "faction": "ZenChi",
     "pageId": 2000,
     "image": "JadeFlingers.jpg",
-    "targets": "Ground & Air",
-    "faction": "Zen-Chi"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -5310,14 +5461,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "MonkeyGroup",
+    "UnitId": "185",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 47.36842,
     "iD": 272,
+    "faction": "ZenChi",
     "pageId": 2003,
     "image": "TingTengTung.jpg",
-    "targets": "Ground & Air",
-    "faction": "Zen-Chi"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -5339,14 +5491,15 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "ZealotLeader",
+    "UnitId": "186",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 54,
     "iD": 273,
+    "faction": "Empyrean",
     "pageId": 2005,
     "image": "HiArdera.png",
-    "targets": "Ground & Air",
-    "faction": "Empyrean"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
@@ -5368,14 +5521,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ZealotBrother",
+    "UnitId": "188",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 50,
     "iD": 274,
+    "faction": "Empyrean",
     "pageId": 2004,
     "image": "BrotherOfTheBurningFist.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5397,27 +5551,28 @@
     "flying": "",
     "hitsFlying": true,
     "unitToSummon": "Jahun",
+    "UnitId": "189",
     "attackOnlyStationary": "",
     "speed": 2,
     "dps": 30,
     "iD": 275,
+    "faction": "ZenChi",
     "pageId": 2011,
     "image": "Jahun.jpg",
-    "targets": "Ground & Air",
-    "faction": "Zen-Chi"
+    "targets": "Ground & Air"
   },
   {
     "catagory": "Standard",
     "name": "Jadespark Watchers",
-    "manacost": 10,
-    "type": "MultiMinion",
+    "manacost": 9,
+    "type": "Minion",
     "rarity": "Rare",
     "imageName": "JadeSparkWatchers",
     "description": "<link=\"actor_skill:BerryBuffPlural><span class='htmlHighlight' data-highlight='Growthburst Shroom (2)'>Growthburst Shroom (2)</span></link>.Summon 2 <span class='htmlCardRef' data-card='ShiHouMonkey'>Shi-Hou</span> and 2 <span class='htmlCardRef' data-card='RangedMonkey'>Mu-Hou</span>.",
     "isAOE": false,
     "ExcludeFromRandom": false,
     "count": 2,
-    "health": 450,
+    "health": 420,
     "attackspeed": 1800,
     "attackDelay": 900,
     "damage": 75,
@@ -5426,13 +5581,14 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "ShiHouMonkey",
+    "UnitId": "190",
     "attackOnlyStationary": "",
     "speed": 7,
     "dps": 41.66667,
     "iD": 276,
+    "faction": "ZenChi",
     "pageId": 2002,
-    "image": "JadeSparkWatchers.jpg",
-    "faction": "Zen-Chi"
+    "image": "JadeSparkWatchers.jpg"
   },
   {
     "catagory": "Standard",
@@ -5450,9 +5606,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 277,
+    "faction": "Empyrean",
     "pageId": 2010,
-    "image": "Smite.jpg",
-    "faction": "Empyrean"
+    "image": "Smite.jpg"
   },
   {
     "catagory": "AbilityCard",
@@ -5470,9 +5626,9 @@
     "radius": 4000,
     "travelSpeed": 0,
     "iD": 278,
+    "faction": "Empyrean",
     "pageId": 2009,
-    "image": "ArdentAegis.jpg",
-    "faction": "Empyrean"
+    "image": "ArdentAegis.jpg"
   },
   {
     "catagory": "Standard",
@@ -5494,14 +5650,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "MonkeyFistfighterStaff",
+    "UnitId": "191",
+    "InheritFromId": "190",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 279,
+    "faction": "ZenChi",
     "pageId": 1999,
     "image": "Windwalker.jpg",
-    "targets": "Ground",
-    "faction": "Zen-Chi"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5519,9 +5677,9 @@
     "radius": 3000,
     "travelSpeed": 0,
     "iD": 280,
+    "faction": "ZenChi",
     "pageId": 2001,
-    "image": "ShensShockStick.jpg",
-    "faction": "Zen-Chi"
+    "image": "ShensShockStick.jpg"
   },
   {
     "catagory": "Standard",
@@ -5543,14 +5701,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "MilitiaKnightBurningFist",
+    "UnitId": "193",
+    "InheritFromId": "15",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 285,
+    "faction": "Empyrean",
     "pageId": 1988,
     "image": "BurningFistZealots.jpg",
-    "targets": "Ground",
-    "faction": "Empyrean"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5572,20 +5732,21 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "MountedElfLord",
+    "UnitId": "196",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 40,
     "iD": 288,
+    "faction": "CrystalElf",
     "pageId": 2020,
     "image": "LordFanriel.jpg",
-    "targets": "Ground",
-    "faction": "Crystal Elf"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
     "name": "Dormant Defenders",
     "manacost": 6,
-    "type": "Minion",
+    "type": "Building",
     "rarity": "Rare",
     "imageName": "InactiveConstructs",
     "description": "Summon 2 <span class='htmlCardRef' data-card='CrystalConstruct'>Crystal Constructs</span> with <link=\"actor_skill:DormantBuff><span class='htmlHighlight' data-highlight='Dormant'>Dormant</span></link>.Awaken from Dormant state while you have Mana Surge.",
@@ -5601,14 +5762,16 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "InactiveCrystalConstruct",
+    "UnitId": "197",
+    "InheritFromId": "137",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 289,
+    "faction": "CrystalElf",
     "pageId": 2022,
     "image": "DormantDefenders.jpg",
-    "targets": "Ground",
-    "faction": "Crystal Elf"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5626,9 +5789,9 @@
     "radius": 5000,
     "travelSpeed": 0,
     "iD": 290,
+    "faction": "CrystalElf",
     "pageId": 2030,
-    "image": "Shield.jpg",
-    "faction": "Crystal Elf"
+    "image": "Shield.jpg"
   },
   {
     "catagory": "Standard",
@@ -5650,14 +5813,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "Skeleton",
+    "UnitId": "164",
     "attackOnlyStationary": "",
     "speed": 4,
     "dps": 12.5,
     "iD": 294,
+    "faction": "Accursed",
     "pageId": 2032,
     "image": "Skeletons.jpg",
-    "targets": "Ground",
-    "faction": "Accursed"
+    "targets": "Ground"
   },
   {
     "catagory": "Standard",
@@ -5675,9 +5839,9 @@
     "radius": 4500,
     "travelSpeed": 0,
     "iD": 295,
+    "faction": "CrystalElf",
     "pageId": 2024,
-    "image": "ResonatingBlast.jpg",
-    "faction": "Crystal Elf"
+    "image": "ResonatingBlast.jpg"
   },
   {
     "catagory": "Standard",
@@ -5699,13 +5863,15 @@
     "flying": "",
     "hitsFlying": "",
     "unitToSummon": "CrystalArcherNoble",
+    "UnitId": "200",
+    "InheritFromId": "133",
     "attackOnlyStationary": "",
     "speed": 0,
     "dps": 0,
     "iD": 297,
+    "faction": "CrystalElf",
     "pageId": 2031,
     "image": "LadyInfray.jpg",
-    "targets": "All",
-    "faction": "Crystal Elf"
+    "targets": "All"
   }
 ]

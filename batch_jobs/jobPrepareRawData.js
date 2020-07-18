@@ -82,6 +82,10 @@ function normalizeGameCardData(propsAsMap) {
     // wikiNameToGameIDMappingConfig
     propsAsMap.iD = parseInt(propsAsMap.iD);
 
+
+    propsAsMap.faction = propsAsMap.Faction;
+    delete propsAsMap.Faction;
+
     if (propsAsMap.type === "DefensiveSpell") {
         propsAsMap.type = "Spell";
     }
@@ -208,7 +212,8 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
         cardDataFromGame.pageId = parseInt(matchedDataFromWikiById.pageId);
         cardDataFromGame.image = matchedDataFromWikiById.image;
         cardDataFromGame.targets = matchedDataFromWikiById.targets; // to be replaced with hitsTarget, when fixed in dataset
-        cardDataFromGame.faction = matchedDataFromWikiById.faction;
+        cardDataFromGame.type = matchedDataFromWikiById.type;
+        // NOT REQUIRED ANYMORE cardDataFromGame.faction = matchedDataFromWikiById.faction;
     } else {
         const gameIdToCustomImage = {
             270: "Malshar.jpg",
@@ -266,7 +271,15 @@ const normalizedWikiData = cardDataFromWiki.map(cardData => {
 });
 
 const normalizedGameData = cardDataFromGame.filter(({iD}) => {
-    return ![18, 109].includes(parseInt(iD));
+    const SKIP_CARDS = [
+        18,
+        109,
+        291, // Restless Dead
+        292, // Unholy Ground
+        293, // Corpse Explosion
+
+    ];
+    return !SKIP_CARDS.includes(parseInt(iD));
 }).map(cardData => {
     return normalizeGameCardData(cardData);
 });
