@@ -31,13 +31,14 @@ export default function RavangerContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_BestBuds.png" alt="Ravager Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_BestBuds_78.webp" alt="Ravager Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_Enrage.png" alt="Ravager Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_Enrage_78.webp" alt="Ravager Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_TerrorBrutus.png" alt="Ravager Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_TerrorBrutus_78.webp"
+                                                    alt="Ravager Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>

@@ -29,15 +29,15 @@ export default function VolcoContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Volco_Fireball.png"
+                    <MasterAbilityImageRoundedStyle src="generated/img/Volco_Fireball_78.webp"
                                                     alt="Volco Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Volco_BurntheBridges.png"
+                    <MasterAbilityImageRoundedStyle src="generated/img/Volco_BurntheBridges_78.webp"
                                                     alt="Volco Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Volco_TempersFlaring2.png"
+                    <MasterAbilityImageRoundedStyle src="generated/img/Volco_TempersFlaring2_78.webp"
                                                     alt="Volco Perk3"/>
                 </Tab>
             </TabList>

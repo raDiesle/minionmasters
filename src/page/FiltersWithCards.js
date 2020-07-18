@@ -9,7 +9,6 @@ import {rarityMapping} from "../rarity/rarityMapping";
 import Cards from "./Cards";
 import {Filters} from "./filters/Filters";
 
-
 export default function FiltersWithCards({cardActionWrapper, isFullWidthClickable}) {
 
     function setAllFilterStates(isActive) {
@@ -36,10 +35,8 @@ export default function FiltersWithCards({cardActionWrapper, isFullWidthClickabl
     const [filters, setFilters] = useState(setAllFilterStates(false));
     const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
 
-
     const filteredMasterCards = cardData.filter(({rarity}) => rarity !== 'Perk');
     const fullCount = filteredMasterCards.length;
-
 
     const filteredCardsDataWithRarity = filters.rarity.every(({isActive}) => !isActive) ? filteredMasterCards : cardData.filter(({rarity}) => filters.rarity.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(rarity));
     const filteredCardsDataFaction = filters.faction.every(({isActive}) => !isActive) ? filteredCardsDataWithRarity : filteredCardsDataWithRarity.filter(({faction}) => filters.faction.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(faction));
@@ -49,7 +46,6 @@ export default function FiltersWithCards({cardActionWrapper, isFullWidthClickabl
     const filteredCardsDataWithName = filters.name === "" ? filteredCardsDataWithType : filteredCardsDataWithType.filter(({name}) => name.toLowerCase().includes(filters.name.toLowerCase()));
     const filteredCardsDataWithTargets = filters.targets.every(({isActive}) => !isActive) ? filteredCardsDataWithName : filteredCardsDataWithName.filter(({targets}) => filters.targets.filter(({isActive}) => isActive).map(({btnkey}) => btnkey).includes(targets));
     const sortedByManaCards = orderBy(filteredCardsDataWithTargets, ({manacost}) => parseInt(manacost), sortByMana);
-
 
     return <div>
         <Filters setFilters={setFiltersMemoized}

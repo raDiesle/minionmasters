@@ -1,33 +1,23 @@
 import React from "react";
-import styled from "styled-components";
 import {Card} from "./Card";
+import css from "./Cards.module.scss";
 
-const CardsStyle = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-`;
-
-const CardNameStyle = styled.div`
-  font-size: 11px;
-  text-align: center;
-`;
 
 export default function Cards({cards, isShowNames, cardActionWrapper, fullCount, isFullWidthClickable}) {
     return (
         <div>
-            <CardsStyle name="cardsview">
+            <div className={css.CardsStyle}>
                 {
                     cards.map(card =>
                         <div key={card.iD}>
                             <Card card={card} isFullWidthClickable={isFullWidthClickable}>
                                 {cardActionWrapper(card)}
                             </Card>
-                            <CardNameStyle>{isShowNames ? card.name : null}</CardNameStyle>
+                            <div className={css.CardNameStyle}>{isShowNames ? card.name : null}</div>
                         </div>
                     )
                 }
-            </CardsStyle>
+            </div>
             Count: {cards.length}/{fullCount}
         </div>
     );

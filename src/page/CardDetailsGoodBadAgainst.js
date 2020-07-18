@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 
 import {toast} from "react-toastify";
 import styled from "styled-components";
@@ -83,6 +83,14 @@ const fetchAgainstCards = (iD) => {
     }).catch(dbErrorHandlerPromise);
 };
 
+const FiltersWithCardsMemo = ({handleSelectCard}) => useMemo(() =>
+    <FiltersWithCards cardActionWrapper={(card) =>
+        <ActionEventListenerStyle
+            onClick={() => handleSelectCard(card.iD)}
+        >
+        </ActionEventListenerStyle>
+    }>
+    </FiltersWithCards>, []);
 
 export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
     const againstRef = db.collection("cards").doc(String(iD));
@@ -184,13 +192,7 @@ export default function CardDetailsGoodBadAgainst({card, card: {iD}}) {
                 <div>
                     {selectionState === "GOOD_AGAINST" ? <AgainstGoodHeaderStyle>Good against</AgainstGoodHeaderStyle> :
                         <AgainstBadHeaderStyle>Bad against</AgainstBadHeaderStyle>}
-                    <FiltersWithCards cardActionWrapper={(card) =>
-                        <ActionEventListenerStyle
-                            onClick={() => handleSelectCard(card.iD)}
-                        >
-                        </ActionEventListenerStyle>
-                    }>
-                    </FiltersWithCards>
+                    <FiltersWithCardsMemo handleSelectCard={handleSelectCard}/>
                 </div>
             )
         }

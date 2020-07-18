@@ -27,13 +27,15 @@ export default function KingPuffContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_TrickSwap.png" alt="KingPuff Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_TrickSwap_78.webp"
+                                                    alt="KingPuff Perk1"/>
                 </Tab>
                 <Tab>
                     <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_Inspire_78.webp" alt="KingPuff Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_BridgeShield.png" alt="KingPuff Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_BridgeShield_78.webp"
+                                                    alt="KingPuff Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>

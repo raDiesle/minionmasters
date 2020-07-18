@@ -90,6 +90,8 @@ function normalizeGameCardData(propsAsMap) {
         propsAsMap.type = "Spell";
     }
 
+    propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
+
     const iDsMasterAbilitySpells = [
         103, // arcane missiles
         244, // drain live
