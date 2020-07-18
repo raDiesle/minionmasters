@@ -63,6 +63,11 @@ const MasterSelectedContainer = styled.div`
 export default function Master({masterKey, actionRegistrationComponent = null}) {
     const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
+    const IMG_FOLDER = "generated/img/";
+    const FILE_ENDING = ".webp";
+    const WIDTH = "_78";
+    const IMG_PATH = IMG_FOLDER + mastersMapping[masterKey].icon + WIDTH + FILE_ENDING;
+
     return <MasterSelectedContainer>
         <MasterModal isOpenHeroModal={isOpenHeroModal}
                      setIsOpenHeroModal={setIsOpenHeroModal}
@@ -90,7 +95,7 @@ export default function Master({masterKey, actionRegistrationComponent = null}) 
                 { // to unregister on rerender bug
                     actionRegistrationComponent && actionRegistrationComponent(masterKey)
                 }
-                <MasterImgStyle src={"generated/img/" + mastersMapping[masterKey].icon}
+                <MasterImgStyle src={IMG_PATH}
                                 alt={masterKey}/>
             </MasterContentStyle>
         </Tooltip>

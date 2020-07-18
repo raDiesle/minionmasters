@@ -36,16 +36,21 @@ if (!fs.existsSync(TARGET_FOLDER)) {
 const FILE_EXT = ".webp";
 
 const files = readFilesSync(SRC_FOLDER);
+
+const generateImages = (file, width) => sharp(file.filepath)
+    .resize({width})
+    .webp({quality: 80})
+    .toFile(TARGET_FOLDER + file.name + "_" + width + FILE_EXT, function (err, info) {
+        if (err) {
+            console.log("error:");
+            console.log(err);
+        } else {
+            console.log(info);
+        }
+    });
+
 files.forEach(file => {
     console.log(file.name + file.ext);
-    sharp(file.filepath)
-        .resize({width: 78})
-        .toFile(TARGET_FOLDER + file.name + FILE_EXT, function (err, info) {
-            if (err) {
-                console.log("error:");
-                console.log(err);
-            } else {
-                console.log(info);
-            }
-        });
+    generateImages(file, 78);
+    //  generateImages(file, 48);
 }); 

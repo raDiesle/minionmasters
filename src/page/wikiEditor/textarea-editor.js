@@ -19,6 +19,7 @@ const mentions = [...heros, ...cardData.map(({name, image}) => ({id: name, displ
 const EditorStyle = styled.div`
   //border: 1px dotted grey;
 
+
   max-width: 600px;
   ${({isEditable}) => isEditable &&
     ` background: 
@@ -64,8 +65,13 @@ export default function TextareaEditor({value, setValue, isDisabledInput, placeh
         setValue(val.target.value);
     };
 
-    const renderUserSuggestion = (val) => {
-        return <div><img src={`generated/img/${val.image}`} style={{width: "25px", paddingRight: "5px"}}/>{val.display}
+    const renderUserSuggestion = ({image, display}) => {
+        const IMG_FOLDER = "generated/img/";
+        const FILE_ENDING = ".webp";
+        const WIDTH = "_78";
+        const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
+
+        return <div><img src={IMG_PATH} style={{width: "25px", paddingRight: "5px"}}/>{display}
         </div>;
     };
 

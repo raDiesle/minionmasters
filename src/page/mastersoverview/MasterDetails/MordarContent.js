@@ -35,7 +35,7 @@ export default function MordarContent() {
                     <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone02.png" alt="Mordar Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Tombstonemaster.jpg" alt="Mordar Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Tombstonemaster_78.webp" alt="Mordar Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>

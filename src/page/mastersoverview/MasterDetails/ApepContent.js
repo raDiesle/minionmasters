@@ -29,13 +29,15 @@ export default function ApepContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_Gift.jpg" alt="apep gift"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_Gift_78.webp" alt="apep gift"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_ShieldTotem.jpg" alt="apep shieldtotem"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_ShieldTotem_78.webp"
+                                                    alt="apep shieldtotem"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_GreaterGift.jpg" alt="apep greatergift"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_GreaterGift_78.webp"
+                                                    alt="apep greatergift"/>
                 </Tab>
             </TabList>
             <TabPanel>

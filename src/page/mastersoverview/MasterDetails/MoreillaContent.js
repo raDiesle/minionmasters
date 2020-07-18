@@ -40,13 +40,13 @@ export default function MoreillaContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk1.jpg" alt="Diona Perk1"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk1_78.webp" alt="Diona Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk2.jpg" alt="Diona Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk2_78.webp" alt="Diona Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk3.jpg" alt="Diona Perk3"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk3_78.webp" alt="Diona Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>

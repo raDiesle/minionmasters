@@ -30,7 +30,7 @@ export default function KingPuffContent() {
                     <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_TrickSwap.png" alt="KingPuff Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_Inspire.jpg" alt="KingPuff Perk2"/>
+                    <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_Inspire_78.webp" alt="KingPuff Perk2"/>
                 </Tab>
                 <Tab>
                     <MasterAbilityImageRoundedStyle src="generated/img/KingPuff_BridgeShield.png" alt="KingPuff Perk3"/>
