@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import styled from "styled-components";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
@@ -19,14 +19,55 @@ const DeckOptionsStyle = styled.div`
 
 `;
 
-export default function CardDeckContainer({
-                                              selectedCardEvent,
-                                              setSelectedCardEvent,
-                                              selectedHero,
-                                              setSelectedHero,
-                                              setShowDeck,
-                                              setSelectedTabIndex
-                                          }) {
+
+const usePreviousValue = value => {
+    const ref = useRef();
+    useEffect(() => {
+        ref.current = value;
+    });
+    return ref.current;
+};
+
+
+const useTraceableState = initialValue => {
+    const [value, setValue] = useState(initialValue);
+    const prevValue = usePreviousValue(value);
+    return [prevValue, value, setValue];
+};
+
+
+const FiltersWithCardsMemo = ({setSelectedCardEvent}) => useMemo(() => {
+    const cardActionWrapper = (card) =>
+        <>
+            <CardActionAddCardToDeck
+                onClick={() => {
+                    setSelectedCardEvent({
+                        eventId: Math.random(),
+                        card: {
+                            iD: card.iD
+                        }
+                    });
+                }}
+                card={card}
+            />
+            <InfoDetailsCardOverlay card={card}/>
+        </>;
+
+    return <FiltersWithCards cardActionWrapper={cardActionWrapper}/>;
+}, []);
+
+export default function DeckContainer() {
+
+    const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+    const [selectedHero, setSelectedHero] = useState("");
+
+    const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
+        eventId: 0,
+        card: {
+            iD: IDENTIFIER_FOR_EMPTY_SLOT
+        }
+    });
+
 
     const Slots = [...Array(10).keys()];
     const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
@@ -38,7 +79,6 @@ export default function CardDeckContainer({
             count: 0
         }
     }));
-
 
     return (
         <div>
@@ -53,7 +93,8 @@ export default function CardDeckContainer({
                       setSelectedTabIndex={setSelectedTabIndex}
             />
 
-            <Tabs style={{paddingTop: "20px"}}>
+            <Tabs style={{paddingTop: "20px"}} selectedIndex={selectedTabIndex}
+                  onSelect={tabIndex => setSelectedTabIndex(tabIndex)}>
                 <TabList>
                     <Tab>Select cards</Tab>
                     <Tab>Select master</Tab>
@@ -62,22 +103,7 @@ export default function CardDeckContainer({
                     <Tab>Export</Tab>
                 </TabList>
                 <TabPanel>
-                    <FiltersWithCards cardActionWrapper={(card) =>
-                        <>
-                            <CardActionAddCardToDeck
-                                onClick={() => {
-                                    setSelectedCardEvent({
-                                        eventId: Math.random(),
-                                        card: {
-                                            iD: card.iD
-                                        }
-                                    });
-                                }}
-                                card={card}
-                            />
-                            <InfoDetailsCardOverlay card={card}/>
-                        </>
-                    }/>
+                    <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent}/>
                 </TabPanel>
                 <TabPanel>
                     <Masters actionRegistrationComponent={(selectedHeroKey) =>
@@ -93,7 +119,7 @@ export default function CardDeckContainer({
 
                 <TabPanel>
                     <DeckOptionsStyle>
-                        <ImportFromGame setShowDeck={setShowDeck}
+                        <ImportFromGame setShowDeck={true}
                                         setSelectedCardEvent={setSelectedCardEvent}
                                         setLastSelectedCards={setLastSelectedCards}
                                         setSelectedHero={setSelectedHero}

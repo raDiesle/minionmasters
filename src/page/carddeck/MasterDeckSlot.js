@@ -33,7 +33,7 @@ const MasterPlaceholder = styled.div`
     flex-wrap: wrap;
     text-align: center;
     padding: 20% 15%;  
-    cursor: default;
+    cursor: pointer;
     text-decoration: none; 
      
       @media (max-width: 767px) {
@@ -68,7 +68,7 @@ export default function MasterDeckSlot({selectedHero, setSelectedHero, setSelect
             {
                 selectedHero ?
                     <Master isMastersSelection={false} masterKey={selectedHero} setSelectedHero={setSelectedHero}/>
-                    : <MasterPlaceholder href="#mastersview" onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}>
+                    : <MasterPlaceholder onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}>
                         Select Master
                     </MasterPlaceholder>}
         </MasterContentStyle>
