@@ -18,6 +18,13 @@
   }
 }
 
+.IMG {
+  width: 78px;
+  @media (max-width: 767px) {
+    width: 48px;
+  }
+}
+
 .CardContainerStyleFullWidth {
   &:hover {
     border-color: yellow;

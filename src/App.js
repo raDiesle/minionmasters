@@ -1,3 +1,4 @@
+import Footer from "Footer";
 import React from "react";
 import Modal from 'react-modal';
 import {BrowserRouter} from "react-router-dom";
@@ -37,12 +38,6 @@ const PageHeaderStyle = styled.h1`
     font-size: 100%;
 `;
 
-const SubheaderLinkStyle = styled.a`
-  font-size: 100%;
-  line-height: 1;
-  padding-left: 5px;
-`;
-
 const CapitalLetterStyle = styled.span`
   font-weight: 700;
 `;
@@ -52,20 +47,21 @@ const App = () => {
     Modal.setAppElement('body');
 
     return (
-        <div>
-            <Header>
-                <PageHeaderStyle>
-                    <CapitalLetterStyle>M</CapitalLetterStyle>inion <CapitalLetterStyle>M</CapitalLetterStyle>asters <CapitalLetterStyle>M</CapitalLetterStyle>anager
-                </PageHeaderStyle>
-                <LoginLogout/>
-            </Header>
+        <div style={{position: "relative", minHeight: "100vh"}}>
+            <div style={{paddingBottom: "20px"}}>
+                <Header>
+                    <PageHeaderStyle>
+                        <CapitalLetterStyle>M</CapitalLetterStyle>inion <CapitalLetterStyle>M</CapitalLetterStyle>asters <CapitalLetterStyle>M</CapitalLetterStyle>anager
+                    </PageHeaderStyle>
+                    <LoginLogout/>
+                </Header>
 
-            <BrowserRouter>
-                <Page/>
-            </BrowserRouter>
-            <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
-                Ideas for new features?
-            </SubheaderLinkStyle>
+                <BrowserRouter>
+                    <Page/>
+                </BrowserRouter>
+            </div>
+            <Footer/>
+
         </div>
     );
 };

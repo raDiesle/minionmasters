@@ -15,18 +15,31 @@ export function ImportFromUrl({setLastSelectedCards, setSelectedHero}) {
         }
 
         let selectediDsFromUrl = urlParams.iD;
+
         if (selectediDsFromUrl && !Array.isArray(selectediDsFromUrl)) {
             selectediDsFromUrl = [selectediDsFromUrl];
         }
         if (!selectediDsFromUrl || selectediDsFromUrl.size === 0) {
             return;
         }
-        const selectediDsNormalized = selectediDsFromUrl ? selectediDsFromUrl.map(iD => parseInt(iD)) : [];
-        const prefillSelectedCardsWithData = selectediDsNormalized.map(selectediD => {
+
+        var iDsWithOccurenceMap = {};
+        selectediDsFromUrl.forEach(function (v) {
+            if (iDsWithOccurenceMap[v]) iDsWithOccurenceMap[v]++;
+            else iDsWithOccurenceMap[v] = 1;
+        });
+
+        const selectediDsNormalized = selectediDsFromUrl ? Object.keys(iDsWithOccurenceMap).map(key => ({
+            iD: parseInt(key),
+            count: iDsWithOccurenceMap[key]
+        })) : [];
+        const prefillSelectedCardsWithData = selectediDsNormalized.map(({iD: selectediD, count}) => {
             const selectedCardData = allCardsData.find(({iD}) => selectediD === parseInt(iD));
-            return typeof selectedCardData === 'undefined' ? {iD: IDENTIFIER_FOR_EMPTY_SLOT} : selectedCardData;
-        }).map(card => {
-            return {eventId: 0, card}
+            return ({
+                card: typeof selectedCardData === 'undefined' ? {iD: IDENTIFIER_FOR_EMPTY_SLOT} : selectedCardData,
+                count,
+                eventId: 0
+            });
         });
 
         setLastSelectedCards((initialSelectedCards) => {

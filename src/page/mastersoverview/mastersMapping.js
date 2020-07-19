@@ -15,46 +15,57 @@ import VolcoContent from "./MasterDetails/VolcoContent";
 export const mastersMapping = {
     "Apep": {
         content: <ApepContent/>,
-        icon: "Apep_Portrait"
+        icon: "Apep_Portrait",
+        iD: 6
     },
     "Diona": {
         content: <DionaContent/>,
-        icon: "Avatar_Diona"
+        icon: "Avatar_Diona",
+        iD: 10
     },
     "King Puff": {
         content: <KingPuffContent/>,
-        icon: "Puff_Icon"
+        icon: "Puff_Icon",
+        iD: 5
     },
     "Milloween": {
         content: <MilloweenContent/>,
-        icon: "Milloween_Icon"
+        icon: "Milloween_Icon",
+        iD: 8
     },
     "Mordar": {
         content: <MordarContent/>,
-        icon: "Mordar_Icon"
+        icon: "Mordar_Icon",
+        iD: 2
     },
     "Morellia": {
         content: <MoreillaContent/>,
-        icon: "LichQueen_Portrait"
+        icon: "LichQueen_Portrait",
+        iD: 11
     },
     "Ratbo": {
         content: <RatboContent/>,
-        icon: "Ratbo_Icon"
+        icon: "Ratbo_Icon",
+        iD: 4
     },
     "Ravanger": {
         content: <RavangerContent/>,
-        icon: "Ravager_Icon"
+        icon: "Ravager_Icon",
+        iD: 3
     },
     "Settsu": {
         content: <SettsuContent/>,
-        icon: "Settsu_Icon"
+        icon: "Settsu_Icon",
+        iD: 7
     },
     "Stormbringer": {
         content: <StormbringerContent/>,
-        icon: "Storm_Icon"
+        icon: "Storm_Icon",
+        iD: 0
     },
     "Volco": {
         content: <VolcoContent/>,
-        icon: "Volco_Icon"
+        icon: "Volco_Icon",
+        iD: 1
     }
 };

@@ -1,0 +1,27 @@
+
+.ButtonInGroupStyle {
+
+  background-color: #444;
+  display: flex;
+  align-items: center;
+
+  &:disabled {
+    background-color: grey;
+  }
+
+  cursor: pointer;
+  border: 1px solid #111;
+
+  &:hover {
+    border-color: yellow;
+  }
+
+  &:focus {
+    outline: none;
+    // background-color: #375a7f;
+  }
+}
+
+.fixedWidth {
+  width: 170px;
+}

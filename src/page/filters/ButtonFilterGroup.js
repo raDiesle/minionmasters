@@ -81,9 +81,9 @@ function ButtonFilterGroup({children, btnkey, filters, setFilters, isShowTooltip
                         {content}
                     </Tooltip>
                     :
-                    <>
+                    <React.Fragment key={position}>
                         {content}
-                    </>;
+                    </React.Fragment>;
             }
         )}
     </ButtonGroupStyle>
