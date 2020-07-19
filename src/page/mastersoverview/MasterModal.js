@@ -27,9 +27,8 @@ export const MasterAbilitySubHeader = styled.div`
 `;
 
 export const MasterAbilityUnlocksHeaderStyle = styled.div`
-  font-size: 1.0rem;
+  font-size: 16px;
 `;
-
 
 export const MasterAbilityDescriptionStyle = styled.div`
   font-size: 0.9rem;

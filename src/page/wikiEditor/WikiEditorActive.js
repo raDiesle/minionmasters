@@ -1,13 +1,13 @@
+import firebase from '@firebase/app';
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
 import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
 import {faPlus} from "@fortawesome/free-solid-svg-icons/faPlus";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import * as firebase from "firebase";
 import React, {useEffect, useRef, useState} from "react";
+
 import {toast} from "react-toastify";
 import styled from "styled-components";
 import {auth, dbErrorHandlerPromise} from "../../firestore";
-
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
 
 import TextareaEditor from "./textarea-editor";

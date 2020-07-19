@@ -1,5 +1,6 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Tooltip from "rc-tooltip/es";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {
@@ -29,15 +30,33 @@ export default function ApepContent() {
                     <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_Gift_78.webp" alt="apep gift"/>
+                    <Tooltip placement="topRight"
+                             overlay={<MasterAbilityUnlocksHeaderStyle>
+                                 <FontAwesomeIcon icon={faUnlock}/> 20XP
+                             </MasterAbilityUnlocksHeaderStyle>}
+                    >
+                        <MasterAbilityImageRoundedStyle src="generated/img/Apep_Gift_78.webp" alt="apep gift"/>
+                    </Tooltip>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_ShieldTotem_78.webp"
-                                                    alt="apep shieldtotem"/>
+                    <Tooltip placement="topRight"
+                             overlay={<MasterAbilityUnlocksHeaderStyle>
+                                 <FontAwesomeIcon icon={faUnlock}/> 60XP
+                             </MasterAbilityUnlocksHeaderStyle>}
+                    >
+                        <MasterAbilityImageRoundedStyle src="generated/img/Apep_ShieldTotem_78.webp"
+                                                        alt="apep shieldtotem"/>
+                    </Tooltip>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Apep_GreaterGift_78.webp"
-                                                    alt="apep greatergift"/>
+                    <Tooltip placement="topRight"
+                             overlay={<MasterAbilityUnlocksHeaderStyle>
+                                 <FontAwesomeIcon icon={faUnlock}/> 120XP
+                             </MasterAbilityUnlocksHeaderStyle>}
+                    >
+                        <MasterAbilityImageRoundedStyle src="generated/img/Apep_GreaterGift_78.webp"
+                                                        alt="apep greatergift"/>
+                    </Tooltip>
                 </Tab>
             </TabList>
             <TabPanel>

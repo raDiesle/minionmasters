@@ -1,10 +1,9 @@
-import * as firebase from "firebase";
+import firebase from '@firebase/app';
 import React, {useState} from "react";
 import {toast} from "react-toastify";
 import styled from "styled-components";
 import {db, dbErrorHandlerPromise} from "../../../firestore";
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
-
 
 const InputGroupStyle = styled.div`
   display: flex;
@@ -21,7 +20,6 @@ export default function SaveDeckToDb({relevantCards, selectedHero}) {
 
     const handleSaveButton = () => {
         const cardIds = relevantCards.map(({iD}) => iD);
-
 
         dbRef.add({
             deckname,

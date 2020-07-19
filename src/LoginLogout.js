@@ -1,19 +1,18 @@
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 import {faSignInAlt} from "@fortawesome/free-solid-svg-icons/faSignInAlt";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import * as firebase from "firebase";
 import React, {useState} from "react";
+
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import {auth, firebaseApp} from "./firestore";
-
+import {auth as authInstance} from "./firestore";
 
 export default function LoginLogout() {
     const [isLoginModalShown, setIsLoginModalShown] = useState(false);
 
     const logout = () => {
-        auth.signOut().then(function () {
+        authInstance.signOut().then(function () {
             // Sign-out successful.
         }).catch(function (error) {
             // An error happened.
@@ -26,7 +25,7 @@ export default function LoginLogout() {
         // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
         signInSuccessUrl: '/',
         signInOptions: [
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            "google.com" //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
             //    firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
         callbacks: {
@@ -57,7 +56,7 @@ export default function LoginLogout() {
 
     return (
         <div>
-            {firebase.auth().currentUser ?
+            {authInstance.currentUser ?
                 <div onClick={logout}>Logout</div>
                 :
                 <>
@@ -74,7 +73,7 @@ export default function LoginLogout() {
                         <ModalCloseStyle><FontAwesomeIcon icon={faTimesCircle} size={"2x"}
                                                           onClick={() => setIsLoginModalShown(false)}/>
                         </ModalCloseStyle>
-                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()}/>
+                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={authInstance}/>
                     </ReactModal>
                 </>
             }

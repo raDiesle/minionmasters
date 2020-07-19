@@ -7,10 +7,13 @@ const AnalysisDataStyle = styled.div`
 
 export default function AnalysisData({cards}) {
 
-    const avgMana = cards.reduce((accumulator, currentValue) => {
-        return (accumulator + currentValue.manacost) / cards.length;
+    const totalMana = cards.reduce((accumulator, currentValue) => {
+        return (accumulator + currentValue.manacost);
     }, 0);
 
+    const numberOfCardsConsideringWildcards = cards.length; // TODO
+
+    const avgMana = (totalMana / numberOfCardsConsideringWildcards * 10) / 10;
     return (
         <AnalysisDataStyle>
             Average Mana : {avgMana}
