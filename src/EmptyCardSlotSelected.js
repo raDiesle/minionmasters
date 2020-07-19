@@ -16,7 +16,11 @@ export default function EmptyCardSlotSelected({children, onClick}) {
     margin-top: 2px;
     text-align: center;
     text-decoration: none;
-    cursor: default;
+    cursor: pointer;
+    
+    &:hover {
+      border: 1px solid yellow;
+    }
     
   @media (max-width: 767px) {
       font-size: 9px;

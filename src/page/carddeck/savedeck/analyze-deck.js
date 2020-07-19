@@ -5,9 +5,7 @@ import AnalysisData from "./analysis-data";
 
 export default function AnalyzeDeck({relevantCards, selectedHero}) {
 
-
     const maxNumberOfCards = 10;
-
 
     return (
         <div>

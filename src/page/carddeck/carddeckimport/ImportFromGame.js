@@ -1,16 +1,14 @@
-/* eslint-disable no-unused-vars */
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {IDENTIFIER_FOR_EMPTY_SLOT} from "page/carddeck/DeckContainer";
-import React, {useState} from "react";
+import css from "page/carddeck/Guide.module.scss";
+import React from "react";
 import {toast} from "react-toastify";
 import styled from "styled-components";
 import cardData from "../../../generated/jobCardProps";
 import {ButtonGroupStyle, ButtonInGroupStyle} from "../../filters/ButtonFilterGroup";
-import ImportFromGameModal from "./ImportFromGameModal";
 
 const CardeckPlaceholderStyle = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   & > * {
     padding-right: 10px;
@@ -37,7 +35,6 @@ const MissingCardMessage = (({nameExtracted}) => <>
 
 
 export default function ImportFromGame({setLastSelectedCards, setSelectedHero}) {
-    const [isOpenCopyInfo, setIsOpenCopyInfo] = useState(false);
 
 // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
     const handleCopyPasteFromGame = (event) => {
@@ -78,21 +75,33 @@ export default function ImportFromGame({setLastSelectedCards, setSelectedHero}) 
     return (
         <CardeckPlaceholderStyle>
             <div>
-                <div>Import from Game</div>
-                <ButtonGroupStyle>
-                    <ButtonInGroupStyle>
-                        <InputTextStyle value=""
-                                        placeholder="Paste here"
-                                        onInput={handleCopyPasteFromGame}
-                                        onChange={() => {
-                                        }}/>
-                    </ButtonInGroupStyle>
-                    <ButtonInGroupStyle onClick={() => setIsOpenCopyInfo(true)}>
-                        <FontAwesomeIcon icon={faInfoCircle}/>
-                    </ButtonInGroupStyle>
-                </ButtonGroupStyle>
+                <h3>Import from game</h3>
+                <ol className={css.olGuide}>
+                    <li>In game, select the deck and master you want to copy</li>
+                    <li>In Minionmasters chat type:
+                        <div>
+                            <code>/copydeck</code>
+                        </div>
+                    </li>
+                    <li>
+                        Focus:
+                        <ButtonGroupStyle>
+                            <ButtonInGroupStyle>
+                                <InputTextStyle value=""
+                                                placeholder="Paste here"
+                                                onInput={handleCopyPasteFromGame}
+                                                onChange={() => {
+                                                }}/>
+                            </ButtonInGroupStyle>
+                        </ButtonGroupStyle>
+
+                        <div>
+                            and press <code>CTRL+V</code> or <code>*Mouse right click* + Insert</code>
+                        </div>
+                    </li>
+                </ol>
             </div>
-            <ImportFromGameModal isOpenCopyInfo={isOpenCopyInfo} setIsOpenCopyInfo={setIsOpenCopyInfo}/>
+
         </CardeckPlaceholderStyle>
     );
 }
