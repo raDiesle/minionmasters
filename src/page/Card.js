@@ -1,10 +1,10 @@
 import {faCircle} from "@fortawesome/free-regular-svg-icons/faCircle";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
-import {is_touch_enabled} from "istouch";
+
 import {rarityMapping} from "rarity/rarityMapping";
-import Tooltip from "rc-tooltip/es";
-import React from "react";
+
+import React, {useState} from "react";
 import {targetsMapping} from "../attack/targetsMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 
@@ -14,11 +14,13 @@ import css from './Card.module.scss';
 
 //onClick to be removed and setter go here
 export function Card({children, card: {image, manacost, rarity, type, faction, targets, name}, isFullWidthClickable = false}) {
+    const [isTooltipVisible, setTooltipVisible] = useState(false);
+
     const IMG_FOLDER = "generated/img/";
     const FILE_ENDING = ".webp";
     const IMG_PATH = IMG_FOLDER + image;
 
-    const content = <div
+    return <div
         className={classnames(css.CardContainerStyle, isFullWidthClickable && css.CardContainerStyleFullWidth)}>
         <div className={css.CardContentStyle}>
             <img src={`${IMG_PATH}_78${FILE_ENDING}`} alt={image}/>
@@ -38,14 +40,5 @@ export function Card({children, card: {image, manacost, rarity, type, faction, t
             </>}
             {children}
         </div>
-    </div>;
-
-    return !is_touch_enabled ?
-        <Tooltip placement="top" overlay={<span>{name}</span>}>
-            {content}
-        </Tooltip>
-        :
-        <div>
-            {content}
-        </div>;
+    </div>
 }
