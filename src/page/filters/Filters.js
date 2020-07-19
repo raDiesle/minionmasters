@@ -97,7 +97,8 @@ export function Filters({filters, setFilters, isShowNames, setIsShowNames, sortB
 
         <div style={{paddingRight: 0}}>
             Manacost
-            <ButtonFilterGroup btnkey="manacost" filters={filters.manacost} setFilters={setFilters}>
+            <ButtonFilterGroup btnkey="manacost" filters={filters.manacost} setFilters={setFilters}
+                               isShowTooltip={false}>
                 {MANACOST.map((number) => <div key={number}>{number}</div>)}
             </ButtonFilterGroup>
         </div>

@@ -10,12 +10,7 @@
     {
       "src": "MinionMasters_Logo.webp",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "MinionMasters_Logo.webp",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "78x46"
     }
   ],
   "start_url": ".",
