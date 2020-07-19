@@ -49,13 +49,19 @@ const MasterPlaceholder = styled.div`
       top: 0px;
       left: 0px;
       border-radius: 50%;
-      animation: spin 10s linear infinite;  
-}
-
-@keyframes spin { 
-  100% { 
-    transform: rotateZ(360deg); 
+      animation: spin 10s linear infinite;
+      
   }
+  
+  :hover::before {
+    border-color: yellow;
+  }
+
+
+    @keyframes spin { 
+      100% { 
+        transform: rotateZ(360deg); 
+    }
 }
 `;
 

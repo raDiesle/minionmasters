@@ -87,3 +87,8 @@ figure {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+code {
+    background-color: black;
+    padding: 3px;
+}

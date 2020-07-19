@@ -3,6 +3,7 @@ import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import {IDENTIFIER_FOR_EMPTY_SLOT} from "page/carddeck/DeckContainer";
+
 import css from "page/filters/ButtonFilterGroup.module.scss";
 import {mastersMapping} from "page/mastersoverview/mastersMapping";
 import React from "react";
@@ -12,6 +13,7 @@ import {FacebookIcon, FacebookShareButton} from "react-share";
 import {toast} from "react-toastify";
 import styled from "styled-components";
 import {ButtonGroupStyle} from "../filters/ButtonFilterGroup";
+import cssGuide from "./Guide.module.scss";
 
 const ExportStyle = styled.div`
   display: flex;
@@ -46,7 +48,7 @@ export default function ExportActions({lastSelectedCards, selectedHero}) {
 
 // Export to game
     const cardsToGameString = `${lastSelectedCards.filter(({card: {iD}}) => iD !== IDENTIFIER_FOR_EMPTY_SLOT).map(({card: {iD}}) => iD).join(" ")}`;
-    const cardShareWithGame = `/setdeck ${mastersMapping[selectedHero].iD}} ${cardsToGameString}`;
+    const cardShareWithGame = `/setdeck ${mastersMapping[selectedHero].iD} ${cardsToGameString}`;
 
     return (
         <div>
@@ -83,9 +85,9 @@ export default function ExportActions({lastSelectedCards, selectedHero}) {
                 <ExportInGameStyleContainer>
 
                     <div>
-                        <h4>How to export current deck to Minionmasters game</h4>
-                        <ol>
-                            <li>Press
+                        <h3>Minionmasters Game</h3>
+                        <ol className={cssGuide.olGuide}>
+                            <li>Press:
                                 <ButtonGroupStyle>
                                     <CopyToClipboard
                                         text={cardShareWithGame}
@@ -95,16 +97,16 @@ export default function ExportActions({lastSelectedCards, selectedHero}) {
                                         title="Export for game"
                                     >
                                         <button className={classnames(css.ButtonInGroupStyle)}
-                                                style={{width: `${170 - 30}px`}}
+                                                style={{width: `${315}px`, paddingLeft: "20px", lineHeight: "1.5"}}
                                         >
-                                            Export to game
+                                            Export-command for game copy-button
                                         </button>
                                     </CopyToClipboard>
                                 </ButtonGroupStyle>
                             </li>
                             <li>Open Minionmasters game & select deck slot to replace with</li>
-                            <li>Select chat and STRG+V to insert</li>
-                            <li>Press ENTER to send command to chat</li>
+                            <li>Select chat and <code>STRG+V</code> to insert</li>
+                            <li>Press <code>ENTER</code> to send command to chat</li>
                         </ol>
                     </div>
                 </ExportInGameStyleContainer>
