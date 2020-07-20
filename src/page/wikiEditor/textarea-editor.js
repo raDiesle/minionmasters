@@ -1,3 +1,4 @@
+import {SEPARATOR, TYPE_CARD, TYPE_MASTER} from "page/wikiEditor/mention-config";
 import React, {useLayoutEffect} from "react";
 import {Mention, MentionsInput} from "react-mentions";
 
@@ -6,19 +7,22 @@ import styled from "styled-components";
 import cardData from "../../generated/jobCardProps";
 import {mastersMapping} from "../mastersoverview/mastersMapping";
 import defaultMentionStyle from './defaultMentionStyle';
-
 import defaultStyle from './defaultStyle'
 
-const heros = Object.keys(mastersMapping).map(key => ({
-    id: key,
-    display: key,
-    image: mastersMapping[key].icon
+const heros = Object.keys(mastersMapping).map(name => ({
+    id: TYPE_MASTER + SEPARATOR + mastersMapping[name].iD,
+    display: name,
+    image: mastersMapping[name].icon
 }));
-const mentions = [...heros, ...cardData.map(({name, image}) => ({id: name, display: name, image}))];
+
+const mentions = [...heros, ...cardData.map(({name, image, iD}) => ({
+    id: TYPE_CARD + SEPARATOR + iD,
+    display: name,
+    image
+}))];
 
 const EditorStyle = styled.div`
   //border: 1px dotted grey;
-
 
   max-width: 600px;
   ${({isEditable}) => isEditable &&
@@ -56,7 +60,6 @@ const EditorStyle = styled.div`
 
 export default function TextareaEditor({value, setValue, isDisabledInput, placeholder = null, editorRef}) {
 
-
     useLayoutEffect(() => {
         editorRef.current.focus();
     }, []);
@@ -65,13 +68,14 @@ export default function TextareaEditor({value, setValue, isDisabledInput, placeh
         setValue(val.target.value);
     };
 
-    const renderUserSuggestion = ({image, display}) => {
+    const renderSuggestion = ({image, display}, entry, search, highlightedDisplay, index, focused) => {
         const IMG_FOLDER = "generated/img/";
         const FILE_ENDING = ".webp";
         const WIDTH = "_78";
         const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
 
-        return <div><img src={IMG_PATH} style={{width: "25px", paddingRight: "5px"}}/>{display}
+        return <div>
+            <img src={IMG_PATH} style={{width: "25px", paddingRight: "5px"}}/>{display}
         </div>;
     };
 
@@ -87,11 +91,9 @@ export default function TextareaEditor({value, setValue, isDisabledInput, placeh
             <Mention
                 trigger="@"
                 data={mentions}
-                renderSuggestion={renderUserSuggestion}
+                renderSuggestion={renderSuggestion}
                 style={defaultMentionStyle}
             />
         </MentionsInput>
-
     </EditorStyle>;
-
 }

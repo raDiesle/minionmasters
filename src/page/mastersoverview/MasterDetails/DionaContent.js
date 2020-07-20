@@ -1,23 +1,14 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import React from 'react';
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    AbilityUlStyle,
-    MasterAbilityDescriptionStyle,
-    MasterAbilityHeaderStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilitySubHeader,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from "../MasterModal";
 import IconDamage from "./icon-damage.png";
 
 export default function DionaContent() {
     return <div>
-        <MasterHeaderStyle>Diona</MasterHeaderStyle>
-        <MasterAbilityDescriptionStyle>
+        <h3 className={css.MasterHeaderStyle}>Diona</h3>
+        <div className={css.MasterAbilityDescriptionStyle}>
             The Witch Hunter Diona uses a variety of traps to deal with any threat. Her trusty sidekick Ruffles fetches
             useful items from the battlefield for his master.
             <div>
@@ -25,25 +16,28 @@ export default function DionaContent() {
                     the
                     Pinewood</a>
             </div>
-        </MasterAbilityDescriptionStyle>
+        </div>
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk1_78.webp" alt="Diona Perk1"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Diona_Perk1_78.webp"
+                         alt="Diona Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk2_78.webp" alt="Diona Perk2"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Diona_Perk2_78.webp"
+                         alt="Diona Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Diona_Perk3_78.webp" alt="Diona Perk3"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Diona_Perk3_78.webp"
+                         alt="Diona Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>
-                <AbilityUlStyle>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         20 damage every 1 sec
                     </li>
@@ -53,12 +47,12 @@ export default function DionaContent() {
                     <li>
                         Lays a Bear Trap every 20 sec.
                     </li>
-                </AbilityUlStyle>
+                </ul>
 
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Bear Trap
-                </MasterAbilityHeaderStyle>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Roots a unit in place for 4 seconds
                     </li>
@@ -68,23 +62,23 @@ export default function DionaContent() {
                     <li>
                         Lasts 15 sec.
                     </li>
-                </AbilityUlStyle>
+                </ul>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Art of the Hunt
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add a Trap card to Diona's deck.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     The card alternates between Crossbow Trap and Decoy Trap with each draw.
-                </MasterAbilityDescriptionStyle>
+                </div>
 
-                <MasterAbilitySubHeader>
+                <div className={css.MasterAbilitySubHeader}>
                     Crossbow Trap
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Stealth. Fires bolts at nearby minions.
                     </li>
@@ -100,11 +94,11 @@ export default function DionaContent() {
                     <li>
                         When used, this card becomes a Decoy Trap
                     </li>
-                </AbilityUlStyle>
-                <MasterAbilitySubHeader>
+                </ul>
+                <div className={css.MasterAbilitySubHeader}>
                     Decoy Trap
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Taunts nearby minions
                     </li>
@@ -117,22 +111,22 @@ export default function DionaContent() {
                     <li>
                         When used, this card becomes a Crossbow Trap
                     </li>
-                </AbilityUlStyle>
+                </ul>
 
-                <MasterAbilityUnlocksHeaderStyle>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Fetch!
-                </MasterAbilityHeaderStyle>
+                </div>
 
-                <MasterAbilityDescriptionStyle>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Every 10 sec, Ruffles will run to a killed enemy Minion and dig up a prize.
-                </MasterAbilityDescriptionStyle>
+                </div>
                 Prizes:
-                <AbilityUlStyle>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         2 Mana
                     </li>
@@ -142,22 +136,22 @@ export default function DionaContent() {
                     <li>
                         250 Master Health
                     </li>
-                    <MasterAbilityUnlocksHeaderStyle>
+                    <div className={css.MasterAbilityUnlocksHeaderStyle}>
                         <FontAwesomeIcon icon={faUnlock}/> 60XP
-                    </MasterAbilityUnlocksHeaderStyle>
-                </AbilityUlStyle>
+                    </div>
+                </ul>
 
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Thrill of the Hunt
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add another Trap card to Diona's deck.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
         </Tabs>
 

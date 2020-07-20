@@ -1,69 +1,63 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import Tooltip from "rc-tooltip/es";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    AbilityUlStyle,
-    MasterAbilityDescriptionStyle,
-    MasterAbilityHeaderStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from '../MasterModal';
+
 import IconDamage from "./icon-damage.png";
 
 export default function ApepContent() {
 
     return <div>
-        <MasterHeaderStyle>Apep</MasterHeaderStyle>
+        <h3 className={css.MasterHeaderStyle}>Apep</h3>
 
-        <MasterAbilityDescriptionStyle>
+        <div className={css.MasterAbilityDescriptionStyle}>
             Apep, the mighty Slither God gifts you with random Minions and spits powerful acid at all minions that dare
             approach. His worshippers power the Shield Totem that makes him immune to damage.
-        </MasterAbilityDescriptionStyle>
+        </div>
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
                     <Tooltip placement="topRight"
-                             overlay={<MasterAbilityUnlocksHeaderStyle>
+                             overlay={<div className={css.MasterAbilityUnlocksHeaderStyle}>
                                  <FontAwesomeIcon icon={faUnlock}/> 20XP
-                             </MasterAbilityUnlocksHeaderStyle>}
+                             </div>}
                     >
-                        <MasterAbilityImageRoundedStyle src="generated/img/Apep_Gift_78.webp" alt="apep gift"/>
+                        <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Apep_Gift_78.webp"
+                             alt="apep gift"/>
                     </Tooltip>
                 </Tab>
                 <Tab>
                     <Tooltip placement="topRight"
-                             overlay={<MasterAbilityUnlocksHeaderStyle>
+                             overlay={<div className={css.MasterAbilityUnlocksHeaderStyle}>
                                  <FontAwesomeIcon icon={faUnlock}/> 60XP
-                             </MasterAbilityUnlocksHeaderStyle>}
+                             </div>}
                     >
-                        <MasterAbilityImageRoundedStyle src="generated/img/Apep_ShieldTotem_78.webp"
-                                                        alt="apep shieldtotem"/>
+                        <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Apep_ShieldTotem_78.webp"
+                             alt="apep shieldtotem"/>
                     </Tooltip>
                 </Tab>
                 <Tab>
                     <Tooltip placement="topRight"
-                             overlay={<MasterAbilityUnlocksHeaderStyle>
+                             overlay={<div className={css.MasterAbilityUnlocksHeaderStyle}>
                                  <FontAwesomeIcon icon={faUnlock}/> 120XP
-                             </MasterAbilityUnlocksHeaderStyle>}
+                             </div>}
                     >
-                        <MasterAbilityImageRoundedStyle src="generated/img/Apep_GreaterGift_78.webp"
-                                                        alt="apep greatergift"/>
+                        <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Apep_GreaterGift_78.webp"
+                             alt="apep greatergift"/>
                     </Tooltip>
                 </Tab>
             </TabList>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Basic Attack
-                </MasterAbilityHeaderStyle>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         30 damage every 2.5 sec.
                     </li>
@@ -73,42 +67,42 @@ export default function ApepContent() {
                     <li>
                         For each card that costs 5 or more in his hand, Apep gains +35% attack speed.
                     </li>
-                </AbilityUlStyle>
+                </ul>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Gift of the Serpent
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Put a random 2 mana Minion or Building card in Apep's deck and reduce its mana cost by 2.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
 
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Shield Totem
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add the card Shield Totem to Apep's deck.
                     Summon a Shield Totem that makes the Master Tower immune to damage as long as it is alive.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 60XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Greater Gift of the Serpent God
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Put a random 4 mana Minion or Building card in APep's deck and reduce its mana cost by 4.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
         </Tabs>
 

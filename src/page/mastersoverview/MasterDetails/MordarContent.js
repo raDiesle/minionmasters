@@ -1,96 +1,91 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    AbilityUlStyle,
-    MasterAbilityDescriptionStyle,
-    MasterAbilityHeaderStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from "../MasterModal";
 import IconDamage from "./icon-damage.png";
 
 export default function MordarContent() {
     return <div>
-        <MasterHeaderStyle>
+        <h3 className={css.MasterHeaderStyle}>
             Mordar
-        </MasterHeaderStyle>
+        </h3>
 
-        <MasterAbilityDescriptionStyle>
+        <div className={css.MasterAbilityDescriptionStyle}>
             Mordar uses his tombstones to raise the dead and his staff to slowly kill all attacking minions.
-        </MasterAbilityDescriptionStyle>
+        </div>
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone_78.webp" alt="Mordar Perk1"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Mordar_Tombstone_78.webp"
+                         alt="Mordar Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Mordar_Tombstone02_78.webp" alt="Mordar Perk2"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Mordar_Tombstone02_78.webp"
+                         alt="Mordar Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Tombstonemaster_78.webp" alt="Mordar Perk3"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Tombstonemaster_78.webp"
+                         alt="Mordar Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Basic Attack
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Deals 10 damage to all enemies on his side of the arena.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     They attack faster and faster ( from every 4 sec to 1 sec).
-                </MasterAbilityDescriptionStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Tombstone
-                </MasterAbilityHeaderStyle>
+                </div>
 
-                <MasterAbilityDescriptionStyle>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add the card Tombstone to Mordar's deck.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     A tombstone with 400 health that activates after 10 seconds and resurrecting the next friendly
                     minion that dies.
 
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Another Tombstone
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add another Tombstone card to Mordar's deck.
-                </MasterAbilityDescriptionStyle>
+                </div>
 
-                <MasterAbilityDescriptionStyle>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     A tombstone with 400 health that activates after 10 seconds and resurrecting the next friendly
                     minion that dies.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 60XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
 
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Vengeful Dead
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     All minions raised by a Tombstone gain Haste
-                </MasterAbilityDescriptionStyle>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         50% Movement speed.
                     </li>
@@ -100,10 +95,10 @@ export default function MordarContent() {
                     <li>
                         Removes Slow.
                     </li>
-                </AbilityUlStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </ul>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
 
         </Tabs>
