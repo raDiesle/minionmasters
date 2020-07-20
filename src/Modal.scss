@@ -1,5 +1,4 @@
 .modalContentStyle {
-
   $yPadding: 200px;
   margin-left: auto;
   margin-right: auto;
@@ -13,8 +12,8 @@
   border: 1px solid #ccc;
   background: #222;
   overflow: auto;
-  WebkitOverflowScrolling: touch;
-  borderRadius: 4px;
+  webkitoverflowscrolling: touch;
+  borderradius: 4px;
   outline: none;
   padding: 20px;
 
@@ -33,5 +32,5 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.70)
+  background-color: rgba(0, 0, 0, 0.7);
 }

@@ -1,15 +1,14 @@
-import 'rc-tooltip/assets/bootstrap_white.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "rc-tooltip/assets/bootstrap_white.css";
+import React from "react";
+import ReactDOM from "react-dom";
 
+import "react-tabs/style/react-tabs.css";
+import "react-toastify/dist/ReactToastify.css";
+import App from "./App";
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
 
-import 'react-tabs/style/react-tabs.css';
-import 'react-toastify/dist/ReactToastify.css';
-import App from './App';
-import './index.css';
-import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

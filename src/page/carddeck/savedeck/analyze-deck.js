@@ -3,27 +3,26 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import AnalysisData from "./analysis-data";
 
-export default function AnalyzeDeck({relevantCards, selectedHero}) {
+export default function AnalyzeDeck({ relevantCards, selectedHero }) {
+  const maxNumberOfCards = 10;
 
-    const maxNumberOfCards = 10;
-
-    return (
+  return (
+    <div>
+      {relevantCards.length < maxNumberOfCards && (
         <div>
-            {relevantCards.length < maxNumberOfCards &&
-            <div>
-                <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
-                The deck is incomplete. Select the {maxNumberOfCards - relevantCards.length} empty slots.
-            </div>
-            }
-            {
-                !selectedHero &&
-                <div>
-                    <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
-                    The deck is incomplete. Select hero for the deck.
-                </div>
-            }
-
-            <AnalysisData cards={relevantCards}/>
+          <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />
+          The deck is incomplete. Select the{" "}
+          {maxNumberOfCards - relevantCards.length} empty slots.
         </div>
-    );
+      )}
+      {!selectedHero && (
+        <div>
+          <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />
+          The deck is incomplete. Select hero for the deck.
+        </div>
+      )}
+
+      <AnalysisData cards={relevantCards} />
+    </div>
+  );
 }

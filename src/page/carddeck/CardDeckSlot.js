@@ -5,49 +5,58 @@ import CardDeckSlotStyle from "../../CardDeckSlotStyle";
 import EmptyCardSlotSelected from "../../EmptyCardSlotSelected";
 import {Card} from "../Card";
 
-
 const EmptyCardSlotUnselectedStyle = styled.div`
-    width: 100%;
-    height: calc(100% + 2px);
-    margin-top: 1px;
-    border: 1px solid #fff;
+  width: 100%;
+  height: calc(100% + 2px);
+  margin-top: 1px;
+  border: 1px solid #fff;
 `;
 
 const WildcardOverlayStyle = styled.div`
-    position: absolute;
-    
-    top: 0;
-    right: 20px;
-    padding: 25px 0 0 10px;   
-    
-    font-size: 30px;
-    
-    color: rgba(255,255,255, 0.7);
-    font-weight: bolder;
-   
-    &:hover{
-      cursor: pointer;
-    }
+  position: absolute;
+
+  top: 0;
+  right: 20px;
+  padding: 25px 0 0 10px;
+
+  font-size: 30px;
+
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bolder;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-export function CardDeckSlot({lastSelectedCard: {count, card, card: {iD}}, isSelectedSlot, cardActionWrapper, setSelectedTabIndex}) {
+export function CardDeckSlot({
+  lastSelectedCard: {
+    count,
+    card,
+    card: { iD },
+  },
+  isSelectedSlot,
+  cardActionWrapper,
+  setSelectedTabIndex,
+}) {
+  let CARDS_TAB_INDEX = 0;
 
-    let CARDS_TAB_INDEX = 0;
-
-    return (
-        <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
-            {iD !== IDENTIFIER_FOR_EMPTY_SLOT ?
-                <Card card={card} isDeckCard showDeck>
-                    {cardActionWrapper(card)}
-                    {count > 1 && <WildcardOverlayStyle>x{count}</WildcardOverlayStyle>}
-                </Card> :
-                (isSelectedSlot ?
-                    <EmptyCardSlotSelected onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
-                        Select Card
-                    </EmptyCardSlotSelected> :
-                    <EmptyCardSlotUnselectedStyle>&nbsp;</EmptyCardSlotUnselectedStyle>)
-            }
-        </CardDeckSlotStyle>
-    );
-
+  return (
+    <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
+      {iD !== IDENTIFIER_FOR_EMPTY_SLOT ? (
+        <Card card={card} isDeckCard showDeck>
+          {cardActionWrapper(card)}
+          {count > 1 && <WildcardOverlayStyle>x{count}</WildcardOverlayStyle>}
+        </Card>
+      ) : isSelectedSlot ? (
+        <EmptyCardSlotSelected
+          onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}
+        >
+          Select Card
+        </EmptyCardSlotSelected>
+      ) : (
+        <EmptyCardSlotUnselectedStyle>&nbsp;</EmptyCardSlotUnselectedStyle>
+      )}
+    </CardDeckSlotStyle>
+  );
 }

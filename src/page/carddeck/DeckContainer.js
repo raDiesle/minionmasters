@@ -15,122 +15,134 @@ import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
 
 export const IDENTIFIER_FOR_EMPTY_SLOT = 999999;
 
-const DeckOptionsStyle = styled.div`
+const DeckOptionsStyle = styled.div``;
 
-`;
-
-
-const usePreviousValue = value => {
-    const ref = useRef();
-    useEffect(() => {
-        ref.current = value;
-    });
-    return ref.current;
+const usePreviousValue = (value) => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
 };
 
-
-const useTraceableState = initialValue => {
-    const [value, setValue] = useState(initialValue);
-    const prevValue = usePreviousValue(value);
-    return [prevValue, value, setValue];
+const useTraceableState = (initialValue) => {
+  const [value, setValue] = useState(initialValue);
+  const prevValue = usePreviousValue(value);
+  return [prevValue, value, setValue];
 };
 
+const FiltersWithCardsMemo = ({ setSelectedCardEvent }) =>
+  useMemo(() => {
+    const cardActionWrapper = (card) => (
+      <>
+        <CardActionAddCardToDeck
+          onClick={() => {
+            setSelectedCardEvent({
+              eventId: Math.random(),
+              card: {
+                iD: card.iD,
+              },
+            });
+          }}
+          card={card}
+        />
+        <InfoDetailsCardOverlay card={card} />
+      </>
+    );
 
-const FiltersWithCardsMemo = ({setSelectedCardEvent}) => useMemo(() => {
-    const cardActionWrapper = (card) =>
-        <>
-            <CardActionAddCardToDeck
-                onClick={() => {
-                    setSelectedCardEvent({
-                        eventId: Math.random(),
-                        card: {
-                            iD: card.iD
-                        }
-                    });
-                }}
-                card={card}
-            />
-            <InfoDetailsCardOverlay card={card}/>
-        </>;
-
-    return <FiltersWithCards cardActionWrapper={cardActionWrapper}/>;
-}, []);
+    return <FiltersWithCards cardActionWrapper={cardActionWrapper} />;
+  }, []);
 
 export default function DeckContainer() {
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [selectedHero, setSelectedHero] = useState("");
 
-    const [selectedTabIndex, setSelectedTabIndex] = useState(0);
-    const [selectedHero, setSelectedHero] = useState("");
+  const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
+    eventId: 0,
+    card: {
+      iD: IDENTIFIER_FOR_EMPTY_SLOT,
+    },
+  });
 
-    const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
+  const Slots = [...Array(10).keys()];
+  const [lastSelectedCards, setLastSelectedCards] = useState(
+    Slots.map((slot) => {
+      return {
         eventId: 0,
         card: {
-            iD: IDENTIFIER_FOR_EMPTY_SLOT
-        }
-    });
+          iD: IDENTIFIER_FOR_EMPTY_SLOT,
+        },
+        count: 0,
+      };
+    })
+  );
 
+  return (
+    <div>
+      <ImportFromUrl
+        setLastSelectedCards={setLastSelectedCards}
+        setSelectedHero={setSelectedHero}
+      />
 
-    const Slots = [...Array(10).keys()];
-    const [lastSelectedCards, setLastSelectedCards] = useState(Slots.map(slot => {
-        return {
-            eventId: 0,
-            card: {
-                iD: IDENTIFIER_FOR_EMPTY_SLOT
-            },
-            count: 0
-        }
-    }));
+      <CardDeck
+        selectedCardEvent={selectedCardEvent}
+        setSelectedCardEvent={setSelectedCardEvent}
+        setLastSelectedCards={setLastSelectedCards}
+        selectedHero={selectedHero}
+        setSelectedHero={setSelectedHero}
+        lastSelectedCards={lastSelectedCards}
+        setSelectedTabIndex={setSelectedTabIndex}
+      />
 
-    return (
-        <div>
-            <ImportFromUrl setLastSelectedCards={setLastSelectedCards} setSelectedHero={setSelectedHero}/>
+      <Tabs
+        style={{ paddingTop: "20px" }}
+        selectedIndex={selectedTabIndex}
+        onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}
+      >
+        <TabList>
+          <Tab>Select cards</Tab>
+          <Tab>Select master</Tab>
+          <Tab>Analyze & Save</Tab>
+          <Tab>Import</Tab>
+          <Tab>Export</Tab>
+        </TabList>
+        <TabPanel>
+          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
+        </TabPanel>
+        <TabPanel>
+          <Masters
+            actionRegistrationComponent={(selectedHeroKey) => (
+              <AddMasterToDeck
+                setSelectedHero={setSelectedHero}
+                masterKey={selectedHeroKey}
+              />
+            )}
+          />
+        </TabPanel>
+        <TabPanel>
+          <AnalyzeAndSaveDeckContainer
+            lastSelectedCards={lastSelectedCards}
+            selectedHero={selectedHero}
+          />
+        </TabPanel>
 
-            <CardDeck selectedCardEvent={selectedCardEvent}
-                      setSelectedCardEvent={setSelectedCardEvent}
-                      setLastSelectedCards={setLastSelectedCards}
-                      selectedHero={selectedHero}
-                      setSelectedHero={setSelectedHero}
-                      lastSelectedCards={lastSelectedCards}
-                      setSelectedTabIndex={setSelectedTabIndex}
+        <TabPanel>
+          <DeckOptionsStyle>
+            <ImportFromGame
+              setShowDeck={true}
+              setSelectedCardEvent={setSelectedCardEvent}
+              setLastSelectedCards={setLastSelectedCards}
+              setSelectedHero={setSelectedHero}
             />
-
-            <Tabs style={{paddingTop: "20px"}} selectedIndex={selectedTabIndex}
-                  onSelect={tabIndex => setSelectedTabIndex(tabIndex)}>
-                <TabList>
-                    <Tab>Select cards</Tab>
-                    <Tab>Select master</Tab>
-                    <Tab>Analyze & Save</Tab>
-                    <Tab>Import</Tab>
-                    <Tab>Export</Tab>
-                </TabList>
-                <TabPanel>
-                    <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent}/>
-                </TabPanel>
-                <TabPanel>
-                    <Masters actionRegistrationComponent={(selectedHeroKey) =>
-                        <AddMasterToDeck setSelectedHero={setSelectedHero}
-                                         masterKey={selectedHeroKey}
-                        />
-                    }
-                    />
-                </TabPanel>
-                <TabPanel>
-                    <AnalyzeAndSaveDeckContainer lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
-                </TabPanel>
-
-                <TabPanel>
-                    <DeckOptionsStyle>
-                        <ImportFromGame setShowDeck={true}
-                                        setSelectedCardEvent={setSelectedCardEvent}
-                                        setLastSelectedCards={setLastSelectedCards}
-                                        setSelectedHero={setSelectedHero}
-                        />
-
-                    </DeckOptionsStyle>
-                </TabPanel>
-                <TabPanel>
-                    <ExportActions lastSelectedCards={lastSelectedCards} selectedHero={selectedHero}/>
-                </TabPanel>
-            </Tabs>
-        </div>
-    )
+          </DeckOptionsStyle>
+        </TabPanel>
+        <TabPanel>
+          <ExportActions
+            lastSelectedCards={lastSelectedCards}
+            selectedHero={selectedHero}
+          />
+        </TabPanel>
+      </Tabs>
+    </div>
+  );
 }
