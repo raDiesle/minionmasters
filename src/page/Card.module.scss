@@ -1,4 +1,4 @@
-@import './IconStyleSize.module';
+@import "./IconStyleSize.module";
 
 .CardContainerStyle {
   width: 80px;
@@ -14,7 +14,7 @@
   border-style: solid;
 
   &:hover {
-    opacity: 1.0;
+    opacity: 1;
   }
 }
 
@@ -70,8 +70,8 @@
   & > svg {
     vertical-align: text-top;
 
-    fill: #FFFFFF;
-    color: #FFFFFF;
+    fill: #ffffff;
+    color: #ffffff;
   }
 }
 
@@ -90,7 +90,6 @@
   }
 }
 
-
 .BottomLeftCornerStyle {
   position: absolute;
   bottom: 0;
@@ -106,7 +105,6 @@
   }
 }
 
-
 .FactionStyle {
   @extend %IconStyleSize;
   position: absolute;
@@ -116,12 +114,10 @@
 
   & > svg {
     vertical-align: bottom;
-    fill: #FFFFFF;
-    color: #FFFFFF;
+    fill: #ffffff;
+    color: #ffffff;
   }
-
 }
-
 
 .AttackTypeStyle {
   @extend %IconStyleSize;
@@ -132,11 +128,10 @@
 
   & > svg {
     vertical-align: bottom;
-    fill: #FFFFFF;
-    color: #FFFFFF;
+    fill: #ffffff;
+    color: #ffffff;
   }
 }
-
 
 .BottomRightCornerStyle {
   position: absolute;

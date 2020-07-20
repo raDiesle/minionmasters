@@ -1,15 +1,14 @@
 import Footer from "Footer";
 import React from "react";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 import {BrowserRouter} from "react-router-dom";
-import {toast} from 'react-toastify';
-import styled from "styled-components"
+import {toast} from "react-toastify";
+import styled from "styled-components";
 
 import LoginLogout from "./LoginLogout";
-import './Modal.scss';
+import "./Modal.scss";
 
 import {Page} from "./page/Page";
-
 
 const Header = styled.header`
   display: flex;
@@ -23,7 +22,6 @@ const Header = styled.header`
 
   a {
     color: #fff;
-   
   }
   h1 {
     display: inline;
@@ -31,11 +29,10 @@ const Header = styled.header`
 `;
 
 const PageHeaderStyle = styled.h1`
-
-    margin: 5px;
-    line-height: 0.8;
-    font-weight: normal;
-    font-size: 100%;
+  margin: 5px;
+  line-height: 0.8;
+  font-weight: normal;
+  font-size: 100%;
 `;
 
 const CapitalLetterStyle = styled.span`
@@ -43,28 +40,28 @@ const CapitalLetterStyle = styled.span`
 `;
 
 const App = () => {
-    toast.configure();
-    Modal.setAppElement('body');
+  toast.configure();
+  Modal.setAppElement("body");
 
-    return (
-        <div style={{position: "relative", minHeight: "100vh"}}>
-            <div style={{paddingBottom: "20px"}}>
-                <Header>
-                    <PageHeaderStyle>
-                        <CapitalLetterStyle>M</CapitalLetterStyle>inion <CapitalLetterStyle>M</CapitalLetterStyle>asters <CapitalLetterStyle>M</CapitalLetterStyle>anager
-                    </PageHeaderStyle>
-                    <LoginLogout/>
-                </Header>
+  return (
+    <div style={{ position: "relative", minHeight: "100vh" }}>
+      <div style={{ paddingBottom: "20px" }}>
+        <Header>
+          <PageHeaderStyle>
+            <CapitalLetterStyle>M</CapitalLetterStyle>inion{" "}
+            <CapitalLetterStyle>M</CapitalLetterStyle>asters{" "}
+            <CapitalLetterStyle>M</CapitalLetterStyle>anager
+          </PageHeaderStyle>
+          <LoginLogout />
+        </Header>
 
-                <BrowserRouter>
-                    <Page/>
-                </BrowserRouter>
-            </div>
-            <Footer/>
-
-        </div>
-    );
+        <BrowserRouter>
+          <Page />
+        </BrowserRouter>
+      </div>
+      <Footer />
+    </div>
+  );
 };
-
 
 export default App;

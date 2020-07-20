@@ -19,7 +19,7 @@ const ExportStyle = styled.div`
   display: flex;
   flex-direction: column;
   & > * {
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
   }
 `;
 
@@ -27,92 +27,116 @@ const ExportInGameStyleContainer = styled.div`
   padding-top: 20px;
 `;
 
-export default function ExportActions({lastSelectedCards, selectedHero}) {
-
-    if (typeof selectedHero === undefined || selectedHero === "") {
-        return <div>
-            <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
-            You must select hero first to export.
-        </div>;
-    }
-// Export to URL
-    const lastSelectedCardiDs = lastSelectedCards.reduce((total, {count, card: {iD}}) => {
-        const wildcardsToMultipleIds = [...Array(count).keys()].map(() => iD);
-        const mergeTotal = [...total, ...wildcardsToMultipleIds];
-        return mergeTotal;
-    }, []);
-    const iDsToParam = lastSelectedCardiDs.join("&iD=");
-
-    const heroParam = `hero=${mastersMapping[selectedHero].iD}`;
-    let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?${heroParam}&iD=${iDsToParam}`;
-
-// Export to game
-    const cardsToGameString = `${lastSelectedCards.filter(({card: {iD}}) => iD !== IDENTIFIER_FOR_EMPTY_SLOT).map(({card: {iD}}) => iD).join(" ")}`;
-    const cardShareWithGame = `/setdeck ${mastersMapping[selectedHero].iD} ${cardsToGameString}`;
-
+export default function ExportActions({ lastSelectedCards, selectedHero }) {
+  if (typeof selectedHero === undefined || selectedHero === "") {
     return (
-        <div>
-            <ExportStyle>
-                <ButtonGroupStyle>
-                    <div className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
-                        <FacebookShareButton url={url}
-                                             style={{padding: "5px"}}
-                                             quote="My Minionmaster deck"
-                                             hashtag="minionmastersdecks">
-                            <div style={{display: "flex", alignContent: "center"}}>
-                                <FacebookIcon size={24} round/>
-                                <span style={{paddingLeft: "5px"}}>Share in Facebook</span>
-                            </div>
-                        </FacebookShareButton>
-                    </div>
-                </ButtonGroupStyle>
-                <ButtonGroupStyle>
-                    <CopyToClipboard
-                        text={url}
-                        onCopy={() => {
-                            toast("Link copied to clipboard");
-                        }}
-                        title="Copy link"
-                    >
-                        <button className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
-                            <FontAwesomeIcon icon={faLink} size="xs"
-                                             style={{marginLeft: "5px"}}
-                            />
-                            <span style={{paddingLeft: "11px"}}>Share by link</span>
-                        </button>
-                    </CopyToClipboard>
-                </ButtonGroupStyle>
-                <ExportInGameStyleContainer>
-
-                    <div>
-                        <h3>Minionmasters Game</h3>
-                        <ol className={cssGuide.olGuide}>
-                            <li>Press:
-                                <ButtonGroupStyle>
-                                    <CopyToClipboard
-                                        text={cardShareWithGame}
-                                        onCopy={() => {
-                                            toast("Deck copied to clipboard. STRG+V in Minionmasters chat");
-                                        }}
-                                        title="Export for game"
-                                    >
-                                        <button className={classnames(css.ButtonInGroupStyle)}
-                                                style={{width: `${315}px`, paddingLeft: "20px", lineHeight: "1.5"}}
-                                        >
-                                            Export-command for game copy-button
-                                        </button>
-                                    </CopyToClipboard>
-                                </ButtonGroupStyle>
-                            </li>
-                            <li>Open Minionmasters game & select deck slot to replace with</li>
-                            <li>Select chat and <code>STRG+V</code> to insert</li>
-                            <li>Press <code>ENTER</code> to send command to chat</li>
-                        </ol>
-                    </div>
-                </ExportInGameStyleContainer>
-
-            </ExportStyle>
-
-        </div>
+      <div>
+        <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />
+        You must select hero first to export.
+      </div>
     );
+  }
+  // Export to URL
+  const lastSelectedCardiDs = lastSelectedCards.reduce(
+    (total, { count, card: { iD } }) => {
+      const wildcardsToMultipleIds = [...Array(count).keys()].map(() => iD);
+      const mergeTotal = [...total, ...wildcardsToMultipleIds];
+      return mergeTotal;
+    },
+    []
+  );
+  const iDsToParam = lastSelectedCardiDs.join("&iD=");
+
+  const heroParam = `hero=${mastersMapping[selectedHero].iD}`;
+  let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?${heroParam}&iD=${iDsToParam}`;
+
+  // Export to game
+  const cardsToGameString = `${lastSelectedCards
+    .filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
+    .map(({ card: { iD } }) => iD)
+    .join(" ")}`;
+  const cardShareWithGame = `/setdeck ${mastersMapping[selectedHero].iD} ${cardsToGameString}`;
+
+  return (
+    <div>
+      <ExportStyle>
+        <ButtonGroupStyle>
+          <div className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
+            <FacebookShareButton
+              url={url}
+              style={{ padding: "5px" }}
+              quote="My Minionmaster deck"
+              hashtag="minionmastersdecks"
+            >
+              <div style={{ display: "flex", alignContent: "center" }}>
+                <FacebookIcon size={24} round />
+                <span style={{ paddingLeft: "5px" }}>Share in Facebook</span>
+              </div>
+            </FacebookShareButton>
+          </div>
+        </ButtonGroupStyle>
+        <ButtonGroupStyle>
+          <CopyToClipboard
+            text={url}
+            onCopy={() => {
+              toast("Link copied to clipboard");
+            }}
+            title="Copy link"
+          >
+            <button
+              className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}
+            >
+              <FontAwesomeIcon
+                icon={faLink}
+                size="xs"
+                style={{ marginLeft: "5px" }}
+              />
+              <span style={{ paddingLeft: "11px" }}>Share by link</span>
+            </button>
+          </CopyToClipboard>
+        </ButtonGroupStyle>
+        <ExportInGameStyleContainer>
+          <div>
+            <h3>Minionmasters Game</h3>
+            <ol className={cssGuide.olGuide}>
+              <li>
+                Press:
+                <ButtonGroupStyle>
+                  <CopyToClipboard
+                    text={cardShareWithGame}
+                    onCopy={() => {
+                      toast(
+                        "Deck copied to clipboard. STRG+V in Minionmasters chat"
+                      );
+                    }}
+                    title="Export for game"
+                  >
+                    <button
+                      className={classnames(css.ButtonInGroupStyle)}
+                      style={{
+                        width: `${315}px`,
+                        paddingLeft: "20px",
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      Export-command for game copy-button
+                    </button>
+                  </CopyToClipboard>
+                </ButtonGroupStyle>
+              </li>
+              <li>
+                Open Minionmasters game & select deck slot to replace with
+              </li>
+              <li>
+                Select chat and <code>STRG+V</code> to insert
+              </li>
+              <li>
+                Press <code>ENTER</code> to send command to chat
+              </li>
+            </ol>
+          </div>
+        </ExportInGameStyleContainer>
+      </ExportStyle>
+    </div>
+  );
 }

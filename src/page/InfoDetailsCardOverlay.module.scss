@@ -1,4 +1,4 @@
-@import './IconStyleSize.module';
+@import "./IconStyleSize.module";
 
 %OverlayActionBackground {
   @extend %IconStyleSize;
@@ -8,9 +8,7 @@
   color: #fff;
 }
 
-
 .InfoDetailsOverlay {
-
   position: absolute;
   top: 0;
   right: 0px;
@@ -27,7 +25,6 @@
     color: #375a7f;
   }
 }
-
 
 .InfoIconStyle {
   @extend %OverlayActionBackground;

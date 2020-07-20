@@ -1,4 +1,4 @@
-import {SEPARATOR, TYPE_CARD, TYPE_MASTER} from "page/wikiEditor/mention-config";
+import {SEPARATOR, TYPE_CARD, TYPE_MASTER,} from "page/wikiEditor/mention-config";
 import React, {useLayoutEffect} from "react";
 import {Mention, MentionsInput} from "react-mentions";
 
@@ -6,26 +6,30 @@ import styled from "styled-components";
 
 import cardData from "../../generated/jobCardProps";
 import {mastersMapping} from "../mastersoverview/mastersMapping";
-import defaultMentionStyle from './defaultMentionStyle';
-import defaultStyle from './defaultStyle'
+import defaultMentionStyle from "./defaultMentionStyle";
+import defaultStyle from "./defaultStyle";
 
-const heros = Object.keys(mastersMapping).map(name => ({
-    id: TYPE_MASTER + SEPARATOR + mastersMapping[name].iD,
-    display: name,
-    image: mastersMapping[name].icon
+const heros = Object.keys(mastersMapping).map((name) => ({
+  id: TYPE_MASTER + SEPARATOR + mastersMapping[name].iD,
+  display: name,
+  image: mastersMapping[name].icon,
 }));
 
-const mentions = [...heros, ...cardData.map(({name, image, iD}) => ({
+const mentions = [
+  ...heros,
+  ...cardData.map(({ name, image, iD }) => ({
     id: TYPE_CARD + SEPARATOR + iD,
     display: name,
-    image
-}))];
+    image,
+  })),
+];
 
 const EditorStyle = styled.div`
   //border: 1px dotted grey;
 
   max-width: 600px;
-  ${({isEditable}) => isEditable &&
+  ${({ isEditable }) =>
+    isEditable &&
     ` background: 
             linear-gradient(90deg, #000 50%, transparent 50%),
             linear-gradient(0deg, #000 50%, transparent 50%),
@@ -47,53 +51,68 @@ const EditorStyle = styled.div`
           {
             background-position: right top, right bottom, left bottom, left top;
           }
-  `
-}
-  
+  `}
+
   & textarea[readonly] {
     border: none !important;
     outline: none;
     cursor: default;
   }
-;
-  `;
+`;
 
-export default function TextareaEditor({value, setValue, isDisabledInput, placeholder = null, editorRef}) {
+export default function TextareaEditor({
+  value,
+  setValue,
+  isDisabledInput,
+  placeholder = null,
+  editorRef,
+}) {
+  useLayoutEffect(() => {
+    editorRef.current.focus();
+  }, []);
 
-    useLayoutEffect(() => {
-        editorRef.current.focus();
-    }, []);
+  const handleChange = (val) => {
+    setValue(val.target.value);
+  };
 
-    const handleChange = (val) => {
-        setValue(val.target.value);
-    };
+  const renderSuggestion = (
+    { image, display },
+    entry,
+    search,
+    highlightedDisplay,
+    index,
+    focused
+  ) => {
+    const IMG_FOLDER = "generated/img/";
+    const FILE_ENDING = ".webp";
+    const WIDTH = "_78";
+    const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
 
-    const renderSuggestion = ({image, display}, entry, search, highlightedDisplay, index, focused) => {
-        const IMG_FOLDER = "generated/img/";
-        const FILE_ENDING = ".webp";
-        const WIDTH = "_78";
-        const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
+    return (
+      <div>
+        <img src={IMG_PATH} style={{ width: "25px", paddingRight: "5px" }} />
+        {display}
+      </div>
+    );
+  };
 
-        return <div>
-            <img src={IMG_PATH} style={{width: "25px", paddingRight: "5px"}}/>{display}
-        </div>;
-    };
-
-    return <EditorStyle isEditable={!isDisabledInput}>
-
-        <MentionsInput inputRef={editorRef}
-                       value={value}
-                       onChange={handleChange}
-                       readOnly={isDisabledInput}
-                       style={defaultStyle}
-                       placeholder={placeholder}
-        >
-            <Mention
-                trigger="@"
-                data={mentions}
-                renderSuggestion={renderSuggestion}
-                style={defaultMentionStyle}
-            />
-        </MentionsInput>
-    </EditorStyle>;
+  return (
+    <EditorStyle isEditable={!isDisabledInput}>
+      <MentionsInput
+        inputRef={editorRef}
+        value={value}
+        onChange={handleChange}
+        readOnly={isDisabledInput}
+        style={defaultStyle}
+        placeholder={placeholder}
+      >
+        <Mention
+          trigger="@"
+          data={mentions}
+          renderSuggestion={renderSuggestion}
+          style={defaultMentionStyle}
+        />
+      </MentionsInput>
+    </EditorStyle>
+  );
 }

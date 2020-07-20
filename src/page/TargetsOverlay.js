@@ -1,6 +1,3 @@
 import React from "react";
 
-export function TargetsOverlay({targets}) {
-
-
-}
+export function TargetsOverlay({ targets }) {}

@@ -9,9 +9,11 @@ const SubheaderLinkStyle = styled.a`
 `;
 
 export default function Footer() {
-    return <div className={css.FooterStyle}>
-        <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
-            Ideas for new features?
-        </SubheaderLinkStyle>
+  return (
+    <div className={css.FooterStyle}>
+      <SubheaderLinkStyle href="https://github.com/raDiesle/minionmasters/issues">
+        Ideas for new features?
+      </SubheaderLinkStyle>
     </div>
+  );
 }

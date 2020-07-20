@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function EmptyCardSlotSelected({children, onClick}) {
-
-    const EmptyCardSlotSelectedStyle = styled.div`
+export default function EmptyCardSlotSelected({ children, onClick }) {
+  const EmptyCardSlotSelectedStyle = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
@@ -49,5 +48,9 @@ export default function EmptyCardSlotSelected({children, onClick}) {
       }
 `;
 
-    return <EmptyCardSlotSelectedStyle onClick={onClick}>{children}</EmptyCardSlotSelectedStyle>;
+  return (
+    <EmptyCardSlotSelectedStyle onClick={onClick}>
+      {children}
+    </EmptyCardSlotSelectedStyle>
+  );
 }

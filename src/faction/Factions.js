@@ -12,14 +12,14 @@ import StoutheartIcon from "./StoutheartIcon";
 import VoidborneIcon from "./VoidborneIcon";
 
 export const factionMapping = {
-    Voidborne: <VoidborneIcon/>,
-    Accursed: <AccursedIcon/>,
-    Scrat: <ScratIcon/>,
-    "CrystalElf": <CrystalElfIcon/>,
-    "Puff": <FontAwesomeIcon icon={faHatWizard} size={"xs"}/>,
-    "ZenChi": <FontAwesomeIcon icon={faYinYang} size={"xs"}/>,
-    "Slither": <SlitherIcon/>,
-    "Outlander": <OutlanderIcon/>,
-    "Empyrean": <EmpyrianIcon/>,
-    "Highlander": <StoutheartIcon/>
+  Voidborne: <VoidborneIcon />,
+  Accursed: <AccursedIcon />,
+  Scrat: <ScratIcon />,
+  CrystalElf: <CrystalElfIcon />,
+  Puff: <FontAwesomeIcon icon={faHatWizard} size={"xs"} />,
+  ZenChi: <FontAwesomeIcon icon={faYinYang} size={"xs"} />,
+  Slither: <SlitherIcon />,
+  Outlander: <OutlanderIcon />,
+  Empyrean: <EmpyrianIcon />,
+  Highlander: <StoutheartIcon />,
 };
