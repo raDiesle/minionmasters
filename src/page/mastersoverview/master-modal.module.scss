@@ -1,0 +1,52 @@
+.MasterHeaderStyle {
+  padding-bottom: 0.5rem;
+}
+
+%abstractMasterAbilityImageStyle {
+  width: 30px;
+  height: 30px;
+}
+
+.MasterAbilityImageStyle {
+  @extend %abstractMasterAbilityImageStyle;
+}
+
+.MasterAbilityImageRoundedStyle {
+  @extend %abstractMasterAbilityImageStyle;
+  border-radius: 50%;
+}
+
+.MasterAbilityHeaderStyle {
+  font-size: 1.1rem;
+}
+
+.MasterAbilitySubHeader {
+  font-size: 1.05rem;
+}
+
+.MasterAbilityUnlocksHeaderStyle {
+  font-size: 16px;
+}
+
+.MasterAbilityDescriptionStyle {
+  font-size: 0.9rem;
+  padding-bottom: 20px;
+}
+
+.AbilityUlStyle {
+}
+
+.ModalCloseStyle {
+
+  display: flex;
+  justify-content: flex-end;
+
+  & > svg {
+    &:hover {
+      color: #a0a0a0;
+      filter: drop-shadow(1px 1px 1px #a0a0a0);
+      cursor: pointer;
+    }
+  }
+
+}

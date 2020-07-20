@@ -1,69 +1,62 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    AbilityUlStyle,
-    MasterAbilityDescriptionStyle,
-    MasterAbilityHeaderStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilitySubHeader,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from "../MasterModal";
 import IconDamage from "./icon-damage.png";
 
 export default function RavangerContent() {
     return <div>
-        <MasterHeaderStyle>
+        <h3 className={css.MasterHeaderStyle}>
             Ravanger
-        </MasterHeaderStyle>
-        <MasterAbilityDescriptionStyle>
+        </h3>
+        <div className={css.MasterAbilityDescriptionStyle}>
             Ravanger is a fierce Master, able to quickly tear through close combat minions, but if they are ranged, he
             has a
             problem and that's where he needs Brutus!
-        </MasterAbilityDescriptionStyle>
+        </div>
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_BestBuds_78.webp" alt="Ravager Perk1"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Ravager_BestBuds_78.webp"
+                         alt="Ravager Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_Enrage_78.webp" alt="Ravager Perk2"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Ravager_Enrage_78.webp"
+                         alt="Ravager Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ravager_TerrorBrutus_78.webp"
-                                                    alt="Ravager Perk3"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Ravager_TerrorBrutus_78.webp"
+                         alt="Ravager Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Basic Attack
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Extremely fast claw attacks.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Deals 10 damage every 0.3 sec, but has very short range of 4.5.
-                </MasterAbilityDescriptionStyle>
+                </div>
             </TabPanel>
             <TabPanel>
 
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Best Buds
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Ravager summons their powerful ally Brutus.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilitySubHeader>
+                </div>
+                <div className={css.MasterAbilitySubHeader}>
                     Brutus
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Health: 800
                     </li>
@@ -75,19 +68,19 @@ export default function RavangerContent() {
                         Life gained per hit: 50
 
                     </li>
-                </AbilityUlStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </ul>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Feeding Frenzy
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Friendly Minions with less than 50% health gains Haste
-                </MasterAbilityDescriptionStyle>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         +50 Movement speed.
 
@@ -99,19 +92,19 @@ export default function RavangerContent() {
                     <li>
                         Removes Slow.
                     </li>
-                </AbilityUlStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </ul>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 60XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Terror Brutus!
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Ravager summons their most powerful ally Terror Brutus
-                </MasterAbilityDescriptionStyle>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Health: 2000
                     </li>
@@ -123,10 +116,10 @@ export default function RavangerContent() {
                         Life gained per hit: 50
 
                     </li>
-                </AbilityUlStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </ul>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
         </Tabs>
 

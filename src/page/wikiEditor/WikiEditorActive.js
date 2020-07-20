@@ -101,13 +101,12 @@ export default function WikiEditorActive({setInEditMode, dbRef, placeholder}) {
         }}>
             <ButtonGroupStyle>
                 <ButtonInGroupStyle onClick={() => addCard()}><FontAwesomeIcon
-                    icon={faPlus}/> Reference Card</ButtonInGroupStyle>
+                    icon={faPlus}/> Reference Master or Card</ButtonInGroupStyle>
             </ButtonGroupStyle>
 
             <ButtonGroupStyle>
                 <ButtonInGroupStyle>
                     <HistorySelectStyle defaultValue="" onChange={(dbKey) => onHistorySelect(dbKey)}>
-
                         {
                             history.map((hist, idx) => <option value={hist.id}
                                                                key={hist.id}>{hist.createdAt.toLocaleString()} {idx === 0 && "latest"}</option>)

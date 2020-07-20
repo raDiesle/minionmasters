@@ -1,100 +1,93 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    AbilityUlStyle,
-    MasterAbilityDescriptionStyle,
-    MasterAbilityHeaderStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilitySubHeader,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from "../MasterModal";
 import IconDamage from "./icon-damage.png";
 
 export default function StormbringerContent() {
     return <div>
-        <MasterHeaderStyle>
+        <h3 className={css.MasterHeaderStyle}>
             Stormbringer
-        </MasterHeaderStyle>
-        <MasterAbilityDescriptionStyle>
+        </h3>
+        <div className={css.MasterAbilityDescriptionStyle}>
             Stormbringer excels at everything that has to do with range!
-        </MasterAbilityDescriptionStyle>
+        </div>
 
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_Sniper_78.webp"
-                                                    alt="Stormbringer Perk1"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Stormbringer_Sniper_78.webp"
+                         alt="Stormbringer Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_Aerodynamics_78.webp"
-                                                    alt="Stormbringer Perk2"/>
+                    <img className={css.MasterAbilityImageRoundedStyle}
+                         src="generated/img/Stormbringer_Aerodynamics_78.webp"
+                         alt="Stormbringer Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Stormbringer_LightningReflexes_78.webp"
-                                                    alt="Stormbringer Perk3"/>
+                    <img className={css.MasterAbilityImageRoundedStyle}
+                         src="generated/img/Stormbringer_LightningReflexes_78.webp"
+                         alt="Stormbringer Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Basic Attack
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Fire bolts of lightning every 4 sec for 35 damage. Has a long range of 20.
-                </MasterAbilityDescriptionStyle>
+                </div>
 
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Long Shot
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Stormbringer gains global attack range.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
 
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Aerodynamics
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     All friendly ranged Units gain Marksmanship when summoned
-                </MasterAbilityDescriptionStyle>
+                </div>
 
-                <MasterAbilitySubHeader>
+                <div className={css.MasterAbilitySubHeader}>
                     Marksmanship
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         +2 Range
                     </li>
-                </AbilityUlStyle>
+                </ul>
 
-                <MasterAbilityUnlocksHeaderStyle>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 60XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
 
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Lightning Reflexes
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Stormbringer gains double attack speedl.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
         </Tabs>
 

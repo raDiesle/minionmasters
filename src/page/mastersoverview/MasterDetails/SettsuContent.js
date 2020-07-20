@@ -1,97 +1,94 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    MasterAbilityDescriptionStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from "../MasterModal";
 import IconDamage from "./icon-damage.png";
 
 export default function SettsuContent() {
     return <div>
-        <MasterHeaderStyle>
+        <h3 className={css.MasterHeaderStyle}>
             Settsu
-        </MasterHeaderStyle>
-        <MasterAbilityDescriptionStyle>
+        </h3>
+        <div className={css.MasterAbilityDescriptionStyle}>
             Settsu is a bad-ass ex-soldier that never plays by the rules.
-        </MasterAbilityDescriptionStyle>
-        <MasterAbilityDescriptionStyle>
+        </div>
+        <div className={css.MasterAbilityDescriptionStyle}>
             She can enter the Arena herself to annihilate
             enemies with superior firepower.
-        </MasterAbilityDescriptionStyle>
+        </div>
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_BlastEntry_78.webp" alt="Settsu Perk1"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Settsu_BlastEntry_78.webp"
+                         alt="Settsu Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_CombatReload_78.webp" alt="Settsu Perk2"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Settsu_CombatReload_78.webp"
+                         alt="Settsu Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Settsu_HighPoweredLaser_78.webp"
-                                                    alt="Settsu Perk3"/>
+                    <img className={css.MasterAbilityImageRoundedStyle}
+                         src="generated/img/Settsu_HighPoweredLaser_78.webp"
+                         alt="Settsu Perk3"/>
                 </Tab>
 
             </TabList>
             <TabPanel>
-                <MasterHeaderStyle>
+                <h3 className={css.MasterHeaderStyle}>
                     Basic Attack
-                </MasterHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </h3>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Settsu fires their range 10 Pulse Rifle once per second for 40 damage.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     After 5 shots they have to
                     reload for 5 seconds.
-                </MasterAbilityDescriptionStyle>
+                </div>
 
             </TabPanel>
             <TabPanel>
 
-                <MasterHeaderStyle>
+                <h3 className={css.MasterHeaderStyle}>
                     Blast Entry
-                </MasterHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </h3>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add the card Blast Entry to Settsu's deck.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
 
                     Settsu enters the battlefield dealing 50 damage on impact and gaining a 300 health shield
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
 
-                <MasterHeaderStyle>
+                <h3 className={css.MasterHeaderStyle}>
                     Combat Reload
-                </MasterHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </h3>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     When Settsu casts a Spell, they instantly reloads their gun
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 60XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterHeaderStyle>
+                <h3 className={css.MasterHeaderStyle}>
                     High Powered Laser
-                </MasterHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </h3>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Settsu's first shot after a reload deals double damage, pierces enemies and Stuns them for 3 seconds
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
         </Tabs>
     </div>

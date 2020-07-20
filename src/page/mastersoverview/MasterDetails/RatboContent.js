@@ -1,80 +1,74 @@
 import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import css from "page/mastersoverview/master-modal.module.scss";
 import React from "react";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import {
-    AbilityUlStyle,
-    MasterAbilityDescriptionStyle,
-    MasterAbilityHeaderStyle,
-    MasterAbilityImageRoundedStyle,
-    MasterAbilityImageStyle,
-    MasterAbilitySubHeader,
-    MasterAbilityUnlocksHeaderStyle,
-    MasterHeaderStyle
-} from "../MasterModal";
 import IconDamage from "./icon-damage.png";
 
 export default function RatboContent() {
     return <div>
-        <MasterHeaderStyle>
+        <h3 className={css.MasterHeaderStyle}>
             Ratbo
-        </MasterHeaderStyle>
-        <MasterAbilityDescriptionStyle>
+        </h3>
+        <div className={css.MasterAbilityDescriptionStyle}>
             Ratbo is among the most famous Scrat leaders. Scrats will gladly follow him blindly and in great numbers -
             they
             have a Minigun insurance.
-        </MasterAbilityDescriptionStyle>
+        </div>
 
 
         <Tabs>
             <TabList>
                 <Tab>
-                    <MasterAbilityImageStyle src={IconDamage} alt="basic attack"/>
+                    <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_Rats_78.webp" alt="Ratbo Perk1"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Ratbo_Rats_78.webp"
+                         alt="Ratbo Perk1"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_moreDakka_78.webp" alt="Ratbo Perk2"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Ratbo_moreDakka_78.webp"
+                         alt="Ratbo Perk2"/>
                 </Tab>
                 <Tab>
-                    <MasterAbilityImageRoundedStyle src="generated/img/Ratbo_RatsRats_78.webp" alt="Ratbo Perk3"/>
+                    <img className={css.MasterAbilityImageRoundedStyle} src="generated/img/Ratbo_RatsRats_78.webp"
+                         alt="Ratbo Perk3"/>
                 </Tab>
             </TabList>
             <TabPanel>
-                <MasterHeaderStyle>
+                <h3 className={css.MasterHeaderStyle}>
                     Basic Attack
-                </MasterHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </h3>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Fires a barrage of bullets a enemies from a range of 10, every 0.3 sec for 6 damage.
-                </MasterAbilityDescriptionStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Scrats!
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Summons a Scrat every time Ratbo plays a Minion card, or an "Armored" Scrat instead if the Minion
                     card cost 5+
                     Mana.
-                </MasterAbilityDescriptionStyle>
+                </div>
 
-                <MasterAbilitySubHeader>
+                <div className={css.MasterAbilitySubHeader}>
                     Scrat
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Health: 15
                     </li>
                     <li>
                         Damage per sec: 10
                     </li>
-                </AbilityUlStyle>
+                </ul>
 
-                <MasterAbilitySubHeader>
+                <div className={css.MasterAbilitySubHeader}>
                     "Armored" Scrat
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Health: 60
                     </li>
@@ -82,51 +76,51 @@ export default function RatboContent() {
                         Damage per sec: 20
 
                     </li>
-                </AbilityUlStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </ul>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 20XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     More Dakka!
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Add the card More Dakka! to Ratbo's deck
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilitySubHeader>
+                </div>
+                <div className={css.MasterAbilitySubHeader}>
                     More Dakka!
-                </MasterAbilitySubHeader>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Ratbo charges up for 1 sec then shoots the nearest enemy for 40 damage per friendly Minion on the
                     field. Reduces
                     damage to Master Towers.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </div>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 60XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
             <TabPanel>
-                <MasterAbilityHeaderStyle>
+                <div className={css.MasterAbilityHeaderStyle}>
                     Scrats! Scrats!
-                </MasterAbilityHeaderStyle>
-                <MasterAbilityDescriptionStyle>
+                </div>
+                <div className={css.MasterAbilityDescriptionStyle}>
                     Now summon 2 Scrat every time Ratbo plays a Minion card, or 2 "Armored" Scrat instead if the Minion
                     card cost 5+
                     Mana.
-                </MasterAbilityDescriptionStyle>
-                <MasterAbilitySubHeader>
+                </div>
+                <div className={css.MasterAbilitySubHeader}>
                     Scrat
-                </MasterAbilitySubHeader>
+                </div>
 
-                <AbilityUlStyle>
+                <ul className={css.AbilityUlStyle}>
                     Health: 15 Damage per sec: 10
-                </AbilityUlStyle>
+                </ul>
 
-                <MasterAbilitySubHeader>
+                <div className={css.MasterAbilitySubHeader}>
                     "Armored" Scrat
-                </MasterAbilitySubHeader>
-                <AbilityUlStyle>
+                </div>
+                <ul className={css.AbilityUlStyle}>
                     <li>
                         Health: 60
                     </li>
@@ -134,10 +128,10 @@ export default function RatboContent() {
                         Damage per sec: 20
                     </li>
 
-                </AbilityUlStyle>
-                <MasterAbilityUnlocksHeaderStyle>
+                </ul>
+                <div className={css.MasterAbilityUnlocksHeaderStyle}>
                     <FontAwesomeIcon icon={faUnlock}/> 120XP
-                </MasterAbilityUnlocksHeaderStyle>
+                </div>
             </TabPanel>
 
         </Tabs>
