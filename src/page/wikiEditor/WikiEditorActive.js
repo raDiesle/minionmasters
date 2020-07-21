@@ -4,8 +4,6 @@ import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
 import {faPlus} from "@fortawesome/free-solid-svg-icons/faPlus";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useRef, useState} from "react";
-
-import {toast} from "react-toastify";
 import styled from "styled-components";
 import {auth, dbErrorHandlerPromise} from "../../firestore";
 import {ButtonGroupStyle, ButtonInGroupStyle,} from "../filters/ButtonFilterGroup";
@@ -91,7 +89,6 @@ export default function WikiEditorActive({
         val: dataToSaveBackend,
       })
       .then(() => {
-        toast("saved");
         setInEditMode(false);
       })
       .catch(dbErrorHandlerPromise);
@@ -101,12 +98,12 @@ export default function WikiEditorActive({
     <div>
       <div
         style={{
-          width: "600px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: "10px",
-          paddingBottom: "2px",
+            maxWidth: "1000px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            fontSize: "10px",
+            paddingBottom: "2px",
         }}
       >
         <ButtonGroupStyle>
@@ -141,10 +138,10 @@ export default function WikiEditorActive({
 
       <div
         style={{
-          display: "flex",
-          width: "600px",
-          paddingTop: "10px",
-          alignItems: "center",
+            display: "flex",
+            maxWidth: "1000px",
+            paddingTop: "10px",
+            alignItems: "center",
         }}
       >
         <ButtonGroupStyle>

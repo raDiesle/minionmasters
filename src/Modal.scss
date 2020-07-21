@@ -15,7 +15,14 @@
   webkitoverflowscrolling: touch;
   borderradius: 4px;
   outline: none;
-  padding: 20px;
+  padding: 5px;
+  /*
+  @media (max-width: 767px) {
+    padding: 2px;
+  }
+
+ 
+ */
 
   @media (max-width: 1400px) {
     $yPadding: 5px;

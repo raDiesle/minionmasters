@@ -37,7 +37,7 @@
     "styled-components": "4.4.1"
   },
   "scripts": {
-    "updateData": "npm-run-all fetchRawData generateData",
+    "updateData": "npm-run-all generateData",
     "fetchRawData": "npm-run-all fetchWikiData fetchImages compressImages",
     "generateData": "node batch_jobs/jobPrepareRawData",
     "deploy": "firebase deploy  --only hosting",

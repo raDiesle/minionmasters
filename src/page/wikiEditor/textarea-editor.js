@@ -27,7 +27,7 @@ const mentions = [
 const EditorStyle = styled.div`
   //border: 1px dotted grey;
 
-  max-width: 600px;
+  max-width: 1000px;
   ${({ isEditable }) =>
     isEditable &&
     ` background: 

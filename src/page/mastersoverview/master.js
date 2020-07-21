@@ -23,15 +23,19 @@ const MasterContentStyle = styled.div`
 const InfoMasterDetailsOverlay = styled.div`
   position: absolute;
   top: 0px;
-  padding: 35px 0 35px
-    ${({ actionRegistrationComponent }) =>
-      actionRegistrationComponent === null ? "90px" : "35px"};
+  padding: 35px 0
+    ${({actionRegistrationComponent}) =>
+    actionRegistrationComponent === null ? "56px" : "35px"}
+    ${({actionRegistrationComponent}) =>
+    actionRegistrationComponent === null ? "90px" : "35px"};
   right: 0px;
 
   @media (max-width: 767px) {
-    padding: 11px 0 11px
-      ${({ actionRegistrationComponent }) =>
-        actionRegistrationComponent === null ? "50px" : "11px"};
+    padding: ${({actionRegistrationComponent}) =>
+    actionRegistrationComponent === null ? "40px" : "11px"}
+      0 11px
+      ${({actionRegistrationComponent}) =>
+    actionRegistrationComponent === null ? "50px" : "11px"};
   }
 
   &:hover {

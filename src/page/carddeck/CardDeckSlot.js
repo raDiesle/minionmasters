@@ -15,14 +15,19 @@ const EmptyCardSlotUnselectedStyle = styled.div`
 const WildcardOverlayStyle = styled.div`
   position: absolute;
 
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bolder;
+
   top: 0;
   right: 20px;
   padding: 25px 0 0 10px;
-
   font-size: 30px;
 
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: bolder;
+  @media (max-width: 767px) {
+    top: -10px;
+    right: 9px;
+    font-size: 20px;
+  }
 
   &:hover {
     cursor: pointer;
