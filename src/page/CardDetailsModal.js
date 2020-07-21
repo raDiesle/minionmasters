@@ -6,15 +6,16 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import _dropRight from "lodash.dropright";
 import sortBy from "lodash.sortby";
+import CardDiscussion from "page/discussion/CardDiscussion";
 import React, {useEffect, useState} from "react";
 import ReactModal from "react-modal";
+
 import styled from "styled-components";
 import {targetsMapping} from "../attack/targetsMapping";
 import {typeMapping} from "../cardtype/typeMapping";
 import {factionMapping} from "../faction/Factions";
 import cardData from "../generated/jobCardProps";
 import {rarityMapping} from "../rarity/rarityMapping";
-import CardDiscussions from "./CardDiscussions";
 
 const ModalContainerStyle = styled.div`
   position: relative;
@@ -22,8 +23,8 @@ const ModalContainerStyle = styled.div`
 
 const ModalAlignCloseStyle = styled.div`
   position: absolute;
-  right: 17px;
-  top: -15px;
+  right: 30px;
+  top: -2px;
 `;
 
 const ModalCloseStyle = styled.div`
@@ -76,7 +77,6 @@ const CardImageStyle = styled.img`
 `;
 
 const DescriptionStyle = styled.div`
-  padding-top: 40px;
   line-height: 2rem;
 `;
 
@@ -361,19 +361,23 @@ export default function CardDetailsModal({
             )}
           </CardPropertyUlStyle>
 
-          <DescriptionStyle dangerouslySetInnerHTML={{ __html: description }} />
+          <h3 style={{marginBottom: 0}}>Description</h3>
+          <DescriptionStyle dangerouslySetInnerHTML={{__html: description}}/>
 
           <CardGlossaryUlStyle>
             {glossary.length > 0 &&
-              glossary.map(({ title, text }) => (
+            glossary.map(({title, text}) => (
                 <CardPropertyLiStyle key={title}>
                   <CardGlossaryStyle>{title}</CardGlossaryStyle>
-                  <div dangerouslySetInnerHTML={{ __html: text }}></div>
+                  <div dangerouslySetInnerHTML={{__html: text}}></div>
                 </CardPropertyLiStyle>
-              ))}
+            ))}
           </CardGlossaryUlStyle>
 
-          <CardDiscussions card={card} />
+          <div>
+            <h3 style={{marginBottom: 0}}>Tips by community</h3>
+            <CardDiscussion card={card} discussionType="mechanics"/>
+          </div>
         </ModalContainerStyle>
       </ReactModal>
     </div>

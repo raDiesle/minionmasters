@@ -8,8 +8,8 @@ export default {
   "&multiLine": {
     control: {
       fontFamily: "monospace",
-      minHeight: 63,
-      minWidth: 500,
+      minHeight: 200,
+      maxWidth: 1000,
     },
     highlighter: {
       padding: 9,
