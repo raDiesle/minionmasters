@@ -1,11 +1,15 @@
-import {SEPARATOR, TYPE_CARD, TYPE_MASTER,} from "page/wikiEditor/mention-config";
-import React, {useLayoutEffect} from "react";
-import {Mention, MentionsInput} from "react-mentions";
+import {
+  SEPARATOR,
+  TYPE_CARD,
+  TYPE_MASTER,
+} from "page/wikiEditor/mention-config";
+import React, { useLayoutEffect } from "react";
+import { Mention, MentionsInput } from "react-mentions";
 
 import styled from "styled-components";
 
 import cardData from "../../generated/jobCardProps";
-import {mastersMapping} from "../mastersoverview/mastersMapping";
+import { mastersMapping } from "../mastersoverview/mastersMapping";
 import defaultMentionStyle from "./defaultMentionStyle";
 import defaultStyle from "./defaultStyle";
 

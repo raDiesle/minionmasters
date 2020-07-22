@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Master from "./master";
-import {mastersMapping} from "./mastersMapping";
+import { mastersMapping } from "./mastersMapping";
 
 const MastersStyle = styled.a`
   display: flex;

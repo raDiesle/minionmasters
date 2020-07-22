@@ -1,5 +1,5 @@
-import React, {useEffect, useMemo, useRef, useState} from "react";
-import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
 import FiltersWithCards from "../FiltersWithCards";
@@ -7,10 +7,10 @@ import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
 
 import AddMasterToDeck from "../mastersoverview/AddMasterToDeck";
 import Masters from "../mastersoverview/Masters";
-import {CardDeck} from "./CardDeck";
+import { CardDeck } from "./CardDeck";
 import ImportFromGame from "./carddeckimport/ImportFromGame";
 import ExportActions from "./ExportActions";
-import {ImportFromUrl} from "./ImportFromUrl";
+import { ImportFromUrl } from "./ImportFromUrl";
 import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
 
 export const IDENTIFIER_FOR_EMPTY_SLOT = 999999;

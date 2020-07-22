@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 const config = {
   apiKey: "AIzaSyAJSnLNkSA4pvIfL6sTVJIUMnme-8gRdEM",

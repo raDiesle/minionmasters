@@ -1,21 +1,21 @@
-import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
-import {faCheck} from "@fortawesome/free-solid-svg-icons/faCheck";
-import {faHeart as faHeartSolid} from "@fortawesome/free-solid-svg-icons/faHeart";
-import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
+import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHeart";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import _dropRight from "lodash.dropright";
 import sortBy from "lodash.sortby";
 import CardDiscussion from "page/discussion/CardDiscussion";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 
 import styled from "styled-components";
-import {targetsMapping} from "../attack/targetsMapping";
-import {typeMapping} from "../cardtype/typeMapping";
-import {factionMapping} from "../faction/Factions";
+import { targetsMapping } from "../attack/targetsMapping";
+import { typeMapping } from "../cardtype/typeMapping";
+import { factionMapping } from "../faction/Factions";
 import cardData from "../generated/jobCardProps";
-import {rarityMapping} from "../rarity/rarityMapping";
+import { rarityMapping } from "../rarity/rarityMapping";
 
 const ModalContainerStyle = styled.div`
   position: relative;
@@ -355,31 +355,31 @@ export default function CardDetailsModal({
             )}
 
             {[true, false].includes(flying) && (
-                <CardPropertyLiStyle>
-                  <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
-                  <div>
-                    <FontAwesomeIcon icon={flying ? faCheck : faTimes}/>
-                  </div>
-                </CardPropertyLiStyle>
+              <CardPropertyLiStyle>
+                <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
+                <div>
+                  <FontAwesomeIcon icon={flying ? faCheck : faTimes} />
+                </div>
+              </CardPropertyLiStyle>
             )}
           </CardPropertyUlStyle>
 
-          <h3 style={{marginBottom: 0}}>Description</h3>
-          <DescriptionStyle dangerouslySetInnerHTML={{__html: description}}/>
+          <h3 style={{ marginBottom: 0 }}>Description</h3>
+          <DescriptionStyle dangerouslySetInnerHTML={{ __html: description }} />
 
           <CardGlossaryUlStyle>
             {glossary.length > 0 &&
-            glossary.map(({title, text}) => (
+              glossary.map(({ title, text }) => (
                 <CardPropertyLiStyle key={title}>
                   <CardGlossaryStyle>{title}</CardGlossaryStyle>
-                  <div dangerouslySetInnerHTML={{__html: text}}></div>
+                  <div dangerouslySetInnerHTML={{ __html: text }}></div>
                 </CardPropertyLiStyle>
-            ))}
+              ))}
           </CardGlossaryUlStyle>
 
           <div>
-            <h3 style={{marginBottom: 0}}>Tips by community</h3>
-            <CardDiscussion card={card} discussionType="mechanics"/>
+            <h3 style={{ marginBottom: 0 }}>Tips by community</h3>
+            <CardDiscussion card={card} discussionType="mechanics" />
           </div>
         </ModalContainerStyle>
       </ReactModal>

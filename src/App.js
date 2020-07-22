@@ -1,14 +1,14 @@
 import Footer from "Footer";
 import React from "react";
 import Modal from "react-modal";
-import {BrowserRouter} from "react-router-dom";
-import {toast} from "react-toastify";
+import { BrowserRouter } from "react-router-dom";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 
 import LoginLogout from "./LoginLogout";
 import "./Modal.scss";
 
-import {Page} from "./page/Page";
+import { Page } from "./page/Page";
 
 const Header = styled.header`
   display: flex;

@@ -1,10 +1,13 @@
-import {IDENTIFIER_FOR_EMPTY_SLOT} from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import css from "page/carddeck/Guide.module.scss";
 import React from "react";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import cardData from "../../../generated/jobCardProps";
-import {ButtonGroupStyle, ButtonInGroupStyle,} from "../../filters/ButtonFilterGroup";
+import {
+  ButtonGroupStyle,
+  ButtonInGroupStyle,
+} from "../../filters/ButtonFilterGroup";
 
 const CardeckPlaceholderStyle = styled.div`
   display: flex;
