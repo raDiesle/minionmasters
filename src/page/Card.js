@@ -28,16 +28,16 @@ export function Card({
               css.CardContainerStyle,
               isFullWidthClickable && css.CardContainerStyleFullWidth
           )}
-    >
-      <div className={css.CardContentStyle}>
-        <img
-          src={`${IMG_PATH}_78${FILE_ENDING}`}
-          alt={image}
-          className={classnames(css.IMG)}
-        />
-        <div
-          className={css.RightCornerStyle}
-          style={{ borderTopColor: rarityMapping[rarity] }}
+      >
+        <div className={css.CardContentStyle}>
+          <img
+              src={`${IMG_PATH}_78${FILE_ENDING}`}
+              alt={image}
+              className={classnames(css.IMG)}
+          />
+          <div
+              className={css.RightCornerStyle}
+              style={{borderTopColor: rarityMapping[rarity]}}
         />
         <div className={css.ManacostStyle}>{manacost}</div>
 
