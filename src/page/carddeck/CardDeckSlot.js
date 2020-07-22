@@ -1,9 +1,9 @@
-import {IDENTIFIER_FOR_EMPTY_SLOT} from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import React from "react";
 import styled from "styled-components";
 import CardDeckSlotStyle from "../../CardDeckSlotStyle";
 import EmptyCardSlotSelected from "../../EmptyCardSlotSelected";
-import {Card} from "../Card";
+import { Card } from "../Card";
 
 const EmptyCardSlotUnselectedStyle = styled.div`
   width: 100%;

@@ -1,6 +1,6 @@
-import {faHatWizard} from "@fortawesome/free-solid-svg-icons/faHatWizard";
-import {faYinYang} from "@fortawesome/free-solid-svg-icons/faYinYang";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faHatWizard } from "@fortawesome/free-solid-svg-icons/faHatWizard";
+import { faYinYang } from "@fortawesome/free-solid-svg-icons/faYinYang";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import AccursedIcon from "./AccursedIcon";
 import CrystalElfIcon from "./CrystalElfIcon";

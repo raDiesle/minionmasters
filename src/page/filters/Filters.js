@@ -1,21 +1,25 @@
-import {faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare";
-import {faSortAmountDown} from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
-import {faSortAmountUp} from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
-import {faSquare} from "@fortawesome/free-solid-svg-icons/faSquare";
-import {faSquareFull} from "@fortawesome/free-solid-svg-icons/faSquareFull";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare";
+import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
+import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
+import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
+import { faSquareFull } from "@fortawesome/free-solid-svg-icons/faSquareFull";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from "rc-tooltip";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import {targetsMapping} from "../../attack/targetsMapping";
-import {typeMapping} from "../../cardtype/typeMapping";
+import { targetsMapping } from "../../attack/targetsMapping";
+import { typeMapping } from "../../cardtype/typeMapping";
 
-import {factionMapping} from "../../faction/Factions";
-import {MANACOST} from "../../manacost/manacost";
+import { factionMapping } from "../../faction/Factions";
+import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 
-import {rarityMapping} from "../../rarity/rarityMapping";
-import {ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle,} from "./ButtonFilterGroup";
+import { rarityMapping } from "../../rarity/rarityMapping";
+import {
+  ButtonFilterGroup,
+  ButtonGroupStyle,
+  ButtonInGroupStyle,
+} from "./ButtonFilterGroup";
 
 const InputTextStyle = styled.input`
   color: #fff;
@@ -170,35 +174,35 @@ export function Filters({
       </div>
 
       <div>
-          Attack
-          <ButtonFilterGroup
-              btnkey="targets"
-              filters={filters.targets}
-              setFilters={setFilters}
-          >
-              {Object.keys(targetsMapping).map((target) => (
-                  <div key={target}>{targetsMapping[target]}</div>
-              ))}
-          </ButtonFilterGroup>
+        Attack
+        <ButtonFilterGroup
+          btnkey="targets"
+          filters={filters.targets}
+          setFilters={setFilters}
+        >
+          {Object.keys(targetsMapping).map((target) => (
+            <div key={target}>{targetsMapping[target]}</div>
+          ))}
+        </ButtonFilterGroup>
       </div>
 
-        <div>
-            <div>Name</div>
-            <FilterByNameInput nameValue={filters.name} setFilters={setFilters}/>
-        </div>
+      <div>
+        <div>Name</div>
+        <FilterByNameInput nameValue={filters.name} setFilters={setFilters} />
+      </div>
 
-        <InputLabelStyle>
-            Show Names
-            <ButtonGroupStyle>
-                <ButtonInGroupStyle
-                    onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
-                >
-                    <FontAwesomeIcon
-                        icon={isShowNames ? faCheckSquare : faSquareFull}
-                    />
-                </ButtonInGroupStyle>
-            </ButtonGroupStyle>
-        </InputLabelStyle>
+      <InputLabelStyle>
+        Show Names
+        <ButtonGroupStyle>
+          <ButtonInGroupStyle
+            onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
+          >
+            <FontAwesomeIcon
+              icon={isShowNames ? faCheckSquare : faSquareFull}
+            />
+          </ButtonInGroupStyle>
+        </ButtonGroupStyle>
+      </InputLabelStyle>
     </FilterContainerStyle>
   );
 }

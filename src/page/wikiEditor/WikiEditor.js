@@ -1,12 +1,12 @@
-import {faEdit} from "@fortawesome/free-regular-svg-icons/faEdit";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-regular-svg-icons/faEdit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from "rc-tooltip/es";
 
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
-import {db, dbErrorHandlerPromise} from "../../firestore";
-import {ButtonColor, ButtonInGroupStyle} from "../filters/ButtonFilterGroup";
+import { db, dbErrorHandlerPromise } from "../../firestore";
+import { ButtonColor, ButtonInGroupStyle } from "../filters/ButtonFilterGroup";
 import WikiEditorActive from "./WikiEditorActive";
 import WikiEditorReadOnly from "./WikiEditorReadOnly";
 
@@ -95,19 +95,19 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
         <EditWithButtonStyle>
           <EditorStyle>
             {currentWikiData.createdAt ? (
-              <WikiEditorReadOnly value={currentWikiData.val}/>
+              <WikiEditorReadOnly value={currentWikiData.val} />
             ) : (
-                <WikiEditorReadOnly
-                    value={currentWikiData.val}
-                    placeholder="None added, yet."
-                />
+              <WikiEditorReadOnly
+                value={currentWikiData.val}
+                placeholder="None added, yet."
+              />
             )}
           </EditorStyle>
           <Tooltip placement="bottomRight" overlay={<span>Edit</span>}>
             <ButtonInGroupStyle onClick={() => setInEditMode(true)}>
               <ButtonColor>
-                <div style={{display: "flex", alignItems: "center"}}>
-                  <FontAwesomeIcon icon={faEdit}/>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <FontAwesomeIcon icon={faEdit} />
                 </div>
               </ButtonColor>
             </ButtonInGroupStyle>
@@ -115,10 +115,10 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
         </EditWithButtonStyle>
         <LastEditedStyle>
           {currentWikiData.createdAt && (
-              <div>
-                last edit: {currentWikiData.createdAt.toLocaleString()} -{" "}
-                {currentWikiData.createdBy}
-              </div>
+            <div>
+              last edit: {currentWikiData.createdAt.toLocaleString()} -{" "}
+              {currentWikiData.createdBy}
+            </div>
           )}
         </LastEditedStyle>
       </div>

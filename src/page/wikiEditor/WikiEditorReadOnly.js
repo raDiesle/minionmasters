@@ -1,9 +1,13 @@
 import CardDetailsModal from "page/CardDetailsModal";
-import {MasterModal} from "page/mastersoverview/MasterModal";
-import {SEPARATOR, TYPE_CARD, TYPE_MASTER,} from "page/wikiEditor/mention-config";
-import React, {useState} from "react";
+import { MasterModal } from "page/mastersoverview/MasterModal";
+import {
+  SEPARATOR,
+  TYPE_CARD,
+  TYPE_MASTER,
+} from "page/wikiEditor/mention-config";
+import React, { useState } from "react";
 import cardData from "../../generated/jobCardProps.json";
-import {mastersMapping} from "../mastersoverview/mastersMapping";
+import { mastersMapping } from "../mastersoverview/mastersMapping";
 import css from "./mention-readonly.module.scss";
 
 export default function WikiEditorReadOnly({ value = "" }) {

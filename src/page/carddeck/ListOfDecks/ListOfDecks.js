@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import {db, dbErrorHandlerPromise} from "../../../firestore";
+import { db, dbErrorHandlerPromise } from "../../../firestore";
 import cardData from "../../../generated/jobCardProps";
-import {Card} from "../../Card";
+import { Card } from "../../Card";
 
 const SingleDeckContainerStyle = styled.div`
   display: flex;

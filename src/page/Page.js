@@ -1,7 +1,7 @@
 import DeckContainer from "page/carddeck/DeckContainer";
 import qs from "qs";
 import React from "react";
-import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 import ListOfDecks from "./carddeck/ListOfDecks/ListOfDecks";
 import DiscussOnCards from "./discussion/discuss-on-cards";

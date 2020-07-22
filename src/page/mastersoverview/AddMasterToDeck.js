@@ -1,5 +1,5 @@
-import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons/faPlusCircle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 

@@ -1,9 +1,9 @@
-import {faTimesCircle} from "@fortawesome/free-regular-svg-icons/faTimesCircle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import css from "page/mastersoverview/master-modal.module.scss";
 import React from "react";
 import ReactModal from "react-modal";
-import {mastersMapping} from "./mastersMapping";
+import { mastersMapping } from "./mastersMapping";
 
 export function MasterModal({
   masterKey,

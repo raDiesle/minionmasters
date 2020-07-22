@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from "react";
-import {toast} from "react-toastify";
+import React, { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
-import {IDENTIFIER_FOR_EMPTY_SLOT} from "../carddeck/DeckContainer";
-import {CardDeckSlot} from "./CardDeckSlot";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "../carddeck/DeckContainer";
+import { CardDeckSlot } from "./CardDeckSlot";
 import MasterDeckSlot from "./MasterDeckSlot";
 
 const CardDeckStyle = styled.div`

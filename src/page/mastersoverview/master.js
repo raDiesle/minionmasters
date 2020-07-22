@@ -1,10 +1,10 @@
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from "rc-tooltip/es";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import {MasterModal} from "./MasterModal";
-import {mastersMapping} from "./mastersMapping";
+import { MasterModal } from "./MasterModal";
+import { mastersMapping } from "./mastersMapping";
 
 const OverlayActionBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -24,18 +24,18 @@ const InfoMasterDetailsOverlay = styled.div`
   position: absolute;
   top: 0px;
   padding: 35px 0
-    ${({actionRegistrationComponent}) =>
-    actionRegistrationComponent === null ? "56px" : "35px"}
-    ${({actionRegistrationComponent}) =>
-    actionRegistrationComponent === null ? "90px" : "35px"};
+    ${({ actionRegistrationComponent }) =>
+      actionRegistrationComponent === null ? "56px" : "35px"}
+    ${({ actionRegistrationComponent }) =>
+      actionRegistrationComponent === null ? "90px" : "35px"};
   right: 0px;
 
   @media (max-width: 767px) {
-    padding: ${({actionRegistrationComponent}) =>
-    actionRegistrationComponent === null ? "40px" : "11px"}
+    padding: ${({ actionRegistrationComponent }) =>
+        actionRegistrationComponent === null ? "40px" : "11px"}
       0 11px
-      ${({actionRegistrationComponent}) =>
-    actionRegistrationComponent === null ? "50px" : "11px"};
+      ${({ actionRegistrationComponent }) =>
+        actionRegistrationComponent === null ? "50px" : "11px"};
   }
 
   &:hover {

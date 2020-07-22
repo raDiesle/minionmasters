@@ -1,11 +1,14 @@
 import firebase from "@firebase/app";
-import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import React, {useState} from "react";
-import {toast} from "react-toastify";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 import styled from "styled-components";
-import {db, dbErrorHandlerPromise} from "../../../firestore";
-import {ButtonGroupStyle, ButtonInGroupStyle,} from "../../filters/ButtonFilterGroup";
+import { db, dbErrorHandlerPromise } from "../../../firestore";
+import {
+  ButtonGroupStyle,
+  ButtonInGroupStyle,
+} from "../../filters/ButtonFilterGroup";
 
 const InputGroupStyle = styled.div`
   display: flex;
@@ -23,15 +26,15 @@ export default function SaveDeckToDb({ relevantCards, selectedHero }) {
   const isIncompleteDeck = relevantCards.length < maxNumberOfCards;
 
   const handleSaveButton = () => {
-    const cardIds = relevantCards.map(({iD}) => iD);
+    const cardIds = relevantCards.map(({ iD }) => iD);
 
     dbRef
-        .add({
-          deckname,
-          cards: cardIds,
-          hero: selectedHero,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        })
+      .add({
+        deckname,
+        cards: cardIds,
+        hero: selectedHero,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      })
       .then((result) => {
         toast("saved");
       })
@@ -53,24 +56,24 @@ export default function SaveDeckToDb({ relevantCards, selectedHero }) {
 
         <ButtonGroupStyle>
           <ButtonInGroupStyle
-              onClick={() => handleSaveButton()}
-              disabled={isIncompleteDeck || !selectedHero}
+            onClick={() => handleSaveButton()}
+            disabled={isIncompleteDeck || !selectedHero}
           >
             Save
           </ButtonInGroupStyle>
         </ButtonGroupStyle>
 
         {isIncompleteDeck && (
-            <div>
-              <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
-              The deck is incomplete.
-            </div>
+          <div>
+            <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />
+            The deck is incomplete.
+          </div>
         )}
         {!selectedHero && (
-            <div>
-              <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
-              You missed to select a hero for the deck.
-            </div>
+          <div>
+            <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />
+            You missed to select a hero for the deck.
+          </div>
         )}
       </div>
     </div>

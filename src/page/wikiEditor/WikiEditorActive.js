@@ -1,13 +1,16 @@
 import firebase from "@firebase/app";
-import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
-import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
-import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
-import {faPlus} from "@fortawesome/free-solid-svg-icons/faPlus";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import React, {useEffect, useRef, useState} from "react";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
+import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
+import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import {auth, dbErrorHandlerPromise} from "../../firestore";
-import {ButtonGroupStyle, ButtonInGroupStyle,} from "../filters/ButtonFilterGroup";
+import { auth, dbErrorHandlerPromise } from "../../firestore";
+import {
+  ButtonGroupStyle,
+  ButtonInGroupStyle,
+} from "../filters/ButtonFilterGroup";
 
 import TextareaEditor from "./textarea-editor";
 
@@ -84,50 +87,50 @@ export default function WikiEditorActive({
     const dataToSaveBackend = value;
 
     dbRef
-        .add({
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            createdBy: currentUsername,
-            val: dataToSaveBackend,
-        })
-        .then(() => {
-            setInEditMode(false);
-        })
-        .catch(dbErrorHandlerPromise);
+      .add({
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdBy: currentUsername,
+        val: dataToSaveBackend,
+      })
+      .then(() => {
+        setInEditMode(false);
+      })
+      .catch(dbErrorHandlerPromise);
   };
 
-    const isLoggedIn = typeof currentUsername !== "undefined";
+  const isLoggedIn = typeof currentUsername !== "undefined";
 
-    return (
-        <div>
-            <div
-                style={{
-                    maxWidth: "1000px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    fontSize: "10px",
-                    paddingBottom: "2px",
-                }}
+  return (
+    <div>
+      <div
+        style={{
+          maxWidth: "1000px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          fontSize: "10px",
+          paddingBottom: "2px",
+        }}
+      >
+        <ButtonGroupStyle>
+          <ButtonInGroupStyle onClick={() => addCard()}>
+            <FontAwesomeIcon icon={faPlus} /> Reference Master or Card
+          </ButtonInGroupStyle>
+        </ButtonGroupStyle>
+
+        <ButtonGroupStyle>
+          <ButtonInGroupStyle>
+            <HistorySelectStyle
+              defaultValue=""
+              onChange={(dbKey) => onHistorySelect(dbKey)}
             >
-                <ButtonGroupStyle>
-                    <ButtonInGroupStyle onClick={() => addCard()}>
-                        <FontAwesomeIcon icon={faPlus}/> Reference Master or Card
-                    </ButtonInGroupStyle>
-                </ButtonGroupStyle>
-
-                <ButtonGroupStyle>
-                    <ButtonInGroupStyle>
-                        <HistorySelectStyle
-                            defaultValue=""
-                            onChange={(dbKey) => onHistorySelect(dbKey)}
-                        >
-                            {history.map((hist, idx) => (
-                                <option value={hist.id} key={hist.id}>
-                                    {hist.createdAt.toLocaleString()} {idx === 0 && "latest"}
-                                </option>
-                            ))}
-                        </HistorySelectStyle>
-                    </ButtonInGroupStyle>
+              {history.map((hist, idx) => (
+                <option value={hist.id} key={hist.id}>
+                  {hist.createdAt.toLocaleString()} {idx === 0 && "latest"}
+                </option>
+              ))}
+            </HistorySelectStyle>
+          </ButtonInGroupStyle>
         </ButtonGroupStyle>
       </div>
 
@@ -141,33 +144,33 @@ export default function WikiEditorActive({
 
       <div
         style={{
-            display: "flex",
-            maxWidth: "1000px",
-            paddingTop: "10px",
-            alignItems: "center",
+          display: "flex",
+          maxWidth: "1000px",
+          paddingTop: "10px",
+          alignItems: "center",
         }}
       >
-          <ButtonGroupStyle>
-              <>
-                  <ButtonInGroupStyle
-                      onClick={(editorStateEvent) => onSave(editorStateEvent)}
-                      disabled={isDisabledInput || !isLoggedIn}
-                      isButtonActive={isDisabledInput}
-                  >
-                      <FontAwesomeIcon icon={faSave}/> Save
-                  </ButtonInGroupStyle>
-              </>
-          </ButtonGroupStyle>
-          <a style={{paddingLeft: "8px"}} onClick={() => setInEditMode(false)}>
-              <FontAwesomeIcon icon={faTimesCircle}/> Discard
-          </a>
+        <ButtonGroupStyle>
+          <>
+            <ButtonInGroupStyle
+              onClick={(editorStateEvent) => onSave(editorStateEvent)}
+              disabled={isDisabledInput || !isLoggedIn}
+              isButtonActive={isDisabledInput}
+            >
+              <FontAwesomeIcon icon={faSave} /> Save
+            </ButtonInGroupStyle>
+          </>
+        </ButtonGroupStyle>
+        <a style={{ paddingLeft: "8px" }} onClick={() => setInEditMode(false)}>
+          <FontAwesomeIcon icon={faTimesCircle} /> Discard
+        </a>
       </div>
-            {!isLoggedIn && (
-                <div>
-                    <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/> Please
-                    login to edit data.
-                </div>
-            )}
+      {!isLoggedIn && (
+        <div>
+          <FontAwesomeIcon icon={faExclamationTriangle} color="orange" /> Please
+          login to edit data.
         </div>
+      )}
+    </div>
   );
 }

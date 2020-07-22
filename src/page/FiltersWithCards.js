@@ -1,13 +1,13 @@
 import orderBy from "lodash/orderBy";
-import React, {useCallback, useState} from "react";
-import {targetsMapping} from "../attack/targetsMapping";
-import {typeMapping} from "../cardtype/typeMapping";
-import {factionMapping} from "../faction/Factions";
+import React, { useCallback, useState } from "react";
+import { targetsMapping } from "../attack/targetsMapping";
+import { typeMapping } from "../cardtype/typeMapping";
+import { factionMapping } from "../faction/Factions";
 import cardData from "../generated/jobCardProps";
-import {MANACOST} from "../manacost/manacost";
-import {rarityMapping} from "../rarity/rarityMapping";
+import { MANACOST } from "../manacost/manacost";
+import { rarityMapping } from "../rarity/rarityMapping";
 import Cards from "./Cards";
-import {Filters} from "./filters/Filters";
+import { Filters } from "./filters/Filters";
 
 export default function FiltersWithCards({
   cardActionWrapper,

@@ -1,18 +1,18 @@
-import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
-import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
+import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
-import {IDENTIFIER_FOR_EMPTY_SLOT} from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 
 import css from "page/filters/ButtonFilterGroup.module.scss";
-import {mastersMapping} from "page/mastersoverview/mastersMapping";
+import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import React from "react";
-import {CopyToClipboard} from "react-copy-to-clipboard";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import {FacebookIcon, FacebookShareButton} from "react-share";
-import {toast} from "react-toastify";
+import { FacebookIcon, FacebookShareButton } from "react-share";
+import { toast } from "react-toastify";
 import styled from "styled-components";
-import {ButtonGroupStyle} from "../filters/ButtonFilterGroup";
+import { ButtonGroupStyle } from "../filters/ButtonFilterGroup";
 import cssGuide from "./Guide.module.scss";
 
 const ExportStyle = styled.div`

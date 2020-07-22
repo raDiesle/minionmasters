@@ -1,9 +1,9 @@
-import {faUnlock} from "@fortawesome/free-solid-svg-icons/faUnlock";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import css from "page/mastersoverview/master-modal.module.scss";
 import Tooltip from "rc-tooltip/es";
 import React from "react";
-import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 import IconDamage from "./icon-damage.png";
 
