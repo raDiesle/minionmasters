@@ -1,4 +1,6 @@
 import firebase from "@firebase/app";
+import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useState} from "react";
 import {toast} from "react-toastify";
 import styled from "styled-components";
@@ -15,22 +17,23 @@ const InputGroupStyle = styled.div`
 
 export default function SaveDeckToDb({ relevantCards, selectedHero }) {
   const [deckname, setDeckname] = useState("");
-
   const dbRef = db.collection("decks");
 
+  const maxNumberOfCards = 10; // verify
+  const isIncompleteDeck = relevantCards.length < maxNumberOfCards;
+
   const handleSaveButton = () => {
-    const cardIds = relevantCards.map(({ iD }) => iD);
+    const cardIds = relevantCards.map(({iD}) => iD);
 
     dbRef
-      .add({
-        deckname,
-        cards: cardIds,
-        hero: selectedHero,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        .add({
+          deckname,
+          cards: cardIds,
+          hero: selectedHero,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((result) => {
         toast("saved");
-        debugger;
       })
       .catch(dbErrorHandlerPromise);
   };
@@ -49,10 +52,26 @@ export default function SaveDeckToDb({ relevantCards, selectedHero }) {
         </InputGroupStyle>
 
         <ButtonGroupStyle>
-          <ButtonInGroupStyle onClick={() => handleSaveButton()}>
+          <ButtonInGroupStyle
+              onClick={() => handleSaveButton()}
+              disabled={isIncompleteDeck || !selectedHero}
+          >
             Save
           </ButtonInGroupStyle>
         </ButtonGroupStyle>
+
+        {isIncompleteDeck && (
+            <div>
+              <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
+              The deck is incomplete.
+            </div>
+        )}
+        {!selectedHero && (
+            <div>
+              <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/>
+              You missed to select a hero for the deck.
+            </div>
+        )}
       </div>
     </div>
   );

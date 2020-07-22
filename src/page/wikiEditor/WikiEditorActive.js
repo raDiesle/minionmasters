@@ -1,6 +1,7 @@
 import firebase from "@firebase/app";
 import {faTimesCircle} from "@fortawesome/free-regular-svg-icons";
 import {faSave} from "@fortawesome/free-regular-svg-icons/faSave";
+import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import {faPlus} from "@fortawesome/free-solid-svg-icons/faPlus";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useRef, useState} from "react";
@@ -84,27 +85,29 @@ export default function WikiEditorActive({
 
     dbRef
       .add({
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        createdBy: currentUsername,
-        val: dataToSaveBackend,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          createdBy: currentUsername,
+          val: dataToSaveBackend,
       })
-      .then(() => {
-        setInEditMode(false);
-      })
-      .catch(dbErrorHandlerPromise);
+        .then(() => {
+            setInEditMode(false);
+        })
+        .catch(dbErrorHandlerPromise);
   };
 
-  return (
-    <div>
-      <div
-        style={{
-            maxWidth: "1000px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontSize: "10px",
-            paddingBottom: "2px",
-        }}
+    const isLoggedIn = typeof currentUsername !== "undefined";
+
+    return (
+        <div>
+            <div
+                style={{
+                    maxWidth: "1000px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    fontSize: "10px",
+                    paddingBottom: "2px",
+                }}
       >
         <ButtonGroupStyle>
           <ButtonInGroupStyle onClick={() => addCard()}>
@@ -147,18 +150,24 @@ export default function WikiEditorActive({
         <ButtonGroupStyle>
           <>
             <ButtonInGroupStyle
-              onClick={(editorStateEvent) => onSave(editorStateEvent)}
-              disabled={isDisabledInput}
-              isButtonActive={isDisabledInput}
+                onClick={(editorStateEvent) => onSave(editorStateEvent)}
+                disabled={isDisabledInput || !isLoggedIn}
+                isButtonActive={isDisabledInput}
             >
-              <FontAwesomeIcon icon={faSave} /> Save
+                <FontAwesomeIcon icon={faSave}/> Save
             </ButtonInGroupStyle>
           </>
         </ButtonGroupStyle>
-        <a style={{ paddingLeft: "8px" }} onClick={() => setInEditMode(false)}>
-          <FontAwesomeIcon icon={faTimesCircle} /> Discard
-        </a>
+          <a style={{paddingLeft: "8px"}} onClick={() => setInEditMode(false)}>
+              <FontAwesomeIcon icon={faTimesCircle}/> Discard
+          </a>
       </div>
-    </div>
+            {!isLoggedIn && (
+                <div>
+                    <FontAwesomeIcon icon={faExclamationTriangle} color="orange"/> Please
+                    login to edit data.
+                </div>
+            )}
+        </div>
   );
 }

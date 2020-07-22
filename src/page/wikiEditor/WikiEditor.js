@@ -95,7 +95,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
         <EditWithButtonStyle>
           <EditorStyle>
             {currentWikiData.createdAt ? (
-                <WikiEditorReadOnly value={currentWikiData.val}/>
+              <WikiEditorReadOnly value={currentWikiData.val}/>
             ) : (
                 <WikiEditorReadOnly
                     value={currentWikiData.val}

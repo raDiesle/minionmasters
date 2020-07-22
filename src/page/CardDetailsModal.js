@@ -77,7 +77,10 @@ const CardImageStyle = styled.img`
 `;
 
 const DescriptionStyle = styled.div`
-  line-height: 2rem;
+  line-height: 1.7;
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
 
 const RarityStyle = styled.div`
@@ -352,12 +355,12 @@ export default function CardDetailsModal({
             )}
 
             {[true, false].includes(flying) && (
-              <CardPropertyLiStyle>
-                <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
-                <div>
-                  <FontAwesomeIcon icon={flying ? faCheck : faTimes} />
-                </div>
-              </CardPropertyLiStyle>
+                <CardPropertyLiStyle>
+                  <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
+                  <div>
+                    <FontAwesomeIcon icon={flying ? faCheck : faTimes}/>
+                  </div>
+                </CardPropertyLiStyle>
             )}
           </CardPropertyUlStyle>
 

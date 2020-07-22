@@ -84,11 +84,6 @@ export function Filters({
   return (
     <FilterContainerStyle>
       <div>
-        <div>Name</div>
-        <FilterByNameInput nameValue={filters.name} setFilters={setFilters} />
-      </div>
-
-      <div>
         Faction
         <ButtonFilterGroup
           btnkey="faction"
@@ -176,26 +171,31 @@ export function Filters({
 
       <div>
         Attack
-        <ButtonFilterGroup
-          btnkey="targets"
-          filters={filters.targets}
-          setFilters={setFilters}
-        >
-          {Object.keys(targetsMapping).map((target) => (
-            <div key={target}>{targetsMapping[target]}</div>
-          ))}
-        </ButtonFilterGroup>
+          <ButtonFilterGroup
+              btnkey="targets"
+              filters={filters.targets}
+              setFilters={setFilters}
+          >
+              {Object.keys(targetsMapping).map((target) => (
+                  <div key={target}>{targetsMapping[target]}</div>
+              ))}
+          </ButtonFilterGroup>
       </div>
 
-      <InputLabelStyle>
-        Show Names
-        <ButtonGroupStyle>
-          <ButtonInGroupStyle
-            onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
-          >
-            <FontAwesomeIcon
-              icon={isShowNames ? faCheckSquare : faSquareFull}
-            />
+        <div>
+            <div>Name</div>
+            <FilterByNameInput nameValue={filters.name} setFilters={setFilters}/>
+        </div>
+
+        <InputLabelStyle>
+            Show Names
+            <ButtonGroupStyle>
+                <ButtonInGroupStyle
+                    onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
+                >
+                    <FontAwesomeIcon
+                        icon={isShowNames ? faCheckSquare : faSquareFull}
+                    />
           </ButtonInGroupStyle>
         </ButtonGroupStyle>
       </InputLabelStyle>
