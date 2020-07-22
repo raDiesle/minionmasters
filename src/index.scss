@@ -30,6 +30,10 @@ a:hover {
 
 .react-tabs__tab {
   text-decoration: underline;
+
+  &:hover {
+    color: yellow;
+  }
 }
 
 .htmlCardRef {

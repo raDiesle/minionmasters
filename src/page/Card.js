@@ -13,10 +13,11 @@ import css from "./Card.module.scss";
 
 //onClick to be removed and setter go here
 export function Card({
-  children,
-  card: { image, manacost, rarity, type, faction, targets, name },
-  isFullWidthClickable = false,
-}) {
+                       children,
+                       card: {image, manacost, rarity, type, faction, targets, name},
+                       isFullWidthClickable = false,
+                       isShowNames = false,
+                     }) {
   const IMG_FOLDER = "generated/img/";
   const FILE_ENDING = ".webp";
   const IMG_PATH = IMG_FOLDER + image;
@@ -49,13 +50,14 @@ export function Card({
         <div className={css.FactionStyle}>{factionMapping[faction]}</div>
 
         {targetsMapping[targets] && (
-          <>
-            <div className={css.BottomRightCornerStyle} />
-            <div className={css.AttackTypeStyle}>{targetsMapping[targets]}</div>
-          </>
+            <>
+              <div className={css.BottomRightCornerStyle}/>
+              <div className={css.AttackTypeStyle}>{targetsMapping[targets]}</div>
+            </>
         )}
         {children}
       </div>
+      <div className={css.CardNameStyle}>{isShowNames ? name : null}</div>
     </div>
   );
 }

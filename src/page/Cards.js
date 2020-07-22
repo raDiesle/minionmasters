@@ -14,12 +14,13 @@ export default function Cards({
       <div className={css.CardsStyle}>
         {cards.map((card) => (
           <div key={card.iD}>
-            <Card card={card} isFullWidthClickable={isFullWidthClickable}>
-              {cardActionWrapper(card)}
-            </Card>
-            <div className={css.CardNameStyle}>
-              {isShowNames ? card.name : null}
-            </div>
+              <Card
+                  card={card}
+                  isFullWidthClickable={isFullWidthClickable}
+                  isShowNames={isShowNames}
+              >
+                  {cardActionWrapper(card)}
+              </Card>
           </div>
         ))}
       </div>

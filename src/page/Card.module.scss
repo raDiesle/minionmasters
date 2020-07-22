@@ -10,12 +10,17 @@
   }
 
   border-width: 1px;
-  border-color: black;
+  border-color: #222;
   border-style: solid;
 
   &:hover {
     opacity: 1;
   }
+}
+
+.CardNameStyle {
+  font-size: 11px;
+  text-align: center;
 }
 
 .IMG {
@@ -28,6 +33,10 @@
 .CardContainerStyleFullWidth {
   &:hover {
     border-color: yellow;
+  }
+
+  &:hover * {
+    color: yellow;
   }
 }
 
