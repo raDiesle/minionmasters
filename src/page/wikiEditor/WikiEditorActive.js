@@ -118,16 +118,16 @@ export default function WikiEditorActive({
                 <ButtonGroupStyle>
                     <ButtonInGroupStyle>
                         <HistorySelectStyle
-              defaultValue=""
-              onChange={(dbKey) => onHistorySelect(dbKey)}
-            >
-              {history.map((hist, idx) => (
-                <option value={hist.id} key={hist.id}>
-                  {hist.createdAt.toLocaleString()} {idx === 0 && "latest"}
-                </option>
-              ))}
-            </HistorySelectStyle>
-          </ButtonInGroupStyle>
+                            defaultValue=""
+                            onChange={(dbKey) => onHistorySelect(dbKey)}
+                        >
+                            {history.map((hist, idx) => (
+                                <option value={hist.id} key={hist.id}>
+                                    {hist.createdAt.toLocaleString()} {idx === 0 && "latest"}
+                                </option>
+                            ))}
+                        </HistorySelectStyle>
+                    </ButtonInGroupStyle>
         </ButtonGroupStyle>
       </div>
 
@@ -147,17 +147,17 @@ export default function WikiEditorActive({
             alignItems: "center",
         }}
       >
-        <ButtonGroupStyle>
-            <>
-                <ButtonInGroupStyle
-                    onClick={(editorStateEvent) => onSave(editorStateEvent)}
-                    disabled={isDisabledInput || !isLoggedIn}
-                    isButtonActive={isDisabledInput}
-                >
-                    <FontAwesomeIcon icon={faSave}/> Save
-                </ButtonInGroupStyle>
-            </>
-        </ButtonGroupStyle>
+          <ButtonGroupStyle>
+              <>
+                  <ButtonInGroupStyle
+                      onClick={(editorStateEvent) => onSave(editorStateEvent)}
+                      disabled={isDisabledInput || !isLoggedIn}
+                      isButtonActive={isDisabledInput}
+                  >
+                      <FontAwesomeIcon icon={faSave}/> Save
+                  </ButtonInGroupStyle>
+              </>
+          </ButtonGroupStyle>
           <a style={{paddingLeft: "8px"}} onClick={() => setInEditMode(false)}>
               <FontAwesomeIcon icon={faTimesCircle}/> Discard
           </a>
