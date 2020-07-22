@@ -170,7 +170,7 @@ export function Filters({
       </div>
 
       <div>
-        Attack
+          Attack
           <ButtonFilterGroup
               btnkey="targets"
               filters={filters.targets}
@@ -196,9 +196,9 @@ export function Filters({
                     <FontAwesomeIcon
                         icon={isShowNames ? faCheckSquare : faSquareFull}
                     />
-          </ButtonInGroupStyle>
-        </ButtonGroupStyle>
-      </InputLabelStyle>
+                </ButtonInGroupStyle>
+            </ButtonGroupStyle>
+        </InputLabelStyle>
     </FilterContainerStyle>
   );
 }

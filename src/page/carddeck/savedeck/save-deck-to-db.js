@@ -31,7 +31,7 @@ export default function SaveDeckToDb({ relevantCards, selectedHero }) {
           cards: cardIds,
           hero: selectedHero,
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      })
+        })
       .then((result) => {
         toast("saved");
       })

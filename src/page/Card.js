@@ -23,11 +23,11 @@ export function Card({
   const IMG_PATH = IMG_FOLDER + image;
 
   return (
-    <div
-      className={classnames(
-        css.CardContainerStyle,
-        isFullWidthClickable && css.CardContainerStyleFullWidth
-      )}
+      <div
+          className={classnames(
+              css.CardContainerStyle,
+              isFullWidthClickable && css.CardContainerStyleFullWidth
+          )}
     >
       <div className={css.CardContentStyle}>
         <img

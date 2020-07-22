@@ -84,11 +84,11 @@ export default function WikiEditorActive({
     const dataToSaveBackend = value;
 
     dbRef
-      .add({
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          createdBy: currentUsername,
-          val: dataToSaveBackend,
-      })
+        .add({
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            createdBy: currentUsername,
+            val: dataToSaveBackend,
+        })
         .then(() => {
             setInEditMode(false);
         })
@@ -108,16 +108,16 @@ export default function WikiEditorActive({
                     fontSize: "10px",
                     paddingBottom: "2px",
                 }}
-      >
-        <ButtonGroupStyle>
-          <ButtonInGroupStyle onClick={() => addCard()}>
-            <FontAwesomeIcon icon={faPlus} /> Reference Master or Card
-          </ButtonInGroupStyle>
-        </ButtonGroupStyle>
+            >
+                <ButtonGroupStyle>
+                    <ButtonInGroupStyle onClick={() => addCard()}>
+                        <FontAwesomeIcon icon={faPlus}/> Reference Master or Card
+                    </ButtonInGroupStyle>
+                </ButtonGroupStyle>
 
-        <ButtonGroupStyle>
-          <ButtonInGroupStyle>
-            <HistorySelectStyle
+                <ButtonGroupStyle>
+                    <ButtonInGroupStyle>
+                        <HistorySelectStyle
               defaultValue=""
               onChange={(dbKey) => onHistorySelect(dbKey)}
             >
@@ -148,15 +148,15 @@ export default function WikiEditorActive({
         }}
       >
         <ButtonGroupStyle>
-          <>
-            <ButtonInGroupStyle
-                onClick={(editorStateEvent) => onSave(editorStateEvent)}
-                disabled={isDisabledInput || !isLoggedIn}
-                isButtonActive={isDisabledInput}
-            >
-                <FontAwesomeIcon icon={faSave}/> Save
-            </ButtonInGroupStyle>
-          </>
+            <>
+                <ButtonInGroupStyle
+                    onClick={(editorStateEvent) => onSave(editorStateEvent)}
+                    disabled={isDisabledInput || !isLoggedIn}
+                    isButtonActive={isDisabledInput}
+                >
+                    <FontAwesomeIcon icon={faSave}/> Save
+                </ButtonInGroupStyle>
+            </>
         </ButtonGroupStyle>
           <a style={{paddingLeft: "8px"}} onClick={() => setInEditMode(false)}>
               <FontAwesomeIcon icon={faTimesCircle}/> Discard
