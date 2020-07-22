@@ -7,13 +7,13 @@ import SaveDeckToDb from "./save-deck-to-db";
 export default function SaveDeckContainer({ lastSelectedCards, selectedHero }) {
     const relevantCards = lastSelectedCards
         .filter(({card: {iD}}) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
-        .map(({ card }) => card);
+        .map(({card}) => card);
 
     return (
         <div>
-            <AnalyzeDeck relevantCards={relevantCards} selectedHero={selectedHero} />
+            <AnalyzeDeck relevantCards={relevantCards} selectedHero={selectedHero}/>
 
-            <SaveDeckToDb relevantCards={relevantCards} selectedHero={selectedHero} />
+            <SaveDeckToDb relevantCards={relevantCards} selectedHero={selectedHero}/>
         </div>
     );
 }
