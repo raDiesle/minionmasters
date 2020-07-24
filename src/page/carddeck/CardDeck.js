@@ -1,3 +1,4 @@
+import mToast from "components/mToast";
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
@@ -97,7 +98,7 @@ export function CardDeck({
         );
         setCurrentSelectedSlot(nextFreeSlot);
         setPrevSelectedCardEvent(cardSelectedEventId);
-        toast("Card added to Deck");
+        mToast("Card added to Deck");
       } else {
         const consideredOngoingCount = 1;
 
@@ -126,9 +127,9 @@ export function CardDeck({
           };
           setLastSelectedCards(newLastSelectedCards);
           setPrevSelectedCardEvent(cardSelectedEventId);
-          toast("Card added to Deck");
+          mToast("Card added to Deck");
         } else {
-          toast("Wildcard limit reached.");
+          mToast("Wildcard limit reached.");
         }
       }
     }

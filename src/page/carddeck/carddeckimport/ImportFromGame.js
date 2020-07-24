@@ -1,3 +1,4 @@
+import mToast from "components/mToast";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import css from "page/carddeck/Guide.module.scss";
 import React from "react";
@@ -77,9 +78,9 @@ export default function ImportFromGame({
       }
       setLastSelectedCards(cardsOnDeckSlots);
       setSelectedHero(heroName);
-      toast("Imported");
+      mToast("Imported");
     } catch (e) {
-      toast("Could not copy paste from game.    Please read the info.");
+      mToast("Could not copy paste from game.    Please read the info.");
     }
   };
 

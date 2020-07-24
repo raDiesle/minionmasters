@@ -1,6 +1,7 @@
 import firebase from "@firebase/app";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import mToast from "components/mToast";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
@@ -36,7 +37,7 @@ export default function SaveDeckToDb({ relevantCards, selectedHero }) {
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((result) => {
-        toast("saved");
+        mToast("saved");
       })
       .catch(dbErrorHandlerPromise);
   };

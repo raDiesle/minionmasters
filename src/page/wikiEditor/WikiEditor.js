@@ -1,11 +1,14 @@
 import { faEdit } from "@fortawesome/free-regular-svg-icons/faEdit";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import mToast from "components/mToast";
+
 import Tooltip from "rc-tooltip/es";
 
 import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
-import { db, dbErrorHandlerPromise } from "../../firestore";
+import { auth, db, dbErrorHandlerPromise } from "../../firestore";
 import { ButtonColor, ButtonInGroupStyle } from "../filters/ButtonFilterGroup";
 import WikiEditorActive from "./WikiEditorActive";
 import WikiEditorReadOnly from "./WikiEditorReadOnly";
@@ -58,12 +61,20 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
     val: "",
   });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const listen = () =>
+      auth.onAuthStateChanged((user) => {
+        setIsLoggedIn(!!user);
+      });
+    return () => listen();
+  }, []);
+
   const [isInEditMode, setInEditMode] = useState(false);
   useEffect(() => {
     if (isInEditMode) {
       return;
     }
-
     dbRef
       .orderBy("createdAt", "desc")
       .limit(1)
@@ -104,7 +115,15 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
             )}
           </EditorStyle>
           <Tooltip placement="bottomRight" overlay={<span>Edit</span>}>
-            <ButtonInGroupStyle onClick={() => setInEditMode(true)}>
+            <ButtonInGroupStyle
+              onClick={() => {
+                if (isLoggedIn) {
+                  setInEditMode(true);
+                } else {
+                  mToast("Login by Facebook, Google, or Twitter.");
+                }
+              }}
+            >
               <ButtonColor>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <FontAwesomeIcon icon={faEdit} />
