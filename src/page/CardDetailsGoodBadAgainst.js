@@ -1,3 +1,4 @@
+import mToast from "components/mToast";
 import React, { useEffect, useMemo, useState } from "react";
 
 import { toast } from "react-toastify";
@@ -142,7 +143,7 @@ export default function CardDetailsGoodBadAgainst({ card, card: { iD } }) {
         { merge: true }
       )
       .then(function () {
-        toast("Saved");
+        mToast("Saved");
         return Promise.resolve();
       })
       .catch(dbErrorHandlerPromise);

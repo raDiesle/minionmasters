@@ -1,15 +1,28 @@
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons/faSignInAlt";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ReactModal from "react-modal";
 import styled from "styled-components";
 import { auth as authInstance } from "./firestore";
 
+let unregisterAuthObserver = null;
+
 export default function LoginLogout() {
   const [isLoginModalShown, setIsLoginModalShown] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
+  useEffect(() => {
+    unregisterAuthObserver = authInstance.onAuthStateChanged((user) =>
+      setIsSignedIn(!!user)
+    );
+    return () => {
+      unregisterAuthObserver();
+    };
+  }, []);
 
   const logout = () => {
     authInstance
@@ -28,8 +41,10 @@ export default function LoginLogout() {
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
     signInSuccessUrl: "/",
     signInOptions: [
-      "google.com", //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      //    firebase.auth.FacebookAuthProvider.PROVIDER_ID
+      //  "emailLink",
+      "facebook.com",
+      //  "twitter.com",
+      "google.com",
     ],
     callbacks: {
       // Avoid redirects after sign-in.
@@ -58,12 +73,17 @@ export default function LoginLogout() {
 
   return (
     <div>
-      {authInstance.currentUser ? (
-        <div onClick={logout}>Logout</div>
+      {isSignedIn === true ? (
+        <div>
+          <SignInLinkStyle onClick={logout}>
+            <span style={{ paddingRight: "5px" }}>Logout</span>
+            <FontAwesomeIcon icon={faSignOutAlt} />
+          </SignInLinkStyle>
+        </div>
       ) : (
         <>
           <SignInLinkStyle onClick={() => setIsLoginModalShown(true)}>
-            <FontAwesomeIcon icon={faSignInAlt} />
+            Login <FontAwesomeIcon icon={faSignInAlt} />
           </SignInLinkStyle>
           <ReactModal
             className="modalContentStyle"

@@ -98,8 +98,6 @@ export default function WikiEditorActive({
       .catch(dbErrorHandlerPromise);
   };
 
-  const isLoggedIn = typeof currentUsername !== "undefined";
-
   return (
     <div>
       <div
@@ -154,7 +152,7 @@ export default function WikiEditorActive({
           <>
             <ButtonInGroupStyle
               onClick={(editorStateEvent) => onSave(editorStateEvent)}
-              disabled={isDisabledInput || !isLoggedIn}
+              disabled={isDisabledInput}
               isButtonActive={isDisabledInput}
             >
               <FontAwesomeIcon icon={faSave} /> Save
@@ -165,12 +163,6 @@ export default function WikiEditorActive({
           <FontAwesomeIcon icon={faTimesCircle} /> Discard
         </a>
       </div>
-      {!isLoggedIn && (
-        <div>
-          <FontAwesomeIcon icon={faExclamationTriangle} color="orange" /> Please
-          login to edit data.
-        </div>
-      )}
     </div>
   );
 }
