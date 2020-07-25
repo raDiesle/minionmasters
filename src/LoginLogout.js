@@ -9,14 +9,12 @@ import ReactModal from "react-modal";
 import styled from "styled-components";
 import { auth as authInstance } from "./firestore";
 
-let unregisterAuthObserver = null;
-
 export default function LoginLogout() {
   const [isLoginModalShown, setIsLoginModalShown] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
-    unregisterAuthObserver = authInstance.onAuthStateChanged((user) =>
+    const unregisterAuthObserver = authInstance.onAuthStateChanged((user) =>
       setIsSignedIn(!!user)
     );
     return () => {
@@ -43,7 +41,7 @@ export default function LoginLogout() {
     signInOptions: [
       //  "emailLink",
       "facebook.com",
-      //  "twitter.com",
+      "twitter.com",
       "google.com",
     ],
     callbacks: {
