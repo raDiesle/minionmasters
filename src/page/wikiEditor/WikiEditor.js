@@ -63,11 +63,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    const listen = () =>
-      auth.onAuthStateChanged((user) => {
-        setIsLoggedIn(!!user);
-      });
-    return () => listen();
+    setIsLoggedIn(!!auth.currentUser);
   }, []);
 
   const [isInEditMode, setInEditMode] = useState(false);
