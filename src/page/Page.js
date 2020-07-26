@@ -1,4 +1,5 @@
 import DeckContainer from "page/carddeck/DeckContainer";
+import ListOfMechanics from "page/mechanics/list-of-mechanics";
 import qs from "qs";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
@@ -21,6 +22,7 @@ export function Page() {
           <Tab>Masters Info</Tab>
           <Tab>Deck Manager</Tab>
           <Tab>Decks</Tab>
+          <Tab>Mechanics</Tab>
         </TabList>
         <TabPanel>
           <DiscussOnCards />
@@ -33,6 +35,9 @@ export function Page() {
         </TabPanel>
         <TabPanel>
           <ListOfDecks />
+        </TabPanel>
+        <TabPanel>
+          <ListOfMechanics />
         </TabPanel>
       </Tabs>
     </div>

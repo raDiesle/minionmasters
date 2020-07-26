@@ -166,6 +166,10 @@ function normalizeGameCardData(propsAsMap) {
     "[math:[v:DamageSelfOnAttack.SELF_DAMAGE_PERCENT]/[av:ZealotLeader.AttackCooldown]]",
     `6`
   );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:PropellerHorde.SummonAmounts*0]",
+    "2"
+  );
 
   propsAsMap.description = propsAsMap.description.replace(
     "ERROR_[actorskillinfo:Cohort,[mec:[r:Cohort]]] ([cv:Hypnotize.Variable])",
@@ -191,6 +195,55 @@ function normalizeGameCardData(propsAsMap) {
     `<link="plain_text:+2 range><b><color=orange>Marksmanship</color></b></link>`,
     `{"Marksmanship", "${TYPE_TERM}","Marksmanship"}`
   );
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:GaxEgg>Egg</link>`,
+    `{"Egg", "${TYPE_TERM}","GaxEgg"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:BoomerEgg>Egg</link>`,
+    `{"Egg", "${TYPE_TERM}","BoomerEgg"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:ReBoomerEgg>Egg</link>`,
+    `{"Egg", "${TYPE_TERM}","ReBoomerEgg"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[math:[av:BridgeShrine.LifeTime]/[math:[v:GeneratePowerOverTime.POWER_DELAY]/1000]]",
+    "18"
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[av:BridgeShrine.LifeTime]",
+    "45"
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[v:TakeDamageOverTimeExtraDuringManaFrenzy.OVERHEAT_MULTIPLIER]",
+    "3"
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:Skeletons.SummonAmounts*0]",
+    "3"
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[r:SkeletonUnits]",
+    "Skeletons"
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:SlitherDarterSlave>Slitherbound Darter</link>`,
+    `{"Slitherbound Darter", "${TYPE_TERM}","SlitherDarterSlave"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:SlitherLancerSlave>Slitherbound Lancer</link>`,
+    `{"Slitherbound Lancer", "${TYPE_TERM}","SlitherLancerSlave"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "<b>each team</b>",
+    "each team"
+  );
 
   propsAsMap.description = propsAsMap.description.replace("[r:Jahun]", "Jahun");
 
@@ -208,7 +261,7 @@ function normalizeGameCardData(propsAsMap) {
   // <link="actor_skill:ManaSurgeBuff><b><color=orange>Mana Surge</color></b></link>
   // <link="actor_skill:Overload><b><color=orange>Mana Freeze (1)</color></b></link>
   propsAsMap.description = propsAsMap.description.replace(
-    /<link="actor_skill:([ a-zA-Z]+?)><b><color=orange>([ a-zA-Z(0-9)]+?)<\/color><\/b><\/link>/gm,
+    /<link="actor_skill:([ a-zA-Z]+?)><b><color=orange>([ a-zA-Z(0-9)-]+?)<\/color><\/b><\/link>/gm,
     `{"$2", "${TYPE_TERM}","$1"}`
   );
 
