@@ -137,65 +137,6 @@ export default function CardDetailsModal({
   setIsOpenDetails,
 }) {
   const [modals, setModals] = useState([]);
-  const [glossary, setGlossary] = useState([]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const $cardRootContainer = `div[data-name="${name}"] `;
-
-      /* TODO Should be moved to batch jobs to prepare data */
-      // expects that both have same size.
-      let inlineItemItems = document.querySelectorAll(
-        `${$cardRootContainer} span[data-inline-text]:not([data-inline-text=""]`
-      );
-      const inlineItemItemss = [...inlineItemItems].map((inlineNode) =>
-        inlineNode.getAttribute("data-inline-text")
-      );
-
-      let inlineItemTitles = document.querySelectorAll(
-        `${$cardRootContainer} span[data-highlight]:not([data-highlight=""]`
-      );
-      const inlineItemTits = [...inlineItemTitles].map((inlineNode) =>
-        inlineNode.getAttribute("data-highlight")
-      );
-
-      const result = inlineItemTits
-        .map((title, index) => ({
-          text: inlineItemItemss[index],
-          title,
-        }))
-        .filter(({ text }) => text); // because description is missing in gameData
-
-      setGlossary(result);
-
-      [
-        ...document.querySelectorAll(
-          `${$cardRootContainer}span[data-card]:not([data-card=""]`
-        ),
-      ].map((foundItem) => {
-        foundItem.addEventListener("click", function (e) {
-          const clickedInfo = this.getAttribute("data-card");
-          // to find card.name is a hack. If sort by iD, it will likely find the card to summon
-          const card = sortBy(cardData, ["iD"]).find((card) => {
-            return (
-              card.unitToSummon === clickedInfo ||
-              card.name.toLowerCase().replace(/\s/g, "") ===
-                clickedInfo.toLowerCase()
-            );
-          });
-
-          if (typeof card !== "undefined") {
-            setModals((modals) => [...modals, card]);
-          }
-        });
-
-        return true;
-      });
-    }, 0);
-
-    document.body.style.overflow = "hidden";
-    return () => (document.body.style.overflow = "unset");
-  }, []);
 
   const isAttacking =
     !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
@@ -366,16 +307,6 @@ export default function CardDetailsModal({
           </CardPropertyUlStyle>
 
           <CardDescription description={description} />
-
-          <CardGlossaryUlStyle>
-            {glossary.length > 0 &&
-              glossary.map(({ title, text }) => (
-                <CardPropertyLiStyle key={title}>
-                  <CardGlossaryStyle>{title}</CardGlossaryStyle>
-                  <div dangerouslySetInnerHTML={{ __html: text }}></div>
-                </CardPropertyLiStyle>
-              ))}
-          </CardGlossaryUlStyle>
 
           <div>
             <h3 style={{ marginBottom: 0 }}>Tips by community</h3>
