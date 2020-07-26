@@ -1,3 +1,10 @@
+const {
+  TYPE_CARD_REF,
+  TYPE_INLINE,
+  TYPE_TERM,
+  TYPE_SUBTEXT,
+} = require("./card-description-types");
+
 const invert = require("lodash.invert");
 const _mapValues = require("lodash.mapvalues");
 const fs = require("fs");
@@ -118,6 +125,7 @@ function normalizeGameCardData(propsAsMap) {
     propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
 
   const iDsMasterAbilitySpells = [
+    104, // arcane golem
     103, // arcane missiles
     244, // drain live
     245, // spirit
@@ -139,111 +147,117 @@ function normalizeGameCardData(propsAsMap) {
     propsAsMap.rarity = "Perk";
   }
 
+  /* special parsings */
   propsAsMap.description = propsAsMap.description.replace(
-    /\<link="spell_info:(.*?)>(.*?)<\/link>/gm,
-    "<span class='htmlCardRef' data-card='$1'>$2</span>"
-  );
-  propsAsMap.description = propsAsMap.description.replace(
-    /\<link="actor_info:(.*?)>(.*?)<\/link>/gm,
-    "<span class='htmlCardRef' data-card='$1'>$2</span>"
+    "[cv:DeadlyTwins.AdditionalUnitTriggerVariable]",
+    `5`
   );
   propsAsMap.description = propsAsMap.description.replace(
-    /\<link="plain_text:(.*?)>(.*?)<\/link>/gm,
-    "<span class='htmlTextRef' data-inline-text='$1'>$2</span>"
-  );
-  propsAsMap.description = propsAsMap.description.replace(
-    /\<b\><color\=orange>(.*?)<\/color>\<\/b\>/gm,
-    "<span class='htmlHighlight' data-highlight='$1'>$1</span>"
-  );
-
-  function mapInlineWordInfo(word, description) {
-    const regex = new RegExp(
-      `\\<span class\\=\\'htmlHighlight\\' data\\-highlight\\=\\'${word}\\'\\>${word}\\<\\/span\\>`,
-      "gm"
-    );
-
-    propsAsMap.description = propsAsMap.description.replace(
-      regex,
-      `
-        <span class='htmlTextRef' data-inline-text='${description}'>
-            <span class='htmlHighlight' data-highlight='${word}'>${word}</span>
-         </span>
-         `
-    );
-  }
-
-  mapInlineWordInfo(
-    "Taunt",
-    `All nearby Enemies will target this Minion. Radius 5.`
-  );
-  mapInlineWordInfo(
-    "Explodes",
-    `Detonates shortly after being summoned and deals damage to all nearby Units.`
-  );
-  mapInlineWordInfo(
-    "Netherstep",
-    `Instantly jump through the nether to a different location. Cooldown 1, Teleport Distance 8.`
-  );
-  mapInlineWordInfo("Poison", `Deals damage over time to a Minion`);
-  mapInlineWordInfo(
-    "Voidborne Wound",
-    `If a Voidborne Minion deals damage to enemy Master while this card is in your hand`
-  );
-  mapInlineWordInfo("Stuns", `Stunned Units are unable to move or attack.`);
-
-  mapInlineWordInfo(
-    "Impactful Entry",
-    "Lands in the arena with devastating force pushing nearby enemy minions away and deals 100 damage."
-  );
-  mapInlineWordInfo(
-    "Armor of Light",
-    "When this Brother takes damage, his radiant armor explodes to damage and knock back enemies. Damage: 75, Cooldown: 12s, Radius: 4"
-  );
-
-  propsAsMap.description = propsAsMap.description.replace(/ERROR_/, "");
-
-  propsAsMap.description = propsAsMap.description.replace(
-    new RegExp(/\. /, "g"),
-    ".<br />"
+    "[math:[av:Jahun.Damage]/2]",
+    `75`
   );
 
   propsAsMap.description = propsAsMap.description.replace(
-    new RegExp(/\'\'\'Mana Freeze \(2\)\'\'\'/, "g"),
-    "<span class='htmlTextRef' data-inline-text='Lock 2 Mana Crystals. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(2)'>Mana Freeze(2)</span></span>"
-  );
-  propsAsMap.description = propsAsMap.description.replace(
-    new RegExp(/\'\'\'Mana Freeze\(1\)\'\'\'/, "g"),
-    "<span class='htmlTextRef' data-inline-text='Lock 1 Mana Crystal. The next time you would gain mana, instead unlock a mana crystal.'><span class='htmlHighlight' data-highlight='Mana Freeze(1)'>Mana Freeze(1)</span></span>"
+    "[cv:DynamicDuo.AdditionalUnitTriggerVariable]",
+    `3`
   );
 
   propsAsMap.description = propsAsMap.description.replace(
-    "[actorskillinfo:MythicBuff,[mec:[r:MythicBuff]]]",
-    `<span class='htmlHighlight' data-highlight=''>
-       <span className='htmlTextRef' data-inline-text='Leaves the battlefield instead of dying. Your team can only have one copy of this minion summoned at a time.'>
-        <span className='htmlHighlight' data-highlight='Mythic'>Mythic</span>
-       </span>
-      </span>`
+    "[math:[v:DamageSelfOnAttack.SELF_DAMAGE_PERCENT]/[av:ZealotLeader.AttackCooldown]]",
+    `6`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "ERROR_[actorskillinfo:Cohort,[mec:[r:Cohort]]] ([cv:Hypnotize.Variable])",
+    `{"Slitherbound (2)", "${TYPE_TERM}","CohortTwo"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "ERROR_[r:ZealotLeaderFirst]",
+    "Ardera"
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:ShiHouMonkey>Shi-Hou</link>`,
+    `{"Shi-Hou", "${TYPE_CARD_REF}", "Windwalker Shi-Hou "}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:RangedMonkey>Mu-Hou</link>`,
+    `{"Mu-Hou", "${TYPE_CARD_REF}", "Jade Flingers"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="plain_text:+2 range><b><color=orange>Marksmanship</color></b></link>`,
+    `{"Marksmanship", "${TYPE_TERM}","Marksmanship"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace("[r:Jahun]", "Jahun");
+
+  propsAsMap.description = propsAsMap.description.replace(
+    /\<link="spell_info:([ a-zA-Z]+?)>([ a-zA-Z]+?)<\/link>/gm,
+    `{"$2", "${TYPE_CARD_REF}", "$1"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    /<link="actor_info:([ a-zA-Z]+?)><b><color=orange>([ a-zA-Z]+?)<\/color><\/b><\/link>/gm,
+    `{"$2", "${TYPE_CARD_REF}","$1"}`
+  );
+
+  // <link="actor_skill:SoulDetonateBuff><b><color=orange>Soul Detonate</color></b></link>
+  // <link="actor_skill:ManaSurgeBuff><b><color=orange>Mana Surge</color></b></link>
+  // <link="actor_skill:Overload><b><color=orange>Mana Freeze (1)</color></b></link>
+  propsAsMap.description = propsAsMap.description.replace(
+    /<link="actor_skill:([ a-zA-Z]+?)><b><color=orange>([ a-zA-Z(0-9)]+?)<\/color><\/b><\/link>/gm,
+    `{"$2", "${TYPE_TERM}","$1"}`
+  );
+
+  //  <link="actor_info:CrystalSentry>Crystal Sentries</link>
+  // <link="actor_info:ShiHouMonkey>Shi-Hou</link>
+  propsAsMap.description = propsAsMap.description.replace(
+    /<link="actor_info:([ a-zA-Z]+?)>([ a-zA-Z-]+?)<\/link>/gm,
+    `{"$2", "${TYPE_CARD_REF}","$1"}`
+  );
+
+  // only to be used when not nested with other variables, otherwise handled above
+  propsAsMap.description = propsAsMap.description.replace(
+    /<b><color=orange>([ a-zA-Z]?)<\/color><\/b>/gm,
+    `{"$1", "${TYPE_TERM}"}` // REQUIRES DATA
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    /<size=20><color=#808080>(.*?)<\/color><\/size>/,
+    `{"$1", "${TYPE_SUBTEXT}"}`
   );
 
   /* fix new inline syntax */
   propsAsMap.description = propsAsMap.description.replace(
     /\[actorinfo\:(.*?)\,\[r\:(.*?)\]\]/gm,
-    `<span className='htmlCardRef' data-card='$1'>$1</span>`
-  );
-
-  propsAsMap.description = propsAsMap.description.replace(
-    /\[cv\:DeadlyTwins\.AdditionalUnitTriggerVariable\]/gm,
-    `5`
-  );
-  propsAsMap.description = propsAsMap.description.replace(
-    /\[math\:\[av\:Jahun\.Damage\]\/2]/gm,
-    `75`
+    `{"$1", "${TYPE_CARD_REF}", "$2"}`
   );
 
   propsAsMap.description = propsAsMap.description.replace(
     /\[spellinfo:(.*?)\,\[r:(.*?)\]\]/gm,
-    `<span className='htmlCardRef' data-card='$1'>$1</span>`
+    `{"$1", "${TYPE_TERM}", "$2"}`
   );
+  propsAsMap.description = propsAsMap.description.replace(
+    /\[actorskillinfo:(.*?)\,.*?\:\[r:(.*?)\]\]\]/gm,
+    `{"$1", "${TYPE_TERM}", "$2"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    /\[r:(.*?)\]/gm,
+    `{"$1", "${TYPE_TERM}", "$1"}`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(/ERROR_/, "");
+
+  /*
+  propsAsMap.description = propsAsMap.description.replace(
+    new RegExp(/\. /, "g"),
+    ".<br />"
+  );
+  */
 
   const propsAsMapParsedValues = _mapValues(propsAsMap, (val) => {
     if (val === "True") {
@@ -278,7 +292,6 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
     1965: 262, //   Crystal Vortex
     1689: 169, //  Deadly Twins
     1961: 260, //  HighlandWoodsman
-    1969: 268, //
     1925: 249, //  SlitherSlaves
     1877: 239, //  Forward Scouts
     1967: 261, //

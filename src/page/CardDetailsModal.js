@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import _dropRight from "lodash.dropright";
 import sortBy from "lodash.sortby";
+import CardDescription from "page/cardmodal/card-description";
 import CardDiscussion from "page/discussion/CardDiscussion";
 import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
@@ -364,8 +365,7 @@ export default function CardDetailsModal({
             )}
           </CardPropertyUlStyle>
 
-          <h3 style={{ marginBottom: 0 }}>Description</h3>
-          <DescriptionStyle dangerouslySetInnerHTML={{ __html: description }} />
+          <CardDescription description={description} />
 
           <CardGlossaryUlStyle>
             {glossary.length > 0 &&
