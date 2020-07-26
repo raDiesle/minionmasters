@@ -449,7 +449,7 @@ export default function CardDescription({ description }) {
         ))}
       </div>
 
-      <div style={{ paddingTop: "10px" }}>
+      <div style={{ paddingTop: "15px" }}>
         {terms.map(({ display, term, description }) => (
           <div key={term}>
             <span style={{ color: "yellow" }}>{display}:</span> {description}

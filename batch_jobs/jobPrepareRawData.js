@@ -124,6 +124,28 @@ function normalizeGameCardData(propsAsMap) {
   propsAsMap.targets =
     propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
 
+  if (typeof propsAsMap.InheritFromId != "undefined") {
+    const inheritFromData = cardDataFromGame.find(
+      ({ UnitId }) => parseInt(UnitId) === parseInt(propsAsMap.InheritFromId)
+    );
+    const propsToInherit = [
+      "speed",
+      "dps",
+      "range",
+      "attackDelay",
+      "attackspeed",
+      "damage",
+      "health",
+    ];
+    propsToInherit.forEach((propKey) => {
+      if (typeof inheritFromData !== "undefined") {
+        propsAsMap[propKey] = inheritFromData[propKey];
+      } else {
+        errorList.push("cannot inherit from: " + propsAsMap.InheritFromId);
+      }
+    });
+  }
+
   const iDsMasterAbilitySpells = [
     104, // arcane golem
     103, // arcane missiles
