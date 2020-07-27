@@ -49,14 +49,11 @@ export function CardDeck({
 
   const findFirstNextFreeSlot = () =>
     Slots.find(
-      (slotPosition) =>
-        lastSelectedCards[slotPosition].card.iD === IDENTIFIER_FOR_EMPTY_SLOT
+      (slotPosition) => lastSelectedCards[slotPosition].card.iD === IDENTIFIER_FOR_EMPTY_SLOT
     );
-  const [
-    prevSelectedSlot,
-    currentSelectedSlot,
-    setCurrentSelectedSlot,
-  ] = useTraceableState(findFirstNextFreeSlot);
+  const [prevSelectedSlot, currentSelectedSlot, setCurrentSelectedSlot] = useTraceableState(
+    findFirstNextFreeSlot
+  );
 
   let isCardAlreadyOnSelectedSlot = lastSelectedCards[currentSelectedSlot]
     ? lastSelectedCards[currentSelectedSlot].card.iD === selectedCardId
@@ -81,9 +78,7 @@ export function CardDeck({
       const newLastSelectedCards = [...lastSelectedCards];
 
       const isCardNotInDeckYet =
-        typeof lastSelectedCards.find(
-          ({ card: { iD } }) => selectedCardId === iD
-        ) === "undefined";
+        typeof lastSelectedCards.find(({ card: { iD } }) => selectedCardId === iD) === "undefined";
       if (isCardNotInDeckYet) {
         // add card
         newLastSelectedCards[currentSelectedSlot] = {
@@ -108,13 +103,10 @@ export function CardDeck({
           .map(({ count }) => count)
           .reduce((total, current) => {
             const STARTING_TO_BE_WILDCARD_COUNT_CONSIDERED = 1;
-            return current > STARTING_TO_BE_WILDCARD_COUNT_CONSIDERED
-              ? total + current
-              : total;
+            return current > STARTING_TO_BE_WILDCARD_COUNT_CONSIDERED ? total + current : total;
           }, consideredOngoingCount);
 
-        const isAllowedToAddAnotherWildcard =
-          numberOfWildcards <= LIMIT_OF_WILDCARDS_ALL_OVER;
+        const isAllowedToAddAnotherWildcard = numberOfWildcards <= LIMIT_OF_WILDCARDS_ALL_OVER;
 
         if (isAllowedToAddAnotherWildcard) {
           const positionOfExistingOccurence = lastSelectedCards.findIndex(

@@ -5,17 +5,16 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import _dropRight from "lodash.dropright";
-import sortBy from "lodash.sortby";
+
 import CardDescription from "page/cardmodal/card-description";
 import CardDiscussion from "page/discussion/CardDiscussion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactModal from "react-modal";
 
 import styled from "styled-components";
 import { targetsMapping } from "../attack/targetsMapping";
 import { typeMapping } from "../cardtype/typeMapping";
 import { factionMapping } from "../faction/Factions";
-import cardData from "../generated/jobCardProps";
 import { rarityMapping } from "../rarity/rarityMapping";
 
 const ModalContainerStyle = styled.div`
@@ -77,29 +76,8 @@ const CardImageStyle = styled.img`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
-const DescriptionStyle = styled.div`
-  line-height: 1.7;
-  @media (max-width: 767px) {
-    font-size: 12px;
-  }
-`;
-
 const RarityStyle = styled.div`
   color: ${({ rarity }) => rarityMapping[rarity]};
-`;
-
-const CardGlossaryUlStyle = styled.div`
-  padding-top: 20px;
-
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  padding-inline-start: 0;
-`;
-
-const CardGlossaryStyle = styled.div`
-  color: orange;
-  font-weight: bold;
 `;
 
 const PortraitStyle = styled.div`
@@ -138,8 +116,7 @@ export default function CardDetailsModal({
 }) {
   const [modals, setModals] = useState([]);
 
-  const isAttacking =
-    !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
+  const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
 
   const IMG_FOLDER = "generated/img/";
   const FILE_ENDING = ".webp";
@@ -153,9 +130,7 @@ export default function CardDetailsModal({
           key={card.iD}
           card={card}
           isOpenDetails={true}
-          setIsOpenDetails={() =>
-            setModals((currentModals) => _dropRight(currentModals))
-          }
+          setIsOpenDetails={() => setModals((currentModals) => _dropRight(currentModals))}
         />
       ))}
 
@@ -199,11 +174,7 @@ export default function CardDetailsModal({
               <CardPropertyLiStyle>
                 <PortraitStyle>
                   <LikeStyle>
-                    <FontAwesomeIcon
-                      icon={faHeartSolid}
-                      size={"xs"}
-                      color={"transparent"}
-                    />
+                    <FontAwesomeIcon icon={faHeartSolid} size={"xs"} color={"transparent"} />
                   </LikeStyle>
                   <img src="bloodimp_inline.jpg" width="60px" />
                 </PortraitStyle>

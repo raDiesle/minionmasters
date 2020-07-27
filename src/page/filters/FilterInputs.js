@@ -1,3 +1,5 @@
+import { faEyeSlash } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
+import { faEye } from "@fortawesome/free-regular-svg-icons/faEye";
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare";
 import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
@@ -15,11 +17,7 @@ import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 
 import { rarityMapping } from "../../rarity/rarityMapping";
-import {
-  ButtonFilterGroup,
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "./ButtonFilterGroup";
+import { ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle } from "./ButtonFilterGroup";
 
 const InputTextStyle = styled.input`
   color: #fff;
@@ -39,29 +37,6 @@ const InputTextStyle = styled.input`
   }
 `;
 
-const InputLabelStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-function FilterByNameInput({ nameValue, setFilters }) {
-  return (
-    <InputTextStyle
-      type="text"
-      value={nameValue}
-      onChange={(event) => {
-        event.persist();
-        setFilters((prevFilters) => {
-          const newFilters = { ...prevFilters };
-          newFilters.name = event.target.value;
-          return newFilters;
-        });
-      }}
-    />
-  );
-}
-
 const FilterContainerStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -73,27 +48,23 @@ const FilterContainerStyle = styled.div`
   }
 `;
 
-export function Filters({
+export function FilterInputs({
   filters,
   setFilters,
+  name,
+  setName,
   isShowNames,
   setIsShowNames,
+  isDescriptionIncluded,
+  setIsDescriptionIncluded,
   sortByMana,
   setSortByMana,
 }) {
-  useEffect(() => {
-    setIsShowNames(!!filters.name);
-  }, [filters.name, setIsShowNames]);
-
   return (
     <FilterContainerStyle>
       <div>
         Faction
-        <ButtonFilterGroup
-          btnkey="faction"
-          filters={filters.faction}
-          setFilters={setFilters}
-        >
+        <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
           {Object.keys(factionMapping).map((faction) => (
             <div key={factionMapping[faction]}>{factionMapping[faction]}</div>
           ))}
@@ -119,10 +90,7 @@ export function Filters({
           isButtonActive={sortByMana === "asc"}
           onClick={() => setSortByMana("asc")}
         >
-          <Tooltip
-            placement="bottomRight"
-            overlay={<span> Sort Mana Ascending</span>}
-          >
+          <Tooltip placement="bottomRight" overlay={<span> Sort Mana Ascending</span>}>
             <FontAwesomeIcon icon={faSortAmountUp} />
           </Tooltip>
         </ButtonInGroupStyle>
@@ -130,10 +98,7 @@ export function Filters({
           isButtonActive={sortByMana === "desc"}
           onClick={() => setSortByMana("desc")}
         >
-          <Tooltip
-            placement="bottomRight"
-            overlay={<span> Sort Mana Descending</span>}
-          >
+          <Tooltip placement="bottomRight" overlay={<span> Sort Mana Descending</span>}>
             <FontAwesomeIcon icon={faSortAmountDown} />
           </Tooltip>
         </ButtonInGroupStyle>
@@ -141,11 +106,7 @@ export function Filters({
 
       <div>
         Rarity
-        <ButtonFilterGroup
-          btnkey="rarity"
-          filters={filters.rarity}
-          setFilters={setFilters}
-        >
+        <ButtonFilterGroup btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
           {Object.keys(rarityMapping).map((rarity) => (
             <div key={rarity} style={{ color: rarityMapping[rarity] }}>
               {rarity !== "Perk" ? (
@@ -160,11 +121,7 @@ export function Filters({
 
       <div>
         Type
-        <ButtonFilterGroup
-          btnkey="type"
-          filters={filters.type}
-          setFilters={setFilters}
-        >
+        <ButtonFilterGroup btnkey="type" filters={filters.type} setFilters={setFilters}>
           {Object.keys(typeMapping).map((type) => (
             <div key={type}>
               <FontAwesomeIcon icon={typeMapping[type]} size="xs" />
@@ -175,11 +132,7 @@ export function Filters({
 
       <div>
         Attack
-        <ButtonFilterGroup
-          btnkey="targets"
-          filters={filters.targets}
-          setFilters={setFilters}
-        >
+        <ButtonFilterGroup btnkey="targets" filters={filters.targets} setFilters={setFilters}>
           {Object.keys(targetsMapping).map((target) => (
             <div key={target}>{targetsMapping[target]}</div>
           ))}
@@ -187,22 +140,41 @@ export function Filters({
       </div>
 
       <div>
-        <div>Name</div>
-        <FilterByNameInput nameValue={filters.name} setFilters={setFilters} />
-      </div>
-
-      <InputLabelStyle>
-        Show Names
+        <div>Name | incl. Description</div>
         <ButtonGroupStyle>
-          <ButtonInGroupStyle
-            onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
-          >
-            <FontAwesomeIcon
-              icon={isShowNames ? faCheckSquare : faSquareFull}
-            />
-          </ButtonInGroupStyle>
+          <InputTextStyle
+            type="text"
+            value={name}
+            onChange={(event) => {
+              event.persist();
+              const typedInEventName = event.target.value;
+              if (isShowNames === false && typedInEventName !== "") {
+                setIsShowNames(true);
+              }
+              setName(typedInEventName);
+            }}
+          />
+
+          <Tooltip placement="bottomRight" overlay={<span>Search by Name & Description</span>}>
+            <ButtonInGroupStyle
+              value={isDescriptionIncluded}
+              onClick={() =>
+                setIsDescriptionIncluded((prevIsDescriptionIncluded) => !prevIsDescriptionIncluded)
+              }
+            >
+              <FontAwesomeIcon icon={isDescriptionIncluded ? faCheckSquare : faSquareFull} />
+            </ButtonInGroupStyle>
+          </Tooltip>
+          <Tooltip placement="bottomRight" overlay={<span>Show Card Names</span>}>
+            <ButtonInGroupStyle
+              value={isShowNames}
+              onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
+            >
+              <FontAwesomeIcon icon={isShowNames ? faEye : faEyeSlash} />
+            </ButtonInGroupStyle>
+          </Tooltip>
         </ButtonGroupStyle>
-      </InputLabelStyle>
+      </div>
     </FilterContainerStyle>
   );
 }

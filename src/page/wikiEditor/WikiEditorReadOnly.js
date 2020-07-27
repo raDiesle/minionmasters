@@ -1,10 +1,6 @@
 import CardDetailsModal from "page/CardDetailsModal";
 import { MasterModal } from "page/mastersoverview/MasterModal";
-import {
-  SEPARATOR,
-  TYPE_CARD,
-  TYPE_MASTER,
-} from "page/wikiEditor/mention-config";
+import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/wikiEditor/mention-config";
 import React, { useState } from "react";
 import cardData from "../../generated/jobCardProps.json";
 import { mastersMapping } from "../mastersoverview/mastersMapping";
@@ -64,15 +60,10 @@ export default function WikiEditorReadOnly({ value = "" }) {
         const imgPathFn = (image) => IMG_FOLDER + image + WIDTH + FILE_ENDING;
 
         if (target_type === TYPE_MASTER) {
-          const matchedMaster = Object.values(mastersMapping).find(
-            ({ iD }) => iD === target_key
-          );
+          const matchedMaster = Object.values(mastersMapping).find(({ iD }) => iD === target_key);
 
           return (
-            <a
-              onClick={() => handleMasterClick(display_value)}
-              className={css.mentionLink}
-            >
+            <a onClick={() => handleMasterClick(display_value)} className={css.mentionLink}>
               <img width="25" src={imgPathFn(matchedMaster.icon)} />
               &nbsp;{display_value}
             </a>
@@ -80,10 +71,7 @@ export default function WikiEditorReadOnly({ value = "" }) {
         } else if (target_type === TYPE_CARD) {
           const matchedCard = cardData.find(({ iD }) => iD === target_key);
           return (
-            <a
-              onClick={() => handleCardClick(target_key, matchedCard)}
-              className={css.mentionLink}
-            >
+            <a onClick={() => handleCardClick(target_key, matchedCard)} className={css.mentionLink}>
               <img width="25" src={imgPathFn(matchedCard.image)} />
               &nbsp;{display_value}
             </a>

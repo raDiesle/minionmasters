@@ -13,18 +13,13 @@ export default function SettsuContent() {
         Settsu is a bad-ass ex-soldier that never plays by the rules.
       </div>
       <div className={css.MasterAbilityDescriptionStyle}>
-        She can enter the Arena herself to annihilate enemies with superior
-        firepower.
+        She can enter the Arena herself to annihilate enemies with superior firepower.
       </div>
 
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <img
@@ -51,8 +46,7 @@ export default function SettsuContent() {
         <TabPanel>
           <h3 className={css.MasterHeaderStyle}>Basic Attack</h3>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Settsu fires their range 10 Pulse Rifle once per second for 40
-            damage.
+            Settsu fires their range 10 Pulse Rifle once per second for 40 damage.
           </div>
           <div className={css.MasterAbilityDescriptionStyle}>
             After 5 shots they have to reload for 5 seconds.
@@ -64,8 +58,8 @@ export default function SettsuContent() {
             Add the card Blast Entry to Settsu's deck.
           </div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Settsu enters the battlefield dealing 50 damage on impact and
-            gaining a 300 health shield
+            Settsu enters the battlefield dealing 50 damage on impact and gaining a 300 health
+            shield
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 20XP
@@ -83,8 +77,8 @@ export default function SettsuContent() {
         <TabPanel>
           <h3 className={css.MasterHeaderStyle}>High Powered Laser</h3>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Settsu's first shot after a reload deals double damage, pierces
-            enemies and Stuns them for 3 seconds
+            Settsu's first shot after a reload deals double damage, pierces enemies and Stuns them
+            for 3 seconds
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 120XP

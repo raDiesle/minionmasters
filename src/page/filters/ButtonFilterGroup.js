@@ -43,8 +43,7 @@ const ButtonInGroupStyle = styled.button`
   &:disabled {
     background-color: grey;
   }
-  background-color: ${({ isButtonActive }) =>
-    isButtonActive ? "#111" : "#444"};
+  background-color: ${({ isButtonActive }) => (isButtonActive ? "#111" : "#444")};
   cursor: pointer;
   border: 1px solid #111;
   &:hover {
@@ -58,13 +57,7 @@ const ButtonInGroupStyle = styled.button`
 `;
 
 /* might be rewritten to something easier to set and identify filters */
-function ButtonFilterGroup({
-  children,
-  btnkey,
-  filters,
-  setFilters,
-  isShowTooltip = true,
-}) {
+function ButtonFilterGroup({ children, btnkey, filters, setFilters, isShowTooltip = true }) {
   return (
     <ButtonGroupStyle>
       {children.map((buttonContent, position) => {
@@ -73,9 +66,7 @@ function ButtonFilterGroup({
             onClick={() =>
               setFilters((prevFilters) => {
                 const newFilters = { ...prevFilters };
-                newFilters[btnkey][position].isActive = !prevFilters[btnkey][
-                  position
-                ].isActive;
+                newFilters[btnkey][position].isActive = !prevFilters[btnkey][position].isActive;
                 return newFilters;
               })
             }

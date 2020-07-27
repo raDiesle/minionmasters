@@ -14,9 +14,7 @@ export default function LoginLogout() {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
-    const unregisterAuthObserver = authInstance.onAuthStateChanged((user) =>
-      setIsSignedIn(!!user)
-    );
+    const unregisterAuthObserver = authInstance.onAuthStateChanged((user) => setIsSignedIn(!!user));
     return () => {
       unregisterAuthObserver();
     };
@@ -96,10 +94,7 @@ export default function LoginLogout() {
                 onClick={() => setIsLoginModalShown(false)}
               />
             </ModalCloseStyle>
-            <StyledFirebaseAuth
-              uiConfig={uiConfig}
-              firebaseAuth={authInstance}
-            />
+            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={authInstance} />
           </ReactModal>
         </>
       )}

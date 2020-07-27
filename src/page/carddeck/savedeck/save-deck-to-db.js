@@ -6,10 +6,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { db, dbErrorHandlerPromise } from "../../../firestore";
-import {
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "../../filters/ButtonFilterGroup";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "../../filters/ButtonFilterGroup";
 
 const InputGroupStyle = styled.div`
   display: flex;

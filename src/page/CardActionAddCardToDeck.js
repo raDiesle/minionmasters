@@ -44,10 +44,7 @@ export default function CardActionAddCardToDeck({ card, isDeckCard, onClick }) {
       {card.rarity !== RARITY_KEYS.Perk && (
         <AddCardToDeckOverlay onClick={onClick}>
           <AddCardToDeckIconStyle>
-            <FontAwesomeIcon
-              icon={isDeckCard ? faMinusCircle : faPlusCircle}
-              size={"sm"}
-            />
+            <FontAwesomeIcon icon={isDeckCard ? faMinusCircle : faPlusCircle} size={"sm"} />
           </AddCardToDeckIconStyle>
         </AddCardToDeckOverlay>
       )}

@@ -7,12 +7,9 @@ import cardData from "../generated/jobCardProps";
 import { MANACOST } from "../manacost/manacost";
 import { rarityMapping } from "../rarity/rarityMapping";
 import Cards from "./Cards";
-import { Filters } from "./filters/Filters";
+import { FilterInputs } from "./filters/FilterInputs";
 
-export default function FiltersWithCards({
-  cardActionWrapper,
-  isFullWidthClickable,
-}) {
+export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
   function setAllFilterStates(isActive) {
     const setFilterState = (key) => {
       return {
@@ -21,7 +18,6 @@ export default function FiltersWithCards({
       };
     };
     return {
-      name: "",
       faction: Object.keys(factionMapping).map(setFilterState),
       manacost: MANACOST.map(setFilterState),
       rarity: Object.keys(rarityMapping).map(setFilterState),
@@ -30,20 +26,18 @@ export default function FiltersWithCards({
     };
   }
 
+  const [isDescriptionIncluded, setIsDescriptionIncluded] = useState(true);
+  const [name, setName] = useState("");
   const [isShowNames, setIsShowNames] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
 
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
 
-  const filteredMasterCards = cardData.filter(
-    ({ rarity }) => rarity !== "Perk"
-  );
+  const filteredMasterCards = cardData.filter(({ rarity }) => rarity !== "Perk");
   const fullCount = filteredMasterCards.length;
 
-  const filteredCardsDataWithRarity = filters.rarity.every(
-    ({ isActive }) => !isActive
-  )
+  const filteredCardsDataWithRarity = filters.rarity.every(({ isActive }) => !isActive)
     ? filteredMasterCards
     : cardData.filter(({ rarity }) =>
         filters.rarity
@@ -51,9 +45,7 @@ export default function FiltersWithCards({
           .map(({ btnkey }) => btnkey)
           .includes(rarity)
       );
-  const filteredCardsDataFaction = filters.faction.every(
-    ({ isActive }) => !isActive
-  )
+  const filteredCardsDataFaction = filters.faction.every(({ isActive }) => !isActive)
     ? filteredCardsDataWithRarity
     : filteredCardsDataWithRarity.filter(({ faction }) =>
         filters.faction
@@ -61,9 +53,7 @@ export default function FiltersWithCards({
           .map(({ btnkey }) => btnkey)
           .includes(faction)
       );
-  const filteredCardsDataWithManacost = filters.manacost.every(
-    ({ isActive }) => !isActive
-  )
+  const filteredCardsDataWithManacost = filters.manacost.every(({ isActive }) => !isActive)
     ? filteredCardsDataFaction
     : filteredCardsDataFaction.filter(({ manacost }) =>
         filters.manacost
@@ -72,9 +62,7 @@ export default function FiltersWithCards({
           .includes(parseInt(manacost))
       );
 
-  const filteredCardsDataWithType = filters.type.every(
-    ({ isActive }) => !isActive
-  )
+  const filteredCardsDataWithType = filters.type.every(({ isActive }) => !isActive)
     ? filteredCardsDataWithManacost
     : filteredCardsDataWithManacost.filter(({ type }) =>
         filters.type
@@ -83,14 +71,17 @@ export default function FiltersWithCards({
           .includes(type)
       );
   const filteredCardsDataWithName =
-    filters.name === ""
+    name === ""
       ? filteredCardsDataWithType
-      : filteredCardsDataWithType.filter(({ name }) =>
-          name.toLowerCase().includes(filters.name.toLowerCase())
-        );
-  const filteredCardsDataWithTargets = filters.targets.every(
-    ({ isActive }) => !isActive
-  )
+      : filteredCardsDataWithType.filter(({ name: nameItem, description }) => {
+          const isMatchByFn = (searchValue) =>
+            searchValue.toLowerCase().includes(name.toLowerCase());
+          return isDescriptionIncluded
+            ? isMatchByFn(nameItem) || isMatchByFn(description)
+            : isMatchByFn(nameItem);
+        });
+
+  const filteredCardsDataWithTargets = filters.targets.every(({ isActive }) => !isActive)
     ? filteredCardsDataWithName
     : filteredCardsDataWithName.filter(({ targets }) =>
         filters.targets
@@ -106,11 +97,15 @@ export default function FiltersWithCards({
 
   return (
     <div>
-      <Filters
+      <FilterInputs
         setFilters={setFiltersMemoized}
         filters={filters}
+        name={name}
+        setName={setName}
         isShowNames={isShowNames}
         setIsShowNames={setIsShowNames}
+        isDescriptionIncluded={isDescriptionIncluded}
+        setIsDescriptionIncluded={setIsDescriptionIncluded}
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
       />

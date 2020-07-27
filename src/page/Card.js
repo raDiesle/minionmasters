@@ -30,15 +30,8 @@ export function Card({
       )}
     >
       <div className={css.CardContentStyle}>
-        <img
-          src={`${IMG_PATH}_78${FILE_ENDING}`}
-          alt={image}
-          className={classnames(css.IMG)}
-        />
-        <div
-          className={css.RightCornerStyle}
-          style={{ borderTopColor: rarityMapping[rarity] }}
-        />
+        <img src={`${IMG_PATH}_78${FILE_ENDING}`} alt={image} className={classnames(css.IMG)} />
+        <div className={css.RightCornerStyle} style={{ borderTopColor: rarityMapping[rarity] }} />
         <div className={css.ManacostStyle}>{manacost}</div>
 
         <div className={css.TopLeftCornerStyle} />

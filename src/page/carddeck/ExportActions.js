@@ -38,14 +38,11 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
     );
   }
   // Export to URL
-  const lastSelectedCardiDs = lastSelectedCards.reduce(
-    (total, { count, card: { iD } }) => {
-      const wildcardsToMultipleIds = [...Array(count).keys()].map(() => iD);
-      const mergeTotal = [...total, ...wildcardsToMultipleIds];
-      return mergeTotal;
-    },
-    []
-  );
+  const lastSelectedCardiDs = lastSelectedCards.reduce((total, { count, card: { iD } }) => {
+    const wildcardsToMultipleIds = [...Array(count).keys()].map(() => iD);
+    const mergeTotal = [...total, ...wildcardsToMultipleIds];
+    return mergeTotal;
+  }, []);
   const iDsToParam = lastSelectedCardiDs.join("&iD=");
 
   const heroParam = `hero=${mastersMapping[selectedHero].iD}`;
@@ -84,14 +81,8 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
             }}
             title="Copy link"
           >
-            <button
-              className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}
-            >
-              <FontAwesomeIcon
-                icon={faLink}
-                size="xs"
-                style={{ marginLeft: "5px" }}
-              />
+            <button className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
+              <FontAwesomeIcon icon={faLink} size="xs" style={{ marginLeft: "5px" }} />
               <span style={{ paddingLeft: "11px" }}>Share by link</span>
             </button>
           </CopyToClipboard>
@@ -106,9 +97,7 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
                   <CopyToClipboard
                     text={cardShareWithGame}
                     onCopy={() => {
-                      toast(
-                        "Deck copied to clipboard. STRG+V in Minionmasters chat"
-                      );
+                      toast("Deck copied to clipboard. STRG+V in Minionmasters chat");
                     }}
                     title="Export for game"
                   >
@@ -125,9 +114,7 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
                   </CopyToClipboard>
                 </ButtonGroupStyle>
               </li>
-              <li>
-                Open Minionmasters game & select deck slot to replace with
-              </li>
+              <li>Open Minionmasters game & select deck slot to replace with</li>
               <li>
                 Select chat and <code>STRG+V</code> to insert
               </li>

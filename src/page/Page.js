@@ -10,8 +10,7 @@ import Masters from "./mastersoverview/Masters";
 
 export function Page() {
   const isUrlImport =
-    typeof qs.parse(window.location.search, { ignoreQueryPrefix: true })
-      .hero !== "undefined";
+    typeof qs.parse(window.location.search, { ignoreQueryPrefix: true }).hero !== "undefined";
 
   // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
   return (

@@ -4,10 +4,7 @@ import React, { useState } from "react";
 import CardDetailsModal from "./CardDetailsModal";
 import css from "./InfoDetailsCardOverlay.module.scss";
 
-export default function InfoDetailsCardOverlay({
-  card,
-  isFullWidthClickable = false,
-}) {
+export default function InfoDetailsCardOverlay({ card, isFullWidthClickable = false }) {
   const [isOpenDetails, setIsOpenDetails] = useState(false);
 
   return (

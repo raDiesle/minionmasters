@@ -54,9 +54,7 @@ export function CardDeckSlot({
           {count > 1 && <WildcardOverlayStyle>x{count}</WildcardOverlayStyle>}
         </Card>
       ) : isSelectedSlot ? (
-        <EmptyCardSlotSelected
-          onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}
-        >
+        <EmptyCardSlotSelected onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
           Select Card
         </EmptyCardSlotSelected>
       ) : (

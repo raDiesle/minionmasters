@@ -16,11 +16,7 @@ export default function StormbringerContent() {
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <img
@@ -47,8 +43,7 @@ export default function StormbringerContent() {
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Basic Attack</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Fire bolts of lightning every 4 sec for 35 damage. Has a long range
-            of 20.
+            Fire bolts of lightning every 4 sec for 35 damage. Has a long range of 20.
           </div>
         </TabPanel>
         <TabPanel>

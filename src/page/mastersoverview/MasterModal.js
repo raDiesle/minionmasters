@@ -5,11 +5,7 @@ import React from "react";
 import ReactModal from "react-modal";
 import { mastersMapping } from "./mastersMapping";
 
-export function MasterModal({
-  masterKey,
-  isOpenHeroModal,
-  setIsOpenHeroModal,
-}) {
+export function MasterModal({ masterKey, isOpenHeroModal, setIsOpenHeroModal }) {
   return (
     <ReactModal
       className="modalContentStyle"

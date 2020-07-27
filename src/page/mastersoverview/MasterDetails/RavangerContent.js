@@ -10,19 +10,14 @@ export default function RavangerContent() {
     <div>
       <h3 className={css.MasterHeaderStyle}>Ravanger</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
-        Ravanger is a fierce Master, able to quickly tear through close combat
-        minions, but if they are ranged, he has a problem and that's where he
-        needs Brutus!
+        Ravanger is a fierce Master, able to quickly tear through close combat minions, but if they
+        are ranged, he has a problem and that's where he needs Brutus!
       </div>
 
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <img
@@ -48,9 +43,7 @@ export default function RavangerContent() {
         </TabList>
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Basic Attack</div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Extremely fast claw attacks.
-          </div>
+          <div className={css.MasterAbilityDescriptionStyle}>Extremely fast claw attacks.</div>
           <div className={css.MasterAbilityDescriptionStyle}>
             Deals 10 damage every 0.3 sec, but has very short range of 4.5.
           </div>
