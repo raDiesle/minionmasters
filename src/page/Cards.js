@@ -14,11 +14,7 @@ export default function Cards({
       <div className={css.CardsStyle}>
         {cards.map((card) => (
           <div key={card.iD}>
-            <Card
-              card={card}
-              isFullWidthClickable={isFullWidthClickable}
-              isShowNames={isShowNames}
-            >
+            <Card card={card} isFullWidthClickable={isFullWidthClickable} isShowNames={isShowNames}>
               {cardActionWrapper(card)}
             </Card>
           </div>

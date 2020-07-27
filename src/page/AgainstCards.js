@@ -39,13 +39,7 @@ const swapArrayElements = (arr, x, y) => {
   }
   const a = x > y ? y : x;
   const b = x > y ? x : y;
-  return [
-    ...arr.slice(0, a),
-    arr[b],
-    ...arr.slice(a + 1, b),
-    arr[a],
-    ...arr.slice(b + 1),
-  ];
+  return [...arr.slice(0, a), arr[b], ...arr.slice(a + 1, b), arr[a], ...arr.slice(b + 1)];
 };
 
 const OrderOverlayStyle = styled.div`
@@ -126,9 +120,7 @@ export default function AgainstCards({
 
               <SingleVoteStyle>
                 <FontAwesomeIcon
-                  icon={
-                    idx < votedCardiDs.length - 1 ? faArrowRight : faTrashAlt
-                  }
+                  icon={idx < votedCardiDs.length - 1 ? faArrowRight : faTrashAlt}
                   color={"red"}
                   onClick={() => handleDownVote(votedCardData.iD, idx)}
                 />

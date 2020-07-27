@@ -5,10 +5,7 @@ import React from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import cardData from "../../../generated/jobCardProps";
-import {
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "../../filters/ButtonFilterGroup";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "../../filters/ButtonFilterGroup";
 
 const CardeckPlaceholderStyle = styled.div`
   display: flex;
@@ -38,10 +35,7 @@ const MissingCardMessage = ({ nameExtracted }) => (
   </>
 );
 
-export default function ImportFromGame({
-  setLastSelectedCards,
-  setSelectedHero,
-}) {
+export default function ImportFromGame({ setLastSelectedCards, setSelectedHero }) {
   // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
   const handleCopyPasteFromGame = (event) => {
     try {
@@ -52,9 +46,7 @@ export default function ImportFromGame({
       const cardNamesValue = value.substring(endOfHeroNamePos + 2);
       const cardNames = cardNamesValue.split(", ");
       const cards = cardNames.map((nameExtracted) => {
-        const matchedCardData = cardData.find(
-          ({ name }) => name === nameExtracted
-        );
+        const matchedCardData = cardData.find(({ name }) => name === nameExtracted);
         if (matchedCardData === undefined) {
           toast(<MissingCardMessage nameExtracted={nameExtracted} />);
           return {
@@ -109,8 +101,7 @@ export default function ImportFromGame({
               </ButtonInGroupStyle>
             </ButtonGroupStyle>
             <div>
-              and press <code>CTRL+V</code> or{" "}
-              <code>*Mouse right click* + Insert</code>
+              and press <code>CTRL+V</code> or <code>*Mouse right click* + Insert</code>
             </div>
           </li>
         </ol>

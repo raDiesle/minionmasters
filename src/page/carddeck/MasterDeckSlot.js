@@ -61,11 +61,7 @@ const MasterPlaceholder = styled.div`
   }
 `;
 
-export default function MasterDeckSlot({
-  selectedHero,
-  setSelectedHero,
-  setSelectedTabIndex,
-}) {
+export default function MasterDeckSlot({ selectedHero, setSelectedHero, setSelectedTabIndex }) {
   let MASTERS_TAB_INDEX = 1;
   return (
     <MasterDeckSlotStyle>
@@ -77,9 +73,7 @@ export default function MasterDeckSlot({
             setSelectedHero={setSelectedHero}
           />
         ) : (
-          <MasterPlaceholder
-            onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}
-          >
+          <MasterPlaceholder onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}>
             Select Master
           </MasterPlaceholder>
         )}

@@ -7,10 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { auth, dbErrorHandlerPromise } from "../../firestore";
-import {
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "../filters/ButtonFilterGroup";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "../filters/ButtonFilterGroup";
 
 import TextareaEditor from "./textarea-editor";
 
@@ -26,11 +23,7 @@ function listenUserAuth(setCurrentUsername) {
   });
 }
 
-export default function WikiEditorActive({
-  setInEditMode,
-  dbRef,
-  placeholder,
-}) {
+export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) {
   const [currentUsername, setCurrentUsername] = useState("");
   const [value, setValue] = useState("");
   const editorRef = useRef();
@@ -118,10 +111,7 @@ export default function WikiEditorActive({
 
         <ButtonGroupStyle>
           <ButtonInGroupStyle>
-            <HistorySelectStyle
-              defaultValue=""
-              onChange={(dbKey) => onHistorySelect(dbKey)}
-            >
+            <HistorySelectStyle defaultValue="" onChange={(dbKey) => onHistorySelect(dbKey)}>
               {history.map((hist, idx) => (
                 <option value={hist.id} key={hist.id}>
                   {hist.createdAt.toLocaleString()} {idx === 0 && "latest"}

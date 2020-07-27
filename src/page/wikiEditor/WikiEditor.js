@@ -50,10 +50,7 @@ const EditWithButtonStyle = styled.div`
 `;
 
 export default function WikiEditor({ card: { iD }, discussionType }) {
-  const dbRef = db
-    .collection("cards")
-    .doc(String(iD))
-    .collection(discussionType);
+  const dbRef = db.collection("cards").doc(String(iD)).collection(discussionType);
 
   const [currentWikiData, setCurrentWikiData] = useState({
     createdAt: "",
@@ -104,10 +101,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
             {currentWikiData.createdAt ? (
               <WikiEditorReadOnly value={currentWikiData.val} />
             ) : (
-              <WikiEditorReadOnly
-                value={currentWikiData.val}
-                placeholder="None added, yet."
-              />
+              <WikiEditorReadOnly value={currentWikiData.val} placeholder="None added, yet." />
             )}
           </EditorStyle>
           <Tooltip placement="bottomRight" overlay={<span>Edit</span>}>
@@ -131,8 +125,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
         <LastEditedStyle>
           {currentWikiData.createdAt && (
             <div>
-              last edit: {currentWikiData.createdAt.toLocaleString()} -{" "}
-              {currentWikiData.createdBy}
+              last edit: {currentWikiData.createdAt.toLocaleString()} - {currentWikiData.createdBy}
             </div>
           )}
         </LastEditedStyle>

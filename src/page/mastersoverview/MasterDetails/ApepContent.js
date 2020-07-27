@@ -13,19 +13,15 @@ export default function ApepContent() {
       <h3 className={css.MasterHeaderStyle}>Apep</h3>
 
       <div className={css.MasterAbilityDescriptionStyle}>
-        Apep, the mighty Slither God gifts you with random Minions and spits
-        powerful acid at all minions that dare approach. His worshippers power
-        the Shield Totem that makes him immune to damage.
+        Apep, the mighty Slither God gifts you with random Minions and spits powerful acid at all
+        minions that dare approach. His worshippers power the Shield Totem that makes him immune to
+        damage.
       </div>
 
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <Tooltip
@@ -81,19 +77,14 @@ export default function ApepContent() {
           <ul className={css.AbilityUlStyle}>
             <li>30 damage every 2.5 sec.</li>
             <li>Range: 10</li>
-            <li>
-              For each card that costs 5 or more in his hand, Apep gains +35%
-              attack speed.
-            </li>
+            <li>For each card that costs 5 or more in his hand, Apep gains +35% attack speed.</li>
           </ul>
         </TabPanel>
         <TabPanel>
-          <div className={css.MasterAbilityHeaderStyle}>
-            Gift of the Serpent
-          </div>
+          <div className={css.MasterAbilityHeaderStyle}>Gift of the Serpent</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Put a random 2 mana Minion or Building card in Apep's deck and
-            reduce its mana cost by 2.
+            Put a random 2 mana Minion or Building card in Apep's deck and reduce its mana cost by
+            2.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 20XP
@@ -102,20 +93,18 @@ export default function ApepContent() {
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Shield Totem</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Add the card Shield Totem to Apep's deck. Summon a Shield Totem that
-            makes the Master Tower immune to damage as long as it is alive.
+            Add the card Shield Totem to Apep's deck. Summon a Shield Totem that makes the Master
+            Tower immune to damage as long as it is alive.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 60XP
           </div>
         </TabPanel>
         <TabPanel>
-          <div className={css.MasterAbilityHeaderStyle}>
-            Greater Gift of the Serpent God
-          </div>
+          <div className={css.MasterAbilityHeaderStyle}>Greater Gift of the Serpent God</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Put a random 4 mana Minion or Building card in APep's deck and
-            reduce its mana cost by 4.
+            Put a random 4 mana Minion or Building card in APep's deck and reduce its mana cost by
+            4.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 120XP

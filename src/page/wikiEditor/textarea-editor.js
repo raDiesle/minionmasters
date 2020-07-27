@@ -1,8 +1,4 @@
-import {
-  SEPARATOR,
-  TYPE_CARD,
-  TYPE_MASTER,
-} from "page/wikiEditor/mention-config";
+import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/wikiEditor/mention-config";
 import React, { useLayoutEffect } from "react";
 import { Mention, MentionsInput } from "react-mentions";
 

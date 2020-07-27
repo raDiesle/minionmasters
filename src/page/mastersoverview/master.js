@@ -24,10 +24,8 @@ const InfoMasterDetailsOverlay = styled.div`
   position: absolute;
   top: 0px;
   padding: 35px 0
-    ${({ actionRegistrationComponent }) =>
-      actionRegistrationComponent === null ? "56px" : "35px"}
-    ${({ actionRegistrationComponent }) =>
-      actionRegistrationComponent === null ? "90px" : "35px"};
+    ${({ actionRegistrationComponent }) => (actionRegistrationComponent === null ? "56px" : "35px")}
+    ${({ actionRegistrationComponent }) => (actionRegistrationComponent === null ? "90px" : "35px")};
   right: 0px;
 
   @media (max-width: 767px) {
@@ -67,17 +65,13 @@ const MasterSelectedContainer = styled.div`
   }
 `;
 
-export default function Master({
-  masterKey,
-  actionRegistrationComponent = null,
-}) {
+export default function Master({ masterKey, actionRegistrationComponent = null }) {
   const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
   const IMG_FOLDER = "generated/img/";
   const FILE_ENDING = ".webp";
   const WIDTH = "_78";
-  const IMG_PATH =
-    IMG_FOLDER + mastersMapping[masterKey].icon + WIDTH + FILE_ENDING;
+  const IMG_PATH = IMG_FOLDER + mastersMapping[masterKey].icon + WIDTH + FILE_ENDING;
 
   return (
     <MasterSelectedContainer>
@@ -105,8 +99,7 @@ export default function Master({
 
           {
             // to unregister on rerender bug
-            actionRegistrationComponent &&
-              actionRegistrationComponent(masterKey)
+            actionRegistrationComponent && actionRegistrationComponent(masterKey)
           }
           <MasterImgStyle src={IMG_PATH} alt={masterKey} />
         </MasterContentStyle>

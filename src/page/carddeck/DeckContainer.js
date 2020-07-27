@@ -112,10 +112,7 @@ export default function DeckContainer() {
         <TabPanel>
           <Masters
             actionRegistrationComponent={(selectedHeroKey) => (
-              <AddMasterToDeck
-                setSelectedHero={setSelectedHero}
-                masterKey={selectedHeroKey}
-              />
+              <AddMasterToDeck setSelectedHero={setSelectedHero} masterKey={selectedHeroKey} />
             )}
           />
         </TabPanel>
@@ -137,10 +134,7 @@ export default function DeckContainer() {
           </DeckOptionsStyle>
         </TabPanel>
         <TabPanel>
-          <ExportActions
-            lastSelectedCards={lastSelectedCards}
-            selectedHero={selectedHero}
-          />
+          <ExportActions lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />
         </TabPanel>
       </Tabs>
     </div>

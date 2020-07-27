@@ -11,18 +11,14 @@ export default function MordarContent() {
       <h3 className={css.MasterHeaderStyle}>Mordar</h3>
 
       <div className={css.MasterAbilityDescriptionStyle}>
-        Mordar uses his tombstones to raise the dead and his staff to slowly
-        kill all attacking minions.
+        Mordar uses his tombstones to raise the dead and his staff to slowly kill all attacking
+        minions.
       </div>
 
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <img
@@ -62,8 +58,8 @@ export default function MordarContent() {
             Add the card Tombstone to Mordar's deck.
           </div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            A tombstone with 400 health that activates after 10 seconds and
-            resurrecting the next friendly minion that dies.
+            A tombstone with 400 health that activates after 10 seconds and resurrecting the next
+            friendly minion that dies.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 20XP
@@ -76,8 +72,8 @@ export default function MordarContent() {
           </div>
 
           <div className={css.MasterAbilityDescriptionStyle}>
-            A tombstone with 400 health that activates after 10 seconds and
-            resurrecting the next friendly minion that dies.
+            A tombstone with 400 health that activates after 10 seconds and resurrecting the next
+            friendly minion that dies.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 60XP

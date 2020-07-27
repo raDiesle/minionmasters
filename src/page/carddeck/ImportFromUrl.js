@@ -36,21 +36,17 @@ export function ImportFromUrl({ setLastSelectedCards, setSelectedHero }) {
           count: iDsWithOccurenceMap[key],
         }))
       : [];
-    const prefillSelectedCardsWithData = selectediDsNormalized.map(
-      ({ iD: selectediD, count }) => {
-        const selectedCardData = allCardsData.find(
-          ({ iD }) => selectediD === parseInt(iD)
-        );
-        return {
-          card:
-            typeof selectedCardData === "undefined"
-              ? { iD: IDENTIFIER_FOR_EMPTY_SLOT }
-              : selectedCardData,
-          count,
-          eventId: 0,
-        };
-      }
-    );
+    const prefillSelectedCardsWithData = selectediDsNormalized.map(({ iD: selectediD, count }) => {
+      const selectedCardData = allCardsData.find(({ iD }) => selectediD === parseInt(iD));
+      return {
+        card:
+          typeof selectedCardData === "undefined"
+            ? { iD: IDENTIFIER_FOR_EMPTY_SLOT }
+            : selectedCardData,
+        count,
+        eventId: 0,
+      };
+    });
 
     setLastSelectedCards((initialSelectedCards) => {
       const normalized = initialSelectedCards.map(

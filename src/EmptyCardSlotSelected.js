@@ -48,9 +48,5 @@ export default function EmptyCardSlotSelected({ children, onClick }) {
       }
 `;
 
-  return (
-    <EmptyCardSlotSelectedStyle onClick={onClick}>
-      {children}
-    </EmptyCardSlotSelectedStyle>
-  );
+  return <EmptyCardSlotSelectedStyle onClick={onClick}>{children}</EmptyCardSlotSelectedStyle>;
 }

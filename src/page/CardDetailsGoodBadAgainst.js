@@ -54,13 +54,7 @@ const swapArrayElements = (arr, x, y) => {
   }
   const a = x > y ? y : x;
   const b = x > y ? x : y;
-  return [
-    ...arr.slice(0, a),
-    arr[b],
-    ...arr.slice(a + 1, b),
-    arr[a],
-    ...arr.slice(b + 1),
-  ];
+  return [...arr.slice(0, a), arr[b], ...arr.slice(a + 1, b), arr[a], ...arr.slice(b + 1)];
 };
 
 const fetchAgainstCards = (iD) => {
@@ -126,9 +120,7 @@ export default function CardDetailsGoodBadAgainst({ card, card: { iD } }) {
     setSelectionState("NONE");
 
     const againstVotedCards = [...cardDbData[goodOrBadKey]];
-    const votedPosition = againstVotedCards.findIndex(
-      (val) => val === currentVotedCardiD
-    );
+    const votedPosition = againstVotedCards.findIndex((val) => val === currentVotedCardiD);
     const isAddedNewToList = votedPosition === -1;
     const newOrderedVotes = isAddedNewToList
       ? [...againstVotedCards, currentVotedCardiD]
@@ -150,8 +142,7 @@ export default function CardDetailsGoodBadAgainst({ card, card: { iD } }) {
   };
 
   const handleSelectCard = (currentVotedCardiD) => {
-    const goodOrBadKey =
-      selectionState === "GOOD_AGAINST" ? goodAgainstKey : badAgainstKey;
+    const goodOrBadKey = selectionState === "GOOD_AGAINST" ? goodAgainstKey : badAgainstKey;
 
     updateUpvoteSelection(goodOrBadKey, currentVotedCardiD)
       .then((_) => {
@@ -179,9 +170,7 @@ export default function CardDetailsGoodBadAgainst({ card, card: { iD } }) {
               votedCards={cardDbData.goodAgainst}
               setSelectionState={setSelectionState}
               updateUpvoteSelection={updateUpvoteSelection}
-              handleEmptyCardDeckSlotClick={() =>
-                setSelectionState("GOOD_AGAINST")
-              }
+              handleEmptyCardDeckSlotClick={() => setSelectionState("GOOD_AGAINST")}
             />
           </CardRelationStyle>
           <CardRelationStyle>
@@ -196,9 +185,7 @@ export default function CardDetailsGoodBadAgainst({ card, card: { iD } }) {
               votedCards={cardDbData.badAgainst}
               setSelectionState={setSelectionState}
               updateUpvoteSelection={updateUpvoteSelection}
-              handleEmptyCardDeckSlotClick={() =>
-                setSelectionState("BAD_AGAINST")
-              }
+              handleEmptyCardDeckSlotClick={() => setSelectionState("BAD_AGAINST")}
             />
           </CardRelationStyle>
         </GoodBadStyle>

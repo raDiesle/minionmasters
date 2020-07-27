@@ -10,18 +10,13 @@ export default function VolcoContent() {
     <div>
       <h3 className={css.MasterHeaderStyle}>Volco</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
-        Volco is not scared of swarms, but he hates flying enemies he can't
-        reach.
+        Volco is not scared of swarms, but he hates flying enemies he can't reach.
       </div>
 
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <img
@@ -50,16 +45,14 @@ export default function VolcoContent() {
           <div className={css.MasterAbilityDescriptionStyle}>
             Deals 40 area Ground damage with his hammer every 2.5 sec.
           </div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Has a range of 10.
-          </div>
+          <div className={css.MasterAbilityDescriptionStyle}>Has a range of 10.</div>
           <div className={css.MasterAbilityDescriptionStyle}>Hammer Time!</div>
         </TabPanel>
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Afterburner</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            When Volco hols the Marked bridge and plays a card, they fire a
-            firebolt at the enemy Master dealing 60 Damage.
+            When Volco hols the Marked bridge and plays a card, they fire a firebolt at the enemy
+            Master dealing 60 Damage.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 20XP
@@ -73,8 +66,8 @@ export default function VolcoContent() {
           </div>
 
           <div className={css.MasterAbilityDescriptionStyle}>
-            Both bridges get covered in flames, dealing 40 damage per sec to
-            unfortunate ground enemies. Lasts 5 sec.
+            Both bridges get covered in flames, dealing 40 damage per sec to unfortunate ground
+            enemies. Lasts 5 sec.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 60XP
@@ -85,9 +78,7 @@ export default function VolcoContent() {
           <div className={css.MasterAbilityDescriptionStyle}>
             All friendly melee Units have Rage
           </div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            +50% Attack damage.
-          </div>
+          <div className={css.MasterAbilityDescriptionStyle}>+50% Attack damage.</div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 120XP
           </div>

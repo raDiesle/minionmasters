@@ -15,10 +15,7 @@ export default function Masters({ actionRegistrationComponent }) {
     <MastersStyle name="mastersview">
       {Object.keys(mastersMapping).map((masterKey) => (
         <div key={masterKey}>
-          <Master
-            masterKey={masterKey}
-            actionRegistrationComponent={actionRegistrationComponent}
-          />
+          <Master masterKey={masterKey} actionRegistrationComponent={actionRegistrationComponent} />
         </div>
       ))}
     </MastersStyle>

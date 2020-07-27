@@ -10,9 +10,8 @@ export default function DionaContent() {
     <div>
       <h3 className={css.MasterHeaderStyle}>Diona</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
-        The Witch Hunter Diona uses a variety of traps to deal with any threat.
-        Her trusty sidekick Ruffles fetches useful items from the battlefield
-        for his master.
+        The Witch Hunter Diona uses a variety of traps to deal with any threat. Her trusty sidekick
+        Ruffles fetches useful items from the battlefield for his master.
         <div>
           <a href="https://www.youtube.com/watch?v=5zafVoWXB34">
             Get to know Diona and Ruffles as they venture into the Pinewood
@@ -23,11 +22,7 @@ export default function DionaContent() {
       <Tabs>
         <TabList>
           <Tab>
-            <img
-              className={css.MasterAbilityImageStyle}
-              src={IconDamage}
-              alt="basic attack"
-            />
+            <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
           </Tab>
           <Tab>
             <img
@@ -67,12 +62,9 @@ export default function DionaContent() {
         </TabPanel>
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Art of the Hunt</div>
+          <div className={css.MasterAbilityDescriptionStyle}>Add a Trap card to Diona's deck.</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Add a Trap card to Diona's deck.
-          </div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            The card alternates between Crossbow Trap and Decoy Trap with each
-            draw.
+            The card alternates between Crossbow Trap and Decoy Trap with each draw.
           </div>
 
           <div className={css.MasterAbilitySubHeader}>Crossbow Trap</div>
@@ -98,8 +90,7 @@ export default function DionaContent() {
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Fetch!</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Every 10 sec, Ruffles will run to a killed enemy Minion and dig up a
-            prize.
+            Every 10 sec, Ruffles will run to a killed enemy Minion and dig up a prize.
           </div>
           Prizes:
           <ul className={css.AbilityUlStyle}>

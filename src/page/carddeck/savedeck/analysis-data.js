@@ -7,9 +7,7 @@ const AnalysisDataStyle = styled.div`
 `;
 
 export default function AnalysisData({ cards }) {
-  const selectedCards = cards.filter(
-    ({ iD }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT
-  );
+  const selectedCards = cards.filter(({ iD }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT);
   const totalMana = selectedCards.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.manacost;
   }, 0);
