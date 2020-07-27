@@ -39,7 +39,7 @@ export default function ListOfDecks() {
         setDecks(normalizedDecks);
       })
       .catch(dbErrorHandlerPromise);
-  });
+  }, []);
 
   return (
     <div>
