@@ -1,0 +1,8 @@
+.imgPicto {
+  // padding-right: 5px;
+  width: 40px;
+
+  @media (max-width: 767px) {
+    width: 30px;
+  }
+}

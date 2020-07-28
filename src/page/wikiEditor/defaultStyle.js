@@ -40,6 +40,8 @@ export default {
       backgroundColor: "#000",
       border: "1px solid yellow",
       fontSize: 14,
+      display: "flex",
+      flexWrap: "wrap",
     },
     item: {
       padding: "0px 0px",

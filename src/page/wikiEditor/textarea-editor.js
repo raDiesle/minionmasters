@@ -1,3 +1,4 @@
+import orderBy from "lodash/orderBy";
 import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/wikiEditor/mention-config";
 import React, { useLayoutEffect } from "react";
 import { Mention, MentionsInput } from "react-mentions";
@@ -8,6 +9,7 @@ import cardData from "../../generated/jobCardProps";
 import { mastersMapping } from "../mastersoverview/mastersMapping";
 import defaultMentionStyle from "./defaultMentionStyle";
 import defaultStyle from "./defaultStyle";
+import css from "./textarea-editor.module.scss";
 
 const heros = Object.keys(mastersMapping).map((name) => ({
   id: TYPE_MASTER + SEPARATOR + mastersMapping[name].iD,
@@ -17,7 +19,7 @@ const heros = Object.keys(mastersMapping).map((name) => ({
 
 const mentions = [
   ...heros,
-  ...cardData.map(({ name, image, iD }) => ({
+  ...orderBy(cardData, ["manacost", "type"], ["asc", "asc"]).map(({ name, image, iD }) => ({
     id: TYPE_CARD + SEPARATOR + iD,
     display: name,
     image,
@@ -90,8 +92,7 @@ export default function TextareaEditor({
 
     return (
       <div>
-        <img src={IMG_PATH} style={{ width: "25px", paddingRight: "5px" }} />
-        {display}
+        <img src={IMG_PATH} className={css.imgPicto} />
       </div>
     );
   };
