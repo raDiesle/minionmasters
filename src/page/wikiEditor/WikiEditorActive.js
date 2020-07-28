@@ -1,9 +1,9 @@
 import firebase from "@firebase/app";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
-import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tooltip from "rc-tooltip/es";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { auth, dbErrorHandlerPromise } from "../../firestore";
@@ -104,9 +104,11 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
         }}
       >
         <ButtonGroupStyle>
-          <ButtonInGroupStyle onClick={() => addCard()}>
-            <FontAwesomeIcon icon={faPlus} /> Reference Master or Card
-          </ButtonInGroupStyle>
+          <Tooltip placement="topLeft" overlay={<span>Type to filter by name</span>}>
+            <ButtonInGroupStyle onClick={() => addCard()}>
+              <FontAwesomeIcon icon={faPlus} /> Reference Master or Card
+            </ButtonInGroupStyle>
+          </Tooltip>
         </ButtonGroupStyle>
 
         <ButtonGroupStyle>
