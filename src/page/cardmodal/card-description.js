@@ -15,6 +15,11 @@ export default function CardDescription({ description }) {
   const formattedDescription = blocks.map((block, index) => {
     const isSpecialBlock = block.startsWith("{");
     if (isSpecialBlock === false) {
+      if (block.startsWith(".")) {
+        const insertAt = (str, sub, pos) => `${str.slice(0, pos)}${sub}${str.slice(pos)}`;
+
+        return <span>{insertAt(block, " ", 1)} </span>;
+      }
       return <span>{block} </span>;
     }
 
@@ -109,9 +114,9 @@ export default function CardDescription({ description }) {
 
       <div style={{ paddingTop: "15px" }}>
         {terms.map(({ display, term, description }) => (
-          <div key={term}>
-            <span style={{ color: "yellow" }}>{display}:</span> {description}
-          </div>
+          <fieldset key={term} style={{ marginTop: "0px" }}>
+            <legend style={{ color: "yellow" }}>{display}</legend> {description}
+          </fieldset>
         ))}
       </div>
     </div>
