@@ -1,10 +1,9 @@
 import { faEyeSlash } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
 import { faEye } from "@fortawesome/free-regular-svg-icons/faEye";
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
-import { faSquareFull } from "@fortawesome/free-solid-svg-icons/faSquareFull";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from "rc-tooltip";
 import React, { useEffect } from "react";
@@ -55,8 +54,6 @@ export function FilterInputs({
   setName,
   isShowNames,
   setIsShowNames,
-  isDescriptionIncluded,
-  setIsDescriptionIncluded,
   sortByMana,
   setSortByMana,
 }) {
@@ -156,13 +153,8 @@ export function FilterInputs({
           />
 
           <Tooltip placement="bottomRight" overlay={<span>Search by Name & Description</span>}>
-            <ButtonInGroupStyle
-              value={isDescriptionIncluded}
-              onClick={() =>
-                setIsDescriptionIncluded((prevIsDescriptionIncluded) => !prevIsDescriptionIncluded)
-              }
-            >
-              <FontAwesomeIcon icon={isDescriptionIncluded ? faCheckSquare : faSquareFull} />
+            <ButtonInGroupStyle>
+              <FontAwesomeIcon icon={faInfoCircle} />
             </ButtonInGroupStyle>
           </Tooltip>
           <Tooltip placement="bottomRight" overlay={<span>Show Card Names</span>}>

@@ -11,10 +11,9 @@ export const TERMS_CONFIG = [
       // Haste
       {
         key: "FrenzyBuff",
-        display: "Frenzy",
+        display: "Frenzy|Haste",
         description: "+50% Movement speed. +50% Attack speed. Removes Slow.",
       },
-
       {
         key: "Stuns",
         display: "Stun",
@@ -29,6 +28,11 @@ export const TERMS_CONFIG = [
         key: "SingleShieldBuff",
         display: "Shield",
         description: "Blocks all damage from the next damage source.",
+      },
+      {
+        key: "DivineShield",
+        display: "Divine Shield",
+        description: "A holy shield that makes the wearer immune to damage. Duration 6.",
       },
       {
         key: "Taunt",
@@ -50,11 +54,6 @@ export const TERMS_CONFIG = [
         key: "PoisonBuff",
         display: "Poison",
         description: "Deals damage over time to a Minion. Cooldown: 0,5. Damage: 10",
-      },
-      {
-        key: "DivineShield",
-        display: "Divine Shield",
-        description: "A holy shield that makes the wearer immune to damage. Duration 6.",
       },
     ],
   },
@@ -239,6 +238,13 @@ export const TERMS_CONFIG = [
     category: "UNUSUAL",
     display: "Unusual",
     terms: [
+      /* actorskillinfo */
+      {
+        key: "MythicBuff",
+        display: "Mythic",
+        description:
+          "Leaves the battlefield instead of dying. Your team can only have one copy of this minion summoned at a time.",
+      },
       {
         key: "Explodes",
         display: "Explodes",
@@ -284,13 +290,6 @@ export const TERMS_CONFIG = [
         display: "Armor of Light",
         description:
           "When this Brother takes damage, his radiant armor explodes to damage and knock back enemies. Damage: 75, Cooldown: 12s, Radius: 4",
-      },
-      /* actorskillinfo */
-      {
-        key: "MythicBuff",
-        display: "Mythic",
-        description:
-          "Leaves the battlefield instead of dying. Your team can only have one copy of this minion summoned at a time.",
       },
       {
         key: "Sunder",

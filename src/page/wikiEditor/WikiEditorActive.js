@@ -24,6 +24,8 @@ function listenUserAuth(setCurrentUsername) {
   });
 }
 
+const MENTION_IDENTIFIER = "@";
+
 export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) {
   const [currentUsername, setCurrentUsername] = useState("");
   const [value, setValue] = useState("");
@@ -72,9 +74,53 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
     setValue(loadedHistoryState);
   };
 
+  const insertAtCaret = (txtarea, text) => {
+    var scrollPos = txtarea.scrollTop;
+    var strPos = 0;
+
+    var br =
+      txtarea.selectionStart || txtarea.selectionStart == "0"
+        ? "ff"
+        : document.selection
+        ? "ie"
+        : false;
+    if (br == "ie") {
+      txtarea.focus();
+      var range = document.selection.createRange();
+      range.moveStart("character", -txtarea.value.length);
+      strPos = range.text.length;
+    } else if (br == "ff") strPos = txtarea.selectionStart;
+
+    var front = txtarea.value.substring(0, strPos);
+    var back = txtarea.value.substring(strPos, txtarea.value.length);
+
+    const newValue = front + text + back;
+
+    // will be overridden by setValue
+    txtarea.value = newValue;
+    setValue(newValue);
+
+    // txtarea.value
+    setTimeout(() => {
+      strPos = strPos + text.length;
+      if (br == "ie") {
+        txtarea.focus();
+        var range = document.selection.createRange();
+        range.moveStart("character", -txtarea.value.length);
+        range.moveStart("character", strPos);
+        range.moveEnd("character", 0);
+        range.select();
+      } else if (br == "ff") {
+        txtarea.selectionStart = strPos;
+        txtarea.selectionEnd = strPos;
+        txtarea.focus();
+      }
+      txtarea.scrollTop = scrollPos;
+    }, 0); // TODO async issue? move to useasyncEffect in editor
+  };
+
   const addCard = () => {
-    setValue((value) => value + " @");
-    editorRef.current.focus();
+    insertAtCaret(editorRef.current, MENTION_IDENTIFIER);
   };
 
   const onSave = () => {
@@ -112,7 +158,8 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
             placement="top"
             overlay={
               <span>
-                Press button or type @. You can start typing to filter references by name.
+                Press button or type {MENTION_IDENTIFIER}. You can start typing to filter references
+                by name.
               </span>
             }
           >

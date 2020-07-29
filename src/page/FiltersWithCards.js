@@ -26,7 +26,6 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
     };
   }
 
-  const [isDescriptionIncluded, setIsDescriptionIncluded] = useState(true);
   const [name, setName] = useState("");
   const [isShowNames, setIsShowNames] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
@@ -76,9 +75,7 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
       : filteredCardsDataWithType.filter(({ name: nameItem, description }) => {
           const isMatchByFn = (searchValue) =>
             searchValue.toLowerCase().includes(name.toLowerCase());
-          return isDescriptionIncluded
-            ? isMatchByFn(nameItem) || isMatchByFn(description)
-            : isMatchByFn(nameItem);
+          return isMatchByFn(nameItem) || isMatchByFn(description);
         });
 
   const filteredCardsDataWithTargets = filters.targets.every(({ isActive }) => !isActive)
@@ -104,8 +101,6 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setName={setName}
         isShowNames={isShowNames}
         setIsShowNames={setIsShowNames}
-        isDescriptionIncluded={isDescriptionIncluded}
-        setIsDescriptionIncluded={setIsDescriptionIncluded}
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
       />

@@ -73,8 +73,8 @@ export default function TextareaEditor({
     editorRef.current.focus();
   }, []);
 
-  const handleChange = (val) => {
-    setValue(val.target.value);
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
   const renderSuggestion = (
