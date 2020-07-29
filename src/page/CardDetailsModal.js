@@ -1,6 +1,8 @@
+import { faReddit } from "@fortawesome/free-brands-svg-icons/faReddit";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHeart";
+import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,6 +10,7 @@ import _dropRight from "lodash.dropright";
 
 import CardDescription from "page/cardmodal/card-description";
 import CardDiscussion from "page/discussion/CardDiscussion";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
@@ -16,6 +19,9 @@ import { targetsMapping } from "../attack/targetsMapping";
 import { typeMapping } from "../cardtype/typeMapping";
 import { factionMapping } from "../faction/Factions";
 import { rarityMapping } from "../rarity/rarityMapping";
+import classNames from "classnames";
+
+import css from "./CardDetailsModal.module.scss";
 
 const ModalContainerStyle = styled.div`
   position: relative;
@@ -44,12 +50,20 @@ const CardHeaderStyle = styled.h2`
 `;
 
 const CardPropertyUlStyle = styled.div`
+  @media (max-width: 767px) {
+    padding-top: 0;
+    grid-row-gap: 5px;
+    grid-column-gap: 2px;
+    padding-bottom: 0px;
+  }
+  padding-bottom: 40px;
+
   padding-top: 30px;
+  grid-row-gap: 25px;
+  grid-column-gap: 10px;
 
   display: grid;
   grid-auto-flow: column;
-  grid-row-gap: 25px;
-  grid-column-gap: 10px;
   align-items: center;
   text-align: center;
   list-style-type: none;
@@ -183,24 +197,26 @@ export default function CardDetailsModal({
 
             <CardPropertyLiStyle>
               <CardPropertyKeyStyle>Cost</CardPropertyKeyStyle>
-              <div>{manacost}</div>
+              <div className={css.CardProperyValue}>{manacost}</div>
             </CardPropertyLiStyle>
 
             <CardPropertyLiStyle>
               <CardPropertyKeyStyle>Faction</CardPropertyKeyStyle>
-              <div>
+              <div className={css.CardProperyValue}>
                 {factionMapping[faction]} {faction}
               </div>
             </CardPropertyLiStyle>
 
             <CardPropertyLiStyle>
               <CardPropertyKeyStyle>Rarity</CardPropertyKeyStyle>
-              <RarityStyle rarity={rarity}>{rarity}</RarityStyle>
+              <RarityStyle className={css.CardProperyValue} rarity={rarity}>
+                {rarity}
+              </RarityStyle>
             </CardPropertyLiStyle>
 
             <CardPropertyLiStyle>
               <CardPropertyKeyStyle>Type</CardPropertyKeyStyle>
-              <div>
+              <div className={css.CardProperyValue}>
                 <FontAwesomeIcon icon={typeMapping[type]} size={"xs"} /> {type}
               </div>
             </CardPropertyLiStyle>
@@ -208,7 +224,7 @@ export default function CardDetailsModal({
             {isAttacking && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Targets</CardPropertyKeyStyle>
-                <div>
+                <div className={css.CardProperyValue}>
                   {targetsMapping[targets] && (
                     <>
                       {targetsMapping[targets]} {targets}
@@ -221,56 +237,58 @@ export default function CardDetailsModal({
             {!isNaN(health) && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Health</CardPropertyKeyStyle>
-                <div>{health}</div>
+                <div className={css.CardProperyValue}>{health}</div>
               </CardPropertyLiStyle>
             )}
 
             {isAttacking && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Attack Speed</CardPropertyKeyStyle>
-                <div>{attackspeed / 1000} s</div>
+                <div className={css.CardProperyValue}>{attackspeed / 1000} s</div>
               </CardPropertyLiStyle>
             )}
 
             {!isNaN(attackdelay) && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Attack Delay</CardPropertyKeyStyle>
-                <div>{attackdelay}</div>
+                <div className={css.CardProperyValue}>{attackdelay}</div>
               </CardPropertyLiStyle>
             )}
 
             {!isNaN(damage) && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Damage</CardPropertyKeyStyle>
-                <div>{damage === 0 ? "-" : damage}</div>
+                <div className={css.CardProperyValue}>{damage === 0 ? "-" : damage}</div>
               </CardPropertyLiStyle>
             )}
 
             {isAttacking && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>DPS</CardPropertyKeyStyle>
-                <div>{Math.round((damage / attackspeed) * 10000) / 10}</div>
+                <div className={css.CardProperyValue}>
+                  {Math.round((damage / attackspeed) * 10000) / 10}
+                </div>
               </CardPropertyLiStyle>
             )}
 
             {isAttacking && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Range</CardPropertyKeyStyle>
-                <div>{range / 1000}</div>
+                <div className={css.CardProperyValue}>{range / 1000}</div>
               </CardPropertyLiStyle>
             )}
 
             {speed && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Speed</CardPropertyKeyStyle>
-                <div>{speed}</div>
+                <div className={css.CardProperyValue}>{speed}</div>
               </CardPropertyLiStyle>
             )}
 
             {[true, false].includes(flying) && (
               <CardPropertyLiStyle>
                 <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
-                <div>
+                <div className={css.CardProperyValue}>
                   <FontAwesomeIcon icon={flying ? faCheck : faTimes} />
                 </div>
               </CardPropertyLiStyle>
@@ -280,8 +298,32 @@ export default function CardDetailsModal({
           <CardDescription description={description} />
 
           <div>
-            <h3 style={{ marginBottom: 0 }}>Tips by community</h3>
+            <h3>Tips by community</h3>
             <CardDiscussion card={card} discussionType="mechanics" />
+          </div>
+
+          <div>
+            <h3>Continue exploring</h3>
+            <ButtonGroupStyle>
+              <ButtonInGroupStyle>
+                <a
+                  href={`https://www.reddit.com/r/MinionMasters/search?q=${name}&restrict_sr=1`}
+                  target="_blank"
+                  className={css.redditIcon}
+                >
+                  <span className={classNames("fa-layers fa-fw")}>
+                    <FontAwesomeIcon icon={faSquare} />
+                    <FontAwesomeIcon
+                      icon={faReddit}
+                      color="#fd7e14"
+                      size="lg"
+                      mask={["far", "circle"]}
+                    />{" "}
+                  </span>
+                  <span> Reddits for {name}</span>
+                </a>
+              </ButtonInGroupStyle>
+            </ButtonGroupStyle>
           </div>
         </ModalContainerStyle>
       </ReactModal>

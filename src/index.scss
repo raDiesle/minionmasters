@@ -19,7 +19,12 @@ a:hover {
   color: #375a7f;
 }
 
-@media (max-width: 767px) {
+h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  @media (max-width: 767px) {
+    margin-top: 10px;
+  }
 }
 
 .react-tabs__tab.react-tabs__tab--selected {

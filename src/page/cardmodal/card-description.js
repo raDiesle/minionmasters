@@ -105,14 +105,14 @@ export default function CardDescription({ description }) {
         />
       )}
 
-      <h3 style={{ marginBottom: 0 }}>Description</h3>
-      <div>
+      <h3>Description</h3>
+      <div className={css.readOnlyText}>
         {formattedDescription.map((block, index) => (
           <React.Fragment key={"descr_" + index}>{block}</React.Fragment>
         ))}
       </div>
 
-      <div style={{ paddingTop: "15px" }}>
+      <div>
         {terms.map(({ display, term, description }) => (
           <fieldset key={term} style={{ marginTop: "0px" }}>
             <legend style={{ color: "yellow" }}>{display}</legend> {description}
