@@ -1,3 +1,4 @@
+import Basics from "page/basics/basics";
 import DeckContainer from "page/carddeck/DeckContainer";
 import ListOfMechanics from "page/mechanics/list-of-mechanics";
 import qs from "qs";
@@ -22,6 +23,7 @@ export function Page() {
           <Tab>Deck Manager</Tab>
           <Tab>Decks</Tab>
           <Tab>Mechanics</Tab>
+          <Tab>Basics</Tab>
         </TabList>
         <TabPanel>
           <DiscussOnCards />
@@ -37,6 +39,9 @@ export function Page() {
         </TabPanel>
         <TabPanel>
           <ListOfMechanics />
+        </TabPanel>
+        <TabPanel>
+          <Basics />
         </TabPanel>
       </Tabs>
     </div>

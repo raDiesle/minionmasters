@@ -6,7 +6,7 @@ import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from "rc-tooltip";
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { targetsMapping } from "../../attack/targetsMapping";
 import { typeMapping } from "../../cardtype/typeMapping";
