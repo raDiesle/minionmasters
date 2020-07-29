@@ -1,3 +1,5 @@
+import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { db, dbErrorHandlerPromise } from "../../../firestore";
@@ -43,6 +45,10 @@ export default function ListOfDecks() {
 
   return (
     <div>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
+        {"  "}Features under construction
+      </div>
       {decks.map((deck) => (
         <SingleDeckContainerStyle key={deck.createdAt.getTime()}>
           {deck.deckname}, {deck.createdAt.toLocaleString()}
