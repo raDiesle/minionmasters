@@ -1,1 +1,1 @@
-You must run npm run compressImages first
+You must run `npm run compressImages` first
