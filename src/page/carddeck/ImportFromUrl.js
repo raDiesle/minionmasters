@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import mToast from "components/mToast";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import qs from "qs";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
+
 import allCardsData from "../../generated/jobCardProps";
 
 export function ImportFromUrl({ setLastSelectedCards, setSelectedHero }) {
