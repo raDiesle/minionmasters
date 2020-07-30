@@ -1,9 +1,13 @@
-import Basics from "page/basics/basics";
-import DeckContainer from "page/carddeck/DeckContainer";
-import ListOfMechanics from "page/mechanics/list-of-mechanics";
+import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import qs from "qs";
+import Tooltip from "rc-tooltip";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+
+import Basics from "page/basics/basics";
+
+import DeckContainer from "page/carddeck/DeckContainer";
 
 import ListOfDecks from "./carddeck/ListOfDecks/ListOfDecks";
 import DiscussOnCards from "./discussion/discuss-on-cards";
@@ -22,8 +26,16 @@ export function Page() {
           <Tab>Masters Info</Tab>
           <Tab>Deck Manager</Tab>
           <Tab>Decks</Tab>
-          <Tab>Mechanics</Tab>
-          <Tab>Basics</Tab>
+          <Tab>
+            <Tooltip
+              placement="topRight"
+              overlay={<span>This section is under construction.</span>}
+            >
+              <div>
+                <FontAwesomeIcon icon={faTools} size="1x" color="yellow" /> The Game
+              </div>
+            </Tooltip>
+          </Tab>
         </TabList>
         <TabPanel>
           <DiscussOnCards />
@@ -36,9 +48,6 @@ export function Page() {
         </TabPanel>
         <TabPanel>
           <ListOfDecks />
-        </TabPanel>
-        <TabPanel>
-          <ListOfMechanics />
         </TabPanel>
         <TabPanel>
           <Basics />
