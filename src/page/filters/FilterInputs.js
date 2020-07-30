@@ -62,6 +62,44 @@ export function FilterInputs({
   return (
     <FilterContainerStyle>
       <div>
+        <div>Search</div>
+        <ButtonGroupStyle>
+          <InputTextStyle
+            type="text"
+            value={name}
+            onChange={(event) => {
+              event.persist();
+              const typedInEventName = event.target.value;
+              if (isShowNames === false && typedInEventName !== "") {
+                setIsShowNames(true);
+              }
+              setName(typedInEventName);
+            }}
+          />
+
+          <Tooltip placement="bottomRight" overlay={<span>Search by Name & Description</span>}>
+            <ButtonInGroupStyle>
+              <FontAwesomeIcon icon={faInfoCircle} />
+            </ButtonInGroupStyle>
+          </Tooltip>
+          <Tooltip placement="bottomRight" overlay={<span>Show Card Names</span>}>
+            <ButtonInGroupStyle
+              value={isShowNames}
+              onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
+            >
+              <FontAwesomeIcon icon={isShowNames ? faEye : faEyeSlash} />
+            </ButtonInGroupStyle>
+          </Tooltip>
+        </ButtonGroupStyle>
+      </div>
+
+      <ButtonGroupStyle>
+        <ButtonInGroupStyle onClick={() => setFilters(setAllFilterStates(false))}>
+          <FontAwesomeIcon icon={faTrashAlt} /> Reset
+        </ButtonInGroupStyle>
+      </ButtonGroupStyle>
+
+      <div>
         Faction
         <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
           {Object.keys(factionMapping).map((faction) => (
@@ -137,44 +175,6 @@ export function FilterInputs({
           ))}
         </ButtonFilterGroup>
       </div>
-
-      <div>
-        <div>Search</div>
-        <ButtonGroupStyle>
-          <InputTextStyle
-            type="text"
-            value={name}
-            onChange={(event) => {
-              event.persist();
-              const typedInEventName = event.target.value;
-              if (isShowNames === false && typedInEventName !== "") {
-                setIsShowNames(true);
-              }
-              setName(typedInEventName);
-            }}
-          />
-
-          <Tooltip placement="bottomRight" overlay={<span>Search by Name & Description</span>}>
-            <ButtonInGroupStyle>
-              <FontAwesomeIcon icon={faInfoCircle} />
-            </ButtonInGroupStyle>
-          </Tooltip>
-          <Tooltip placement="bottomRight" overlay={<span>Show Card Names</span>}>
-            <ButtonInGroupStyle
-              value={isShowNames}
-              onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
-            >
-              <FontAwesomeIcon icon={isShowNames ? faEye : faEyeSlash} />
-            </ButtonInGroupStyle>
-          </Tooltip>
-        </ButtonGroupStyle>
-      </div>
-
-      <ButtonGroupStyle>
-        <ButtonInGroupStyle onClick={() => setFilters(setAllFilterStates(false))}>
-          <FontAwesomeIcon icon={faTrashAlt} /> Reset
-        </ButtonInGroupStyle>
-      </ButtonGroupStyle>
     </FilterContainerStyle>
   );
 }
