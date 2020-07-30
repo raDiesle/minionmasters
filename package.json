@@ -39,16 +39,15 @@
   },
   "scripts": {
     "updateData": "npm-run-all generateData",
-    "fetchRawData": "npm-run-all fetchWikiData fetchImages compressImages",
-    "generateData": "node batch_jobs/jobPrepareRawData",
+    "compressImages": "node batch_jobs/jobCompressImages",
     "deploy": "firebase deploy  --only hosting",
     "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "generateData": "node batch_jobs/jobPrepareRawData",
     "fetchWikiData": "node batch_jobs/jobFetchRawDataFromWiki",
-    "fetchImages": "node batch_jobs/jobRawImagesDownload",
-    "compressImages": "node batch_jobs/jobCompressImages"
+    "fetchImages": "node batch_jobs/jobRawImagesDownload"
   },
   "eslintConfig": {
     "extends": "react-app"
