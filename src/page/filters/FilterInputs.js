@@ -1,10 +1,12 @@
 import { faEyeSlash } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
 import { faEye } from "@fortawesome/free-regular-svg-icons/faEye";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons/faTrashAlt";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { setAllFilterStates } from "page/FiltersWithCards";
 import Tooltip from "rc-tooltip";
 import React from "react";
 import styled from "styled-components";
@@ -137,7 +139,7 @@ export function FilterInputs({
       </div>
 
       <div>
-        <div>Name | incl. Description</div>
+        <div>Search</div>
         <ButtonGroupStyle>
           <InputTextStyle
             type="text"
@@ -167,6 +169,12 @@ export function FilterInputs({
           </Tooltip>
         </ButtonGroupStyle>
       </div>
+
+      <ButtonGroupStyle>
+        <ButtonInGroupStyle onClick={() => setFilters(setAllFilterStates(false))}>
+          <FontAwesomeIcon icon={faTrashAlt} /> Reset
+        </ButtonInGroupStyle>
+      </ButtonGroupStyle>
     </FilterContainerStyle>
   );
 }

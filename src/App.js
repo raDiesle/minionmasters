@@ -18,7 +18,7 @@ const Header = styled.header`
   width: 100%;
   background-color: #375a7f;
   color: white;
-  padding: 20px 10px;
+  padding: 5px 10px;
 
   a {
     color: #fff;
@@ -30,7 +30,7 @@ const Header = styled.header`
 
 const PageHeaderStyle = styled.h1`
   margin: 5px;
-  line-height: 0.8;
+  line-height: 1;
   font-weight: normal;
   font-size: 100%;
 `;
@@ -51,8 +51,11 @@ const App = () => {
             <CapitalLetterStyle>M</CapitalLetterStyle>inion{" "}
             <CapitalLetterStyle>M</CapitalLetterStyle>asters{" "}
             <CapitalLetterStyle>M</CapitalLetterStyle>anager
+            <div>v1.15</div>
           </PageHeaderStyle>
-          <LoginLogout />
+          <div>
+            <LoginLogout />
+          </div>
         </Header>
 
         <BrowserRouter>

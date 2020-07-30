@@ -1,9 +1,4 @@
-const {
-  TYPE_CARD_REF,
-  TYPE_INLINE,
-  TYPE_TERM,
-  TYPE_SUBTEXT,
-} = require("./card-description-types");
+const { TYPE_CARD_REF, TYPE_INLINE, TYPE_TERM, TYPE_SUBTEXT } = require("./card-description-types");
 
 const invert = require("lodash.invert");
 const _mapValues = require("lodash.mapvalues");
@@ -39,18 +34,10 @@ function normalizeWikiData(propsAsMap) {
     1925: 2,
   };
 
-  if (
-    Object.keys(bugsPageIdToRangeMapperWikiBugsConfig).includes(
-      "" + propsAsMap.pageId
-    )
-  ) {
+  if (Object.keys(bugsPageIdToRangeMapperWikiBugsConfig).includes("" + propsAsMap.pageId)) {
     propsAsMap.range = bugsPageIdToRangeMapperWikiBugsConfig[propsAsMap.pageId];
   }
-  if (
-    Object.keys(bugsPageIdToCountMapperWikiBugsConfig).includes(
-      "" + propsAsMap.pageId
-    )
-  ) {
+  if (Object.keys(bugsPageIdToCountMapperWikiBugsConfig).includes("" + propsAsMap.pageId)) {
     propsAsMap.count = bugsPageIdToCountMapperWikiBugsConfig[propsAsMap.pageId];
   }
 
@@ -70,8 +57,7 @@ function normalizeWikiData(propsAsMap) {
   PROPS_PARSE_TO_INT.forEach((prop) => {
     let currentPropValue = propsAsMap[prop];
     if (typeof currentPropValue !== "undefined") {
-      let isToConvertMeleeToNumeric =
-        prop === "range" && currentPropValue === "Melee";
+      let isToConvertMeleeToNumeric = prop === "range" && currentPropValue === "Melee";
       if (isToConvertMeleeToNumeric) {
         propsAsMap[prop] = 0;
         return propsAsMap;
@@ -121,8 +107,7 @@ function normalizeGameCardData(propsAsMap) {
     propsAsMap.type = "Spell";
   }
 
-  propsAsMap.targets =
-    propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
+  propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
 
   if (typeof propsAsMap.InheritFromId != "undefined") {
     const inheritFromData = cardDataFromGame.find(
@@ -174,10 +159,7 @@ function normalizeGameCardData(propsAsMap) {
     "[cv:DeadlyTwins.AdditionalUnitTriggerVariable]",
     `5`
   );
-  propsAsMap.description = propsAsMap.description.replace(
-    "[math:[av:Jahun.Damage]/2]",
-    `75`
-  );
+  propsAsMap.description = propsAsMap.description.replace("[math:[av:Jahun.Damage]/2]", `75`);
 
   propsAsMap.description = propsAsMap.description.replace(
     "[cv:DynamicDuo.AdditionalUnitTriggerVariable]",
@@ -198,10 +180,7 @@ function normalizeGameCardData(propsAsMap) {
     `{"Slitherbound (2)", "${TYPE_TERM}","CohortTwo"}`
   );
 
-  propsAsMap.description = propsAsMap.description.replace(
-    "ERROR_[r:ZealotLeaderFirst]",
-    "Ardera"
-  );
+  propsAsMap.description = propsAsMap.description.replace("ERROR_[r:ZealotLeaderFirst]", "Ardera");
 
   propsAsMap.description = propsAsMap.description.replace(
     `<link="actor_info:ShiHouMonkey>Shi-Hou</link>`,
@@ -236,22 +215,13 @@ function normalizeGameCardData(propsAsMap) {
     "[math:[av:BridgeShrine.LifeTime]/[math:[v:GeneratePowerOverTime.POWER_DELAY]/1000]]",
     "18"
   );
-  propsAsMap.description = propsAsMap.description.replace(
-    "[av:BridgeShrine.LifeTime]",
-    "45"
-  );
+  propsAsMap.description = propsAsMap.description.replace("[av:BridgeShrine.LifeTime]", "45");
   propsAsMap.description = propsAsMap.description.replace(
     "[v:TakeDamageOverTimeExtraDuringManaFrenzy.OVERHEAT_MULTIPLIER]",
     "3"
   );
-  propsAsMap.description = propsAsMap.description.replace(
-    "[cv:Skeletons.SummonAmounts*0]",
-    "3"
-  );
-  propsAsMap.description = propsAsMap.description.replace(
-    "[r:SkeletonUnits]",
-    "Skeletons"
-  );
+  propsAsMap.description = propsAsMap.description.replace("[cv:Skeletons.SummonAmounts*0]", "3");
+  propsAsMap.description = propsAsMap.description.replace("[r:SkeletonUnits]", "Skeletons");
   propsAsMap.description = propsAsMap.description.replace(
     `<link="actor_info:SlitherDarterSlave>Slitherbound Darter</link>`,
     `{"Slitherbound Darter", "${TYPE_TERM}","SlitherDarterSlave"}`
@@ -262,10 +232,7 @@ function normalizeGameCardData(propsAsMap) {
     `{"Slitherbound Lancer", "${TYPE_TERM}","SlitherLancerSlave"}`
   );
 
-  propsAsMap.description = propsAsMap.description.replace(
-    "<b>each team</b>",
-    "each team"
-  );
+  propsAsMap.description = propsAsMap.description.replace("<b>each team</b>", "each team");
 
   propsAsMap.description = propsAsMap.description.replace("[r:Jahun]", "Jahun");
 
@@ -376,9 +343,7 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
     1643: 89, // master card
     1999: 279,
   };
-  const gameiDToWikiPageIdMappingConfig = invert(
-    wikiPageIdToGameIdMappingConfig
-  );
+  const gameiDToWikiPageIdMappingConfig = invert(wikiPageIdToGameIdMappingConfig);
   const matchedDataFromWikiByName = cardDataFromWiki.find(
     ({ name }) => cardDataFromGame.name === name
   );
@@ -387,9 +352,7 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
   const matchedDataFromWikiById =
     matchedDataFromWikiByName ||
     cardDataFromWiki.find(
-      ({ pageId }) =>
-        parseInt(gameiDToWikiPageIdMappingConfig[cardDataFromGame.iD]) ===
-        pageId
+      ({ pageId }) => parseInt(gameiDToWikiPageIdMappingConfig[cardDataFromGame.iD]) === pageId
     );
   if (matchedDataFromWikiById) {
     cardDataFromGame.pageId = parseInt(matchedDataFromWikiById.pageId);
@@ -410,9 +373,11 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
       277: "Smite.jpg",
       272: "TingTengTung.jpg",
       279: "Windwalker.jpg",
+      291: "SummonUndyingCorpse.jpg",
+      292: "GroundMinionsAndSummonSkeletons.jpg",
+      293: "CorpseExplosion.jpg",
     };
-    cardDataFromGame.image =
-      gameIdToCustomImage[cardDataFromGame.iD] || "Notavailable.png";
+    cardDataFromGame.image = gameIdToCustomImage[cardDataFromGame.iD] || "Notavailable.png";
   }
 
   if (typeof cardDataFromGame.pageId === "undefined") {
@@ -439,8 +404,7 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
 */
   if (cardDataFromGame.image) {
     const imageNormalized =
-      cardDataFromGame.image.charAt(0).toUpperCase() +
-      cardDataFromGame.image.slice(1);
+      cardDataFromGame.image.charAt(0).toUpperCase() + cardDataFromGame.image.slice(1);
     cardDataFromGame.image = imageNormalized;
 
     const imageSrc = cardDataFromGame.image.split(".");
@@ -461,35 +425,22 @@ const normalizedWikiData = cardDataFromWiki.map((cardData) => {
 
 const normalizedGameData = cardDataFromGame
   .filter(({ iD }) => {
-    const SKIP_CARDS = [
-      18,
-      109,
-      291, // Restless Dead
-      292, // Unholy Ground
-      293, // Corpse Explosion
-    ];
+    const SKIP_CARDS = [18, 109];
     return !SKIP_CARDS.includes(parseInt(iD));
   })
   .map((cardData) => {
     return normalizeGameCardData(cardData);
   });
 console.log(normalizeWikiData);
-const cardDataWikiAsMasterMergedWithGameData = normalizedGameData.map(
-  (gameDataset) => {
-    return mapGameDataToWikiData(gameDataset, normalizedWikiData);
-  }
-);
+const cardDataWikiAsMasterMergedWithGameData = normalizedGameData.map((gameDataset) => {
+  return mapGameDataToWikiData(gameDataset, normalizedWikiData);
+});
 
-fs.writeFileSync(
-  TARGET_FILE,
-  JSON.stringify(cardDataWikiAsMasterMergedWithGameData, null, 4)
-);
+fs.writeFileSync(TARGET_FILE, JSON.stringify(cardDataWikiAsMasterMergedWithGameData, null, 4));
 // cardDataFromGame
 
 errorList.forEach((err) => console.error(err));
 
 console.log("count of cards from game:" + cardDataFromGame.length);
 console.log("count of cards from wiki:" + cardDataFromWiki.length);
-console.log(
-  "count of merged data:" + cardDataWikiAsMasterMergedWithGameData.length
-);
+console.log("count of merged data:" + cardDataWikiAsMasterMergedWithGameData.length);

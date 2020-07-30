@@ -9,23 +9,22 @@ import { rarityMapping } from "../rarity/rarityMapping";
 import Cards from "./Cards";
 import { FilterInputs } from "./filters/FilterInputs";
 
-export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
-  function setAllFilterStates(isActive) {
-    const setFilterState = (key) => {
-      return {
-        btnkey: key,
-        isActive: isActive,
-      };
-    };
+export function setAllFilterStates(isActive) {
+  const setFilterState = (key) => {
     return {
-      faction: Object.keys(factionMapping).map(setFilterState),
-      manacost: MANACOST.map(setFilterState),
-      rarity: Object.keys(rarityMapping).map(setFilterState),
-      type: Object.keys(typeMapping).map(setFilterState),
-      targets: Object.keys(targetsMapping).map(setFilterState),
+      btnkey: key,
+      isActive: isActive,
     };
-  }
-
+  };
+  return {
+    faction: Object.keys(factionMapping).map(setFilterState),
+    manacost: MANACOST.map(setFilterState),
+    rarity: Object.keys(rarityMapping).map(setFilterState),
+    type: Object.keys(typeMapping).map(setFilterState),
+    targets: Object.keys(targetsMapping).map(setFilterState),
+  };
+}
+export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
   const [name, setName] = useState("");
   const [isShowNames, setIsShowNames] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
