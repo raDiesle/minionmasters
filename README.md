@@ -3,16 +3,19 @@
 
 # getting started
 1. `npm install`
-2. `npm run updateRawData`
- 
-   -> optional
-3. `npm start`
-4. `npm run deploy`
+2. `npm run compressImages`
+3. `npm start` 
 
+# Later on
+4. `npm start`
+5. `npm run deploy`
 
-## Available Scripts
-### `npm start`
-
+# update game data
+1. Download and replace file manual from: https://drive.google.com/file/d/0B-3hJBoCehBpQVBUYVdxZDVNSms/view?usp=sharing
+2. `npm run generateData`
+3. download card image and move to folder
+4. give image url path name
+5. `npm run compressImages`
 
 # another tool from another guy:
  https://steamcommunity.com/app/489520/discussions/0/1474222595297615799/?ctp=2

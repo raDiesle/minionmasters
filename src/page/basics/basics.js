@@ -20,368 +20,275 @@ export default function Basics() {
           <div className="rightSectionTopTitle">Inhaltsverzeichnis</div>
           <div className="hr smallpadded" />
           <div className="guideSubSectionSelection" id="guideSectionSelection_0">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '0', 'changeHash' )">Übersicht</a>
+              Übersicht
             </div>
           </div>
           <div className="hr smallpadded" />
           <div className="guideSubSectionSelection selected" id="guideSectionSelection_2894034">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894034', 'changeHash' )">
-                Basics - Resources and Shop
-              </a>
+
+              Basics - Resources and Shop
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2899748">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2899748', 'changeHash' )">
-                Basics - Power Tokens
-              </a>
+
+              Basics - Power Tokens
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894035">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894035', 'changeHash' )">
-                Basics - Main Menu
-              </a>
+
+              Basics - Main Menu
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894037">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894037', 'changeHash' )">
-                Basics - Chat Commands
-              </a>
+
+              Basics - Chat Commands
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894038">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894038', 'changeHash' )">
-                Basics - Streamers
-              </a>
+
+              Basics - Streamers
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2899595">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2899595', 'changeHash' )">
-                Basics - Freebies
-              </a>
+
+              Basics - Freebies
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2899664">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2899664', 'changeHash' )">
-                Basics - Rewards (Level up and Ranks)
-              </a>
+
+              Basics - Rewards (Level up and Ranks)
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2837185">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2837185', 'changeHash' )">
-                Basics - Interaction with Others
-              </a>
+
+              Basics - Interaction with Others
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3069646">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '3069646', 'changeHash' )">
-                Basics - Replays
-              </a>
+
+              Basics - Replays
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032441">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '3032441', 'changeHash' )">
-                - - - - - - - - - - - - - - - - - - - - - - - - - - -
-              </a>
+
+
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894043">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894043', 'changeHash' )">
-                The Game Purpose - Introduction
-              </a>
+
+              The Game Purpose - Introduction
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894044">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894044', 'changeHash' )">
-                The Game Purpose - Ranks
-              </a>
+
+              The Game Purpose - Ranks
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894045">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894045', 'changeHash' )">
-                The Game Purpose - Draft
-              </a>
+
+              The Game Purpose - Draft
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2974486">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2974486', 'changeHash' )">
-                The Game Purpose - Mayhem
-              </a>
+
+              The Game Purpose - Mayhem
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894046">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894046', 'changeHash' )">
-                The Game Purpose - Expeditions
-              </a>
+
+              The Game Purpose - Expeditions
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894047">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894047', 'changeHash' )">
-                The Game Purpose - Season (Battle Pass)
-              </a>
+
+              The Game Purpose - Season (Battle Pass)
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2954636">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2954636', 'changeHash' )">
-                The Game Purpose - Guild Pass
-              </a>
+
+              The Game Purpose - Guild Pass
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2837228">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2837228', 'changeHash' )">
-                The Game Purpose - Optimize the Rewards
-              </a>
+
+              The Game Purpose - Optimize the Rewards
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032442">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '3032442', 'changeHash' )">
-                - - - - - - - - - - - - - - - - - - - - - - - - - - -
-              </a>
+
+
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2894054">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2894054', 'changeHash' )">
-                Deck Building - Basics
-              </a>
+
+              Deck Building - Basics
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2837346">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2837346', 'changeHash' )">
-                Deck Building - Basic Rules
-              </a>
+
+              Deck Building - Basic Rules
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032443">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '3032443', 'changeHash' )">
-                - - - - - - - - - - - - - - - - - - - - - - - - - - -
-              </a>
+
+
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2837414">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2837414', 'changeHash' )">
-                Deck Building - Masters - EASY
-              </a>
+
+              Deck Building - Masters - EASY
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2941648">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2941648', 'changeHash' )">
-                Deck Building - Masters - MEDIUM
-              </a>
+
+              Deck Building - Masters - MEDIUM
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2941647">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2941647', 'changeHash' )">
-                Deck Building - Masters - HARD (Part 1)
-              </a>
+
+              Deck Building - Masters - HARD (Part 1)
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2956037">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2956037', 'changeHash' )">
-                Deck Building - Masters - HARD (Part 2)
-              </a>
+
+              Deck Building - Masters - HARD (Part 2)
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3071787">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '3071787', 'changeHash' )">
-                Deck Building - Masters - HARD (Part 3)
-              </a>
+
+              Deck Building - Masters - HARD (Part 3)
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032444">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '3032444', 'changeHash' )">
-                - - - - - - - - - - - - - - - - - - - - - - - - - - -
-              </a>
+
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2837435">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
-              <a href="javascript:SelectGuideSection( '2837435', 'changeHash' )">
-                Deck Building - Strategies
-              </a>
+
+              Deck Building - Strategies
+
               &nbsp;
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2840747">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '2840747', 'changeHash' )">
                 Deck Building - Combos
@@ -390,10 +297,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3068444">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3068444', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -402,10 +306,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3068443">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3068443', 'changeHash' )">
                 Cards Guide - Buff/Debuff
@@ -414,10 +315,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032440">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032440', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -426,10 +324,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3039119">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3039119', 'changeHash' )">
                 Cards Guide - 0 Mana Cost - Masters
@@ -438,10 +333,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032431">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032431', 'changeHash' )">
                 Cards Guide - 0 Mana Cost
@@ -450,10 +342,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032432">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032432', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -462,10 +351,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3039117">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3039117', 'changeHash' )">
                 Cards Guide - 1 Mana Cost - Masters
@@ -474,10 +360,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3009297">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3009297', 'changeHash' )">
                 Cards Guide - 1 Mana Cost
@@ -486,10 +369,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032434">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032434', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -498,10 +378,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3039116">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3039116', 'changeHash' )">
                 Cards Guide - 2 Mana Cost - Masters
@@ -510,10 +387,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3026110">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3026110', 'changeHash' )">
                 Cards Guide - 2 Mana Cost - Part 1
@@ -522,10 +396,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031937">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031937', 'changeHash' )">
                 Cards Guide - 2 Mana Cost - Part 2
@@ -534,10 +405,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3026303">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3026303', 'changeHash' )">
                 Cards Guide - 2 Mana Cost - Part 3
@@ -546,10 +414,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031940">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031940', 'changeHash' )">
                 Cards Guide - 2 Mana Cost - Part 4
@@ -558,10 +423,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3063824">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3063824', 'changeHash' )">
                 Cards Guide - 2 Mana Cost - Part 5
@@ -570,10 +432,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032435">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032435', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -582,10 +441,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3039115">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3039115', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Masters
@@ -594,10 +450,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3027065">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3027065', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Part 1
@@ -606,10 +459,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031945">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031945', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Part 2
@@ -618,10 +468,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3027235">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3027235', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Part 3
@@ -630,10 +477,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031949">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031949', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Part 4
@@ -642,10 +486,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3027295">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3027295', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Part 5
@@ -654,10 +495,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031951">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031951', 'changeHash' )">
                 Cards Guide - 3 Mana Cost - Part 6
@@ -666,10 +504,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032436">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032436', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -678,10 +513,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3029474">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3029474', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 1
@@ -690,10 +522,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031952">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031952', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 2
@@ -702,10 +531,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3029591">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3029591', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 3
@@ -714,10 +540,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031955">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031955', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 4
@@ -726,10 +549,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3030504">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3030504', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 5
@@ -738,10 +558,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031957">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031957', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 5
@@ -750,10 +567,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3078942">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3078942', 'changeHash' )">
                 Cards Guide - 4 Mana Cost - Part 6
@@ -762,10 +576,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032437">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032437', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -774,10 +585,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3031768">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3031768', 'changeHash' )">
                 Cards Guide - 5 Mana Cost - Part 1
@@ -786,10 +594,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032084">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032084', 'changeHash' )">
                 Cards Guide - 5 Mana Cost - Part 2
@@ -798,10 +603,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032114">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032114', 'changeHash' )">
                 Cards Guide - 5 Mana Cost - Part 3
@@ -810,10 +612,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032252">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032252', 'changeHash' )">
                 Cards Guide - 5 Mana Cost - Part 4
@@ -822,10 +621,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032334">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032334', 'changeHash' )">
                 Cards Guide - 5 Mana Cost - Part 5
@@ -834,10 +630,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3189490">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3189490', 'changeHash' )">
                 Cards Guide - 5 Mana Cost - Part 6
@@ -846,10 +639,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3032438">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3032438', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -858,10 +648,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3033147">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3033147', 'changeHash' )">
                 Cards Guide - 6 Mana Cost - Part 1
@@ -870,10 +657,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3033792">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3033792', 'changeHash' )">
                 Cards Guide - 6 Mana Cost - Part 2
@@ -882,10 +666,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3189529">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3189529', 'changeHash' )">
                 Cards Guide - 6 Mana Cost - Part 3
@@ -894,10 +675,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3033849">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3033849', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -906,10 +684,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034287">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034287', 'changeHash' )">
                 Cards Guide - 7 Mana Cost - Part 1
@@ -918,10 +693,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034332">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034332', 'changeHash' )">
                 Cards Guide - 7 Mana Cost - Part 2
@@ -930,10 +702,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3189536">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3189536', 'changeHash' )">
                 Cards Guide - 7 Mana Cost - Part 3
@@ -942,10 +711,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034348">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034348', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -954,10 +720,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034538">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034538', 'changeHash' )">
                 Cards Guide - 8 Mana Cost - Part 1
@@ -966,10 +729,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3189552">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3189552', 'changeHash' )">
                 Cards Guide - 8 Mana Cost - Part 2
@@ -978,10 +738,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034576">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034576', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -990,10 +747,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034656">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034656', 'changeHash' )">
                 Cards Guide - 9 Mana Cost
@@ -1002,10 +756,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034665">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034665', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1014,10 +765,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034666">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034666', 'changeHash' )">
                 Cards Guide - 10 Mana Cards
@@ -1026,10 +774,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_3034671">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '3034671', 'changeHash' )">
                 - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1038,10 +783,7 @@ export default function Basics() {
             </div>
           </div>
           <div className="guideSubSectionSelection" id="guideSectionSelection_2837443">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '2837443', 'changeHash' )">Conclusions</a>
               &nbsp;
@@ -1049,10 +791,7 @@ export default function Basics() {
           </div>
           <div className="hr smallpadded" />
           <div className="guideSubSectionSelection" id="guideSectionSelection_-1">
-            <img
-              className="browseOptionImage"
-              src="https://community.cloudflare.steamstatic.com/public/images/sharedfiles/filterselect_blue.png?v=1"
-            />
+            {/* img placeholder */}
             <div className="guideSubSectionSelectionLink ellipsis">
               <a href="javascript:SelectGuideSection( '-1', 'changeHash' )">Kommentare</a>
             </div>
@@ -1079,12 +818,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645159838%2FE61E93A08DEB71B124B39EEC2DF33E240041C30A%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645159838/E61E93A08DEB71B124B39EEC2DF33E240041C30A/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>Gold</b>: gold is very important since it's your primary source of shards and
                 cards. Spend this in the shop on good offers (especially to boost the cards you use)
@@ -1100,12 +834,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645159872%2F24CBA67A00EB49CC41B91E0A16DC60FD66E85B18%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645159872/24CBA67A00EB49CC41B91E0A16DC60FD66E85B18/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>Shards</b>: shards are extremely important since with this you can craft cards.
                 You shouldn't haste in spending shards since they are not easy to come by, spend
@@ -1124,12 +853,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645159856%2F9D6E6EDF21FB2A2407E5BFB9ADA2167A9A523A76%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645159856/9D6E6EDF21FB2A2407E5BFB9ADA2167A9A523A76/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>Rubies</b>: rubies are the most precious resource you have, you can rarely obtain
                 it as a reward, and they can be bought for real money. With rubies you can buy stuff
@@ -1156,12 +880,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645174428%2FA0DC8BBDD0AF927A1C854765A8C0F1D0875DE9B6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/994638228645174428/A0DC8BBDD0AF927A1C854765A8C0F1D0875DE9B6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             To better understand the prices in the shop, you need to know the currency conversion:
             <br />
@@ -1456,12 +1175,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F947343832948952298%2F13746A4DC2FBBE8753F69D0CE9162790BED5E2BD%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/947343832948952298/13746A4DC2FBBE8753F69D0CE9162790BED5E2BD/"
-                className="sharedFilePreviewImage sizeOriginal floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <ol>
@@ -2600,12 +2314,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691568%2F1BE5C3AEEF2BAE44306DAA66FB54FA48DDB130C3%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691568/1BE5C3AEEF2BAE44306DAA66FB54FA48DDB130C3/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>{" "}
             <br />
             <br />
@@ -2620,12 +2329,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691553%2F24F6083D7F1613F4F8EE0082BCB24C0D0D670855%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691553/24F6083D7F1613F4F8EE0082BCB24C0D0D670855/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -2640,12 +2344,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095692247%2F7B2AFCED8D3ECE407CBB20DA497AC70AEB75E559%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095692247/7B2AFCED8D3ECE407CBB20DA497AC70AEB75E559/"
-                className="sharedFilePreviewImage floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>{" "}
             <br />
             <br />
@@ -2660,12 +2359,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691542%2FA6F26514AAD8E2753EE5E4B0DF588427B5A5A8D2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691542/A6F26514AAD8E2753EE5E4B0DF588427B5A5A8D2/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -2680,12 +2374,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691498%2F09E7236F740EEB008962BEEE9B9A46FA33B15677%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691498/09E7236F740EEB008962BEEE9B9A46FA33B15677/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -2701,12 +2390,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691520%2F4CE3D9B984571CEFA00427A7E25A37CF8888B667%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691520/4CE3D9B984571CEFA00427A7E25A37CF8888B667/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -2722,12 +2406,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691473%2F013A90008CF022AD9CF69C23DA45FA2C2109EC2E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691473/013A90008CF022AD9CF69C23DA45FA2C2109EC2E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -2743,12 +2422,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691510%2FA87EE266F92FB7BCB526B65FFBCB15DBFF047456%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691510/A87EE266F92FB7BCB526B65FFBCB15DBFF047456/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -2764,12 +2438,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F989009337095691483%2F43FEFC059E2DF11C294BBD4397BDCC192BE029DA%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/989009337095691483/43FEFC059E2DF11C294BBD4397BDCC192BE029DA/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3266,12 +2935,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483349788645%2FD7E8E807CA39CF2105A4F95CC427BFF1A0960EC6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483349788645/D7E8E807CA39CF2105A4F95CC427BFF1A0960EC6/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3302,12 +2966,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350130037%2FECA5810A553B17974CF0054A5B67A48E46062803%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350130037/ECA5810A553B17974CF0054A5B67A48E46062803/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3329,12 +2988,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350132186%2F375CF555D21C820F190201231014BFF55AE94E12%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350132186/375CF555D21C820F190201231014BFF55AE94E12/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3370,12 +3024,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350136130%2FAC7C42A3B8367580EBB6499F0C90A6CA42778624%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350136130/AC7C42A3B8367580EBB6499F0C90A6CA42778624/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3400,12 +3049,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350143057%2F9CE839D45CF2664853C24DC7327D4BB14E1D0BEC%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350143057/9CE839D45CF2664853C24DC7327D4BB14E1D0BEC/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3436,12 +3080,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350151003%2F55376C964066BF976E7B68972EAE4B917DD20C7C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350151003/55376C964066BF976E7B68972EAE4B917DD20C7C/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3464,12 +3103,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350155679%2FDBF8D813BD69725123041462EF832970694EA4C2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350155679/DBF8D813BD69725123041462EF832970694EA4C2/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3493,12 +3127,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350165446%2F0723FC2946954793935FC75FC8C2001D7B69BF5C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350165446/0723FC2946954793935FC75FC8C2001D7B69BF5C/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3536,12 +3165,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350174000%2F5C1C733A381A5A27482166D87D56DC7CD9116EC5%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350174000/5C1C733A381A5A27482166D87D56DC7CD9116EC5/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3570,12 +3194,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F995765483350182834%2FD513025ADDEAF3C738ABF0536DA30349A442814E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/995765483350182834/D513025ADDEAF3C738ABF0536DA30349A442814E/"
-                className="sharedFilePreviewImage sizeThumb inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <br />
             <br />
@@ -3904,12 +3523,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757418682375470%2F83A2B14014DC9DACA47EE93542D5CE7DEE05C5D8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757418682375470/83A2B14014DC9DACA47EE93542D5CE7DEE05C5D8/"
-                className="sharedFilePreviewImage sizeFull inline"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The multiplier for the formula above is ( xx% / 100 ) + 1. Example for GM is 3.5.
             <br />
@@ -4648,12 +4262,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836447%2FC6B4F7939305ED80390DAF4A309D3CA00D9F0EED%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836447/C6B4F7939305ED80390DAF4A309D3CA00D9F0EED/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -4731,12 +4340,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836438%2F2560FBBC9B1AE20FF3248C8D25583F460640035C%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836438/2560FBBC9B1AE20FF3248C8D25583F460640035C/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -4849,12 +4453,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836486%2F79341EFFE2F17177603429A4518184CE26FC5143%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836486/79341EFFE2F17177603429A4518184CE26FC5143/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -4962,12 +4561,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645843944%2F1C2EAFBA9465236EB69994CD66A9C3998A540B80%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645843944/1C2EAFBA9465236EB69994CD66A9C3998A540B80/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5078,12 +4672,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836370%2FFA7E65E325C69F651FC87D7983C9E994065F8176%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836370/FA7E65E325C69F651FC87D7983C9E994065F8176/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5196,12 +4785,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836385%2FF55E796A98248FC19856F3B53152AF58E4A1807C%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836385/F55E796A98248FC19856F3B53152AF58E4A1807C/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5321,12 +4905,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836411%2FE541EB494C9F8EFEC4C319813FB6FE349EB8768F%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836411/E541EB494C9F8EFEC4C319813FB6FE349EB8768F/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5417,12 +4996,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836423%2FA8D48862713D0089CE2DDAD29B3C12A753EDD1E0%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836423/A8D48862713D0089CE2DDAD29B3C12A753EDD1E0/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5514,12 +5088,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836502%2F94379A3A4AAD66CF7328183EFA0F6440F17B7AC5%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836502/94379A3A4AAD66CF7328183EFA0F6440F17B7AC5/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5630,12 +5199,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F994638228645836397%2F1F47B4D381EA51D4993DF9D9D473F4D5DA4E7210%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/994638228645836397/1F47B4D381EA51D4993DF9D9D473F4D5DA4E7210/"
-                    className="sharedFilePreviewImage sizeOriginal floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 <b>PERKS:</b>
                 <br />
@@ -5762,12 +5326,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879007%2F9D57709AA4B03C538040F1C8F6CAF9347DDA7BB5%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879007/9D57709AA4B03C538040F1C8F6CAF9347DDA7BB5/"
-                    className="sharedFilePreviewImage sizeThumb floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 A control deck is designed to maintain the control of the bridges and to counter
                 anything that comes in your way. This kind of decks are usually effective in 2v2
@@ -5790,12 +5349,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878915%2F08AECD0C9118F30DDD12F6EE69F82F445B1704A4%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878915/08AECD0C9118F30DDD12F6EE69F82F445B1704A4/"
-                    className="sharedFilePreviewImage sizeThumb floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 The swarming strategies are mainly designed to spawn so many minions that your
                 opponent won't be able to stop you.
@@ -5817,12 +5371,7 @@ export default function Basics() {
                   className="modalContentLink"
                   data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877748%2F7EBEAB63F3C360C6214AEF6EFC26A92B05766A1B%2F"
                 >
-                  <img
-                    src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877748/7EBEAB63F3C360C6214AEF6EFC26A92B05766A1B/"
-                    className="sharedFilePreviewImage sizeThumb floatLeft"
-                    alt=""
-                    title
-                  />
+                  {/* img placeholder */}
                 </a>
                 This strategy requires you to escort one big fat minion to the enemy tower to cause
                 massive damage. Since the big fat minions have huge amount of hp, some tactics can
@@ -6291,12 +5840,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079608%2F9C83DB178284926989285C5282E843AA66866744%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079608/9C83DB178284926989285C5282E843AA66866744/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Burn the Bridges is a spell that sets the bridges on fire and damages every enemy ground
             minion on it. Make sure to use a tank or any unit to keep the enemy units on the bridge
@@ -6324,12 +5868,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079714%2F1DD79F2DED5207B6FA473B37F33CB3106F5163A0%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079714/1DD79F2DED5207B6FA473B37F33CB3106F5163A0/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Tombstone is a building that after 10 seconds resurrect the first friendly minion
             that dies (including your teammate minions). Timing the placement with a minion death
@@ -6359,12 +5898,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079689%2F53C151F8F89A238BF56B1B2900A6F42D947C1157%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079689/53C151F8F89A238BF56B1B2900A6F42D947C1157/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             More Dakka! is probably the most powerful spell in the game. This spell cause 40 damage
             per friendly minion you have around (including your teammate minions), hitting the enemy
@@ -6394,12 +5928,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079728%2FB3616A3896F09426196A024930D489CBAD0A54B3%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079728/B3616A3896F09426196A024930D489CBAD0A54B3/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Trick Swap is a spell that swap all location of all units on the both bridges, and stuns
             enemy minions for 4 seconds. Using Trick Swap also swap the crown location (the mark
@@ -6428,12 +5957,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079701%2F92ABB29CF45E2DBF8FE6004915C8426F53A2A216%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079701/92ABB29CF45E2DBF8FE6004915C8426F53A2A216/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Shield Totem is a building that makes your tower immune to damage. Place this
             building in a safe place to protect your tower when it's under heavy siege. The Shield
@@ -6463,12 +5987,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079542%2F3F075C8AC15B950EDFE51403D80DC8B554489204%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079542/3F075C8AC15B950EDFE51403D80DC8B554489204/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Arcane Missiles is a spell that shots 5 missiles in selected direction (when you do the
             selection, pay attention to the rune, because that will be the main target). Each
@@ -6498,12 +6017,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877582%2FEBD057F6473CE47F73145752A6F9CE5AE30E78BB%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877582/EBD057F6473CE47F73145752A6F9CE5AE30E78BB/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Blood Imps are free to use minions, but EXTREMELY dangerous to use, since all the damage
             they take (INCLUDING OVERKILL) will be taken by your tower too!
@@ -6545,12 +6059,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079635%2FF85391FE41B2B6577DDBD12D7A1FE93C1B935025%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079635/F85391FE41B2B6577DDBD12D7A1FE93C1B935025/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crossbow Trap is a building capable of dealing small amount of damage very fast. It
             can be placed anywhere in the battlefield (including the enemy side) and can also be use
@@ -6581,12 +6090,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079664%2F5ECF529C1237A08D5D9D674E5D6CAB2FEA8779C5%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079664/5ECF529C1237A08D5D9D674E5D6CAB2FEA8779C5/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Decoy Trap is a building that taunts nearby enemies. This building can be placed
             anywhere it the battlefield (including the enemy side) and can also be used to capture
@@ -6618,12 +6122,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878429%2F880959FFC6F290DBE6E19C19694940CCDAE8BC6D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878429/880959FFC6F290DBE6E19C19694940CCDAE8BC6D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Illusory Cleaver is a cheap and versatile card that can be used either to capture a
             bridge or to kill small groups of minions (like scrat horde or propelled horde).
@@ -6648,12 +6147,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878551%2FA350B68865292FEBC656C994D9E83B418ACE9695%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878551/A350B68865292FEBC656C994D9E83B418ACE9695/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Mana Puff is a cheap card that can be used either to capture a bridge, or to
             increase your mana regeneration (as long as it's alive on a bridge).
@@ -6677,12 +6171,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877567%2F9F7CACC8FBF75CC1DEFE5500124990B49409EF85%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877567/9F7CACC8FBF75CC1DEFE5500124990B49409EF85/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Nether Bat is a cheap card that can be used either to capture a bridge, or to attack
             ground creatures for a small damage. It also teleports to a random enemy from time to
@@ -6706,12 +6195,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878257%2FDA2A83EA22EEAF1481C5BB92BD44B05382FACF02%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878257/DA2A83EA22EEAF1481C5BB92BD44B05382FACF02/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Scrat Pack is a cheap card that can be used either to capture a bridge (or both if
             split in the middle), or to stop dangerous minions like a Cleaver.
@@ -6734,12 +6218,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879007%2F9D57709AA4B03C538040F1C8F6CAF9347DDA7BB5%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879007/9D57709AA4B03C538040F1C8F6CAF9347DDA7BB5/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Screaming Scrat is a cheap card that can be used either to capture a bridge, or to
             distract dangerous minions from reaching your tower such as Cleaver or Rammer.
@@ -6767,12 +6246,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786179%2F40CC4A467316CB5C74011205B0DC608A798451CD%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786179/40CC4A467316CB5C74011205B0DC608A798451CD/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Sewer Scrat is a poisonous unit that applies poison for 5 seconds to any melee unit
             that attacks him. Is very good to be used as bridge capture, but also a very cheap way
@@ -6809,12 +6283,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079593%2F656ED3DFFFB2D59A7D855CEFE08902D7902A72FE%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079593/656ED3DFFFB2D59A7D855CEFE08902D7902A72FE/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Blast Entry is a spell that removes Settsu from the tower and let her to move in the
             battlefield. When Settsu land she'll deal 50 damage and she'll have 300 hp.
@@ -6855,12 +6324,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877537%2F4F3111DA810E92FACF665337D0B277AFAEBA2D7E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877537/4F3111DA810E92FACF665337D0B277AFAEBA2D7E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Black Hole can be used to counter many spells, to either protect your units or to
             separate enemies. It's especially good to protect from Magma Storm and Combustion, while
@@ -6891,12 +6355,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877600%2F2535595E48B7068D75BD85B196BCCD95D5042B8D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877600/2535595E48B7068D75BD85B196BCCD95D5042B8D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Boomer is a cheap and effective way to clear few melee minions like Stun Lancers,
             Defenso Chopper, etc.. In order to use it properly, make sure the egg can hatch or it
@@ -6920,12 +6379,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878978%2FDCCDBE192EC02659635A2AB697069053D24B8BC6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878978/DCCDBE192EC02659635A2AB697069053D24B8BC6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Bridge Buddies are a very effective spell that allows you to instantly capture both
             bridges (assuming there is no enemy minion walking over it of course..). This spell
@@ -6950,12 +6404,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877658%2FB55E2C6647F1A59DF0AE9D86667EC53B7502E759%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877658/B55E2C6647F1A59DF0AE9D86667EC53B7502E759/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Call To Arms is a spell that transforms any building (excluding the master specific
             ones, like Mordar's Tombstones or Diona's Traps) into Warriors. The most effective
@@ -6981,12 +6430,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877761%2F2BE4AB4F2E3E25F7CA9CF39F10F94D8607B1D061%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877761/2BE4AB4F2E3E25F7CA9CF39F10F94D8607B1D061/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Combustion is a spell VERY effective to take down big minions or large group of
             medium-small minions. To use it effectively, just cast it on a group of friendly minions
@@ -7016,12 +6460,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877795%2F9297C66002026DC80F5BBF8C60EAFAC6D2177B3E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877795/9297C66002026DC80F5BBF8C60EAFAC6D2177B3E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crossbow Dudes are a cheap ranged unit that can be used from a safe position as
             additional damage, or you can just use them to capture bridges by splitting them on the
@@ -7049,12 +6488,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877924%2F6DA111255A0E39E864E358C4254AB6C7D24E4D1E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877924/6DA111255A0E39E864E358C4254AB6C7D24E4D1E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Disruptor Puffs increases the mana cost of random card SLOTS by 2 (each). The mana
             cost cannot be higher than 10.
@@ -7080,12 +6514,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878112%2FC963A57211DDFEE49E3687BEF62B0D471BAAC15C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878112/C963A57211DDFEE49E3687BEF62B0D471BAAC15C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Elite Swarmer is the cheapest tank available, very good if you don't want to spend
             much to stop a small threat.
@@ -7109,12 +6538,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878302%2FBA878F8AEC201EEE208303050EA41B654499CFD8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878302/BA878F8AEC201EEE208303050EA41B654499CFD8/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Gor'Rakk Gate is a cheap spell that can summon: 7 Swarmers OR 2 Dragon Whelps OR 1
             Cleaver, but whatever it summons it will have Turncoat (it will change team when it
@@ -7148,12 +6572,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878308%2F48BF5F65EFC07091E19EBC0F34D1A9760129DF57%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878308/48BF5F65EFC07091E19EBC0F34D1A9760129DF57/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Thorns are a good way to slow down dangerous minions that are coming your way (like
             Cleaver or Rammer), but also a good way to kill small minions (placing it in the lane
@@ -7180,12 +6599,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878320%2F5E9964C833BA4FA2BF43A2F912E1C18F6ACBBB7B%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878320/5E9964C833BA4FA2BF43A2F912E1C18F6ACBBB7B/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Grenadier is the cheapest AoE unit. Even tho it can only damage ground units, it's
             still very effective against small minions like Scrat or Crossbow Dudes. It really
@@ -7208,12 +6622,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878386%2FFDDBFBAA69E516CA1B90F11721FC054BB122DC77%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878386/FDDBFBAA69E516CA1B90F11721FC054BB122DC77/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Heal Puff once he reach a bridge, will heal your tower by 25 hp per second. While it
             might look a small amount, if you manage to protect it long enough, he can restore your
@@ -7241,12 +6650,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878567%2FF348FBB18A97F41B6433DABF43B4E92B0BC336F7%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878567/F348FBB18A97F41B6433DABF43B4E92B0BC336F7/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Mana Puff Madness spell creates 4 Mana Puffs for you and 4 for your opponent. You
             can use this spell as distraction for big minions (like Cleaver), to massively increase
@@ -7274,12 +6678,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878694%2FAC05982389DD4E690733B559246FADCE778BB746%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878694/AC05982389DD4E690733B559246FADCE778BB746/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Once Bitten spell allows you to infect one of your minions in the selected area with
             lycanthropy.
@@ -7311,12 +6710,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878814%2FBEE2640361372826B34B7ED00C9F5BA961199815%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878814/BEE2640361372826B34B7ED00C9F5BA961199815/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Propeller Scrats are good minions to be used to capture a bridge or to kill ground
             minions that cannot attack them. Since they are very weak any other use will be
@@ -7340,12 +6734,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877668%2F3B476207DBFCBA58BC869E2B7BEFFEFC45013CA8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877668/3B476207DBFCBA58BC869E2B7BEFFEFC45013CA8/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Ravenous Swarmers are extremely weak and easy to kill, but they can deal a decent
             damage if they are ignored. Just remember to cast a spell before using them.
@@ -7369,12 +6758,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879101%2F2A705EE8C185585E8C54FD2B77102A4FFAA1B8F4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879101/2A705EE8C185585E8C54FD2B77102A4FFAA1B8F4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The S.T.Int is the cheapest ranged unit with a decent damage and somewhat resilient. You
             can use it to kill small flying minions, and if protected by a tank, it can also kill
@@ -7398,12 +6782,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879303%2FC5187E58DB2CBFF9CD3A7854DDE7B08C98E88A9F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879303/C5187E58DB2CBFF9CD3A7854DDE7B08C98E88A9F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Shock Rock is a popular spell used to stun AND deal 40 damage. It's very effective
             against scrats, but also very useful to stun dangerous minions while you prepare to stop
@@ -7438,12 +6817,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879263%2F485693269CCE2A845327326E771ACF3BBFA769F0%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879263/485693269CCE2A845327326E771ACF3BBFA769F0/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Squire Puff is a spell which summon an imp that will walk to a random bridge. If he
             reaches the bridge, 5 of your minions will receive Rage, if they are Empyrean, they'll
@@ -7467,12 +6841,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879368%2F002B9D9D22F50FAF634C73DFC0D5C1A282512674%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879368/002B9D9D22F50FAF634C73DFC0D5C1A282512674/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Swarmers are a cheap melee DPS that can be used to deal damage (while a tank is
             protecting them), or to capture bridges, or to slow down big minions (like Cleaver).
@@ -7495,12 +6864,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879467%2F0A0AD71720755F12BE7B9D5415920319C31DE193%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879467/0A0AD71720755F12BE7B9D5415920319C31DE193/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Wall is the perfect defense against minions who only attacks buildings (like
             Rammer), but also very good to buy time by placing it in front of the tower so that your
@@ -7524,12 +6888,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877321%2F0989ADC8618F0A9A7E8B4574F5015270A295BCFC%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877321/0989ADC8618F0A9A7E8B4574F5015270A295BCFC/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Zeppelin Bomber is the cheapest siege unit. If used at the right moment, it can deal
             250 damage to the enemy tower every 6 seconds.
@@ -7553,12 +6912,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879247%2F90D3D4BA494D11F6B0097B3FE5EE9B005BCC7515%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879247/90D3D4BA494D11F6B0097B3FE5EE9B005BCC7515/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Spirit Vessel is a cheap unit that can be used to capture bridge and on death will
             grant 200 hp to another random friendly unit (100 for flying units) in the battlefield.
@@ -7586,12 +6940,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878904%2F3504B527ECD5DC7D9FE4AFE6B021A44329FA9B51%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878904/3504B527ECD5DC7D9FE4AFE6B021A44329FA9B51/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Rampage spell grants Rage to every friendly units in the area after landing. This
             spell can be an effective tool to crush your enemy while you have a good bunch of
@@ -7621,12 +6970,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413440%2F2E441139E1B0CDADFA21C24391AC04F9C5EED959%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413440/2E441139E1B0CDADFA21C24391AC04F9C5EED959/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Haunting Hugger is a cheap unit that attaches himself to an enemy minon or building
             and curses it (causing 3% damage per second). When the cursed target dies, you get a
@@ -7654,12 +6998,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413471%2F96C8FB48CC6A3131C949D3150315B81B3E51FF14%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413471/96C8FB48CC6A3131C949D3150315B81B3E51FF14/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Lone Scout is a single Crystal Archer, that will cost 1 mana if it's the only
             friendly unit when you spawn it. This unit can be used to capture bridges or as cheap
@@ -7684,12 +7023,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786129%2F292B6F428C2A24528A5EB10983D77343BDC56327%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786129/292B6F428C2A24528A5EB10983D77343BDC56327/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Ritual of Servitude is a spell designed to be used in high mana costs deck and with a
             single copy of it. This spell summons a random unit equal to the lowest mana cost card
@@ -7715,12 +7049,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786190%2FDB640D077C50D781844806392864B41CAC6B8C89%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786190/DB640D077C50D781844806392864B41CAC6B8C89/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Slitherbounds are slaves used as Sacrifice to obtain additional effects on other cards.
             While they are alive they can be pretty dangerous since each hit from them apply Poison
@@ -7764,12 +7093,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F795359565567079514%2FD6E0EAA7287180E6C7DB52704AE5AD66B480FF2C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/795359565567079514/D6E0EAA7287180E6C7DB52704AE5AD66B480FF2C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Arcane Golem is a DPS unit capable of dealing great damage. This unit gains 1 stack
             everytime you play a spell, and every stack grants extra damage and health (up to 10
@@ -7808,12 +7132,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877383%2FA21623B9A6E6AA3DB3F073E6C1FEB5B1BB2B8B84%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877383/A21623B9A6E6AA3DB3F073E6C1FEB5B1BB2B8B84/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The "Armored" Scrats are a cheap tank(ish) unit that can be used to capture bridges,
             kill small DPS (like Plasma Marines, Crossbow Dudes, etc..) or to stop a Cleaver from
@@ -7836,12 +7155,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877448%2F66BCE83F8BE67C644B51716263F455601FC2EEE6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877448/66BCE83F8BE67C644B51716263F455601FC2EEE6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Banner Man is a special unit to be used to shield 5 (or less) minions around him. To
             do so, just place the minions then the Banner Man and he'll shield them all if they are
@@ -7871,12 +7185,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877498%2F67D7C0A2B61AB3FBE8DC011E1A75C366F1B6ADB7%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877498/67D7C0A2B61AB3FBE8DC011E1A75C366F1B6ADB7/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Bazooka Scrat is a cheap but effective siege unit.
             <br />
@@ -7900,12 +7209,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877507%2F45164592587AE9D567DA04B0117FE1E958C3778A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877507/45164592587AE9D567DA04B0117FE1E958C3778A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Brutish Betrayer is a cheaper version of the Rammer with Rage, but when he reaches
             50% hp he will change team. To use it properly make sure to have a counter ready (like
@@ -7929,12 +7233,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877694%2F615FCAF228B2C6198767720663A841BA3CFB1AF2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877694/615FCAF228B2C6198767720663A841BA3CFB1AF2/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Cheese Date is a spell that spawn a random 3 mana scrat card and give them Rage.
             "Armored" Scrats and Scrat Horde can be useful against big minions like Cleavers, while
@@ -7959,12 +7258,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877711%2FDDB99C572A5E3BB5780F49990B2C290C77AD7B44%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877711/DDB99C572A5E3BB5780F49990B2C290C77AD7B44/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Clear Skies spell is very useful to heal your tower and your minions, and to remove
             Shield and Rage from every minion around.
@@ -7996,12 +7290,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877852%2F38182AEDE657310D3F818E0DD980C2E3A2CFAA39%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877852/38182AEDE657310D3F818E0DD980C2E3A2CFAA39/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crystal Arcanist is a cheap DPS with area damage, very good to take out small hordes
             (especially good to get rid of Propelled Scrats). While the attack speed may look low,
@@ -8028,12 +7317,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877805%2F76E5AD2349F27FBE6C2FE1072F6CBA78BC855F5A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877805/76E5AD2349F27FBE6C2FE1072F6CBA78BC855F5A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crystal Archers are long range DPS, capable of dealing serious damage if they are
             properly protected (with a tank in front and maybe shielded by a Banner Man). They reach
@@ -8059,12 +7343,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877874%2F8D0E1BF17901EB10D006AC302712C42F7D8BBA1A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877874/8D0E1BF17901EB10D006AC302712C42F7D8BBA1A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Cursebearer is a cheap tank that can also deal a very good damage thanks to his aura
             that damage every enemy minion around causing 3% max hp loss per second even when
@@ -8099,12 +7378,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877466%2F73B9628807A8CDE386B8A0C376637C6D5D14F142%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877466/73B9628807A8CDE386B8A0C376637C6D5D14F142/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Daggerfall is a cheap but very effective spell. It can be used to clear wide areas
             from small minions, and also to remove shields from big group of minions.
@@ -8128,12 +7402,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878014%2FC147A2CF42F45CB3EF5A66EEC584F844E3AB1948%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878014/C147A2CF42F45CB3EF5A66EEC584F844E3AB1948/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Dragon Whelp is a melee flying DPS, capable of dealing some serious damage. It's
             very effective if used against ground minions that cannot attack him or other flying
@@ -8160,12 +7429,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878250%2F8BB3DC6D869C4F1A1EC8176337BF0E927DBAA21A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878250/8BB3DC6D869C4F1A1EC8176337BF0E927DBAA21A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Gambler's Ball is a spell that rely completely on luck. It can be a Healing Fireball
             or a normal Fireball. Since you have no clue on what will be casted when you use it, the
@@ -8195,12 +7459,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878292%2FB7FD664002EA16CCBD61949EDF0519722F74FD05%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878292/B7FD664002EA16CCBD61949EDF0519722F74FD05/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Ghost Turret is a defensive building that can deal serious damage to any ground unit
             that enters the range. Unfortunately the range is quite short so make sure to position
@@ -8227,12 +7486,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879337%2FBC71AA45A0F82217F8AD8E43732AC091DC4580F4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879337/BC71AA45A0F82217F8AD8E43732AC091DC4580F4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Gor'Rakk Sacrifice spell can be used on cheap minions to get a Cleaver. The minion
             will be picked randomly from all your minions around, so make sure to use this spell
@@ -8265,12 +7519,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878355%2F017E1BD5B223EB88B535223EFE1C89475FF3BD73%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878355/017E1BD5B223EB88B535223EFE1C89475FF3BD73/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Healing Fireball is a very useful spell to be casted on big minions that have 50% hp
             or less to heal them and make them last longer.
@@ -8295,12 +7544,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878373%2F7A05DAD4B6CC2D4207F5ABA6DE7BCF2134ECC6D2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878373/7A05DAD4B6CC2D4207F5ABA6DE7BCF2134ECC6D2/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Healing Shrine is a building that heals every minion in the area around it. It's
             very useful to have a steady healing while you're making a stand in your side of the
@@ -8324,12 +7568,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879412%2FBD65F503047B0351A0F17250DD4A0BEFE321DF8D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879412/BD65F503047B0351A0F17250DD4A0BEFE321DF8D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Lost Legionnaires are a cheap tank(ish) unit that can be used to capture bridges or
             to delay dangerous minions. Since their use is the same of a Scrat Pack but more
@@ -8357,12 +7596,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878719%2F1A7939FEC8B6827C79D02A5A593A45DB934123A5%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878719/1A7939FEC8B6827C79D02A5A593A45DB934123A5/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Netherstep is a spell that teleports a group of minions in a selected area closer to the
             enemy tower. It can be useful to help big minions to skip tanks and buildings to get
@@ -8390,12 +7624,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878064%2FFFD870F3475AAFC378318A5AAF64243DF920F7E0%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878064/FFD870F3475AAFC378318A5AAF64243DF920F7E0/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Plasma Marines are a cheap but effective ranged DPS unit. If protected by a tank
             they can deal good damage to any ground or airborne unit. If you manage to summon more
@@ -8420,12 +7649,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878929%2F0758E2EA061DB41A8D3B48EFEE4401FD5B677F8C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878929/0758E2EA061DB41A8D3B48EFEE4401FD5B677F8C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Re-Boomer, like the Boomer, hatches from an egg then explodes. The main difference
             is that the Re-Boomer after exploding leaves another egg behind, and will keep hatching
@@ -8455,12 +7679,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878915%2F08AECD0C9118F30DDD12F6EE69F82F445B1704A4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878915/08AECD0C9118F30DDD12F6EE69F82F445B1704A4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Scrat Horde is a very useful bunch that is very effective in taking down big minions
             (including Colossus if you place them behind him while he's distracted attacking
@@ -8486,12 +7705,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879234%2F39FEA274278783A74377E7E24DAD88CBD51C335F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879234/39FEA274278783A74377E7E24DAD88CBD51C335F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Snake Druid is a unit designed to root in place ground minions. It's very effective
             against Cleavers, Rammers and any other dangerous big minions, and rooting enemies when
@@ -8515,12 +7729,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879122%2F1EB4A9F76BB7BFCBFEE4BD886BF30B22CCCF7D2F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879122/1EB4A9F76BB7BFCBFEE4BD886BF30B22CCCF7D2F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Sniper Scrat is a long range unit capable of dealing 100 damage per shot. Once you
             position the Sniper Scrat in a safe spot, he can keep the field clean from all kind of
@@ -8549,12 +7758,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878182%2FE0BE005494F15753412F99C7379EF525B1453EE8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878182/E0BE005494F15753412F99C7379EF525B1453EE8/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Stun Blast is a powerful spell capable of stunning minions or the enemy tower for 5
             seconds with a large area. While the spell does not deal any damage, it can be
@@ -8583,12 +7787,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879361%2F950A3B24C34998E618E2621F8DECC19C9C533C89%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879361/950A3B24C34998E618E2621F8DECC19C9C533C89/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Sun Burn spell is an interesting spell that can be used either to kill units with
             100 or less hit points or to give Rage to one (or more) of your powerful units.
@@ -8614,12 +7813,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878844%2F73EAF288D5B58001171B214EFF2CEA9E1339809E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878844/73EAF288D5B58001171B214EFF2CEA9E1339809E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Tantrum Throwers are a cheap unit with Rage that can be used either to kill a Dragon
             Whelp, Shadow Whelp or Xiao Long, or to activate the Empowered Soul Stealer. They can
@@ -8648,12 +7842,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879459%2FC84BDD9EA3C6870DB5C8E0134BD2ADA5FF113BAF%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879459/C84BDD9EA3C6870DB5C8E0134BD2ADA5FF113BAF/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Walking Blind Date is a minion with a certain tactical value. It can be used like a
             Screaming Scrat to taunt away dangerous minions, and once it dies, it will provide
@@ -8678,12 +7867,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879481%2F2DD666C4F53F90677604AC470778A00BC1B3CD92%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879481/2DD666C4F53F90677604AC470778A00BC1B3CD92/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Warrior is a basic tank with a decent amount of hp and a good damage. It's a very
             versatile unit and can be useful in many different strategies.
@@ -8711,12 +7895,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879394%2F3422EB573F52B78C78240BFCEBCDF0B489A95514%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879394/3422EB573F52B78C78240BFCEBCDF0B489A95514/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Xiao Long is one of the cheapest and most powerful flying unit in game. It's a perfect
             anti-spell unit if spawned right before your opponent uses a spell, since it will gain
@@ -8752,12 +7931,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879612%2F382A8A9A7B9FECAA485D976066C2EE0448BB7EB3%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879612/382A8A9A7B9FECAA485D976066C2EE0448BB7EB3/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Zap Shrine is a building capable of stunning the closest minion every 2 seconds. If
             you played a Zen-Chi card before placing it, it will also stun every enemy unit in a
@@ -8781,12 +7955,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413462%2FBF8A56BB14BD7E12C0BBE27117AEFD61FCB4546B%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413462/BF8A56BB14BD7E12C0BBE27117AEFD61FCB4546B/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Jolo the Hero Scrat is a cheap unit with low hp but a good damage output. While he's not
             very resilient, Jolo the Hero Scrat has 50% chance to dodge any damage (spells
@@ -8819,12 +7988,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786080%2F4A8A71F797F8D5026F0CBAF94E8D2775DEA8EB31%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786080/4A8A71F797F8D5026F0CBAF94E8D2775DEA8EB31/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Caged Prowler is a cheaper version of the 5 mana prowler. The only catch is that you
             must wait 20 seconds before it appears, and if the cage take ANY damage he will die (the
@@ -8852,12 +8016,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F785229875309179876%2FB5778A6E2CF768DB9BFB7642B3E289EBF66A299D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/785229875309179876/B5778A6E2CF768DB9BFB7642B3E289EBF66A299D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Spawn of Fury is a spell that stuns a random friendly unit for 3 seconds and reduce
             the maximum health by 50%. If the unit survive, a copy of such unit will be summoned
@@ -8896,12 +8055,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786107%2F6DEA26E178091120F7360D90E920CE51D45F5D6A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786107/6DEA26E178091120F7360D90E920CE51D45F5D6A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Poison Strike is a spell that applies Poison for 6 seconds to all units in a pretty wide
             area. Using this spells multiple times in a row can deal quite an impressive damage
@@ -8940,12 +8094,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877396%2F770502CDAB139740562DE2522170DB1F327F877D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877396/770502CDAB139740562DE2522170DB1F327F877D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Assassin is a stealth unit that deals triple damage when attacks from invisibility.
             It's very effective to kill in 1 shot anything with less than 210 hp. He can be revealed
@@ -8970,12 +8119,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877481%2FBABDBA38ACAD9DFFCEAFE2A744E0469917C6B4D4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877481/BABDBA38ACAD9DFFCEAFE2A744E0469917C6B4D4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Bats Bats Bats! spell spawn 1 bat for every mana you spend in the next 5 seconds
             after casting it. It's very effective if you reach 11 mana then cast Bats Bats Bats!,
@@ -9000,12 +8144,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879210%2F8ED1F3AD179002E1F6B868C8C6B6F631EF3C1A31%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879210/8ED1F3AD179002E1F6B868C8C6B6F631EF3C1A31/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Blind Date is a spell that spawn a random 5 mana minion. While it can be very
             interesting (since it adds a level of unpredictability to your deck), you must be
@@ -9029,12 +8168,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877610%2F9284B2ECD7CF9E2060274B4ADFD80A9BC9E37D14%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877610/9284B2ECD7CF9E2060274B4ADFD80A9BC9E37D14/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Bounty Sniper works like a regular Sniper, but whenever he kills a minion or hits
             the enemy tower, you get experience.
@@ -9061,12 +8195,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878762%2F3FCCC8ECEF88C3D2C3BC94D313CF2988ACF5C308%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878762/3FCCC8ECEF88C3D2C3BC94D313CF2988ACF5C308/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Bridge Shrine is a very useful building that generates experience like a third
             bridge. Having one or more of this building will grant you to reach mana frenzy very
@@ -9090,12 +8219,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879083%2FAC45B19B97A6E0E4FC58AA0D87B97E9797366C85%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879083/AC45B19B97A6E0E4FC58AA0D87B97E9797366C85/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Cannon Roller is a very powerful ranged unit capable of taking down big minions
             without being hit, since he will move backwards everytime he shoots. The only downside
@@ -9124,12 +8248,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877677%2F595D65A4B2DDBB4B9A2B606A0464BE9FF7B0D743%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877677/595D65A4B2DDBB4B9A2B606A0464BE9FF7B0D743/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Chain Lightning is a powerful spell capable of bouncing from the center point of the
             area you cast it to any nearby enemy minion or building then to another and another and
@@ -9166,12 +8285,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877863%2FE786AE46DDF63780A81F9DAFB231E9F80A2B7793%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877863/E786AE46DDF63780A81F9DAFB231E9F80A2B7793/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crystal Sentry is a tank(ish) short ranged unit. This minion is not really worth
             playing on his own, while it can deal a nice damage if you have 6+ mana available, his
@@ -9196,12 +8310,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878002%2FE53FA93500D1DF8896ECE4C7521C923701DB1FAE%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878002/E53FA93500D1DF8896ECE4C7521C923701DB1FAE/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Dragon Nest is a building that spawn a Flightless Dragon everytime you use a spell.
             Unfortunately the building lasts only 35 seconds and until late game (or in case you
@@ -9230,12 +8339,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878045%2FE56D7727F9D26F4A40E41139B55740B1EB600680%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878045/E56D7727F9D26F4A40E41139B55740B1EB600680/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Drone Buzzers are flying ranged units, they come very handy since they shoot fast
             and they have a decent damage for this mana cost. They are usually used with King Puff
@@ -9260,12 +8364,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878093%2FC16B37E85A08988F0F532467B3A48CBFB700A0EC%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878093/C16B37E85A08988F0F532467B3A48CBFB700A0EC/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Drone Walker is a resilient ranged unit with a good damage. This unit really shine
             when used with King Puff since it will be far more effective with Shield or Rage (tanks
@@ -9293,12 +8392,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878174%2F00CCF6E67B11783526B81294CEF1212139F4B0C9%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878174/00CCF6E67B11783526B81294CEF1212139F4B0C9/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Fire Imp is a powerful ranged unit that deal constant area damage where he throws
             his fireball. While he can only attack ground minions, it's extremely effective against
@@ -9323,12 +8417,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878153%2F80A395078C40177B9D2060BD2B725598657A1717%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878153/80A395078C40177B9D2060BD2B725598657A1717/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Fireball is one of the more commonly used spell, since it can deal serious damage in
             a big area.
@@ -9351,12 +8440,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877733%2F8B279A5AA8A3C81B7A635D830608A6B7227FC6BF%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877733/8B279A5AA8A3C81B7A635D830608A6B7227FC6BF/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Flightless Dragons are a powerful but squishy units. This unit can be extremely
             effective while defending to take down big minions in a very short time. Using them to
@@ -9381,12 +8465,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878188%2FEAB5A5084BE04E7FA6C6E6E2B9C0E48957ED8A8C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878188/EAB5A5084BE04E7FA6C6E6E2B9C0E48957ED8A8C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Future Past is a spell that replaces itself (permanently) with a random card of 1 mana
             or higher, reducing the original mana cost of that card by 1. Since the result is
@@ -9410,12 +8489,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878282%2F0C52919E7B0E442D036699E4B03F2DBD5971D2DC%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878282/0C52919E7B0E442D036699E4B03F2DBD5971D2DC/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Ghost is a very insidious minion, since (if properly protected) in 4 seconds will
             steal the first unit it comes in contact with. It should be used to steal meaningful
@@ -9452,12 +8526,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878418%2F30F944EF488BA1FD12AB25F74A6DC5B729A7C05A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878418/30F944EF488BA1FD12AB25F74A6DC5B729A7C05A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Hypnotize is a spell that allows you to convert one or more units to your side for 5
             seconds (it doesn't convert buildings). Use Hypnotize to protect your units when they
@@ -9489,12 +8558,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878496%2FD568EA731EDA342366A22C7B6B6C76D01B5C1098%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878496/D568EA731EDA342366A22C7B6B6C76D01B5C1098/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Lightning Bolt is one of the most powerful spell available since it's able to instantly
             kill one unit (or building) ignoring any kind of shield and invulnerability.
@@ -9520,12 +8584,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878524%2FD998E17E8E1D73C331462447BEF21C345D06ED77%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878524/D998E17E8E1D73C331462447BEF21C345D06ED77/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Lone Wolf is a Warrior with Rage, if when you summon it there is no other friendly
             unit, it will also turn into a Werewolf when it gets below 50% hp.
@@ -9555,12 +8614,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877627%2F5A5E4CA8104DBA7EBDD6548BC23EDC68B3958B27%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877627/5A5E4CA8104DBA7EBDD6548BC23EDC68B3958B27/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Magma Cannon is a defensive building capable of dealing good damage against ground
             and air units. It's very useful in Call to Arms based decks since you can cause damage
@@ -9584,12 +8638,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879379%2F7E192EB21E220C99FBB053ED1897C6FE50D1A3C8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879379/7E192EB21E220C99FBB053ED1897C6FE50D1A3C8/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Morgrul's the Swarmer King is a tank that also spawn 2 Swarmers on spawn and 2 more when
             he dies. In addition, he also cause 50 damage on spawn and when he dies and also knocks
@@ -9615,12 +8664,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878593%2F8803C5B33940F86D1C19E1BB64A69C0AB2D58C67%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878593/8803C5B33940F86D1C19E1BB64A69C0AB2D58C67/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Musketeer is a tank with the ability to dodge an attack every 3 seconds and reflect
             it back for double damage. While is quite weak against multiple minions, it's extremely
@@ -9646,12 +8690,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878794%2F141EBB82442AAE1F97CFD5F525E2E8F018CBBB98%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878794/141EBB82442AAE1F97CFD5F525E2E8F018CBBB98/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Priestess is a healer that walks very slow, and heal the first wounded unit she can
             find. She can also attack ranged and cause a little damage.
@@ -9680,12 +8719,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878805%2FBE94A51A85CA21DE892693FFCE961324DFE6BF57%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878805/BE94A51A85CA21DE892693FFCE961324DFE6BF57/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Propeller Horde is a group of 5 Propeller Scrats whith additional 5 if you have any
             unit with Rage in the battlefield. While they get easily killed, they are capable of
@@ -9712,12 +8746,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878855%2FE5112A6A5AF3BF4E4D96380164EBD74F48918EA6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878855/E5112A6A5AF3BF4E4D96380164EBD74F48918EA6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Raging Reinforcements is a spell that summon either a Dragon Whelp, 4 Crossbow Dudes or
             a Warrior, with Rage. You'll have a preview of what you're going to get on top of the
@@ -9744,12 +8773,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878875%2F81EA662E47BC4170557F06D0148FB8510E874160%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878875/81EA662E47BC4170557F06D0148FB8510E874160/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Rammer is a strong siege unit that will run straight towards the first enemy
             building he can find. It can also be used as tank since he always run forward.
@@ -9781,12 +8805,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879064%2F39CCEA903EE4CC5216B5F1BB57BC496628D1477E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879064/39CCEA903EE4CC5216B5F1BB57BC496628D1477E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Shielded Crossbow Dudes are 3 Crossbow Dudes with a Shield. While usually the
             Crossbow Dudes are weak, this guys can be pretty useful to stop a Cleaver (for example),
@@ -9810,12 +8829,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879180%2FDF9D003270B7D4E355C570641AA264DBED01D45C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879180/DF9D003270B7D4E355C570641AA264DBED01D45C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Spear Throwers are a melee unit that can deal great damage with their spear on the
             first target they attack. When they thrown thier spear they became quite useless, very
@@ -9844,12 +8858,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878124%2F15F5CF6AFCB09AD74711FC5CF0837B732123DEDD%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878124/15F5CF6AFCB09AD74711FC5CF0837B732123DEDD/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Spirit Infusion is an utility spell that grants 200 hp to a random friendly minion (100
             for flying units) in the battlefield (the effect DO NOT stack)..
@@ -9879,12 +8888,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879287%2F643329DF64C25F44F6E188FA72BB3A951052D258%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879287/643329DF64C25F44F6E188FA72BB3A951052D258/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Stun Lancers are a melee unit capable of stunning the enemy they are attacking. This
             unit is one of the must have in a deck since if properly paced can stun Rammers before
@@ -9910,12 +8914,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878775%2F0765D5A07004A8D85D444491ED1514B8C825CE29%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878775/0765D5A07004A8D85D444491ED1514B8C825CE29/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Tranquil Shi-Hou is a medium level tank, capable of dealing decent damage. The core
             feature of Tranquil Shi-Hou is that when he's not under attack, he will heal himself up
@@ -9941,12 +8940,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879439%2F90289138FE566D6A4203BBBB259FFF4C78894EB6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879439/90289138FE566D6A4203BBBB259FFF4C78894EB6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Undying Skeleton is a tank capable of dealing decent damage, but if he dies, he will
             resurrect in 25 seconds for another round. This unit is really good with Rage or if you
@@ -9973,12 +8967,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879532%2F3EE95867C6D4ABEE68BC0E558311AA9551B1D1EF%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879532/3EE95867C6D4ABEE68BC0E558311AA9551B1D1EF/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Wheel of Doom is a spell that throws a big wheel in the chosen direction and deal
             300 damage to any unit in that line. If a unit DO NOT dies, the Wheel of Doom breaks and
@@ -10006,12 +8995,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879544%2F6137A1C3EC5B853238DA2D86A3FB5DAA3C193AC9%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879544/6137A1C3EC5B853238DA2D86A3FB5DAA3C193AC9/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Whirly Scrat is a solid tank capable of dealing good damage all around him. This
             unit is very useful to clear hordes and tank at the same time.
@@ -10035,12 +9019,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413514%2F455733800CA2C2A271C2EE24E139CFAC7E2CB87D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413514/455733800CA2C2A271C2EE24E139CFAC7E2CB87D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Skeleton Horde is a group of skeletons, slow hitting but more resilient than a Scrat
             Horde. They attack at half speed, but double damage compare to a Scrat Horde.
@@ -10087,12 +9066,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877331%2FB7E2B806B5E4C52383A9BE890174AC20F0132FAA%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877331/B7E2B806B5E4C52383A9BE890174AC20F0132FAA/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The A.I.M. Bot is an improved version of the Drone Walker with Marksmanship (which will
             extend its range by 2) AND Shield.
@@ -10116,12 +9090,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878081%2F40EA81137AABECEBBEB859C49F2A83EF440F9733%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878081/40EA81137AABECEBBEB859C49F2A83EF440F9733/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Annihilator is a powerful ranged unit capable of dealing high damage in a small
             area. Using the Annihilator behind a solid tank, will ensure that your tank safety from
@@ -10144,12 +9113,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877344%2F48CDA2D87450F9CDD8C65078EBED52D914630EAB%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877344/48CDA2D87450F9CDD8C65078EBED52D914630EAB/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Arcane Bolt is a powerful but hard to use spell that can instatly kill any GROUND unit
             with less than 500 hp in the selected area. While it can be useful to kill units that
@@ -10177,12 +9141,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877417%2FB024F9EE73C70B9E40E85CA0024449B3E592C44C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877417/B024F9EE73C70B9E40E85CA0024449B3E592C44C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Battle Shi-Hou is a tank designed to be used against hordes, since his attack speed
             increases with the number of enemies around him. In fact with 5 or more enemies his
@@ -10210,12 +9169,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877551%2FC5B32C1ED1214B7610EC79A8F958470383CAB4C1%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877551/C5B32C1ED1214B7610EC79A8F958470383CAB4C1/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Blastmancer is a support unit that should always be paired with a high damage minion
             and protected by a tank. Every minion that dies while the Blastmancer is attacking them
@@ -10250,12 +9204,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877839%2FEF62E3EEB224E453EABC4795B10FADBA4679AB06%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877839/EF62E3EEB224E453EABC4795B10FADBA4679AB06/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crystal Construct is a solid tank that refunds 1 mana after spawning it. This unit
             is not really good for dealing damage since it's very slow, but it's a very good tank
@@ -10282,12 +9231,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877522%2F89B91A6AB14D96C225937C4DEE24258F4AED62F6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877522/89B91A6AB14D96C225937C4DEE24258F4AED62F6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Defenso Chopper is a tank designed to counter melee opponents (both on ground and
             flying).
@@ -10318,12 +9262,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878273%2FF17BD839A55AB7B89BAED383AA51AD30C3E5664E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878273/F17BD839A55AB7B89BAED383AA51AD30C3E5664E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Gax The World Bomb is a powerful unit that after hatching from an egg, will deal 175
             damage to both yours and your opponent tower, and every minion (including yours). It
@@ -10350,12 +9289,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878331%2FF09573D8239F7A494E031A95FA0A4FC7E108A6A4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878331/F09573D8239F7A494E031A95FA0A4FC7E108A6A4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Guardian protect all the sorrounding Crystal Elves units by absorbing any damage
             they take. Since the guardian can absorb up to 800 damage, make sure NOT to pile too
@@ -10380,12 +9314,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878439%2F93CAB68998BF087C15643CE233453F65A4355A5F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878439/93CAB68998BF087C15643CE233453F65A4355A5F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Incubus is a powerful melee DPS that teleports in face of any ranged unit that dares
             to attack him. He deal damage in a frontal arc in front of him, making the Incubus
@@ -10412,12 +9341,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878452%2F08A98D9498E40C9B68BD21A1FB63C6E697982F1E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878452/08A98D9498E40C9B68BD21A1FB63C6E697982F1E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Infiltration is a spell that summons ANYWHERE in the battlefield 4 Plasma Marines. While
             it doesn't look much, 4 Plasma Marines used at the right moment can deal some serious
@@ -10441,12 +9365,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878477%2FD1587BAD111DE34DD49574C8A2B2E1855956E4F6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878477/D1587BAD111DE34DD49574C8A2B2E1855956E4F6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Laser Turret is the top defensive building, since it can take down anything in a
             very short time. The Laser Turret damage starts slow, and gets faster and faster until
@@ -10481,12 +9400,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878485%2FC649D7BF585837E581A5476C0F20DDD64B853D4C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878485/C649D7BF585837E581A5476C0F20DDD64B853D4C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Legionnaires are a group of 4 units that can be used to capture bridges or to defend
             in case of emergency. Much like the Flightless Dragons they are quite easy to kill but
@@ -10512,12 +9426,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878510%2F9FCE9DCD5AA09D325086F04C9114850C98EA0B9A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878510/9FCE9DCD5AA09D325086F04C9114850C98EA0B9A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Living Statue is a heavy siege unit, very slow moving, but very effective to tank
             everything while your units cause damage from behind. The statue won't stop attack
@@ -10545,12 +9454,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878543%2F2DDAF184E1EBEE2D8266DDDC9F1E2CA78C738EC8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878543/2DDAF184E1EBEE2D8266DDDC9F1E2CA78C738EC8/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Magma Storm is a powerful spell capable to deal 200 damage per hit to any friendly or
             enemy units. The main problem of Magma Storm is that the Fireballs it generates fall in
@@ -10582,12 +9486,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878574%2F085F3A85EB0064D7F40FDD6212614ED191D4E428%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878574/085F3A85EB0064D7F40FDD6212614ED191D4E428/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Morgrul's Ragers are a couple of Elite Swarmers. If a Voidborne unit hits the enemy
             tower while you have this card IN HAND, when you spawn them, all your units will gain
@@ -10617,12 +9516,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878532%2FF33433DA0EE04DFBB38CCC8C35EC8D9BD0913FDF%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878532/F33433DA0EE04DFBB38CCC8C35EC8D9BD0913FDF/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Prowler is a DPS melee unit, capable of dealing an impressive damage when itleaps.
             Use this at your advantage to destroy Scrat Launcher (since it can jump over the gap in
@@ -10654,12 +9548,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878954%2FF621FF36DD610EA6A60CEBEB8F59DBE86BF82EEA%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878954/F621FF36DD610EA6A60CEBEB8F59DBE86BF82EEA/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Scott the Sensitive Savage is a tank(ish) DPS unit capable of dealing great damage, but
             you can count on him only until he reaches 50% hp, after that he will sit down and cry
@@ -10692,12 +9581,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879093%2F7AF46C840412F19127ED52E296C6F12FFD06EBC5%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879093/7AF46C840412F19127ED52E296C6F12FFD06EBC5/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Scrat Launcher is a siege building, very good to cause massive damage to the enemy
             tower from a safer position. If you are able to keep it protected long enough, each shot
@@ -10724,12 +9608,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878996%2F9CFE7BB1BEB8AA6F4531D3E76A4469CFB42C1287%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878996/9CFE7BB1BEB8AA6F4531D3E76A4469CFB42C1287/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Scrat Tank is one of the best tanks in game, since it won't take any damage until
             his lit is closed, and he opens it only when he's fighting melee. It's the perfect
@@ -10755,12 +9634,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879022%2F3EF5F1BC07BC8DFFA10122FF3464EFE29532FCF2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879022/3EF5F1BC07BC8DFFA10122FF3464EFE29532FCF2/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Shadow Whelp is a mix between a Dragon Whelp and an Assassin. The Shadow Whelp moves
             invisible until he attacks, and (like the Assassin) will deal triple damage. While the
@@ -10789,12 +9663,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879045%2FC1CFF34EC9F5147E23A27DAD78919C755ADED2AF%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879045/C1CFF34EC9F5147E23A27DAD78919C755ADED2AF/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Shen Stormstrike is a strong DPS that stuns with one hit and damage with the following
             one, causing MASSIVE damage. If you played another Zen-Chi card before using him, Shen
@@ -10822,12 +9691,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879135%2FE448F5D180312589C5F500003113DAF62C37733D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879135/E448F5D180312589C5F500003113DAF62C37733D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Sniper Squad are 2 Scrat Snipers with the same pro and cons they have, the only
             advantage of using Sniper Squad over Sniper Scrat is that costs 1 less mana than placing
@@ -10854,12 +9718,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879223%2FF792F508B190933B6FA55E4DA7843C0DC73C4F91%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879223/F792F508B190933B6FA55E4DA7843C0DC73C4F91/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Soul Stealer is an airborne DPS capable of dealing good damage. This unit gains 1
             stack everytime he kills a minion, and each stack grants him additional attack speed.
@@ -10896,12 +9755,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878612%2F95682E1DCED1F953CDA0CD45C760BEF2D5C1E6C0%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878612/95682E1DCED1F953CDA0CD45C760BEF2D5C1E6C0/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Spiritmancer works exactly like the Blastmancer, but instead of blowing up the
             enemies that he kills, he adds 200 hp to a random friendly unit (100 for flying units),
@@ -10929,12 +9783,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879277%2F6E4AB7BDA6B4770AF304A5AE37D484D7842771F3%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879277/6E4AB7BDA6B4770AF304A5AE37D484D7842771F3/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Stormy is an insanely powerful unit since it can cast Chain Lightning at every hit,
             stunning a lot of minions and seriously damaging them. The Chain Lightning he casts also
@@ -10964,12 +9813,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879321%2F1EEEADAD6F9F5C852ED603E2AFFF39121E5813B4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879321/1EEEADAD6F9F5C852ED603E2AFFF39121E5813B4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Succubus is a fast and powerful ranged DPS. While she has a short range, the
             Succubus can deal great damage, especially if enraged or with Frenzy. In addition to
@@ -10993,12 +9837,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879161%2F0E21798B53F9862EA152D74C73B4D899D08408B3%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879161/0E21798B53F9862EA152D74C73B4D899D08408B3/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Swarmer Totem is a building that spawns 3 Swarmers every few seconds. It's very good
             to maintain the control of a bridge (especially if you are using Volco), and all those
@@ -11025,12 +9864,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879571%2FCFC673BE2F3CFC6CC9A50A11A9E3B61567869EDD%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879571/CFC673BE2F3CFC6CC9A50A11A9E3B61567869EDD/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Wizard Puff is a DPS unit with a good damage, but the real strength of this unit is
             that if it dies, a random enemy minion will be turned into a Mana Puff. If enough Wizard
@@ -11059,12 +9893,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413519%2F39E6448052DDCCB0A4B29EBD7B4D622EE750291E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413519/39E6448052DDCCB0A4B29EBD7B4D622EE750291E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Toll of the Dead is a spell that summons an Undying Skeleton. The main difference is
             that after the second death, the Undying Skeleton remains will linger in the battlefield
@@ -11098,12 +9927,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877935%2F8C6A7D7BA811EDFAB67493E5FEE67E73AB995956%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877935/8C6A7D7BA811EDFAB67493E5FEE67E73AB995956/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Divine Warrior is a normal warrior invulnerable for 5 seconds after spawning. This
             unit is very useful to stop dangerous minions (like Cleaver or Colossus), since he can
@@ -11129,12 +9953,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786067%2FAE0E48B33E4B16E9F7478814360695BAA5D71329%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786067/AE0E48B33E4B16E9F7478814360695BAA5D71329/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Boom Buggy is a long ranged unit capable of dealing a huge amount of damage by
             shooting 6 rockets. The rockets hits up to 6 random targets splitting the damage between
@@ -11171,12 +9990,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786160%2FFD9446CA605D51708CF5766EBB03005EA1C4CF28%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786160/FD9446CA605D51708CF5766EBB03005EA1C4CF28/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Scratillery is a spell that throws 5 rockets in a small area causing 40 damage each and
             spawning a scrat. The Scrats also gain Frenzy if you already have 3 or more scrats in
@@ -11218,12 +10032,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879420%2F6F7C87F8F144BE4BE9685B0B34026E1C4CC63A1F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879420/6F7C87F8F144BE4BE9685B0B34026E1C4CC63A1F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The AtG Drone x8 is a flying unit designed to rapidly damage 8 ground units at time in a
             large area. This unit is designed to clear large groups of small minions, but is less
@@ -11246,12 +10055,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877719%2F98D9700B65FE49689CB3ED6ECDE4D3B9B16F25AD%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877719/98D9700B65FE49689CB3ED6ECDE4D3B9B16F25AD/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Cleaver is a powerful melee DPS unit capable of dealing a HUGE amount of damage
             every 5 seconds. Other than being able to kill anything that has less than 300 hp, the
@@ -11279,12 +10083,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877786%2F8BFB2AB932B81F6356EB12E2D4839492B22D10D5%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877786/8BFB2AB932B81F6356EB12E2D4839492B22D10D5/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Crossbow Guild (or Toilet given the shape), is a building that generates Crossbow
             Dudes over time. It's very effective if you place a solid tank to cover the Crossbow
@@ -11314,12 +10113,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877899%2FDF8809A933E0C19B37BC019277775941A68EE146%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877899/DF8809A933E0C19B37BC019277775941A68EE146/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Demon Warrior is a melee DPS unit slow and mediocre unless you manage to summon more
             than 5. After the fifth has been summoned, it will become insanely powerful, just make
@@ -11351,12 +10145,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878827%2FD3D038CAF2DBF43D1282E098EFDECAED4A737BC2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878827/D3D038CAF2DBF43D1282E098EFDECAED4A737BC2/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Rabid Prowler is exactly like the Prowler, but if there is a friendly unit with
             Rage, he also gain Rage. It's a good out of the box pick if you have at least a Rage
@@ -11393,12 +10182,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878945%2F9AC4F377C3971F7FD7CB65295679957A7C59E240%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878945/9AC4F377C3971F7FD7CB65295679957A7C59E240/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Rock Rivals summons a Blue Golem with Taunt, but the first time you use this card it
             will also summon a Living Statue with Rage and Frenzy for your opponent in the same
@@ -11428,12 +10212,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879311%2F04D8D5EB62681FB4A5EFFDEE606A223C614C6630%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879311/04D8D5EB62681FB4A5EFFDEE606A223C614C6630/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Styxi is a Scrat Sniper with a bigger range and it moves in stealth. Styxi after killing
             a minion fires again much faster than a normal Scrat Sniper, but if the target does not
@@ -11459,12 +10238,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879590%2FE99708629962D16E703779EF246158E3C879C55A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879590/E99708629962D16E703779EF246158E3C879C55A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Wolf Among Sheep summons a group of 4 Legionnaires, and 1 of them will transform into a
             Werewolf when he reaches 50% hp. This is an improved version of Legionnaires, and is
@@ -11488,12 +10262,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877992%2F81F447E8C34357BA264A2C828FB53BF51F9D87F8%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877992/81F447E8C34357BA264A2C828FB53BF51F9D87F8/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Dragon Ball is a very useful spell that works like a Fireball, but if you played a 6
             (or more) mana minion before using it, it will also spawn a Dragon Whelp where it lands.
@@ -11528,12 +10297,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413452%2FB5A06285A69129958A9383CB240158FA5A9AD1DD%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413452/B5A06285A69129958A9383CB240158FA5A9AD1DD/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Border Patrol summons 1 Crystal Sentry and 1 Crystal Arcanist. If you have only Crystal
             Elves minions alive in the battlefield, the Crystal Sentry and Arcanist will also
@@ -11559,12 +10323,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413493%2F119718671763E470B08FAC605658684CCF26FAD1%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413493/119718671763E470B08FAC605658684CCF26FAD1/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Nyrvir's Breath is a powerful spell that summons the dragon Nyrvir's to breath acid all
             over a straight line that goes from 1 side to the other of the battlefield. Once the
@@ -11601,12 +10360,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786200%2F371FB39F511DACC451D3AEF19A32EDF387AB257E%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786200/371FB39F511DACC451D3AEF19A32EDF387AB257E/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Slithering Summons is a spell that summons either a Living Statue, a Prowler or a Soul
             Stealer (you can see an icon indicating what's going to be summoned). To effectively use
@@ -11649,12 +10403,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877363%2FEE625DABF8FDC4EB5379C9F68DB055CEBD1486A4%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877363/EE625DABF8FDC4EB5379C9F68DB055CEBD1486A4/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Armored Escort is a spell that once activated, the next ranged unit you play will also
             have 2 Crystal Sentry protecting it. Remember that in order to get the best out of the
@@ -11680,12 +10429,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879560%2FCB01F47C4110E068BA12CAB571A10F864AA3B410%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879560/CB01F47C4110E068BA12CAB571A10F864AA3B410/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Bahra the Witchwolf is a powerful DPS capable of melting even the strongest tank in a
             matter of seconds. After spawning, Bahra the Witchwolf will root every enemy minion for
@@ -11719,12 +10463,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877950%2FEA8F18DA68C116919090DBEEC32F1F8516F225D7%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877950/EA8F18DA68C116919090DBEEC32F1F8516F225D7/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Beam of Doom is one of the most powerful spells in game, it deals 600 damage to minions
             and 300 damage to buildings. It's very strong against Guardian + other minions combo
@@ -11748,12 +10487,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877587%2F0EA9BFE415DE9BE5DE40CFA00803A1B9C3FE3000%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877587/0EA9BFE415DE9BE5DE40CFA00803A1B9C3FE3000/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Blue Golem is a tank(ish) DPS, that can be used in defense to kill single units with
             less than 200 hp (like Fire Imp, Succubus and several others). While very strong, is
@@ -11778,12 +10512,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878026%2FE8785C7A2ED47318E8F463F39CA6D3DD683AC763%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878026/E8785C7A2ED47318E8F463F39CA6D3DD683AC763/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Dragon Pack is a group of 3 Dragon Whelps, nothing more and nothing less. This card
             simply makes you pay 7 mana instead of 9 for the 3 Dragon Whelps.
@@ -11808,12 +10537,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878135%2FC5567C167B464BB1F61DDAF0A39D9C855244B557%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878135/C5567C167B464BB1F61DDAF0A39D9C855244B557/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Empowered Soul Stealer, is a Soul Stealer with a wider range and if you have a unit
             with Rage around, he also gain 4 stacks on spawn. Like the Soul Stealer, this unit gains
@@ -11851,12 +10575,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878397%2F9AF2F0AE6D20A70C28E0F885429D27C2ADDBC34F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878397/9AF2F0AE6D20A70C28E0F885429D27C2ADDBC34F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Howling Moon is a spell that reduces every minion in there is (friendly AND foe) at 50%
             hp (if they are already lower than 50% they won't be affected), and also spawn 2
@@ -11892,12 +10611,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877740%2F082723DF444E15A797C0887E0814A9C48706BDB6%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877740/082723DF444E15A797C0887E0814A9C48706BDB6/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Last Stand is a powerful defensive spell, since it will summon 5 Legionnaires (7 if your
             opponent controls both bridges. Use this to clear your side of the battlefield if things
@@ -11926,12 +10640,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877890%2F2FF1B039A081AFA7C466AA6217A996E54A0464F2%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877890/2FF1B039A081AFA7C466AA6217A996E54A0464F2/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Shars'Rakk Twins summons an Incubus, but if you have played a 5 mana spell before using
             this card, it will also summon a Succubus.
@@ -11959,12 +10668,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879072%2FC36A00FCD6C2F830253814C1D8211AB0AF100452%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879072/C36A00FCD6C2F830253814C1D8211AB0AF100452/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Shieldguard of Light is one of the best tank in game. Not only he has a big health
             pool, but also knocks back the opponents every 5 seconds and charge towards them. The
@@ -11991,12 +10695,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878337%2FEE46882A4399E3F6155506B8F37DA0C3C9A06E0F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878337/EE46882A4399E3F6155506B8F37DA0C3C9A06E0F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Harbinger is the most powerful flying unit available in game. It has the longest
             range and damage a flying unit can have, the only downside is that he shoots at a very
@@ -12036,12 +10735,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786214%2F450A7DFE6117236A37146EE56762124D08CDD83C%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786214/450A7DFE6117236A37146EE56762124D08CDD83C/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Wreckinator 9000 is the most powerful Scrat unit available. This unit deal continuos
             damage in a frontal arc, then every 6 seconds slams the ground causing a bigger damage
@@ -12085,12 +10779,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877905%2FCFA20B4E6F7FC9B8902FF2E83596B2DF4BC35A8A%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877905/CFA20B4E6F7FC9B8902FF2E83596B2DF4BC35A8A/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Commander Azali is a powerful tank/DPS unit. While Commander Azali is alive and NOT
             stunned, the moment you capture a bridge every single one of your minions will get a
@@ -12119,12 +10808,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878238%2F16771378995A3655952F851B382C2D69C2B5F188%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878238/16771378995A3655952F851B382C2D69C2B5F188/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Future Present, like Future Past, when used gets replaced by a random card (2 mana or
             higher) and with a mana cost discounted by 2.
@@ -12153,12 +10837,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878102%2F3FF582779A80455357CEB8364F84EB44FDC899CE%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878102/3FF582779A80455357CEB8364F84EB44FDC899CE/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Gor'Rakk Brutes summons a Cleaver, but if the card you played before this one was a 3
             mana spell, it also summons a Rammer.
@@ -12184,12 +10863,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878461%2FBC0C4D245FDD6567677878339EA700AA24E67052%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878461/BC0C4D245FDD6567677878339EA700AA24E67052/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Jungle Jumble is a spell that replaces itself by adding to your deck 3 Zen-chi cards.
             The cards will be scrambled inside your deck and not consecutive to this one (like it
@@ -12215,12 +10889,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340879404%2FFD48527A25F1D5DF7FF06B98D128948C7A05AA9B%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340879404/FD48527A25F1D5DF7FF06B98D128948C7A05AA9B/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Troubadour is the most powerful siege unit in game. This unit walks towards the
             nearest building taunting anyone in his way, and dealing 300 damage (only to buildings).
@@ -12249,12 +10918,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877639%2F06987CEA726320F0F7DEF2A8FC3A94D7151D585B%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877639/06987CEA726320F0F7DEF2A8FC3A94D7151D585B/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Caeleth Dawnhammer is a mediocre tank with a good damage output that also can become
             invulnerable for 5 seconds when Armor of Light triggers. Unfortunately since Armor of
@@ -12291,12 +10955,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F780732677056786095%2F580610A5D1581621B4AEBB61C6BC57E72A854856%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/780732677056786095/580610A5D1581621B4AEBB61C6BC57E72A854856/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Herald Ah'Mun is the most powerful melee flying units available. It deals huge damage to
             all enemies in a frontal line (air and ground alike). While it has a small health pool
@@ -12338,12 +10997,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877748%2F7EBEAB63F3C360C6214AEF6EFC26A92B05766A1B%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877748/7EBEAB63F3C360C6214AEF6EFC26A92B05766A1B/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Colossus is a good tank with high cleave damage. If properly supported, the Colossus
             can reach your opponent tower and win the game. Just make sure to protect him from
@@ -12370,12 +11024,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877776%2FD3FFEC1F794871753A4FD6A1DC8F8FB499E3DD75%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877776/D3FFEC1F794871753A4FD6A1DC8F8FB499E3DD75/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Crakgul Doomcleaver is a glorified Cleaver that reduce the mana cost of 1 of the
             Voidborne cards you have in hand when he kills another minion or hits the tower.
@@ -12407,12 +11056,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340878936%2FFD8F9AE2F0D865A6F0733B58DE8D99EF87ADD192%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340878936/FD8F9AE2F0D865A6F0733B58DE8D99EF87ADD192/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Red Golem is exactly like the Blue Golem, but if your tower has less than 50% hp, he
             gains double hp on spawn. This can make it an amazing tank if you're prepared to
@@ -12453,12 +11097,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877617%2FCA22B20F15FD64B059156F96758DAD05002CE256%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877617/CA22B20F15FD64B059156F96758DAD05002CE256/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             The Brothers of Light are 2 decent tanks with Armor of Light and a good damage output.
             This card can work well if you manage to put some DPS behind them (but it won't be easy
@@ -12484,12 +11123,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757737340877821%2F4E4541CADA1E8DD1FDED156E91EE6F79C0F4AACA%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/825757737340877821/4E4541CADA1E8DD1FDED156E91EE6F79C0F4AACA/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Lord-Sentinel Thelec is a weak tank with acceptable DPS, that also spawn 6 Crystal
             Archers if you have at least 4 spells in your deck. Unfortunately the Crystal Archers
@@ -12524,12 +11158,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413485%2FFF03C0A2AA6077FDBA0B5594FE9D23E2CFD9DF9D%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413485/FF03C0A2AA6077FDBA0B5594FE9D23E2CFD9DF9D/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             Nyrvir the Fallen is a huge dragon capable of dealing a small but continuous amount of
             damage by channeling her breath in a cone in front of her, damaging ground and airborne
@@ -12549,12 +11178,7 @@ export default function Basics() {
               className="modalContentLink"
               data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F796487543243413505%2F06490DDCE78552D4B23003461FB6EEDDB79E685F%2F"
             >
-              <img
-                src="https://steamuserimages-a.akamaihd.net/ugc/796487543243413505/06490DDCE78552D4B23003461FB6EEDDB79E685F/"
-                className="sharedFilePreviewImage sizeThumb floatLeft"
-                alt=""
-                title
-              />
+              {/* img placeholder */}
             </a>
             <b>Nyrvir Slumber (3 Mana)</b>
             <br />
