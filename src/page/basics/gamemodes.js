@@ -1,7 +1,7 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import css from "../mechanics/list-of-mechanics.module.scss";
+import css from "page/basics/static-content.module.scss";
 
 export default function Gamemodes() {
   return (
@@ -892,7 +892,7 @@ export default function Gamemodes() {
               className="bb_link"
               href="https://steamcommunity.com/linkfilter/?url=https://docs.google.com/spreadsheets/d/1JknSRREm-_drFz8GGFYSfD0XTDt9kjtz2XSeW4ILesY/edit#gid=0"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Here is the link
             </a>

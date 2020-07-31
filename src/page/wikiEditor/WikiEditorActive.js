@@ -9,7 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { auth, dbErrorHandlerPromise } from "../../firestore";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "../filters/ButtonFilterGroup";
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import TextareaEditor from "./textarea-editor";
 
 const HistorySelectStyle = styled.select`

@@ -5,7 +5,7 @@ import BuffIcon from "components/debuff-icon";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
 import React from "react";
 import { TERMS_CONFIG } from "page/terms-config";
-import css from "./list-of-mechanics.module.scss";
+import css from "page/basics/static-content.module.scss";
 
 export default function ListOfMechanics() {
   return (
@@ -25,7 +25,7 @@ export default function ListOfMechanics() {
         </ButtonGroupStyle>
       </div>
       {TERMS_CONFIG.map(({ display, terms }) => (
-        <fieldset style={{ marginTop: "20px" }}>
+        <fieldset style={{ marginTop: "20px" }} key={display}>
           <legend>{display}</legend>
           {terms
             .filter(

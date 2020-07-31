@@ -1,0 +1,10 @@
+.menuLink {
+  text-decoration: none;
+  & svg {
+    display: none;
+  }
+  &:hover svg {
+    display: inline;
+    margin-left: -20px;
+  }
+}

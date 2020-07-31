@@ -4,7 +4,7 @@ import { TYPE_TERM, TYPE_CARD_REF, TYPE_SUBTEXT } from "card-description-types";
 import cardData from "generated/jobCardProps.json";
 import CardDetailsModal from "page/CardDetailsModal";
 import css from "page/wikiEditor/mention-readonly.module.scss";
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
 export default function CardDescription({ description }) {
   const [cardSubModalData, setCardSubModalData] = useState({});
   const [isOpenCardSubModal, setIsOpenCardSubModal] = useState(false);

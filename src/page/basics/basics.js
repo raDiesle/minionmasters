@@ -1,11 +1,9 @@
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Gamemodes from "page/basics/gamemodes";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
 import Community from "page/basics/community";
 import MainScreen from "page/basics/main-screen";
 import ResourceMngmt from "page/basics/resource-mgmt";
-import ListOfMechanics from "page/mechanics/list-of-mechanics";
+import ListOfMechanics from "page/basics/mechanics/list-of-mechanics";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 

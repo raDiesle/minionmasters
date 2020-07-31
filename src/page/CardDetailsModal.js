@@ -18,7 +18,7 @@ import styled from "styled-components";
 import { targetsMapping } from "../attack/targetsMapping";
 import { typeMapping } from "../cardtype/typeMapping";
 import { factionMapping } from "../faction/Factions";
-import { rarityMapping } from "../rarity/rarityMapping";
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import classNames from "classnames";
 
 import css from "./CardDetailsModal.module.scss";
@@ -91,7 +91,7 @@ const CardImageStyle = styled.img`
 `;
 
 const RarityStyle = styled.div`
-  color: ${({ rarity }) => rarityMapping[rarity]};
+  color: ${({ rarity }) => RARITY_MAPPING_CONFIG[rarity]};
 `;
 
 const PortraitStyle = styled.div`
@@ -190,7 +190,7 @@ export default function CardDetailsModal({
                   <LikeStyle>
                     <FontAwesomeIcon icon={faHeartSolid} size={"xs"} color={"transparent"} />
                   </LikeStyle>
-                  <img src="bloodimp_inline.jpg" width="60px" />
+                  <img src="bloodimp_inline.jpg" width="60px" alt="bloodimp" />
                 </PortraitStyle>
               </CardPropertyLiStyle>
             )}
@@ -309,6 +309,7 @@ export default function CardDetailsModal({
                 <a
                   href={`https://www.reddit.com/r/MinionMasters/search?q=${name}&restrict_sr=1`}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={css.redditIcon}
                 >
                   <span className={classNames("fa-layers fa-fw")}>

@@ -1,5 +1,7 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import DiscussOnCards from "page/discussion/discuss-on-cards";
 import qs from "qs";
 import Tooltip from "rc-tooltip";
 import React from "react";
@@ -10,7 +12,7 @@ import Basics from "page/basics/basics";
 import DeckContainer from "page/carddeck/DeckContainer";
 
 import ListOfDecks from "./carddeck/ListOfDecks/ListOfDecks";
-import DiscussOnCards from "./discussion/discuss-on-cards";
+
 import Masters from "./mastersoverview/Masters";
 
 export function Page() {
@@ -38,6 +40,8 @@ export function Page() {
           </Tab>
         </TabList>
         <TabPanel>
+          {/*<ResourceMngmt />*/}
+
           <DiscussOnCards />
         </TabPanel>
         <TabPanel>

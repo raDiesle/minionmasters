@@ -1,6 +1,6 @@
 import mToast from "components/mToast";
 import React, { useEffect, useRef, useState } from "react";
-import { toast } from "react-toastify";
+
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
 import CardActionAddCardToDeck from "../CardActionAddCardToDeck";

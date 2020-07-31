@@ -22,9 +22,15 @@ a:hover {
 h3 {
   font-size: 16px;
   margin-bottom: 5px;
+  color: yellow;
   @media (max-width: 767px) {
     margin-top: 10px;
   }
+}
+
+b,
+legend {
+  color: yellow;
 }
 
 .react-tabs__tab.react-tabs__tab--selected {
