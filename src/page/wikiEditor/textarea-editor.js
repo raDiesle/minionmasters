@@ -92,7 +92,7 @@ export default function TextareaEditor({
 
     return (
       <div>
-        <img src={IMG_PATH} className={css.imgPicto} />
+        <img src={IMG_PATH} className={css.imgPicto} alt={image} />
       </div>
     );
   };

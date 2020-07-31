@@ -5,7 +5,7 @@ import { typeMapping } from "../cardtype/typeMapping";
 import { factionMapping } from "../faction/Factions";
 import cardData from "../generated/jobCardProps";
 import { MANACOST } from "../manacost/manacost";
-import { rarityMapping } from "../rarity/rarityMapping";
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Cards from "./Cards";
 import { FilterInputs } from "./filters/FilterInputs";
 
@@ -19,7 +19,7 @@ export function setAllFilterStates(isActive) {
   return {
     faction: Object.keys(factionMapping).map(setFilterState),
     manacost: MANACOST.map(setFilterState),
-    rarity: Object.keys(rarityMapping).map(setFilterState),
+    rarity: Object.keys(RARITY_MAPPING_CONFIG).map(setFilterState),
     type: Object.keys(typeMapping).map(setFilterState),
     targets: Object.keys(targetsMapping).map(setFilterState),
   };

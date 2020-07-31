@@ -3,7 +3,7 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import { RARITY_KEYS } from "../rarity/rarityMapping";
+import { RARITY_KEYS } from "rarity/RARITY_MAPPING_CONFIG";
 
 export default function CardActionAddCardToDeck({ card, isDeckCard, onClick }) {
   const IconStyleSize = styled.div`

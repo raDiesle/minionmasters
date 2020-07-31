@@ -2,7 +2,7 @@ import { faCircle } from "@fortawesome/free-regular-svg-icons/faCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
 
-import { rarityMapping } from "rarity/rarityMapping";
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React from "react";
 
 import { targetsMapping } from "../attack/targetsMapping";
@@ -31,7 +31,10 @@ export function Card({
     >
       <div className={css.CardContentStyle}>
         <img src={`${IMG_PATH}_78${FILE_ENDING}`} alt={image} className={classnames(css.IMG)} />
-        <div className={css.RightCornerStyle} style={{ borderTopColor: rarityMapping[rarity] }} />
+        <div
+          className={css.RightCornerStyle}
+          style={{ borderTopColor: RARITY_MAPPING_CONFIG[rarity] }}
+        />
         <div className={css.ManacostStyle}>{manacost}</div>
 
         <div className={css.TopLeftCornerStyle} />

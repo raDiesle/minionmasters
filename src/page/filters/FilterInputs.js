@@ -17,7 +17,7 @@ import { factionMapping } from "../../faction/Factions";
 import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 
-import { rarityMapping } from "../../rarity/rarityMapping";
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import { ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle } from "./ButtonFilterGroup";
 
 const InputTextStyle = styled.input`
@@ -144,8 +144,8 @@ export function FilterInputs({
       <div>
         Rarity
         <ButtonFilterGroup btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
-          {Object.keys(rarityMapping).map((rarity) => (
-            <div key={rarity} style={{ color: rarityMapping[rarity] }}>
+          {Object.keys(RARITY_MAPPING_CONFIG).map((rarity) => (
+            <div key={rarity} style={{ color: RARITY_MAPPING_CONFIG[rarity] }}>
               {rarity !== "Perk" ? (
                 <FontAwesomeIcon icon={faSquare} size={"xs"} />
               ) : (

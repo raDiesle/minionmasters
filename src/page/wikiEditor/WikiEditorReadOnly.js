@@ -6,6 +6,8 @@ import cardData from "../../generated/jobCardProps.json";
 import { mastersMapping } from "../mastersoverview/mastersMapping";
 import css from "./mention-readonly.module.scss";
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 export default function WikiEditorReadOnly({ value = "" }) {
   const [cardSubModalData, setCardSubModalData] = useState({});
   const [isOpenCardSubModal, setIsOpenCardSubModal] = useState(false);
@@ -64,7 +66,7 @@ export default function WikiEditorReadOnly({ value = "" }) {
 
           return (
             <a onClick={() => handleMasterClick(display_value)} className={css.mentionLink}>
-              <img width="25" src={imgPathFn(matchedMaster.icon)} />
+              <img width="25" src={imgPathFn(matchedMaster.icon)} alt={display_value} />
               &nbsp;{display_value}
             </a>
           );
@@ -72,7 +74,7 @@ export default function WikiEditorReadOnly({ value = "" }) {
           const matchedCard = cardData.find(({ iD }) => iD === target_key);
           return (
             <a onClick={() => handleCardClick(target_key, matchedCard)} className={css.mentionLink}>
-              <img width="25" src={imgPathFn(matchedCard.image)} />
+              <img width="25" src={imgPathFn(matchedCard.image)} alt={target_key} />
               &nbsp;{display_value}
             </a>
           );
@@ -82,6 +84,7 @@ export default function WikiEditorReadOnly({ value = "" }) {
       } else {
         console.error("not supported" + target_type);
       }
+      return null;
     }
   );
 

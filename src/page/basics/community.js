@@ -27,7 +27,7 @@ export default function Community() {
             className="bb_link"
             href="https://steamcommunity.com/linkfilter/?url=http://minionmastersthegame.com/streamerboost/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             http://minionmastersthegame.com/streamerboost/
           </a>
@@ -78,7 +78,7 @@ export default function Community() {
               className="bb_link"
               href="https://steamcommunity.com/linkfilter/?url=https://discordapp.com/invite/minionmasters"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Minion Masters discord channel
             </a>

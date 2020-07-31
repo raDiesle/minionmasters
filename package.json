@@ -50,8 +50,20 @@
     "fetchImages": "node batch_jobs/jobRawImagesDownload"
   },
   "eslintConfig": {
-    "extends": "react-app"
-  },
+    "extends": "react-app",
+    "rules": {
+      "jsx-a11y/anchor-is-valid": 0
+    },
+    "overrides" : [
+      {
+        "files": [
+          "*.js"
+        ],
+          "rules": {
+            "jsx-a11y/anchor-is-valid": 0
+          }
+      }]
+    },
   "browserslist": {
     "production": [
       ">0.2%",
