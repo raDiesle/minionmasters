@@ -1,5 +1,6 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ResourceMngmt from "page/basics/resource-mgmt";
 
 import DiscussOnCards from "page/discussion/discuss-on-cards";
 import qs from "qs";
@@ -40,7 +41,7 @@ export function Page() {
           </Tab>
         </TabList>
         <TabPanel>
-          {/*<ResourceMngmt />*/}
+          {/*  <ResourceMngmt />*/}
 
           <DiscussOnCards />
         </TabPanel>

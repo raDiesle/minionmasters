@@ -13,6 +13,7 @@ export default function Shop() {
           1k {GoldImg()} <b>=</b> 80 {RubiesImg()} <b>=</b> 125 {ShardsImg()}
         </p>
       </fieldset>
+      <p>Check the shop daily offers, because very often there is free!!! stuff or great deals.</p>
       <p>
         If you see for example 25 common cards for 5k gold, it is actually a nice deal since you'll
         have to get 25 tokens to get the same amount of cards.
@@ -25,11 +26,9 @@ export default function Shop() {
       </p>
       In general, if you see a single card for sell for less than 1k, is always a good deal.
       <br />
-      <br />
       However, this is only if we speak about gold, if we speak about rubies, things are a bit
       different, since they are harder to come by, so you should only spend them for something that
       is really good...
-      <br />
       <br />
       If you have any doubt about if a shop offer is worth buying, do not hesitate to ask in general
       chat, there always is some veteran player that can help you with that.

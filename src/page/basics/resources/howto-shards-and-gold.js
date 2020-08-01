@@ -7,7 +7,7 @@ export default function HowToShardsAndGold() {
   return (
     <div>
       {anchorLinkTarget(
-        MENU_LINKS_CONFIG["How to spend shards/gold"],
+        MENU_LINKS_CONFIG["How to spend shards and gold"],
         <>
           How to spend {ShardsImg()} and {GoldImg()}
         </>

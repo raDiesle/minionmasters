@@ -5,6 +5,7 @@ import css from "./helper.module.scss";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export const anchorLinkTarget = (menuLink, children = null) => (
   <>
+    <a name={menuLink}></a>
     <a href={`#${menuLink}`} className={css.menuLink}>
       <span>
         <h3>
@@ -12,6 +13,5 @@ export const anchorLinkTarget = (menuLink, children = null) => (
         </h3>
       </span>
     </a>
-    <a name={menuLink}></a>
   </>
 );

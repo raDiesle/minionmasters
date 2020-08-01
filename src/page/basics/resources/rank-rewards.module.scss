@@ -1,0 +1,26 @@
+.table {
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: 120px auto 120px;
+  max-width: 370px;
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-items: center;
+  text-align: center;
+  align-items: end;
+
+  & > *:nth-child(-n + 3) {
+    color: yellow;
+  }
+
+  & > *:nth-child(3n + 1) > b {
+    position: relative;
+    //top: 21px;
+  }
+
+  & > *:nth-child(3n + 2) {
+    justify-self: left;
+    text-align: left;
+    align-self: center;
+  }
+}
