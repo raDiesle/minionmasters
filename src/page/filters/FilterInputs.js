@@ -1,5 +1,5 @@
-import { faEyeSlash } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
 import { faEye } from "@fortawesome/free-regular-svg-icons/faEye";
+import { faEyeSlash } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons/faTrashAlt";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
@@ -7,6 +7,8 @@ import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { setAllFilterStates } from "page/FiltersWithCards";
+
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Tooltip from "rc-tooltip";
 import React from "react";
 import styled from "styled-components";
@@ -16,8 +18,6 @@ import { typeMapping } from "../../cardtype/typeMapping";
 import { factionMapping } from "../../faction/Factions";
 import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
-
-import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import { ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle } from "./ButtonFilterGroup";
 
 const InputTextStyle = styled.input`

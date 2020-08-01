@@ -1,16 +1,14 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ResourceMngmt from "page/basics/resource-mgmt";
 
-import DiscussOnCards from "page/discussion/discuss-on-cards";
+import Basics from "page/basics/basics";
+import Maythem from "page/basics/maythem";
+
+import DeckContainer from "page/carddeck/DeckContainer";
 import qs from "qs";
 import Tooltip from "rc-tooltip";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-
-import Basics from "page/basics/basics";
-
-import DeckContainer from "page/carddeck/DeckContainer";
 
 import ListOfDecks from "./carddeck/ListOfDecks/ListOfDecks";
 
@@ -41,9 +39,9 @@ export function Page() {
           </Tab>
         </TabList>
         <TabPanel>
-          {/*  <ResourceMngmt />*/}
+          <Maythem />
 
-          <DiscussOnCards />
+          {/*  <DiscussOnCards />*/}
         </TabPanel>
         <TabPanel>
           <Masters />

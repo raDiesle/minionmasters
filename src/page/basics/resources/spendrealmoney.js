@@ -1,4 +1,5 @@
 import { anchorLinkTarget } from "components/helper";
+import { GoldImg } from "components/thegame-icons";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
 import React from "react";
 
@@ -6,21 +7,18 @@ export default function SpendRealMoney() {
   return (
     <div>
       {anchorLinkTarget(MENU_LINKS_CONFIG["How to spend real money"])}
-      <br />
-      If you have some cash, the first thing to do is: DO NOT start spending it in rubies!
-      <br />
-      In fact, it's best if you spend in the following order:
-      <br />
+      Best is in the following order:
       <ol>
         <li>
           {" "}
-          <b>Premium Upgrade</b>: this is a must have if you want to get the most from the game. It
-          provides:
+          <b>Premium Upgrade</b>
+          <div>this is a must have if you want to get the most from the game. It provides:</div>
           <br />
           <ul className="bb_ul">
             <li>
               {" "}
-              +50% Gold for every victory forever (DOES NOT stacks with the level up gold bonus).
+              +50% {GoldImg()} for every victory forever. Does not stack with the level up gold
+              bonus.
               <br />
             </li>
             <li>
@@ -51,40 +49,39 @@ export default function SpendRealMoney() {
           <br />
         </li>
         <li>
-          {" "}
-          <b>All Masters Upgrade</b>: this upgrade unlocks all the current and future masters, so
-          it's VERY good. It also provides you with a REFUND for all the masters you already have!
-          <br />
-          Buy all masters with shards first so you can get a lot of rubies.
-          <br />
-          <br />
+          <b>All Masters Upgrade</b>
+          <div>
+            {" "}
+            this upgrade unlocks all the current and future masters, so it's VERY good. It also
+            provides you with a REFUND for all the masters you already have! Buy all masters with
+            shards first so you can get a lot of rubies.
+          </div>
         </li>
         <li>
           {" "}
-          <b>Voidborne Onslaught</b>: this is a cards pack that can be very useful when you have few
-          cards.
-          <br />
-          <br />
+          <b>Voidborne Onslaught</b>
+          <div>this is a cards pack that can be very useful when you have few cards.</div>
         </li>
         <li>
           {" "}
-          <b>Accursed Army Pack</b>: this is a cards pack that can be very useful when you have few
-          cards.
-          <br />
-          <br />
+          <b>Accursed Army Pack</b>
+          <div>this is a cards pack that can be very useful when you have few cards.</div>
         </li>
         <li>
           {" "}
-          <b>Rubies</b>: if you already have all the upgrades, you can buy rubies to be used wisely
-          in the shop offers. If you buy cards (or upgrade them), with 20k Rubies you'll be able to
-          buy around 50k Shards value of cards.
-          <br />
-          If you plan to upgrade all cards to 400 spending real money, don't do it, because it will
-          requires around 2.500€ worth of rubies and at least a couple of months to get all the shop
-          offers.
-          <br />
-          The shop offers that provides the most values are:
-          <br />
+          <b>Rubies</b>
+          <div>
+            {" "}
+            if you already have all the upgrades, you can buy rubies to be used wisely in the shop
+            offers. If you buy cards (or upgrade them), with 20k Rubies you'll be able to buy around
+            50k Shards value of cards.
+            <br />
+            If you plan to upgrade all cards to 400 spending real money, don't do it, because it
+            will requires around 2.500€ worth of rubies and at least a couple of months to get all
+            the shop offers.
+            <br />
+            The shop offers that provides the most values are:
+          </div>
           <ul className="bb_ul">
             <li>
               {" "}

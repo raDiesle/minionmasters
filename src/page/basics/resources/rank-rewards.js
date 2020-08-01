@@ -1,9 +1,9 @@
+import classNames from "classnames";
 import { anchorLinkTarget } from "components/helper";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
 import React from "react";
 
 import css from "./rank-rewards.module.scss";
-import classNames from "classnames";
 
 export default function RankRewards() {
   const rankRewardConfig = [
@@ -79,6 +79,28 @@ export default function RankRewards() {
             <img src={`img/basics/rank_${downgrade.toLowerCase()}.png`} alt={downgrade} />
           </React.Fragment>
         ))}
+      </div>
+      <div className="subSection detailBox" id={2894044}>
+        <div className="subSectionDesc">
+          The ranks are:
+          <br />
+          Wood &gt; Stone &gt; Bronze &gt; Silver &gt; Gold &gt; Platinum &gt; Diamond &gt; Master
+          &gt; Grand Master
+          <br />
+          <br />
+          Everytime you win you gain points to get to the next rank, losing however decrease your
+          points and eventually your rank (once you reach Grand Master, you won't be demoted
+          anymore). Winning more times on a row, also grants bonus points!
+          <br />
+          <br />
+          Raising your rank provides you with increasing rewards, but beware! Ranks reset at the end
+          of every month and the reset rewards you based on how high you got.
+          <br />
+          <br />
+          Very often people ask what's a good rank, the answer is: before platinum is just a
+          warm-up, from platinum you start to play seriously, so don't get too cocky if at the
+          beginning you never lose... <div style={{ clear: "both" }} />
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import firebase from "@firebase/app";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import mToast from "components/mToast";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { db, dbErrorHandlerPromise } from "../../../firestore";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "../../filters/ButtonFilterGroup";

@@ -39,7 +39,7 @@ export default function Freebies() {
         While viewing a stream on twitch, there are several commands that you can use to interact
         with the game by changing your puff style or by throwing stuff in the arena. All the
         commands available can be found here:{" "}
-        <div style={{ width: "50%", margin: "auto", paddingTop: "20px" }}>
+        <div style={{ display: "flex", justifyContent: "center", paddingTop: "20px" }}>
           <a
             href="https://steamcommunity.com/linkfilter/?url=http://minionmastersthegame.com/streamerboost/"
             target="_blank"
@@ -50,15 +50,14 @@ export default function Freebies() {
         </div>
         <br />
         <br />
-        Also by watching the streamers, you will receive drops when they win! Drops grant you 50
-        gold (and eventually a key of the tri-team event).
+        Also by watching the streamers, you will receive <b>drops</b> when they win! Drops grant you
+        50 gold (and eventually a key of the tri-team event).
         <br />
         The drops can be collected on login.
-        <div style={{ width: "50%", margin: "auto", paddingTop: "20px" }}>
-          Popular streamer list
+        <div style={{ display: "flex", justifyContent: "center", paddingTop: "20px" }}>
           <div>
-            <a href="https://www.twitch.tv/TeamManaFrenzy/">
-              <b>https://www.twitch.tv/TeamManaFrenzy/</b>
+            <a href="https://www.twitch.tv/directory/game/Minion%20Masters">
+              <b>https://www.twitch.tv/directory/game/Minion%20Masters</b>
             </a>
           </div>
         </div>

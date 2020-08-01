@@ -1,5 +1,5 @@
 import { anchorLinkTarget } from "components/helper";
-import { GoldImg, RubiesImg, ShardsImg } from "components/thegame-icons";
+import { CardImg, GoldImg, RubiesImg, ShardsImg, TokenImg } from "components/thegame-icons";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
 import React from "react";
 
@@ -13,25 +13,28 @@ export default function Shop() {
           1k {GoldImg()} <b>=</b> 80 {RubiesImg()} <b>=</b> 125 {ShardsImg()}
         </p>
       </fieldset>
-      <p>Check the shop daily offers, because very often there is free!!! stuff or great deals.</p>
-      <p>
-        If you see for example 25 common cards for 5k gold, it is actually a nice deal since you'll
-        have to get 25 tokens to get the same amount of cards.
-      </p>
-      <p>
-        A token gives you a card AND shards and the shop offers only give you the cards (you get
-        shards only if you get beyond 400 glory for a specific card), so going back to the previous
-        example, if you get 25 tokens and you get 25 common cards you also get 75 shards, so it's
-        still a very good deal.
-      </p>
-      In general, if you see a single card for sell for less than 1k, is always a good deal.
-      <br />
-      However, this is only if we speak about gold, if we speak about rubies, things are a bit
-      different, since they are harder to come by, so you should only spend them for something that
-      is really good...
-      <br />
-      If you have any doubt about if a shop offer is worth buying, do not hesitate to ask in general
-      chat, there always is some veteran player that can help you with that.
+      <fieldset>
+        <legend>Free items unregulary</legend>
+        <p>Check the shop daily offers, because very often there are free ones</p>
+      </fieldset>
+      <fieldset>
+        <legend>Examples for good shop offers by calculation</legend>
+        <div>
+          First look on the gold offers. {RubiesImg()} offers are often not worth it, except you are
+          looking for something particular. See {RubiesImg()} buying rules below the section.
+        </div>
+        <div>
+          25 common {CardImg()} for 5k {GoldImg()}, because its worth 25 tokens, even if you do not
+          get {ShardsImg()} like you would get for the {TokenImg()}
+        </div>
+        <div>
+          If you see a single {CardImg(false)} for sell for less than 1k, is always a good deal.
+        </div>
+        <div>
+          If you have any doubt about if a shop offer is worth buying, do not hesitate to ask in
+          general chat, there always is some veteran player that can help you with that.
+        </div>
+      </fieldset>
     </div>
   );
 }
