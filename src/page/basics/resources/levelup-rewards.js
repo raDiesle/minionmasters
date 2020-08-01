@@ -1,8 +1,9 @@
+import classNames from "classnames";
 import { anchorLinkTarget } from "components/helper";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
 import React from "react";
 import css from "../static-content.module.scss";
-import classNames from "classnames";
+
 export default function LevelupRewards() {
   return (
     <div>

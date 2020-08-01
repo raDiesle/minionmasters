@@ -1,11 +1,11 @@
 import orderBy from "lodash/orderBy";
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React, { useCallback, useState } from "react";
 import { targetsMapping } from "../attack/targetsMapping";
 import { typeMapping } from "../cardtype/typeMapping";
 import { factionMapping } from "../faction/Factions";
 import cardData from "../generated/jobCardProps";
 import { MANACOST } from "../manacost/manacost";
-import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Cards from "./Cards";
 import { FilterInputs } from "./filters/FilterInputs";
 

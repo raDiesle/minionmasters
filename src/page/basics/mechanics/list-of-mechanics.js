@@ -1,21 +1,21 @@
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DeebuffIcon from "components/buff-icon";
 import BuffIcon from "components/debuff-icon";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
-import React from "react";
-import { TERMS_CONFIG } from "page/terms-config";
 import css from "page/basics/static-content.module.scss";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
+import { TERMS_CONFIG } from "page/terms-config";
+import React, { useState } from "react";
 
 export default function ListOfMechanics() {
+  const [selectedBuff, setSelectedBuff] = useState("ALL");
   return (
     <div className={css.container}>
-      <div style={{ display: "none" }}>
+      <div>
         <ButtonGroupStyle>
-          <ButtonInGroupStyle>
+          <ButtonInGroupStyle onClick={() => setSelectedBuff("ALL")}>All</ButtonInGroupStyle>
+          <ButtonInGroupStyle onClick={() => setSelectedBuff("DEBUFF")}>
             <BuffIcon /> Debuff
           </ButtonInGroupStyle>
-          <ButtonInGroupStyle>
+          <ButtonInGroupStyle onClick={() => setSelectedBuff("BUFF")}>
             <DeebuffIcon /> Buff
           </ButtonInGroupStyle>
         </ButtonGroupStyle>
@@ -37,6 +37,9 @@ export default function ListOfMechanics() {
                   "BerryBuffPlural",
                   "CohortTwo",
                 ].includes(key)
+            )
+            .filter(({ isBuff }) =>
+              selectedBuff === "ALL" || selectedBuff === "BUFF" ? isBuff : !isBuff
             )
             .map(({ key, display, description }, index) => (
               <div key={index} style={{ padding: "5px" }}>

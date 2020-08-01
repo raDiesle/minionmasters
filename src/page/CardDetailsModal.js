@@ -5,12 +5,14 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHea
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
 
 import _dropRight from "lodash.dropright";
 
 import CardDescription from "page/cardmodal/card-description";
 import CardDiscussion from "page/discussion/CardDiscussion";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
+import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
@@ -18,8 +20,6 @@ import styled from "styled-components";
 import { targetsMapping } from "../attack/targetsMapping";
 import { typeMapping } from "../cardtype/typeMapping";
 import { factionMapping } from "../faction/Factions";
-import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
-import classNames from "classnames";
 
 import css from "./CardDetailsModal.module.scss";
 

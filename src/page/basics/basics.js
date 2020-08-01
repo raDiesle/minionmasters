@@ -1,9 +1,11 @@
-import Gamemodes from "page/basics/gamemodes";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
-import Community from "page/basics/community";
+import Draft from "page/basics/draft";
+import Guild from "page/basics/guild";
+
 import MainScreen from "page/basics/main-screen";
-import ResourceMngmt from "page/basics/resource-mgmt";
+import Maythem from "page/basics/maythem";
 import ListOfMechanics from "page/basics/mechanics/list-of-mechanics";
+import ResourceMngmt from "page/basics/resource-mgmt";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
@@ -12,30 +14,34 @@ export default function Basics() {
     <div>
       <Tabs>
         <TabList>
-          <Tab>Mechanics</Tab>
-          <Tab>Resource Mgmt</Tab>
-          <Tab>Community</Tab>
+          <Tab>Resources & Rewards</Tab>
+          <Tab>Buffs/Debuffs</Tab>
           <Tab>Deck Strategies</Tab>
+          <Tab>Draft</Tab>
+          <Tab>Maythem</Tab>
+          <Tab>Guild</Tab>
           <Tab>Main Screen</Tab>
-          <Tab>Decks Guide</Tab>
         </TabList>
-        <TabPanel>
-          <ListOfMechanics />
-        </TabPanel>
         <TabPanel>
           <ResourceMngmt />
         </TabPanel>
         <TabPanel>
-          <Community />
+          <ListOfMechanics />
         </TabPanel>
         <TabPanel>
           <BuilddeckGuide />
         </TabPanel>
         <TabPanel>
-          <MainScreen />
+          <Draft />
         </TabPanel>
         <TabPanel>
-          <Gamemodes />
+          <Maythem />
+        </TabPanel>
+        <TabPanel>
+          <Guild />
+        </TabPanel>
+        <TabPanel>
+          <MainScreen />
         </TabPanel>
       </Tabs>
     </div>

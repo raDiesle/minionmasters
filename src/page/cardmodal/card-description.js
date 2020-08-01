@@ -1,9 +1,9 @@
-import { TERMS_CONFIG } from "page/terms-config";
-import React, { useState } from "react";
-import { TYPE_TERM, TYPE_CARD_REF, TYPE_SUBTEXT } from "card-description-types";
+import { TYPE_CARD_REF, TYPE_SUBTEXT, TYPE_TERM } from "card-description-types";
 import cardData from "generated/jobCardProps.json";
 import CardDetailsModal from "page/CardDetailsModal";
+import { TERMS_CONFIG } from "page/terms-config";
 import css from "page/wikiEditor/mention-readonly.module.scss";
+import React, { useState } from "react";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function CardDescription({ description }) {
   const [cardSubModalData, setCardSubModalData] = useState({});

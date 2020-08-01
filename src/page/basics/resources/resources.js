@@ -1,7 +1,7 @@
-import React from "react";
 import { anchorLinkTarget } from "components/helper";
 import { CardImg, GoldImg, RubiesImg, ShardsImg, TokenImg } from "components/thegame-icons";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
+import React from "react";
 
 export default function Resources() {
   return (
