@@ -28,9 +28,17 @@ h3 {
   }
 }
 
-b,
 legend {
   color: yellow;
+}
+b {
+}
+
+fieldset {
+  @media (max-width: 767px) {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
 }
 
 .react-tabs__tab.react-tabs__tab--selected {

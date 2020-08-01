@@ -1,314 +1,299 @@
 import { anchorLinkTarget } from "components/helper";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
 import React from "react";
-
+import css from "../static-content.module.scss";
+import classNames from "classnames";
 export default function LevelupRewards() {
   return (
     <div>
       {anchorLinkTarget(MENU_LINKS_CONFIG["Level up Rewards"])}
-      Here is the complete list of the level rewards:
-      <br />
-      <br />
-      <ul className="bb_ul">
-        <li>
-          {" "}
-          LVL 1 - Tutorial
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 2 - (Common Card) Cleaver
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 3 - (Rare Card) Stun Lancers
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 4 - (Common Card) Dragon Whelp
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 5 - (Common Card) Sniper Scrat
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 6 - 1 Power Token
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 7 - <b>Unlock Team Battle</b>, <b>Unlock Shop</b>, 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 8 - <b>Unlock Daily Quests</b>, (Common Card) Crossbow Dudes
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 9 - <b>Unlock Battle Pass</b>, (Common Card) Swarmers x16
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 10 - (Common Card) Daggerfall x3, +50% Win Bonus Gold For 3 Days
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 11 - <b>Unlock Expeditions</b>, (Rare Card) Crossbow Guild x3
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 12 - <b>Unlock Draft</b>, Daft Ticket
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 13 - (Common Card) Beam of DOOM! x6
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 14 - <b>Unlock Mayhem</b>, 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 15 - 350 Rubies
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 16 - Stun Lancers Avatar, 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 17 - (Rare Card) Annihilator x6
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 18 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 19 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 20 - Three Extra Deck Slots
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 21 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 22 - Draft Ticket x2
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 23 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 24 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 25 - (Rare Card) Last Stand x6
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 26 - Scrat Pack Avatar, 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 27 - 100 Shards
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 28 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 29 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 30 - (Arena) Tranquil Estate
-          <br />
-        </li>
-        <li>
-          {" "}
-          LvL 31 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 32 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 33 - 100 Shards
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 34 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 35 - 250 Rubies
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 36 - Legionnaires Avatar, 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 37 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 38 - +50% win bonus gold for 7 days
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 39 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 40 - Three Extra Deck Slots
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 41 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 42 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 43 - Draft Ticket x2
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 44 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 45 - 500 Rubies
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 46 - Spirit Vessel Avatar, 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 47 - 1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 48 - 100 Shards
-          <br />
-        </li>
-        <li>
-          {" "}
-          LVL 49 - 1000 Gold
-          <br />
-        </li>
-        <li> LVL 50 - (Arena) Crashsite</li>
-      </ul>
-      <br />
-      From 51 and above, the rewards repeats itself every 10 levels as follows:
-      <br />
-      <ol>
-        <li>
-          {" "}
-          1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          +50% win bonus gold for 3 days
-          <br />
-        </li>
-        <li>
-          {" "}
-          1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          200 Rubies
-          <br />
-        </li>
-        <li>
-          {" "}
-          1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          1000 Gold
-          <br />
-        </li>
-        <li>
-          {" "}
-          2 Power Tokens
-          <br />
-        </li>
-        <li>
-          {" "}
-          1000 Gold
-          <br />
-        </li>
-        <li> 350 Rubies</li>
-      </ol>
-      <br />
+
+      <div className={css.itemsArea}>
+        <fieldset>
+          <legend>Level 01-50</legend>
+          <div className={css.table}>
+            <div className={css.tableRow}>
+              <div
+                className={classNames(css.tableCell, css.tableHeader)}
+                style={{ minWidth: "30px" }}
+              >
+                <span className={css.hideOnMobile}>Level</span>
+              </div>
+              <div className={classNames(css.tableCell, css.tableHeader)}>Reward</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>1</div>
+              <div className={css.tableCell}>Tutorial</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>2</div>
+              <div className={css.tableCell}>(Common Card) Cleaver</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>3</div>
+              <div className={css.tableCell}>(Rare Card) Stun Lancers</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>4</div>
+              <div className={css.tableCell}>(Common Card) Dragon Whelp</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>5</div>
+              <div className={css.tableCell}>(Common Card) Sniper Scrat</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>6</div>
+              <div className={css.tableCell}>1 Power Token</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>7</div>
+              <div className={css.tableCell}>
+                <b>Unlock Team Battle</b>, <b>Unlock Shop</b>, 1000 Gold
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>8</div>
+              <div className={css.tableCell}>
+                <b>Unlock Daily Quests</b>, (Common Card) Crossbow Dudes
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>9</div>
+              <div className={css.tableCell}>
+                <b>Unlock Battle Pass</b>, (Common Card) Swarmers x16
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>10</div>
+              <div className={css.tableCell}>
+                (Common Card) Daggerfall x3, +50% Win Bonus Gold For 3 Days
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>11</div>
+              <div className={css.tableCell}>
+                <b>Unlock Expeditions</b>, (Rare Card) Crossbow Guild x3
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>12</div>
+              <div className={css.tableCell}>
+                <b>Unlock Draft</b>, Daft Ticket
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>13</div>
+              <div className={css.tableCell}>(Common Card) Beam of DOOM! x6</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>14</div>
+              <div className={css.tableCell}>
+                <b>Unlock Mayhem</b>, 1000 Gold
+              </div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>15</div>
+              <div className={css.tableCell}>350 Rubies</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>16</div>
+              <div className={css.tableCell}>Stun Lancers Avatar, 1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>17</div>
+              <div className={css.tableCell}>(Rare Card) Annihilator x6</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>18</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>19</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>20</div>
+              <div className={css.tableCell}>Three Extra Deck Slots</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>21</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>22</div>
+              <div className={css.tableCell}>Draft Ticket x2</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>23</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>24</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>25</div>
+              <div className={css.tableCell}>(Rare Card) Last Stand x6</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>26</div>
+              <div className={css.tableCell}>Scrat Pack Avatar, 1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>27</div>
+              <div className={css.tableCell}>100 Shards</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>28</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>29</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>30</div>
+              <div className={css.tableCell}>(Arena) Tranquil Estate</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>31</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>32</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>33</div>
+              <div className={css.tableCell}>100 Shards</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>34</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>35</div>
+              <div className={css.tableCell}>250 Rubies</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>36</div>
+              <div className={css.tableCell}>Legionnaires Avatar, 1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>37</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>38</div>
+              <div className={css.tableCell}>+50% win bonus gold for 7 days</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>39</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>40</div>
+              <div className={css.tableCell}>Three Extra Deck Slots</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>41</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>42</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>43</div>
+              <div className={css.tableCell}>Draft Ticket x2</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>44</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>45</div>
+              <div className={css.tableCell}>500 Rubies</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>46</div>
+              <div className={css.tableCell}>Spirit Vessel Avatar, 1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>47</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>48</div>
+              <div className={css.tableCell}>100 Shards</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>49</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>50</div>
+              <div className={css.tableCell}>(Arena) Crashsite</div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>51 > repeats itself every 10 levels</legend>
+
+          <div className={css.table}>
+            <div className={css.tableRow}>
+              <div
+                className={classNames(css.tableCell, css.tableHeader)}
+                style={{ minWidth: "30px" }}
+              >
+                <span className={css.hideOnMobile}>Level</span>
+              </div>
+              <div className={classNames(css.tableCell, css.tableHeader)}>Reward</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X1</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X2</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X3</div>
+              <div className={css.tableCell}>+50% win bonus gold for 3 days</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X4</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X5</div>
+              <div className={css.tableCell}>200 Rubies</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X6</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X7</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X8</div>
+              <div className={css.tableCell}>2 Power Tokens</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X9</div>
+              <div className={css.tableCell}>1000 Gold</div>
+            </div>
+            <div className={css.tableRow}>
+              <div className={css.tableCell}>X0</div>
+              <div className={css.tableCell}>350 Rubies</div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
     </div>
   );
 }

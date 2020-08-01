@@ -10,11 +10,7 @@ import css from "page/basics/static-content.module.scss";
 export default function ListOfMechanics() {
   return (
     <div className={css.container}>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "} Page under construction
-      </div>
-      <div>
+      <div style={{ display: "none" }}>
         <ButtonGroupStyle>
           <ButtonInGroupStyle>
             <BuffIcon /> Debuff

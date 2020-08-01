@@ -6,3 +6,48 @@
     width: 100%;
   }
 }
+
+.table {
+  display: table;
+}
+
+.tableRow {
+  display: table-row;
+  & .tableCell {
+    padding-right: 5px; // 23
+    text-align: left;
+  }
+
+  & .tableCell:last-child {
+    padding-right: 0;
+  }
+}
+
+.tableCell {
+  display: table-cell;
+}
+
+.tableHeader {
+  font-weight: bold;
+}
+
+.itemsArea {
+  display: flex;
+  flex-wrap: wrap;
+}
+.itemGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.rankImage {
+  width: 55px;
+}
+
+.hideOnMobile {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}

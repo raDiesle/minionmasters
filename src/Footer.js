@@ -22,7 +22,7 @@ export default function Footer() {
           })
         }
       >
-        Ideas for new features?
+        Ideas for new features or you want to contribute?
       </SubheaderLinkStyle>
     </div>
   );

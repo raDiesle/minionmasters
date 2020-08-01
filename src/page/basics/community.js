@@ -10,35 +10,7 @@ export default function Community() {
         {"  "} Page under construction
       </div>
 
-      <div className="subSection detailBox" id={2894038}>
-        <div className="subSectionTitle">Basics - Streamers </div>
-        <div className="subSectionDesc">
-          Watching the most popular streamers is also a good way to earn resources!
-          <br />
-          In fact the BetaDwarf provides them giveaway packages to be given away, and the more
-          viewer they have, the bigger the packages will be, so be sure you don't miss your chance
-          in their raffle (especially if you are a new player)!
-          <br />
-          <br />
-          While viewing a stream on twitch, there are several commands that you can use to interact
-          with the game by changing your puff style or by throwing stuff in the arena. All the
-          commands available can be found here:{" "}
-          <a
-            className="bb_link"
-            href="https://steamcommunity.com/linkfilter/?url=http://minionmastersthegame.com/streamerboost/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            http://minionmastersthegame.com/streamerboost/
-          </a>
-          <br />
-          <br />
-          Also by watching the streamers, you will receive drops when they win! Drops grant you 50
-          gold (and eventually a key of the tri-team event).
-          <br />
-          The drops can be collected on login. <div style={{ clear: "both" }} />
-        </div>
-      </div>
+      <div className="subSection detailBox" id={2894038}></div>
 
       <div>
         <div style={{ clear: "both" }} />
