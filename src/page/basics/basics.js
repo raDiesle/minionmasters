@@ -1,3 +1,4 @@
+import AdventuresChallenges from "page/basics/adventures-challenges";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
 import Draft from "page/basics/draft";
 import Guild from "page/basics/guild";
@@ -20,6 +21,7 @@ export default function Basics() {
           <Tab>Draft</Tab>
           <Tab>Maythem</Tab>
           <Tab>Guild</Tab>
+          <Tab>Adventures & Challenges</Tab>
           <Tab>Main Screen</Tab>
         </TabList>
         <TabPanel>
@@ -39,6 +41,9 @@ export default function Basics() {
         </TabPanel>
         <TabPanel>
           <Guild />
+        </TabPanel>
+        <TabPanel>
+          <AdventuresChallenges />
         </TabPanel>
         <TabPanel>
           <MainScreen />

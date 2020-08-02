@@ -1,3 +1,4 @@
+import { imgPathFn } from "components/helper";
 import CardDetailsModal from "page/CardDetailsModal";
 import { MasterModal } from "page/mastersoverview/MasterModal";
 import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/wikiEditor/mention-config";
@@ -8,6 +9,7 @@ import css from "./mention-readonly.module.scss";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+const OVERRIDEN_WIDTH = "25";
 export default function WikiEditorReadOnly({ value = "" }) {
   const [cardSubModalData, setCardSubModalData] = useState({});
   const [isOpenCardSubModal, setIsOpenCardSubModal] = useState(false);
@@ -56,17 +58,16 @@ export default function WikiEditorReadOnly({ value = "" }) {
       if (element_type === "PLAIN_TEXT") {
         return <span>{display_value}</span>;
       } else if (element_type === "MENTION") {
-        const IMG_FOLDER = "generated/img/";
-        const FILE_ENDING = ".webp";
-        const WIDTH = "_78";
-        const imgPathFn = (image) => IMG_FOLDER + image + WIDTH + FILE_ENDING;
-
         if (target_type === TYPE_MASTER) {
           const matchedMaster = Object.values(mastersMapping).find(({ iD }) => iD === target_key);
 
           return (
             <a onClick={() => handleMasterClick(display_value)} className={css.mentionLink}>
-              <img width="25" src={imgPathFn(matchedMaster.icon)} alt={display_value} />
+              <img
+                width={OVERRIDEN_WIDTH}
+                src={imgPathFn(matchedMaster.icon)}
+                alt={display_value}
+              />
               &nbsp;{display_value}
             </a>
           );
@@ -74,7 +75,7 @@ export default function WikiEditorReadOnly({ value = "" }) {
           const matchedCard = cardData.find(({ iD }) => iD === target_key);
           return (
             <a onClick={() => handleCardClick(target_key, matchedCard)} className={css.mentionLink}>
-              <img width="25" src={imgPathFn(matchedCard.image)} alt={target_key} />
+              <img width={OVERRIDEN_WIDTH} src={imgPathFn(matchedCard.image)} alt={target_key} />
               &nbsp;{display_value}
             </a>
           );

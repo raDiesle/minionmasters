@@ -57,14 +57,21 @@ export default function RankRewards() {
   return (
     <div>
       {anchorLinkTarget(MENU_LINKS_CONFIG["Rank Rewards"])}
-      This rewards can be obtained multiple times by ranking up in multiple game modes. To get the
-      highest rewards each month, you need to get to grandmaster in solo, team battle and premade
-      team battle. This way you will get more than 1k rubies every month! After the end of a season
-      you will be deranked according to table below. You can get the rewards all over again, plus an
-      additional reward based on your previous season rank. The monthly reward is equal to all the
-      rewards from wood to your <u>NEW</u> rank. So if you want to gain the most from the game,
-      you'll need to reach at least tier 100 in the season and possibly reach Grand Master rank in
-      all the game modes each season.
+      <div>
+        Everytime you win you gain points to get to the next rank, losing however decrease your
+        points and eventually your rank (once you reach Grand Master, you won't be demoted anymore).
+        Winning more times on a row, also grants bonus points!
+      </div>
+      <div>
+        This rewards can be obtained multiple times by ranking up in multiple game modes. To get the
+        highest rewards each month, you need to get to grandmaster in solo, team battle and premade
+        team battle. This way you will get more than 1k rubies every month! After the end of a
+        season you will be deranked according to table below. You can get the rewards all over
+        again, plus an additional reward based on your previous season rank. The monthly reward is
+        equal to all the rewards from wood to your <u>NEW</u> rank. So if you want to gain the most
+        from the game, you'll need to reach at least tier 100 in the season and possibly reach Grand
+        Master rank in all the game modes each season.
+      </div>
       <div className={classNames(css.table)}>
         <div>Rank</div>
         <div>Reward</div>
@@ -82,20 +89,6 @@ export default function RankRewards() {
       </div>
       <div className="subSection detailBox" id={2894044}>
         <div className="subSectionDesc">
-          The ranks are:
-          <br />
-          Wood &gt; Stone &gt; Bronze &gt; Silver &gt; Gold &gt; Platinum &gt; Diamond &gt; Master
-          &gt; Grand Master
-          <br />
-          <br />
-          Everytime you win you gain points to get to the next rank, losing however decrease your
-          points and eventually your rank (once you reach Grand Master, you won't be demoted
-          anymore). Winning more times on a row, also grants bonus points!
-          <br />
-          <br />
-          Raising your rank provides you with increasing rewards, but beware! Ranks reset at the end
-          of every month and the reset rewards you based on how high you got.
-          <br />
           <br />
           Very often people ask what's a good rank, the answer is: before platinum is just a
           warm-up, from platinum you start to play seriously, so don't get too cocky if at the

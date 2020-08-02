@@ -1,41 +1,68 @@
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { anchorLinkTarget } from "components/helper";
+import { GoldImg } from "components/thegame-icons";
 import css from "page/basics/static-content.module.scss";
 import React from "react";
 
 export default function Maythem() {
+  const MENU_LINKS_CONFIG = {
+    "Killing Floor": "Killing Floor",
+    "Desert Maythem": "Desert Maythem",
+    "Helpful Imps!": "Helpful Imps!",
+    "Explosive Minions": "Explosive Minions",
+    "Two for free": "Two for free",
+    Summonings: "Summonings",
+    "Defense of the Masters": "Defense of the Masters",
+    "Frenzied Minions": "Frenzied Minions",
+    Fluctuations: "Fluctuations",
+    "Defense Surge": "Defense Surge",
+  };
+
+  const MENU_ORDER = [
+    MENU_LINKS_CONFIG["Killing Floor"],
+    MENU_LINKS_CONFIG["Desert Maythem"],
+    MENU_LINKS_CONFIG["Helpful Imps!"],
+    MENU_LINKS_CONFIG["Explosive Minions"],
+    MENU_LINKS_CONFIG["Two for free"],
+    MENU_LINKS_CONFIG.Summonings,
+    MENU_LINKS_CONFIG["Defense of the Masters"],
+    MENU_LINKS_CONFIG["Frenzied Minions"],
+    MENU_LINKS_CONFIG.Fluctuations,
+    MENU_LINKS_CONFIG["Defense Surge"],
+  ];
+
   return (
     <div className={css.container}>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "} Page under construction
-      </div>
+      <ul>
+        {MENU_ORDER.map((key) => (
+          <li key={key}>
+            <a href={`#${key}`}>{key}</a>
+          </li>
+        ))}
+      </ul>
 
       <div>
-        <div className="subSectionDesc">
-          Like for the draft, the mayhem mode cost 750 gold to play and rewards you based on how
-          many victories you achieve. The main difference is that you have to build the deck BEFORE
-          starting (once you started you can't change the deck anymore), and every mayhem has a
-          different condition that makes it very fun to play, but often is also more complicated
-          than normal. Also, the Mayhem mode is available only once a week for 3 days.
-          <br />
-          In any case, while the draft can only be played in solo, the mayhem can also be played
-          with a friend making it more interesting, and the rewards are fixed and quite appetible if
-          you can achieve 12 victories.
-          <br />
+        <div>
+          <fieldset>
+            <legend>Basics</legend>
+
+            <ul>
+              <li>Enter the mayhem mode cost 750 {GoldImg()}.</li>
+              <li>Max victories: 12</li>
+              <li>Max allowed losses: 3</li>
+              <li>You have to build deck before starting and cannot change after.</li>
+              <li>
+                every mayhem has a different condition that makes it very fun to play, but often is
+                also more complicated than normal.
+              </li>
+              <li>Available only once a week and for 3 days.</li>
+              <li>Can be also played with friend</li>
+            </ul>
+          </fieldset>
           <fieldset>
             <legend>Rewards</legend>
             Check them on Resource Management page
           </fieldset>
-          <br />
-          <div className="bb_h1">
-            <b>Types of Mayhems</b>
-          </div>
-          <br />
-          Each mayhem has a different condition that makes the battle more complicated, here is the
-          list of all the possible conditions:
-          <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Killing Floor"])}
           <img src="img/basics/maythem_killingfloor.jpg" alt="Killing Floor" />
           <br />
           <br />
@@ -61,7 +88,8 @@ export default function Maythem() {
           </ul>
           <br />
           <br />
-          <img src="img/basics/maythem_desertermaythem.jpg" alt="Killing Floor" />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Desert Maythem"])}
+          <img src="img/basics/maythem_desertermaythem.jpg" alt="Desert Maythem" />
           <br />
           <br />
           All minions are summoned with Turncoat.
@@ -76,7 +104,7 @@ export default function Maythem() {
             </li>
           </ul>
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Helpful Imps!"])}
           <img src="img/basics/maythem_helpfulimps.jpg" alt="helpful imps" />
           <br />
           <br />
@@ -107,6 +135,7 @@ export default function Maythem() {
           </ul>
           <br />
           <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Explosive Minions"])}
           <img src="img/basics/maythem_explositveminions.jpg" alt="explositve minions" />
           <br />
           <br />
@@ -125,7 +154,7 @@ export default function Maythem() {
             <li> Use Taunt minions to prevent enemy minions from reaching your tower.</li>
           </ul>
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Two for free"])}
           <img src="img/basics/maythem_twoforfree.jpg" alt="two for free" />
           <br />
           <br />
@@ -150,7 +179,7 @@ export default function Maythem() {
             </li>
           </ul>
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG.Summonings)}
           <img src="img/basics/maythem_summonings.jpg" alt="Summonings" />
           <br />
           <br />
@@ -167,7 +196,7 @@ export default function Maythem() {
             </li>
           </ul>
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Defense of the Masters"])}
           <img src="img/basics/maythem_defense_of_the_masters.jpg" alt="defense of the master" />
           <br />
           <br />
@@ -185,7 +214,7 @@ export default function Maythem() {
             </li>
           </ul>
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Frenzied Minions"])}
           <img src="img/basics/maythem_frenziedminions.jpg" alt="Frenzied Minions" />
           <br />
           <br />
@@ -217,7 +246,7 @@ export default function Maythem() {
           Using more than 2 cards within 5 seconds triggers the effect ONLY ONCE.
           <br />
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG.Fluctuations)}
           <img src="img/basics/maythem_fluctuations.jpg" alt="Fluctuations" />
           <br />
           <br />
@@ -240,7 +269,7 @@ export default function Maythem() {
             </li>
           </ul>
           <br />
-          <br />
+          {anchorLinkTarget(MENU_LINKS_CONFIG["Defense Surge"])}
           <img src="img/basics/maythem_defensesurge.jpg" alt="Defense Surge" />
           <br />
           <br />
@@ -268,7 +297,6 @@ export default function Maythem() {
               your push towards your opponent.
             </li>
           </ul>
-          <br />
         </div>
       </div>
     </div>

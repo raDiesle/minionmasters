@@ -38,6 +38,7 @@ export default function Tokens() {
               Rare Resource Token
             </legend>
             You get on every fourth Resource Token. Rewards: Rare {CardImg()} or more {GoldImg()} or{" "}
+            . Worst price is 500 {GoldImg()}.{CardImg()}
             {RubiesImg()}
           </fieldset>
 
@@ -46,8 +47,26 @@ export default function Tokens() {
               <img src="img/basics/resource_token.png" alt="token" style={{ width: "20px" }} />{" "}
               Power Tokens
             </legend>
-            1{TokenImg(false)} will give you 1{CardImg(false)} and {ShardsImg()}.
+            1{TokenImg(false)} will give you 1{CardImg(false)} (or upgrade for duplicates) and{" "}
+            {ShardsImg()}.
             <div>When the given card is beyond 400 glory, you will only get {ShardsImg()}.</div>
+            <fieldset>
+              <legend>Possible shards</legend>
+              <div>Do not underestimate the benefit of its {ShardsImg()}. You can receive:</div>
+              <br />
+              Common: 15 shards (+25 if the card is already at 400 glory)
+              <br />
+              Rare: 30 shards (+50 if the card is already at 400 glory)
+              <br />
+              Supreme: 75 shards (+125 if the card is already at 400 glory)
+              <br />
+              Legendary: 300 shards (+500 if the card is already at 400 glory)
+              <br />
+              <br />
+              If you reach 400 glory on a card and you find that card again while using a token or
+              by buying a bundle in the shop, you will receive a generous amount of extra shards.
+              <br />
+            </fieldset>
             <fieldset>
               <legend>Card Drop Rates</legend>
               <div className={css.tokenDroprateGrid}>
@@ -82,8 +101,7 @@ export default function Tokens() {
               />{" "}
               Rare Power Token
             </legend>
-            Received on every fourth Power Token and rewards: {RARITY_REFERENCE.Rare} or better{" "}
-            {CardImg()}
+            Received on every fourth Power Token. It rewards: {RARITY_REFERENCE.Rare} or better.
           </fieldset>
         </div>
       </div>
