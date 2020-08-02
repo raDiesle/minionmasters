@@ -1,4 +1,5 @@
 import { faReddit } from "@fortawesome/free-brands-svg-icons/faReddit";
+import { faSteam } from "@fortawesome/free-brands-svg-icons/faSteam";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHeart";
@@ -322,6 +323,23 @@ export default function CardDetailsModal({
                     />{" "}
                   </span>
                   <span> Reddits for {name}</span>
+                </a>
+              </ButtonInGroupStyle>
+            </ButtonGroupStyle>
+            <ButtonGroupStyle>
+              <ButtonInGroupStyle>
+                <a
+                  href={` https://steamcommunity.com/app/489520/discussions/search/?q=${name}&gidforum=350543738456481917&include_deleted=1`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={css.steamIcon}
+                  color="#fd7e14"
+                >
+                  <span className={classNames("fa-layers fa-fw")}>
+                    <FontAwesomeIcon icon={faSquare} size="lg" />
+                    <FontAwesomeIcon icon={faSteam} size="lg" mask={["far", "circle"]} />{" "}
+                  </span>
+                  <span> Steam discussions for {name}</span>
                 </a>
               </ButtonInGroupStyle>
             </ButtonGroupStyle>
