@@ -2,6 +2,8 @@ import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Basics from "page/basics/basics";
+import Guild from "page/basics/guild";
+import MainScreen from "page/basics/main-screen";
 
 import DeckContainer from "page/carddeck/DeckContainer";
 import DiscussOnCards from "page/discussion/discuss-on-cards";

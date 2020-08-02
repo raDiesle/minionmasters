@@ -1,6 +1,8 @@
 import AdventureRewards from "page/basics/resources/adventure-rewards";
 import ChallengesRewards from "page/basics/resources/challenges-rewards";
+import DraftRewards from "page/basics/resources/draft-rewards";
 import Freebies from "page/basics/resources/freebies";
+import GuildRewards from "page/basics/resources/guild-rewards";
 import HowToShardsAndGold from "page/basics/resources/howto-shards-and-gold";
 import LevelupRewards from "page/basics/resources/levelup-rewards";
 import MaythemResources from "page/basics/resources/maythem-resources";
@@ -27,7 +29,9 @@ export const MENU_LINKS_CONFIG = {
   "Rank Rewards": "Rank Rewards",
   "Season Battle Pass Rewards": "Season Battle Pass Rewards",
   "Season House Rewards": "Season House Rewards",
+  "Guild Rewards": "Guild Rewards",
   "Maythem Rewards": "Maythem Rewards",
+  "Draft Rewards": "Draft Rewards",
   "Challenges Rewards": "Challenges Rewards",
 };
 
@@ -43,7 +47,9 @@ export default function ResourceMngmt() {
     MENU_LINKS_CONFIG["Rank Rewards"],
     MENU_LINKS_CONFIG["Season Battle Pass Rewards"],
     MENU_LINKS_CONFIG["Season House Rewards"],
+    MENU_LINKS_CONFIG["Guild Rewards"],
     MENU_LINKS_CONFIG["Maythem Rewards"],
+    MENU_LINKS_CONFIG["Draft Rewards"],
     MENU_LINKS_CONFIG["Challenges Rewards"],
   ];
   return (
@@ -66,9 +72,11 @@ export default function ResourceMngmt() {
       <RankRewards />
       <SeasonRewards />
       <SeasonHouseRewards />
+      <GuildRewards />
       <MaythemResources />
       <AdventureRewards />
       <ChallengesRewards />
+      <DraftRewards />
     </div>
   );
 }

@@ -1,0 +1,17 @@
+bb_table {
+  display: table;
+}
+
+.bb_table_tr {
+  display: table-row;
+}
+
+.bb_table_td,
+.bb_table_th {
+  display: table-cell;
+  padding: 10px;
+}
+
+.bb_table_th {
+  font-weight: bold;
+}

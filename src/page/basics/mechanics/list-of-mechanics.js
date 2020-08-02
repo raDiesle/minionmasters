@@ -11,11 +11,22 @@ export default function ListOfMechanics() {
     <div className={css.container}>
       <div>
         <ButtonGroupStyle>
-          <ButtonInGroupStyle onClick={() => setSelectedBuff("ALL")}>All</ButtonInGroupStyle>
-          <ButtonInGroupStyle onClick={() => setSelectedBuff("DEBUFF")}>
+          <ButtonInGroupStyle
+            onClick={() => setSelectedBuff("ALL")}
+            isButtonActive={selectedBuff === "ALL"}
+          >
+            All
+          </ButtonInGroupStyle>
+          <ButtonInGroupStyle
+            onClick={() => setSelectedBuff("DEBUFF")}
+            isButtonActive={selectedBuff === "DEBUFF"}
+          >
             <BuffIcon /> Debuff
           </ButtonInGroupStyle>
-          <ButtonInGroupStyle onClick={() => setSelectedBuff("BUFF")}>
+          <ButtonInGroupStyle
+            isButtonActive={selectedBuff === "BUFF"}
+            onClick={() => setSelectedBuff("BUFF")}
+          >
             <DeebuffIcon /> Buff
           </ButtonInGroupStyle>
         </ButtonGroupStyle>
@@ -38,9 +49,16 @@ export default function ListOfMechanics() {
                   "CohortTwo",
                 ].includes(key)
             )
-            .filter(({ isBuff }) =>
-              selectedBuff === "ALL" || selectedBuff === "BUFF" ? isBuff : !isBuff
-            )
+            .filter(({ isBuff }) => {
+              switch (selectedBuff) {
+                case "ALL":
+                  return true;
+                case "BUFF":
+                  return isBuff;
+                case "DEBUFF":
+                  return !isBuff;
+              }
+            })
             .map(({ key, display, description }, index) => (
               <div key={index} style={{ padding: "5px" }}>
                 <div style={{ color: "yellow", fontWeight: "bold" }}>{display}:</div>
