@@ -2,17 +2,24 @@
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
-  & > li {
-    flex-basis: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    background-color: #444;
-    margin: 5px;
-    &:hover {
-      border-color: yellow;
-      cursor: pointer;
-    }
+}
+
+.chatEmotesAbstract {
+  border: 1px solid black;
+  background-color: #444;
+  margin: 5px;
+  padding: 0 10px;
+
+  &:hover {
+    border-color: yellow;
+    cursor: pointer;
   }
+}
+
+.chatEmotesItem {
+  @extend .chatEmotesAbstract;
+  flex-basis: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -13,17 +13,19 @@ export const MENU_LINKS_CONFIG = {
   Profile: "Profile",
   "Power Tower": "Power Tower",
   "Game Modes": "Game Modes",
-  "Chat Commands": "Chat Commands",
+  "Chat Commands: Functional": "Chat Commands: Functional",
+  "Chat Commands: Emoji": "Chat Commands: Emoji",
   Replays: "Replays",
 };
 export default function MainScreen() {
   const MENU_ORDER = [
     MENU_LINKS_CONFIG.Overview,
     MENU_LINKS_CONFIG.Profile,
+    MENU_LINKS_CONFIG.Replays,
     MENU_LINKS_CONFIG["Power Tower"],
     MENU_LINKS_CONFIG["Game Modes"],
-    MENU_LINKS_CONFIG["Chat Commands"],
-    MENU_LINKS_CONFIG.Replays,
+    MENU_LINKS_CONFIG["Chat Commands: Functional"],
+    MENU_LINKS_CONFIG["Chat Commands: Emoji"],
   ];
 
   return (
@@ -53,8 +55,6 @@ export default function MainScreen() {
 
       <div>
         <div className="subSectionDesc">
-          So here is a picture of the main menu where you can see the 3 most important parts:
-          <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Profile"])}
           <fieldset>
             <legend>Quests</legend>

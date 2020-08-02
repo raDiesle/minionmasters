@@ -8,18 +8,13 @@ import cssStatic from "./static-content.module.scss";
 export default function AdventuresChallenges() {
   const MENU_LINKS_CONFIG = {
     Adventures: "Adventures",
-    Challenges: "Challenges",
+    Challenges: "Challenges/Tutorial",
   };
 
   const MENU_LINKS_ORDER = [MENU_LINKS_CONFIG.Adventures, MENU_LINKS_CONFIG.Challenges];
 
   return (
     <div className={cssStatic.container}>
-      <div>
-        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "} Page under construction
-      </div>
-
       <div>
         <ul>
           {MENU_LINKS_ORDER.map((key) => (
@@ -87,8 +82,15 @@ export default function AdventuresChallenges() {
       </fieldset>
 
       {anchorLinkTarget(MENU_LINKS_CONFIG.Challenges)}
-      <div>Play it once to get some rewards.</div>
+      <div>It is considered to be kind of the tutorial for Minionmasters.</div>
       <img src="img/basics/challenges.png" alt="challenges" />
+      <fieldset>
+        <legend>Rewards</legend>
+        <div>
+          See page for &nbsp;
+          <b>Resource Management</b>
+        </div>
+      </fieldset>
     </div>
   );
 }

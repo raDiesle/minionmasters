@@ -11,8 +11,8 @@ export default function Guild() {
         {"  "} Page under construction
       </div>
 
-      <div className="subSectionTitle">Guild</div>
-      <div className="subSectionDesc">
+      <h4>Basics</h4>
+      <div>
         The guild pass is basically a community driven season, where you and you're guild contribute
         every cycle to increase the glory and gain tiers.
         <br />
@@ -34,7 +34,12 @@ export default function Guild() {
         apply to wild cards (so you get the bonus only for the first copy of the card, not the
         second one).
         <br />
-        <br />
+        <fieldset>
+          <legend>Calculations & Rewards</legend>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <h4>Check Resource Management Page</h4>
+          </div>
+        </fieldset>
         <div className="bb_h1">
           <b>How to contribute</b>
         </div>
@@ -55,24 +60,6 @@ export default function Guild() {
         "Battle" button to start a game.
         <br />
         <br />
-        The total glory you'll receive after each victory is: <br />
-        <b>
-          ( &lt;Conquest Card Glory&gt; + &lt;Your Deck Glory&gt; + &lt;Season Bonus Glory&gt; ) x
-          &lt;Rank Multiplier&gt;{" "}
-        </b>
-        <br />
-        <br />
-        The ranks mutipliers are the following:
-        <br />
-        <br />
-        <a
-          href="https://steamuserimages-a.akamaihd.net/ugc/825757418682375470/83A2B14014DC9DACA47EE93542D5CE7DEE05C5D8/"
-          className="modalContentLink"
-          data-modal-content-popup-url="https://steamcommunity.com/sharedfiles/displayimageformodaldialog/?imageurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F825757418682375470%2F83A2B14014DC9DACA47EE93542D5CE7DEE05C5D8%2F"
-        >
-          {/* img placeholder */}
-        </a>
-        The multiplier for the formula above is ( xx% / 100 ) + 1. Example for GM is 3.5.
         <br />
         <br />
         Your total contribution for the cycle is visible in the guild screen, and the guild roster
@@ -140,281 +127,6 @@ export default function Guild() {
         guild, and to work together in order to reach the top tier before the end of the season.
         <br />
         <br />
-        Here is the list of rewards:
-        <br />
-        <ol>
-          <li>
-            {" "}
-            5 x Conquest Card slot
-            <br />
-          </li>
-          <li>
-            {" "}
-            1 x Conquest Card slot
-            <br />
-          </li>
-          <li>
-            {" "}
-            10 x Common Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            1 x Conquest Card slot
-            <br />
-          </li>
-          <li>
-            {" "}
-            5 x Rare Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            500k Account XP
-            <br />
-          </li>
-          <li>
-            {" "}
-            1 x Conquest Card slot
-            <br />
-          </li>
-          <li>
-            {" "}
-            15 x Common Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            +50 Season bonus Glory
-            <br />
-          </li>
-          <li>
-            {" "}
-            Settsu Avatar
-            <br />
-          </li>
-          <li>
-            {" "}
-            750k Account XP
-            <br />
-          </li>
-          <li>
-            {" "}
-            1 x Conquest Card slot
-            <br />
-          </li>
-          <li>
-            {" "}
-            7 x Supreme Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            1 x Conquest Card slot
-            <br />
-          </li>
-          <li>
-            {" "}
-            Pink Settsu Skin
-            <br />
-          </li>
-          <li>
-            {" "}
-            750k Account XP
-            <br />
-          </li>
-          <li>
-            {" "}
-            10 x Rare Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            20 x Common Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            Guild Frame
-            <br />
-          </li>
-          <li> 3 x Legendary Card</li>
-        </ol>
-        <br />
-        After tier 20 the rewards repeats as follow:
-        <br />
-        <ol>
-          <li>
-            {" "}
-            3 x Common Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            500 x Gold
-            <br />
-          </li>
-          <li>
-            {" "}
-            3 x Common Card
-            <br />
-          </li>
-          <li>
-            {" "}
-            250k Account XP
-            <br />
-          </li>
-          <li> 1 x Power Token</li>
-        </ol>
-        <br />
-        <div className="bb_h1">
-          <b>Glory Table</b>
-        </div>
-        <br />
-        Here is the amount of glory required for each tier:
-        <br />
-        <br />
-        <div className="bb_table">
-          {" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_th">
-              <b>Tier</b>
-            </div>{" "}
-            <div className="bb_table_th">
-              <b>Mini Season Glory</b>
-            </div>{" "}
-            <div className="bb_table_th">
-              <b>Normal Season Glory</b>
-            </div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">1</div> <div className="bb_table_td">---</div>{" "}
-            <div className="bb_table_td">---</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">2</div> <div className="bb_table_td">145k</div>{" "}
-            <div className="bb_table_td">150k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">3</div> <div className="bb_table_td">155k</div>{" "}
-            <div className="bb_table_td">160k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">4</div> <div className="bb_table_td">165k</div>{" "}
-            <div className="bb_table_td">180k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">5</div> <div className="bb_table_td">175k</div>{" "}
-            <div className="bb_table_td">190k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">6</div> <div className="bb_table_td">185k</div>{" "}
-            <div className="bb_table_td">200k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">7</div> <div className="bb_table_td">195k</div>{" "}
-            <div className="bb_table_td">210k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">8</div> <div className="bb_table_td">205k</div>{" "}
-            <div className="bb_table_td">220k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">9</div> <div className="bb_table_td">215k</div>{" "}
-            <div className="bb_table_td">235k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">10</div> <div className="bb_table_td">230k</div>{" "}
-            <div className="bb_table_td">245k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">11</div> <div className="bb_table_td">240k</div>{" "}
-            <div className="bb_table_td">260k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">12</div> <div className="bb_table_td">255k</div>{" "}
-            <div className="bb_table_td">275k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">13</div> <div className="bb_table_td">265k</div>{" "}
-            <div className="bb_table_td">290k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">14</div> <div className="bb_table_td">280k</div>{" "}
-            <div className="bb_table_td">305k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">15</div> <div className="bb_table_td">300k</div>{" "}
-            <div className="bb_table_td">325k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">16</div> <div className="bb_table_td">315k</div>{" "}
-            <div className="bb_table_td">340k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">17</div> <div className="bb_table_td">330k</div>{" "}
-            <div className="bb_table_td">360k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">18</div> <div className="bb_table_td">350k</div>{" "}
-            <div className="bb_table_td">380k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">19</div> <div className="bb_table_td">370k</div>{" "}
-            <div className="bb_table_td">400k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">20</div> <div className="bb_table_td">390k</div>{" "}
-            <div className="bb_table_td">420k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">21</div> <div className="bb_table_td">410k</div>{" "}
-            <div className="bb_table_td">445k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">22</div> <div className="bb_table_td">435k</div>{" "}
-            <div className="bb_table_td">470k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">23</div> <div className="bb_table_td">455k</div>{" "}
-            <div className="bb_table_td">495k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">24</div> <div className="bb_table_td">480k</div>{" "}
-            <div className="bb_table_td">520k</div>{" "}
-          </div>{" "}
-          <div className="bb_table_tr">
-            {" "}
-            <div className="bb_table_td">25+</div> <div className="bb_table_td">605k</div>{" "}
-            <div className="bb_table_td">655k</div>{" "}
-          </div>
-        </div>{" "}
-        <div style={{ clear: "both" }} />
       </div>
     </div>
   );
