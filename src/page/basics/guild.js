@@ -1,8 +1,16 @@
+import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import cssStatic from "./static-content.module.scss";
 
 export default function Guild() {
   return (
-    <div className="subSection detailBox" id={2954636}>
+    <div className={cssStatic.container}>
+      <div>
+        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
+        {"  "} Page under construction
+      </div>
+
       <div className="subSectionTitle">Guild</div>
       <div className="subSectionDesc">
         The guild pass is basically a community driven season, where you and you're guild contribute

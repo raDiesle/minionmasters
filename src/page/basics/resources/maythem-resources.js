@@ -2,10 +2,10 @@ import { anchorLinkTarget } from "components/helper";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
 import React from "react";
 
-export default function Maythem() {
+export default function MaythemResources() {
   return (
     <div>
-      {anchorLinkTarget(MENU_LINKS_CONFIG["Maythem"])}
+      {anchorLinkTarget(MENU_LINKS_CONFIG["Maythem Rewards"])}
       <fieldset>
         <legend>Rewards</legend>
         The rewards for the mayhem are fixed, except for the cards that changes every time.

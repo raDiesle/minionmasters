@@ -2,9 +2,9 @@ import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Basics from "page/basics/basics";
-import Maythem from "page/basics/maythem";
 
 import DeckContainer from "page/carddeck/DeckContainer";
+import DiscussOnCards from "page/discussion/discuss-on-cards";
 import qs from "qs";
 import Tooltip from "rc-tooltip";
 import React from "react";
@@ -39,9 +39,7 @@ export function Page() {
           </Tab>
         </TabList>
         <TabPanel>
-          <Maythem />
-
-          {/*  <DiscussOnCards />*/}
+          <DiscussOnCards />
         </TabPanel>
         <TabPanel>
           <Masters />

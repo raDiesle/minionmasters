@@ -1,14 +1,19 @@
+import AdventureRewards from "page/basics/resources/adventure-rewards";
+import ChallengesRewards from "page/basics/resources/challenges-rewards";
 import Freebies from "page/basics/resources/freebies";
 import HowToShardsAndGold from "page/basics/resources/howto-shards-and-gold";
 import LevelupRewards from "page/basics/resources/levelup-rewards";
-import MaythemResources from "page/basics/resources/maythem";
+import MaythemResources from "page/basics/resources/maythem-resources";
+import Quests from "page/basics/resources/quests";
 import RankRewards from "page/basics/resources/rank-rewards";
 import Resources from "page/basics/resources/resources";
+import SeasonHouseRewards from "page/basics/resources/season-houserewards";
 import SeasonRewards from "page/basics/resources/season-rewards";
 import Shop from "page/basics/resources/shop";
 import SpendRealMoney from "page/basics/resources/spendrealmoney";
 import Tokens from "page/basics/resources/tokens";
 import css from "page/basics/static-content.module.scss";
+
 import React from "react";
 
 export const MENU_LINKS_CONFIG = {
@@ -21,7 +26,9 @@ export const MENU_LINKS_CONFIG = {
   "Level up Rewards": "Level up Rewards",
   "Rank Rewards": "Rank Rewards",
   "Season Battle Pass Rewards": "Season Battle Pass Rewards",
+  "Season House Rewards": "Season House Rewards",
   "Maythem Rewards": "Maythem Rewards",
+  "Challenges Rewards": "Challenges Rewards",
 };
 
 export default function ResourceMngmt() {
@@ -35,34 +42,33 @@ export default function ResourceMngmt() {
     MENU_LINKS_CONFIG["Level up Rewards"],
     MENU_LINKS_CONFIG["Rank Rewards"],
     MENU_LINKS_CONFIG["Season Battle Pass Rewards"],
+    MENU_LINKS_CONFIG["Season House Rewards"],
     MENU_LINKS_CONFIG["Maythem Rewards"],
+    MENU_LINKS_CONFIG["Challenges Rewards"],
   ];
   return (
     <div className={css.container}>
-      <div className={css.container}>
-        <ul>
-          {MENU_ORDER.map((item, index) => (
-            <li key={"menu_" + index}>
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {MENU_ORDER.map((item, index) => (
+          <li key={"menu_" + index}>
+            <a href={`#${item}`}>{item}</a>
+          </li>
+        ))}
+      </ul>
       <Resources />
       <Tokens />
-
       <Shop />
-
+      <Quests />
       <SpendRealMoney />
-
       <HowToShardsAndGold />
-
       <Freebies />
-
       <LevelupRewards />
       <RankRewards />
       <SeasonRewards />
+      <SeasonHouseRewards />
       <MaythemResources />
+      <AdventureRewards />
+      <ChallengesRewards />
     </div>
   );
 }

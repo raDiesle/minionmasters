@@ -1,10 +1,11 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import cssStatic from "./static-content.module.scss";
 
 export default function Draft() {
   return (
-    <div className="subSection detailBox" id={2894045}>
+    <div className={cssStatic.container}>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
         <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
         {"  "} Page under construction
