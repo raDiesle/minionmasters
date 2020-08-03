@@ -373,7 +373,7 @@ export const TERMS_CONFIG = [
 
       {
         key: "SliceAndDice",
-        display: "splice and dice",
+        display: "slice and dice",
         description: "Deals strong Area of Effect damage with its sawblade arm.",
         isBuff: true,
       },

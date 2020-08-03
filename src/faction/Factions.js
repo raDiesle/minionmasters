@@ -21,5 +21,5 @@ export const factionMapping = {
   Slither: <SlitherIcon />,
   Outlander: <OutlanderIcon />,
   Empyrean: <EmpyrianIcon />,
-  Highlander: <StoutheartIcon />,
+  Stoutheart: <StoutheartIcon />,
 };
