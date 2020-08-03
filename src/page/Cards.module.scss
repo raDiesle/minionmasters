@@ -1,5 +1,7 @@
 .CardsStyle {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
 }

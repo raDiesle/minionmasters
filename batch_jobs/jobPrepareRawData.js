@@ -108,6 +108,7 @@ function normalizeGameCardData(propsAsMap) {
   }
 
   propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
+  propsAsMap.targets = propsAsMap.attackOnlyStationary === "True" ? "Building" : propsAsMap.targets;
 
   if (typeof propsAsMap.InheritFromId != "undefined") {
     const inheritFromData = cardDataFromGame.find(
@@ -357,7 +358,7 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
   if (matchedDataFromWikiById) {
     cardDataFromGame.pageId = parseInt(matchedDataFromWikiById.pageId);
     cardDataFromGame.image = matchedDataFromWikiById.image;
-    cardDataFromGame.targets = matchedDataFromWikiById.targets; // to be replaced with hitsTarget, when fixed in dataset
+    //cardDataFromGame.targets = matchedDataFromWikiById.targets; // to be replaced with hitsTarget, when fixed in dataset
     cardDataFromGame.type = matchedDataFromWikiById.type;
     // NOT REQUIRED ANYMORE cardDataFromGame.faction = matchedDataFromWikiById.faction;
   } else {

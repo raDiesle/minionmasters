@@ -137,6 +137,7 @@
         "travelSpeed": 0,
         "iD": 4,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 753,
         "image": "LightningBolt"
     },
@@ -166,7 +167,7 @@
         "dps": 46.66667,
         "iD": 5,
         "faction": "Slither",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 755,
         "image": "LivingStatue"
     },
@@ -277,6 +278,7 @@
         "travelSpeed": 0,
         "iD": 9,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 726,
         "image": "Explosion"
     },
@@ -397,6 +399,7 @@
         "dps": 0,
         "iD": 13,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 788,
         "image": "SpawnerShrine"
     },
@@ -507,6 +510,7 @@
         "travelSpeed": 0,
         "iD": 17,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 748,
         "image": "Clone"
     },
@@ -596,6 +600,7 @@
         "dps": 0,
         "iD": 21,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 690,
         "image": "PowerShrine"
     },
@@ -646,6 +651,7 @@
         "travelSpeed": 0,
         "iD": 23,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 680,
         "image": "SpellPowerSummon"
     },
@@ -735,6 +741,7 @@
         "dps": 0,
         "iD": 26,
         "faction": "Puff",
+        "targets": "Ground",
         "pageId": 757,
         "image": "ManaPuff"
     },
@@ -815,6 +822,7 @@
         "travelSpeed": 0,
         "iD": 29,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 740,
         "image": "HealingFireball"
     },
@@ -835,6 +843,7 @@
         "travelSpeed": 0,
         "iD": 30,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 770,
         "image": "StunThunder"
     },
@@ -855,6 +864,7 @@
         "travelSpeed": 0,
         "iD": 31,
         "faction": "Outlander",
+        "targets": "Ground",
         "pageId": 779,
         "image": "Freeze"
     },
@@ -997,6 +1007,7 @@
         "travelSpeed": 0,
         "iD": 36,
         "faction": "Outlander",
+        "targets": "Ground",
         "pageId": 674,
         "image": "DoomBeam"
     },
@@ -1119,7 +1130,7 @@
         "dps": 66.66666,
         "iD": 40,
         "faction": "Highlander",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 792,
         "image": "Troubadour"
     },
@@ -1209,7 +1220,7 @@
         "dps": 33.33333,
         "iD": 43,
         "faction": "Scrat",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 1197,
         "image": "SiegeTurret"
     },
@@ -1330,7 +1341,7 @@
         "dps": 38.09524,
         "iD": 47,
         "faction": "Outlander",
-        "targets": "All",
+        "targets": "Ground & Air",
         "pageId": 668,
         "image": "DroneContenderHeavy"
     },
@@ -1390,6 +1401,7 @@
         "dps": 0,
         "iD": 49,
         "faction": "Puff",
+        "targets": "Ground",
         "pageId": 1950,
         "image": "DisruptorPuff"
     },
@@ -1419,6 +1431,7 @@
         "dps": 0,
         "iD": 50,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 715,
         "image": "DragonNest"
     },
@@ -1448,6 +1461,7 @@
         "dps": 0,
         "iD": 51,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 702,
         "image": "CrossbowGuild"
     },
@@ -1468,6 +1482,7 @@
         "travelSpeed": 0,
         "iD": 52,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 727,
         "image": "FuturePast"
     },
@@ -1488,6 +1503,7 @@
         "travelSpeed": 0,
         "iD": 53,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 693,
         "image": "CallToArms"
     },
@@ -1538,6 +1554,7 @@
         "travelSpeed": 0,
         "iD": 55,
         "faction": "Puff",
+        "targets": "Ground",
         "pageId": 1635,
         "image": "TrickSwap"
     },
@@ -1588,6 +1605,7 @@
         "travelSpeed": 0,
         "iD": 57,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 675,
         "image": "BlackHole"
     },
@@ -1608,6 +1626,7 @@
         "travelSpeed": 0,
         "iD": 58,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1645,
         "image": "\tBurnthebridges"
     },
@@ -1637,6 +1656,7 @@
         "dps": 0,
         "iD": 59,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1639,
         "image": "Tombstone"
     },
@@ -1654,6 +1674,7 @@
         "delay": 0,
         "iD": 60,
         "faction": "Outlander",
+        "targets": "Ground",
         "pageId": 743,
         "image": "Infiltrators"
     },
@@ -1674,6 +1695,7 @@
         "travelSpeed": 0,
         "iD": 61,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 703,
         "image": "Barrage"
     },
@@ -1795,7 +1817,7 @@
         "dps": 20,
         "iD": 65,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Ground & Air",
         "pageId": 730,
         "image": "Gax"
     },
@@ -1825,7 +1847,7 @@
         "dps": 60,
         "iD": 66,
         "faction": "Voidborne",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 761,
         "image": "Rammer"
     },
@@ -1855,7 +1877,7 @@
         "dps": 33.33333,
         "iD": 67,
         "faction": "Scrat",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 1219,
         "image": "ZeppelinBomber"
     },
@@ -1906,6 +1928,7 @@
         "travelSpeed": 0,
         "iD": 69,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 763,
         "image": "Rampage"
     },
@@ -1935,6 +1958,7 @@
         "dps": 0,
         "iD": 70,
         "faction": "Puff",
+        "targets": "Ground",
         "pageId": 737,
         "image": "HealPuff"
     },
@@ -2016,6 +2040,7 @@
         "travelSpeed": 0,
         "iD": 73,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1253,
         "image": "RagingReinforcements"
     },
@@ -2045,6 +2070,7 @@
         "dps": 0,
         "iD": 74,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1223,
         "image": "Wall"
     },
@@ -2135,6 +2161,7 @@
         "dps": 0,
         "iD": 78,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1222,
         "image": "WalkingBlindDate"
     },
@@ -2245,6 +2272,7 @@
         "travelSpeed": 0,
         "iD": 83,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 1277,
         "image": "LightningBounces"
     },
@@ -2274,7 +2302,7 @@
         "dps": 10,
         "iD": 84,
         "faction": "Empyrean",
-        "targets": "All/Ground",
+        "targets": "Ground & Air",
         "pageId": 1280,
         "image": "SpearThrowers"
     },
@@ -2335,6 +2363,7 @@
         "dps": 0,
         "iD": 88,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1634,
         "image": "ShieldTotem"
     },
@@ -2352,6 +2381,7 @@
         "delay": 4000,
         "iD": 89,
         "faction": "Outlander",
+        "targets": "Ground",
         "pageId": 1643,
         "image": "\tBlastEntry"
     },
@@ -2442,7 +2472,7 @@
         "dps": 75,
         "iD": 93,
         "faction": "Scrat",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 1269,
         "image": "BazookaScrat"
     },
@@ -2463,6 +2493,7 @@
         "travelSpeed": 0,
         "iD": 96,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1372,
         "image": "Hypnotize"
     },
@@ -2483,6 +2514,7 @@
         "travelSpeed": 0,
         "iD": 99,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1301,
         "image": "MagmaStorm"
     },
@@ -2503,6 +2535,7 @@
         "travelSpeed": 0,
         "iD": 100,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1369,
         "image": "SpiritInfusion"
     },
@@ -2523,6 +2556,7 @@
         "travelSpeed": 25000,
         "iD": 103,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 1637,
         "image": "\tArcaneMissiles"
     },
@@ -2552,7 +2586,7 @@
         "dps": 23.07692,
         "iD": 104,
         "faction": "CrystalElf",
-        "targets": "All",
+        "targets": "Ground & Air",
         "pageId": 1638,
         "image": "ArcaneGolem"
     },
@@ -2604,6 +2638,7 @@
         "travelSpeed": 0,
         "iD": 106,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1325,
         "image": "FuturePresent"
     },
@@ -2805,6 +2840,7 @@
         "travelSpeed": 0,
         "iD": 116,
         "faction": "Scrat",
+        "targets": "Ground",
         "pageId": 1640,
         "image": "\tMoreDakka"
     },
@@ -2895,6 +2931,7 @@
         "dps": 0,
         "iD": 122,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 1515,
         "image": "HealingShrine"
     },
@@ -2915,6 +2952,7 @@
         "travelSpeed": 0,
         "iD": 123,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1660,
         "image": "Combustion"
     },
@@ -3057,6 +3095,7 @@
         "travelSpeed": 0,
         "iD": 135,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1693,
         "image": "SummoningRitual"
     },
@@ -3077,6 +3116,7 @@
         "travelSpeed": 0,
         "iD": 138,
         "faction": "Scrat",
+        "targets": "Ground",
         "pageId": 1654,
         "image": "ScratAmbush"
     },
@@ -3188,6 +3228,7 @@
         "travelSpeed": 0,
         "iD": 143,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1656,
         "image": "GamblersBall"
     },
@@ -3277,6 +3318,7 @@
         "dps": 60,
         "iD": 161,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1688,
         "image": "DestructiveDemonDuo"
     },
@@ -3297,6 +3339,7 @@
         "travelSpeed": 0,
         "iD": 162,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1691,
         "image": "Phase"
     },
@@ -3356,7 +3399,7 @@
         "dps": 60,
         "iD": 164,
         "faction": "Voidborne",
-        "targets": "Buildings",
+        "targets": "Building",
         "pageId": 1680,
         "image": "BetrayerRammer"
     },
@@ -3386,6 +3429,7 @@
         "dps": 60,
         "iD": 169,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1689,
         "image": "SharsrakkTwins"
     },
@@ -3403,6 +3447,7 @@
         "delay": 2000,
         "iD": 170,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1692,
         "image": "DragonBall"
     },
@@ -3432,7 +3477,7 @@
         "dps": 40.90909,
         "iD": 172,
         "faction": "Outlander",
-        "targets": "All",
+        "targets": "Ground & Air",
         "pageId": 1663,
         "image": "AIMBot"
     },
@@ -3483,6 +3528,7 @@
         "travelSpeed": 0,
         "iD": 175,
         "faction": "Scrat",
+        "targets": "Ground",
         "pageId": 1703,
         "image": "CheeseDate"
     },
@@ -3503,6 +3549,7 @@
         "travelSpeed": 0,
         "iD": 178,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1707,
         "image": "SunBurn"
     },
@@ -3523,6 +3570,7 @@
         "travelSpeed": 0,
         "iD": 180,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1705,
         "image": "ClearSkies"
     },
@@ -3582,7 +3630,7 @@
         "dps": 10,
         "iD": 183,
         "faction": "Empyrean",
-        "targets": "All/Ground",
+        "targets": "Ground & Air",
         "pageId": 1704,
         "image": "RageThrowers"
     },
@@ -3612,7 +3660,7 @@
         "dps": 10,
         "iD": 184,
         "faction": "Scrat",
-        "targets": "All",
+        "targets": "Ground & Air",
         "pageId": 1706,
         "image": "PropellerHorde"
     },
@@ -3723,6 +3771,7 @@
         "travelSpeed": 0,
         "iD": 188,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 1763,
         "image": "ArcanePrison"
     },
@@ -3773,6 +3822,7 @@
         "travelSpeed": 0,
         "iD": 192,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 1762,
         "image": "ArmoredEscort"
     },
@@ -3853,6 +3903,7 @@
         "travelSpeed": 0,
         "iD": 195,
         "faction": "Puff",
+        "targets": "Ground",
         "pageId": 1757,
         "image": "ManaPuffMadness"
     },
@@ -3873,6 +3924,7 @@
         "travelSpeed": 25000,
         "iD": 196,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1766,
         "image": "WheelOfDoom"
     },
@@ -3953,6 +4005,7 @@
         "travelSpeed": 0,
         "iD": 201,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1777,
         "image": "OnceBitten"
     },
@@ -3973,6 +4026,7 @@
         "travelSpeed": 0,
         "iD": 202,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1780,
         "image": "BatSwarm"
     },
@@ -3993,6 +4047,7 @@
         "travelSpeed": 0,
         "iD": 203,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1783,
         "image": "GraspingThorns"
     },
@@ -4082,6 +4137,7 @@
         "dps": 0,
         "iD": 208,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 1794,
         "image": "Diona_DecoyTrap"
     },
@@ -4102,6 +4158,7 @@
         "travelSpeed": 0,
         "iD": 209,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1781,
         "image": "HowlingMoon"
     },
@@ -4131,7 +4188,7 @@
         "dps": 100,
         "iD": 210,
         "faction": "Accursed",
-        "targets": "All",
+        "targets": "Ground & Air",
         "pageId": 1784,
         "image": "WitchWolf"
     },
@@ -4221,6 +4278,7 @@
         "dps": 0,
         "iD": 214,
         "faction": "Puff",
+        "targets": "Ground",
         "pageId": 1832,
         "image": "Squirepuff"
     },
@@ -4241,6 +4299,7 @@
         "travelSpeed": 0,
         "iD": 215,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1831,
         "image": "Gorrakkgate"
     },
@@ -4331,7 +4390,7 @@
         "dps": 45.45454,
         "iD": 219,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
+        "targets": "Ground",
         "pageId": 1834,
         "image": "Shadowwhelp"
     },
@@ -4442,6 +4501,7 @@
         "travelSpeed": 0,
         "iD": 224,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1921,
         "image": "PoisonStrike"
     },
@@ -4462,6 +4522,7 @@
         "travelSpeed": 0,
         "iD": 226,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 1865,
         "image": "JungleRumble"
     },
@@ -4603,6 +4664,7 @@
         "travelSpeed": 0,
         "iD": 236,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1881,
         "image": "NyrvirsBreath"
     },
@@ -4623,6 +4685,7 @@
         "travelSpeed": 0,
         "iD": 237,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1876,
         "image": "TollOfTheDead"
     },
@@ -4682,6 +4745,7 @@
         "dps": 35.29412,
         "iD": 239,
         "faction": "CrystalElf",
+        "targets": "Ground & Air",
         "pageId": 1877,
         "image": "BorderPatrol"
     },
@@ -4741,7 +4805,7 @@
         "dps": 40,
         "iD": 241,
         "faction": "Accursed",
-        "targets": "All",
+        "targets": "Ground & Air",
         "pageId": 1884,
         "image": "NyrvirAwakens"
     },
@@ -4762,6 +4826,7 @@
         "travelSpeed": 0,
         "iD": 242,
         "faction": "Voidborne",
+        "targets": "Ground",
         "pageId": 1887,
         "image": "SpawnofFury"
     },
@@ -4782,6 +4847,7 @@
         "travelSpeed": 0,
         "iD": 243,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1907,
         "image": "NyrvirQueensDragon"
     },
@@ -4802,6 +4868,7 @@
         "travelSpeed": 0,
         "iD": 244,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1905,
         "image": "LichBook_Drain"
     },
@@ -4822,6 +4889,7 @@
         "travelSpeed": 0,
         "iD": 245,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1904,
         "image": "LichBook_Spirit"
     },
@@ -4851,6 +4919,7 @@
         "dps": 12.5,
         "iD": 246,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1903,
         "image": "LichBook_Skeletons"
     },
@@ -4871,6 +4940,7 @@
         "travelSpeed": 0,
         "iD": 247,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1906,
         "image": "LichBook_Mana"
     },
@@ -4891,6 +4961,7 @@
         "travelSpeed": 0,
         "iD": 248,
         "faction": "Accursed",
+        "targets": "Ground",
         "pageId": 1902,
         "image": "LichQueenBook"
     },
@@ -4920,6 +4991,7 @@
         "dps": 5,
         "iD": 249,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1925,
         "image": "Slitherbound"
     },
@@ -4979,6 +5051,7 @@
         "dps": 0,
         "iD": 252,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1920,
         "image": "CagedProwler"
     },
@@ -4999,6 +5072,7 @@
         "travelSpeed": 0,
         "iD": 253,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1931,
         "image": "SlitheringSummons"
     },
@@ -5077,6 +5151,7 @@
         "delay": 500,
         "iD": 257,
         "faction": "Scrat",
+        "targets": "Ground",
         "pageId": 1928,
         "image": "ScratStorm"
     },
@@ -5127,6 +5202,7 @@
         "travelSpeed": 0,
         "iD": 259,
         "faction": "Slither",
+        "targets": "Ground",
         "pageId": 1922,
         "image": "RitualOfServitude"
     },
@@ -5207,6 +5283,7 @@
         "travelSpeed": 0,
         "iD": 262,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 1965,
         "image": "LeilielsVortex"
     },
@@ -5227,6 +5304,7 @@
         "travelSpeed": 0,
         "iD": 263,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 1955,
         "image": "ArcaneRing"
     },
@@ -5247,6 +5325,7 @@
         "travelSpeed": 0,
         "iD": 264,
         "faction": "Highlander",
+        "targets": "Ground",
         "pageId": 1963,
         "image": "GlennsBrew"
     },
@@ -5358,6 +5437,7 @@
         "travelSpeed": 0,
         "iD": 268,
         "faction": "Highlander",
+        "targets": "Ground",
         "pageId": 1969,
         "image": "Mountainshaper"
     },
@@ -5378,6 +5458,7 @@
         "travelSpeed": 0,
         "iD": 269,
         "faction": "Highlander",
+        "targets": "Ground",
         "pageId": 1971,
         "image": "FrostfeatherFlyby"
     },
@@ -5587,6 +5668,7 @@
         "dps": 41.66667,
         "iD": 276,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 2002,
         "image": "JadeSparkWatchers"
     },
@@ -5607,6 +5689,7 @@
         "travelSpeed": 0,
         "iD": 277,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 2010,
         "image": "Smite"
     },
@@ -5627,6 +5710,7 @@
         "travelSpeed": 0,
         "iD": 278,
         "faction": "Empyrean",
+        "targets": "Ground",
         "pageId": 2009,
         "image": "ArdentAegis"
     },
@@ -5678,6 +5762,7 @@
         "travelSpeed": 0,
         "iD": 280,
         "faction": "ZenChi",
+        "targets": "Ground",
         "pageId": 2001,
         "image": "ShensShockStick"
     },
@@ -5790,6 +5875,7 @@
         "travelSpeed": 0,
         "iD": 290,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 2030,
         "image": "Shield"
     },
@@ -5897,6 +5983,7 @@
         "travelSpeed": 0,
         "iD": 295,
         "faction": "CrystalElf",
+        "targets": "Ground",
         "pageId": 2024,
         "image": "ResonatingBlast"
     },
@@ -5927,7 +6014,7 @@
         "dps": 12.5,
         "iD": 297,
         "faction": "CrystalElf",
-        "targets": "All",
+        "targets": "Ground",
         "pageId": 2031,
         "image": "LadyInfray"
     }

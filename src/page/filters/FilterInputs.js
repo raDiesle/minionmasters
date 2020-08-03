@@ -58,6 +58,7 @@ export function FilterInputs({
   setIsShowNames,
   sortByMana,
   setSortByMana,
+  children,
 }) {
   return (
     <FilterContainerStyle>
@@ -92,13 +93,11 @@ export function FilterInputs({
           </Tooltip>
         </ButtonGroupStyle>
       </div>
-
       <ButtonGroupStyle>
         <ButtonInGroupStyle onClick={() => setFilters(setAllFilterStates(false))}>
           <FontAwesomeIcon icon={faTrashAlt} /> Reset
         </ButtonInGroupStyle>
       </ButtonGroupStyle>
-
       <div>
         Faction
         <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
@@ -107,7 +106,6 @@ export function FilterInputs({
           ))}
         </ButtonFilterGroup>
       </div>
-
       <div style={{ paddingRight: 0 }}>
         Manacost
         <ButtonFilterGroup
@@ -121,7 +119,6 @@ export function FilterInputs({
           ))}
         </ButtonFilterGroup>
       </div>
-
       <ButtonGroupStyle>
         <ButtonInGroupStyle
           isButtonActive={sortByMana === "asc"}
@@ -140,7 +137,6 @@ export function FilterInputs({
           </Tooltip>
         </ButtonInGroupStyle>
       </ButtonGroupStyle>
-
       <div>
         Rarity
         <ButtonFilterGroup btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
@@ -155,7 +151,6 @@ export function FilterInputs({
           ))}
         </ButtonFilterGroup>
       </div>
-
       <div>
         Type
         <ButtonFilterGroup btnkey="type" filters={filters.type} setFilters={setFilters}>
@@ -166,7 +161,6 @@ export function FilterInputs({
           ))}
         </ButtonFilterGroup>
       </div>
-
       <div>
         Attack
         <ButtonFilterGroup btnkey="targets" filters={filters.targets} setFilters={setFilters}>
@@ -175,6 +169,7 @@ export function FilterInputs({
           ))}
         </ButtonFilterGroup>
       </div>
+      {children}
     </FilterContainerStyle>
   );
 }
