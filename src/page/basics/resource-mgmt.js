@@ -1,3 +1,4 @@
+import Achievements from "page/basics/resources/achievements";
 import AdventureRewards from "page/basics/resources/adventure-rewards";
 import ChallengesRewards from "page/basics/resources/challenges-rewards";
 import DraftRewards from "page/basics/resources/draft-rewards";
@@ -22,6 +23,8 @@ export const MENU_LINKS_CONFIG = {
   Resources: "Resource Types",
   Tokens: "Tokens",
   Shop: "Shop",
+  Achievements: "Achievements",
+  Quests: "Quests",
   "How to spend real money": "How to spend real money",
   "How to spend shards and gold": "How to spend shards and gold",
   Freebies: "Freebies",
@@ -40,6 +43,8 @@ export default function ResourceMngmt() {
     MENU_LINKS_CONFIG.Resources,
     MENU_LINKS_CONFIG["Tokens"],
     MENU_LINKS_CONFIG.Shop,
+    MENU_LINKS_CONFIG.Achievements,
+    MENU_LINKS_CONFIG.Quests,
     MENU_LINKS_CONFIG["How to spend real money"],
     MENU_LINKS_CONFIG["How to spend shards and gold"],
     MENU_LINKS_CONFIG["Freebies"],
@@ -64,6 +69,7 @@ export default function ResourceMngmt() {
       <Resources />
       <Tokens />
       <Shop />
+      <Achievements />
       <Quests />
       <SpendRealMoney />
       <HowToShardsAndGold />

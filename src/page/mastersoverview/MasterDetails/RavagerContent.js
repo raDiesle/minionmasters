@@ -5,12 +5,12 @@ import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import IconDamage from "./icon-damage.png";
 
-export default function RavangerContent() {
+export default function RavagerContent() {
   return (
     <div>
-      <h3 className={css.MasterHeaderStyle}>Ravanger</h3>
+      <h3 className={css.MasterHeaderStyle}>ravager</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
-        Ravanger is a fierce Master, able to quickly tear through close combat minions, but if they
+        ravager is a fierce Master, able to quickly tear through close combat minions, but if they
         are ranged, he has a problem and that's where he needs Brutus!
       </div>
 

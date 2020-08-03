@@ -391,6 +391,7 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
       291: "SummonUndyingCorpse.jpg",
       292: "GroundMinionsAndSummonSkeletons.jpg",
       293: "CorpseExplosion.jpg",
+      218: "MorgrulsRagers.jpg",
     };
     cardDataFromGame.image = gameIdToCustomImage[cardDataFromGame.iD] || "Notavailable.png";
   }
