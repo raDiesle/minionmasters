@@ -101,6 +101,9 @@ function normalizeGameCardData(propsAsMap) {
   propsAsMap.iD = parseInt(propsAsMap.iD);
 
   propsAsMap.faction = propsAsMap.Faction;
+
+  propsAsMap.faction = propsAsMap.faction === "Highlander" ? "Stoutheart" : propsAsMap.faction;
+
   delete propsAsMap.Faction;
 
   if (propsAsMap.type === "DefensiveSpell") {
@@ -130,6 +133,17 @@ function normalizeGameCardData(propsAsMap) {
         errorList.push("cannot inherit from: " + propsAsMap.InheritFromId);
       }
     });
+  }
+
+  if (["Spell", "SummonSpell", "DefensiveSpell"].includes(propsAsMap.type)) {
+    propsAsMap.type = "Spell";
+  } else if (["Minion", "MultiMinion"].includes(propsAsMap.type)) {
+    if (propsAsMap.flying === "True") {
+      propsAsMap.type = "Flying Minion";
+    } else {
+      propsAsMap.type =
+        propsAsMap.type === "Trap" || propsAsMap.speed === 0 ? "Building" : "Minion";
+    }
   }
 
   const iDsMasterAbilitySpells = [
@@ -359,7 +373,7 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
     cardDataFromGame.pageId = parseInt(matchedDataFromWikiById.pageId);
     cardDataFromGame.image = matchedDataFromWikiById.image;
     //cardDataFromGame.targets = matchedDataFromWikiById.targets; // to be replaced with hitsTarget, when fixed in dataset
-    cardDataFromGame.type = matchedDataFromWikiById.type;
+    // cardDataFromGame.type = matchedDataFromWikiById.type;
     // NOT REQUIRED ANYMORE cardDataFromGame.faction = matchedDataFromWikiById.faction;
   } else {
     const gameIdToCustomImage = {
