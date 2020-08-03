@@ -34,12 +34,7 @@ export const TERMS_CONFIG = [
         description: "Blocks all damage from the next damage source.",
         isBuff: true,
       },
-      {
-        key: "DivineShield",
-        display: "Divine Shield",
-        description: "A holy shield that makes the wearer immune to damage. Duration 6.",
-        isBuff: true,
-      },
+
       {
         key: "Taunt",
         display: "Taunt",
@@ -64,6 +59,30 @@ export const TERMS_CONFIG = [
         display: "Poison",
         description: "Deals damage over time to a Minion. Cooldown: 0,5. Damage: 10",
         isBuff: false,
+      },
+      {
+        key: "Marksmanship",
+        display: "Marksmanship",
+        description: "+2 range",
+        isBuff: true,
+      },
+      {
+        key: "RushBuff",
+        display: "Rush",
+        description: "Starts acting immediately after being summoned.",
+        isBuff: true,
+      },
+      {
+        key: "DestroyBuff",
+        display: "Destroy",
+        description: "Kill a Unit. If it is Mythic, deal 1000 damage instead.",
+        isBuff: false,
+      },
+      {
+        key: "StealthBuff",
+        display: "Stealth",
+        description: "Becomes invisible while not attacking or taking damage for 2 seconds.",
+        isBuff: true,
       },
     ],
   },
@@ -127,6 +146,12 @@ export const TERMS_CONFIG = [
           "If a Voidborne Minion deals damage to enemy Master while this card is in your hand",
         isBuff: true,
       },
+      {
+        key: "TurncoatBuff",
+        display: "Turncoat",
+        description: "Switches sides the first time it drops below 50% health",
+        isBuff: false,
+      },
     ],
   },
   {
@@ -152,12 +177,25 @@ export const TERMS_CONFIG = [
         description: "Loses 3% of max health every second.",
         isBuff: false,
       },
+      {
+        key: "UndyingCorpse",
+        display: "Undying Corpse",
+        description: "Resurrects the Undying Skeleton one last time after a delay. Delay: 25",
+        isBuff: true,
+      },
+      {
+        key: "LycanthropyBuff",
+        display: "Lycanthropy",
+        description:
+          "Transform into a Werewolf when health is 50% or below. Werewolf Health: 400. Damage per sec: 36.36",
+        isBuff: true,
+      },
     ],
   },
 
   {
     category: "HIGHLANDER",
-    display: "STOUTHEART",
+    display: "Stoutheart",
     terms: [
       // Revelry
       {
@@ -244,13 +282,6 @@ export const TERMS_CONFIG = [
         description: "Kill all Slitherbound you command.",
         isBuff: true,
       },
-      {
-        key: "SoulStealBuff",
-        display: "Soul Steal",
-        description:
-          "Steals his enemies' souls when he kills them. Increase attack speed by 20% for each soul he has collected (Max 200%).",
-        isBuff: true,
-      },
     ],
   },
   {
@@ -262,6 +293,32 @@ export const TERMS_CONFIG = [
         display: "Empyrean Army",
         description:
           "If you have 5 or more Empyrean cards in your deck at the time this card is played.",
+        isBuff: true,
+      },
+      {
+        key: "DivineShield",
+        display: "Divine Shield",
+        description: "A holy shield that makes the wearer immune to damage. Duration 6.",
+        isBuff: true,
+      },
+    ],
+  },
+  {
+    category: "SCRAT",
+    display: "Scrat",
+    terms: [
+      {
+        key: "BarrelShield",
+        display: "Barrel Shield",
+        description:
+          "This Scrat wears a barrel which protects it but slows it down. When the barrel is destroyed, the Scrat emerge unscathed.",
+        isBuff: true,
+      },
+      {
+        key: "ScratSwarm",
+        display: "Scrat Swarm",
+        description:
+          "This Scrat wears a barrel which protects it but slows it down. When the barrel is destroyed, the Scrat emerge unscathed.",
         isBuff: true,
       },
     ],
@@ -277,25 +334,6 @@ export const TERMS_CONFIG = [
         description:
           "Leaves the battlefield instead of dying. Your team can only have one copy of this minion summoned at a time.",
         isBuff: false,
-      },
-      {
-        key: "Explodes",
-        display: "Explodes",
-        description: `Detonates shortly after being summoned and deals damage to all nearby Units.`,
-        isBuff: true,
-      },
-      {
-        key: "Marksmanship",
-        display: "Marksmanship",
-        description: "+2 range",
-        isBuff: true,
-      },
-
-      {
-        key: "RushBuff",
-        display: "Rush",
-        description: "Starts acting immediately after being summoned.",
-        isBuff: true,
       },
     ],
   },
@@ -318,10 +356,23 @@ export const TERMS_CONFIG = [
         isBuff: true,
       },
       {
+        key: "SoulStealBuff",
+        display: "Soul Steal",
+        description:
+          "Steals his enemies' souls when he kills them. Increase attack speed by 20% for each soul he has collected (Max 200%).",
+        isBuff: true,
+      },
+      {
         key: "ImpactfulEntry",
         display: "Impactful Entry",
         description:
           "Lands in the arena with devastating force pushing nearby enemy minions away and deals 100 damage.",
+        isBuff: true,
+      },
+      {
+        key: "Explodes",
+        display: "Explodes",
+        description: `Detonates shortly after being summoned and deals damage to all nearby Units.`,
         isBuff: true,
       },
       {
@@ -454,12 +505,7 @@ export const TERMS_CONFIG = [
           "After a delay, release a piercing shot that deals damage to all Units in a straight line. Damage: 75. Delay: 2. Radius: 2. Range: Unlimited",
         isBuff: true,
       },
-      {
-        key: "DestroyBuff",
-        display: "Destroy",
-        description: "Kill a Unit. If it is Mythic, deal 1000 damage instead.",
-        isBuff: false,
-      },
+
       {
         key: "CursedAuraBuff",
         display: "Cursed Aura",
@@ -467,44 +513,13 @@ export const TERMS_CONFIG = [
           "Nearby enemy ground Minions lose 3% of their max health every second. The aura even persists after his death!",
         isBuff: false,
       },
-      {
-        key: "UndyingCorpse",
-        display: "Undying Corpse",
-        description: "Resurrects the Undying Skeleton one last time after a delay. Delay: 25",
-        isBuff: true,
-      },
+
       {
         key: "SoulDetonateBuff",
         display: "Soul Detonate",
         description:
           "Detonate the Minion's soul and deal damage to nearby enemies. Radius: 14. Damage: 20",
         isBuff: false,
-      },
-      {
-        key: "StealthBuff",
-        display: "Stealth",
-        description: "Becomes invisible while not attacking or taking damage for 2 seconds.",
-        isBuff: true,
-      },
-      {
-        key: "TurncoatBuff",
-        display: "Turncoat",
-        description: "Switches sides the first time it drops below 50% health",
-        isBuff: false,
-      },
-      {
-        key: "BarrelShield",
-        display: "Barrel Shield",
-        description:
-          "This Scrat wears a barrel which protects it but slows it down. When the barrel is destroyed, the Scrat emerge unscathed.",
-        isBuff: true,
-      },
-      {
-        key: "LycanthropyBuff",
-        display: "Lycanthropy",
-        description:
-          "Transform into a Werewolf when health is 50% or below. Werewolf Health: 400. Damage per sec: 36.36",
-        isBuff: true,
       },
       {
         key: "MalfunctionBuffScreamingScrat",

@@ -1,9 +1,11 @@
 import { faReddit } from "@fortawesome/free-brands-svg-icons/faReddit";
+import { faSteam } from "@fortawesome/free-brands-svg-icons/faSteam";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { anchorLinkTarget } from "components/helper";
 import { MENU_LINKS_CONFIG } from "page/basics/resource-mgmt";
+import css from "page/CardDetailsModal.module.scss";
 import React from "react";
 
 export default function Freebies() {
@@ -24,6 +26,23 @@ export default function Freebies() {
           >
             <b>Codes for new and old players to gain a massive amount of rewards</b>
           </a>{" "}
+          <div>
+            <a
+              href={`https://steamcommunity.com/sharedfiles/filedetails/?id=1976644824`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.steamIcon}
+              color="#fd7e14"
+            >
+              <span className={classNames("fa-layers fa-fw")}>
+                <FontAwesomeIcon icon={faSquare} size="lg" />
+                <FontAwesomeIcon icon={faSteam} size="lg" mask={["far", "circle"]} />{" "}
+              </span>
+              <span>
+                <b> FREE Minion Masters Codes (constantly updated!)</b>{" "}
+              </span>
+            </a>
+          </div>
         </div>
       </fieldset>
 

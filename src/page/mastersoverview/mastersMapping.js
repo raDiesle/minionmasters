@@ -6,7 +6,7 @@ import MilloweenContent from "./MasterDetails/MilloweenContent";
 import MordarContent from "./MasterDetails/MordarContent";
 import MoreillaContent from "./MasterDetails/MoreillaContent";
 import RatboContent from "./MasterDetails/RatboContent";
-import RavangerContent from "./MasterDetails/RavangerContent";
+import RavagerContent from "page/mastersoverview/MasterDetails/RavagerContent";
 import SettsuContent from "./MasterDetails/SettsuContent";
 import StormbringerContent from "./MasterDetails/StormbringerContent";
 import VolcoContent from "./MasterDetails/VolcoContent";
@@ -47,8 +47,8 @@ export const mastersMapping = {
     icon: "Ratbo_Icon",
     iD: 4,
   },
-  Ravanger: {
-    content: <RavangerContent />,
+  ravager: {
+    content: <RavagerContent />,
     icon: "Ravager_Icon",
     iD: 3,
   },
