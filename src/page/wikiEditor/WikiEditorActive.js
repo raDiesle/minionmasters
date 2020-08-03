@@ -116,9 +116,9 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
         txtarea.focus();
       }
       txtarea.scrollTop = scrollPos;
-    }, 0); // TODO async issue? move to useasyncEffect in editor
+    }, 500); // TODO async issue? move to useasyncEffect in editor
   };
-
+  // TODO
   const addCard = () => {
     insertAtCaret(editorRef.current, MENTION_IDENTIFIER);
   };
@@ -151,19 +151,17 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
         }}
       >
         <ButtonGroupStyle>
-          <ButtonInGroupStyle onClick={() => addCard()}>
-            <FontAwesomeIcon icon={faPlus} /> Reference Master or Card
-          </ButtonInGroupStyle>
           <Tooltip
             placement="top"
             overlay={
               <span>
-                Press button or type {MENTION_IDENTIFIER}. You can start typing to filter references
-                by name.
+                type {MENTION_IDENTIFIER} and start typing to filter references by name and select
+                it.
               </span>
             }
           >
             <ButtonInGroupStyle>
+              How to reference a Master or Card
               <FontAwesomeIcon icon={faInfoCircle} size={"sm"} />
             </ButtonInGroupStyle>
           </Tooltip>

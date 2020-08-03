@@ -38,16 +38,17 @@ export default {
   suggestions: {
     list: {
       backgroundColor: "#000",
-      border: "1px solid yellow",
+      border: "1px solid rgba(0,0,0,0)",
       fontSize: 14,
       display: "flex",
       flexWrap: "wrap",
     },
     item: {
       padding: "0px 0px",
-      borderBottom: "1px solid #fff",
+      border: "1px solid rgba(0,0,0,0)",
+      color: "rgba(0,0,0,0)",
       "&focused": {
-        backgroundColor: "#444",
+        borderColor: "yellow",
       },
     },
   },

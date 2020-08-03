@@ -102,7 +102,11 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setIsShowNames={setIsShowNames}
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
-      />
+      >
+        <div style={{ marginLeft: "auto", paddingRight: "0", paddingBottom: "6px" }}>
+          Results: {sortedByManaCards.length}/{fullCount}
+        </div>
+      </FilterInputs>
 
       <Cards
         cards={sortedByManaCards}

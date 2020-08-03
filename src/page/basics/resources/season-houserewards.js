@@ -20,18 +20,30 @@ export default function SeasonHouseRewards() {
         since you'll get shards from them, and even if 10 shards looks a small amount, when you get
         them all you will have many more (sometimes even 600!!!)
       </div>
-      <img
-        src="img/basics/season_house_reward.png"
-        alt="season house rewards"
-        style={{ maxWidth: "200px" }}
-      />
+
       <fieldset>
         <legend>Example for a season house reward</legend>
-        <img
-          src="img/basics/tri_team_journey_example.png"
-          alt="tri team journey example"
-          style={{ maxWidth: "350px" }}
-        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <img
+              src="img/basics/season_house_reward.png"
+              alt="season house rewards"
+              style={{ maxWidth: "200px", width: "100%", paddingRight: "10px" }}
+            />
+          </div>
+          <img
+            src="img/basics/tri_team_journey_example.png"
+            alt="tri team journey example"
+            style={{ maxWidth: "350px", width: "100%" }}
+          />
+        </div>
       </fieldset>
     </div>
   );

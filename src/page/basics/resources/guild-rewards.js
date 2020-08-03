@@ -152,7 +152,7 @@ export default function GuildRewards() {
           <img
             src="img/basics/guild_formula.png"
             alt="Guild formula"
-            style={{ maxWidth: "400px" }}
+            style={{ maxWidth: "400px", width: "100%" }}
           />
         </div>
       </fieldset>
