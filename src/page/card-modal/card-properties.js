@@ -183,7 +183,14 @@ export default function CardProperties({
       {radius && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Radius</CardPropertyKeyStyle>
-          <div className={css.CardProperyValue}>{radius / 1000}</div>
+          <div className={css.CardProperyValue}>
+            <img
+              src="img/icon-radius.png"
+              alt="radius"
+              style={{ width: "auto", height: "25px", verticalAlign: "text-top" }}
+            />{" "}
+            {radius / 1000}
+          </div>
         </CardPropertyLiStyle>
       )}
 
