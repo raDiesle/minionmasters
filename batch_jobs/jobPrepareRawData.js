@@ -106,13 +106,6 @@ function normalizeGameCardData(propsAsMap) {
 
   delete propsAsMap.Faction;
 
-  if (propsAsMap.type === "DefensiveSpell") {
-    propsAsMap.type = "Spell";
-  }
-
-  propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
-  propsAsMap.targets = propsAsMap.attackOnlyStationary === "True" ? "Building" : propsAsMap.targets;
-
   if (typeof propsAsMap.InheritFromId != "undefined") {
     const inheritFromData = cardDataFromGame.find(
       ({ UnitId }) => parseInt(UnitId) === parseInt(propsAsMap.InheritFromId)
@@ -144,6 +137,12 @@ function normalizeGameCardData(propsAsMap) {
       propsAsMap.type =
         propsAsMap.type === "Trap" || propsAsMap.speed === 0 ? "Building" : "Minion";
     }
+  }
+
+  propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
+  propsAsMap.targets = propsAsMap.attackOnlyStationary === "True" ? "Building" : propsAsMap.targets;
+  if (propsAsMap.type === "Spell") {
+    propsAsMap.targets = "Is Spell";
   }
 
   const iDsMasterAbilitySpells = [
@@ -268,6 +267,37 @@ function normalizeGameCardData(propsAsMap) {
     /<link="actor_skill:([ a-zA-Z]+?)><b><color=orange>([ a-zA-Z(0-9)-]+?)<\/color><\/b><\/link>/gm,
     `{"$2", "${TYPE_TERM}","$1"}`
   );
+  propsAsMap.description = propsAsMap.description.replace(
+    "ERROR_[r:WitchQueenBookEffect1DescriptionPerk1][mec:[r:WitchQueenPerk2]]: [r:WitchQueenBookEffect1DescriptionPerk2]",
+    "Summon 3 on Perk 1, 6 on Perk 2 Skelettons"
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[math:[av:CrossbowTrap.Damage]/[av:CrossbowTrap.AttackCooldown]]",
+    " 30 "
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[av:CrossbowTrap.LifeTime]",
+    "15 seconds "
+  );
+  propsAsMap.description = propsAsMap.description.replace("[av:DecoyTrap.LifeTime]", " 15 ");
+
+  propsAsMap.description = propsAsMap.description.replace("[av:DecoyTrap.MaxHealth]", " 300 ");
+  propsAsMap.description = propsAsMap.description.replace("[r:DionaCrossBowTrap]", "Crossbow Trap");
+
+  propsAsMap.description = propsAsMap.description.replace("[mec:[r:Nyrvir]]", "Nyrvir");
+
+  propsAsMap.description = propsAsMap.description.replace("[mec:[av:Nyrvir.MaxHealth]", " 2000 ");
+
+  propsAsMap.description = propsAsMap.description.replace("[av:CrossbowTrap.MaxHealth]", " 100 ");
+
+  propsAsMap.description = propsAsMap.description.replace("[av:Nyrvir.Damage]", " 320 ");
+
+  propsAsMap.description = propsAsMap.description.replace("(Dps: [dps:Nyrvir])]", " (Dps: 40) ");
+
+  propsAsMap.description = propsAsMap.description.replace("[sv:BlastEntry.Damage]", " 50 ");
+  propsAsMap.description = propsAsMap.description.replace("[av:SettsuMinion.MaxHealth]", " 300 ");
+
+  propsAsMap.description = propsAsMap.description.replace("[r:DionaDecoyTrap]", "Decoy Trap");
 
   //  <link="actor_info:CrystalSentry>Crystal Sentries</link>
   // <link="actor_info:ShiHouMonkey>Shi-Hou</link>
@@ -275,7 +305,12 @@ function normalizeGameCardData(propsAsMap) {
     /<link="actor_info:([ a-zA-Z]+?)>([ a-zA-Z-]+?)<\/link>/gm,
     `{"$2", "${TYPE_CARD_REF}","$1"}`
   );
+  propsAsMap.description = propsAsMap.description.replace(
+    "<b><color=orange>Unholy Bargain</color></b>",
+    " Unholy Bargain"
+  );
 
+  // <b><color=orange>Unholy Bargain</color></b>
   // only to be used when not nested with other variables, otherwise handled above
   propsAsMap.description = propsAsMap.description.replace(
     /<b><color=orange>([ a-zA-Z]?)<\/color><\/b>/gm,

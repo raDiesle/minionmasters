@@ -137,7 +137,7 @@
         "travelSpeed": 0,
         "iD": 4,
         "faction": "ZenChi",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 753,
         "image": "LightningBolt"
     },
@@ -278,7 +278,7 @@
         "travelSpeed": 0,
         "iD": 9,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 726,
         "image": "Explosion"
     },
@@ -510,7 +510,7 @@
         "travelSpeed": 0,
         "iD": 17,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 748,
         "image": "Clone"
     },
@@ -651,7 +651,7 @@
         "travelSpeed": 0,
         "iD": 23,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 680,
         "image": "SpellPowerSummon"
     },
@@ -822,7 +822,7 @@
         "travelSpeed": 0,
         "iD": 29,
         "faction": "ZenChi",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 740,
         "image": "HealingFireball"
     },
@@ -843,7 +843,7 @@
         "travelSpeed": 0,
         "iD": 30,
         "faction": "ZenChi",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 770,
         "image": "StunThunder"
     },
@@ -864,7 +864,7 @@
         "travelSpeed": 0,
         "iD": 31,
         "faction": "Outlander",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 779,
         "image": "Freeze"
     },
@@ -1007,7 +1007,7 @@
         "travelSpeed": 0,
         "iD": 36,
         "faction": "Outlander",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 674,
         "image": "DoomBeam"
     },
@@ -1482,7 +1482,7 @@
         "travelSpeed": 0,
         "iD": 52,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 727,
         "image": "FuturePast"
     },
@@ -1503,7 +1503,7 @@
         "travelSpeed": 0,
         "iD": 53,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 693,
         "image": "CallToArms"
     },
@@ -1554,7 +1554,7 @@
         "travelSpeed": 0,
         "iD": 55,
         "faction": "Puff",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1635,
         "image": "TrickSwap"
     },
@@ -1605,7 +1605,7 @@
         "travelSpeed": 0,
         "iD": 57,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 675,
         "image": "BlackHole"
     },
@@ -1626,7 +1626,7 @@
         "travelSpeed": 0,
         "iD": 58,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1645,
         "image": "\tBurnthebridges"
     },
@@ -1674,7 +1674,7 @@
         "delay": 0,
         "iD": 60,
         "faction": "Outlander",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 743,
         "image": "Infiltrators"
     },
@@ -1695,7 +1695,7 @@
         "travelSpeed": 0,
         "iD": 61,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 703,
         "image": "Barrage"
     },
@@ -1928,7 +1928,7 @@
         "travelSpeed": 0,
         "iD": 69,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 763,
         "image": "Rampage"
     },
@@ -2040,7 +2040,7 @@
         "travelSpeed": 0,
         "iD": 73,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1253,
         "image": "RagingReinforcements"
     },
@@ -2272,7 +2272,7 @@
         "travelSpeed": 0,
         "iD": 83,
         "faction": "ZenChi",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1277,
         "image": "LightningBounces"
     },
@@ -2374,14 +2374,14 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "BlastEntry",
-        "description": "Settsu enters the battlefield and deals damage to nearby enemies on impact.Damage: [sv:BlastEntry.Damage]Shield Health: [av:SettsuMinion.MaxHealth]",
+        "description": "Settsu enters the battlefield and deals damage to nearby enemies on impact.Damage:  50 Shield Health:  300 ",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "radius": 4500,
         "delay": 4000,
         "iD": 89,
         "faction": "Outlander",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1643,
         "image": "\tBlastEntry"
     },
@@ -2493,7 +2493,7 @@
         "travelSpeed": 0,
         "iD": 96,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1372,
         "image": "Hypnotize"
     },
@@ -2514,7 +2514,7 @@
         "travelSpeed": 0,
         "iD": 99,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1301,
         "image": "MagmaStorm"
     },
@@ -2535,7 +2535,7 @@
         "travelSpeed": 0,
         "iD": 100,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1369,
         "image": "SpiritInfusion"
     },
@@ -2556,7 +2556,7 @@
         "travelSpeed": 25000,
         "iD": 103,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1637,
         "image": "\tArcaneMissiles"
     },
@@ -2638,7 +2638,7 @@
         "travelSpeed": 0,
         "iD": 106,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1325,
         "image": "FuturePresent"
     },
@@ -2840,7 +2840,7 @@
         "travelSpeed": 0,
         "iD": 116,
         "faction": "Scrat",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1640,
         "image": "\tMoreDakka"
     },
@@ -2952,7 +2952,7 @@
         "travelSpeed": 0,
         "iD": 123,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1660,
         "image": "Combustion"
     },
@@ -3095,7 +3095,7 @@
         "travelSpeed": 0,
         "iD": 135,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1693,
         "image": "SummoningRitual"
     },
@@ -3116,7 +3116,7 @@
         "travelSpeed": 0,
         "iD": 138,
         "faction": "Scrat",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1654,
         "image": "ScratAmbush"
     },
@@ -3228,7 +3228,7 @@
         "travelSpeed": 0,
         "iD": 143,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1656,
         "image": "GamblersBall"
     },
@@ -3339,7 +3339,7 @@
         "travelSpeed": 0,
         "iD": 162,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1691,
         "image": "Phase"
     },
@@ -3447,7 +3447,7 @@
         "delay": 2000,
         "iD": 170,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1692,
         "image": "DragonBall"
     },
@@ -3528,7 +3528,7 @@
         "travelSpeed": 0,
         "iD": 175,
         "faction": "Scrat",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1703,
         "image": "CheeseDate"
     },
@@ -3549,7 +3549,7 @@
         "travelSpeed": 0,
         "iD": 178,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1707,
         "image": "SunBurn"
     },
@@ -3570,7 +3570,7 @@
         "travelSpeed": 0,
         "iD": 180,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1705,
         "image": "ClearSkies"
     },
@@ -3771,7 +3771,7 @@
         "travelSpeed": 0,
         "iD": 188,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1763,
         "image": "ArcanePrison"
     },
@@ -3822,7 +3822,7 @@
         "travelSpeed": 0,
         "iD": 192,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1762,
         "image": "ArmoredEscort"
     },
@@ -3903,7 +3903,7 @@
         "travelSpeed": 0,
         "iD": 195,
         "faction": "Puff",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1757,
         "image": "ManaPuffMadness"
     },
@@ -3924,7 +3924,7 @@
         "travelSpeed": 25000,
         "iD": 196,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1766,
         "image": "WheelOfDoom"
     },
@@ -4005,7 +4005,7 @@
         "travelSpeed": 0,
         "iD": 201,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1777,
         "image": "OnceBitten"
     },
@@ -4026,7 +4026,7 @@
         "travelSpeed": 0,
         "iD": 202,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1780,
         "image": "BatSwarm"
     },
@@ -4047,7 +4047,7 @@
         "travelSpeed": 0,
         "iD": 203,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1783,
         "image": "GraspingThorns"
     },
@@ -4088,7 +4088,7 @@
         "type": "Trap",
         "rarity": "Perk",
         "imageName": "Diona_CrossbowTrap",
-        "description": "Fires bolts at nearby minions.DPS: [math:[av:CrossbowTrap.Damage]/[av:CrossbowTrap.AttackCooldown]]Health: [av:CrossbowTrap.MaxHealth]Duration: [av:CrossbowTrap.LifeTime] secondsWhen used, this card becomes a {\"DionaDecoyTrap\", \"TERM\", \"DionaDecoyTrap\"}",
+        "description": "Fires bolts at nearby minions.DPS:  30 Health:  100 Duration: 15 seconds  secondsWhen used, this card becomes a Decoy Trap",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4118,7 +4118,7 @@
         "type": "Trap",
         "rarity": "Perk",
         "imageName": "Diona_DecoyTrap",
-        "description": "Taunts nearby minionsHealth: [av:DecoyTrap.MaxHealth]Duration: [av:DecoyTrap.LifeTime] secWhen used, this card becomes a {\"DionaCrossBowTrap\", \"TERM\", \"DionaCrossBowTrap\"}.",
+        "description": "Taunts nearby minionsHealth:  300 Duration:  15  secWhen used, this card becomes a Crossbow Trap.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4158,7 +4158,7 @@
         "travelSpeed": 0,
         "iD": 209,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1781,
         "image": "HowlingMoon"
     },
@@ -4299,7 +4299,7 @@
         "travelSpeed": 0,
         "iD": 215,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1831,
         "image": "Gorrakkgate"
     },
@@ -4501,7 +4501,7 @@
         "travelSpeed": 0,
         "iD": 224,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1921,
         "image": "PoisonStrike"
     },
@@ -4522,7 +4522,7 @@
         "travelSpeed": 0,
         "iD": 226,
         "faction": "ZenChi",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1865,
         "image": "JungleRumble"
     },
@@ -4664,7 +4664,7 @@
         "travelSpeed": 0,
         "iD": 236,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1881,
         "image": "NyrvirsBreath"
     },
@@ -4685,7 +4685,7 @@
         "travelSpeed": 0,
         "iD": 237,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1876,
         "image": "TollOfTheDead"
     },
@@ -4826,7 +4826,7 @@
         "travelSpeed": 0,
         "iD": 242,
         "faction": "Voidborne",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1887,
         "image": "SpawnofFury"
     },
@@ -4837,7 +4837,7 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "NyrvirQueensDragon",
-        "description": "The mighty [mec:{\"Nyrvir\", \"TERM\", \"Nyrvir\"}] enters the battlefield with [mec:[av:Nyrvir.MaxHealth] Max Health and [av:Nyrvir.Damage] Damage (Dps: [dps:Nyrvir])]",
+        "description": "The mighty Nyrvir enters the battlefield with  2000  Max Health and  320  Damage  (Dps: 40) ",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 325,
@@ -4847,7 +4847,7 @@
         "travelSpeed": 0,
         "iD": 243,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1907,
         "image": "NyrvirQueensDragon"
     },
@@ -4858,7 +4858,7 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "LichBook_Drain",
-        "description": "Drain 100 health from the closest enemy Minion, transfering it to Morellia<b><color=orange>Unholy Bargain</color></b>: Drain 100 health from the 2 closest enemy Minions, transfering it to Morellia",
+        "description": "Drain 100 health from the closest enemy Minion, transfering it to Morellia Unholy Bargain: Drain 100 health from the 2 closest enemy Minions, transfering it to Morellia",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 100,
@@ -4868,7 +4868,7 @@
         "travelSpeed": 0,
         "iD": 244,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1905,
         "image": "LichBook_Drain"
     },
@@ -4879,7 +4879,7 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "LichBook_Spirit",
-        "description": "Give a random friendly Minion Spirit (increases max Health).<b><color=orange>Unholy Bargain</color></b>: Give 2 random friendly Minions Spirit (increases max Health).",
+        "description": "Give a random friendly Minion Spirit (increases max Health). Unholy Bargain: Give 2 random friendly Minions Spirit (increases max Health).",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 325,
@@ -4889,7 +4889,7 @@
         "travelSpeed": 0,
         "iD": 245,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1904,
         "image": "LichBook_Spirit"
     },
@@ -4900,7 +4900,7 @@
         "type": "Minion",
         "rarity": "Perk",
         "imageName": "LichBook_Skeletons",
-        "description": "{\"WitchQueenBookEffect1DescriptionPerk1\", \"TERM\", \"WitchQueenBookEffect1DescriptionPerk1\"}[mec:{\"WitchQueenPerk2\", \"TERM\", \"WitchQueenPerk2\"}]: {\"WitchQueenBookEffect1DescriptionPerk2\", \"TERM\", \"WitchQueenBookEffect1DescriptionPerk2\"}",
+        "description": "Summon 3 on Perk 1, 6 on Perk 2 Skelettons",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 3,
@@ -4930,7 +4930,7 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "LichBook_Mana",
-        "description": "2 of Morellia's 4+ mana spells costs 1 less until played. Does not stack.<b><color=orange>Unholy Bargain</color></b>: 2 of Morellia's 4+ mana spells costs 2 less until played. Does not stack.",
+        "description": "2 of Morellia's 4+ mana spells costs 1 less until played. Does not stack. Unholy Bargain: 2 of Morellia's 4+ mana spells costs 2 less until played. Does not stack.",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 325,
@@ -4940,7 +4940,7 @@
         "travelSpeed": 0,
         "iD": 247,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1906,
         "image": "LichBook_Mana"
     },
@@ -4961,7 +4961,7 @@
         "travelSpeed": 0,
         "iD": 248,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1902,
         "image": "LichQueenBook"
     },
@@ -5072,7 +5072,7 @@
         "travelSpeed": 0,
         "iD": 253,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1931,
         "image": "SlitheringSummons"
     },
@@ -5151,7 +5151,7 @@
         "delay": 500,
         "iD": 257,
         "faction": "Scrat",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1928,
         "image": "ScratStorm"
     },
@@ -5202,7 +5202,7 @@
         "travelSpeed": 0,
         "iD": 259,
         "faction": "Slither",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1922,
         "image": "RitualOfServitude"
     },
@@ -5283,7 +5283,7 @@
         "travelSpeed": 0,
         "iD": 262,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1965,
         "image": "LeilielsVortex"
     },
@@ -5304,7 +5304,7 @@
         "travelSpeed": 0,
         "iD": 263,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1955,
         "image": "ArcaneRing"
     },
@@ -5325,7 +5325,7 @@
         "travelSpeed": 0,
         "iD": 264,
         "faction": "Stoutheart",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1963,
         "image": "GlennsBrew"
     },
@@ -5437,7 +5437,7 @@
         "travelSpeed": 0,
         "iD": 268,
         "faction": "Stoutheart",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1969,
         "image": "Mountainshaper"
     },
@@ -5458,7 +5458,7 @@
         "travelSpeed": 0,
         "iD": 269,
         "faction": "Stoutheart",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 1971,
         "image": "FrostfeatherFlyby"
     },
@@ -5689,7 +5689,7 @@
         "travelSpeed": 0,
         "iD": 277,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 2010,
         "image": "Smite"
     },
@@ -5710,7 +5710,7 @@
         "travelSpeed": 0,
         "iD": 278,
         "faction": "Empyrean",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 2009,
         "image": "ArdentAegis"
     },
@@ -5762,7 +5762,7 @@
         "travelSpeed": 0,
         "iD": 280,
         "faction": "ZenChi",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 2001,
         "image": "ShensShockStick"
     },
@@ -5875,7 +5875,7 @@
         "travelSpeed": 0,
         "iD": 290,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 2030,
         "image": "Shield"
     },
@@ -5896,7 +5896,7 @@
         "travelSpeed": 0,
         "iD": 291,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "image": "SummonUndyingCorpse"
     },
     {
@@ -5913,7 +5913,7 @@
         "delay": 1000,
         "iD": 292,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "image": "GroundMinionsAndSummonSkeletons"
     },
     {
@@ -5933,7 +5933,7 @@
         "travelSpeed": 0,
         "iD": 293,
         "faction": "Accursed",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "image": "CorpseExplosion"
     },
     {
@@ -5983,7 +5983,7 @@
         "travelSpeed": 0,
         "iD": 295,
         "faction": "CrystalElf",
-        "targets": "Ground",
+        "targets": "Is Spell",
         "pageId": 2024,
         "image": "ResonatingBlast"
     },
