@@ -70,6 +70,7 @@ const LikeStyle = styled.div`
 export default function CardProperties({
   card: {
     image,
+    count,
     attackdelay,
     attackspeed,
     damage,
@@ -108,7 +109,6 @@ export default function CardProperties({
           <CardImageStyle src={IMG_PATH} alt={image} />
         </PortraitStyle>
       </CardPropertyLiStyle>
-
       {image === "BloodImps.jpg" && (
         <CardPropertyLiStyle>
           <PortraitStyle>
@@ -119,33 +119,34 @@ export default function CardProperties({
           </PortraitStyle>
         </CardPropertyLiStyle>
       )}
-
       <CardPropertyLiStyle>
         <CardPropertyKeyStyle>Cost</CardPropertyKeyStyle>
         <div className={css.CardProperyValue}>{manacost}</div>
       </CardPropertyLiStyle>
-
       <CardPropertyLiStyle>
         <CardPropertyKeyStyle>Faction</CardPropertyKeyStyle>
         <div className={css.CardProperyValue}>
           {factionMapping[faction]} {faction}
         </div>
       </CardPropertyLiStyle>
-
-      <CardPropertyLiStyle>
-        <CardPropertyKeyStyle>Rarity</CardPropertyKeyStyle>
-        <RarityStyle className={css.CardProperyValue} rarity={rarity}>
-          {rarity}
-        </RarityStyle>
-      </CardPropertyLiStyle>
-
       <CardPropertyLiStyle>
         <CardPropertyKeyStyle>Type</CardPropertyKeyStyle>
         <div className={css.CardProperyValue}>
           <FontAwesomeIcon icon={typeMapping[type]} size={"xs"} /> {type}
         </div>
       </CardPropertyLiStyle>
-
+      {!isNaN(count) && (
+        <CardPropertyLiStyle>
+          <CardPropertyKeyStyle>Count</CardPropertyKeyStyle>
+          <div className={css.CardProperyValue}>
+            <img
+              src="img/icon-count.png"
+              style={{ width: "auto", height: "26px", verticalAlign: "middle" }}
+            />
+            {count}
+          </div>
+        </CardPropertyLiStyle>
+      )}
       {isAttacking && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Targets</CardPropertyKeyStyle>
@@ -158,14 +159,12 @@ export default function CardProperties({
           </div>
         </CardPropertyLiStyle>
       )}
-
       {!isNaN(health) && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Health</CardPropertyKeyStyle>
           <div className={css.CardProperyValue}>{health}</div>
         </CardPropertyLiStyle>
       )}
-
       {isAttacking && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Attack Speed</CardPropertyKeyStyle>
@@ -179,8 +178,7 @@ export default function CardProperties({
           <div className={css.CardProperyValue}>{attackdelay}</div>
         </CardPropertyLiStyle>
       )}
-
-      {radius && (
+      {!isNaN(radius) && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Radius</CardPropertyKeyStyle>
           <div className={css.CardProperyValue}>
@@ -193,14 +191,12 @@ export default function CardProperties({
           </div>
         </CardPropertyLiStyle>
       )}
-
       {!isNaN(damage) && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Damage</CardPropertyKeyStyle>
           <div className={css.CardProperyValue}>{damage === 0 ? "-" : damage}</div>
         </CardPropertyLiStyle>
       )}
-
       {isAttacking && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>DPS</CardPropertyKeyStyle>
@@ -209,21 +205,18 @@ export default function CardProperties({
           </div>
         </CardPropertyLiStyle>
       )}
-
       {isAttacking && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Range</CardPropertyKeyStyle>
           <div className={css.CardProperyValue}>{range / 1000}</div>
         </CardPropertyLiStyle>
       )}
-
       {speed && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Speed</CardPropertyKeyStyle>
           <div className={css.CardProperyValue}>{speed}</div>
         </CardPropertyLiStyle>
       )}
-
       {[true, false].includes(flying) && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
@@ -232,6 +225,12 @@ export default function CardProperties({
           </div>
         </CardPropertyLiStyle>
       )}
+      <CardPropertyLiStyle>
+        <CardPropertyKeyStyle>Rarity</CardPropertyKeyStyle>
+        <RarityStyle className={css.CardProperyValue} rarity={rarity}>
+          {rarity}
+        </RarityStyle>
+      </CardPropertyLiStyle>
     </CardPropertyUlStyle>
   );
 }

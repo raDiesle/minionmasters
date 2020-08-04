@@ -298,6 +298,14 @@ function normalizeGameCardData(propsAsMap) {
   propsAsMap.description = propsAsMap.description.replace("[av:SettsuMinion.MaxHealth]", " 300 ");
 
   propsAsMap.description = propsAsMap.description.replace("[r:DionaDecoyTrap]", "Decoy Trap");
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:ShieldedCrossbowDudes.SummonAmounts*0]",
+    " 1 "
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "[f:Still a group of weak ranged Minions. Still great friends.]",
+    "Still a group of weak ranged Minions. Still great friends."
+  );
 
   //  <link="actor_info:CrystalSentry>Crystal Sentries</link>
   // <link="actor_info:ShiHouMonkey>Shi-Hou</link>

@@ -24,10 +24,14 @@ export function setAllFilterStates(isActive) {
     targets: Object.keys(targetsMapping).map(setFilterState),
   };
 }
+
 export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
   const [name, setName] = useState("");
   const [isShowNames, setIsShowNames] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
+
+  const COUNT_FILTER_DEFAULT = { min: 0, max: 15 };
+  const [countFilter, setCountFilter] = useState(COUNT_FILTER_DEFAULT);
 
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
@@ -85,8 +89,16 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
           .map(({ btnkey }) => btnkey)
           .includes(targets)
       );
+
+  const filteredCardsDataWithCount =
+    countFilter.min === COUNT_FILTER_DEFAULT.min && countFilter.max === COUNT_FILTER_DEFAULT.max
+      ? filteredCardsDataWithTargets
+      : filteredCardsDataWithTargets.filter(
+          ({ count = 0 }) => count >= countFilter.min && count <= countFilter.max
+        );
+
   const sortedByManaCards = orderBy(
-    filteredCardsDataWithTargets,
+    filteredCardsDataWithCount,
     ({ manacost }) => parseInt(manacost),
     sortByMana
   );
@@ -98,6 +110,8 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         filters={filters}
         name={name}
         setName={setName}
+        countFilter={countFilter}
+        setCountFilter={setCountFilter}
         isShowNames={isShowNames}
         setIsShowNames={setIsShowNames}
         setSortByMana={setSortByMana}

@@ -2649,7 +2649,7 @@
         "type": "Minion",
         "rarity": "Rare",
         "imageName": "ShieldedCrossbowDudes",
-        "description": "{\"SingleShieldBuff\", \"TERM\", \"SingleShieldBuff\"}.If you do not control any bridges summon [cv:ShieldedCrossbowDudes.SummonAmounts*0] extra.[f:Still a group of weak ranged Minions. Still great friends.]",
+        "description": "{\"SingleShieldBuff\", \"TERM\", \"SingleShieldBuff\"}.If you do not control any bridges summon  1  extra.Still a group of weak ranged Minions. Still great friends.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 3,

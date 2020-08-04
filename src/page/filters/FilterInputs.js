@@ -11,6 +11,7 @@ import { setAllFilterStates } from "page/FiltersWithCards";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Tooltip from "rc-tooltip";
 import React from "react";
+import InputRange from "react-input-range";
 import styled from "styled-components";
 import { targetsMapping } from "../../attack/targetsMapping";
 import { typeMapping } from "../../cardtype/typeMapping";
@@ -19,6 +20,8 @@ import { factionMapping } from "../../faction/Factions";
 import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 import { ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle } from "./ButtonFilterGroup";
+
+import "./FilterInputs.scss";
 
 const InputTextStyle = styled.input`
   color: #fff;
@@ -42,7 +45,7 @@ const FilterContainerStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  padding: 0 0 10px 0px;
+  padding: 0 5px 10px 0px;
 
   & > div {
     padding-right: 20px;
@@ -58,6 +61,8 @@ export function FilterInputs({
   setIsShowNames,
   sortByMana,
   setSortByMana,
+  countFilter,
+  setCountFilter,
   children,
 }) {
   return (
@@ -168,6 +173,16 @@ export function FilterInputs({
             <div key={target}>{targetsMapping[target]}</div>
           ))}
         </ButtonFilterGroup>
+      </div>
+
+      <div className="countStyle">
+        <div>Unit Count</div>
+        <InputRange
+          maxValue={15}
+          minValue={0}
+          value={countFilter}
+          onChange={(value) => setCountFilter(value)}
+        />
       </div>
       {children}
     </FilterContainerStyle>
