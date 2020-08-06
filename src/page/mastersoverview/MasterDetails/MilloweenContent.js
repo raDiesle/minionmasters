@@ -57,14 +57,14 @@ export default function MiloweenContent() {
           </div>
 
           <ul className={css.AbilityUlStyle}>
-            <li>Health: 300</li>
-            <li>Damage: 40 (Dps: 33.77)</li>
+            <li>Health: 250</li>
+            <li>Damage: 30</li>
             <li>Range 8</li>
           </ul>
 
           <div className={css.MasterAbilityDescriptionStyle}>
-            Mystical ranged unit fueled by magic. When its Master casts a spell, it gains +40 health
-            and +6 damage
+            Mystical ranged unit fueled by magic. When its Master casts a spell, it gains +30 health
+            and +5 damage
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             <FontAwesomeIcon icon={faUnlock} /> 20XP
