@@ -51,7 +51,7 @@ export default function RavagerContent() {
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Best Buds</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Ravager summons their powerful ally Brutus.
+            Ravager summons their powerful ally Brutus, which is Mythic.
           </div>
           <div className={css.MasterAbilitySubHeader}>Brutus</div>
           <ul className={css.AbilityUlStyle}>
@@ -66,11 +66,11 @@ export default function RavagerContent() {
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Feeding Frenzy</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Friendly Minions with less than 50% health gains Haste
+            Friendly Minions with less than 66% health gains Haste
           </div>
           <ul className={css.AbilityUlStyle}>
-            <li>+50 Movement speed.</li>
-            <li>+50% Attack speed.</li>
+            <li>+33 Movement speed.</li>
+            <li>+33% Attack speed.</li>
             <li>Removes Slow.</li>
           </ul>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
@@ -80,7 +80,7 @@ export default function RavagerContent() {
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Terror Brutus!</div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Ravager summons their most powerful ally Terror Brutus
+            Ravager summons their most powerful ally Terror Brutus, which is Mythic.
           </div>
           <ul className={css.AbilityUlStyle}>
             <li>Health: 2000</li>
