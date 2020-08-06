@@ -2,7 +2,7 @@ import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { db, dbErrorHandlerPromise } from "../../../firestore";
+import { db, dbErrorHandlerPromise, gaTrackView } from "../../../firestore";
 import cardData from "../../../generated/jobCardProps";
 import { Card } from "../../Card";
 
@@ -17,6 +17,7 @@ const CardsContainerStyle = styled.div`
 `;
 
 export default function ListOfDecks() {
+  gaTrackView("/ListOfDecks");
   const [decks, setDecks] = useState([]);
 
   useEffect(() => {

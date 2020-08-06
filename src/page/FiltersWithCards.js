@@ -1,4 +1,5 @@
 import orderBy from "lodash/orderBy";
+import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React, { useCallback, useState } from "react";
 import { targetsMapping } from "../attack/targetsMapping";
@@ -25,13 +26,19 @@ export function setAllFilterStates(isActive) {
   };
 }
 
+// different logic than previous filter buttons
+const UNITS_COUNT_GREATER_5 = ">";
+export const ALL_UNIT_COUNT_CONFIG = [0, 1, 2, 3, 4, 5, UNITS_COUNT_GREATER_5].map((key) => ({
+  btnkey: key,
+  isActive: false,
+}));
+
 export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
   const [name, setName] = useState("");
   const [isShowNames, setIsShowNames] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
 
-  const COUNT_FILTER_DEFAULT = { min: 0, max: 15 };
-  const [countFilter, setCountFilter] = useState(COUNT_FILTER_DEFAULT);
+  const [countFilter, setCountFilter] = useState(ALL_UNIT_COUNT_CONFIG);
 
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
@@ -90,12 +97,21 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
           .includes(targets)
       );
 
-  const filteredCardsDataWithCount =
-    countFilter.min === COUNT_FILTER_DEFAULT.min && countFilter.max === COUNT_FILTER_DEFAULT.max
-      ? filteredCardsDataWithTargets
-      : filteredCardsDataWithTargets.filter(
-          ({ count = 0 }) => count >= countFilter.min && count <= countFilter.max
-        );
+  const filteredCardsDataWithCount = Object.values(countFilter).every(({ isActive }) => !isActive)
+    ? filteredCardsDataWithTargets
+    : filteredCardsDataWithTargets.filter(({ count }) =>
+        countFilter
+          .filter(({ isActive }) => isActive)
+          .some(({ btnkey }) => {
+            if (btnkey === UNITS_COUNT_GREATER_5) {
+              return count > 5;
+            } else if (btnkey === 0) {
+              return !count;
+            } else {
+              return count >= btnkey && count <= btnkey;
+            }
+          })
+      );
 
   const sortedByManaCards = orderBy(
     filteredCardsDataWithCount,

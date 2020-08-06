@@ -6,12 +6,11 @@ import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmount
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { setAllFilterStates } from "page/FiltersWithCards";
+import { ALL_UNIT_COUNT_CONFIG, setAllFilterStates } from "page/FiltersWithCards";
 
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Tooltip from "rc-tooltip";
 import React from "react";
-import InputRange from "react-input-range";
 import styled from "styled-components";
 import { targetsMapping } from "../../attack/targetsMapping";
 import { typeMapping } from "../../cardtype/typeMapping";
@@ -20,8 +19,6 @@ import { factionMapping } from "../../faction/Factions";
 import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 import { ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle } from "./ButtonFilterGroup";
-
-import "./FilterInputs.scss";
 
 const InputTextStyle = styled.input`
   color: #fff;
@@ -175,14 +172,25 @@ export function FilterInputs({
         </ButtonFilterGroup>
       </div>
 
-      <div className="countStyle">
+      <div>
         <div>Unit Count</div>
-        <InputRange
-          maxValue={15}
-          minValue={0}
-          value={countFilter}
-          onChange={(value) => setCountFilter(value)}
-        />
+        <ButtonGroupStyle>
+          {ALL_UNIT_COUNT_CONFIG.map(({ btnkey }, position) => (
+            <ButtonInGroupStyle
+              key={`unitcount_${btnkey}`}
+              onClick={() => {
+                setCountFilter((prevState) => {
+                  const newCounterFilter = [...prevState];
+                  newCounterFilter[position].isActive = !prevState[position].isActive;
+                  return newCounterFilter;
+                });
+              }}
+              isButtonActive={countFilter[position].isActive}
+            >
+              {btnkey}
+            </ButtonInGroupStyle>
+          ))}
+        </ButtonGroupStyle>
       </div>
       {children}
     </FilterContainerStyle>

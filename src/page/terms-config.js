@@ -13,7 +13,7 @@ export const TERMS_CONFIG = [
       {
         key: "FrenzyBuff",
         display: "Frenzy, Haste",
-        description: "+50% Movement speed. +50% Attack speed. Removes Slow.",
+        description: "+33% Movement speed. +33% Attack speed. Removes Slow.",
         isBuff: true,
       },
       {
@@ -75,7 +75,7 @@ export const TERMS_CONFIG = [
       {
         key: "DestroyBuff",
         display: "Destroy",
-        description: "Kill a Unit. If it is Mythic, deal 1000 damage instead.",
+        description: "Kill a Unit. If it is Mythic, deal  50% of their Maximum Health instead.",
         isBuff: false,
       },
       {
@@ -208,7 +208,7 @@ export const TERMS_CONFIG = [
       {
         key: "AntiFrenzy",
         display: "Slow",
-        description: "-25% Movement speed. -25% Attack Speed. Removes Haste.",
+        description: "-20% Movement speed. -20% Attack Speed. Removes Haste.",
         isBuff: false,
       },
     ],

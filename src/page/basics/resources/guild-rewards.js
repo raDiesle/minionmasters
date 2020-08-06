@@ -4,7 +4,8 @@ import React from "react";
 import css from "./guild-rewards.scss";
 
 export default function GuildRewards() {
-  console.log(css);
+  if (css) {
+  }
   return (
     <div>
       {anchorLinkTarget(MENU_LINKS_CONFIG["Guild Rewards"])}

@@ -1,3 +1,4 @@
+import { gaTrackView } from "firestore";
 import AdventuresChallenges from "page/basics/adventures-challenges";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
 import Draft from "page/basics/draft";
@@ -11,6 +12,7 @@ import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 export default function Basics() {
+  gaTrackView("/Basics");
   return (
     <div>
       <Tabs>
