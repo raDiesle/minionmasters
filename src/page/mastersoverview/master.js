@@ -1,5 +1,6 @@
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { gaTrackView } from "firestore";
 import Tooltip from "rc-tooltip/es";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -66,6 +67,7 @@ const MasterSelectedContainer = styled.div`
 `;
 
 export default function Master({ masterKey, actionRegistrationComponent = null }) {
+  gaTrackView(`/Master/${masterKey}`);
   const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
   const IMG_FOLDER = "generated/img/";

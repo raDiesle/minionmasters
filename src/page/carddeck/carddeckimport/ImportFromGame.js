@@ -1,4 +1,5 @@
 import mToast from "components/mToast";
+import { gaTrackView } from "firestore";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import css from "page/carddeck/Guide.module.scss";
 import React from "react";
@@ -36,6 +37,7 @@ const MissingCardMessage = ({ nameExtracted }) => (
 );
 
 export default function ImportFromGame({ setLastSelectedCards, setSelectedHero }) {
+  gaTrackView("/ImportFromGame");
   // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
   const handleCopyPasteFromGame = (event) => {
     try {

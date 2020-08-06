@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/analytics";
 import { toast } from "react-toastify";
 
 const config = {
@@ -14,6 +15,8 @@ const config = {
   measurementId: "G-0J3Y5FMREJ",
 };
 const firebaseApp = firebase.initializeApp(config);
+const ga = firebase.analytics();
+
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
@@ -24,4 +27,6 @@ const dbErrorHandlerPromise = (error) => {
   return Promise.reject();
 };
 
-export { db, auth, firebaseApp, dbErrorHandlerPromise };
+const gaTrackView = (screen_name) => ga.logEvent("screen_view", { screen_name });
+
+export { db, auth, firebaseApp, dbErrorHandlerPromise, gaTrackView };

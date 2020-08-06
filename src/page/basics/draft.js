@@ -1,7 +1,9 @@
+import { gaTrackView } from "firestore";
 import React from "react";
 import cssStatic from "./static-content.module.scss";
 
 export default function Draft() {
+  gaTrackView("/Basics/Draft");
   return (
     <div className={cssStatic.container}>
       <div>

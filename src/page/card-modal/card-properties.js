@@ -137,14 +137,8 @@ export default function CardProperties({
       </CardPropertyLiStyle>
       {!isNaN(count) && (
         <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Count</CardPropertyKeyStyle>
-          <div className={css.CardProperyValue}>
-            <img
-              src="img/icon-count.png"
-              style={{ width: "auto", height: "26px", verticalAlign: "middle" }}
-            />
-            {count}
-          </div>
+          <CardPropertyKeyStyle>Unit Count</CardPropertyKeyStyle>
+          <div className={css.CardProperyValue}>{count}</div>
         </CardPropertyLiStyle>
       )}
       {isAttacking && (
@@ -181,14 +175,7 @@ export default function CardProperties({
       {!isNaN(radius) && (
         <CardPropertyLiStyle>
           <CardPropertyKeyStyle>Radius</CardPropertyKeyStyle>
-          <div className={css.CardProperyValue}>
-            <img
-              src="img/icon-radius.png"
-              alt="radius"
-              style={{ width: "auto", height: "25px", verticalAlign: "text-top" }}
-            />{" "}
-            {radius / 1000}
-          </div>
+          <div className={css.CardProperyValue}>{radius / 1000}</div>
         </CardPropertyLiStyle>
       )}
       {!isNaN(damage) && (

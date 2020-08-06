@@ -1,3 +1,4 @@
+import { gaTrackView } from "firestore";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
@@ -54,6 +55,7 @@ const FiltersWithCardsMemo = ({ setSelectedCardEvent }) =>
   }, []);
 
 export default function DeckContainer() {
+  gaTrackView("/DeckContainer");
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [selectedHero, setSelectedHero] = useState("");
 

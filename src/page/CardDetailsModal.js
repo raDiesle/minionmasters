@@ -7,6 +7,7 @@ import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
+import { gaTrackView } from "firestore";
 
 import _dropRight from "lodash.dropright";
 import CardProperties from "page/card-modal/card-properties";
@@ -57,6 +58,8 @@ export default function CardDetailsModal({
   isOpenDetails,
   setIsOpenDetails,
 }) {
+  gaTrackView(`/CardDetailsModal/${name}`);
+
   const [modals, setModals] = useState([]);
 
   return (
