@@ -4,7 +4,7 @@ import DionaContent from "./MasterDetails/DionaContent";
 import KingPuffContent from "./MasterDetails/KingPuffContent";
 import MilloweenContent from "./MasterDetails/MilloweenContent";
 import MordarContent from "./MasterDetails/MordarContent";
-import MoreillaContent from "./MasterDetails/MoreillaContent";
+import MorelliaContent from "page/mastersoverview/MasterDetails/MorelliaContent";
 import RatboContent from "./MasterDetails/RatboContent";
 import RavagerContent from "page/mastersoverview/MasterDetails/RavagerContent";
 import SettsuContent from "./MasterDetails/SettsuContent";
@@ -38,7 +38,7 @@ export const mastersMapping = {
     iD: 2,
   },
   Morellia: {
-    content: <MoreillaContent />,
+    content: <MorelliaContent />,
     icon: "LichQueen_Portrait",
     iD: 11,
   },

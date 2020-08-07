@@ -8,7 +8,7 @@ import IconDamage from "./icon-damage.png";
 export default function KingPuffContent() {
   return (
     <div>
-      <h3 className={css.MasterHeaderStyle}>Diona</h3>
+      <h3 className={css.MasterHeaderStyle}>King Puff</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
         King Puff is a trickster, he loves to confuse his opponents and keep bridge control just as
         he loves kingdom control.

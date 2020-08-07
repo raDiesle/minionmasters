@@ -8,7 +8,7 @@ import IconDamage from "./icon-damage.png";
 export default function RavagerContent() {
   return (
     <div>
-      <h3 className={css.MasterHeaderStyle}>ravager</h3>
+      <h3 className={css.MasterHeaderStyle}>Ravager</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
         ravager is a fierce Master, able to quickly tear through close combat minions, but if they
         are ranged, he has a problem and that's where he needs Brutus!

@@ -85,8 +85,8 @@ export default function MordarContent() {
             All minions raised by a Tombstone gain Haste
           </div>
           <ul className={css.AbilityUlStyle}>
-            <li>50% Movement speed.</li>
-            <li>+50% Attack speed.</li>
+            <li>33% Movement speed.</li>
+            <li>+33% Attack speed.</li>
             <li>Removes Slow.</li>
           </ul>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>

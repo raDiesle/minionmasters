@@ -10,14 +10,17 @@
 
 .InfoDetailsOverlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0px;
 
   &:hover {
     cursor: pointer;
   }
 
-  &:hover > div {
+  &:not(:hover) path {
+    color: white;
+  }
+  &:hover path {
     color: yellow;
   }
 

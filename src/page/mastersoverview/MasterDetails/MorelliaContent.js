@@ -6,10 +6,10 @@ import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import IconDamage from "./icon-damage.png";
 
-export default function MoreillaContent() {
+export default function MorelliaContent() {
   return (
     <div>
-      <h3 className={css.MasterHeaderStyle}>Moreilla</h3>
+      <h3 className={css.MasterHeaderStyle}>Morellia</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
         Morellia the Lich Queen, Ruler of the Cursed lands, Queen of Souls, and Dragon Binder.
         Wielding the Book of the Dead, she can call upon a host of powerful Death Magic to decimate

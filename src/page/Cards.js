@@ -2,7 +2,12 @@ import React from "react";
 import { Card } from "./Card";
 import css from "./Cards.module.scss";
 
-export default function Cards({ cards, isShowNames, cardActionWrapper, isFullWidthClickable }) {
+export default function Cards({
+  cards,
+  isShowDetailsOnCard,
+  cardActionWrapper,
+  isFullWidthClickable,
+}) {
   return (
     <div>
       <div>
@@ -12,7 +17,7 @@ export default function Cards({ cards, isShowNames, cardActionWrapper, isFullWid
               <Card
                 card={card}
                 isFullWidthClickable={isFullWidthClickable}
-                isShowNames={isShowNames}
+                isShowDetailsOnCard={isShowDetailsOnCard}
               >
                 {cardActionWrapper(card)}
               </Card>

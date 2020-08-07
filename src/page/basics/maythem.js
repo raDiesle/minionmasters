@@ -227,7 +227,7 @@ export default function Maythem() {
           <ul className="bb_ul">
             <li>
               {" "}
-              Since all minions have +50% attack and movement speed, you can use either a swarm
+              Since all minions have +33% attack and movement speed, you can use either a swarm
               tactic to melt your opponent with lots of small and incredibly fast minions, or you
               can choose to include some big minions for heavy damage at high speed.
               <br />

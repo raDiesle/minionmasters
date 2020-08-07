@@ -2,7 +2,7 @@ import { gaTrackView } from "firestore";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
-import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
+import CardActionAddOrRemoveCardToDeck from "page/CardActionAddOrRemoveCardToDeck";
 import FiltersWithCards from "../FiltersWithCards";
 import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
 
@@ -36,7 +36,7 @@ const FiltersWithCardsMemo = ({ setSelectedCardEvent }) =>
   useMemo(() => {
     const cardActionWrapper = (card) => (
       <>
-        <CardActionAddCardToDeck
+        <CardActionAddOrRemoveCardToDeck
           onClick={() => {
             setSelectedCardEvent({
               eventId: Math.random(),
@@ -102,21 +102,18 @@ export default function DeckContainer() {
         onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}
       >
         <TabList>
-          <Tab>Select cards</Tab>
-          <Tab>Select master</Tab>
+          <Tab>Build</Tab>
           <Tab>Analyze & Save</Tab>
           <Tab>Import</Tab>
           <Tab>Export</Tab>
         </TabList>
-        <TabPanel>
-          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
-        </TabPanel>
         <TabPanel>
           <Masters
             actionRegistrationComponent={(selectedHeroKey) => (
               <AddMasterToDeck setSelectedHero={setSelectedHero} masterKey={selectedHeroKey} />
             )}
           />
+          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
         </TabPanel>
         <TabPanel>
           <AnalyzeAndSaveDeckContainer
