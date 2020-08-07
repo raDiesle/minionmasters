@@ -472,7 +472,7 @@ export function BuilddeckGuide() {
                 </li>
                 <li>
                   {" "}
-                  <u>Feeding Frenzy</u>: all your minions gain Frenzy (+50% attack and movement
+                  <u>Feeding Frenzy</u>: all your minions gain Frenzy (+33% attack and movement
                   speed) when they have less than 50% hp.
                   <br />
                 </li>
@@ -493,7 +493,7 @@ export function BuilddeckGuide() {
               <b>Tactics</b>:<br />
               Ravager is quite a simple master to use. The core feature of ravager are 2: the free
               big minion that spawns at level 1 and 3, and the fact that all your minions will goes
-              to frenzy when below 50% hp (which means +50% movement and attack speed).
+              to frenzy when below 50% hp (which means +33% movement and attack speed).
               <br />
               There are several possible strategies involving the ravager capabilities, from using
               the free minions to lead a big deadly push, to using medium minions like the succubus
@@ -1036,7 +1036,7 @@ export function BuilddeckGuide() {
                 </li>
                 <li>
                   {" "}
-                  <u>Vengeful Dead</u>: every minion resurrected by a Tombstone, gains Frenzy (+50%
+                  <u>Vengeful Dead</u>: every minion resurrected by a Tombstone, gains Frenzy (+33%
                   attack and movement speed).
                 </li>
               </ul>

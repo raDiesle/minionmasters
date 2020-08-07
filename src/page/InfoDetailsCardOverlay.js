@@ -21,7 +21,7 @@ export default function InfoDetailsCardOverlay({ card, isFullWidthClickable = fa
       <div
         className={css.InfoDetailsOverlay}
         style={{
-          padding: isFullWidthClickable ? "50% 0 36% 100%" : "50% 0 36% 30%",
+          padding: isFullWidthClickable ? "59% 50%" : "10px 0 0 10px",
         }}
         onClick={(event) => {
           setIsOpenDetails(true);

@@ -49,7 +49,7 @@ export function CardDeckSlot({
   return (
     <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
       {iD !== IDENTIFIER_FOR_EMPTY_SLOT ? (
-        <Card card={card} isDeckCard showDeck>
+        <Card card={card} isDeckCard showDeck isFullWidthClickable>
           {cardActionWrapper(card)}
           {count > 1 && <WildcardOverlayStyle>x{count}</WildcardOverlayStyle>}
         </Card>

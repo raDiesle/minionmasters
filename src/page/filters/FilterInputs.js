@@ -54,8 +54,8 @@ export function FilterInputs({
   setFilters,
   name,
   setName,
-  isShowNames,
-  setIsShowNames,
+  isShowDetailsOnCard,
+  setIsShowDetailsOnCard,
   sortByMana,
   setSortByMana,
   countFilter,
@@ -73,8 +73,8 @@ export function FilterInputs({
             onChange={(event) => {
               event.persist();
               const typedInEventName = event.target.value;
-              if (isShowNames === false && typedInEventName !== "") {
-                setIsShowNames(true);
+              if (isShowDetailsOnCard === false && typedInEventName !== "") {
+                setIsShowDetailsOnCard(true);
               }
               setName(typedInEventName);
             }}
@@ -85,16 +85,22 @@ export function FilterInputs({
               <FontAwesomeIcon icon={faInfoCircle} />
             </ButtonInGroupStyle>
           </Tooltip>
-          <Tooltip placement="bottomRight" overlay={<span>Show Card Names</span>}>
-            <ButtonInGroupStyle
-              value={isShowNames}
-              onClick={() => setIsShowNames((prevShowNames) => !prevShowNames)}
-            >
-              <FontAwesomeIcon icon={isShowNames ? faEye : faEyeSlash} />
-            </ButtonInGroupStyle>
-          </Tooltip>
         </ButtonGroupStyle>
       </div>
+
+      <Tooltip placement="bottomRight" overlay={<span>Show Details</span>}>
+        <ButtonGroupStyle>
+          <ButtonInGroupStyle
+            value={isShowDetailsOnCard}
+            onClick={() =>
+              setIsShowDetailsOnCard((prevShowDetailsOnCard) => !prevShowDetailsOnCard)
+            }
+          >
+            <FontAwesomeIcon icon={isShowDetailsOnCard ? faEye : faEyeSlash} />
+          </ButtonInGroupStyle>
+        </ButtonGroupStyle>
+      </Tooltip>
+
       <ButtonGroupStyle>
         <ButtonInGroupStyle onClick={() => setFilters(setAllFilterStates(false))}>
           <FontAwesomeIcon icon={faTrashAlt} /> Reset

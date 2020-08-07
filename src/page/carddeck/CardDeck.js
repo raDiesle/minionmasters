@@ -1,9 +1,10 @@
 import mToast from "components/mToast";
+import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
 import React, { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
-import CardActionAddCardToDeck from "../CardActionAddCardToDeck";
+import CardActionAddOrRemoveCardToDeck from "page/CardActionAddOrRemoveCardToDeck";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "../carddeck/DeckContainer";
 import { CardDeckSlot } from "./CardDeckSlot";
 import MasterDeckSlot from "./MasterDeckSlot";
@@ -189,13 +190,16 @@ export function CardDeck({
             isSelectedSlot={currentSelectedSlot === slotPos}
             lastSelectedCard={lastSelectedCards[slotPos]}
             cardActionWrapper={(card) => (
-              <CardActionAddCardToDeck
-                onClick={() => {
-                  handleRemoveCard(slotPos);
-                }}
-                card={card}
-                isDeckCard
-              />
+              <>
+                <CardActionAddOrRemoveCardToDeck
+                  onClick={() => {
+                    handleRemoveCard(slotPos);
+                  }}
+                  card={card}
+                  isDeckCard
+                />
+                <InfoDetailsCardOverlay card={card} />
+              </>
             )}
             setSelectedTabIndex={setSelectedTabIndex}
           />

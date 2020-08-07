@@ -33,6 +33,7 @@
 .CardContainerStyleFullWidth {
   &:hover {
     border-color: yellow;
+    cursor: pointer;
   }
 
   &:hover * {

@@ -36,7 +36,7 @@ export default function CommunityLinks({ name }) {
       <ButtonGroupStyle style={{ paddingTop: "5px" }}>
         <ButtonInGroupStyle>
           <a
-            href={`https://steamcommunity.com/app/489520/discussions/search/?q=${name}&gidforum=350543738456481917&include_deleted=1`}
+            href={`https://steamcommunity.com/app/489520/discussions/search/?q=${name}&include_deleted=0`}
             target="_blank"
             rel="noopener noreferrer"
             className={css.steamIcon}
@@ -60,7 +60,7 @@ export default function CommunityLinks({ name }) {
             color="#FF0000"
           >
             <span className={classNames("fa-layers fa-fw")}>
-              <FontAwesomeIcon icon={faSquare} size="s" />
+              <FontAwesomeIcon icon={faSquare} />
               <FontAwesomeIcon
                 icon={faYoutube}
                 size="lg"

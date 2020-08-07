@@ -35,7 +35,7 @@ export const ALL_UNIT_COUNT_CONFIG = [0, 1, 2, 3, 4, 5, UNITS_COUNT_GREATER_5].m
 
 export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
   const [name, setName] = useState("");
-  const [isShowNames, setIsShowNames] = useState(false);
+  const [isShowDetailsOnCard, setIsShowDetailsOnCard] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
 
   const [countFilter, setCountFilter] = useState(ALL_UNIT_COUNT_CONFIG);
@@ -128,8 +128,8 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setName={setName}
         countFilter={countFilter}
         setCountFilter={setCountFilter}
-        isShowNames={isShowNames}
-        setIsShowNames={setIsShowNames}
+        isShowDetailsOnCard={isShowDetailsOnCard}
+        setIsShowDetailsOnCard={setIsShowDetailsOnCard}
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
       >
@@ -140,7 +140,7 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
 
       <Cards
         cards={sortedByManaCards}
-        isShowNames={isShowNames}
+        isShowDetailsOnCard={isShowDetailsOnCard}
         cardActionWrapper={cardActionWrapper}
         fullCount={fullCount}
         isFullWidthClickable={isFullWidthClickable}
