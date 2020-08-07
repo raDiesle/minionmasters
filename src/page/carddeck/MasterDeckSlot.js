@@ -1,4 +1,5 @@
-import React from "react";
+import BuildMasterDeckActionOverlay from "page/carddeck/build-master-deck-action-overlay";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import Master from "../mastersoverview/master";
 
@@ -61,6 +62,16 @@ const MasterPlaceholder = styled.div`
   }
 `;
 
+const MastersMemo = ({ masterKey }) => {
+  return useMemo(() => {
+    const mastersActionWrapper = (selectedHeroKey) => (
+      <BuildMasterDeckActionOverlay masterKey={selectedHeroKey} />
+    );
+
+    return <Master masterKey={masterKey} actionRegistrationComponent={mastersActionWrapper} />;
+  }, []);
+};
+
 export default function MasterDeckSlot({ selectedHero, setSelectedHero, setSelectedTabIndex }) {
   let MASTERS_TAB_INDEX = 1;
   return (
@@ -68,9 +79,13 @@ export default function MasterDeckSlot({ selectedHero, setSelectedHero, setSelec
       <MasterContentStyle>
         {selectedHero ? (
           <Master
-            isMastersSelection={false}
             masterKey={selectedHero}
-            setSelectedHero={setSelectedHero}
+            actionRegistrationComponent={(selectedHeroKey) => (
+              <BuildMasterDeckActionOverlay
+                masterKey={selectedHeroKey}
+                setSelectedHero={setSelectedHero}
+              />
+            )}
           />
         ) : (
           <MasterPlaceholder onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}>

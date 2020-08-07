@@ -1,7 +1,7 @@
+import * as Sentry from "@sentry/react";
 import "rc-tooltip/assets/bootstrap_white.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import * as Sentry from "@sentry/react";
 import "react-tabs/style/react-tabs.css";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App";

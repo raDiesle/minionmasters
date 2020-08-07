@@ -1,22 +1,21 @@
 import { gaTrackView } from "firestore";
-import CardBottomOverlay from "page/card-bottom-overlay";
-import React from "react";
+import CardforInfoActionOverlay from "page/discussion/cardforinfo-actionoverlay";
+import React, { useMemo } from "react";
 import FiltersWithCards from "../FiltersWithCards";
 
-import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
+const FiltersWithCardsWrapperMemo = () => {
+  return useMemo(() => {
+    const cardActionWrapper = (card) => <CardforInfoActionOverlay card={card} />;
+    return <FiltersWithCards cardActionWrapper={cardActionWrapper} isFullWidthClickable={true} />;
+  }, []);
+};
 
 export default function DiscussOnCards() {
   gaTrackView("/DiscussOnCards");
+
   return (
     <div>
-      <FiltersWithCards
-        cardActionWrapper={(card) => (
-          <>
-            <InfoDetailsCardOverlay card={card} isFullWidthClickable={true} />
-          </>
-        )}
-        isFullWidthClickable={true}
-      />
+      <FiltersWithCardsWrapperMemo />
     </div>
   );
 }

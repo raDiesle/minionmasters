@@ -1,5 +1,5 @@
 import { imgPathFn } from "components/helper";
-import CardDetailsModal from "page/CardDetailsModal";
+import CardDetailsModal from "page/cardmodal/CardDetailsModal";
 import { MasterModal } from "page/mastersoverview/MasterModal";
 import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/wikiEditor/mention-config";
 import React, { useState } from "react";

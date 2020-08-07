@@ -1,8 +1,3 @@
-import { faMinusCircle } from "@fortawesome/free-solid-svg-icons/faMinusCircle";
-import { faMinusSquare } from "@fortawesome/free-solid-svg-icons/faMinusSquare";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons/faPlusCircle";
-import { faPlusSquare } from "@fortawesome/free-solid-svg-icons/faPlusSquare";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RARITY_KEYS } from "rarity/RARITY_MAPPING_CONFIG";
 import React from "react";
 import styled from "styled-components";
