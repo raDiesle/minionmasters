@@ -2,7 +2,6 @@ import firebase from "@firebase/app";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from "rc-tooltip/es";
 import React, { useEffect, useRef, useState } from "react";

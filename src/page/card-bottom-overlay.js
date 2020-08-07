@@ -1,7 +1,7 @@
-import React from "react";
 import { targetsMapping } from "attack/targetsMapping";
 import { factionMapping } from "faction/Factions";
 import css from "page/Card.module.scss";
+import React from "react";
 
 export default function CardBottomOverlay({ faction, targets }) {
   return (

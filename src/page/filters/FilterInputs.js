@@ -42,7 +42,7 @@ const FilterContainerStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  padding: 0 5px 10px 0px;
+  padding: 0 5px 5px 0px;
 
   & > div {
     padding-right: 20px;

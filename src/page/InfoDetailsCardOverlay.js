@@ -1,12 +1,12 @@
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import CardDetailsModal from "./CardDetailsModal";
-import css from "./InfoDetailsCardOverlay.module.scss";
+import CardDetailsModal from "page/cardmodal/CardDetailsModal";
+import React from "react";
 
-export default function InfoDetailsCardOverlay({ card, isFullWidthClickable = false }) {
-  const [isOpenDetails, setIsOpenDetails] = useState(false);
-
+export default function InfoDetailsCardOverlay({
+  card,
+  isOpenDetails,
+  setIsOpenDetails,
+  cardEventComponent = null,
+}) {
   return (
     <>
       {isOpenDetails ? (
@@ -15,25 +15,9 @@ export default function InfoDetailsCardOverlay({ card, isFullWidthClickable = fa
           setIsOpenDetails={setIsOpenDetails}
           card={card}
           key={card.iD}
+          cardEventComponent={cardEventComponent}
         />
       ) : null}
-
-      <div
-        className={css.InfoDetailsOverlay}
-        style={{
-          padding: isFullWidthClickable ? "59% 50%" : "10px 0 0 10px",
-        }}
-        onClick={(event) => {
-          setIsOpenDetails(true);
-          event.stopPropagation();
-        }}
-      >
-        {isFullWidthClickable === false && (
-          <div className={css.InfoIconStyle}>
-            <FontAwesomeIcon icon={faInfoCircle} size={"sm"} />
-          </div>
-        )}
-      </div>
     </>
   );
 }

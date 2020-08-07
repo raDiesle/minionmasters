@@ -12,7 +12,6 @@ import css from "./Card.module.scss";
 export function Card({
   children,
   card: { image, manacost, rarity, type, faction, targets, name },
-  isFullWidthClickable = false,
   isShowDetailsOnCard = false,
 }) {
   const IMG_FOLDER = "generated/img/";

@@ -1,10 +1,9 @@
 import mToast from "components/mToast";
-import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
+import BuildCardDeckActionOverlay from "page/carddeck/build-card-deck-action-overlay";
 import React, { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
-import CardActionAddOrRemoveCardToDeck from "page/CardActionAddOrRemoveCardToDeck";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "../carddeck/DeckContainer";
 import { CardDeckSlot } from "./CardDeckSlot";
 import MasterDeckSlot from "./MasterDeckSlot";
@@ -138,43 +137,6 @@ export function CardDeck({
     selectedCardId,
   ]);
 
-  const handleRemoveCard = (slotPos) =>
-    setLastSelectedCards((prevSelectedCards) => {
-      const selectedCardsWithRemovedCard = [...prevSelectedCards];
-
-      const hasAnyWildcard = prevSelectedCards[slotPos].count > 1;
-
-      if (hasAnyWildcard) {
-        selectedCardsWithRemovedCard[slotPos] = {
-          eventId: Math.random(),
-          card: prevSelectedCards[slotPos].card,
-          count: prevSelectedCards[slotPos].count - 1,
-        };
-
-        setSelectedCardEvent({
-          eventId: Math.random(),
-          card: prevSelectedCards[slotPos].card,
-          action: "reduced",
-        });
-      } else {
-        selectedCardsWithRemovedCard[slotPos] = {
-          eventId: Math.random(),
-          card: {
-            iD: IDENTIFIER_FOR_EMPTY_SLOT,
-          },
-        };
-        setSelectedCardEvent({
-          eventId: Math.random(),
-          card: { iD: IDENTIFIER_FOR_EMPTY_SLOT },
-        });
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(
-          ({ card: { iD } }) => iD === IDENTIFIER_FOR_EMPTY_SLOT
-        );
-        setCurrentSelectedSlot(nextFreeSlot);
-      }
-      return selectedCardsWithRemovedCard;
-    });
-
   return (
     <div>
       <CardDeckStyle>
@@ -190,16 +152,13 @@ export function CardDeck({
             isSelectedSlot={currentSelectedSlot === slotPos}
             lastSelectedCard={lastSelectedCards[slotPos]}
             cardActionWrapper={(card) => (
-              <>
-                <CardActionAddOrRemoveCardToDeck
-                  onClick={() => {
-                    handleRemoveCard(slotPos);
-                  }}
-                  card={card}
-                  isDeckCard
-                />
-                <InfoDetailsCardOverlay card={card} />
-              </>
+              <BuildCardDeckActionOverlay
+                setLastSelectedCards={setLastSelectedCards}
+                setSelectedCardEvent={setSelectedCardEvent}
+                setCurrentSelectedSlot={setCurrentSelectedSlot}
+                slotPos={slotPos}
+                card={card}
+              />
             )}
             setSelectedTabIndex={setSelectedTabIndex}
           />

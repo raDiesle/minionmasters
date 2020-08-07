@@ -68,19 +68,20 @@ export default function LoginLogout() {
   `;
 
   return (
-    <div>
+    <>
       {isSignedIn === true ? (
         <div>
           <SignInLinkStyle onClick={logout}>
-            <span style={{ paddingRight: "5px" }}>Logout</span>
             <FontAwesomeIcon icon={faSignOutAlt} />
           </SignInLinkStyle>
         </div>
       ) : (
         <>
-          <SignInLinkStyle onClick={() => setIsLoginModalShown(true)}>
-            Login <FontAwesomeIcon icon={faSignInAlt} />
-          </SignInLinkStyle>
+          <div>
+            <SignInLinkStyle onClick={() => setIsLoginModalShown(true)}>
+              Login <FontAwesomeIcon icon={faSignInAlt} />
+            </SignInLinkStyle>
+          </div>
           <ReactModal
             className="modalContentStyle"
             overlayClassName="modalOverlayStyle"
@@ -98,6 +99,6 @@ export default function LoginLogout() {
           </ReactModal>
         </>
       )}
-    </div>
+    </>
   );
 }

@@ -1,25 +1,19 @@
-import { faReddit } from "@fortawesome/free-brands-svg-icons/faReddit";
-import { faSteam } from "@fortawesome/free-brands-svg-icons/faSteam";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
-import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classNames from "classnames";
 import { gaTrackView } from "firestore";
 
 import _dropRight from "lodash.dropright";
 import CardProperties from "page/card-modal/card-properties";
 
 import CardDescription from "page/cardmodal/card-description";
+
+import css from "page/cardmodal/CardDetailsModal.module.scss";
 import CommunityLinks from "page/cardmodal/community-links";
 import CardDiscussion from "page/discussion/CardDiscussion";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
 import styled from "styled-components";
-
-import css from "./CardDetailsModal.module.scss";
 
 const ModalContainerStyle = styled.div`
   position: relative;
@@ -49,9 +43,10 @@ const CardHeaderStyle = styled.h2`
 
 export default function CardDetailsModal({
   card,
-  card: { description, name },
+  card: { iD, description, name },
   isOpenDetails,
   setIsOpenDetails,
+  cardEventComponent = null,
 }) {
   gaTrackView(`/CardDetailsModal/${name}`);
 
@@ -96,7 +91,10 @@ export default function CardDetailsModal({
             <CardDiscussion card={card} discussionType="mechanics" />
           </div>
 
-          <CommunityLinks name={name} />
+          <div className={css.buttonsLayout}>
+            <CommunityLinks name={name} />
+            {cardEventComponent && cardEventComponent(iD)}
+          </div>
         </ModalContainerStyle>
       </ReactModal>
     </div>

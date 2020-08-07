@@ -46,9 +46,25 @@ export default function ListOfDecks() {
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
         <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
         {"  "}Features under construction
+        <div>
+          <b>
+            The next days I will heavily add new features how to save and share decks, so be
+            prepared!
+          </b>
+        </div>
+        <div>
+          <b> Till that time, I recommend to share decks by URL/Bookmark.</b>
+        </div>
       </div>
       {decks.map((deck) => (
         <SingleDeckContainerStyle key={deck.createdAt.getTime()}>

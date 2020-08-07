@@ -1,6 +1,6 @@
 import { TYPE_CARD_REF, TYPE_SUBTEXT, TYPE_TERM } from "card-description-types";
 import cardData from "generated/jobCardProps.json";
-import CardDetailsModal from "page/CardDetailsModal";
+import CardDetailsModal from "page/cardmodal/CardDetailsModal";
 import { TERMS_CONFIG } from "page/terms-config";
 import css from "page/wikiEditor/mention-readonly.module.scss";
 import React, { useState } from "react";

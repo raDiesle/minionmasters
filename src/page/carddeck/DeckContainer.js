@@ -1,12 +1,11 @@
 import { gaTrackView } from "firestore";
+import CardForDeckActionOverlay from "page/carddeck/cardfordeck-actionoverlay";
+
+import AddMasterToDeckActionOverlay from "page/mastersoverview/AddMasterToDeckActionOverlay";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
-import CardActionAddOrRemoveCardToDeck from "page/CardActionAddOrRemoveCardToDeck";
 import FiltersWithCards from "../FiltersWithCards";
-import InfoDetailsCardOverlay from "../InfoDetailsCardOverlay";
-
-import AddMasterToDeck from "../mastersoverview/AddMasterToDeck";
 import Masters from "../mastersoverview/Masters";
 import { CardDeck } from "./CardDeck";
 import ImportFromGame from "./carddeckimport/ImportFromGame";
@@ -32,32 +31,32 @@ const useTraceableState = (initialValue) => {
   return [prevValue, value, setValue];
 };
 
-const FiltersWithCardsMemo = ({ setSelectedCardEvent }) =>
-  useMemo(() => {
+const FiltersWithCardsMemo = ({ setSelectedCardEvent }) => {
+  return useMemo(() => {
     const cardActionWrapper = (card) => (
-      <>
-        <CardActionAddOrRemoveCardToDeck
-          onClick={() => {
-            setSelectedCardEvent({
-              eventId: Math.random(),
-              card: {
-                iD: card.iD,
-              },
-            });
-          }}
-          card={card}
-        />
-        <InfoDetailsCardOverlay card={card} />
-      </>
+      <CardForDeckActionOverlay card={card} setSelectedCardEvent={setSelectedCardEvent} />
     );
 
     return <FiltersWithCards cardActionWrapper={cardActionWrapper} />;
   }, []);
+};
+
+const MastersMemo = ({ setSelectedHero }) => {
+  return useMemo(() => {
+    const mastersActionWrapper = (selectedHeroKey) => (
+      <AddMasterToDeckActionOverlay masterKey={selectedHeroKey} setSelectedHero={setSelectedHero} />
+    );
+
+    return <Masters actionRegistrationComponent={mastersActionWrapper} />;
+  }, []);
+};
+
+export const DEFAULT_MASTER_NOT_SELECTED = "";
 
 export default function DeckContainer() {
   gaTrackView("/DeckContainer");
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
-  const [selectedHero, setSelectedHero] = useState("");
+  const [selectedHero, setSelectedHero] = useState(DEFAULT_MASTER_NOT_SELECTED);
 
   const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
     eventId: 0,
@@ -108,11 +107,7 @@ export default function DeckContainer() {
           <Tab>Export</Tab>
         </TabList>
         <TabPanel>
-          <Masters
-            actionRegistrationComponent={(selectedHeroKey) => (
-              <AddMasterToDeck setSelectedHero={setSelectedHero} masterKey={selectedHeroKey} />
-            )}
-          />
+          <MastersMemo setSelectedHero={setSelectedHero} />
           <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
         </TabPanel>
         <TabPanel>

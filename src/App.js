@@ -13,12 +13,16 @@ import { Page } from "./page/Page";
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid black;
   width: 100%;
   background-color: #375a7f;
   color: white;
   padding: 5px 10px;
+
+  align-items: center;
+  @media (max-width: 767px) {
+    align-items: flex-start;
+  }
 
   a {
     color: #fff;
@@ -29,10 +33,14 @@ const Header = styled.header`
 `;
 
 const PageHeaderStyle = styled.h1`
+  flex: 1;
   margin: 5px;
   line-height: 1;
   font-weight: normal;
-  font-size: 100%;
+  font-size: 24px;
+  @media (max-width: 767px) {
+    font-size: 17px;
+  }
 `;
 
 const CapitalLetterStyle = styled.span`
@@ -48,12 +56,19 @@ const App = () => {
       <div style={{ paddingBottom: "20px" }}>
         <Header>
           <PageHeaderStyle>
-            <CapitalLetterStyle>M</CapitalLetterStyle>inion{" "}
-            <CapitalLetterStyle>M</CapitalLetterStyle>asters{" "}
-            <CapitalLetterStyle>M</CapitalLetterStyle>anager
-            <div>v1.15</div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src="img/mm_logo.webp" alt="mm logo" style={{ height: "50px" }} />
+              <span style={{ paddingLeft: "10px" }}>
+                <CapitalLetterStyle>M</CapitalLetterStyle>inionmasters
+                <span>
+                  {" "}
+                  <CapitalLetterStyle>M</CapitalLetterStyle>anager
+                </span>
+                <div style={{ fontSize: "13px" }}>v1.15</div>
+              </span>
+            </div>
           </PageHeaderStyle>
-          <div>
+          <div style={{ paddingLeft: "10px" }}>
             <LoginLogout />
           </div>
         </Header>

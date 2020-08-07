@@ -1,0 +1,12 @@
+.fullCardWidthActionOverlay {
+  top: 0;
+  position: absolute;
+  left: 0;
+  width: 78px;
+  height: 92px;
+
+  @media (max-width: 767px) {
+    width: 48px;
+    height: 56.509px;
+  }
+}

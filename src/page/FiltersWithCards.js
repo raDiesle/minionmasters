@@ -1,5 +1,5 @@
+import { is_touch_device } from "components/helper";
 import orderBy from "lodash/orderBy";
-import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React, { useCallback, useState } from "react";
 import { targetsMapping } from "../attack/targetsMapping";
@@ -132,11 +132,24 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setIsShowDetailsOnCard={setIsShowDetailsOnCard}
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
+      ></FilterInputs>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          fontSize: "10px",
+          paddingRight: "2px",
+        }}
       >
-        <div style={{ marginLeft: "auto", paddingRight: "0", paddingBottom: "6px" }}>
+        <div>
+          {is_touch_device() ? <code>long touch</code> : <code>right click mouse</code>} to open
+          details
+        </div>
+
+        <div>
           Results: {sortedByManaCards.length}/{fullCount}
         </div>
-      </FilterInputs>
+      </div>
 
       <Cards
         cards={sortedByManaCards}

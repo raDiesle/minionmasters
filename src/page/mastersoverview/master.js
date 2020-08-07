@@ -1,10 +1,7 @@
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import { gaTrackView } from "firestore";
-import Tooltip from "rc-tooltip/es";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { MasterModal } from "./MasterModal";
 import { mastersMapping } from "./mastersMapping";
 
 const OverlayActionBackground = styled.div`
@@ -66,46 +63,17 @@ const MasterSelectedContainer = styled.div`
   }
 `;
 
-export default function Master({ masterKey, actionRegistrationComponent = null }) {
+export default function Master({ masterKey, actionRegistrationComponent }) {
   gaTrackView(`/Master/${masterKey}`);
-  const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
-  const IMG_FOLDER = "generated/img/";
-  const FILE_ENDING = ".webp";
-  const WIDTH = "_78";
-  const IMG_PATH = IMG_FOLDER + mastersMapping[masterKey].icon + WIDTH + FILE_ENDING;
+  const IMG_PATH = imgPathFn(mastersMapping[masterKey].icon);
 
   return (
     <MasterSelectedContainer>
-      <MasterModal
-        isOpenHeroModal={isOpenHeroModal}
-        setIsOpenHeroModal={setIsOpenHeroModal}
-        masterKey={masterKey}
-      />
-
-      <Tooltip placement="top" overlay={<span>{masterKey}</span>}>
-        <MasterContentStyle>
-          <InfoMasterDetailsOverlay
-            actionRegistrationComponent={actionRegistrationComponent}
-            onClick={(event) => {
-              setIsOpenHeroModal(true);
-              event.stopPropagation();
-            }}
-          >
-            {actionRegistrationComponent !== null && (
-              <IconStyle>
-                <FontAwesomeIcon icon={faInfoCircle} size={"sm"} />
-              </IconStyle>
-            )}
-          </InfoMasterDetailsOverlay>
-
-          {
-            // to unregister on rerender bug
-            actionRegistrationComponent && actionRegistrationComponent(masterKey)
-          }
-          <MasterImgStyle src={IMG_PATH} alt={masterKey} />
-        </MasterContentStyle>
-      </Tooltip>
+      <MasterContentStyle>
+        {actionRegistrationComponent && actionRegistrationComponent(masterKey)}
+        <MasterImgStyle src={IMG_PATH} alt={masterKey} />
+      </MasterContentStyle>
     </MasterSelectedContainer>
   );
 }
