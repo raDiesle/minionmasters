@@ -1,5 +1,6 @@
 import { gaTrackView } from "firestore";
 import CardForDeckActionOverlay from "page/carddeck/cardfordeck-actionoverlay";
+import { HowToUse } from "page/carddeck/how-to-use";
 
 import AddMasterToDeckActionOverlay from "page/mastersoverview/AddMasterToDeckActionOverlay";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -107,14 +108,15 @@ export default function DeckContainer() {
           <Tab>Export</Tab>
         </TabList>
         <TabPanel>
+          <HowToUse />
+          <MastersMemo setSelectedHero={setSelectedHero} />
+          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
+        </TabPanel>
+        <TabPanel>
           <AnalyzeAndSaveDeckContainer
             lastSelectedCards={lastSelectedCards}
             selectedHero={selectedHero}
           />
-        </TabPanel>
-        <TabPanel>
-          <MastersMemo setSelectedHero={setSelectedHero} />
-          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
         </TabPanel>
 
         <TabPanel>

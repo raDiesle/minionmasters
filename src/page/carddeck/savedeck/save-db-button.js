@@ -1,5 +1,8 @@
 import firebase from "@firebase/app";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
+import { CURRENT_GAME_VERSION } from "components/helper";
 import mToast from "components/mToast";
 import { db, dbErrorHandlerPromise } from "firestore";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
@@ -32,6 +35,7 @@ export default function SaveDbButton({
     dbRef
       .add({
         ...formData,
+        createdAtVersion: CURRENT_GAME_VERSION,
         cards: cardIds,
         hero: selectedHero,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -42,13 +46,23 @@ export default function SaveDbButton({
       .catch(dbErrorHandlerPromise);
   };
 
+  const hasValidationError = Object.values(formData).some((formValue) => !formValue);
+
   return (
     <div>
+      {hasValidationError && (
+        <>
+          <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />{" "}
+          <span className={css.containsValidationError}>
+            Provide all properties to save your deck.
+          </span>
+        </>
+      )}
       <ButtonGroupStyle>
         <button
           className={classnames(cssButton.ButtonInGroupStyle, css.saveButton)}
           onClick={() => handleSaveButton()}
-          disabled={Object.values(formData).some((formValue) => !formValue)}
+          disabled={hasValidationError}
         >
           Save
         </button>

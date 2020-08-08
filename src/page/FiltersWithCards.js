@@ -1,5 +1,5 @@
-import { is_touch_device } from "components/helper";
 import orderBy from "lodash/orderBy";
+
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React, { useCallback, useState } from "react";
 import { targetsMapping } from "../attack/targetsMapping";
@@ -28,17 +28,20 @@ export function setAllFilterStates(isActive) {
 
 // different logic than previous filter buttons
 const UNITS_COUNT_GREATER_5 = ">";
-export const ALL_UNIT_COUNT_CONFIG = [0, 1, 2, 3, 4, 5, UNITS_COUNT_GREATER_5].map((key) => ({
-  btnkey: key,
-  isActive: false,
-}));
+export const ALL_UNIT_COUNT_DEFAULT_CONFIG = [0, 1, 2, 3, 4, 5, UNITS_COUNT_GREATER_5].map(
+  (key) => ({
+    btnkey: key,
+    isActive: false,
+  })
+);
 
 export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
   const [name, setName] = useState("");
   const [isShowDetailsOnCard, setIsShowDetailsOnCard] = useState(false);
+  const [isShowNamesOnCards, setIsShowNamesOnCards] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
 
-  const [countFilter, setCountFilter] = useState(ALL_UNIT_COUNT_CONFIG);
+  const [countFilter, setCountFilter] = useState(ALL_UNIT_COUNT_DEFAULT_CONFIG);
 
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
@@ -130,9 +133,11 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setCountFilter={setCountFilter}
         isShowDetailsOnCard={isShowDetailsOnCard}
         setIsShowDetailsOnCard={setIsShowDetailsOnCard}
+        isShowNamesOnCards={isShowNamesOnCards}
+        setIsShowNamesOnCards={setIsShowNamesOnCards}
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
-      ></FilterInputs>
+      />
       <div
         style={{
           display: "flex",
@@ -142,11 +147,6 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         }}
       >
         <div>
-          {is_touch_device() ? <code>long touch</code> : <code>right click mouse</code>} to open
-          details
-        </div>
-
-        <div>
           Results: {sortedByManaCards.length}/{fullCount}
         </div>
       </div>
@@ -154,6 +154,7 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
       <Cards
         cards={sortedByManaCards}
         isShowDetailsOnCard={isShowDetailsOnCard}
+        isShowNamesOnCards={isShowNamesOnCards}
         cardActionWrapper={cardActionWrapper}
         fullCount={fullCount}
         isFullWidthClickable={isFullWidthClickable}

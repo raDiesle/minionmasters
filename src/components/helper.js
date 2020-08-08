@@ -42,3 +42,50 @@ export function is_touch_device() {
     return false;
   }
 }
+
+export const CURRENT_GAME_VERSION = "1.15";
+
+export const insertAtCaret = (txtarea, text, setValue) => {
+  var scrollPos = txtarea.scrollTop;
+  var strPos = 0;
+
+  var br =
+    txtarea.selectionStart || txtarea.selectionStart === "0"
+      ? "ff"
+      : document.selection
+      ? "ie"
+      : false;
+  if (br === "ie") {
+    txtarea.focus();
+    var range = document.selection.createRange();
+    range.moveStart("character", -txtarea.value.length);
+    strPos = range.text.length;
+  } else if (br === "ff") strPos = txtarea.selectionStart;
+
+  var front = txtarea.value.substring(0, strPos);
+  var back = txtarea.value.substring(strPos, txtarea.value.length);
+
+  const newValue = front + text + back;
+
+  // will be overridden by setValue
+  txtarea.value = newValue;
+  setValue(newValue);
+
+  // txtarea.value
+  setTimeout(() => {
+    strPos = strPos + text.length;
+    if (br === "ie") {
+      txtarea.focus();
+      var range = document.selection.createRange();
+      range.moveStart("character", -txtarea.value.length);
+      range.moveStart("character", strPos);
+      range.moveEnd("character", 0);
+      range.select();
+    } else if (br === "ff") {
+      txtarea.selectionStart = strPos;
+      txtarea.selectionEnd = strPos;
+      txtarea.focus();
+    }
+    txtarea.scrollTop = scrollPos;
+  }, 500); // TODO async issue? move to useasyncEffect in editor
+};

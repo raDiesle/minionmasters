@@ -1,0 +1,11 @@
+.formLayout {
+  display: flex;
+  & > div {
+    padding-right: 10px;
+
+    & > select,
+    input {
+      display: flex;
+    }
+  }
+}

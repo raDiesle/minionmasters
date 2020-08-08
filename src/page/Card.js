@@ -13,6 +13,7 @@ export function Card({
   children,
   card: { image, manacost, rarity, type, faction, targets, name },
   isShowDetailsOnCard = false,
+  isShowNamesOnCards = false,
 }) {
   const IMG_FOLDER = "generated/img/";
   const FILE_ENDING = ".webp";
@@ -40,7 +41,7 @@ export function Card({
 
         {children}
       </div>
-      <div className={css.CardNameStyle}>{isShowDetailsOnCard ? name : null}</div>
+      <div className={css.CardNameStyle}>{isShowNamesOnCards ? name : null}</div>
     </div>
   );
 }

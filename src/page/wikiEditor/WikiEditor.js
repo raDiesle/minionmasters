@@ -54,6 +54,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
 
   const [currentWikiData, setCurrentWikiData] = useState({
     createdAt: "",
+    createdAtVersion: "",
     createdBy: "",
     val: "",
   });
@@ -77,6 +78,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
           const doc = documentSnapshots.docs[0].data();
           setCurrentWikiData({
             createdAt: doc.createdAt.toDate(),
+            createdAtVersion: doc.createdAtVersion,
             createdBy: doc.createdBy,
             val: doc.val,
           });
@@ -125,7 +127,11 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
         <LastEditedStyle>
           {currentWikiData.createdAt && (
             <div>
-              last edit: {currentWikiData.createdAt.toLocaleString()} - {currentWikiData.createdBy}
+              last edit:{" "}
+              {currentWikiData.createdAtVersion
+                ? `${currentWikiData.createdAtVersion}v`
+                : currentWikiData.createdAt.toLocaleString()}{" "}
+              - {currentWikiData.createdBy}
             </div>
           )}
         </LastEditedStyle>
