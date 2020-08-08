@@ -1,5 +1,7 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import orderBy from "lodash/orderBy";
+import Master from "page/mastersoverview/master";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { db, dbErrorHandlerPromise, gaTrackView } from "../../../firestore";
@@ -37,6 +39,11 @@ export default function ListOfDecks() {
             deckname: deck.deckname,
             cards: mappedCardData,
             createdAt: deck.createdAt.toDate(),
+            gameType: deck.gameType,
+            playStyle: deck.playStyle,
+            master: deck.hero,
+            description: deck.description,
+            gameTypeSecondary: deck.gameTypeSecondary,
           };
         });
         setDecks(normalizedDecks);
@@ -68,9 +75,14 @@ export default function ListOfDecks() {
       </div>
       {decks.map((deck) => (
         <SingleDeckContainerStyle key={deck.createdAt.getTime()}>
-          {deck.deckname}, {deck.createdAt.toLocaleString()}
+          {deck.deckname} {deck.createdAt.toLocaleString()} {deck.description} {deck.gameType}{" "}
+          {deck.playStyle}
+          {deck.gameTypeSecondary}
           <CardsContainerStyle>
-            {deck.cards.map((card) => (
+            {deck.master && (
+              <Master masterKey={deck.master} actionRegistrationComponent={() => {}} />
+            )}
+            {orderBy(deck.cards, ({ manacost }) => parseInt(manacost), "asc").map((card) => (
               <Card card={card} isDeckCard showDeck key={card.iD} />
             ))}
           </CardsContainerStyle>

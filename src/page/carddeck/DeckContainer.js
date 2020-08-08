@@ -107,14 +107,14 @@ export default function DeckContainer() {
           <Tab>Export</Tab>
         </TabList>
         <TabPanel>
-          <MastersMemo setSelectedHero={setSelectedHero} />
-          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
-        </TabPanel>
-        <TabPanel>
           <AnalyzeAndSaveDeckContainer
             lastSelectedCards={lastSelectedCards}
             selectedHero={selectedHero}
           />
+        </TabPanel>
+        <TabPanel>
+          <MastersMemo setSelectedHero={setSelectedHero} />
+          <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
         </TabPanel>
 
         <TabPanel>
