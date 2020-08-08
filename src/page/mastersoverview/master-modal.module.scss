@@ -1,5 +1,6 @@
 .MasterHeaderStyle {
   padding-bottom: 0.5rem;
+  font-size: 23px;
 }
 
 %abstractMasterAbilityImageStyle {
@@ -17,7 +18,8 @@
 }
 
 .MasterAbilityHeaderStyle {
-  font-size: 1.1rem;
+  font-size: 20px;
+  color: yellow;
 }
 
 .MasterAbilitySubHeader {
@@ -25,11 +27,12 @@
 }
 
 .MasterAbilityUnlocksHeaderStyle {
-  font-size: 16px;
+  //font-size: 20px;
+  color: yellow;
 }
 
 .MasterAbilityDescriptionStyle {
-  font-size: 0.9rem;
+  //font-size: 0.9rem;
   padding-bottom: 20px;
 }
 

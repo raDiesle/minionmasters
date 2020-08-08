@@ -1,6 +1,8 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CURRENT_GAME_VERSION } from "components/helper";
 import orderBy from "lodash/orderBy";
+import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
 import Master from "page/mastersoverview/master";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -21,6 +23,9 @@ const CardsContainerStyle = styled.div`
 export default function ListOfDecks() {
   gaTrackView("/ListOfDecks");
   const [decks, setDecks] = useState([]);
+  const [gameTypeFilter, setGameTypeFilter] = useState("");
+  const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
+  const [playStyleFilter, setPlayStyleFilter] = useState("");
 
   useEffect(() => {
     db.collection("decks")
@@ -39,6 +44,7 @@ export default function ListOfDecks() {
             deckname: deck.deckname,
             cards: mappedCardData,
             createdAt: deck.createdAt.toDate(),
+            createdAtVersion: deck.createdAtVersion,
             gameType: deck.gameType,
             playStyle: deck.playStyle,
             master: deck.hero,
@@ -51,6 +57,20 @@ export default function ListOfDecks() {
       .catch(dbErrorHandlerPromise);
   }, []);
 
+  const decksWithGameType = !gameTypeFilter
+    ? decks
+    : decks.filter(({ gameType }) => gameType === gameTypeFilter);
+  const decksWithGameTypeSecondary = !gameTypeSecondaryFilter
+    ? decksWithGameType
+    : decksWithGameType.filter(
+        ({ gameTypeSecondary }) => gameTypeSecondary === gameTypeSecondaryFilter
+      );
+  const decksWithPlayStyle = !playStyleFilter
+    ? decksWithGameTypeSecondary
+    : decksWithGameTypeSecondary.filter(({ playStyle }) => playStyle === playStyleFilter);
+
+  // SORT BY VERSION DESC
+
   return (
     <div>
       <div
@@ -62,22 +82,21 @@ export default function ListOfDecks() {
         }}
       >
         <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "}Features under construction
-        <div>
-          <b>
-            The next days I will heavily add new features how to save and share decks, so be
-            prepared!
-          </b>
-        </div>
-        <div>
-          <b> Till that time, I recommend to share decks by URL/Bookmark.</b>
-        </div>
+        {"  "}Features under construction. Ready in some days. Ideas to share? - contact me!
       </div>
-      {decks.map((deck) => (
+      <DecklistFilters
+        gameType={gameTypeFilter}
+        setGameType={setGameTypeFilter}
+        gameTypeSecondary={gameTypeSecondaryFilter}
+        setGameTypeSecondary={setGameTypeSecondaryFilter}
+        playStyle={playStyleFilter}
+        setPlayStyle={setPlayStyleFilter}
+      />
+      {decksWithPlayStyle.map((deck) => (
         <SingleDeckContainerStyle key={deck.createdAt.getTime()}>
-          {deck.deckname} {deck.createdAt.toLocaleString()} {deck.description} {deck.gameType}{" "}
-          {deck.playStyle}
-          {deck.gameTypeSecondary}
+          {deck.deckname} {deck.createdAt.toLocaleString()}{" "}
+          {deck.createdAtVersion ? deck.createdAtVersion : CURRENT_GAME_VERSION}v {deck.description}{" "}
+          {deck.gameType} {deck.playStyle} {deck.gameTypeSecondary}
           <CardsContainerStyle>
             {deck.master && (
               <Master masterKey={deck.master} actionRegistrationComponent={() => {}} />

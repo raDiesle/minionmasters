@@ -1,6 +1,8 @@
 import * as classnames from "classnames";
+import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
+import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
+import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
 import SaveDbButton from "page/carddeck/savedeck/save-db-button";
-import { GAME_TYPES, PLAY_STYLES } from "page/carddeck/savedeck/saved-decks-configs";
 import React, { useState } from "react";
 import css from "./save-deck-form.module.scss";
 
@@ -15,7 +17,7 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
     <div>
       <div className={css.formLayout}>
         <div className={css.inputGroupStyle}>
-          <label htmlFor="name">Deckname *</label>
+          <label htmlFor="name">Deckname</label>
           <input
             type="text"
             name="name"
@@ -25,57 +27,23 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
         </div>
 
         <div className={css.inputGroupStyle}>
-          <label htmlFor="playStyle">Play Style *</label>
-          <select
-            name="playStyle"
-            onChange={(e) => setPlayStyle(e.currentTarget.value)}
-            value={playStyle}
-          >
-            <option value="">-</option>
-            {PLAY_STYLES.map(({ key }) => (
-              <option value={key} key={key}>
-                {key}
-              </option>
-            ))}
-          </select>
+          <GameStyleInput playStyle={playStyle} setPlayStyle={setPlayStyle} />
         </div>
 
         <div className={css.inputGroupStyle}>
-          <label htmlFor="gameType">Game Type *</label>
-          <select
-            name="gameType"
-            onChange={(e) => setGameType(e.currentTarget.value)}
-            value={gameType}
-          >
-            <option value="">-</option>
-            {GAME_TYPES.map(({ key }) => (
-              <option value={key} key={key}>
-                {key}
-              </option>
-            ))}
-          </select>
+          <GameTypeInput gameType={gameType} setGameType={setGameType} />
         </div>
 
         <div className={css.inputGroupStyle}>
-          <label htmlFor="gameTypeSecondary">Sub Game Type *</label>
-          <select
-            name="gameType"
-            onChange={(e) => setGameTypeSecondary(e.currentTarget.value)}
-            value={gameTypeSecondary}
-            disabled={!gameType}
-          >
-            <option value="">-</option>
-            {gameType &&
-              GAME_TYPES.find(({ key }) => key === gameType).subitems.map(({ key }) => (
-                <option value={key} key={key}>
-                  {key}
-                </option>
-              ))}
-          </select>
+          <GameTypeSecondaryInput
+            gameTypeSecondary={gameTypeSecondary}
+            setGameTypeSecondary={setGameTypeSecondary}
+            gameType={gameType}
+          />
         </div>
 
         <div className={classnames(css.descriptionTextArea, css.inputGroupStyle)}>
-          <label htmlFor="description">Description *</label>
+          <label htmlFor="description">Description</label>
           <textarea
             name="description"
             onChange={(e) => setDescription(e.currentTarget.value)}

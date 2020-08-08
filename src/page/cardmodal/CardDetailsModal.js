@@ -86,10 +86,7 @@ export default function CardDetailsModal({
 
           <CardDescription description={description} />
 
-          <div>
-            <h3>Tips by community</h3>
-            <CardDiscussion card={card} discussionType="mechanics" />
-          </div>
+          <CardDiscussion card={card} discussionType="mechanics" />
 
           <div className={css.buttonsLayout}>
             <CommunityLinks name={name} />

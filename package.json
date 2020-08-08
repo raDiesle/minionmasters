@@ -16,6 +16,7 @@
     "classnames": "2.2.6",
     "firebase": "7.16.1",
     "lodash": "4.17.19",
+    "lodash.clonedeep": "^4.5.0",
     "lodash.dropright": "4.1.1",
     "lodash.invert": "4.3.0",
     "lodash.map": "4.6.0",

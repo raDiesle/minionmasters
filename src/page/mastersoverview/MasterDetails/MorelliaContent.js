@@ -83,6 +83,9 @@ export default function MorelliaContent() {
             Morellia unlocks the deepest mysteries from the sentient Book of the Dead, empowering
             its effects:
           </div>
+          <div className={css.MasterAbilityUnlocksHeaderStyle}>
+            <FontAwesomeIcon icon={faUnlock} /> 60XP
+          </div>
         </TabPanel>
         <TabPanel>
           <div className={css.MasterAbilityHeaderStyle}>Queen's Dragon</div>

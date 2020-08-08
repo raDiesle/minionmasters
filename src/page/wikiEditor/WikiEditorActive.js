@@ -3,6 +3,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CURRENT_GAME_VERSION } from "components/helper";
 import Tooltip from "rc-tooltip/es";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
@@ -49,10 +50,11 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
             ...doc.data(),
           };
         });
-        const normalizedHistory = docs.map(({ createdAt, id, val }) => {
+        const normalizedHistory = docs.map(({ createdAt, id, val, createdAtVersion }) => {
           return {
             id,
             createdAt: createdAt.toDate(),
+            createdAtVersion: createdAtVersion,
             val: val,
           };
         });
@@ -73,54 +75,12 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
     setValue(loadedHistoryState);
   };
 
-  const insertAtCaret = (txtarea, text) => {
-    var scrollPos = txtarea.scrollTop;
-    var strPos = 0;
-
-    var br =
-      txtarea.selectionStart || txtarea.selectionStart === "0"
-        ? "ff"
-        : document.selection
-        ? "ie"
-        : false;
-    if (br === "ie") {
-      txtarea.focus();
-      var range = document.selection.createRange();
-      range.moveStart("character", -txtarea.value.length);
-      strPos = range.text.length;
-    } else if (br === "ff") strPos = txtarea.selectionStart;
-
-    var front = txtarea.value.substring(0, strPos);
-    var back = txtarea.value.substring(strPos, txtarea.value.length);
-
-    const newValue = front + text + back;
-
-    // will be overridden by setValue
-    txtarea.value = newValue;
-    setValue(newValue);
-
-    // txtarea.value
-    setTimeout(() => {
-      strPos = strPos + text.length;
-      if (br === "ie") {
-        txtarea.focus();
-        var range = document.selection.createRange();
-        range.moveStart("character", -txtarea.value.length);
-        range.moveStart("character", strPos);
-        range.moveEnd("character", 0);
-        range.select();
-      } else if (br === "ff") {
-        txtarea.selectionStart = strPos;
-        txtarea.selectionEnd = strPos;
-        txtarea.focus();
-      }
-      txtarea.scrollTop = scrollPos;
-    }, 500); // TODO async issue? move to useasyncEffect in editor
-  };
   // TODO
+  /*
   const addCard = () => {
-    insertAtCaret(editorRef.current, MENTION_IDENTIFIER);
+    insertAtCaret(editorRef.current, MENTION_IDENTIFIER, setValue);
   };
+  */
 
   const onSave = () => {
     const dataToSaveBackend = value;
@@ -128,6 +88,7 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
     dbRef
       .add({
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdAtVersion: CURRENT_GAME_VERSION,
         createdBy: currentUsername,
         val: dataToSaveBackend,
       })
@@ -145,8 +106,8 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          fontSize: "10px",
-          paddingBottom: "2px",
+          fontSize: "12px",
+          paddingBottom: "4px",
         }}
       >
         <ButtonGroupStyle>
@@ -154,14 +115,15 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
             placement="top"
             overlay={
               <span>
-                type {MENTION_IDENTIFIER} and start typing to filter references by name and select
-                it.
+                Type {MENTION_IDENTIFIER}. You can continue typing to filter references by name.
+                Select it from the list.
               </span>
             }
           >
             <ButtonInGroupStyle>
-              How to reference a Master or Card
-              <FontAwesomeIcon icon={faInfoCircle} size={"sm"} />
+              {" "}
+              <FontAwesomeIcon icon={faInfoCircle} size={"sm"} /> How to reference a Master or Card
+              in the text {"  "}
             </ButtonInGroupStyle>
           </Tooltip>
         </ButtonGroupStyle>

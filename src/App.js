@@ -1,3 +1,4 @@
+import { CURRENT_GAME_VERSION } from "components/helper";
 import Footer from "Footer";
 import React from "react";
 import Modal from "react-modal";
@@ -64,7 +65,7 @@ const App = () => {
                   {" "}
                   <CapitalLetterStyle>M</CapitalLetterStyle>anager
                 </span>
-                <div style={{ fontSize: "13px" }}>v1.15</div>
+                <div style={{ fontSize: "13px" }}>{CURRENT_GAME_VERSION}v</div>
               </span>
             </div>
           </PageHeaderStyle>

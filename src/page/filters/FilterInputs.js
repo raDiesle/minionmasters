@@ -1,13 +1,15 @@
-import { faEye } from "@fortawesome/free-regular-svg-icons/faEye";
-import { faEyeSlash } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
+import { faEye as faEyeRegular } from "@fortawesome/free-regular-svg-icons/faEye";
+import { faEyeSlash as faEyeSlashRegular } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons/faTrashAlt";
+import { faEye as faEyeSolid } from "@fortawesome/free-solid-svg-icons/faEye";
+import { faEyeSlash as faEyeSlashSolid } from "@fortawesome/free-solid-svg-icons/faEyeSlash";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmountDown";
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ALL_UNIT_COUNT_CONFIG, setAllFilterStates } from "page/FiltersWithCards";
-
+import cloneDeep from "lodash/cloneDeep";
+import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/FiltersWithCards";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Tooltip from "rc-tooltip";
 import React from "react";
@@ -56,6 +58,8 @@ export function FilterInputs({
   setName,
   isShowDetailsOnCard,
   setIsShowDetailsOnCard,
+  isShowNamesOnCards,
+  setIsShowNamesOnCards,
   sortByMana,
   setSortByMana,
   countFilter,
@@ -73,8 +77,8 @@ export function FilterInputs({
             onChange={(event) => {
               event.persist();
               const typedInEventName = event.target.value;
-              if (isShowDetailsOnCard === false && typedInEventName !== "") {
-                setIsShowDetailsOnCard(true);
+              if (isShowNamesOnCards === false && typedInEventName !== "") {
+                setIsShowNamesOnCards(true);
               }
               setName(typedInEventName);
             }}
@@ -88,21 +92,38 @@ export function FilterInputs({
         </ButtonGroupStyle>
       </div>
 
-      <Tooltip placement="bottomRight" overlay={<span>Show Details</span>}>
-        <ButtonGroupStyle>
+      <ButtonGroupStyle>
+        <Tooltip placement="bottomRight" overlay={<span>Show Names</span>}>
+          <ButtonInGroupStyle
+            value={isShowNamesOnCards}
+            onClick={() => setIsShowNamesOnCards((prevShowDetailsOnCard) => !prevShowDetailsOnCard)}
+          >
+            <FontAwesomeIcon icon={isShowNamesOnCards ? faEyeRegular : faEyeSlashRegular} />
+          </ButtonInGroupStyle>
+        </Tooltip>
+        <Tooltip placement="bottomRight" overlay={<span>Show details on cards</span>}>
           <ButtonInGroupStyle
             value={isShowDetailsOnCard}
             onClick={() =>
               setIsShowDetailsOnCard((prevShowDetailsOnCard) => !prevShowDetailsOnCard)
             }
           >
-            <FontAwesomeIcon icon={isShowDetailsOnCard ? faEye : faEyeSlash} />
+            <FontAwesomeIcon icon={isShowDetailsOnCard ? faEyeSolid : faEyeSlashSolid} />
           </ButtonInGroupStyle>
-        </ButtonGroupStyle>
-      </Tooltip>
+        </Tooltip>
+      </ButtonGroupStyle>
 
       <ButtonGroupStyle>
-        <ButtonInGroupStyle onClick={() => setFilters(setAllFilterStates(false))}>
+        <ButtonInGroupStyle
+          onClick={() => {
+            setFilters(setAllFilterStates(false));
+            setIsShowNamesOnCards(false);
+            setIsShowDetailsOnCard(false);
+            setName("");
+            setSortByMana("asc");
+            setCountFilter(ALL_UNIT_COUNT_DEFAULT_CONFIG);
+          }}
+        >
           <FontAwesomeIcon icon={faTrashAlt} /> Reset
         </ButtonInGroupStyle>
       </ButtonGroupStyle>
@@ -181,13 +202,13 @@ export function FilterInputs({
       <div>
         <div>Unit Count</div>
         <ButtonGroupStyle>
-          {ALL_UNIT_COUNT_CONFIG.map(({ btnkey }, position) => (
+          {ALL_UNIT_COUNT_DEFAULT_CONFIG.map(({ btnkey }, position) => (
             <ButtonInGroupStyle
               key={`unitcount_${btnkey}`}
               onClick={() => {
-                setCountFilter((prevState) => {
-                  const newCounterFilter = [...prevState];
-                  newCounterFilter[position].isActive = !prevState[position].isActive;
+                setCountFilter((prevCounterFilter) => {
+                  const newCounterFilter = cloneDeep(prevCounterFilter);
+                  newCounterFilter[position].isActive = !prevCounterFilter[position].isActive;
                   return newCounterFilter;
                 });
               }}
