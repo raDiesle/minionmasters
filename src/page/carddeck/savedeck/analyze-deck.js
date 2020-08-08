@@ -4,7 +4,10 @@ import AnalysisData from "./analysis-data";
 export default function AnalyzeDeck({ relevantCards, selectedHero }) {
   return (
     <div>
-      <AnalysisData cards={relevantCards} />
+      <fieldset>
+        <legend>Analysis</legend>
+        <AnalysisData cards={relevantCards} />
+      </fieldset>
     </div>
   );
 }

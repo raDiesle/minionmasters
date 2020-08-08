@@ -1,0 +1,21 @@
+.formLayout {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  flex-direction: row;
+}
+
+.inputGroupStyle {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 10px 0;
+  width: 50%;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.descriptionTextArea {
+  width: 100%;
+  //height: 168px;
+}

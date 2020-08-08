@@ -119,13 +119,18 @@ function normalizeGameCardData(propsAsMap) {
       "damage",
       "health",
     ];
-    propsToInherit.forEach((propKey) => {
-      if (typeof inheritFromData !== "undefined") {
-        propsAsMap[propKey] = inheritFromData[propKey];
-      } else {
-        errorList.push("cannot inherit from: " + propsAsMap.InheritFromId);
-      }
-    });
+    if (typeof inheritFromData !== "undefined") {
+      propsToInherit.forEach((propKey) => {
+        const valueToTake = inheritFromData[propKey];
+        // only inherit, if original value is 0 or ""
+        const isToOverrideValue = !propsAsMap[propKey];
+        if (isToOverrideValue) {
+          propsAsMap[propKey] = valueToTake;
+        }
+      });
+    } else {
+      errorList.push("cannot inherit from: " + propsAsMap.InheritFromId);
+    }
   }
 
   if (["Spell", "SummonSpell", "DefensiveSpell"].includes(propsAsMap.type)) {
