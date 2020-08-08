@@ -10,22 +10,23 @@ import { db, dbErrorHandlerPromise, gaTrackView } from "../../../firestore";
 import cardData from "../../../generated/jobCardProps";
 import { Card } from "../../Card";
 
-const SingleDeckContainerStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0;
-`;
+import css from "./decks.module.scss";
 
 const CardsContainerStyle = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
 `;
 
-export default function ListOfDecks() {
+export default function Decks() {
   gaTrackView("/ListOfDecks");
   const [decks, setDecks] = useState([]);
   const [gameTypeFilter, setGameTypeFilter] = useState("");
   const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
   const [playStyleFilter, setPlayStyleFilter] = useState("");
+  const [masterFilter, setMasterFilter] = useState("");
 
   useEffect(() => {
     db.collection("decks")
@@ -69,6 +70,9 @@ export default function ListOfDecks() {
     ? decksWithGameTypeSecondary
     : decksWithGameTypeSecondary.filter(({ playStyle }) => playStyle === playStyleFilter);
 
+  const decksWithMaster = !masterFilter
+    ? decksWithPlayStyle
+    : decksWithPlayStyle.filter(({ master }) => master === masterFilter);
   // SORT BY VERSION DESC
 
   return (
@@ -81,8 +85,15 @@ export default function ListOfDecks() {
           flexDirection: "column",
         }}
       >
-        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "}Features under construction. Ready in some days. Ideas to share? - contact me!
+        <div>
+          <FontAwesomeIcon
+            icon={faTools}
+            size="2x"
+            color="yellow"
+            style={{ paddingRight: "10px" }}
+          />
+          {"  "}Features under construction. Ready in some days. Ideas to share? - contact me!
+        </div>
       </div>
       <DecklistFilters
         gameType={gameTypeFilter}
@@ -91,21 +102,29 @@ export default function ListOfDecks() {
         setGameTypeSecondary={setGameTypeSecondaryFilter}
         playStyle={playStyleFilter}
         setPlayStyle={setPlayStyleFilter}
+        masterFiltr={masterFilter}
+        setMasterFilter={setMasterFilter}
       />
-      {decksWithPlayStyle.map((deck) => (
-        <SingleDeckContainerStyle key={deck.createdAt.getTime()}>
-          {deck.deckname} {deck.createdAt.toLocaleString()}{" "}
-          {deck.createdAtVersion ? deck.createdAtVersion : CURRENT_GAME_VERSION}v {deck.description}{" "}
-          {deck.gameType} {deck.playStyle} {deck.gameTypeSecondary}
+      {decksWithMaster.map((deck) => (
+        <fieldset className={css.singleDeck} key={deck.createdAt.getTime()}>
+          <legend>
+            <div className={css.deckLegend}>{deck.deckname}</div>
+          </legend>
+          <div className={css.deckRightLegend}>
+            v{deck.createdAtVersion ? deck.createdAtVersion : CURRENT_GAME_VERSION}
+          </div>
           <CardsContainerStyle>
             {deck.master && (
-              <Master masterKey={deck.master} actionRegistrationComponent={() => {}} />
+              <div className={css.master}>
+                <Master masterKey={deck.master} actionRegistrationComponent={() => {}} />
+              </div>
             )}
             {orderBy(deck.cards, ({ manacost }) => parseInt(manacost), "asc").map((card) => (
               <Card card={card} isDeckCard showDeck key={card.iD} />
             ))}
           </CardsContainerStyle>
-        </SingleDeckContainerStyle>
+          <div className={css.deckBelow}>{deck.description}</div>
+        </fieldset>
       ))}
     </div>
   );

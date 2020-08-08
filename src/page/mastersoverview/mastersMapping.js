@@ -47,7 +47,7 @@ export const mastersMapping = {
     icon: "Ratbo_Icon",
     iD: 4,
   },
-  ravager: {
+  Ravager: {
     content: <RavagerContent />,
     icon: "Ravager_Icon",
     iD: 3,

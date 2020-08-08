@@ -43,7 +43,7 @@ export function is_touch_device() {
   }
 }
 
-export const CURRENT_GAME_VERSION = "1.15";
+export const CURRENT_GAME_VERSION = "1.15.43740";
 
 export const insertAtCaret = (txtarea, text, setValue) => {
   var scrollPos = txtarea.scrollTop;
