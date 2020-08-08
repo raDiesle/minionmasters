@@ -1,11 +1,14 @@
 .formLayout {
   display: flex;
+  flex-wrap: wrap;
   & > div {
     padding-right: 10px;
 
     & > select,
     input {
       display: flex;
+
+      min-width: 180px;
     }
   }
 }

@@ -10,7 +10,7 @@ export default function GameTypeSecondaryInput({
     <div>
       <label htmlFor="gameTypeSecondary">Sub Game Type</label>
       <select
-        name="gameType"
+        name="gameTypeSecondary"
         onChange={(e) => setGameTypeSecondary(e.currentTarget.value)}
         value={gameTypeSecondary}
         disabled={!gameType}

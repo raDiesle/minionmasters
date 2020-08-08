@@ -1,0 +1,41 @@
+.singleDeck {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  max-width: 930px;
+  margin: 10px 0;
+}
+
+.deckRightLegend {
+  position: absolute;
+  top: -0.2px;
+  right: 7px;
+  padding: 0 2px;
+  line-height: 1.2em;
+  background-color: #222;
+}
+
+.deckName {
+  color: yellow;
+  font-size: 16px;
+}
+
+.deckLegend {
+  display: flex;
+  justify-content: space-between;
+}
+
+.master {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.deckBelow {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 82px;
+}

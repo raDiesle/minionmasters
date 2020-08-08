@@ -9,7 +9,7 @@ import Tooltip from "rc-tooltip";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
-import ListOfDecks from "./carddeck/ListOfDecks/ListOfDecks";
+import Decks from "page/carddeck/ListOfDecks/decks";
 
 export function Page() {
   const isUrlImport =
@@ -22,22 +22,13 @@ export function Page() {
         <TabList>
           <Tab>Deck Manager</Tab>
           <Tab>Decks</Tab>
-          <Tab>
-            <Tooltip
-              placement="topRight"
-              overlay={<span>This section is under construction.</span>}
-            >
-              <div>
-                <FontAwesomeIcon icon={faTools} size="1x" color="yellow" /> The Game
-              </div>
-            </Tooltip>
-          </Tab>
+          <Tab>The Game</Tab>
         </TabList>
         <TabPanel>
           <DeckContainer />
         </TabPanel>
         <TabPanel>
-          <ListOfDecks />
+          <Decks />
         </TabPanel>
         <TabPanel>
           <Basics />

@@ -65,7 +65,7 @@ const App = () => {
                   {" "}
                   <CapitalLetterStyle>M</CapitalLetterStyle>anager
                 </span>
-                <div style={{ fontSize: "13px" }}>{CURRENT_GAME_VERSION}v</div>
+                <div style={{ fontSize: "13px" }}>v{CURRENT_GAME_VERSION}</div>
               </span>
             </div>
           </PageHeaderStyle>
