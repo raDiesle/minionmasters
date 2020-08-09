@@ -29,6 +29,8 @@ export default function Decks() {
   const [playStyleFilter, setPlayStyleFilter] = useState("");
   const [masterFilter, setMasterFilter] = useState("");
 
+  const [availableCards, setAvailableCards] = useState("");
+
   useEffect(() => {
     db.collection("decks")
       .orderBy("createdAt", "desc")
@@ -105,6 +107,8 @@ export default function Decks() {
         setPlayStyle={setPlayStyleFilter}
         masterFiltr={masterFilter}
         setMasterFilter={setMasterFilter}
+        availableCards={availableCards}
+        setAvailableCards={setAvailableCards}
       />
       {decksWithMaster.map((deck) => (
         <fieldset className={css.singleDeck} key={deck.createdAt.getTime()}>

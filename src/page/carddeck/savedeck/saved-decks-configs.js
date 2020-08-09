@@ -15,7 +15,7 @@ export const GAME_TYPES = [
     ],
   },
   {
-    key: "Maythem",
+    key: "Mayhem",
     subitems: [
       { key: "Killing Floor", description: "" },
       { key: "Desert Maythem", description: "" },
