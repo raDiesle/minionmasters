@@ -2,38 +2,21 @@ import { faEdit } from "@fortawesome/free-regular-svg-icons/faEdit";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import mToast from "components/mToast";
+import { auth, dbErrorHandlerPromise } from "mm-firestore";
 
 import Tooltip from "rc-tooltip/es";
 
 import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
-import { auth, db, dbErrorHandlerPromise } from "../../firestore";
 import { ButtonColor, ButtonInGroupStyle } from "../filters/ButtonFilterGroup";
 import WikiEditorActive from "./WikiEditorActive";
 import WikiEditorReadOnly from "./WikiEditorReadOnly";
 
 const EditorStyle = styled.div`
-  // border: 1px solid lightgray;
   border-right: 0;
   padding-right: 5px;
   max-width: 1000px;
-  //padding: 8px;
-  /*
-  // border: 1px solid lightgray;
-  border-right: 0;
-  // padding: 8px;
-  
-  //    box-sizing: border-box;
-    border: 1px solid #ddd;
-    cursor: text;
-    padding: 16px;
-    border-radius: 2px;
-    // margin-bottom: 2em;
-    box-shadow: inset 0px 1px 8px -3px #ABABAB;
-    background: #fefefe;
-    
-   */
 `;
 
 const LastEditedStyle = styled.div`
@@ -49,9 +32,7 @@ const EditWithButtonStyle = styled.div`
   }
 `;
 
-export default function WikiEditor({ card: { iD }, discussionType }) {
-  const dbRef = db.collection("cards").doc(String(iD)).collection(discussionType);
-
+export default function WikiEditor({ dbRef }) {
   const [currentWikiData, setCurrentWikiData] = useState({
     createdAt: "",
     createdAtVersion: "",
@@ -129,7 +110,7 @@ export default function WikiEditor({ card: { iD }, discussionType }) {
             <div>
               last edit:{" "}
               {currentWikiData.createdAtVersion
-                ? `${currentWikiData.createdAtVersion}v`
+                ? `v${currentWikiData.createdAtVersion}`
                 : currentWikiData.createdAt.toLocaleString()}{" "}
               - {currentWikiData.createdBy}
             </div>

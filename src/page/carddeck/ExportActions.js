@@ -3,7 +3,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 
 import css from "page/filters/ButtonFilterGroup.module.scss";

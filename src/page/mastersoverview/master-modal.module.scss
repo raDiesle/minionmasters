@@ -1,11 +1,13 @@
 .MasterHeaderStyle {
-  padding-bottom: 0.5rem;
+  margin-top: 0;
+  padding-bottom: 5px;
   font-size: 23px;
 }
 
 %abstractMasterAbilityImageStyle {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
 }
 
 .MasterAbilityImageStyle {
@@ -17,26 +19,49 @@
   border-radius: 50%;
 }
 
+.abilityContainer {
+  position: relative;
+  margin-bottom: 10px;
+  & > legend {
+    margin-right: 65px;
+  }
+}
+
 .MasterAbilityHeaderStyle {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  //font-size: 20px;
+
   color: yellow;
 }
 
 .MasterAbilitySubHeader {
-  font-size: 1.05rem;
+  font-size: 16px;
 }
 
+.rightLegend {
+  position: absolute;
+  top: 10.8px;
+  right: 3px;
+  padding: 0 2px;
+  line-height: 1.2em;
+  background-color: #222;
+}
 .MasterAbilityUnlocksHeaderStyle {
-  //font-size: 20px;
-  color: yellow;
+  @extend .rightLegend;
+  @extend .MasterAbilityHeaderStyle;
+
+  & > svg {
+    margin-left: 5px;
+  }
 }
 
 .MasterAbilityDescriptionStyle {
-  //font-size: 0.9rem;
   padding-bottom: 20px;
 }
 
 .AbilityUlStyle {
+  margin-top: 0;
 }
 
 .ModalCloseStyle {

@@ -1,7 +1,7 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { anchorLinkTarget } from "components/helper";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 
 import ChatCommands from "page/basics/chat-commands";
 import GameModes from "page/basics/game-modes";

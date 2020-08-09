@@ -1,5 +1,5 @@
 import { DEFAULT_MASTER_NOT_SELECTED } from "page/carddeck/DeckContainer";
-import { FullWidthMasterOverlay } from "page/mastersoverview/AddMasterToDeckActionOverlay";
+import { FullWidthMasterOverlay } from "page/mastersoverview/AddMasterToDeckOrOpenDetailsActionOverlay";
 import { MasterModal } from "page/mastersoverview/MasterModal";
 import React, { useState } from "react";
 import LongPress from "react-long";
@@ -23,11 +23,13 @@ export default function BuildMasterDeckActionOverlay({ masterKey, setSelectedHer
         ></FullWidthMasterOverlay>
       </LongPress>
 
-      <MasterModal
-        isOpenHeroModal={isOpenHeroModal}
-        setIsOpenHeroModal={setIsOpenHeroModal}
-        masterKey={masterKey}
-      />
+      {isOpenHeroModal && (
+        <MasterModal
+          isOpenHeroModal={isOpenHeroModal}
+          setIsOpenHeroModal={setIsOpenHeroModal}
+          masterKey={masterKey}
+        />
+      )}
     </>
   );
 }

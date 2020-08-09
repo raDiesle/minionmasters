@@ -2,12 +2,12 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons/faSignInAlt";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { auth as authInstance } from "mm-firestore";
 import React, { useEffect, useState } from "react";
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import { auth as authInstance } from "./firestore";
 
 export default function LoginLogout() {
   const [isLoginModalShown, setIsLoginModalShown] = useState(false);

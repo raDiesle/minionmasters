@@ -4,10 +4,10 @@ import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENT_GAME_VERSION } from "components/helper";
+import { auth, dbErrorHandlerPromise } from "mm-firestore";
 import Tooltip from "rc-tooltip/es";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { auth, dbErrorHandlerPromise } from "../../firestore";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "../filters/ButtonFilterGroup";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import TextareaEditor from "./textarea-editor";
@@ -121,7 +121,6 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
             }
           >
             <ButtonInGroupStyle>
-              {" "}
               <FontAwesomeIcon icon={faInfoCircle} size={"sm"} /> How to reference a Master or Card
               in the text {"  "}
             </ButtonInGroupStyle>

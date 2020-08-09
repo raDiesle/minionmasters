@@ -1,4 +1,3 @@
-import { gaTrackView } from "firestore";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,7 +11,6 @@ const MastersStyle = styled.a`
 `;
 
 export default function Masters({ actionRegistrationComponent }) {
-  gaTrackView("/Masters");
   return (
     <MastersStyle name="mastersview">
       {Object.keys(mastersMapping).map((masterKey) => (

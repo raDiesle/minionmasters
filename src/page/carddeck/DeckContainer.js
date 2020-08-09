@@ -1,8 +1,8 @@
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import CardForDeckActionOverlay from "page/carddeck/cardfordeck-actionoverlay";
 import { HowToUse } from "page/carddeck/how-to-use";
 
-import AddMasterToDeckActionOverlay from "page/mastersoverview/AddMasterToDeckActionOverlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/mastersoverview/AddMasterToDeckOrOpenDetailsActionOverlay";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
@@ -45,7 +45,10 @@ const FiltersWithCardsMemo = ({ setSelectedCardEvent }) => {
 const MastersMemo = ({ setSelectedHero }) => {
   return useMemo(() => {
     const mastersActionWrapper = (selectedHeroKey) => (
-      <AddMasterToDeckActionOverlay masterKey={selectedHeroKey} setSelectedHero={setSelectedHero} />
+      <AddMasterToDeckOrOpenDetailsActionOverlay
+        masterKey={selectedHeroKey}
+        setSelectedHero={setSelectedHero}
+      />
     );
 
     return <Masters actionRegistrationComponent={mastersActionWrapper} />;

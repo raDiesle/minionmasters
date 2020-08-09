@@ -1,6 +1,6 @@
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 
 import _dropRight from "lodash.dropright";
 import CardProperties from "page/card-modal/card-properties";

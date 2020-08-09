@@ -2,7 +2,7 @@ import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExcla
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LoginRequired from "components/login-required";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import css from "page/carddeck/savedeck/save-db-button.module.scss";
 import SaveDeckForm from "page/carddeck/savedeck/save-deck-form";

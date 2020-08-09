@@ -1,4 +1,4 @@
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import CardforInfoActionOverlay from "page/discussion/cardforinfo-actionoverlay";
 import React, { useMemo } from "react";
 import FiltersWithCards from "../FiltersWithCards";

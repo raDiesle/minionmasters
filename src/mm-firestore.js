@@ -15,7 +15,6 @@ const config = {
   measurementId: "G-0J3Y5FMREJ",
 };
 const firebaseApp = firebase.initializeApp(config);
-const ga = firebase.analytics();
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
@@ -27,6 +26,4 @@ const dbErrorHandlerPromise = (error) => {
   return Promise.reject();
 };
 
-const gaTrackView = (screen_name) => ga.logEvent("screen_view", { screen_name });
-
-export { db, auth, firebaseApp, dbErrorHandlerPromise, gaTrackView };
+export { db, auth, firebaseApp, dbErrorHandlerPromise };

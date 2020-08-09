@@ -1,7 +1,7 @@
 import mToast from "components/mToast";
+import { db, dbErrorHandlerPromise } from "mm-firestore";
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
-import { db, dbErrorHandlerPromise } from "../firestore";
 import AgainstCards from "./AgainstCards";
 import CardDiscussion from "./discussion/CardDiscussion";
 

@@ -1,6 +1,6 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import React from "react";
 
 import cssStatic from "./static-content.module.scss";
