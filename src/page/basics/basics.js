@@ -1,4 +1,4 @@
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import AdventuresChallenges from "page/basics/adventures-challenges";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
 import Draft from "page/basics/draft";

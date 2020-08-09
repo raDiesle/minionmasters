@@ -1,11 +1,14 @@
-import AddMasterToDeckActionOverlay from "page/mastersoverview/AddMasterToDeckActionOverlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/mastersoverview/AddMasterToDeckOrOpenDetailsActionOverlay";
 import Masters from "page/mastersoverview/Masters";
 import React, { useMemo } from "react";
 
 const MastersMemo = ({ setSelectedHero }) => {
   return useMemo(() => {
     const mastersActionWrapper = (selectedHeroKey) => (
-      <AddMasterToDeckActionOverlay masterKey={selectedHeroKey} setSelectedHero={setSelectedHero} />
+      <AddMasterToDeckOrOpenDetailsActionOverlay
+        masterKey={selectedHeroKey}
+        setSelectedHero={setSelectedHero}
+      />
     );
 
     return <Masters actionRegistrationComponent={mastersActionWrapper} />;

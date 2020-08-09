@@ -8,7 +8,9 @@ import App from "./App";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
-Sentry.init({ dsn: "https://487d2f84e8784b78b2658663894c9073@o430881.ingest.sentry.io/5380445" });
+if (!window.location.host.includes("localhost")) {
+  Sentry.init({ dsn: "https://487d2f84e8784b78b2658663894c9073@o430881.ingest.sentry.io/5380445" });
+}
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

@@ -1,12 +1,11 @@
 import firebase from "@firebase/app";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons/faCheckCircle";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import { CURRENT_GAME_VERSION } from "components/helper";
 import mToast from "components/mToast";
-import { db, dbErrorHandlerPromise } from "firestore";
+import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import cssButton from "page/filters/ButtonFilterGroup.module.scss";
 import React, { useState } from "react";

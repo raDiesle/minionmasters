@@ -17,7 +17,7 @@ export default function Footer() {
     <div className={css.FooterStyle}>
       <SubheaderLinkStyle
         onClick={() =>
-          toast("Contact me in Discord: raDies_chen#4904", {
+          toast("Contact me in Discord: raDies_chen#4904 or david@amend.online", {
             position: "bottom-right",
           })
         }

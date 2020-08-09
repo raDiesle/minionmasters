@@ -99,7 +99,7 @@ export default function WikiEditorReadOnly({ value = "" }) {
           setIsOpenDetails={setIsOpenCardSubModal}
         />
       )}
-      {masterSubModalData !== null && (
+      {masterSubModalData !== null && isOpenMasterSubModal && (
         <MasterModal
           masterKey={masterSubModalData}
           isOpenHeroModal={isOpenMasterSubModal}

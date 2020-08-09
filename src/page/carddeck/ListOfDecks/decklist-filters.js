@@ -39,7 +39,9 @@ export default function DecklistFilters({
         >
           <option value="">-</option>
           {Object.keys(mastersMapping).map((key) => (
-            <option value={key}>{key}</option>
+            <option value={key} key={key}>
+              {key}
+            </option>
           ))}
         </select>
       </div>

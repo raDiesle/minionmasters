@@ -1,6 +1,6 @@
 import DeebuffIcon from "components/buff-icon";
 import BuffIcon from "components/debuff-icon";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import css from "page/basics/static-content.module.scss";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
 import { TERMS_CONFIG } from "page/terms-config";

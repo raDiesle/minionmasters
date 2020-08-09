@@ -1,6 +1,6 @@
 import { anchorLinkTarget } from "components/helper";
 import { GoldImg } from "components/thegame-icons";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import css from "page/basics/static-content.module.scss";
 import React from "react";
 

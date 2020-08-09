@@ -48,7 +48,7 @@ export default {
       border: "1px solid rgba(0,0,0,0)",
       color: "rgba(0,0,0,0)",
       "&focused": {
-        borderColor: "yellow",
+        border: "1px solid yellow",
       },
     },
   },

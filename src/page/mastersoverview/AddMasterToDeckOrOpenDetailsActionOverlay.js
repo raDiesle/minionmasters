@@ -1,5 +1,6 @@
+import { gaTrackView } from "consent-banner";
 import { MasterModal } from "page/mastersoverview/MasterModal";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LongPress from "react-long";
 import styled from "styled-components";
 
@@ -28,13 +29,19 @@ export const FullWidthMasterOverlay = styled.div`
   }
 `;
 
-export default function AddMasterToDeckActionOverlay({ setSelectedHero, masterKey }) {
+export default function AddMasterToDeckOrOpenDetailsActionOverlay({ setSelectedHero, masterKey }) {
   const [isOpenHeroModal, setIsOpenHeroModal] = useState(false);
 
   const handleOnContextMenu = (event) => {
     event && event.preventDefault();
     setIsOpenHeroModal(true);
   };
+
+  useEffect(() => {
+    if (isOpenHeroModal) {
+      gaTrackView(`/Master/${masterKey}`);
+    }
+  }, [isOpenHeroModal]);
 
   return (
     <>
@@ -50,12 +57,13 @@ export default function AddMasterToDeckActionOverlay({ setSelectedHero, masterKe
           onContextMenu={(event) => handleOnContextMenu(event)}
         ></FullWidthMasterOverlay>
       </LongPress>
-
-      <MasterModal
-        isOpenHeroModal={isOpenHeroModal}
-        setIsOpenHeroModal={setIsOpenHeroModal}
-        masterKey={masterKey}
-      />
+      {isOpenHeroModal && (
+        <MasterModal
+          isOpenHeroModal={isOpenHeroModal}
+          setIsOpenHeroModal={setIsOpenHeroModal}
+          masterKey={masterKey}
+        />
+      )}
     </>
   );
 }

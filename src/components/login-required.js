@@ -1,7 +1,7 @@
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { auth as authInstance } from "mm-firestore";
 import React, { useEffect, useState } from "react";
-import { auth as authInstance } from "../firestore";
 
 export default function LoginRequired() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

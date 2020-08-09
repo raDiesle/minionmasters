@@ -1,5 +1,5 @@
 import { anchorLinkTarget } from "components/helper";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 
 import React from "react";
 import cssStatic from "./static-content.module.scss";

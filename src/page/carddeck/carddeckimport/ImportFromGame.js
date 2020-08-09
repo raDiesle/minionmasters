@@ -1,5 +1,5 @@
 import mToast from "components/mToast";
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import css from "page/carddeck/Guide.module.scss";
 import React from "react";

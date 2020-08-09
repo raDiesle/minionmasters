@@ -1,3 +1,11 @@
+.pageContainer {
+  margin: auto;
+  width: 930px;
+  @media (max-width: 955px) {
+    width: 100%;
+  }
+}
+
 .singleDeck {
   position: relative;
   display: flex;

@@ -1,4 +1,4 @@
-import { gaTrackView } from "firestore";
+import { gaTrackView } from "consent-banner";
 import Achievements from "page/basics/resources/achievements";
 import AdventureRewards from "page/basics/resources/adventure-rewards";
 import ChallengesRewards from "page/basics/resources/challenges-rewards";

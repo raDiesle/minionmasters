@@ -1,4 +1,5 @@
 import { CURRENT_GAME_VERSION } from "components/helper";
+import ConsentBanner from "consent-banner";
 import Footer from "Footer";
 import React from "react";
 import Modal from "react-modal";
@@ -78,6 +79,7 @@ const App = () => {
           <Page />
         </BrowserRouter>
       </div>
+      <ConsentBanner />
       <Footer />
     </div>
   );

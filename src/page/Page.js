@@ -1,15 +1,11 @@
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import Basics from "page/basics/basics";
 
 import DeckContainer from "page/carddeck/DeckContainer";
-import qs from "qs";
-import Tooltip from "rc-tooltip";
-import React from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 import Decks from "page/carddeck/ListOfDecks/decks";
+import qs from "qs";
+import React from "react";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 export function Page() {
   const isUrlImport =

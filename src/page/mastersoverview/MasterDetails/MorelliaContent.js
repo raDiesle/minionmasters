@@ -2,8 +2,9 @@ import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import css from "page/mastersoverview/master-modal.module.scss";
+import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
+import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import React from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import IconDamage from "./icon-damage.png";
 
 export default function MorelliaContent() {
@@ -21,89 +22,97 @@ export default function MorelliaContent() {
         </div>
       </div>
 
-      <Tabs>
-        <TabList>
-          <Tab>
+      <fieldset className={css.abilityContainer}>
+        <legend>
+          <div className={css.MasterAbilityHeaderStyle}>
             <img className={css.MasterAbilityImageStyle} src={IconDamage} alt="basic attack" />
-          </Tab>
-          <Tab>
-            <img
-              className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Diona_Perk1_78.webp"
-              alt="Diona Perk1"
-            />
-          </Tab>
-          <Tab>
-            <img
-              className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Diona_Perk2_78.webp"
-              alt="Diona Perk2"
-            />
-          </Tab>
-          <Tab>
-            <img
-              className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Diona_Perk3_78.webp"
-              alt="Diona Perk3"
-            />
-          </Tab>
-        </TabList>
-        <TabPanel>
-          <div className={css.MasterAbilityHeaderStyle}>Basic Attack</div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Necrothic Touch: Channels a beam of necrotic energy for 6 damage every 0.3 seconds with
-            10 range.
+            <div>Basic Attack</div>
           </div>
-        </TabPanel>
-        <TabPanel>
-          <div className={css.MasterAbilityHeaderStyle}>Book of the dead</div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Adds a One-use Card; Book of the Dead, to the top of Morellia's deck every 30 seconds.
-            Book of the Dead: Replace your hand with 4 options:
-          </div>
-          <ul className={css.AbilityUlStyle}>
-            <li>Skeletons: Summon 4 Skeletons.</li>
-            <li>Spirit: Give a random friendly Minion Spirit.</li>
-            <li>
-              Drain Life: Drain 100 health from the closest enemy Minion, transfering it to Morellia
-            </li>
-            <li>
-              Forbidden Knowledge: 2 of Morellia's 4+ mana spells costs 1 less until played. Does
-              not stack.
-            </li>
-          </ul>
+        </legend>
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Necrothic Touch: Channels a beam of necrotic energy for 6 damage every 0.3 seconds with 10
+          range.
+        </div>
+      </fieldset>
 
-          <div className={css.MasterAbilityUnlocksHeaderStyle}>
-            <FontAwesomeIcon icon={faUnlock} /> 20XP
+      <fieldset className={css.abilityContainer}>
+        <legend>
+          <div className={css.MasterAbilityHeaderStyle}>
+            <img
+              className={css.MasterAbilityImageRoundedStyle}
+              src="generated/img/LichQueen_Perk1_78.webp"
+              alt="Morellia Perk1"
+            />
+            Book of the dead
           </div>
-        </TabPanel>
-        <TabPanel>
-          <div className={css.MasterAbilityHeaderStyle}>Unholy Bargain</div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Morellia unlocks the deepest mysteries from the sentient Book of the Dead, empowering
-            its effects:
+        </legend>
+        <div className={css.MasterAbilityUnlocksHeaderStyle}>
+          20 XP <FontAwesomeIcon icon={faUnlock} />
+        </div>
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Adds a One-use Card; Book of the Dead, to the top of Morellia's deck every 30 seconds.
+          Book of the Dead: Replace your hand with 4 options:
+        </div>
+        <ul className={css.AbilityUlStyle}>
+          <li>Skeletons: Summon 4 Skeletons.</li>
+          <li>Spirit: Give a random friendly Minion Spirit.</li>
+          <li>
+            Drain Life: Drain 100 health from the closest enemy Minion, transfering it to Morellia
+          </li>
+          <li>
+            Forbidden Knowledge: 2 of Morellia's 4+ mana spells costs 1 less until played. Does not
+            stack.
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset className={css.abilityContainer}>
+        <legend>
+          <div className={css.MasterAbilityHeaderStyle}>
+            <img
+              className={css.MasterAbilityImageRoundedStyle}
+              src="generated/img/LichQueen_Perk2_78.webp"
+              alt="Morellia Perk2"
+            />
+            <div>Unholy Bargain</div>
           </div>
-          <div className={css.MasterAbilityUnlocksHeaderStyle}>
-            <FontAwesomeIcon icon={faUnlock} /> 60XP
+        </legend>
+        <div className={css.MasterAbilityUnlocksHeaderStyle}>
+          60 XP <FontAwesomeIcon icon={faUnlock} />
+        </div>
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Morellia unlocks the deepest mysteries from the sentient Book of the Dead, empowering its
+          effects:
+        </div>
+      </fieldset>
+
+      <fieldset className={css.abilityContainer}>
+        <legend>
+          <div className={css.MasterAbilityHeaderStyle}>
+            <img
+              className={css.MasterAbilityImageRoundedStyle}
+              src="generated/img/LichQueen_Perk3_78.webp"
+              alt="Morellia Perk3"
+            />
+            <div>Queen's Dragon</div>
           </div>
-        </TabPanel>
-        <TabPanel>
-          <div className={css.MasterAbilityHeaderStyle}>Queen's Dragon</div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Add the One-use Card: Queen's Dragon, to Morellia's deck.
-          </div>
-          <div className={css.MasterAbilityDescriptionStyle}>
-            Queen's Dragon Summons Nyrvir the Fallen
-          </div>
-          <ul className={css.AbilityUlStyle}>
-            <li>Max Health: 2000.</li>
-            <li>Damage: 320 (Dps: 40).</li>
-          </ul>
-          <div className={css.MasterAbilityUnlocksHeaderStyle}>
-            <FontAwesomeIcon icon={faUnlock} /> 120XP
-          </div>
-        </TabPanel>
-      </Tabs>
+        </legend>
+        <div className={css.MasterAbilityUnlocksHeaderStyle}>
+          120 XP <FontAwesomeIcon icon={faUnlock} />
+        </div>
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Add the One-use Card: Queen's Dragon, to Morellia's deck.
+        </div>
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Queen's Dragon Summons Nyrvir the Fallen
+        </div>
+        <ul className={css.AbilityUlStyle}>
+          <li>Max Health: 2000.</li>
+          <li>Damage: 320 (Dps: 40).</li>
+        </ul>
+      </fieldset>
+
+      <MasterTipsByCommunity masterKey={mastersMapping.Morellia.iD} />
     </div>
   );
 }

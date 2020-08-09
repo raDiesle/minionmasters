@@ -1,12 +1,13 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENT_GAME_VERSION } from "components/helper";
+import { gaTrackView } from "consent-banner";
 import orderBy from "lodash/orderBy";
+import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
 import Master from "page/mastersoverview/master";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { db, dbErrorHandlerPromise, gaTrackView } from "../../../firestore";
 import cardData from "../../../generated/jobCardProps";
 import { Card } from "../../Card";
 
@@ -76,7 +77,7 @@ export default function Decks() {
   // SORT BY VERSION DESC
 
   return (
-    <div>
+    <div className={css.pageContainer}>
       <div
         style={{
           display: "flex",
