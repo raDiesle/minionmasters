@@ -9,10 +9,14 @@ import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cloneDeep from "lodash/cloneDeep";
+import AvailableCardsFilter from "page/filters/available-cards-filter";
+import cssButton from "page/filters/ButtonFilterGroup.module.scss";
 import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/FiltersWithCards";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Tooltip from "rc-tooltip";
-import React from "react";
+import React, { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import { targetsMapping } from "../../attack/targetsMapping";
 import { typeMapping } from "../../cardtype/typeMapping";
@@ -64,8 +68,14 @@ export function FilterInputs({
   setSortByMana,
   countFilter,
   setCountFilter,
+  availableCards,
+  setAvailableCards,
+  isToggleAvailableCards,
+  setIsToggleAvailableCards,
   children,
 }) {
+  const [toPasteAvailableCards, setToPasteAvailableCards] = useState(false);
+
   return (
     <FilterContainerStyle>
       <div>
@@ -122,6 +132,9 @@ export function FilterInputs({
             setName("");
             setSortByMana("asc");
             setCountFilter(ALL_UNIT_COUNT_DEFAULT_CONFIG);
+            setToPasteAvailableCards(false);
+            setAvailableCards("");
+            setIsToggleAvailableCards(false);
           }}
         >
           <FontAwesomeIcon icon={faTrashAlt} /> Reset
@@ -219,6 +232,16 @@ export function FilterInputs({
           ))}
         </ButtonGroupStyle>
       </div>
+
+      <AvailableCardsFilter
+        availableCards={availableCards}
+        setAvailableCards={setAvailableCards}
+        isToggleAvailableCards={isToggleAvailableCards}
+        setIsToggleAvailableCards={setIsToggleAvailableCards}
+        toPasteAvailableCards={toPasteAvailableCards}
+        setToPasteAvailableCards={setToPasteAvailableCards}
+      />
+
       {children}
     </FilterContainerStyle>
   );

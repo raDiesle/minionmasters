@@ -42,11 +42,14 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
   const [sortByMana, setSortByMana] = useState("asc");
 
   const [countFilter, setCountFilter] = useState(ALL_UNIT_COUNT_DEFAULT_CONFIG);
+  const [availableCards, setAvailableCards] = useState("");
+  const [isToggleAvailableCards, setIsToggleAvailableCards] = useState(false);
 
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
 
   const filteredMasterCards = cardData.filter(({ rarity }) => rarity !== "Perk");
+
   const fullCount = filteredMasterCards.length;
 
   const filteredCardsDataWithRarity = filters.rarity.every(({ isActive }) => !isActive)
@@ -116,8 +119,14 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
           })
       );
 
+  const filteredCardsWithAvailableCards = !availableCards
+    ? filteredCardsDataWithCount
+    : filteredCardsDataWithCount.filter(({ iD }) =>
+        isToggleAvailableCards ? !availableCards.includes(iD) : availableCards.includes(iD)
+      );
+
   const sortedByManaCards = orderBy(
-    filteredCardsDataWithCount,
+    filteredCardsWithAvailableCards,
     ({ manacost }) => parseInt(manacost),
     sortByMana
   );
@@ -131,6 +140,10 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setName={setName}
         countFilter={countFilter}
         setCountFilter={setCountFilter}
+        availableCards={availableCards}
+        setAvailableCards={setAvailableCards}
+        isToggleAvailableCards={isToggleAvailableCards}
+        setIsToggleAvailableCards={setIsToggleAvailableCards}
         isShowDetailsOnCard={isShowDetailsOnCard}
         setIsShowDetailsOnCard={setIsShowDetailsOnCard}
         isShowNamesOnCards={isShowNamesOnCards}

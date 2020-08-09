@@ -14,6 +14,8 @@ export default function DecklistFilters({
   setPlayStyle,
   masterFilter,
   setMasterFilter,
+  availableCards,
+  setAvailableCards,
 }) {
   return (
     <div className={css.formLayout}>
