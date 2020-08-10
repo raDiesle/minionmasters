@@ -1,17 +1,24 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as classnames from "classnames";
 import { CURRENT_GAME_VERSION } from "components/helper";
+import mToast from "components/mToast";
 import { useGaTrackView } from "consent-banner";
 import orderBy from "lodash/orderBy";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
+import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import Master from "page/mastersoverview/master";
+import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import React, { useEffect, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import cardData from "../../../generated/jobCardProps";
 import { Card } from "../../Card";
 
 import css from "./decks.module.scss";
+import cssButton from "../../filters/ButtonFilterGroup.module.scss";
 
 const CardsContainerStyle = styled.div`
   display: grid;
@@ -51,6 +58,7 @@ export default function Decks() {
             cards: mappedCardData,
             createdAt: deck.createdAt.toDate(),
             createdAtVersion: deck.createdAtVersion,
+            createdByDisplayName: deck.createdByDisplayName,
             gameType: deck.gameType,
             playStyle: deck.playStyle,
             master: deck.hero,
@@ -96,6 +104,7 @@ export default function Decks() {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          paddingBottom: "15px",
         }}
       >
         <div>
@@ -130,6 +139,9 @@ export default function Decks() {
           <div className={css.deckRightLegend}>
             v{deck.createdAtVersion ? deck.createdAtVersion : CURRENT_GAME_VERSION}
           </div>
+          <div className={css.deckRightBottomLegend}>
+            by {deck.createdByDisplayName ? deck.createdByDisplayName : "unknown"}
+          </div>
           <CardsContainerStyle>
             {deck.master && (
               <div className={css.master}>
@@ -140,7 +152,25 @@ export default function Decks() {
               <Card card={card} isDeckCard showDeck key={card.iD} />
             ))}
           </CardsContainerStyle>
-          <div className={css.deckBelow}>{deck.description}</div>
+          <div className={css.belowDeck}>
+            <CopyToClipboard
+              text={`/setdeck ${deck.master}: ${deck.cards.map(({ name }) => name).join(", ")}`}
+              onCopy={() => {
+                toast(
+                  "Copied to clipboard. Go to game, switch to a slot and paste command and press ENTER. Game must be english language. Experimental feature, might not work!",
+                  { position: "bottom-right", autoClose: 10000 }
+                );
+              }}
+              title="Copy"
+            >
+              <ButtonGroupStyle>
+                <div className={classnames(css.copyDeck, cssButton.ButtonInGroupStyle)}>
+                  Copy to game
+                </div>
+              </ButtonGroupStyle>
+            </CopyToClipboard>
+            <div className={css.description}>{deck.description}</div>
+          </div>
         </fieldset>
       ))}
     </div>

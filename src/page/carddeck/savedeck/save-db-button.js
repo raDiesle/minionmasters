@@ -5,11 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import { CURRENT_GAME_VERSION } from "components/helper";
 import mToast from "components/mToast";
-import { db, dbErrorHandlerPromise } from "mm-firestore";
+import { auth, db, dbErrorHandlerPromise } from "mm-firestore";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import cssButton from "page/filters/ButtonFilterGroup.module.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./save-db-button.module.scss";
+
+function listenUserAuth(setCurrentUser) {
+  return auth.onAuthStateChanged((user) => {
+    setCurrentUser(auth.currentUser);
+  });
+}
 
 export default function SaveDbButton({
   relevantCards,
@@ -23,6 +29,14 @@ export default function SaveDbButton({
   const dbRef = db.collection("decks");
 
   const [isSaved, setSaved] = useState(false);
+
+  const [currentUser, setCurrentUser] = useState("");
+  useEffect(() => {
+    const listen = listenUserAuth(setCurrentUser);
+    return () => listen();
+  }, []);
+
+  console.log(currentUser);
 
   const formData = {
     deckname: name,
@@ -42,6 +56,8 @@ export default function SaveDbButton({
         cards: cardIds,
         hero: selectedHero,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdByUid: currentUser.uid,
+        createdByDisplayName: currentUser.displayName,
       })
       .then((result) => {
         mToast("saved");

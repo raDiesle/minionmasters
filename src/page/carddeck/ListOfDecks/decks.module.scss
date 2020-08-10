@@ -25,6 +25,16 @@
   background-color: #222;
 }
 
+.deckRightBottomLegend {
+  position: absolute;
+  bottom: -8.2px;
+  right: 7px;
+  padding: 0 2px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+}
+
 .deckName {
   color: yellow;
   font-size: 16px;
@@ -42,8 +52,21 @@
   justify-content: center;
 }
 
-.deckBelow {
+.belowDeck {
+  display: flex;
+}
+
+.description {
   display: flex;
   justify-content: space-between;
-  padding-left: 82px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.copyDeck {
+  width: 78px;
+  padding: 5px;
+  margin-left: -5px;
+  margin-top: 5px;
+  font-size: 10px;
 }
