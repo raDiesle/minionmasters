@@ -1,6 +1,6 @@
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 
 import _dropRight from "lodash.dropright";
 import CardProperties from "page/card-modal/card-properties";
@@ -48,7 +48,7 @@ export default function CardDetailsModal({
   setIsOpenDetails,
   cardEventComponent = null,
 }) {
-  gaTrackView(`/CardDetailsModal/${name}`);
+  useGaTrackView(`/CardDetailsModal/${name}`);
 
   const [modals, setModals] = useState([]);
 

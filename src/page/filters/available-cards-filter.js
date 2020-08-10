@@ -1,9 +1,10 @@
+import * as classnames from "classnames";
+import css from "page/filters/available-cards-filter.module.scss";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import cssButton from "page/filters/ButtonFilterGroup.module.scss";
-import React, { useState } from "react";
+import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
-import css from "page/filters/available-cards-filter.module.scss";
 
 export default function AvailableCardsFilter({
   availableCards,
@@ -42,16 +43,20 @@ export default function AvailableCardsFilter({
   );
 
   const applied = (
-    <div className={css.appliedContainer}>
-      <button className={cssButton.ButtonInGroupStyle}>
+    <div>
+      <button
+        className={classnames(cssButton.ButtonInGroupStyle, css.appliedHover)}
+        style={{ width: "180px" }}
+      >
         <input
           type="checkbox"
           id="toggleAvailable"
           name="toggleAvailable"
+          style={{ minWidth: "unset" }}
           value={isToggleAvailableCards}
           onChange={() => setIsToggleAvailableCards((prevIsToggle) => !prevIsToggle)}
         />
-        <label htmlFor="toggleAvailable" style={{ width: "135px", textAlign: "left" }}>
+        <label htmlFor="toggleAvailable" className={css.labelInline}>
           Toggle {isToggleAvailableCards ? "owned" : "not owned"}
         </label>
       </button>
@@ -60,7 +65,7 @@ export default function AvailableCardsFilter({
 
   return (
     <div>
-      Filter by available cards
+      <label>Filter by available cards</label>
       <ButtonGroupStyle>
         {!toPasteAvailableCards ? copyCommand : !availableCards ? pasteHere : applied}
       </ButtonGroupStyle>

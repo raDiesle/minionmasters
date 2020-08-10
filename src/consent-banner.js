@@ -12,7 +12,12 @@ const fakeGA = {
 };
 // firebaseApp force to load before
 window.ga = Cookies.get("isAllowCookies") ? firebaseApp && firebase.analytics() : fakeGA;
-export const gaTrackView = (screen_name) => window.ga.logEvent("screen_view", { screen_name });
+
+export const useGaTrackView = (screen_name) => {
+  useEffect(() => {
+    window.ga.logEvent("screen_view", { screen_name });
+  }, []);
+};
 
 export default function ConsentBanner() {
   const [isAllowCookies, setAllowCookies] = useCookie("isAllowCookies", null);
@@ -23,7 +28,7 @@ export default function ConsentBanner() {
     window.ga = isAllowCookies ? firebase.analytics() : fakeGA;
   }, [isAllowCookies]);
 
-  if (isAllowCookies || isDeclinedTemporary || window.location.host.includes("localhost")) {
+  if (isAllowCookies || isDeclinedTemporary) {
     return null;
   }
 

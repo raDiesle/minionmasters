@@ -1,12 +1,12 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import React from "react";
 
 import cssStatic from "./static-content.module.scss";
 
 export function BuilddeckGuide() {
-  gaTrackView("/Basics/BuilddeckGuide");
+  useGaTrackView("/Basics/BuilddeckGuide");
   return (
     <div className={cssStatic.container}>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

@@ -1,4 +1,4 @@
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import CardForDeckActionOverlay from "page/carddeck/cardfordeck-actionoverlay";
 import { HowToUse } from "page/carddeck/how-to-use";
 
@@ -58,7 +58,7 @@ const MastersMemo = ({ setSelectedHero }) => {
 export const DEFAULT_MASTER_NOT_SELECTED = "";
 
 export default function DeckContainer() {
-  gaTrackView("/DeckContainer");
+  useGaTrackView("/DeckContainer");
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [selectedHero, setSelectedHero] = useState(DEFAULT_MASTER_NOT_SELECTED);
 

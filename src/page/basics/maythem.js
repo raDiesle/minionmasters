@@ -1,11 +1,11 @@
 import { anchorLinkTarget } from "components/helper";
 import { GoldImg } from "components/thegame-icons";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import css from "page/basics/static-content.module.scss";
 import React from "react";
 
 export default function Maythem() {
-  gaTrackView("/Basics/Maythem");
+  useGaTrackView("/Basics/Maythem");
   const MENU_LINKS_CONFIG = {
     "Killing Floor": "Killing Floor",
     "Desert Maythem": "Desert Maythem",

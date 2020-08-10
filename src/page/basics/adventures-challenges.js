@@ -1,11 +1,11 @@
 import { anchorLinkTarget } from "components/helper";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 
 import React from "react";
 import cssStatic from "./static-content.module.scss";
 
 export default function AdventuresChallenges() {
-  gaTrackView("/Basics/AdventuresChallenges");
+  useGaTrackView("/Basics/AdventuresChallenges");
   const MENU_LINKS_CONFIG = {
     Adventures: "Adventures",
     Challenges: "Challenges/Tutorial",

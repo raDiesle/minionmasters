@@ -3,7 +3,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 
 import css from "page/filters/ButtonFilterGroup.module.scss";
@@ -30,7 +30,7 @@ const ExportInGameStyleContainer = styled.div`
 `;
 
 export default function ExportActions({ lastSelectedCards, selectedHero }) {
-  gaTrackView("/ExportActions");
+  useGaTrackView("/ExportActions");
   if (typeof selectedHero === undefined || selectedHero === "") {
     return (
       <div>

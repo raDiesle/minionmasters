@@ -1,8 +1,9 @@
 import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
 import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
+import AvailableCardsFilter from "page/filters/available-cards-filter";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
-import React from "react";
+import React, { useState } from "react";
 import css from "./decklist-filters.module.scss";
 
 export default function DecklistFilters({
@@ -16,7 +17,11 @@ export default function DecklistFilters({
   setMasterFilter,
   availableCards,
   setAvailableCards,
+  isToggleAvailableCards,
+  setIsToggleAvailableCards,
 }) {
+  const [toPasteAvailableCards, setToPasteAvailableCards] = useState(false);
+
   return (
     <div className={css.formLayout}>
       <GameTypeInput
@@ -47,6 +52,15 @@ export default function DecklistFilters({
           ))}
         </select>
       </div>
+
+      <AvailableCardsFilter
+        availableCards={availableCards}
+        setAvailableCards={setAvailableCards}
+        isToggleAvailableCards={isToggleAvailableCards}
+        setIsToggleAvailableCards={setIsToggleAvailableCards}
+        toPasteAvailableCards={toPasteAvailableCards}
+        setToPasteAvailableCards={setToPasteAvailableCards}
+      />
     </div>
   );
 }

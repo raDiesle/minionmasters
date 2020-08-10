@@ -1,4 +1,4 @@
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import { MasterModal } from "page/mastersoverview/MasterModal";
 import React, { useEffect, useState } from "react";
 import LongPress from "react-long";
@@ -39,7 +39,7 @@ export default function AddMasterToDeckOrOpenDetailsActionOverlay({ setSelectedH
 
   useEffect(() => {
     if (isOpenHeroModal) {
-      gaTrackView(`/Master/${masterKey}`);
+      window.ga.logEvent("screen_view", { screen_name: `/Master/${masterKey}` });
     }
   }, [isOpenHeroModal]);
 

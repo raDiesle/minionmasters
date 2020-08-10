@@ -1,9 +1,9 @@
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import React from "react";
 import cssStatic from "./static-content.module.scss";
 
 export default function Draft() {
-  gaTrackView("/Basics/Draft");
+  useGaTrackView("/Basics/Draft");
   return (
     <div className={cssStatic.container}>
       <div>
