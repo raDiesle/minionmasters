@@ -28,7 +28,7 @@ export default function ConsentBanner() {
     window.ga = isAllowCookies ? firebase.analytics() : fakeGA;
   }, [isAllowCookies]);
 
-  if (isAllowCookies || isDeclinedTemporary) {
+  if (isAllowCookies || isDeclinedTemporary || window.location.host.includes("localhost")) {
     return null;
   }
 

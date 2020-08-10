@@ -4,7 +4,7 @@ import css from "page/carddeck/carddeck-actionoverlay.module.scss";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
 import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
 import React, { useState } from "react";
-import LongPress from "react-long";
+import ClickNHold from "react-click-n-hold";
 
 export default function CardForDeckActionOverlay({ setSelectedCardEvent, card, card: { iD } }) {
   const [isOpenDetails, setIsOpenDetails] = useState(false);
@@ -25,13 +25,18 @@ export default function CardForDeckActionOverlay({ setSelectedCardEvent, card, c
 
   return (
     <>
-      <LongPress time={200} onLongPress={(event) => handleOnContextMenu(event)}>
+      <ClickNHold
+        time={0.3}
+        onClickNHold={() => {
+          setIsOpenDetails(true);
+        }}
+      >
         <div
           onClick={() => handleOnClick(iD)}
           className={css.fullCardWidthActionOverlay}
           onContextMenu={(event) => handleOnContextMenu(event)}
         ></div>
-      </LongPress>
+      </ClickNHold>
       {isOpenDetails && (
         <InfoDetailsCardOverlay
           card={card}

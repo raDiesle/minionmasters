@@ -1,7 +1,6 @@
-import { useGaTrackView } from "consent-banner";
 import { MasterModal } from "page/mastersoverview/MasterModal";
 import React, { useEffect, useState } from "react";
-import LongPress from "react-long";
+import ClickNHold from "react-click-n-hold";
 import styled from "styled-components";
 
 const OverlayActionBackground = styled.div`
@@ -45,10 +44,11 @@ export default function AddMasterToDeckOrOpenDetailsActionOverlay({ setSelectedH
 
   return (
     <>
-      <LongPress
-        time={200}
-        onLongPress={(event) => handleOnContextMenu(event)}
-        onPress={() => setSelectedHero(masterKey)}
+      <ClickNHold
+        time={0.3}
+        onClickNHold={() => {
+          setIsOpenHeroModal(true);
+        }}
       >
         <FullWidthMasterOverlay
           onClick={() => {
@@ -56,7 +56,7 @@ export default function AddMasterToDeckOrOpenDetailsActionOverlay({ setSelectedH
           }}
           onContextMenu={(event) => handleOnContextMenu(event)}
         ></FullWidthMasterOverlay>
-      </LongPress>
+      </ClickNHold>
       {isOpenHeroModal && (
         <MasterModal
           isOpenHeroModal={isOpenHeroModal}

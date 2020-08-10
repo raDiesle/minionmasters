@@ -1,7 +1,7 @@
 import css from "page/carddeck/carddeck-actionoverlay.module.scss";
 import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
 import React, { useState } from "react";
-import LongPress from "react-long";
+import ClickNHold from "react-click-n-hold";
 
 export default function CardforInfoActionOverlay({ card }) {
   const [isOpenDetails, setIsOpenDetails] = useState(false);
@@ -12,13 +12,18 @@ export default function CardforInfoActionOverlay({ card }) {
   };
   return (
     <>
-      <LongPress time={200} onLongPress={(event) => handleEvent(event)}>
+      <ClickNHold
+        time={0.3}
+        onClickNHold={() => {
+          setIsOpenDetails(true);
+        }}
+      >
         <div
           onClick={(event) => handleEvent(event)}
           onContextMenu={(event) => handleEvent(event)}
           className={css.fullCardWidthActionOverlay}
         ></div>
-      </LongPress>
+      </ClickNHold>
       {isOpenDetails && (
         <InfoDetailsCardOverlay
           card={card}
