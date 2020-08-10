@@ -1,4 +1,4 @@
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import CardforInfoActionOverlay from "page/discussion/cardforinfo-actionoverlay";
 import React, { useMemo } from "react";
 import FiltersWithCards from "../FiltersWithCards";
@@ -11,7 +11,7 @@ const FiltersWithCardsWrapperMemo = () => {
 };
 
 export default function DiscussOnCards() {
-  gaTrackView("/DiscussOnCards");
+  useGaTrackView("/DiscussOnCards");
 
   return (
     <div>

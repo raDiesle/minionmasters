@@ -1,11 +1,14 @@
-.appliedContainer {
+.appliedHover {
   &:hover * {
     cursor: pointer;
     border-color: yellow;
   }
+}
 
-  & label {
-    vertical-align: text-bottom;
-    padding-left: 5px;
-  }
+.labelInline {
+  @extend .appliedHover;
+  width: 135px;
+  text-align: left;
+  vertical-align: text-bottom;
+  padding-left: 5px;
 }

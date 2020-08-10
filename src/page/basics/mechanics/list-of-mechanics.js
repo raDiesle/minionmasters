@@ -1,13 +1,13 @@
 import DeebuffIcon from "components/buff-icon";
 import BuffIcon from "components/debuff-icon";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import css from "page/basics/static-content.module.scss";
 import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
 import { TERMS_CONFIG } from "page/terms-config";
 import React, { useState } from "react";
 
 export default function ListOfMechanics() {
-  gaTrackView("/Basics/ListOfMechanics");
+  useGaTrackView("/Basics/ListOfMechanics");
   const [selectedBuff, setSelectedBuff] = useState("ALL");
   return (
     <div className={css.container}>

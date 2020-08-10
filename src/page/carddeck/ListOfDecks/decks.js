@@ -1,7 +1,7 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENT_GAME_VERSION } from "components/helper";
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import orderBy from "lodash/orderBy";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
@@ -22,7 +22,8 @@ const CardsContainerStyle = styled.div`
 `;
 
 export default function Decks() {
-  gaTrackView("/ListOfDecks");
+  useGaTrackView("/ListOfDecks");
+
   const [decks, setDecks] = useState([]);
   const [gameTypeFilter, setGameTypeFilter] = useState("");
   const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
@@ -30,6 +31,7 @@ export default function Decks() {
   const [masterFilter, setMasterFilter] = useState("");
 
   const [availableCards, setAvailableCards] = useState("");
+  const [isToggleAvailableCards, setIsToggleAvailableCards] = useState(false);
 
   useEffect(() => {
     db.collection("decks")
@@ -78,6 +80,14 @@ export default function Decks() {
     : decksWithPlayStyle.filter(({ master }) => master === masterFilter);
   // SORT BY VERSION DESC
 
+  const decksWithAvailableCards = !availableCards
+    ? decksWithMaster
+    : decksWithMaster.filter(({ cards }) =>
+        cards.every(({ iD }) =>
+          isToggleAvailableCards ? !availableCards.includes(iD) : availableCards.includes(iD)
+        )
+      );
+
   return (
     <div className={css.pageContainer}>
       <div
@@ -109,8 +119,10 @@ export default function Decks() {
         setMasterFilter={setMasterFilter}
         availableCards={availableCards}
         setAvailableCards={setAvailableCards}
+        isToggleAvailableCards={isToggleAvailableCards}
+        setIsToggleAvailableCards={setIsToggleAvailableCards}
       />
-      {decksWithMaster.map((deck) => (
+      {decksWithAvailableCards.map((deck) => (
         <fieldset className={css.singleDeck} key={deck.createdAt.getTime()}>
           <legend>
             <div className={css.deckLegend}>{deck.deckname}</div>

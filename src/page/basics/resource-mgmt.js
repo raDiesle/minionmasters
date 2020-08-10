@@ -1,4 +1,4 @@
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import Achievements from "page/basics/resources/achievements";
 import AdventureRewards from "page/basics/resources/adventure-rewards";
 import ChallengesRewards from "page/basics/resources/challenges-rewards";
@@ -40,7 +40,7 @@ export const MENU_LINKS_CONFIG = {
 };
 
 export default function ResourceMngmt() {
-  gaTrackView("/Basics/ResourceMngmt");
+  useGaTrackView("/Basics/ResourceMngmt");
   const MENU_ORDER = [
     MENU_LINKS_CONFIG.Resources,
     MENU_LINKS_CONFIG["Tokens"],

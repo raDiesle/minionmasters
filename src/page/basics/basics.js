@@ -1,4 +1,4 @@
-import { gaTrackView } from "consent-banner";
+import { useGaTrackView } from "consent-banner";
 import AdventuresChallenges from "page/basics/adventures-challenges";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
 import Draft from "page/basics/draft";
@@ -12,7 +12,7 @@ import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 export default function Basics() {
-  gaTrackView("/Basics");
+  useGaTrackView("/Basics");
   return (
     <div>
       <Tabs>
