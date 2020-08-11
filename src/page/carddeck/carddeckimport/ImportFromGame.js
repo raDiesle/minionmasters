@@ -83,6 +83,7 @@ export default function ImportFromGame({ setLastSelectedCards, setSelectedHero }
       <div>
         <h3>Import from game</h3>
         <ol className={css.olGuide}>
+          <li>At the moment, it will only work, if your deck is configured english language.</li>
           <li>In game, select the deck and master you want to copy</li>
           <li>
             In Minionmasters chat type:

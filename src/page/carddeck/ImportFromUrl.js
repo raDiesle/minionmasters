@@ -1,5 +1,6 @@
 import mToast from "components/mToast";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import qs from "qs";
 import { useEffect } from "react";
 
@@ -10,8 +11,13 @@ export function ImportFromUrl({ setLastSelectedCards, setSelectedHero }) {
     let urlParams = qs.parse(window.location.search, {
       ignoreQueryPrefix: true,
     });
+
     if (urlParams.hero) {
-      setSelectedHero(urlParams.hero);
+      //const  mastersMapping.find(({ iD }) => iD === urlParams.hero)
+      const keyByValue = Object.keys(mastersMapping).find(
+        (key) => mastersMapping[key].iD === parseInt(urlParams.hero)
+      );
+      setSelectedHero(keyByValue);
     }
 
     let selectediDsFromUrl = urlParams.iD;
