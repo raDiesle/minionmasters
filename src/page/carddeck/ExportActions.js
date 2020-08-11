@@ -53,9 +53,9 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
   // Export to game
   const cardsToGameString = `${lastSelectedCards
     .filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
-    .map(({ card: { iD } }) => iD)
-    .join(" ")}`;
-  const cardShareWithGame = `/setdeck ${mastersMapping[selectedHero].iD} ${cardsToGameString}`;
+    .map(({ card: { name } }) => name)
+    .join(", ")}`;
+  const cardShareWithGame = `/setdeck ${selectedHero}: ${cardsToGameString}`;
 
   return (
     <div>
@@ -93,6 +93,7 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
           <div>
             <h3>Minionmasters Game</h3>
             <ol className={cssGuide.olGuide}>
+              <li>At the moment, it will only work, when you set your language to english.</li>
               <li>
                 Press:
                 <ButtonGroupStyle>

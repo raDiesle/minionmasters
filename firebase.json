@@ -20,7 +20,15 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ]
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|webp)",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=1.728.000"
+        } ]
+    }]
   },
   "storage": {
     "rules": "storage.rules"
