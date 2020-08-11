@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -33,7 +34,7 @@ export default function RavagerContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Ravager_BestBuds_78.webp"
+              src={imgPathFn("Ravager_BestBuds")}
               alt="Ravager Perk1"
             />
             <div>Best Buds</div>
@@ -59,7 +60,7 @@ export default function RavagerContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Ravager_Enrage_78.webp"
+              src={imgPathFn("Ravager_Enrage")}
               alt="Ravager Perk2"
             />
             <div>Feeding Frenzy</div>
@@ -82,7 +83,7 @@ export default function RavagerContent() {
         <div className={css.MasterAbilityHeaderStyle}>
           <img
             className={css.MasterAbilityImageRoundedStyle}
-            src="generated/img/Ravager_TerrorBrutus_78.webp"
+            src={imgPathFn("Ravager_TerrorBrutus")}
             alt="Ravager Perk3"
           />
           <div>Terror Brutus!</div>

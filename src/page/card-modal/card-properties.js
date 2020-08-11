@@ -4,6 +4,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { targetsMapping } from "attack/targetsMapping";
 import { typeMapping } from "cardtype/typeMapping";
+import { imgPathFn } from "components/helper";
 import { factionMapping } from "faction/Factions";
 import css from "page/CardDetailsModal.module.scss";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
@@ -88,10 +89,6 @@ export default function CardProperties({
 }) {
   const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
 
-  const IMG_FOLDER = "generated/img/";
-  const FILE_ENDING = ".webp";
-  const WIDTH = "_78";
-  const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
   return (
     <CardPropertyUlStyle>
       <CardPropertyLiStyle>
@@ -106,7 +103,7 @@ export default function CardProperties({
                                                                                         size={"xs"}/>
                                 </LikeStyle>
                                 */}
-          <CardImageStyle src={IMG_PATH} alt={image} />
+          <CardImageStyle src={imgPathFn(image)} alt={image} />
         </PortraitStyle>
       </CardPropertyLiStyle>
       {image === "BloodImps.jpg" && (

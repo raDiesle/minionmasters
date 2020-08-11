@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -38,7 +39,7 @@ export default function MordarContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Mordar_Tombstone_78.webp"
+              src={imgPathFn("Mordar_Tombstone")}
               alt="Mordar Perk1"
             />
             Tombstone
@@ -62,7 +63,7 @@ export default function MordarContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Mordar_Tombstone02_78.webp"
+              src={imgPathFn("Mordar_Tombstone02")}
               alt="Mordar Perk2"
             />
             <div>Another Tombstone</div>
@@ -85,7 +86,7 @@ export default function MordarContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Tombstonemaster_78.webp"
+              src={imgPathFn("Tombstonemaster")}
               alt="Mordar Perk3"
             />
             <div>Vengeful Dead</div>

@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -35,7 +36,7 @@ export default function MiloweenContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Arcane_Golem_78.webp"
+              src={imgPathFn("Arcane_Golem")}
               alt="Miloween Perk1"
             />
             Arcane Golem
@@ -66,7 +67,7 @@ export default function MiloweenContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Arcane_Missiles_78.webp"
+              src={imgPathFn("Arcane_Missiles_78")}
               alt="Miloween Perk2"
             />
             <div>Arcane Missiles</div>
@@ -91,7 +92,7 @@ export default function MiloweenContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Tome_of_Lore_78.webp"
+              src={imgPathFn("Tome_of_Lore")}
               alt="Miloween Perk3"
             />
             <div>Xianian Construct</div>

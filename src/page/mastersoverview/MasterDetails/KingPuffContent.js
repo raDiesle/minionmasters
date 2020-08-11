@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -31,7 +32,7 @@ export default function KingPuffContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/KingPuff_TrickSwap_78.webp"
+              src={imgPathFn("KingPuff_TrickSwap")}
               alt="KingPuff Perk1"
             />
             <div>Trick Swap</div>
@@ -54,7 +55,7 @@ export default function KingPuffContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/KingPuff_Inspire_78.webp"
+              src={imgPathFn("KingPuff_Inspire")}
               alt="KingPuff Perk2"
             />
             <div>King Buff</div>
@@ -76,7 +77,7 @@ export default function KingPuffContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/KingPuff_BridgeShield_78.webp"
+              src={imgPathFn("KingPuff_BridgeShield")}
               alt="KingPuff Perk3"
             />
             <div>Bridge Shield</div>

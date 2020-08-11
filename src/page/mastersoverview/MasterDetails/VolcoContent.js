@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -35,7 +36,7 @@ export default function VolcoContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Volco_Fireball_78.webp"
+              src={imgPathFn("Volco_Fireball")}
               alt="Volco Perk1"
             />
             <div>Afterburner</div>
@@ -56,7 +57,7 @@ export default function VolcoContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Volco_BurntheBridges_78.webp"
+              src={imgPathFn("Volco_BurntheBridges")}
               alt="Volco Perk2"
             />
             <div>Burn the Bridges</div>
@@ -80,7 +81,7 @@ export default function VolcoContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Volco_TempersFlaring2_78.webp"
+              src={imgPathFn("Volco_TempersFlaring2")}
               alt="Volco Perk3"
             />
             <div>Tempers Flaring</div>

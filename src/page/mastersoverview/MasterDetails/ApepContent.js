@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -36,7 +37,7 @@ export default function ApepContent() {
             <div className={css.MasterAbilityHeaderStyle}>
               <img
                 className={css.MasterAbilityImageRoundedStyle}
-                src="generated/img/Apep_Gift_78.webp"
+                src={imgPathFn("Apep_Gift")}
                 alt="apep gift"
               />
               <div> Gift of the Serpent</div>
@@ -57,7 +58,7 @@ export default function ApepContent() {
             <div className={css.MasterAbilityHeaderStyle}>
               <img
                 className={css.MasterAbilityImageRoundedStyle}
-                src="generated/img/Apep_ShieldTotem_78.webp"
+                src={imgPathFn("Apep_ShieldTotem")}
                 alt="apep shieldtotem"
               />
               <div>Shield Totem</div>
@@ -77,7 +78,7 @@ export default function ApepContent() {
             <div className={css.MasterAbilityHeaderStyle}>
               <img
                 className={css.MasterAbilityImageRoundedStyle}
-                src="generated/img/Apep_GreaterGift_78.webp"
+                src={imgPathFn("Apep_GreaterGift")}
                 alt="apep greatergift"
               />
               Greater Gift of the Serpent God

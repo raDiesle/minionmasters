@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -32,7 +33,7 @@ export default function RatboContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Ratbo_Rats_78.webp"
+              src={imgPathFn("Ratbo_Rats")}
               alt="Ratbo Perk1"
             />
             <div>Scrats!</div>
@@ -64,7 +65,7 @@ export default function RatboContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Ratbo_moreDakka_78.webp"
+              src={imgPathFn("Ratbo_moreDakka")}
               alt="Ratbo Perk2"
             />
             <div>More Dakka!</div>
@@ -89,7 +90,7 @@ export default function RatboContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Ratbo_RatsRats_78.webp"
+              src={imgPathFn("Ratbo_RatsRats")}
               alt="Ratbo Perk3"
             />
             <div>Scrats! Scrats!</div>

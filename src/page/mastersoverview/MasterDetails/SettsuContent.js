@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -41,7 +42,7 @@ export default function SettsuContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Settsu_BlastEntry_78.webp"
+              src={imgPathFn("Settsu_BlastEntry")}
               alt="Settsu Perk1"
             />
             Blast Entry
@@ -60,7 +61,7 @@ export default function SettsuContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Settsu_CombatReload_78.webp"
+              src={imgPathFn("Settsu_CombatReload")}
               alt="Settsu Perk2"
             />
             <div>Combat Reload</div>
@@ -79,7 +80,7 @@ export default function SettsuContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Settsu_HighPoweredLaser_78.webp"
+              src={imgPathFn("Settsu_HighPoweredLaser")}
               alt="Settsu Perk3"
             />
             High Powered Laser
