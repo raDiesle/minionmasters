@@ -86,7 +86,7 @@ export default function TextareaEditor({
     focused
   ) => {
     const IMG_FOLDER = "generated/img/";
-    const FILE_ENDING = ".webp";
+    const FILE_ENDING = ".jpg"; //.webp
     const WIDTH = "_78";
     const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
 

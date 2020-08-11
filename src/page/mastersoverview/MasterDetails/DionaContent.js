@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -43,7 +44,7 @@ export default function DionaContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Diona_Perk1_78.webp"
+              src={imgPathFn("Diona_Perk1")}
               alt="Diona Perk1"
             />
             Art of the Hunt
@@ -80,7 +81,7 @@ export default function DionaContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Diona_Perk2_78.webp"
+              src={imgPathFn("Diona_Perk2")}
               alt="Diona Perk2"
             />
             Fetch!
@@ -104,7 +105,7 @@ export default function DionaContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Diona_Perk3_78.webp"
+              src={imgPathFn("Diona_Perk3_78")}
               alt="Diona Perk3"
             />
             <div>Thrill of the Hunt</div>

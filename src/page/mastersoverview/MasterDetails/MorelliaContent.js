@@ -1,6 +1,7 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -40,7 +41,7 @@ export default function MorelliaContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/LichQueen_Perk1_78.webp"
+              src={imgPathFn("LichQueen_Perk1")}
               alt="Morellia Perk1"
             />
             Book of the dead
@@ -71,7 +72,7 @@ export default function MorelliaContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/LichQueen_Perk2_78.webp"
+              src={imgPathFn("LichQueen_Perk2")}
               alt="Morellia Perk2"
             />
             <div>Unholy Bargain</div>
@@ -91,7 +92,7 @@ export default function MorelliaContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/LichQueen_Perk3_78.webp"
+              src={imgPathFn("LichQueen_Perk3")}
               alt="Morellia Perk3"
             />
             <div>Queen's Dragon</div>

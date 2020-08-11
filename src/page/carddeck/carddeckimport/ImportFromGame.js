@@ -74,7 +74,7 @@ export default function ImportFromGame({ setLastSelectedCards, setSelectedHero }
       setSelectedHero(heroName);
       mToast("Imported");
     } catch (e) {
-      mToast("Could not copy paste from game.    Please read the info.");
+      mToast("Could not copy paste from game. Please read the info.");
     }
   };
 

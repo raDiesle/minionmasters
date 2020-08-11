@@ -17,7 +17,7 @@ export const anchorLinkTarget = (menuLink, children = null) => (
 );
 
 const IMG_FOLDER = "generated/img/";
-const FILE_ENDING = ".webp";
+const FILE_ENDING = ".jpg";
 const WIDTH = "_78";
 export const imgPathFn = (image) => IMG_FOLDER + image + WIDTH + FILE_ENDING;
 

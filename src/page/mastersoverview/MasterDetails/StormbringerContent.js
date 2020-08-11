@@ -1,5 +1,6 @@
 import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { imgPathFn } from "components/helper";
 import css from "page/mastersoverview/master-modal.module.scss";
 import MasterTipsByCommunity from "page/mastersoverview/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -32,7 +33,7 @@ export default function StormbringerContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Stormbringer_Sniper_78.webp"
+              src={imgPathFn("Stormbringer_Sniper")}
               alt="Stormbringer Perk1"
             />
             Long Shot
@@ -52,7 +53,7 @@ export default function StormbringerContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Stormbringer_Aerodynamics_78.webp"
+              src={imgPathFn("Stormbringer_Aerodynamics")}
               alt="Stormbringer Perk2"
             />
             Aerodynamics
@@ -77,7 +78,7 @@ export default function StormbringerContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src="generated/img/Stormbringer_LightningReflexes_78.webp"
+              src={imgPathFn("Stormbringer_LightningReflexes")}
               alt="Stormbringer Perk3"
             />
             Lightning Reflexes

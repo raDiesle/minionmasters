@@ -1,6 +1,7 @@
 import { faCircle } from "@fortawesome/free-regular-svg-icons/faCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
+import { imgPathFn } from "components/helper";
 import CardBottomOverlay from "page/card-bottom-overlay";
 
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
@@ -15,14 +16,10 @@ export function Card({
   isShowDetailsOnCard = false,
   isShowNamesOnCards = false,
 }) {
-  const IMG_FOLDER = "generated/img/";
-  const FILE_ENDING = ".webp";
-  const IMG_PATH = IMG_FOLDER + image;
-
   return (
     <div className={classnames(css.CardContainerStyle, css.CardContainerStyleFullWidth)}>
       <div className={css.CardContentStyle}>
-        <img src={`${IMG_PATH}_78${FILE_ENDING}`} alt={image} className={classnames(css.IMG)} />
+        <img src={`${imgPathFn(image)}`} alt={image} className={classnames(css.IMG)} />
         <div
           className={css.RightCornerStyle}
           style={{ borderTopColor: RARITY_MAPPING_CONFIG[rarity] }}

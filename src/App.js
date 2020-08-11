@@ -59,7 +59,7 @@ const App = () => {
         <Header>
           <PageHeaderStyle>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <img src="img/mm_logo.webp" alt="mm logo" style={{ height: "50px" }} />
+              <img src="img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
               <span style={{ paddingLeft: "10px" }}>
                 <CapitalLetterStyle>M</CapitalLetterStyle>inionmasters
                 <span>
