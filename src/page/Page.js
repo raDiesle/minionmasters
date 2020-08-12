@@ -3,7 +3,6 @@ import Basics from "page/basics/basics";
 import DeckContainer from "page/carddeck/DeckContainer";
 
 import Decks from "page/carddeck/ListOfDecks/decks";
-import qs from "qs";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 

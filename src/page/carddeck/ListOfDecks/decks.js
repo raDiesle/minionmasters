@@ -2,23 +2,21 @@ import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import { CURRENT_GAME_VERSION } from "components/helper";
-import mToast from "components/mToast";
 import { useGaTrackView } from "consent-banner";
 import orderBy from "lodash/orderBy";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import Master from "page/mastersoverview/master";
-import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import React, { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import cardData from "../../../generated/jobCardProps";
 import { Card } from "../../Card";
+import cssButton from "../../filters/ButtonFilterGroup.module.scss";
 
 import css from "./decks.module.scss";
-import cssButton from "../../filters/ButtonFilterGroup.module.scss";
 
 const CardsContainerStyle = styled.div`
   display: grid;
@@ -34,6 +32,8 @@ export default function Decks() {
   const [decks, setDecks] = useState([]);
   const [gameTypeFilter, setGameTypeFilter] = useState("");
   const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
+  const [gameTypeThirdFilter, setGameTypeThirdFilter] = useState("");
+
   const [playStyleFilter, setPlayStyleFilter] = useState("");
   const [masterFilter, setMasterFilter] = useState("");
 
@@ -64,6 +64,7 @@ export default function Decks() {
             master: deck.hero,
             description: deck.description,
             gameTypeSecondary: deck.gameTypeSecondary,
+            gameTypeThird: deck.gameTypeThird,
           };
         });
         setDecks(normalizedDecks);
@@ -74,14 +75,22 @@ export default function Decks() {
   const decksWithGameType = !gameTypeFilter
     ? decks
     : decks.filter(({ gameType }) => gameType === gameTypeFilter);
+
   const decksWithGameTypeSecondary = !gameTypeSecondaryFilter
     ? decksWithGameType
     : decksWithGameType.filter(
         ({ gameTypeSecondary }) => gameTypeSecondary === gameTypeSecondaryFilter
       );
-  const decksWithPlayStyle = !playStyleFilter
+
+  const decksWithGameTypeThird = !gameTypeThirdFilter
     ? decksWithGameTypeSecondary
-    : decksWithGameTypeSecondary.filter(({ playStyle }) => playStyle === playStyleFilter);
+    : decksWithGameTypeSecondary.filter(
+        ({ gameTypeThird }) => gameTypeThird === gameTypeThirdFilter
+      );
+
+  const decksWithPlayStyle = !playStyleFilter
+    ? decksWithGameTypeThird
+    : decksWithGameTypeThird.filter(({ playStyle }) => playStyle === playStyleFilter);
 
   const decksWithMaster = !masterFilter
     ? decksWithPlayStyle
@@ -122,6 +131,8 @@ export default function Decks() {
         setGameType={setGameTypeFilter}
         gameTypeSecondary={gameTypeSecondaryFilter}
         setGameTypeSecondary={setGameTypeSecondaryFilter}
+        gameTypeThird={gameTypeThirdFilter}
+        setGameTypeThird={setGameTypeThirdFilter}
         playStyle={playStyleFilter}
         setPlayStyle={setPlayStyleFilter}
         masterFiltr={masterFilter}

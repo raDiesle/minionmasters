@@ -1,4 +1,4 @@
-import { GAME_TYPES } from "page/carddeck/savedeck/saved-decks-configs";
+import { PLAYER_GAME_TYPE } from "page/carddeck/savedeck/saved-decks-configs";
 import React from "react";
 
 export default function GameTypeSecondaryInput({
@@ -13,12 +13,11 @@ export default function GameTypeSecondaryInput({
         name="gameTypeSecondary"
         onChange={(e) => setGameTypeSecondary(e.currentTarget.value)}
         value={gameTypeSecondary}
-        disabled={!gameType}
         style={{ width: "100%" }}
       >
         <option value="">-</option>
         {gameType &&
-          GAME_TYPES.find(({ key }) => key === gameType).subitems.map(({ key }) => (
+          PLAYER_GAME_TYPE.map(({ key }) => (
             <option value={key} key={key}>
               {key}
             </option>

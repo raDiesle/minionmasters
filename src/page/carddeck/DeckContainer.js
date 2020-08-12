@@ -1,9 +1,11 @@
 import { useGaTrackView } from "consent-banner";
 import CardForDeckActionOverlay from "page/carddeck/cardfordeck-actionoverlay";
 import { HowToUse } from "page/carddeck/how-to-use";
+import { useLastSelectedCards } from "page/carddeck/useLastSelectedCards";
+import { useSelectedCardEvent } from "page/carddeck/useSelectedCardEvent";
 
 import AddMasterToDeckOrOpenDetailsActionOverlay from "page/mastersoverview/AddMasterToDeckOrOpenDetailsActionOverlay";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
 import FiltersWithCards from "../FiltersWithCards";
@@ -16,21 +18,14 @@ import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
 
 export const IDENTIFIER_FOR_EMPTY_SLOT = 999999;
 
+export const DEFAULT_SELECTED_CARD_EVENT = {
+  eventId: 0,
+  card: {
+    iD: IDENTIFIER_FOR_EMPTY_SLOT,
+  },
+};
+
 const DeckOptionsStyle = styled.div``;
-
-const usePreviousValue = (value) => {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-};
-
-const useTraceableState = (initialValue) => {
-  const [value, setValue] = useState(initialValue);
-  const prevValue = usePreviousValue(value);
-  return [prevValue, value, setValue];
-};
 
 const FiltersWithCardsMemo = ({ setSelectedCardEvent }) => {
   return useMemo(() => {
@@ -56,31 +51,16 @@ const MastersMemo = ({ setSelectedHero }) => {
 };
 
 export const DEFAULT_MASTER_NOT_SELECTED = "";
+export const DEFAULT_SELECTED_TAB = 0;
 
 export default function DeckContainer() {
   useGaTrackView("/DeckContainer");
-  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
   const [selectedHero, setSelectedHero] = useState(DEFAULT_MASTER_NOT_SELECTED);
 
-  const [, selectedCardEvent, setSelectedCardEvent] = useTraceableState({
-    eventId: 0,
-    card: {
-      iD: IDENTIFIER_FOR_EMPTY_SLOT,
-    },
-  });
+  const [selectedCardEvent, setSelectedCardEvent] = useSelectedCardEvent();
 
-  const Slots = [...Array(10).keys()];
-  const [lastSelectedCards, setLastSelectedCards] = useState(
-    Slots.map((slot) => {
-      return {
-        eventId: 0,
-        card: {
-          iD: IDENTIFIER_FOR_EMPTY_SLOT,
-        },
-        count: 0,
-      };
-    })
-  );
+  const [lastSelectedCards, setLastSelectedCards] = useLastSelectedCards();
 
   return (
     <div>

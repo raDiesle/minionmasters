@@ -48,14 +48,21 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
   const iDsToParam = lastSelectedCardiDs.join("&iD=");
 
   const heroParam = `hero=${mastersMapping[selectedHero].iD}`;
-  let url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}${window.location.pathname}?${heroParam}&iD=${iDsToParam}`;
+  const port = window.location.port === "3000" ? ":${window.location.port}" : "";
+  const url = `${window.location.protocol}//${window.location.hostname}${port}${window.location.pathname}?${heroParam}&iD=${iDsToParam}`;
 
   // Export to game
   const cardsToGameString = `${lastSelectedCards
     .filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
     .map(({ card: { name } }) => name)
     .join(", ")}`;
+
   const cardShareWithGame = `/setdeck ${selectedHero}: ${cardsToGameString}`;
+
+  const IMAGE_SERVER = `https://minionmastersmanager-286215.ew.r.appspot.com/screenshot`;
+  const shareImageUrl = `${IMAGE_SERVER}/${encodeURIComponent(
+    url + "&isPreview"
+  )}?width=917&height=101`;
 
   return (
     <div>
@@ -89,6 +96,22 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
             </button>
           </CopyToClipboard>
         </ButtonGroupStyle>
+
+        <ButtonGroupStyle>
+          <CopyToClipboard
+            text={shareImageUrl}
+            onCopy={() => {
+              mToast("Link copied to clipboard");
+            }}
+            title="Copy link"
+          >
+            <button className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
+              <FontAwesomeIcon icon={faLink} size="xs" style={{ marginLeft: "5px" }} />
+              <span style={{ paddingLeft: "11px" }}>Share as Image</span>
+            </button>
+          </CopyToClipboard>
+        </ButtonGroupStyle>
+
         <ExportInGameStyleContainer>
           <div>
             <h3>Minionmasters Game</h3>
