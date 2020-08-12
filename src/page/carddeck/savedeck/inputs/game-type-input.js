@@ -1,7 +1,7 @@
 import { GAME_TYPES } from "page/carddeck/savedeck/saved-decks-configs";
 import React from "react";
 
-export default function GameTypeInput({ gameType, setGameType, setGameTypeSecondary }) {
+export default function GameTypeInput({ gameType, setGameType, setGameTypeThird }) {
   return (
     <div>
       {" "}
@@ -12,7 +12,7 @@ export default function GameTypeInput({ gameType, setGameType, setGameTypeSecond
           const newGameType = e.currentTarget.value;
           setGameType(newGameType);
           if (newGameType === "") {
-            setGameTypeSecondary("");
+            setGameTypeThird("");
           }
         }}
         value={gameType}

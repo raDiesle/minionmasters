@@ -7,9 +7,9 @@ export default function GameTypeThirdInput({ gameType, gameTypeThird, setGameTyp
   }
   return (
     <div>
-      <label htmlFor="gameTypeSecondary">Mayhem Type</label>
+      <label htmlFor="gameTypeThird">Mayhem Type</label>
       <select
-        name="gameTypeSecondary"
+        name="gameTypeThird"
         onChange={(e) => setGameTypeThird(e.currentTarget.value)}
         value={gameTypeThird}
         style={{ width: "100%" }}

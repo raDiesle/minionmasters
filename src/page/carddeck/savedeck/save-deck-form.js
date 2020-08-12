@@ -37,7 +37,7 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
           <GameTypeInput
             gameType={gameType}
             setGameType={setGameType}
-            setGameTypeSecondary={setGameTypeSecondary}
+            setGameTypeThird={setGameTypeThird}
           />
         </div>
 

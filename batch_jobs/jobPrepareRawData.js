@@ -424,24 +424,32 @@ function mapGameDataToWikiData(cardDataFromGame, cardDataFromWiki) {
     // cardDataFromGame.type = matchedDataFromWikiById.type;
     // NOT REQUIRED ANYMORE cardDataFromGame.faction = matchedDataFromWikiById.faction;
   } else {
-    const gameIdToCustomImage = {
-      270: "Malshar.jpg",
-      278: "ArdentAegis.jpg",
-      274: "BrotherOfTheBurningFist.jpg",
-      273: "HiArdera.jpg",
-      271: "JadeFlingers.jpg",
-      276: "JadeSparkWatchers.jpg",
-      275: "Jahun.jpg",
-      280: "ShensShockStick.jpg",
-      277: "Smite.jpg",
-      272: "TingTengTung.jpg",
-      279: "Windwalker.jpg",
-      291: "SummonUndyingCorpse.jpg",
-      292: "GroundMinionsAndSummonSkeletons.jpg",
-      293: "CorpseExplosion.jpg",
-      218: "MorgrulsRagers.jpg",
-    };
-    cardDataFromGame.image = gameIdToCustomImage[cardDataFromGame.iD] || "Notavailable.png";
+  }
+
+  const gameIdToCustomImage = {
+    "270": "Malshar",
+    "278": "ArdentAegis",
+    "274": "BrotherOfTheBurningFist",
+    "273": "HiArdera",
+    "271": "JadeFlingers",
+    "276": "JadeSparkWatchers",
+    "275": "Jahun",
+    "280": "ShensShockStick",
+    "277": "Smite",
+    "272": "TingTengTung",
+    "279": "Windwalker",
+    "291": "SummonUndyingCorpse",
+    "292": "GroundMinionsAndSummonSkeletons",
+    "293": "CorpseExplosion",
+    "218": "MorgrulsRagers",
+  };
+
+  const replaceOrAddNewImageName = Object.keys(gameIdToCustomImage).includes(
+    cardDataFromGame.iD.toString()
+  );
+  if (replaceOrAddNewImageName) {
+    console.log("AAAAAAAAAAA" + cardDataFromGame.iD);
+    cardDataFromGame.image = gameIdToCustomImage[cardDataFromGame.iD] + "" || "Notavailable.png";
   }
 
   if (typeof cardDataFromGame.pageId === "undefined") {

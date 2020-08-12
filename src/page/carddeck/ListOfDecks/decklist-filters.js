@@ -30,7 +30,7 @@ export default function DecklistFilters({
       <GameTypeInput
         gameType={gameType}
         setGameType={setGameType}
-        setGameTypeSecondary={setGameTypeSecondary}
+        setGameTypeThird={setGameTypeThird}
       />
       <GameTypeSecondaryInput
         gameTypeSecondary={gameTypeSecondary}

@@ -6,6 +6,7 @@ import * as classnames from "classnames";
 import { CURRENT_GAME_VERSION } from "components/helper";
 import mToast from "components/mToast";
 import { auth, db, dbErrorHandlerPromise } from "mm-firestore";
+import { MAYHEM } from "page/carddeck/savedeck/saved-decks-configs";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import cssButton from "page/filters/ButtonFilterGroup.module.scss";
 import React, { useEffect, useState } from "react";
@@ -68,7 +69,13 @@ export default function SaveDbButton({
       .catch(dbErrorHandlerPromise);
   };
 
-  const hasValidationError = Object.values(formData).some((formValue) => !formValue);
+  const hasValidationError =
+    !formData.deckname ||
+    !description ||
+    !gameType ||
+    !gameTypeSecondary ||
+    (gameType === MAYHEM && !gameTypeThird) ||
+    !playStyle;
 
   return (
     <div>
