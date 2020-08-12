@@ -1,21 +1,16 @@
+export const MAYHEM = "Mayhem";
+
 export const GAME_TYPES = [
   {
-    key: "1on1",
-    subitems: [
-      { key: "Random", description: "" },
-      { key: "Tournament", description: "" },
-    ],
+    key: "Ladder",
+    subitems: [],
   },
   {
-    key: "2on2 Random",
-    subitems: [
-      { key: "Random", description: "" },
-      { key: "Premade", description: "" },
-      { key: "Tournament", description: "" },
-    ],
+    key: "Tournament",
+    subitems: [],
   },
   {
-    key: "Mayhem",
+    key: MAYHEM,
     subitems: [
       { key: "Killing Floor", description: "" },
       { key: "Desert Maythem", description: "" },
@@ -28,6 +23,18 @@ export const GAME_TYPES = [
       { key: "Fluctuations", description: "" },
       { key: "Defense Surge", description: "" },
     ],
+  },
+];
+
+export const PLAYER_GAME_TYPE = [
+  {
+    key: "Solo",
+  },
+  {
+    key: "Team",
+  },
+  {
+    key: "Both",
   },
 ];
 

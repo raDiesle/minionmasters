@@ -1,6 +1,7 @@
 import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
 import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
+import GameTypeThirdInput from "page/carddeck/savedeck/inputs/game-type-third-input";
 import AvailableCardsFilter from "page/filters/available-cards-filter";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import React, { useState } from "react";
@@ -11,6 +12,8 @@ export default function DecklistFilters({
   setGameType,
   gameTypeSecondary,
   setGameTypeSecondary,
+  gameTypeThird,
+  setGameTypeThird,
   playStyle,
   setPlayStyle,
   masterFilter,
@@ -34,6 +37,13 @@ export default function DecklistFilters({
         setGameTypeSecondary={setGameTypeSecondary}
         gameType={gameType}
       />
+
+      <GameTypeThirdInput
+        gameType={gameType}
+        gameTypeThird={gameTypeThird}
+        setGameTypeThird={setGameTypeThird}
+      />
+
       <GameStyleInput playStyle={playStyle} setPlayStyle={setPlayStyle} />
 
       <div>

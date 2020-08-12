@@ -2,6 +2,7 @@ import * as classnames from "classnames";
 import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
 import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
+import GameTypeThirdInput from "page/carddeck/savedeck/inputs/game-type-third-input";
 import SaveDbButton from "page/carddeck/savedeck/save-db-button";
 import React, { useState } from "react";
 import css from "./save-deck-form.module.scss";
@@ -11,6 +12,8 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
   const [description, setDescription] = useState("");
   const [gameType, setGameType] = useState("");
   const [gameTypeSecondary, setGameTypeSecondary] = useState("");
+  const [gameTypeThird, setGameTypeThird] = useState("");
+
   const [playStyle, setPlayStyle] = useState("");
 
   return (
@@ -31,7 +34,11 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
         </div>
 
         <div className={css.inputGroupStyle}>
-          <GameTypeInput gameType={gameType} setGameType={setGameType} />
+          <GameTypeInput
+            gameType={gameType}
+            setGameType={setGameType}
+            setGameTypeSecondary={setGameTypeSecondary}
+          />
         </div>
 
         <div className={css.inputGroupStyle}>
@@ -39,6 +46,14 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
             gameTypeSecondary={gameTypeSecondary}
             setGameTypeSecondary={setGameTypeSecondary}
             gameType={gameType}
+          />
+        </div>
+
+        <div className={css.inputGroupStyle}>
+          <GameTypeThirdInput
+            gameType={gameType}
+            gameTypeThird={gameTypeThird}
+            setGameTypeThird={setGameTypeThird}
           />
         </div>
 
@@ -60,6 +75,7 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
         description={description}
         gameType={gameType}
         gameTypeSecondary={gameTypeSecondary}
+        gameTypeThird={gameTypeThird}
         playStyle={playStyle}
       />
     </div>

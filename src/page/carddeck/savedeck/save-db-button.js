@@ -24,6 +24,7 @@ export default function SaveDbButton({
   description,
   gameType,
   gameTypeSecondary,
+  gameTypeThird,
   playStyle,
 }) {
   const dbRef = db.collection("decks");
@@ -43,6 +44,7 @@ export default function SaveDbButton({
     description,
     gameType,
     gameTypeSecondary,
+    gameTypeThird,
     playStyle,
   };
 

@@ -1,3 +1,4 @@
+import { isForImagePreview } from "components/helper";
 import mToast from "components/mToast";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -62,7 +63,9 @@ export function ImportFromUrl({ setLastSelectedCards, setSelectedHero }) {
       return normalized;
     });
 
-    mToast("Deck was loaded from link.");
+    if (!isForImagePreview) {
+      mToast("Deck was loaded from link.");
+    }
   }, []); // eslint-disable-line  react-hooks/exhaustive-deps
 
   return null;

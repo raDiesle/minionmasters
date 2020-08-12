@@ -1,4 +1,5 @@
-import { CURRENT_GAME_VERSION } from "components/helper";
+import AppPreview from "App-Preview";
+import { CURRENT_GAME_VERSION, isForImagePreview } from "components/helper";
 import ConsentBanner from "consent-banner";
 import Footer from "Footer";
 import React from "react";
@@ -52,6 +53,10 @@ const CapitalLetterStyle = styled.span`
 const App = () => {
   toast.configure();
   Modal.setAppElement("body");
+
+  if (isForImagePreview) {
+    return <AppPreview />;
+  }
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
