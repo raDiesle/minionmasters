@@ -1,14 +1,25 @@
 import * as classnames from "classnames";
+import { useCurrentUser } from "components/helper";
 import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
 import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
 import GameTypeThirdInput from "page/carddeck/savedeck/inputs/game-type-third-input";
 import SaveDbButton from "page/carddeck/savedeck/save-db-button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./save-deck-form.module.scss";
 
 export default function SaveDeckForm({ relevantCards, selectedHero }) {
   const [name, setName] = useState("");
+
+  const [createdByDisplayName, setCreatedByDisplayName] = useState("");
+  const currentUser = useCurrentUser();
+
+  useEffect(() => {
+    if (currentUser.displayName) {
+      setCreatedByDisplayName(currentUser.displayName);
+    }
+  }, [currentUser]);
+
   const [description, setDescription] = useState("");
   const [gameType, setGameType] = useState("");
   const [gameTypeSecondary, setGameTypeSecondary] = useState("");
@@ -19,6 +30,16 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
   return (
     <div>
       <div className={css.formLayout}>
+        <div className={css.inputGroupStyle}>
+          <label htmlFor="createdByDisplayName">User Display Name</label>
+          <input
+            type="text"
+            name="createdByDisplayName"
+            onChange={(e) => setCreatedByDisplayName(e.currentTarget.value)}
+            value={createdByDisplayName}
+          />
+        </div>
+
         <div className={css.inputGroupStyle}>
           <label htmlFor="name">Deckname</label>
           <input
@@ -72,6 +93,7 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
         relevantCards={relevantCards}
         selectedHero={selectedHero}
         name={name}
+        createdByDisplayName={createdByDisplayName}
         description={description}
         gameType={gameType}
         gameTypeSecondary={gameTypeSecondary}

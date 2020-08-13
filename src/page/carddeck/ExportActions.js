@@ -48,7 +48,7 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
   const iDsToParam = lastSelectedCardiDs.join("&iD=");
 
   const heroParam = `hero=${mastersMapping[selectedHero].iD}`;
-  const port = window.location.port === "3000" ? ":${window.location.port}" : "";
+  const port = window.location.port === "3000" ? `:${window.location.port}` : "";
   const url = `${window.location.protocol}//${window.location.hostname}${port}${window.location.pathname}?${heroParam}&iD=${iDsToParam}`;
 
   // Export to game

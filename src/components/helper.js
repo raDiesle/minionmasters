@@ -1,7 +1,8 @@
 import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { auth } from "mm-firestore";
 import qs from "qs";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import css from "./helper.module.scss";
 /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
 export const anchorLinkTarget = (menuLink, children = null) => (
@@ -93,4 +94,19 @@ export const insertAtCaret = (txtarea, text, setValue) => {
     }
     txtarea.scrollTop = scrollPos;
   }, 500); // TODO async issue? move to useasyncEffect in editor
+};
+
+function listenUserAuth(setCurrentUser) {
+  return auth.onAuthStateChanged((user) => {
+    setCurrentUser(auth.currentUser);
+  });
+}
+export const useCurrentUser = () => {
+  const [currentUser, setCurrentUser] = useState("");
+  useEffect(() => {
+    const listen = listenUserAuth(setCurrentUser);
+    return () => listen();
+  }, []);
+
+  return currentUser;
 };
