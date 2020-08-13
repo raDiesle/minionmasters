@@ -80,6 +80,7 @@ export default function DeckContainer() {
       />
 
       <Tabs
+        forceRenderTabPanel
         style={{ paddingTop: "20px" }}
         selectedIndex={selectedTabIndex}
         onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}

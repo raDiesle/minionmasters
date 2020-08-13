@@ -20,7 +20,7 @@ export function Page() {
           <Tab>Decks</Tab>
           <Tab>The Game</Tab>
         </TabList>
-        <TabPanel>
+        <TabPanel forceRender>
           <DeckContainer />
         </TabPanel>
         <TabPanel>

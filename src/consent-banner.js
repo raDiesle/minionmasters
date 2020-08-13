@@ -24,7 +24,6 @@ export default function ConsentBanner() {
   const [isDeclinedTemporary, setIsDeclinedTemporary] = useState(false);
 
   useEffect(() => {
-    console.log("initiated");
     window.ga = isAllowCookies ? firebase.analytics() : fakeGA;
   }, [isAllowCookies]);
 

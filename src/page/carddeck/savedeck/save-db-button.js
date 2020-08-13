@@ -3,7 +3,7 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons/faCheckCircle";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
-import { CURRENT_GAME_VERSION } from "components/helper";
+import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
 import mToast from "components/mToast";
 import { auth, db, dbErrorHandlerPromise } from "mm-firestore";
 import { MAYHEM } from "page/carddeck/savedeck/saved-decks-configs";
@@ -12,16 +12,11 @@ import cssButton from "page/filters/ButtonFilterGroup.module.scss";
 import React, { useEffect, useState } from "react";
 import css from "./save-db-button.module.scss";
 
-function listenUserAuth(setCurrentUser) {
-  return auth.onAuthStateChanged((user) => {
-    setCurrentUser(auth.currentUser);
-  });
-}
-
 export default function SaveDbButton({
   relevantCards,
   selectedHero,
   name,
+  createdByDisplayName,
   description,
   gameType,
   gameTypeSecondary,
@@ -29,19 +24,12 @@ export default function SaveDbButton({
   playStyle,
 }) {
   const dbRef = db.collection("decks");
-
   const [isSaved, setSaved] = useState(false);
-
-  const [currentUser, setCurrentUser] = useState("");
-  useEffect(() => {
-    const listen = listenUserAuth(setCurrentUser);
-    return () => listen();
-  }, []);
-
-  console.log(currentUser);
+  const currentUser = useCurrentUser();
 
   const formData = {
     deckname: name,
+    createdByDisplayName,
     description,
     gameType,
     gameTypeSecondary,
@@ -60,7 +48,6 @@ export default function SaveDbButton({
         hero: selectedHero,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         createdByUid: currentUser.uid,
-        createdByDisplayName: currentUser.displayName,
       })
       .then((result) => {
         mToast("saved");
