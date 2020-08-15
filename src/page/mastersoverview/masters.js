@@ -6,12 +6,12 @@ import { mastersMapping } from "./mastersMapping";
 
 export default function Masters({ actionRegistrationComponent }) {
   return (
-    <a className={css.masters} name="mastersview">
+    <div className={css.masters}>
       {Object.keys(mastersMapping).map((masterKey) => (
         <div key={masterKey} className={css.masterContainer}>
           <Master masterKey={masterKey} actionRegistrationComponent={actionRegistrationComponent} />
         </div>
       ))}
-    </a>
+    </div>
   );
 }

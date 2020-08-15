@@ -1,17 +1,68 @@
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons/faPlusCircle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import mToast from "components/mToast";
+import allCardsData from "generated/jobCardProps.json";
+import cloneDeep from "lodash/cloneDeep";
 import css from "page/carddeck/carddeck-actionoverlay.module.scss";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/filters/ButtonFilterGroup";
+import { findFirstNextFreeSlot } from "page/carddeck/deck-manager";
 import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 
-export default function CardForDeckActionOverlay({ setSelectedCardEvent, card, card: { iD } }) {
+export default function CardForDeckActionOverlay({ card, card: { iD }, setLastSelectedCards }) {
   const [isOpenDetails, setIsOpenDetails] = useState(false);
 
+  const handleSelectedCard = ({ card: { iD: selectedCardId } }) => {
+    setLastSelectedCards((lastSelectedCards) => {
+      const cardToAdd = allCardsData.find((cardsData) => cardsData.iD === selectedCardId);
+      const newLastSelectedCards = cloneDeep(lastSelectedCards);
+
+      const isCardNotInDeckYet =
+        typeof lastSelectedCards.find(({ card: { iD } }) => selectedCardId === iD) === "undefined";
+      if (isCardNotInDeckYet) {
+        // add card
+        const nextFreeSlot = findFirstNextFreeSlot(lastSelectedCards);
+
+        newLastSelectedCards[nextFreeSlot] = {
+          card: cardToAdd,
+          count: 1,
+        };
+
+        mToast("Card added to Deck");
+        return newLastSelectedCards;
+      } else {
+        const consideredOngoingCount = 1;
+
+        const LIMIT_OF_WILDCARDS_ALL_OVER = 3;
+
+        const numberOfWildcards = lastSelectedCards
+          .map(({ count }) => count)
+          .reduce((total, current) => {
+            const STARTING_TO_BE_WILDCARD_COUNT_CONSIDERED = 1;
+            return current > STARTING_TO_BE_WILDCARD_COUNT_CONSIDERED ? total + current : total;
+          }, consideredOngoingCount);
+
+        const isAllowedToAddAnotherWildcard = numberOfWildcards <= LIMIT_OF_WILDCARDS_ALL_OVER;
+
+        if (isAllowedToAddAnotherWildcard) {
+          const positionOfExistingOccurence = lastSelectedCards.findIndex(
+            ({ card: { iD } }) => selectedCardId === iD
+          );
+          newLastSelectedCards[positionOfExistingOccurence] = {
+            card: newLastSelectedCards[positionOfExistingOccurence].card,
+            count: newLastSelectedCards[positionOfExistingOccurence].count + 1,
+          };
+
+          mToast("Card added to Deck");
+          return newLastSelectedCards;
+        } else {
+          mToast("Wildcard limit reached.");
+          return lastSelectedCards;
+        }
+      }
+    });
+  };
+
   const handleOnClick = (iDToSelectCard) => {
-    setSelectedCardEvent({
-      eventId: Math.random(),
+    handleSelectedCard({
       card: {
         iD: iDToSelectCard,
       },
@@ -42,16 +93,6 @@ export default function CardForDeckActionOverlay({ setSelectedCardEvent, card, c
           card={card}
           isOpenDetails={isOpenDetails}
           setIsOpenDetails={setIsOpenDetails}
-          cardEventComponent={(iDFromModal) =>
-            false && (
-              <ButtonGroupStyle style={{ paddingTop: "15px" }}>
-                <ButtonInGroupStyle onClick={() => handleOnClick(iDFromModal)}>
-                  <FontAwesomeIcon icon={faPlusCircle} style={{ marginRight: "5px" }} /> Add Card to
-                  deck
-                </ButtonInGroupStyle>
-              </ButtonGroupStyle>
-            )
-          }
         />
       )}
     </>

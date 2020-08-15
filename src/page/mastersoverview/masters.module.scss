@@ -2,8 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    display: grid;
+    justify-content: unset;
+    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+  }
+}
+
+.masterContainer {
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .masterContainer:not(:last-of-type) {
-  margin-right: 5px;
 }

@@ -1,3 +1,4 @@
+import mToast from "components/mToast";
 import { MasterModal } from "page/mastersoverview/MasterModal";
 import React, { useEffect, useState } from "react";
 import ClickNHold from "react-click-n-hold";
@@ -47,9 +48,10 @@ export default function AddMasterToDeckOrOpenDetailsActionOverlay({ setSelectedH
         <FullWidthMasterOverlay
           onClick={() => {
             setSelectedHero(masterKey);
+            mToast("Master added to deck.");
           }}
           onContextMenu={(event) => handleOnContextMenu(event)}
-        ></FullWidthMasterOverlay>
+        />
       </ClickNHold>
       {isOpenHeroModal && (
         <MasterModal

@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import css from "./save-db-button.module.scss";
 
 export default function SaveDbButton({
-  relevantCards,
+  lastSelectedCards,
   selectedHero,
   name,
   createdByDisplayName,
@@ -36,19 +36,22 @@ export default function SaveDbButton({
   };
 
   const handleSaveButton = () => {
-    const cardIds = relevantCards.map(({ iD }) => iD);
+    const reduceCardData = lastSelectedCards.map(({ card: { iD }, count }) => ({
+      card: { iD },
+      count,
+    }));
 
     dbRef
       .add({
         ...formData,
         createdAtVersion: CURRENT_GAME_VERSION,
-        cards: cardIds,
+        cards: reduceCardData,
         hero: selectedHero,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         createdByUid: currentUser.uid,
       })
       .then((result) => {
-        mToast("saved");
+        mToast("Successful saved to database!");
         setSaved(true);
       })
       .catch(dbErrorHandlerPromise);

@@ -1,12 +1,7 @@
 import CardDetailsModal from "page/cardmodal/CardDetailsModal";
 import React from "react";
 
-export default function InfoDetailsCardOverlay({
-  card,
-  isOpenDetails,
-  setIsOpenDetails,
-  cardEventComponent = null,
-}) {
+export default function InfoDetailsCardOverlay({ card, isOpenDetails, setIsOpenDetails }) {
   return (
     <>
       {isOpenDetails ? (
@@ -15,7 +10,6 @@ export default function InfoDetailsCardOverlay({
           setIsOpenDetails={setIsOpenDetails}
           card={card}
           key={card.iD}
-          cardEventComponent={cardEventComponent}
         />
       ) : null}
     </>

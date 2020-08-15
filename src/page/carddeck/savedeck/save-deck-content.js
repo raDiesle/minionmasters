@@ -4,9 +4,9 @@ import css from "page/carddeck/savedeck/save-db-button.module.scss";
 import SaveDeckForm from "page/carddeck/savedeck/save-deck-form";
 import React from "react";
 
-export default function SaveDeckContent({ selectedHero, relevantCards }) {
+export default function SaveDeckContent({ selectedHero, lastSelectedCards }) {
   const maxNumberOfCards = 10; // verify
-  const isIncompleteDeck = relevantCards.length < maxNumberOfCards;
+  const isIncompleteDeck = lastSelectedCards.length < maxNumberOfCards;
 
   if (isIncompleteDeck || !selectedHero) {
     return (
@@ -26,6 +26,6 @@ export default function SaveDeckContent({ selectedHero, relevantCards }) {
       </div>
     );
   } else {
-    return <SaveDeckForm relevantCards={relevantCards} selectedHero={selectedHero} />;
+    return <SaveDeckForm lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />;
   }
 }

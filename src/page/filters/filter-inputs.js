@@ -9,12 +9,11 @@ import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cloneDeep from "lodash/cloneDeep";
+import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/filters-with-cards";
 import AvailableCardsFilter from "page/filters/available-cards-filter";
-import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/FiltersWithCards";
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import Tooltip from "rc-tooltip";
 import React, { useState } from "react";
-import styled from "styled-components";
 import { targetsMapping } from "../../attack/targetsMapping";
 import { typeMapping } from "../../cardtype/typeMapping";
 
@@ -22,35 +21,7 @@ import { factionMapping } from "../../faction/Factions";
 import { MANACOST } from "../../manacost/manacost";
 import PerkHeroIcon from "../../rarity/PerkHeroIcon";
 import { ButtonFilterGroup, ButtonGroupStyle, ButtonInGroupStyle } from "./ButtonFilterGroup";
-
-const InputTextStyle = styled.input`
-  color: #fff;
-  border: 1px solid #000;
-  font-weight: bold;
-  width: 100px;
-  background-color: #444;
-
-  &:hover {
-    border-color: yellow;
-    outline: none;
-  }
-
-  &:focus,
-  &:active {
-    background-color: #111;
-  }
-`;
-
-const FilterContainerStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  padding: 0 5px 5px 0px;
-
-  & > div {
-    padding-right: 20px;
-  }
-`;
+import css from "./filter-inputs.module.scss";
 
 export function FilterInputs({
   filters,
@@ -74,11 +45,12 @@ export function FilterInputs({
   const [toPasteAvailableCards, setToPasteAvailableCards] = useState(false);
 
   return (
-    <FilterContainerStyle>
+    <div className={css.FilterContainerStyle}>
       <div>
         <div>Search</div>
         <ButtonGroupStyle>
-          <InputTextStyle
+          <input
+            className={css.InputTextStyle}
             type="text"
             value={name}
             onChange={(event) => {
@@ -120,23 +92,6 @@ export function FilterInputs({
         </Tooltip>
       </ButtonGroupStyle>
 
-      <ButtonGroupStyle>
-        <ButtonInGroupStyle
-          onClick={() => {
-            setFilters(setAllFilterStates(false));
-            setIsShowNamesOnCards(false);
-            setIsShowDetailsOnCard(false);
-            setName("");
-            setSortByMana("asc");
-            setCountFilter(ALL_UNIT_COUNT_DEFAULT_CONFIG);
-            setToPasteAvailableCards(false);
-            setAvailableCards("");
-            setIsToggleAvailableCards(false);
-          }}
-        >
-          <FontAwesomeIcon icon={faTrashAlt} /> Reset
-        </ButtonInGroupStyle>
-      </ButtonGroupStyle>
       <div>
         Faction
         <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
@@ -239,7 +194,25 @@ export function FilterInputs({
         setToPasteAvailableCards={setToPasteAvailableCards}
       />
 
+      <ButtonGroupStyle>
+        <ButtonInGroupStyle
+          onClick={() => {
+            setFilters(setAllFilterStates(false));
+            setIsShowNamesOnCards(false);
+            setIsShowDetailsOnCard(false);
+            setName("");
+            setSortByMana("asc");
+            setCountFilter(ALL_UNIT_COUNT_DEFAULT_CONFIG);
+            setToPasteAvailableCards(false);
+            setAvailableCards("");
+            setIsToggleAvailableCards(false);
+          }}
+        >
+          <FontAwesomeIcon icon={faTrashAlt} /> Reset
+        </ButtonInGroupStyle>
+      </ButtonGroupStyle>
+
       {children}
-    </FilterContainerStyle>
+    </div>
   );
 }

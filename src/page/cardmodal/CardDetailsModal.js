@@ -46,7 +46,6 @@ export default function CardDetailsModal({
   card: { iD, description, name },
   isOpenDetails,
   setIsOpenDetails,
-  cardEventComponent = null,
 }) {
   useGaTrackView(`/CardDetailsModal/${name}`);
 
@@ -90,7 +89,6 @@ export default function CardDetailsModal({
 
           <div className={css.buttonsLayout}>
             <CommunityLinks name={name} />
-            {cardEventComponent && cardEventComponent(iD)}
           </div>
         </ModalContainerStyle>
       </ReactModal>

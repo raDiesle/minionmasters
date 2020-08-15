@@ -1,4 +1,5 @@
 import orderBy from "lodash/orderBy";
+import { FilterInputs } from "page/filters/filter-inputs";
 
 import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
 import React, { useCallback, useState } from "react";
@@ -8,7 +9,8 @@ import { factionMapping } from "../faction/Factions";
 import cardData from "../generated/jobCardProps";
 import { MANACOST } from "../manacost/manacost";
 import Cards from "./Cards";
-import { FilterInputs } from "./filters/FilterInputs";
+
+import css from "./filters-with-cards.module.scss";
 
 export function setAllFilterStates(isActive) {
   const setFilterState = (key) => {
@@ -151,14 +153,7 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setSortByMana={setSortByMana}
         sortByMana={sortByMana}
       />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          fontSize: "10px",
-          paddingRight: "2px",
-        }}
-      >
+      <div className={css.results}>
         <div>
           Results: {sortedByManaCards.length}/{fullCount}
         </div>

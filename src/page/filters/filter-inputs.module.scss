@@ -1,0 +1,29 @@
+.FilterContainerStyle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 0 5px 5px 0px;
+
+  & > div {
+    padding-right: 26px;
+    padding-top: 5px;
+  }
+}
+
+.InputTextStyle {
+  color: #fff;
+  border: 1px solid #000;
+  font-weight: bold;
+  width: 100px;
+  background-color: #444;
+
+  &:hover {
+    border-color: yellow;
+    outline: none;
+  }
+
+  &:focus,
+  &:active {
+    background-color: #111;
+  }
+}

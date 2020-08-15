@@ -40,19 +40,24 @@
 }
 
 .belowDeck {
-  //display: flex;
+  // grid 2 cols
+  padding-left: 101px;
+  @media (max-width: 767px) {
+    padding-left: 70px;
+  }
 }
 
 .description {
   display: flex;
   justify-content: space-between;
-  padding-left: 10px;
   padding-top: 5px;
 }
 
 .copyDeck {
-  width: 78px;
-  padding: 5px;
-  margin-top: 5px;
-  font-size: 10px;
+  padding: 7px 16px;
+  margin-top: 10px;
+
+  & svg {
+    margin-right: 5px;
+  }
 }

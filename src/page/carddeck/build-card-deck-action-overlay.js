@@ -1,7 +1,7 @@
 import cloneDeep from "lodash/cloneDeep";
 import css from "page/carddeck/carddeck-actionoverlay.module.scss";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/Page";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 
@@ -17,13 +17,11 @@ export default function BuildCardDeckActionOverlay({ setLastSelectedCards, card 
 
       if (hasAnyWildcard) {
         selectedCardsWithRemovedCard[slotPos] = {
-          eventId: Math.random(),
           card: prevSelectedCards[slotPos].card,
           count: prevSelectedCards[slotPos].count - 1,
         };
       } else {
         selectedCardsWithRemovedCard[slotPos] = {
-          eventId: Math.random(),
           card: {
             iD: IDENTIFIER_FOR_EMPTY_SLOT,
           },

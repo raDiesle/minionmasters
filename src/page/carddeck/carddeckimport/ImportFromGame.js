@@ -1,7 +1,7 @@
 import mToast from "components/mToast";
 import { useGaTrackView } from "consent-banner";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import css from "page/carddeck/Guide.module.scss";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/Page";
 import React from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
@@ -59,7 +59,7 @@ export default function ImportFromGame({ setLastSelectedCards, setSelectedHero }
         }
       });
       const cardsOnDeckSlots = cards.map((card) => {
-        return { eventId: 0, card };
+        return { card };
       });
 
       if (

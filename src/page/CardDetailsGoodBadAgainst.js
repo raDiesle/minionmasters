@@ -1,11 +1,11 @@
 import mToast from "components/mToast";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
+
+import FiltersWithCards from "page/filters-with-cards";
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import AgainstCards from "./AgainstCards";
 import CardDiscussion from "./discussion/CardDiscussion";
-
-import FiltersWithCards from "./FiltersWithCards";
 
 const GoodBadStyle = styled.div`
   display: flex;
