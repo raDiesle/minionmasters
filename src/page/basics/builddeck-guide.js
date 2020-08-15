@@ -1,12 +1,39 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { anchorLinkTarget } from "components/helper";
 import { useGaTrackView } from "consent-banner";
 import React from "react";
 
 import cssStatic from "./static-content.module.scss";
 
+export const MENU_LINKS_CONFIG = {
+  "Youtube Videos": "Youtube Videos",
+  Basics: "Basics",
+  "Basic Rules": "Basic Rules",
+  "Masters Easy": "Masters Easy",
+  "Masters Medium": "Masters Medium",
+  "Masters Hard": "Masters Hard",
+  "Masters Very Hard": "Masters Very Hard",
+  Strategies: "Strategies",
+  "Testing & Gameplay": "Testing & Gameplay",
+  Combos: "Combos",
+};
+
 export function BuilddeckGuide() {
   useGaTrackView("/Basics/BuilddeckGuide");
+
+  const MENU_ORDER = [
+    MENU_LINKS_CONFIG.Basics,
+    MENU_LINKS_CONFIG["Basic Rules"],
+    MENU_LINKS_CONFIG["Masters Easy"],
+    MENU_LINKS_CONFIG["Masters Medium"],
+    MENU_LINKS_CONFIG["Masters Hard"],
+    MENU_LINKS_CONFIG["Masters Very Hard"],
+    MENU_LINKS_CONFIG.Strategies,
+    MENU_LINKS_CONFIG["Testing & Gameplay"],
+    MENU_LINKS_CONFIG["Youtube Videos"],
+  ];
+
   return (
     <div className={cssStatic.container}>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -14,8 +41,16 @@ export function BuilddeckGuide() {
         {"  "} Page under construction
       </div>
 
+      <ul>
+        {MENU_ORDER.map((item, index) => (
+          <li key={"menu_" + index}>
+            <a href={`#${item}`}>{item}</a>
+          </li>
+        ))}
+      </ul>
+
       <div className="subSection detailBox" id={2894054}>
-        <div className="subSectionTitle">Deck Building - Basics </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG.Basics)}
         <div className="subSectionDesc">
           First of all, there are few things that you need to keep in mind:
           <br />
@@ -59,7 +94,8 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2837346}>
-        <div className="subSectionTitle">Deck Building - Basic Rules </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG["Basic Rules"])}
+
         <div className="subSectionDesc">
           That said, there is no website or golden deck that makes you win like crazy. If you want
           to progress in this game you need to work on your strategies and to learn from your
@@ -363,7 +399,8 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2837414}>
-        <div className="subSectionTitle">Deck Building - Masters - EASY </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG["Masters Easy"])}
+
         <div className="subSectionDesc">
           This is the list of masters that can be used by new players and requires no special skills
           to be played:
@@ -553,7 +590,7 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2941648}>
-        <div className="subSectionTitle">Deck Building - Masters - MEDIUM </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG["Masters Medium"])}
         <div className="subSectionDesc">
           This is the list of masters that requires some skill to be used propely making them of
           "MEDIUM" difficulty to play:
@@ -658,7 +695,7 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2941647}>
-        <div className="subSectionTitle">Deck Building - Masters - HARD (Part 1) </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG["Masters Hard"])}
         <div className="subSectionDesc">
           This is the list of masters that requires some advanced skills to be used, making them
           "HARD" to play:
@@ -1004,7 +1041,7 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2956037}>
-        <div className="subSectionTitle">Deck Building - Masters - HARD (Part 2) </div>
+        {/* HARD PT 2 */}
         <div className="subSectionDesc">
           <ul className="bb_ul">
             <li>
@@ -1297,7 +1334,7 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={3071787}>
-        <div className="subSectionTitle">Deck Building - Masters - HARD (Part 3) </div>
+        {/* Hard part 3 */}
         <div className="subSectionDesc">
           <ul className="bb_ul">
             <li>
@@ -1423,7 +1460,8 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2837435}>
-        <div className="subSectionTitle">Deck Building - Strategies </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG["Strategies"])}
+
         <div className="subSectionDesc">
           The first thing to keep in mind when you create a deck is what core strategy you want to
           use. The core strategies are mainly divided in 3 groups:
@@ -1568,9 +1606,7 @@ export function BuilddeckGuide() {
           <br />
           <br />
           <br />
-          <div className="bb_h1">
-            <b>TESTING AND GAMEPLAY</b>
-          </div>
+          <div className="bb_h1">{anchorLinkTarget(MENU_LINKS_CONFIG["Testing & Gameplay"])}</div>
           <br />
           The test of the deck is the most important part of all, watch how your cards play out,
           learn your weakness and how your opponent is exploiting them, and change your deck trying
@@ -1608,7 +1644,8 @@ export function BuilddeckGuide() {
       </div>
       <div style={{ clear: "both" }} />
       <div className="subSection detailBox" id={2840747}>
-        <div className="subSectionTitle">Deck Building - Combos </div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG.Combos)}
+
         <div className="subSectionDesc">
           As we talked about strategies, I feel it's good to also list some of the combo you can
           find around. I'll try to keep this section updated, if you see one missing just let me
@@ -1779,7 +1816,16 @@ export function BuilddeckGuide() {
           <div style={{ clear: "both" }} />
         </div>
       </div>
-      <div style={{ clear: "both" }} />
+
+      {anchorLinkTarget(MENU_LINKS_CONFIG["Youtube Videos"])}
+      <iframe
+        width="1280"
+        height="720"
+        src="https://www.youtube.com/embed/ArjvkktCens"
+        frameBorder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import React from "react";
 import styled from "styled-components";
 import CardDeckSlotStyle from "../../CardDeckSlotStyle";

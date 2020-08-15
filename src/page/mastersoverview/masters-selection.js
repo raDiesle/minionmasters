@@ -1,5 +1,5 @@
 import AddMasterToDeckOrOpenDetailsActionOverlay from "page/mastersoverview/AddMasterToDeckOrOpenDetailsActionOverlay";
-import Masters from "page/mastersoverview/Masters";
+import Masters from "page/mastersoverview/masters";
 import React, { useMemo } from "react";
 
 const MastersMemo = ({ setSelectedHero }) => {

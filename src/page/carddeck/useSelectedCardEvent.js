@@ -1,4 +1,4 @@
-import { DEFAULT_SELECTED_CARD_EVENT } from "page/carddeck/DeckContainer";
+import { DEFAULT_SELECTED_CARD_EVENT } from "page/carddeck/deck-manager";
 import { useEffect, useRef, useState } from "react";
 
 const usePreviousValue = (value) => {

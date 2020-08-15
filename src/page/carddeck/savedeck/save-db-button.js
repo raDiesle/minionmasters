@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
 import mToast from "components/mToast";
-import { auth, db, dbErrorHandlerPromise } from "mm-firestore";
+import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { MAYHEM } from "page/carddeck/savedeck/saved-decks-configs";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import cssButton from "page/filters/ButtonFilterGroup.module.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import css from "./save-db-button.module.scss";
 
 export default function SaveDbButton({
@@ -21,7 +21,6 @@ export default function SaveDbButton({
   gameType,
   gameTypeSecondary,
   gameTypeThird,
-  playStyle,
 }) {
   const dbRef = db.collection("decks");
   const [isSaved, setSaved] = useState(false);
@@ -34,7 +33,6 @@ export default function SaveDbButton({
     gameType,
     gameTypeSecondary,
     gameTypeThird,
-    playStyle,
   };
 
   const handleSaveButton = () => {
@@ -61,8 +59,7 @@ export default function SaveDbButton({
     !description ||
     !gameType ||
     !gameTypeSecondary ||
-    (gameType === MAYHEM && !gameTypeThird) ||
-    !playStyle;
+    (gameType === MAYHEM && !gameTypeThird);
 
   return (
     <div>

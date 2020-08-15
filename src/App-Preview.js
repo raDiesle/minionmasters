@@ -1,6 +1,6 @@
-import { CardDeck } from "page/carddeck/CardDeck";
-import { DEFAULT_MASTER_NOT_SELECTED, DEFAULT_SELECTED_TAB } from "page/carddeck/DeckContainer";
-import { ImportFromUrl } from "page/carddeck/ImportFromUrl";
+import { Deck } from "page/carddeck/deck";
+import { DEFAULT_MASTER_NOT_SELECTED, DEFAULT_SELECTED_TAB } from "page/carddeck/deck-manager";
+import { ImportFromUrl } from "page/carddeck/import-from-url";
 import { useLastSelectedCards } from "page/carddeck/useLastSelectedCards";
 import { useSelectedCardEvent } from "page/carddeck/useSelectedCardEvent";
 import React, { useState } from "react";
@@ -18,7 +18,7 @@ export default function AppPreview() {
         setSelectedHero={setSelectedHero}
       />
 
-      <CardDeck
+      <Deck
         selectedCardEvent={selectedCardEvent}
         setSelectedCardEvent={setSelectedCardEvent}
         setLastSelectedCards={setLastSelectedCards}

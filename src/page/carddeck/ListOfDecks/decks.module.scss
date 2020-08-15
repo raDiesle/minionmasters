@@ -1,9 +1,4 @@
 .pageContainer {
-  margin: auto;
-  width: 930px;
-  @media (max-width: 955px) {
-    width: 100%;
-  }
 }
 
 .singleDeck {
@@ -12,7 +7,6 @@
   flex-direction: column;
   align-items: flex-start;
 
-  max-width: 930px;
   margin: 10px 0;
 }
 
@@ -45,15 +39,8 @@
   justify-content: space-between;
 }
 
-.master {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
-
 .belowDeck {
-  display: flex;
+  //display: flex;
 }
 
 .description {
@@ -66,7 +53,6 @@
 .copyDeck {
   width: 78px;
   padding: 5px;
-  margin-left: -5px;
   margin-top: 5px;
   font-size: 10px;
 }

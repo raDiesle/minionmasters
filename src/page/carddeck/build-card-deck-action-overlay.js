@@ -1,5 +1,5 @@
 import css from "page/carddeck/carddeck-actionoverlay.module.scss";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";

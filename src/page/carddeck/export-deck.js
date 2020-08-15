@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
 import { useGaTrackView } from "consent-banner";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 
 import css from "page/filters/ButtonFilterGroup.module.scss";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
@@ -29,7 +29,7 @@ const ExportInGameStyleContainer = styled.div`
   padding-top: 20px;
 `;
 
-export default function ExportActions({ lastSelectedCards, selectedHero }) {
+export default function ExportDeck({ lastSelectedCards, selectedHero }) {
   useGaTrackView("/ExportActions");
   if (typeof selectedHero === undefined || selectedHero === "") {
     return (
@@ -116,7 +116,6 @@ export default function ExportActions({ lastSelectedCards, selectedHero }) {
           <div>
             <h3>Minionmasters Game</h3>
             <ol className={cssGuide.olGuide}>
-              <li>At the moment, it will only work, when you set your language to english.</li>
               <li>
                 Press:
                 <ButtonGroupStyle>

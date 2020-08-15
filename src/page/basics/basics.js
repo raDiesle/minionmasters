@@ -2,6 +2,7 @@ import { useGaTrackView } from "consent-banner";
 import AdventuresChallenges from "page/basics/adventures-challenges";
 import { BuilddeckGuide } from "page/basics/builddeck-guide";
 import Draft from "page/basics/draft";
+import Gameplay from "page/basics/gameplay/gameplay";
 import Guild from "page/basics/guild";
 
 import MainScreen from "page/basics/main-screen";
@@ -18,13 +19,14 @@ export default function Basics() {
       <Tabs>
         <TabList>
           <Tab>Resources & Rewards</Tab>
-          <Tab>Buffs/Debuffs</Tab>
+          <Tab>Buffs & Debuffs</Tab>
           <Tab>Deck Strategies</Tab>
+          <Tab>Gameplay</Tab>
           <Tab>Draft</Tab>
           <Tab>Maythem</Tab>
           <Tab>Guild</Tab>
           <Tab>Adventures & Challenges</Tab>
-          <Tab>Main Screen</Tab>
+          <Tab>Basics & Mainscreen</Tab>
         </TabList>
         <TabPanel>
           <ResourceMngmt />
@@ -34,6 +36,9 @@ export default function Basics() {
         </TabPanel>
         <TabPanel>
           <BuilddeckGuide />
+        </TabPanel>
+        <TabPanel>
+          <Gameplay />
         </TabPanel>
         <TabPanel>
           <Draft />

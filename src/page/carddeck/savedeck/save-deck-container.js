@@ -1,12 +1,11 @@
+import React from "react";
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LoginRequired from "components/login-required";
 import { useGaTrackView } from "consent-banner";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import SaveDeckPrimaryValidationAndForm from "page/carddeck/savedeck/save-deck-content";
-import React from "react";
-
-import AnalyzeDeck from "./analyze-deck";
+import css from "./save-deck-container.module.scss";
 
 export default function SaveDeckContainer({ lastSelectedCards, selectedHero }) {
   useGaTrackView("/SaveDeckContainer");
@@ -16,13 +15,7 @@ export default function SaveDeckContainer({ lastSelectedCards, selectedHero }) {
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "left",
-          alignItems: "center",
-        }}
-      >
+      <div className={css.saveDeckContainer}>
         <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
         {"  "}Features under construction
       </div>
@@ -32,7 +25,7 @@ export default function SaveDeckContainer({ lastSelectedCards, selectedHero }) {
         Visible on "Decks". Alternatively, you can also "Export" built deck by a link without
         saving.
       </div>
-      <AnalyzeDeck relevantCards={relevantCards} selectedHero={selectedHero} />
+
       <SaveDeckPrimaryValidationAndForm relevantCards={relevantCards} selectedHero={selectedHero} />
     </div>
   );

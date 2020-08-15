@@ -1,23 +1,17 @@
 import React from "react";
-import styled from "styled-components";
 
 import Master from "./master";
 import { mastersMapping } from "./mastersMapping";
-
-const MastersStyle = styled.a`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-`;
+import css from "./masters.module.scss";
 
 export default function Masters({ actionRegistrationComponent }) {
   return (
-    <MastersStyle name="mastersview">
+    <a className={css.masters} name="mastersview">
       {Object.keys(mastersMapping).map((masterKey) => (
-        <div key={masterKey}>
+        <div key={masterKey} className={css.masterContainer}>
           <Master masterKey={masterKey} actionRegistrationComponent={actionRegistrationComponent} />
         </div>
       ))}
-    </MastersStyle>
+    </a>
   );
 }

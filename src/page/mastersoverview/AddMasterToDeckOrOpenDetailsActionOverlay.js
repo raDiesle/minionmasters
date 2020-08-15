@@ -3,12 +3,6 @@ import React, { useEffect, useState } from "react";
 import ClickNHold from "react-click-n-hold";
 import styled from "styled-components";
 
-const OverlayActionBackground = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px dotted rgba(0, 0, 0, 0.5);
-  color: #fff;
-`;
-
 export const FullWidthMasterOverlay = styled.div`
   position: absolute;
   top: 0;

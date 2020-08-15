@@ -1,4 +1,3 @@
-import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
 import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
 import GameTypeThirdInput from "page/carddeck/savedeck/inputs/game-type-third-input";
@@ -14,8 +13,6 @@ export default function DecklistFilters({
   setGameTypeSecondary,
   gameTypeThird,
   setGameTypeThird,
-  playStyle,
-  setPlayStyle,
   masterFilter,
   setMasterFilter,
   availableCards,
@@ -43,8 +40,6 @@ export default function DecklistFilters({
         gameTypeThird={gameTypeThird}
         setGameTypeThird={setGameTypeThird}
       />
-
-      <GameStyleInput playStyle={playStyle} setPlayStyle={setPlayStyle} />
 
       <div>
         <label htmlFor="masterFilter">Master</label>

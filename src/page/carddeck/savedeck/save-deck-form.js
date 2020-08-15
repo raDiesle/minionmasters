@@ -1,6 +1,5 @@
 import * as classnames from "classnames";
 import { useCurrentUser } from "components/helper";
-import GameStyleInput from "page/carddeck/savedeck/inputs/game-style-input";
 import GameTypeInput from "page/carddeck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/carddeck/savedeck/inputs/game-type-secondary-input";
 import GameTypeThirdInput from "page/carddeck/savedeck/inputs/game-type-third-input";
@@ -25,8 +24,6 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
   const [gameTypeSecondary, setGameTypeSecondary] = useState("");
   const [gameTypeThird, setGameTypeThird] = useState("");
 
-  const [playStyle, setPlayStyle] = useState("");
-
   return (
     <div>
       <div className={css.formLayout}>
@@ -48,10 +45,6 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
             onChange={(e) => setName(e.currentTarget.value)}
             value={name}
           />
-        </div>
-
-        <div className={css.inputGroupStyle}>
-          <GameStyleInput playStyle={playStyle} setPlayStyle={setPlayStyle} />
         </div>
 
         <div className={css.inputGroupStyle}>
@@ -98,7 +91,6 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
         gameType={gameType}
         gameTypeSecondary={gameTypeSecondary}
         gameTypeThird={gameTypeThird}
-        playStyle={playStyle}
       />
     </div>
   );

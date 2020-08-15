@@ -1,0 +1,9 @@
+.masters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.masterContainer:not(:last-of-type) {
+  margin-right: 5px;
+}
