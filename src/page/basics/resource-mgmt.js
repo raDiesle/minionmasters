@@ -10,6 +10,7 @@ import LevelupRewards from "page/basics/resources/levelup-rewards";
 import MaythemResources from "page/basics/resources/maythem-resources";
 import Quests from "page/basics/resources/quests";
 import RankRewards from "page/basics/resources/rank-rewards";
+import ResourceVideos from "page/basics/resources/resource-videos";
 import Resources from "page/basics/resources/resources";
 import SeasonHouseRewards from "page/basics/resources/season-houserewards";
 import SeasonRewards from "page/basics/resources/season-rewards";
@@ -21,6 +22,7 @@ import css from "page/basics/static-content.module.scss";
 import React from "react";
 
 export const MENU_LINKS_CONFIG = {
+  "Youtube Videos": "Youtube Videos",
   Resources: "Resource Types",
   Tokens: "Tokens",
   Shop: "Shop",
@@ -58,6 +60,7 @@ export default function ResourceMngmt() {
     MENU_LINKS_CONFIG["Maythem Rewards"],
     MENU_LINKS_CONFIG["Draft Rewards"],
     MENU_LINKS_CONFIG["Challenges Rewards"],
+    MENU_LINKS_CONFIG["Youtube Videos"],
   ];
   return (
     <div className={css.container}>
@@ -68,6 +71,7 @@ export default function ResourceMngmt() {
           </li>
         ))}
       </ul>
+
       <Resources />
       <Tokens />
       <Shop />
@@ -85,6 +89,7 @@ export default function ResourceMngmt() {
       <AdventureRewards />
       <ChallengesRewards />
       <DraftRewards />
+      <ResourceVideos />
     </div>
   );
 }

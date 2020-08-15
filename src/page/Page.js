@@ -1,10 +1,11 @@
 import Basics from "page/basics/basics";
 
-import DeckContainer from "page/carddeck/DeckContainer";
+import DeckManager from "page/carddeck/deck-manager";
 
 import Decks from "page/carddeck/ListOfDecks/decks";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import css from "./page.module.scss";
 
 export function Page() {
   /*
@@ -13,7 +14,7 @@ export function Page() {
 */
   // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
   return (
-    <div style={{ padding: "5px" }}>
+    <div className={css.pageContentContainer}>
       <Tabs style={{ paddingTop: "20px" }}>
         <TabList>
           <Tab>Deck Manager</Tab>
@@ -21,7 +22,7 @@ export function Page() {
           <Tab>The Game</Tab>
         </TabList>
         <TabPanel forceRender>
-          <DeckContainer />
+          <DeckManager />
         </TabPanel>
         <TabPanel>
           <Decks />

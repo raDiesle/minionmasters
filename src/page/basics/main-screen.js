@@ -5,6 +5,7 @@ import { useGaTrackView } from "consent-banner";
 
 import ChatCommands from "page/basics/chat-commands";
 import GameModes from "page/basics/game-modes";
+import YoutubeVideosMainScreen from "page/basics/mainscreen/youtube-videos-main-screen";
 import Replays from "page/basics/replays";
 import React from "react";
 import cssStatic from "./static-content.module.scss";
@@ -17,6 +18,7 @@ export const MENU_LINKS_CONFIG = {
   "Chat Commands: Functional": "Chat Commands: Functional",
   "Chat Commands: Emoji": "Chat Commands: Emoji",
   Replays: "Replays",
+  "Youtube Videos": "Youtube Videos",
 };
 export default function MainScreen() {
   useGaTrackView("/Basics/MainScreen");
@@ -28,6 +30,7 @@ export default function MainScreen() {
     MENU_LINKS_CONFIG["Game Modes"],
     MENU_LINKS_CONFIG["Chat Commands: Functional"],
     MENU_LINKS_CONFIG["Chat Commands: Emoji"],
+    MENU_LINKS_CONFIG["Youtube Videos"],
   ];
 
   return (
@@ -82,6 +85,8 @@ export default function MainScreen() {
       </div>
 
       <ChatCommands />
+
+      <YoutubeVideosMainScreen />
     </div>
   );
 }

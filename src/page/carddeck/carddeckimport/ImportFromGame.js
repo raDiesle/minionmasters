@@ -1,6 +1,6 @@
 import mToast from "components/mToast";
 import { useGaTrackView } from "consent-banner";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import css from "page/carddeck/Guide.module.scss";
 import React from "react";
 import { toast } from "react-toastify";
@@ -83,7 +83,6 @@ export default function ImportFromGame({ setLastSelectedCards, setSelectedHero }
       <div>
         <h3>Import from game</h3>
         <ol className={css.olGuide}>
-          <li>At the moment, it will only work, if your deck is configured english language.</li>
           <li>In game, select the deck and master you want to copy</li>
           <li>
             In Minionmasters chat type:

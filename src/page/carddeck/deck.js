@@ -1,22 +1,11 @@
 import mToast from "components/mToast";
 import BuildCardDeckActionOverlay from "page/carddeck/build-card-deck-action-overlay";
+import { CardDeckSlot } from "page/carddeck/card-deck-slot";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
+import { MasterAndCardsContainerStyle } from "page/carddeck/master-and-cards-container-style";
+import MasterDeckSlot from "page/carddeck/master-deck-slot";
 import React, { useEffect, useRef, useState } from "react";
-
-import styled from "styled-components";
 import allCardsData from "../../generated/jobCardProps";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "../carddeck/DeckContainer";
-import { CardDeckSlot } from "./CardDeckSlot";
-import MasterDeckSlot from "./MasterDeckSlot";
-
-const CardDeckStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-
-  @media (max-width: 767px) {
-    // justify-content: center;
-  }
-`;
 
 const usePreviousValue = (value) => {
   const ref = useRef();
@@ -32,7 +21,7 @@ const useTraceableState = (initialValue) => {
 };
 
 // refactor to only pass selectedCardId
-export function CardDeck({
+export function Deck({
   selectedCardEvent: {
     eventId: cardSelectedEventId,
     card: { iD: selectedCardId },
@@ -139,7 +128,7 @@ export function CardDeck({
 
   return (
     <div>
-      <CardDeckStyle>
+      <MasterAndCardsContainerStyle>
         <MasterDeckSlot
           selectedHero={selectedHero}
           setSelectedHero={setSelectedHero}
@@ -163,7 +152,7 @@ export function CardDeck({
             setSelectedTabIndex={setSelectedTabIndex}
           />
         ))}
-      </CardDeckStyle>
+      </MasterAndCardsContainerStyle>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { isForImagePreview } from "components/helper";
 import mToast from "components/mToast";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/DeckContainer";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
 import qs from "qs";
 import { useEffect } from "react";

@@ -1,6 +1,7 @@
 import { useGaTrackView } from "consent-banner";
 import CardForDeckActionOverlay from "page/carddeck/cardfordeck-actionoverlay";
 import { HowToUse } from "page/carddeck/how-to-use";
+import AnalyzeDeck from "page/carddeck/savedeck/analyze-deck";
 import { useLastSelectedCards } from "page/carddeck/useLastSelectedCards";
 import { useSelectedCardEvent } from "page/carddeck/useSelectedCardEvent";
 
@@ -9,12 +10,12 @@ import React, { useMemo, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
 import FiltersWithCards from "../FiltersWithCards";
-import Masters from "../mastersoverview/Masters";
-import { CardDeck } from "./CardDeck";
+import Masters from "page/mastersoverview/masters";
+import { Deck } from "page/carddeck/deck";
 import ImportFromGame from "./carddeckimport/ImportFromGame";
-import ExportActions from "./ExportActions";
-import { ImportFromUrl } from "./ImportFromUrl";
-import AnalyzeAndSaveDeckContainer from "./savedeck/save-deck-container";
+import ExportDeck from "page/carddeck/export-deck";
+import { ImportFromUrl } from "page/carddeck/import-from-url";
+import SaveDeckContainer from "./savedeck/save-deck-container";
 
 export const IDENTIFIER_FOR_EMPTY_SLOT = 999999;
 
@@ -53,7 +54,7 @@ const MastersMemo = ({ setSelectedHero }) => {
 export const DEFAULT_MASTER_NOT_SELECTED = "";
 export const DEFAULT_SELECTED_TAB = 0;
 
-export default function DeckContainer() {
+export default function DeckManager() {
   useGaTrackView("/DeckContainer");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
   const [selectedHero, setSelectedHero] = useState(DEFAULT_MASTER_NOT_SELECTED);
@@ -69,7 +70,7 @@ export default function DeckContainer() {
         setSelectedHero={setSelectedHero}
       />
 
-      <CardDeck
+      <Deck
         selectedCardEvent={selectedCardEvent}
         setSelectedCardEvent={setSelectedCardEvent}
         setLastSelectedCards={setLastSelectedCards}
@@ -87,9 +88,10 @@ export default function DeckContainer() {
       >
         <TabList>
           <Tab>Build</Tab>
-          <Tab>Analyze & Save</Tab>
+          <Tab>Save</Tab>
           <Tab>Import</Tab>
           <Tab>Export</Tab>
+          <Tab>Analyze</Tab>
         </TabList>
         <TabPanel>
           <HowToUse />
@@ -97,10 +99,7 @@ export default function DeckContainer() {
           <FiltersWithCardsMemo setSelectedCardEvent={setSelectedCardEvent} />
         </TabPanel>
         <TabPanel>
-          <AnalyzeAndSaveDeckContainer
-            lastSelectedCards={lastSelectedCards}
-            selectedHero={selectedHero}
-          />
+          <SaveDeckContainer lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />
         </TabPanel>
 
         <TabPanel>
@@ -114,7 +113,10 @@ export default function DeckContainer() {
           </DeckOptionsStyle>
         </TabPanel>
         <TabPanel>
-          <ExportActions lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />
+          <ExportDeck lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />
+        </TabPanel>
+        <TabPanel>
+          <AnalyzeDeck lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />
         </TabPanel>
       </Tabs>
     </div>

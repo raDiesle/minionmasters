@@ -1,0 +1,10 @@
+.pageContentContainer {
+  padding: 5px;
+
+  margin: auto;
+  width: 1100px;
+
+  @media (max-width: 1099px) {
+    width: 100%;
+  }
+}

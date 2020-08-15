@@ -6,6 +6,7 @@ import { useGaTrackView } from "consent-banner";
 import orderBy from "lodash/orderBy";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
+import { MasterAndCardsContainerStyle } from "page/carddeck/master-and-cards-container-style";
 import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
 import Master from "page/mastersoverview/master";
 import React, { useEffect, useState } from "react";
@@ -18,14 +19,6 @@ import cssButton from "../../filters/ButtonFilterGroup.module.scss";
 
 import css from "./decks.module.scss";
 
-const CardsContainerStyle = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  }
-`;
-
 export default function Decks() {
   useGaTrackView("/ListOfDecks");
 
@@ -34,7 +27,6 @@ export default function Decks() {
   const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
   const [gameTypeThirdFilter, setGameTypeThirdFilter] = useState("");
 
-  const [playStyleFilter, setPlayStyleFilter] = useState("");
   const [masterFilter, setMasterFilter] = useState("");
 
   const [availableCards, setAvailableCards] = useState("");
@@ -60,7 +52,6 @@ export default function Decks() {
             createdAtVersion: deck.createdAtVersion,
             createdByDisplayName: deck.createdByDisplayName,
             gameType: deck.gameType,
-            playStyle: deck.playStyle,
             master: deck.hero,
             description: deck.description,
             gameTypeSecondary: deck.gameTypeSecondary,
@@ -88,13 +79,9 @@ export default function Decks() {
         ({ gameTypeThird }) => gameTypeThird === gameTypeThirdFilter
       );
 
-  const decksWithPlayStyle = !playStyleFilter
-    ? decksWithGameTypeThird
-    : decksWithGameTypeThird.filter(({ playStyle }) => playStyle === playStyleFilter);
-
   const decksWithMaster = !masterFilter
-    ? decksWithPlayStyle
-    : decksWithPlayStyle.filter(({ master }) => master === masterFilter);
+    ? decksWithGameTypeThird
+    : decksWithGameTypeThird.filter(({ master }) => master === masterFilter);
   // SORT BY VERSION DESC
 
   const decksWithAvailableCards = !availableCards
@@ -133,8 +120,6 @@ export default function Decks() {
         setGameTypeSecondary={setGameTypeSecondaryFilter}
         gameTypeThird={gameTypeThirdFilter}
         setGameTypeThird={setGameTypeThirdFilter}
-        playStyle={playStyleFilter}
-        setPlayStyle={setPlayStyleFilter}
         masterFiltr={masterFilter}
         setMasterFilter={setMasterFilter}
         availableCards={availableCards}
@@ -153,34 +138,38 @@ export default function Decks() {
           <div className={css.deckRightBottomLegend}>
             by {deck.createdByDisplayName ? deck.createdByDisplayName : "unknown"}
           </div>
-          <CardsContainerStyle>
-            {deck.master && (
-              <div className={css.master}>
+
+          <div>
+            <MasterAndCardsContainerStyle>
+              <div>
                 <Master masterKey={deck.master} actionRegistrationComponent={() => {}} />
               </div>
-            )}
-            {orderBy(deck.cards, ({ manacost }) => parseInt(manacost), "asc").map((card) => (
-              <Card card={card} isDeckCard showDeck key={card.iD} />
-            ))}
-          </CardsContainerStyle>
-          <div className={css.belowDeck}>
-            <CopyToClipboard
-              text={`/setdeck ${deck.master}: ${deck.cards.map(({ name }) => name).join(", ")}`}
-              onCopy={() => {
-                toast(
-                  "Copied to clipboard. Go to game, switch to a slot and paste command and press ENTER. Game must be english language. Experimental feature, might not work!",
-                  { position: "bottom-right", autoClose: 10000 }
-                );
-              }}
-              title="Copy"
-            >
-              <ButtonGroupStyle>
-                <div className={classnames(css.copyDeck, cssButton.ButtonInGroupStyle)}>
-                  Copy to game
-                </div>
-              </ButtonGroupStyle>
-            </CopyToClipboard>
+              {orderBy(deck.cards, ({ manacost }) => parseInt(manacost), "asc").map((card) => (
+                <Card card={card} isDeckCard showDeck key={card.iD} />
+              ))}
+            </MasterAndCardsContainerStyle>
+
             <div className={css.description}>{deck.description}</div>
+            <div>
+              <div className={css.belowDeck}>
+                <CopyToClipboard
+                  text={`/setdeck ${deck.master}: ${deck.cards.map(({ name }) => name).join(", ")}`}
+                  onCopy={() => {
+                    toast(
+                      "Copied to clipboard. Go to game, switch to a slot and paste command and press ENTER. Game must be english language. Experimental feature, might not work!",
+                      { position: "bottom-right", autoClose: 10000 }
+                    );
+                  }}
+                  title="Copy"
+                >
+                  <ButtonGroupStyle>
+                    <div className={classnames(css.copyDeck, cssButton.ButtonInGroupStyle)}>
+                      Copy to game
+                    </div>
+                  </ButtonGroupStyle>
+                </CopyToClipboard>
+              </div>
+            </div>
           </div>
         </fieldset>
       ))}
