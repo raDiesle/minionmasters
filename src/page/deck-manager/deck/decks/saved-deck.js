@@ -6,7 +6,7 @@ import { CURRENT_GAME_VERSION } from "components/helper";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
 import { DeckMasterAndCardsContainerStyle } from "page/deck-manager/deck/deck-master-and-cards-container-style";
-import css from "page/deck-manager/deck/ListOfDecks/decks.module.scss";
+import css from "page/deck-manager/deck/decks/decks.module.scss";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/AddMasterToDeckOrOpenDetailsActionOverlay";

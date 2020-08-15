@@ -42,7 +42,7 @@ export const MENU_LINKS_CONFIG = {
 };
 
 export default function ResourceMngmt() {
-  useGaTrackView("/Basics/ResourceMngmt");
+  useGaTrackView("/Basics/Rewards");
   const MENU_ORDER = [
     MENU_LINKS_CONFIG.Resources,
     MENU_LINKS_CONFIG["Tokens"],

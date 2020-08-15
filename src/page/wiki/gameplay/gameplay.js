@@ -10,6 +10,13 @@ export default function Gameplay() {
         <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
         {"  "} Page under construction
       </div>
+
+      <h3>Don't</h3>
+
+      <ol>
+        <li>do</li>
+      </ol>
+
       <iframe
         src="https://www.youtube.com/embed/-1kOHvJX_wM"
         frameBorder="0"

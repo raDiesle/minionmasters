@@ -3,7 +3,7 @@ import { MENU_LINKS_CONFIG } from "page/wiki/mainscreen/main-screen";
 
 import React from "react";
 
-export default function GameModes() {
+export default function MainGameModes() {
   return (
     <div>
       {anchorLinkTarget(MENU_LINKS_CONFIG["Game Modes"])}

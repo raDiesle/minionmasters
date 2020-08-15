@@ -34,6 +34,7 @@ export default function Mayhem() {
 
   return (
     <div className={css.container}>
+      <h3>Mayhem</h3>
       <ul>
         {MENU_ORDER.map((key) => (
           <li key={key}>

@@ -6,6 +6,7 @@ export default function Draft() {
   useGaTrackView("/Basics/Draft");
   return (
     <div className={cssStatic.container}>
+      <h3>Draft</h3>
       <div>
         Draft is more complicated and more subject to luck. In this mode you get to pick a random
         master and to build a random deck with limited choices, so don't rush and think before you
