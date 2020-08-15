@@ -72,8 +72,7 @@ const MastersMemo = ({ masterKey }) => {
   }, []);
 };
 
-export default function MasterDeckSlot({ selectedHero, setSelectedHero, setSelectedTabIndex }) {
-  let MASTERS_TAB_INDEX = 1;
+export default function MasterDeckSlot({ selectedHero, setSelectedHero }) {
   return (
     <MasterDeckSlotStyle>
       <MasterContentStyle>
@@ -88,9 +87,7 @@ export default function MasterDeckSlot({ selectedHero, setSelectedHero, setSelec
             )}
           />
         ) : (
-          <MasterPlaceholder onClick={() => setSelectedTabIndex(MASTERS_TAB_INDEX)}>
-            Select Master
-          </MasterPlaceholder>
+          <MasterPlaceholder>Select Master</MasterPlaceholder>
         )}
       </MasterContentStyle>
     </MasterDeckSlotStyle>

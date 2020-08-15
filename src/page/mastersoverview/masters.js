@@ -1,8 +1,8 @@
 import React from "react";
 
 import Master from "./master";
-import { mastersMapping } from "./mastersMapping";
 import css from "./masters.module.scss";
+import { mastersMapping } from "./mastersMapping";
 
 export default function Masters({ actionRegistrationComponent }) {
   return (
