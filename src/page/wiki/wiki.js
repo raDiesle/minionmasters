@@ -1,14 +1,15 @@
 import { useGaTrackView } from "footer/consent-banner";
 import AdventuresChallenges from "page/wiki/adventures-challenges/adventures-challenges";
-import { DeckStrategies } from "page/wiki/deck-strategies/deck-strategies";
-import Draft from "page/wiki/draft/draft";
+import { BuildDecks } from "page/wiki/deck-strategies/build-decks";
+import Draft from "page/wiki/gamemodes/draft/draft";
+import { GameModes } from "page/wiki/gamemodes/gamemodes";
 import Gameplay from "page/wiki/gameplay/gameplay";
 import Guild from "page/wiki/guild/guild";
 
 import MainScreen from "page/wiki/mainscreen/main-screen";
-import Mayhem from "page/wiki/mayhem/mayhem";
-import ListOfMechanics from "page/wiki/buffs-debuffs/list-of-mechanics";
-import ResourceMngmt from "page/wiki/resource-mngt/resource-mgmt";
+import Mayhem from "page/wiki/gamemodes/mayhem/mayhem";
+import Abilities from "page/wiki/abilities/list-of-mechanics";
+import Rewards from "page/wiki/resource-mngt/resource-mgmt";
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
@@ -18,42 +19,37 @@ export default function Wiki() {
     <div>
       <Tabs>
         <TabList>
-          <Tab>Resources & Rewards</Tab>
-          <Tab>Buffs & Debuffs</Tab>
-          <Tab>Deck Strategies</Tab>
-          <Tab>Gameplay</Tab>
-          <Tab>Draft</Tab>
-          <Tab>Maythem</Tab>
-          <Tab>Guild</Tab>
-          <Tab>Adventures & Challenges</Tab>
+          <Tab>Rewards</Tab>
           <Tab>Basics & Mainscreen</Tab>
+          <Tab>Build Decks</Tab>
+          <Tab>Gameplay</Tab>
+          <Tab>Guild</Tab>
+          <Tab>Abilities</Tab>
+          <Tab>Game Modes</Tab>
         </TabList>
+
         <TabPanel>
-          <ResourceMngmt />
+          <Rewards />
         </TabPanel>
         <TabPanel>
-          <ListOfMechanics />
+          <MainScreen />
         </TabPanel>
+
         <TabPanel>
-          <DeckStrategies />
+          <BuildDecks />
         </TabPanel>
         <TabPanel>
           <Gameplay />
         </TabPanel>
         <TabPanel>
-          <Draft />
-        </TabPanel>
-        <TabPanel>
-          <Mayhem />
-        </TabPanel>
-        <TabPanel>
           <Guild />
         </TabPanel>
+
         <TabPanel>
-          <AdventuresChallenges />
+          <Abilities />
         </TabPanel>
         <TabPanel>
-          <MainScreen />
+          <GameModes />
         </TabPanel>
       </Tabs>
     </div>

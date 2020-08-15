@@ -11,10 +11,6 @@ export default function SaveDeckContainer({ lastSelectedCards, selectedMaster })
 
   return (
     <div>
-      <div className={css.saveDeckContainer}>
-        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "}Features under construction
-      </div>
       <LoginRequired />
       <h3>Save deck for public share</h3>
       <div>

@@ -19,7 +19,7 @@ export const MENU_LINKS_CONFIG = {
   Combos: "Combos",
 };
 
-export function DeckStrategies() {
+export function BuildDecks() {
   useGaTrackView("/Basics/BuilddeckGuide");
 
   const MENU_ORDER = [

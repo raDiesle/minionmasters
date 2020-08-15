@@ -1,5 +1,5 @@
-import DeebuffIcon from "page/wiki/buffs-debuffs/buff-icon";
-import BuffIcon from "page/wiki/buffs-debuffs/debuff-icon";
+import DeebuffIcon from "page/wiki/abilities/buff-icon";
+import BuffIcon from "page/wiki/abilities/debuff-icon";
 import { useGaTrackView } from "footer/consent-banner";
 import css from "page/wiki/static-content.module.scss";
 import {
@@ -10,7 +10,7 @@ import { TERMS_CONFIG } from "page/terms-config";
 import React, { useState } from "react";
 
 export default function ListOfMechanics() {
-  useGaTrackView("/Basics/ListOfMechanics");
+  useGaTrackView("/Basics/Abilities");
   const [selectedBuff, setSelectedBuff] = useState("ALL");
   return (
     <div className={css.container}>

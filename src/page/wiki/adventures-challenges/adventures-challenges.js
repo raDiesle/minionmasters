@@ -15,6 +15,7 @@ export default function AdventuresChallenges() {
 
   return (
     <div className={cssStatic.container}>
+      <h3>Adventures & Challenges</h3>
       <div>
         <ul>
           {MENU_LINKS_ORDER.map((key) => (

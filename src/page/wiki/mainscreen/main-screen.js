@@ -4,7 +4,7 @@ import { anchorLinkTarget } from "components/helper";
 import { useGaTrackView } from "footer/consent-banner";
 
 import ChatCommands from "page/wiki/mainscreen/chat-commands";
-import GameModes from "page/wiki/mainscreen/game-modes";
+import MainGameModes from "page/wiki/mainscreen/main-game-modes";
 import YoutubeVideosMainScreen from "page/wiki/mainscreen/youtube-videos-main-screen";
 import Replays from "page/wiki/mainscreen/replays";
 import React from "react";
@@ -27,7 +27,6 @@ export default function MainScreen() {
     MENU_LINKS_CONFIG.Profile,
     MENU_LINKS_CONFIG.Replays,
     MENU_LINKS_CONFIG["Power Tower"],
-    MENU_LINKS_CONFIG["Game Modes"],
     MENU_LINKS_CONFIG["Chat Commands: Functional"],
     MENU_LINKS_CONFIG["Chat Commands: Emoji"],
     MENU_LINKS_CONFIG["Youtube Videos"],
@@ -55,8 +54,6 @@ export default function MainScreen() {
         alt="mm main menu"
         style={{ maxWidth: "600px", width: "100%" }}
       />
-
-      <GameModes />
 
       <div>
         <div className="subSectionDesc">
