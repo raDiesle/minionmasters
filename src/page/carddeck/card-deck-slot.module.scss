@@ -1,0 +1,51 @@
+.EmptyCardSlotUnselectedStyle {
+  width: 100%;
+  height: calc(100% + 2px);
+  margin-top: 1px;
+  border: 1px solid #fff;
+}
+
+.oneCardStyle {
+  // z-index: -100;
+}
+
+.wildcardOverlaySecondStyle {
+  position: relative;
+
+  //color: rgb(240, 255, 51);
+  font-weight: bolder;
+
+  top: -101px;
+  right: 8px;
+  font-size: 14px;
+
+  @media (max-width: 767px) {
+    top: -65px;
+    right: 6px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.wildcardOverlayThirdStyle {
+  position: relative;
+
+  //color: rgb(240, 255, 51);
+  font-weight: bolder;
+
+  top: -202px;
+  right: 16px;
+  font-size: 14px;
+
+  @media (max-width: 767px) {
+    top: -131px;
+    right: 11px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -156,7 +156,6 @@ export default function DeckManager() {
               <CardForDeckActionOverlay card={card} setSelectedCardEvent={setSelectedCardEvent} />
             )}
           />
-          ;
         </TabPanel>
         <TabPanel>
           <SaveDeckContainer lastSelectedCards={lastSelectedCards} selectedHero={selectedHero} />
