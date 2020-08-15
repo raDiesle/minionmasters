@@ -1,6 +1,6 @@
-import { DEFAULT_MASTER_NOT_SELECTED } from "page/carddeck/deck-manager";
 import { FullWidthMasterOverlay } from "page/mastersoverview/AddMasterToDeckOrOpenDetailsActionOverlay";
 import { MasterModal } from "page/mastersoverview/MasterModal";
+import { DEFAULT_MASTER_NOT_SELECTED } from "page/Page";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 

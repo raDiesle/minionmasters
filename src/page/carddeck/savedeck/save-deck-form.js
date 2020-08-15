@@ -7,7 +7,7 @@ import SaveDbButton from "page/carddeck/savedeck/save-db-button";
 import React, { useEffect, useState } from "react";
 import css from "./save-deck-form.module.scss";
 
-export default function SaveDeckForm({ relevantCards, selectedHero }) {
+export default function SaveDeckForm({ lastSelectedCards, selectedHero }) {
   const [name, setName] = useState("");
 
   const [createdByDisplayName, setCreatedByDisplayName] = useState("");
@@ -83,7 +83,7 @@ export default function SaveDeckForm({ relevantCards, selectedHero }) {
       </div>
 
       <SaveDbButton
-        relevantCards={relevantCards}
+        lastSelectedCards={lastSelectedCards}
         selectedHero={selectedHero}
         name={name}
         createdByDisplayName={createdByDisplayName}

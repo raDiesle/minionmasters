@@ -1,11 +1,13 @@
 import React from "react";
 
+const OPACITY = 0.9;
+
 const RARITY_MAPPING_CONFIG = {
-  Perk: "rgba(255, 255, 255, 0.6)",
-  Common: "rgba(0, 153, 0, 0.6)",
-  Rare: "rgba(51, 153, 255, 0.6)",
-  Supreme: "rgba(153, 51, 255, 0.6)",
-  Legendary: "rgba(220, 186, 1, 0.6)",
+  Perk: `rgba(255, 255, 255, ${OPACITY})`,
+  Common: `rgba(0, 153, 0, ${OPACITY})`,
+  Rare: `rgba(51, 153, 255, ${OPACITY})`,
+  Supreme: `rgba(153, 51, 255, ${OPACITY})`,
+  Legendary: `rgba(220, 186, 1, ${OPACITY})`,
 };
 
 const RARITY_KEYS = {

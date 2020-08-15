@@ -1,5 +1,5 @@
 import BuildMasterDeckActionOverlay from "page/carddeck/build-master-deck-action-overlay";
-import React, { useMemo } from "react";
+import React from "react";
 import styled from "styled-components";
 import Master from "../mastersoverview/master";
 
@@ -11,18 +11,13 @@ const MasterDeckSlotStyle = styled.div`
   width: 90px;
   height: 90px;
   margin-top: 3px;
-  margin-right: 7px;
+  //margin-right: 7px;
 
   @media (max-width: 767px) {
-    height: 50px;
-    width: 50px;
+    height: 59px;
+    width: 59px;
     //margin-top: 5px;
   }
-`;
-
-const MasterContentStyle = styled.div`
-  //   width: 100%;
-  //   position: relative;
 `;
 
 const MasterPlaceholder = styled.div`
@@ -62,20 +57,10 @@ const MasterPlaceholder = styled.div`
   }
 `;
 
-const MastersMemo = ({ masterKey }) => {
-  return useMemo(() => {
-    const mastersActionWrapper = (selectedHeroKey) => (
-      <BuildMasterDeckActionOverlay masterKey={selectedHeroKey} />
-    );
-
-    return <Master masterKey={masterKey} actionRegistrationComponent={mastersActionWrapper} />;
-  }, []);
-};
-
 export default function MasterDeckSlot({ selectedHero, setSelectedHero }) {
   return (
     <MasterDeckSlotStyle>
-      <MasterContentStyle>
+      <div>
         {selectedHero ? (
           <Master
             masterKey={selectedHero}
@@ -89,7 +74,7 @@ export default function MasterDeckSlot({ selectedHero, setSelectedHero }) {
         ) : (
           <MasterPlaceholder>Select Master</MasterPlaceholder>
         )}
-      </MasterContentStyle>
+      </div>
     </MasterDeckSlotStyle>
   );
 }

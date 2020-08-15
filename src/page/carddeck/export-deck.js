@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
 import { useGaTrackView } from "consent-banner";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 
 import css from "page/filters/ButtonFilterGroup.module.scss";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/Page";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 

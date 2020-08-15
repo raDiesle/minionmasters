@@ -1,7 +1,7 @@
 import { isForImagePreview } from "components/helper";
 import mToast from "components/mToast";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import { mastersMapping } from "page/mastersoverview/mastersMapping";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/Page";
 import qs from "qs";
 import { useEffect } from "react";
 
@@ -50,7 +50,6 @@ export function ImportFromUrl({ setLastSelectedCards, setSelectedHero }) {
             ? { iD: IDENTIFIER_FOR_EMPTY_SLOT }
             : selectedCardData,
         count,
-        eventId: 0,
       };
     });
 

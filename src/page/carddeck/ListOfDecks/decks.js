@@ -1,24 +1,15 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as classnames from "classnames";
-import { CURRENT_GAME_VERSION } from "components/helper";
 import { useGaTrackView } from "consent-banner";
-import orderBy from "lodash/orderBy";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/carddeck/ListOfDecks/decklist-filters";
-import { MasterAndCardsContainerStyle } from "page/carddeck/master-and-cards-container-style";
-import { ButtonGroupStyle } from "page/filters/ButtonFilterGroup";
-import Master from "page/mastersoverview/master";
+import { SavedDeck } from "page/carddeck/ListOfDecks/saved-deck";
 import React, { useEffect, useState } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { toast } from "react-toastify";
 import cardData from "../../../generated/jobCardProps";
-import { Card } from "../../Card";
-import cssButton from "../../filters/ButtonFilterGroup.module.scss";
 
 import css from "./decks.module.scss";
 
-export default function Decks() {
+export default function Decks({ setSelectedHero, setLastSelectedCards }) {
   useGaTrackView("/ListOfDecks");
 
   const [decks, setDecks] = useState([]);
@@ -32,6 +23,7 @@ export default function Decks() {
   const [isToggleAvailableCards, setIsToggleAvailableCards] = useState(false);
 
   useEffect(() => {
+    console.debug("fetched decks");
     db.collection("decks")
       .orderBy("createdAt", "desc")
       .get()
@@ -41,10 +33,14 @@ export default function Decks() {
           ...doc.data(),
         }));
         const normalizedDecks = dbDecks.map((deck) => {
-          const mappedCardData = deck.cards.map((iDFromDb) => {
-            return cardData.find(({ iD }) => iD === iDFromDb);
+          const mappedCardData = deck.cards.map(({ card: { iD: iDFromDb }, count }) => {
+            return {
+              card: cardData.find(({ iD }) => iD === iDFromDb),
+              count,
+            };
           });
           return {
+            dbid: deck.id,
             deckname: deck.deckname,
             cards: mappedCardData,
             createdAt: deck.createdAt.toDate(),
@@ -109,7 +105,8 @@ export default function Decks() {
             color="yellow"
             style={{ paddingRight: "10px" }}
           />
-          {"  "}Features under construction. Ready in some days. Ideas to share? - contact me!
+          {"  "}Features under construction. Ready in some days. Ideas to share? - contact me! Sorry
+          that I had to delete some decks.
         </div>
       </div>
       <DecklistFilters
@@ -127,50 +124,12 @@ export default function Decks() {
         setIsToggleAvailableCards={setIsToggleAvailableCards}
       />
       {decksWithAvailableCards.map((deck) => (
-        <fieldset className={css.singleDeck} key={deck.createdAt.getTime()}>
-          <legend>
-            <div className={css.deckLegend}>{deck.deckname}</div>
-          </legend>
-          <div className={css.deckRightLegend}>
-            v{deck.createdAtVersion ? deck.createdAtVersion : CURRENT_GAME_VERSION}
-          </div>
-          <div className={css.deckRightBottomLegend}>
-            by {deck.createdByDisplayName ? deck.createdByDisplayName : "unknown"}
-          </div>
-
-          <div>
-            <MasterAndCardsContainerStyle>
-              <div>
-                <Master masterKey={deck.master} actionRegistrationComponent={() => {}} />
-              </div>
-              {orderBy(deck.cards, ({ manacost }) => parseInt(manacost), "asc").map((card) => (
-                <Card card={card} isDeckCard showDeck key={card.iD} />
-              ))}
-            </MasterAndCardsContainerStyle>
-
-            <div className={css.description}>{deck.description}</div>
-            <div>
-              <div className={css.belowDeck}>
-                <CopyToClipboard
-                  text={`/setdeck ${deck.master}: ${deck.cards.map(({ name }) => name).join(", ")}`}
-                  onCopy={() => {
-                    toast(
-                      "Copied to clipboard. Go to game, switch to a slot and paste command and press ENTER. Game must be english language. Experimental feature, might not work!",
-                      { position: "bottom-right", autoClose: 10000 }
-                    );
-                  }}
-                  title="Copy"
-                >
-                  <ButtonGroupStyle>
-                    <div className={classnames(css.copyDeck, cssButton.ButtonInGroupStyle)}>
-                      Copy to game
-                    </div>
-                  </ButtonGroupStyle>
-                </CopyToClipboard>
-              </div>
-            </div>
-          </div>
-        </fieldset>
+        <SavedDeck
+          deck={deck}
+          key={deck.dbid}
+          setSelectedHero={setSelectedHero}
+          setLastSelectedCards={setLastSelectedCards}
+        />
       ))}
     </div>
   );
