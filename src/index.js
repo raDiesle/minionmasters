@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "react-tabs/style/react-tabs.css";
 import "react-toastify/dist/ReactToastify.css";
-import App from "./App";
+import App from "app";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 

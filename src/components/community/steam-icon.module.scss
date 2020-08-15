@@ -1,0 +1,14 @@
+.steamIcon {
+  & svg:first-child {
+    font-size: 18px;
+    color: white;
+  }
+
+  & svg:last-child {
+    color: #1b2838;
+  }
+
+  &:hover:first-child {
+    color: #375a7f;
+  }
+}

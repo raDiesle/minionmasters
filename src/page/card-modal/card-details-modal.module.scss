@@ -1,0 +1,32 @@
+.buttonsLayout button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 350px;
+}
+
+.ModalContainerStyle {
+  position: relative;
+}
+
+.ModalAlignCloseStyle {
+  position: absolute;
+  right: 30px;
+  top: -2px;
+}
+
+.ModalCloseStyle {
+  position: fixed;
+
+  & > svg {
+    &:hover {
+      color: #a0a0a0;
+      filter: drop-shadow(1px 1px 1px #a0a0a0);
+      cursor: pointer;
+    }
+  }
+}
+
+.CardHeaderStyle {
+  margin-top: 0;
+}

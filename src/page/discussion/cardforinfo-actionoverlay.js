@@ -1,5 +1,5 @@
-import css from "page/carddeck/carddeck-actionoverlay.module.scss";
-import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
+import css from "page/deck-manager/deck/carddeck-actionoverlay.module.scss";
+import InfoDetailsCardOverlay from "page/deck-manager/build/cards/card/info-details-card-overlay";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 
