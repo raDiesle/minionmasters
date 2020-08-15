@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export const useLastSelectedCards = () => {
   const Slots = [...Array(10).keys()];
+  console.log("triggered");
   const [lastSelectedCards, setLastSelectedCards] = useState(
     Slots.map((slot) => {
       return {

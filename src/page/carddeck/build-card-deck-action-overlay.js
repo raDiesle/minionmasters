@@ -1,21 +1,17 @@
+import cloneDeep from "lodash/cloneDeep";
 import css from "page/carddeck/carddeck-actionoverlay.module.scss";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/carddeck/deck-manager";
 import InfoDetailsCardOverlay from "page/InfoDetailsCardOverlay";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 
-export default function BuildCardDeckActionOverlay({
-  setLastSelectedCards,
-  setSelectedCardEvent,
-  setCurrentSelectedSlot,
-  slotPos,
-  card,
-}) {
+export default function BuildCardDeckActionOverlay({ setLastSelectedCards, card }) {
   const [isOpenDetails, setIsOpenDetails] = useState(false);
 
-  const handleRemoveCard = (slotPos) =>
+  const handleRemoveCard = () =>
     setLastSelectedCards((prevSelectedCards) => {
-      const selectedCardsWithRemovedCard = [...prevSelectedCards];
+      const slotPos = prevSelectedCards.findIndex(({ card: { iD } }) => iD === card.iD);
+      const selectedCardsWithRemovedCard = cloneDeep(prevSelectedCards);
 
       const hasAnyWildcard = prevSelectedCards[slotPos].count > 1;
 
@@ -25,12 +21,6 @@ export default function BuildCardDeckActionOverlay({
           card: prevSelectedCards[slotPos].card,
           count: prevSelectedCards[slotPos].count - 1,
         };
-
-        setSelectedCardEvent({
-          eventId: Math.random(),
-          card: prevSelectedCards[slotPos].card,
-          action: "reduced",
-        });
       } else {
         selectedCardsWithRemovedCard[slotPos] = {
           eventId: Math.random(),
@@ -38,20 +28,12 @@ export default function BuildCardDeckActionOverlay({
             iD: IDENTIFIER_FOR_EMPTY_SLOT,
           },
         };
-        setSelectedCardEvent({
-          eventId: Math.random(),
-          card: { iD: IDENTIFIER_FOR_EMPTY_SLOT },
-        });
-        const nextFreeSlot = selectedCardsWithRemovedCard.findIndex(
-          ({ card: { iD } }) => iD === IDENTIFIER_FOR_EMPTY_SLOT
-        );
-        setCurrentSelectedSlot(nextFreeSlot);
       }
       return selectedCardsWithRemovedCard;
     });
 
   const handleOnClick = () => {
-    handleRemoveCard(slotPos);
+    handleRemoveCard();
   };
   const handleOnContextMenu = (event) => {
     event && event.preventDefault();

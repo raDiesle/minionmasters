@@ -13,19 +13,18 @@ const EmptyCardSlotUnselectedStyle = styled.div`
 `;
 
 const WildcardOverlayStyle = styled.div`
-  position: absolute;
+  position: relative;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(240, 255, 51);
   font-weight: bolder;
 
-  top: 0;
-  right: 20px;
-  padding: 25px 0 0 10px;
-  font-size: 30px;
+  top: -86px;
+  right: -8px;
+  font-size: 14px;
 
   @media (max-width: 767px) {
-    top: -10px;
-    right: 9px;
+    top: -54px;
+    right: -5px;
     font-size: 20px;
   }
 
@@ -42,21 +41,24 @@ export function CardDeckSlot({
   },
   isSelectedSlot,
   cardActionWrapper,
-  setSelectedTabIndex,
 }) {
-  let CARDS_TAB_INDEX = 0;
-
   return (
     <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
       {iD !== IDENTIFIER_FOR_EMPTY_SLOT ? (
-        <Card card={card} isDeckCard showDeck isFullWidthClickable>
-          {cardActionWrapper(card)}
-          {count > 1 && <WildcardOverlayStyle>x{count}</WildcardOverlayStyle>}
-        </Card>
+        <>
+          <Card card={card} isDeckCard showDeck isFullWidthClickable>
+            {cardActionWrapper(card)}
+          </Card>
+          {count > 1 && (
+            <WildcardOverlayStyle>
+              <Card card={card} isDeckCard showDeck isFullWidthClickable>
+                {cardActionWrapper(card)}
+              </Card>
+            </WildcardOverlayStyle>
+          )}
+        </>
       ) : isSelectedSlot ? (
-        <EmptyCardSlotSelected onClick={() => setSelectedTabIndex(CARDS_TAB_INDEX)}>
-          Select Card
-        </EmptyCardSlotSelected>
+        <EmptyCardSlotSelected>Select Card</EmptyCardSlotSelected>
       ) : (
         <EmptyCardSlotUnselectedStyle>&nbsp;</EmptyCardSlotUnselectedStyle>
       )}

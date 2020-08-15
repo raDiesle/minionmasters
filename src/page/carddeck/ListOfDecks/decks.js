@@ -12,7 +12,6 @@ import Master from "page/mastersoverview/master";
 import React, { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
-import styled from "styled-components";
 import cardData from "../../../generated/jobCardProps";
 import { Card } from "../../Card";
 import cssButton from "../../filters/ButtonFilterGroup.module.scss";
