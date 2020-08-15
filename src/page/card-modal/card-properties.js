@@ -2,12 +2,12 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { targetsMapping } from "attack/targetsMapping";
-import { typeMapping } from "cardtype/typeMapping";
+import { targetsMapping } from "components/attack/targetsMapping";
+import { typeMapping } from "components/typeMapping";
 import { imgPathFn } from "components/helper";
-import { factionMapping } from "faction/Factions";
-import css from "page/CardDetailsModal.module.scss";
-import { RARITY_MAPPING_CONFIG } from "rarity/RARITY_MAPPING_CONFIG";
+import { factionMapping } from "components/faction/factions-mapping-config";
+import css from "page/card-details-modal.module.scss";
+import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import React from "react";
 import styled from "styled-components";
 
@@ -53,7 +53,7 @@ const CardImageStyle = styled.img`
 `;
 
 const RarityStyle = styled.div`
-  color: ${({ rarity }) => RARITY_MAPPING_CONFIG[rarity]};
+  color: ${({ rarity }) => RarityMappingConfig[rarity]};
 `;
 
 const PortraitStyle = styled.div`

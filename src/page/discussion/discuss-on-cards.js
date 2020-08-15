@@ -1,6 +1,6 @@
-import { useGaTrackView } from "consent-banner";
+import { useGaTrackView } from "footer/consent-banner";
 import CardforInfoActionOverlay from "page/discussion/cardforinfo-actionoverlay";
-import FiltersWithCards from "page/filters-with-cards";
+import FiltersWithCards from "page/deck-manager/build/filters-with-cards";
 import React, { useMemo } from "react";
 
 const FiltersWithCardsWrapperMemo = () => {
