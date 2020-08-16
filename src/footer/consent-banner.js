@@ -1,11 +1,11 @@
 import { useCookie } from "@use-hook/use-cookie";
 import "firebase/analytics";
 import firebase from "firebase/app";
+
+import css from "footer/consent-banner.module.scss";
 import * as Cookies from "js-cookie";
 import { firebaseApp } from "mm-firestore";
 import React, { useEffect, useState } from "react";
-
-import css from "footer/consent-banner.module.scss";
 
 const fakeGA = {
   logEvent: (eventName, eventParams) => console.debug(`${eventName}:${eventParams.screen_name}`),

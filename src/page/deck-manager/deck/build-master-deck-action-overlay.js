@@ -1,6 +1,6 @@
-import { FullWidthMasterOverlay } from "page/deck-manager/build/masters/AddMasterToDeckOrOpenDetailsActionOverlay";
+import { FullWidthMasterOverlay } from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import { MasterModal } from "page/deck-manager/build/masters/MasterModal";
-import { DEFAULT_MASTER_NOT_SELECTED } from "page/page";
+import { DEFAULT_MASTER_NOT_SELECTED } from "page/page-config";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 

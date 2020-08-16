@@ -1,16 +1,16 @@
-import orderBy from "lodash/orderBy";
-import { FilterInputs } from "page/deck-manager/build/filters/filter-inputs";
+import { targetsMapping } from "components/attack/targetsMapping";
+import { factionMapping } from "components/faction/factions-mapping-config";
+import { MANACOST } from "components/manacost/manacost";
 
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
-import React, { useCallback, useState } from "react";
-import { targetsMapping } from "components/attack/targetsMapping";
 import { typeMapping } from "components/typeMapping";
-import { factionMapping } from "components/faction/factions-mapping-config";
 import cardData from "generated/jobCardProps.json";
-import { MANACOST } from "components/manacost/manacost";
+import orderBy from "lodash/orderBy";
 import Cards from "page/deck-manager/build/cards/cards";
 
 import css from "page/deck-manager/build/filters-with-cards.module.scss";
+import { FilterInputs } from "page/deck-manager/build/filters/filter-inputs";
+import React, { useCallback, useState } from "react";
 
 export function setAllFilterStates(isActive) {
   const setFilterState = (key) => {

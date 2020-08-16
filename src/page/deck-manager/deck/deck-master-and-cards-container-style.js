@@ -1,5 +1,5 @@
-import React from "react";
 import css from "page/deck-manager/deck/master-and-cards-container-style.module.scss";
+import React from "react";
 
 export function DeckMasterAndCardsContainerStyle({ masterEl, children }) {
   return (

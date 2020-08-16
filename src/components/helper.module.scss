@@ -8,3 +8,9 @@
     margin-left: -20px;
   }
 }
+
+.hideOnMobile {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}

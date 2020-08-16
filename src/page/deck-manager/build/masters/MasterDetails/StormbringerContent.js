@@ -2,10 +2,10 @@ import { faUnlock } from "@fortawesome/free-solid-svg-icons/faUnlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { imgPathFn } from "components/helper";
 import css from "page/deck-manager/build/masters/master-modal.module.scss";
+import IconDamage from "page/deck-manager/build/masters/MasterDetails/icon-damage.png";
 import MasterTipsByCommunity from "page/deck-manager/build/masters/MasterDetails/master-tips-by-community";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import React from "react";
-import IconDamage from "page/deck-manager/build/masters/MasterDetails/icon-damage.png";
 
 export default function StormbringerContent() {
   return (

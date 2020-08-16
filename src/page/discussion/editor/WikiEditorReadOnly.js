@@ -1,11 +1,11 @@
 import { imgPathFn } from "components/helper";
+import cardData from "generated/jobCardProps.json";
 import CardDetailsModal from "page/card-modal/card-details-modal";
 import { MasterModal } from "page/deck-manager/build/masters/MasterModal";
-import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/discussion/editor/mention-config";
-import React, { useState } from "react";
-import cardData from "generated/jobCardProps.json";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
+import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/discussion/editor/mention-config";
 import css from "page/discussion/editor/mention-readonly.module.scss";
+import React, { useState } from "react";
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 

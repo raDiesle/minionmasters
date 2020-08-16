@@ -1,9 +1,9 @@
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page";
-import React from "react";
-import CardDeckSlotStyle from "page/deck-manager/deck/card-deck-slot-style";
-import EmptyCardSlotSelected from "page/deck-manager/deck/empty-card-slot-selected";
 import { Card } from "page/deck-manager/build/cards/card/card";
+import CardDeckSlotStyle from "page/deck-manager/deck/card-deck-slot-style";
 import css from "page/deck-manager/deck/card-deck-slot.module.scss";
+import EmptyCardSlotSelected from "page/deck-manager/deck/empty-card-slot-selected";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
+import React from "react";
 
 export function CardDeckSlot({
   lastSelectedCard: {

@@ -1,9 +1,4 @@
-import { faReddit } from "@fortawesome/free-brands-svg-icons/faReddit";
-import { faSteam } from "@fortawesome/free-brands-svg-icons/faSteam";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
-import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classNames from "classnames";
+import React from "react";
 import { RedditIcon } from "components/community/reddit-icon";
 import { SteamIcon } from "components/community/steam-icon";
 import { YoutubeIcon } from "components/community/youtube-icon";
@@ -12,11 +7,10 @@ import {
   ButtonGroupStyle,
   ButtonInGroupStyle,
 } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import React from "react";
 
 export default function CommunityLinks({ name }) {
   return (
-    <div>
+    <div className={css.buttonsLayout}>
       <h3>Continue exploring</h3>
       <ButtonGroupStyle>
         <ButtonInGroupStyle>
@@ -49,7 +43,7 @@ export default function CommunityLinks({ name }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <YoutubeIcon>Steam discussions for {name}</YoutubeIcon>
+            <YoutubeIcon>Youtube videos for {name}</YoutubeIcon>
           </a>
         </ButtonInGroupStyle>
       </ButtonGroupStyle>

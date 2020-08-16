@@ -1,15 +1,15 @@
-import MorelliaContent from "page/deck-manager/build/masters/MasterDetails/MorelliaContent";
-import RavagerContent from "page/deck-manager/build/masters/MasterDetails/RavagerContent";
-import React from "react";
 import ApepContent from "page/deck-manager/build/masters/MasterDetails/ApepContent";
 import DionaContent from "page/deck-manager/build/masters/MasterDetails/DionaContent";
 import KingPuffContent from "page/deck-manager/build/masters/MasterDetails/KingPuffContent";
 import MilloweenContent from "page/deck-manager/build/masters/MasterDetails/MilloweenContent";
 import MordarContent from "page/deck-manager/build/masters/MasterDetails/MordarContent";
+import MorelliaContent from "page/deck-manager/build/masters/MasterDetails/MorelliaContent";
 import RatboContent from "page/deck-manager/build/masters/MasterDetails/RatboContent";
+import RavagerContent from "page/deck-manager/build/masters/MasterDetails/RavagerContent";
 import SettsuContent from "page/deck-manager/build/masters/MasterDetails/SettsuContent";
 import StormbringerContent from "page/deck-manager/build/masters/MasterDetails/StormbringerContent";
 import VolcoContent from "page/deck-manager/build/masters/MasterDetails/VolcoContent";
+import React from "react";
 
 export const mastersMapping = {
   Apep: {

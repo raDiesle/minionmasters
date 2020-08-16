@@ -1,10 +1,10 @@
+import AvailableCardsFilter from "page/deck-manager/build/filters/available-cards-filter";
+import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
+import css from "page/deck-manager/deck/decks/decklist-filters.module.scss";
 import GameTypeInput from "page/deck-manager/deck/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/deck-manager/deck/savedeck/inputs/game-type-secondary-input";
 import GameTypeThirdInput from "page/deck-manager/deck/savedeck/inputs/game-type-third-input";
-import AvailableCardsFilter from "page/deck-manager/build/filters/available-cards-filter";
-import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import React, { useState } from "react";
-import css from "page/deck-manager/deck/decks/decklist-filters.module.scss";
 
 export default function DecklistFilters({
   gameType,

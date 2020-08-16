@@ -1,0 +1,17 @@
+.property {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AnalysisDataStyle {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding-top: 0;
+
+  & > div {
+    padding-right: 20px;
+  }
+}

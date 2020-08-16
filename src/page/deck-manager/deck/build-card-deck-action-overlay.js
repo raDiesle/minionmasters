@@ -1,7 +1,7 @@
 import cloneDeep from "lodash/cloneDeep";
-import css from "page/deck-manager/deck/carddeck-actionoverlay.module.scss";
 import InfoDetailsCardOverlay from "page/deck-manager/build/cards/card/info-details-card-overlay";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page";
+import css from "page/deck-manager/deck/carddeck-actionoverlay.module.scss";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 

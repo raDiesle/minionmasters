@@ -5,15 +5,12 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENT_GAME_VERSION } from "components/helper";
 import { auth, dbErrorHandlerPromise } from "mm-firestore";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import TextareaEditor from "page/discussion/editor/textarea-editor";
 import Tooltip from "rc-tooltip/es";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import {
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "page/deck-manager/build/filters/ButtonFilterGroup";
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import TextareaEditor from "page/discussion/editor/textarea-editor";
 
 const HistorySelectStyle = styled.select`
   height: 18px;

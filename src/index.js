@@ -1,10 +1,10 @@
 import * as Sentry from "@sentry/react";
+import App from "app";
 import "rc-tooltip/assets/bootstrap_white.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import "react-tabs/style/react-tabs.css";
 import "react-toastify/dist/ReactToastify.css";
-import App from "app";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 

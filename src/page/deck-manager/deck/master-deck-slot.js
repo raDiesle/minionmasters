@@ -1,7 +1,7 @@
+import Master from "page/deck-manager/build/masters/master";
 import BuildMasterDeckActionOverlay from "page/deck-manager/deck/build-master-deck-action-overlay";
 import React from "react";
 import styled from "styled-components";
-import Master from "page/deck-manager/build/masters/master";
 
 const MasterDeckSlotStyle = styled.div`
   display: flex;
