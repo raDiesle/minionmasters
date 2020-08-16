@@ -29,8 +29,7 @@ export default function Wiki() {
   ];
 
   const initialSelectedTab = pageTabsConfig.findIndex((tab) => tab === window.location.pathname);
-  console.log(window.location.pathname);
-  console.log(initialSelectedTab);
+
   const [selectedTabIndex, setSelectedTabIndex] = useState(initialSelectedTab);
 
   return (

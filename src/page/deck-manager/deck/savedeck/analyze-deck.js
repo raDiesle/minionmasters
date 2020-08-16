@@ -1,6 +1,14 @@
+import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as classnames from "classnames";
+import mToast from "components/mToast";
+import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import { exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
 import React from "react";
-import css from "page/deck-manager/deck/savedeck/analyse-deck.module.scss";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import css from "page/deck-manager/deck/savedeck/analyse-deck.module.scss";
+import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 
 export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
   const cards = lastSelectedCards.filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT);
@@ -23,9 +31,10 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
   const attackFlying = selectedCards.filter(({ card: { hitsFlying } }) => hitsFlying).length;
   const spells = selectedCards.filter(({ card: { type } }) => type === "Spell").length;
 
+  const url = exportDeckUrl(selectedMaster, lastSelectedCards);
   return (
     <div>
-      <fieldset>
+      <fieldset className={css.analyzeFieldset}>
         <legend>Analysis</legend>
         <div className={css.AnalysisDataStyle}>
           <div className={css.property}>
@@ -39,6 +48,23 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
           <div className={css.property}>
             <b>Spells</b> <div>{spells}</div>
           </div>
+        </div>
+
+        <div className={css.rightTopLegend}>
+          <ButtonGroupStyle>
+            <CopyToClipboard
+              text={url}
+              onCopy={() => {
+                mToast("Link copied to clipboard");
+              }}
+              title="To share by Discord, Twitter, Facebook with Image Preview without saving to database."
+            >
+              <button className={classnames(cssButton.ButtonInGroupStyle)}>
+                <FontAwesomeIcon icon={faLink} size="xs" style={{ marginLeft: "5px" }} />
+                <span style={{ paddingLeft: "11px" }}>Copy link with preview</span>
+              </button>
+            </CopyToClipboard>
+          </ButtonGroupStyle>
         </div>
       </fieldset>
     </div>

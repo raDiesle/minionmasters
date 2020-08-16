@@ -17,12 +17,24 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/",
+        "function": "mm"
       },
       {
-        "source": "/**/*isPreview",
+        "source": "/index.html",
         "function": "mm"
+      },
+      {
+        "source": "*",
+        "function": "mm"
+      },
+      {
+        "source": "**",
+        "function": "mm"
+      },
+      {
+        "source": "**/*.@(js|css|ico|json|jpg|png|webp)",
+        "destination": "/index.html"
       }
     ],
     "headers": [
