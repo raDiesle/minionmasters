@@ -1,9 +1,9 @@
-import React from "react";
 import { faSteam } from "@fortawesome/free-brands-svg-icons/faSteam";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import css from "components/community/steam-icon.module.scss";
+import React from "react";
 
 export function SteamIcon({ children }) {
   return (

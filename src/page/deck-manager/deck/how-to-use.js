@@ -1,7 +1,7 @@
 import { is_touch_device } from "components/helper";
-import React from "react";
 
 import css from "page/deck-manager/deck/how-to-use.module.scss";
+import React from "react";
 
 export function HowToUse() {
   return (

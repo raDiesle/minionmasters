@@ -8,27 +8,24 @@ import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmount
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import cloneDeep from "lodash/cloneDeep";
-import {
-  ALL_UNIT_COUNT_DEFAULT_CONFIG,
-  setAllFilterStates,
-} from "page/deck-manager/build/filters-with-cards";
-import AvailableCardsFilter from "page/deck-manager/build/filters/available-cards-filter";
-import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
-import Tooltip from "rc-tooltip";
-import React, { useState } from "react";
 import { targetsMapping } from "components/attack/targetsMapping";
-import { typeMapping } from "components/typeMapping";
 
 import { factionMapping } from "components/faction/factions-mapping-config";
 import { MANACOST } from "components/manacost/manacost";
 import PerkMasterIcon from "components/rarity/perk-master-icon";
+import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
+import { typeMapping } from "components/typeMapping";
+import cloneDeep from "lodash/cloneDeep";
+import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/deck-manager/build/filters-with-cards";
+import AvailableCardsFilter from "page/deck-manager/build/filters/available-cards-filter";
 import {
   ButtonFilterGroup,
   ButtonGroupStyle,
-  ButtonInGroupStyle,
+  ButtonInGroupStyle
 } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import css from "page/deck-manager/build/filters/filter-inputs.module.scss";
+import Tooltip from "rc-tooltip";
+import React, { useState } from "react";
 
 export function FilterInputs({
   filters,

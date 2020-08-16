@@ -2,12 +2,12 @@ import { faCircle } from "@fortawesome/free-regular-svg-icons/faCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
 import { imgPathFn } from "components/helper";
-import CardBottomOverlay from "page/deck-manager/build/cards/card/card-bottom-overlay";
 
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
-import React from "react";
 import { typeMapping } from "components/typeMapping";
+import CardBottomOverlay from "page/deck-manager/build/cards/card/card-bottom-overlay";
 import css from "page/deck-manager/card.module.scss";
+import React from "react";
 
 //onClick to be removed and setter go here
 export function Card({

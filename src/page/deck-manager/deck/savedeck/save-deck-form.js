@@ -4,8 +4,8 @@ import GameTypeInput from "page/deck-manager/deck/savedeck/inputs/game-type-inpu
 import GameTypeSecondaryInput from "page/deck-manager/deck/savedeck/inputs/game-type-secondary-input";
 import GameTypeThirdInput from "page/deck-manager/deck/savedeck/inputs/game-type-third-input";
 import SaveDbButton from "page/deck-manager/deck/savedeck/save-db-button";
-import React, { useEffect, useState } from "react";
 import css from "page/deck-manager/deck/savedeck/save-deck-form.module.scss";
+import React, { useEffect, useState } from "react";
 
 export default function SaveDeckForm({ lastSelectedCards, selectedMaster }) {
   const [name, setName] = useState("");

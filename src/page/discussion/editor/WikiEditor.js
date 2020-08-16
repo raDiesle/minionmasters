@@ -3,15 +3,15 @@ import { faEdit } from "@fortawesome/free-regular-svg-icons/faEdit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import mToast from "components/mToast";
 import { auth, dbErrorHandlerPromise } from "mm-firestore";
+import { ButtonColor, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import WikiEditorActive from "page/discussion/editor/WikiEditorActive";
+import WikiEditorReadOnly from "page/discussion/editor/WikiEditorReadOnly";
 
 import Tooltip from "rc-tooltip/es";
 
 import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
-import { ButtonColor, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import WikiEditorActive from "page/discussion/editor/WikiEditorActive";
-import WikiEditorReadOnly from "page/discussion/editor/WikiEditorReadOnly";
 
 const EditorStyle = styled.div`
   border-right: 0;

@@ -4,18 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
 import { useGaTrackView } from "footer/consent-banner";
+import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 
 import css from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page";
+import ExportAsImage from "page/deck-manager/deck/export/export-as-image";
+import { exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
+import cssGuide from "page/deck-manager/deck/Guide.module.scss";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { FacebookIcon, FacebookShareButton } from "react-share";
 import { toast } from "react-toastify";
 import styled from "styled-components";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssGuide from "page/deck-manager/deck/Guide.module.scss";
 
 const ExportStyle = styled.div`
   display: flex;
@@ -39,17 +41,6 @@ export default function ExportDeck({ lastSelectedCards, selectedMaster }) {
       </div>
     );
   }
-  // Export to URL
-  const lastSelectedCardiDs = lastSelectedCards.reduce((total, { count, card: { iD } }) => {
-    const wildcardsToMultipleIds = [...Array(count).keys()].map(() => iD);
-    const mergeTotal = [...total, ...wildcardsToMultipleIds];
-    return mergeTotal;
-  }, []);
-  const iDsToParam = lastSelectedCardiDs.join("&iD=");
-
-  const masterParam = `master=${mastersMapping[selectedMaster].iD}`;
-  const port = window.location.port === "3000" ? `:${window.location.port}` : "";
-  const url = `${window.location.protocol}//${window.location.hostname}${port}${window.location.pathname}?${masterParam}&iD=${iDsToParam}`;
 
   // Export to game
   const cardsToGameString = `${lastSelectedCards
@@ -59,10 +50,7 @@ export default function ExportDeck({ lastSelectedCards, selectedMaster }) {
 
   const cardShareWithGame = `/setdeck ${selectedMaster}: ${cardsToGameString}`;
 
-  const IMAGE_SERVER = `https://minionmastersmanager-286215.ew.r.appspot.com/screenshot`;
-  const shareImageUrl = `${IMAGE_SERVER}/${encodeURIComponent(
-    url + "&isPreview"
-  )}?width=917&height=101`;
+  const url = exportDeckUrl(selectedMaster, lastSelectedCards);
 
   return (
     <div>
@@ -97,20 +85,7 @@ export default function ExportDeck({ lastSelectedCards, selectedMaster }) {
           </CopyToClipboard>
         </ButtonGroupStyle>
 
-        <ButtonGroupStyle>
-          <CopyToClipboard
-            text={shareImageUrl}
-            onCopy={() => {
-              mToast("Link copied to clipboard");
-            }}
-            title="Copy link"
-          >
-            <button className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
-              <FontAwesomeIcon icon={faLink} size="xs" style={{ marginLeft: "5px" }} />
-              <span style={{ paddingLeft: "11px" }}>Share as Image</span>
-            </button>
-          </CopyToClipboard>
-        </ButtonGroupStyle>
+        <ExportAsImage url={url} />
 
         <ExportInGameStyleContainer>
           <div>

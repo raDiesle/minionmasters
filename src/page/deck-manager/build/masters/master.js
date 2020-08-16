@@ -1,8 +1,8 @@
 import { imgPathFn } from "components/helper";
-import React from "react";
 
 import css from "page/deck-manager/build/masters/master.module.scss";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
+import React from "react";
 
 export default function Master({ masterKey, actionRegistrationComponent }) {
   const IMG_PATH = imgPathFn(mastersMapping[masterKey].icon);

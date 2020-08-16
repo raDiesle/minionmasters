@@ -1,5 +1,5 @@
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page";
 import { useState } from "react";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 
 export const useLastSelectedCards = () => {
   const Slots = [...Array(10).keys()];

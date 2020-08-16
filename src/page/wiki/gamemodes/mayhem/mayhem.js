@@ -1,7 +1,8 @@
-import { anchorLinkTarget } from "components/helper";
-import { GoldImg } from "page/wiki/thegame-icons";
 import { useGaTrackView } from "footer/consent-banner";
+import { MENU_LINKS_CONFIG as MENU_LINKS_CONFIG_GAMEMODES } from "page/wiki/gamemodes/gamemodes";
+import { anchorLinkTarget } from "page/wiki/menu-helper";
 import css from "page/wiki/static-content.module.scss";
+import { GoldImg } from "page/wiki/thegame-icons";
 import React from "react";
 
 export default function Mayhem() {
@@ -34,7 +35,7 @@ export default function Mayhem() {
 
   return (
     <div className={css.container}>
-      <h3>Mayhem</h3>
+      {anchorLinkTarget(MENU_LINKS_CONFIG_GAMEMODES.Mayhem)}
       <ul>
         {MENU_ORDER.map((key) => (
           <li key={key}>
@@ -66,7 +67,7 @@ export default function Mayhem() {
             Check them on Resource Management page
           </fieldset>
           {anchorLinkTarget(MENU_LINKS_CONFIG["Killing Floor"])}
-          <img src="img/basics/maythem_killingfloor.jpg" alt="Killing Floor" />
+          <img src="/img/basics/maythem_killingfloor.jpg" alt="Killing Floor" />
           <br />
           <br />
           The lower bridge is always on fire, but experience points are generated at double speed
@@ -92,7 +93,7 @@ export default function Mayhem() {
           <br />
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Desert Maythem"])}
-          <img src="img/basics/maythem_desertermaythem.jpg" alt="Desert Maythem" />
+          <img src="/img/basics/maythem_desertermaythem.jpg" alt="Desert Maythem" />
           <br />
           <br />
           All minions are summoned with Turncoat.
@@ -108,7 +109,7 @@ export default function Mayhem() {
           </ul>
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Helpful Imps!"])}
-          <img src="img/basics/maythem_helpfulimps.jpg" alt="helpful imps" />
+          <img src="/img/basics/maythem_helpfulimps.jpg" alt="helpful imps" />
           <br />
           <br />
           Summoning a minion also summons a Blood Imp.
@@ -139,7 +140,7 @@ export default function Mayhem() {
           <br />
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Explosive Minions"])}
-          <img src="img/basics/maythem_explositveminions.jpg" alt="explositve minions" />
+          <img src="/img/basics/maythem_explositveminions.jpg" alt="explositve minions" />
           <br />
           <br />
           When a minion dies, it explodes causing 50 damage to the surrounding minions and buildings
@@ -158,7 +159,7 @@ export default function Mayhem() {
           </ul>
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Two for free"])}
-          <img src="img/basics/maythem_twoforfree.jpg" alt="two for free" />
+          <img src="/img/basics/maythem_twoforfree.jpg" alt="two for free" />
           <br />
           <br />
           Make two of the cheapest cards in the deck cost 0 mana when the match starts.
@@ -183,7 +184,7 @@ export default function Mayhem() {
           </ul>
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG.Summonings)}
-          <img src="img/basics/maythem_summonings.jpg" alt="Summonings" />
+          <img src="/img/basics/maythem_summonings.jpg" alt="Summonings" />
           <br />
           <br />
           After using a spell, a random minion with the same mana cost will be summoned in front of
@@ -200,7 +201,7 @@ export default function Mayhem() {
           </ul>
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Defense of the Masters"])}
-          <img src="img/basics/maythem_defense_of_the_masters.jpg" alt="defense of the master" />
+          <img src="/img/basics/maythem_defense_of_the_masters.jpg" alt="defense of the master" />
           <br />
           <br />
           Every 30 seconds summons 2 Legionnaires, then another 2 after 1.5 seconds, then another 2
@@ -218,7 +219,7 @@ export default function Mayhem() {
           </ul>
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Frenzied Minions"])}
-          <img src="img/basics/maythem_frenziedminions.jpg" alt="Frenzied Minions" />
+          <img src="/img/basics/maythem_frenziedminions.jpg" alt="Frenzied Minions" />
           <br />
           <br />
           Every minion has Frenzy at all time.
@@ -250,7 +251,7 @@ export default function Mayhem() {
           <br />
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG.Fluctuations)}
-          <img src="img/basics/maythem_fluctuations.jpg" alt="Fluctuations" />
+          <img src="/img/basics/maythem_fluctuations.jpg" alt="Fluctuations" />
           <br />
           <br />
           When you get a card in hand, there is a 20% chance that changes its basic mana cost from
@@ -273,7 +274,7 @@ export default function Mayhem() {
           </ul>
           <br />
           {anchorLinkTarget(MENU_LINKS_CONFIG["Defense Surge"])}
-          <img src="img/basics/maythem_defensesurge.jpg" alt="Defense Surge" />
+          <img src="/img/basics/maythem_defensesurge.jpg" alt="Defense Surge" />
           <br />
           <br />
           Every 30 seconds summons 2 Crystal Sentry and after 1.5 seconds summons 2 Crystal

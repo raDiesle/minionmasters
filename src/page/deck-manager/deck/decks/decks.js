@@ -1,13 +1,13 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGaTrackView } from "footer/consent-banner";
+import cardData from "generated/jobCardProps.json";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import DecklistFilters from "page/deck-manager/deck/decks/decklist-filters";
-import { SavedDeck } from "page/deck-manager/deck/decks/saved-deck";
-import React, { useEffect, useState } from "react";
-import cardData from "generated/jobCardProps.json";
 
 import css from "page/deck-manager/deck/decks/decks.module.scss";
+import { SavedDeck } from "page/deck-manager/deck/decks/saved-deck";
+import React, { useEffect, useState } from "react";
 
 export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
   useGaTrackView("/ListOfDecks");

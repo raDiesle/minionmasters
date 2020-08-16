@@ -1,15 +1,15 @@
 import mToast from "components/mToast";
 import { useGaTrackView } from "footer/consent-banner";
-import css from "page/deck-manager/deck/Guide.module.scss";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page";
-import React from "react";
-import { toast } from "react-toastify";
-import styled from "styled-components";
 import cardData from "generated/jobCardProps.json";
 import {
   ButtonGroupStyle,
   ButtonInGroupStyle,
 } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import css from "page/deck-manager/deck/Guide.module.scss";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
+import React from "react";
+import { toast } from "react-toastify";
+import styled from "styled-components";
 
 const CardeckPlaceholderStyle = styled.div`
   display: flex;

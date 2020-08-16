@@ -1,36 +1,71 @@
 import { useGaTrackView } from "footer/consent-banner";
-import AdventuresChallenges from "page/wiki/adventures-challenges/adventures-challenges";
-import { BuildDecks } from "page/wiki/deck-strategies/build-decks";
-import Draft from "page/wiki/gamemodes/draft/draft";
+import Abilities from "page/wiki/abilities/abilities";
+import { ROUTE_PATH_ABILITIES } from "page/wiki/abilities/abilities-config";
+import { BuildDecks } from "page/wiki/build-decks/build-decks";
+import { ROUTE_PATH_BUILDDECKS } from "page/wiki/build-decks/build-decks-config";
 import { GameModes } from "page/wiki/gamemodes/gamemodes";
+import { ROUTE_PATH_GAMEMODES } from "page/wiki/gamemodes/gamemodes-config";
 import Gameplay from "page/wiki/gameplay/gameplay";
-import Guild from "page/wiki/guild/guild";
+import { ROUTE_PATH_GAMEPLAY } from "page/wiki/gameplay/gameplay-config";
 
-import MainScreen from "page/wiki/mainscreen/main-screen";
-import Mayhem from "page/wiki/gamemodes/mayhem/mayhem";
-import Abilities from "page/wiki/abilities/list-of-mechanics";
-import Rewards from "page/wiki/resource-mngt/resource-mgmt";
-import React from "react";
+import MainScreen from "page/wiki/main-screen/main-screen";
+import { ROUTE_PATH_MAINSCREEN } from "page/wiki/main-screen/main-screen-config";
+import Rewards from "page/wiki/rewards/rewards";
+import { ROUTE_PATH_REWARDS } from "page/wiki/rewards/rewards-config";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 export default function Wiki() {
   useGaTrackView("/Basics");
+
+  const pageTabsConfig = [
+    ROUTE_PATH_REWARDS,
+    ROUTE_PATH_MAINSCREEN,
+    ROUTE_PATH_BUILDDECKS,
+    ROUTE_PATH_GAMEPLAY,
+    ROUTE_PATH_ABILITIES,
+    ROUTE_PATH_GAMEMODES,
+  ];
+
+  const initialSelectedTab = pageTabsConfig.findIndex((tab) => tab === window.location.pathname);
+  console.log(window.location.pathname);
+  console.log(initialSelectedTab);
+  const [selectedTabIndex, setSelectedTabIndex] = useState(initialSelectedTab);
+
   return (
     <div>
-      <Tabs>
+      <Tabs selectedIndex={selectedTabIndex} onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}>
         <TabList>
-          <Tab>Rewards</Tab>
-          <Tab>Basics & Mainscreen</Tab>
-          <Tab>Build Decks</Tab>
-          <Tab>Gameplay</Tab>
-          <Tab>Guild</Tab>
-          <Tab>Abilities</Tab>
-          <Tab>Game Modes</Tab>
+          <Tab>
+            <Link to={ROUTE_PATH_REWARDS}>Rewards</Link>
+          </Tab>
+
+          <Tab>
+            <Link to={ROUTE_PATH_MAINSCREEN}>Mainscreen</Link>
+          </Tab>
+
+          <Tab>
+            <Link to={ROUTE_PATH_BUILDDECKS}>Build Decks</Link>
+          </Tab>
+
+          <Tab>
+            <Link to={ROUTE_PATH_GAMEPLAY}>Gameplay</Link>
+          </Tab>
+
+          <Tab>
+            <Link to={ROUTE_PATH_ABILITIES}>Abilities</Link>
+          </Tab>
+
+          <Tab>
+            <Link to={ROUTE_PATH_GAMEMODES}>Game Modes</Link>
+          </Tab>
         </TabList>
 
         <TabPanel>
           <Rewards />
         </TabPanel>
+
         <TabPanel>
           <MainScreen />
         </TabPanel>
@@ -38,16 +73,15 @@ export default function Wiki() {
         <TabPanel>
           <BuildDecks />
         </TabPanel>
+
         <TabPanel>
           <Gameplay />
-        </TabPanel>
-        <TabPanel>
-          <Guild />
         </TabPanel>
 
         <TabPanel>
           <Abilities />
         </TabPanel>
+
         <TabPanel>
           <GameModes />
         </TabPanel>

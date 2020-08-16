@@ -14,6 +14,7 @@ body {
 
 a {
   color: #fff;
+  cursor: pointer;
 }
 
 a:hover {
@@ -77,10 +78,15 @@ select {
 
   border-color: yellow;
   color: yellow;
+  border-bottom: 1px solid #222;
+  bottom: -2px;
 
   & > a {
     text-decoration: none;
     color: yellow;
+  }
+  &:hover {
+    border-bottom: 1px solid #222;
   }
 }
 
@@ -99,11 +105,17 @@ select {
 .react-tabs__tab:not(.react-tabs__tab--selected) {
   border-radius: 5px 5px 0 0;
   border: 1px solid #444;
-  border-bottom: none;
+  border-bottom-color: #222;
+
   margin-bottom: 1px;
 
   &:hover {
-    border-color: yellow;
+    //  margin-bottom: 0;
+    bottom: -2px;
+    //   border-bottom-color: #222;
+    border-left-color: yellow;
+    border-right-color: yellow;
+    border-top-color: yellow;
   }
 }
 

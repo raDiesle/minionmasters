@@ -3,11 +3,11 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHea
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { targetsMapping } from "components/attack/targetsMapping";
-import { typeMapping } from "components/typeMapping";
-import { imgPathFn } from "components/helper";
 import { factionMapping } from "components/faction/factions-mapping-config";
-import css from "page/card-details-modal.module.scss";
+import { imgPathFn } from "components/helper";
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
+import { typeMapping } from "components/typeMapping";
+import css from "page/card-details-modal.module.scss";
 import React from "react";
 import styled from "styled-components";
 

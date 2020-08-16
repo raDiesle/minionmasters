@@ -1,9 +1,9 @@
 import mToast from "components/mToast";
 import allCardsData from "generated/jobCardProps.json";
 import cloneDeep from "lodash/cloneDeep";
-import css from "page/deck-manager/deck/carddeck-actionoverlay.module.scss";
-import { findFirstNextFreeSlot } from "page/deck-manager/deck-manager";
 import InfoDetailsCardOverlay from "page/deck-manager/build/cards/card/info-details-card-overlay";
+import { findFirstNextFreeSlot } from "page/deck-manager/deck-manager";
+import css from "page/deck-manager/deck/carddeck-actionoverlay.module.scss";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
 

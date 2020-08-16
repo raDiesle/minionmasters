@@ -1,6 +1,6 @@
-import React from "react";
 import { Card } from "page/deck-manager/build/cards/card/card";
 import css from "page/deck-manager/build/cards/cards.module.scss";
+import React from "react";
 
 export default function Cards({
   cards,

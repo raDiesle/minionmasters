@@ -8,6 +8,7 @@
   align-items: flex-start;
 
   margin: 10px 0;
+  padding-bottom: 20px;
 }
 
 .deckRightLegend {
@@ -27,6 +28,28 @@
   line-height: 1.2em;
   background-color: #222;
   color: yellow;
+}
+
+.deckLeftBottomLegend {
+  position: absolute;
+  bottom: -17px;
+  left: 8px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+}
+
+.deckLeftBottomSecondaryLegend {
+  position: absolute;
+  bottom: -16px;
+  left: 153px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+
+  @media (max-width: 767px) {
+    left: 52px;
+  }
 }
 
 .deckName {
@@ -54,8 +77,7 @@
 }
 
 .copyDeck {
-  padding: 7px 16px;
-  margin-top: 10px;
+  padding: 5px 8px;
 
   & svg {
     margin-right: 5px;

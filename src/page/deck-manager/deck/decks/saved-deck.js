@@ -3,19 +3,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 
 import { CURRENT_GAME_VERSION } from "components/helper";
+import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import Master from "page/deck-manager/build/masters/master";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
 import { DeckMasterAndCardsContainerStyle } from "page/deck-manager/deck/deck-master-and-cards-container-style";
+import { CopyDeckToGameButton } from "page/deck-manager/deck/decks/copy-deck-to-game-button";
 import css from "page/deck-manager/deck/decks/decks.module.scss";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
-import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/AddMasterToDeckOrOpenDetailsActionOverlay";
-import Master from "page/deck-manager/build/masters/master";
+import ExportAsImage from "page/deck-manager/deck/export/export-as-image";
+import { exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 
-export function SavedDeck({ deck, deck: { cards }, setSelectedMaster, setLastSelectedCards }) {
+export function SavedDeck({
+  deck,
+  deck: { master },
+  deck: { cards },
+  setSelectedMaster,
+  setLastSelectedCards,
+}) {
+  const url = exportDeckUrl(master, cards);
   return (
     <fieldset className={css.singleDeck} key={deck.createdAt.getTime()}>
       <legend>
@@ -26,6 +36,14 @@ export function SavedDeck({ deck, deck: { cards }, setSelectedMaster, setLastSel
       </div>
       <div className={css.deckRightBottomLegend}>
         by {deck.createdByDisplayName ? deck.createdByDisplayName : "unknown"}
+      </div>
+
+      <div className={css.deckLeftBottomLegend}>
+        <CopyDeckToGameButton master={deck.master} cards={deck.cards} />
+      </div>
+
+      <div className={css.deckLeftBottomSecondaryLegend}>
+        <ExportAsImage url={url} />
       </div>
 
       <div>
@@ -53,27 +71,6 @@ export function SavedDeck({ deck, deck: { cards }, setSelectedMaster, setLastSel
         </DeckMasterAndCardsContainerStyle>
         <div className={css.belowDeck}>
           <div className={css.description}>{deck.description}</div>
-          <div>
-            <div>
-              <CopyToClipboard
-                text={`/setdeck ${deck.master}: ${deck.cards.map(({ name }) => name).join(", ")}`}
-                onCopy={() => {
-                  toast(
-                    "Copied to clipboard. Go to game, switch to a slot and paste command and press ENTER. Game must be english language. Experimental feature, might not work!",
-                    { position: "bottom-right", autoClose: 10000 }
-                  );
-                }}
-                title="Copy"
-              >
-                <ButtonGroupStyle>
-                  <div className={classnames(css.copyDeck, cssButton.ButtonInGroupStyle)}>
-                    <FontAwesomeIcon icon={faCopy} />
-                    Copy to game
-                  </div>
-                </ButtonGroupStyle>
-              </CopyToClipboard>
-            </div>
-          </div>
         </div>
       </div>
     </fieldset>

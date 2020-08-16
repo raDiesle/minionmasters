@@ -1,11 +1,11 @@
+import { useEffect } from "react";
 import { isForImagePreview } from "components/helper";
 import mToast from "components/mToast";
-import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page";
-import qs from "qs";
-import { useEffect } from "react";
 
 import allCardsData from "generated/jobCardProps.json";
+import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
+import qs from "qs";
 
 export function ImportFromUrl({ setLastSelectedCards, setSelectedMaster }) {
   useEffect(() => {

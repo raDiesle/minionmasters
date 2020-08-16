@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGaTrackView } from "footer/consent-banner";
 
 import _dropRight from "lodash.dropright";
-import CardProperties from "page/card-modal/card-properties";
 
 import CardDescription from "page/card-modal/card-description";
 
 import css from "page/card-modal/card-details-modal.module.scss";
+import CardProperties from "page/card-modal/card-properties";
 import CommunityLinks from "page/card-modal/community-links";
-import CardDiscussion from "page/discussion/CardDiscussion";
+import CommunityTips from "page/discussion/CardDiscussion";
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
@@ -57,11 +57,9 @@ export default function CardDetailsModal({
 
           <CardDescription description={description} />
 
-          <CardDiscussion card={card} discussionType="mechanics" />
+          <CommunityTips card={card} discussionType="mechanics" />
 
-          <div className={css.buttonsLayout}>
-            <CommunityLinks name={name} />
-          </div>
+          <CommunityLinks name={name} />
         </div>
       </ReactModal>
     </div>

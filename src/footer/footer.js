@@ -1,7 +1,7 @@
+import css from "footer/footer.module.scss";
 import React from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
-import css from "footer/footer.module.scss";
 
 const SubheaderLinkStyle = styled.a`
   font-size: 100%;

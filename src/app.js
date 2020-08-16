@@ -2,16 +2,16 @@ import AppPreview from "app-preview";
 import { CURRENT_GAME_VERSION, isForImagePreview } from "components/helper";
 import ConsentBanner from "footer/consent-banner";
 import Footer from "footer/footer";
-import React from "react";
-import Modal from "react-modal";
-import { BrowserRouter } from "react-router-dom";
-import { toast } from "react-toastify";
-import styled from "styled-components";
 
 import LoginLogout from "header/login-logout";
 import "modal.scss";
 
 import { Page } from "page/page";
+import React from "react";
+import Modal from "react-modal";
+import { BrowserRouter } from "react-router-dom";
+import { toast } from "react-toastify";
+import styled from "styled-components";
 
 const Header = styled.header`
   display: flex;
@@ -60,11 +60,11 @@ const App = () => {
 
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
-      <div style={{ paddingBottom: "20px" }}>
+      <div style={{ paddingBottom: "26px" }}>
         <Header>
           <PageHeaderStyle>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <img src="img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
+              <img src="/img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
               <span style={{ paddingLeft: "10px" }}>
                 <CapitalLetterStyle>M</CapitalLetterStyle>inionmasters
                 <span>
