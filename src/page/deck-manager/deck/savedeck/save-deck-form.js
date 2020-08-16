@@ -14,7 +14,7 @@ export default function SaveDeckForm({ lastSelectedCards, selectedMaster }) {
   const currentUser = useCurrentUser();
 
   useEffect(() => {
-    if (currentUser.displayName) {
+    if (!!currentUser) {
       setCreatedByDisplayName(currentUser.displayName);
     }
   }, [currentUser]);

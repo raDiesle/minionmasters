@@ -65,24 +65,10 @@ export default function ExportDeck({ lastSelectedCards, selectedMaster }) {
             >
               <div style={{ display: "flex", alignContent: "center" }}>
                 <FacebookIcon size={24} round />
-                <span style={{ paddingLeft: "5px" }}>Share in Facebook</span>
+                <span style={{ paddingLeft: "5px" }}>Create post in Facebook</span>
               </div>
             </FacebookShareButton>
           </div>
-        </ButtonGroupStyle>
-        <ButtonGroupStyle>
-          <CopyToClipboard
-            text={url}
-            onCopy={() => {
-              mToast("Link copied to clipboard");
-            }}
-            title="Copy link"
-          >
-            <button className={classnames(css.ButtonInGroupStyle, css.fixedWidth)}>
-              <FontAwesomeIcon icon={faLink} size="xs" style={{ marginLeft: "5px" }} />
-              <span style={{ paddingLeft: "11px" }}>Share by link</span>
-            </button>
-          </CopyToClipboard>
         </ButtonGroupStyle>
 
         <ExportAsImage url={url} />

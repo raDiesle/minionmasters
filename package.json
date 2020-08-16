@@ -46,9 +46,11 @@
   "scripts": {
     "updateData": "npm-run-all generateData",
     "compressImages": "node batch_jobs/jobCompressImages",
-    "deploy": "firebase deploy --only hosting",
-    "deployFn": "firebase deploy --only functions",
-    "predeploy": "npm run build",
+    "predeploy": "npm-run-all build copyToFunctions",
+    "copyToFunctions": "cpy build/index.html functions/",
+    "deploy": "npm-run-all deployHosting deployFunctions",
+    "deployHosting": "firebase deploy --only hosting",
+    "deployFunctions": "firebase deploy --only functions",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -85,6 +87,7 @@
     ]
   },
   "devDependencies": {
+    "cpy-cli": "^3.1.1",
     "node-sass": "4.13.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.0.5",

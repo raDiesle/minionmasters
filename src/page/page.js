@@ -29,7 +29,16 @@ export function Page() {
   );
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(initialSelectedTab);
-
+  /*
+  const history = useHistory();
+  useEffect(() => {
+    history.push({
+      pathname: window.location.pathname,
+      search: toParams(selectedMaster, lastSelectedCards),
+    });
+    console.log("pushed");
+  }, [selectedMaster, lastSelectedCards]);
+*/
   return (
     <div className={css.pageContentContainer}>
       <Tabs
