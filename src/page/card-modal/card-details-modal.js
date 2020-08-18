@@ -2,8 +2,6 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGaTrackView } from "footer/consent-banner";
 
-import _dropRight from "lodash.dropright";
-
 import CardDescription from "page/card-modal/card-description";
 
 import css from "page/card-modal/card-details-modal.module.scss";
@@ -15,24 +13,53 @@ import ReactModal from "react-modal";
 
 export default function CardDetailsModal({
   card,
-  card: { description, name },
+  card: { description, name, iD },
   isOpenDetails,
   setIsOpenDetails,
 }) {
   useGaTrackView(`/CardDetailsModal/${name}`);
 
-  const [modals, setModals] = useState([]);
+  const [isNestedModalOpened, setIsNestedModalOpened] = useState(false);
+  /*
+  trying to make back button in browser to close modal
+  const history = useHistory();
+  const location = useLocation();
+  console.log("current:" + location.pathname + location.search);
+  const cardModalId = `/card-modal?iD=${iD}`;
+
+  console.log("rendered");
+  useEffect(() => {
+    history.push(cardModalId);
+    return () => {
+      history.goBack(-1);
+      console.log("close");
+    };
+  }, []);
+
+  useEffect(() => {
+    return history.listen((location) => {
+      if (cardModalId)
+        console.log(
+          `You changed the page from : ${cardModalId} to: ${location.pathname}${location.search}`
+        );
+
+      if (isNestedModalOpened === false && cardModalId !== location.pathname + location.search) {
+        setIsOpenDetails(false);
+      }
+    });
+  }, [history]);
+*/
 
   return (
     <div>
-      {modals.map((card) => (
+      {isNestedModalOpened && (
         <CardDetailsModal
           key={card.iD}
           card={card}
           isOpenDetails={true}
-          setIsOpenDetails={() => setModals((currentModals) => _dropRight(currentModals))}
+          setIsOpenDetails={setIsNestedModalOpened}
         />
-      ))}
+      )}
 
       <ReactModal
         isOpen={isOpenDetails}

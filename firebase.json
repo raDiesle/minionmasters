@@ -17,24 +17,8 @@
     ],
     "rewrites": [
       {
-        "source": "/",
-        "function": "mm"
-      },
-      {
-        "source": "/index.html",
-        "function": "mm"
-      },
-      {
-        "source": "*",
-        "function": "mm"
-      },
-      {
         "source": "**",
         "function": "mm"
-      },
-      {
-        "source": "**/*.@(js|css|ico|json|jpg|png|webp)",
-        "destination": "/index.html"
       }
     ],
     "headers": [

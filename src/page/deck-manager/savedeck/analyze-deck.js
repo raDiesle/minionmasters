@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import { exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
+import { ExportAsUrl, exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
 import React from "react";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import css from "page/deck-manager/deck/savedeck/analyse-deck.module.scss";
+import css from "page/deck-manager/savedeck/analyse-deck.module.scss";
 import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 
 export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
@@ -31,7 +31,6 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
   const attackFlying = selectedCards.filter(({ card: { hitsFlying } }) => hitsFlying).length;
   const spells = selectedCards.filter(({ card: { type } }) => type === "Spell").length;
 
-  const url = exportDeckUrl(selectedMaster, lastSelectedCards);
   return (
     <div>
       <fieldset className={css.analyzeFieldset}>
@@ -51,20 +50,7 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
         </div>
 
         <div className={css.rightTopLegend}>
-          <ButtonGroupStyle>
-            <CopyToClipboard
-              text={url}
-              onCopy={() => {
-                mToast("Link copied to clipboard");
-              }}
-              title="To share by Discord, Twitter, Facebook with Image Preview without saving to database."
-            >
-              <button className={classnames(cssButton.ButtonInGroupStyle)}>
-                <FontAwesomeIcon icon={faLink} size="xs" style={{ marginLeft: "5px" }} />
-                <span style={{ paddingLeft: "11px" }}>Copy link with preview</span>
-              </button>
-            </CopyToClipboard>
-          </ButtonGroupStyle>
+          <ExportAsUrl selectedMaster={selectedMaster} lastSelectedCards={lastSelectedCards} />
         </div>
       </fieldset>
     </div>

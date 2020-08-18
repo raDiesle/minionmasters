@@ -1,7 +1,7 @@
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import css from "page/deck-manager/deck/savedeck/save-db-button.module.scss";
-import SaveDeckForm from "page/deck-manager/deck/savedeck/save-deck-form";
+import css from "page/deck-manager/savedeck/save-db-button.module.scss";
+import SaveDeckForm from "page/deck-manager/savedeck/save-deck-form";
 import React from "react";
 
 export default function SaveDeckContent({ selectedMaster, lastSelectedCards }) {

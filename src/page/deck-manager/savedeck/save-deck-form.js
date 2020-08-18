@@ -1,10 +1,10 @@
 import * as classnames from "classnames";
 import { useCurrentUser } from "components/helper";
-import GameTypeInput from "page/deck-manager/deck/savedeck/inputs/game-type-input";
-import GameTypeSecondaryInput from "page/deck-manager/deck/savedeck/inputs/game-type-secondary-input";
-import GameTypeThirdInput from "page/deck-manager/deck/savedeck/inputs/game-type-third-input";
-import SaveDbButton from "page/deck-manager/deck/savedeck/save-db-button";
-import css from "page/deck-manager/deck/savedeck/save-deck-form.module.scss";
+import GameTypeInput from "page/deck-manager/savedeck/inputs/game-type-input";
+import GameTypeSecondaryInput from "page/deck-manager/savedeck/inputs/game-type-secondary-input";
+import GameTypeThirdInput from "page/deck-manager/savedeck/inputs/game-type-third-input";
+import SaveDbButton from "page/deck-manager/savedeck/save-db-button";
+import css from "page/deck-manager/savedeck/save-deck-form.module.scss";
 import React, { useEffect, useState } from "react";
 
 export default function SaveDeckForm({ lastSelectedCards, selectedMaster }) {
