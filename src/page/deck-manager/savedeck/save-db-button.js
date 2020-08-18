@@ -8,8 +8,8 @@ import mToast from "components/mToast";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
-import css from "page/deck-manager/deck/savedeck/save-db-button.module.scss";
-import { MAYHEM } from "page/deck-manager/deck/savedeck/saved-decks-configs";
+import css from "page/deck-manager/savedeck/save-db-button.module.scss";
+import { MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React, { useState } from "react";
 
 export default function SaveDbButton({

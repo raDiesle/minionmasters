@@ -5,11 +5,11 @@ const functions = require("firebase-functions");
 //
 const fs = require("fs");
 exports.mm = functions.https.onRequest((request, response) => {
-  //const file = fs.readFileSync(path.join(__dirname, "./index.html"), "utf8");
+  const file = fs.readFileSync("./index2.html");
 
-  const file = fs.readFileSync("./index.html");
-
-  const query = `?master=${request.query.master}&iD=${request.query.iD.join("&iD=")}`;
+  const master = request.query.master || "";
+  const iDs = request.query.iD || [""];
+  const query = `?master=${master}&iD=${iDs.join("&iD=")}`;
 
   const previewUrl = `https://minionmastersmanager.web.app/${query}`;
 
@@ -24,5 +24,6 @@ exports.mm = functions.https.onRequest((request, response) => {
     .toString()
     .replace(/<meta property="og:image" content=".*?"\/>/, buildMeta("og:image"))
     .replace(/<meta property="twitter:image" content=".*?"\/>/, buildMeta("twitter:image"));
+
   response.status(200).send(`<!-- preview -->${newHtmlFile}`);
 });

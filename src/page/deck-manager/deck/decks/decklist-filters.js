@@ -1,9 +1,9 @@
 import AvailableCardsFilter from "page/deck-manager/build/filters/available-cards-filter";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import css from "page/deck-manager/deck/decks/decklist-filters.module.scss";
-import GameTypeInput from "page/deck-manager/deck/savedeck/inputs/game-type-input";
-import GameTypeSecondaryInput from "page/deck-manager/deck/savedeck/inputs/game-type-secondary-input";
-import GameTypeThirdInput from "page/deck-manager/deck/savedeck/inputs/game-type-third-input";
+import GameTypeInput from "page/deck-manager/savedeck/inputs/game-type-input";
+import GameTypeSecondaryInput from "page/deck-manager/savedeck/inputs/game-type-secondary-input";
+import GameTypeThirdInput from "page/deck-manager/savedeck/inputs/game-type-third-input";
 import React, { useState } from "react";
 
 export default function DecklistFilters({

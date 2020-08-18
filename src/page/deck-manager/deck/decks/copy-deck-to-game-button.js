@@ -1,3 +1,7 @@
+import {
+  getCardIdsFromCount,
+  getCardNamesFromCount,
+} from "page/deck-manager/deck/export/export-helper";
 import React from "react";
 import { faCopy } from "@fortawesome/free-solid-svg-icons/faCopy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,9 +15,10 @@ import { toast } from "react-toastify";
 import cssHelpers from "components/helper.module.scss";
 
 export function CopyDeckToGameButton({ master, cards }) {
+  const cardNamesFromCount = getCardNamesFromCount(cards);
   return (
     <CopyToClipboard
-      text={`/setdeck ${master}: ${cards.map(({ name }) => name).join(", ")}`}
+      text={`/setdeck ${master}: ${cardNamesFromCount.join(", ")}`}
       onCopy={() => {
         toast(
           "Copied to clipboard. Go to game, switch to a slot and paste command and press ENTER. Game must be english language. Experimental feature, might not work!",

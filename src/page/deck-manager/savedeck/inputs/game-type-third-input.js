@@ -1,4 +1,4 @@
-import { GAME_TYPES, MAYHEM } from "page/deck-manager/deck/savedeck/saved-decks-configs";
+import { GAME_TYPES, MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 
 export default function GameTypeThirdInput({ gameType, gameTypeThird, setGameTypeThird }) {

@@ -1,4 +1,4 @@
-import { PLAYER_GAME_TYPE } from "page/deck-manager/deck/savedeck/saved-decks-configs";
+import { PLAYER_GAME_TYPE } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 
 export default function GameTypeSecondaryInput({

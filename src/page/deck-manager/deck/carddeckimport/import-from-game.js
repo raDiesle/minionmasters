@@ -5,6 +5,7 @@ import {
   ButtonGroupStyle,
   ButtonInGroupStyle,
 } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import { getCardWithDataByListOfId } from "page/deck-manager/deck/carddeckimport/import-helper";
 import css from "page/deck-manager/deck/Guide.module.scss";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
@@ -50,7 +51,8 @@ export default function ImportFromGame({ setLastSelectedCards, setSelectedMaster
       const masterName = value.substring(0, endOfMasterNamePos);
       const cardNamesValue = value.substring(endOfMasterNamePos + 2);
       const cardNames = cardNamesValue.split(", ");
-      const cards = cardNames.map((nameExtracted) => {
+
+      const cardIds = cardNames.map((nameExtracted) => {
         const matchedCardData = cardData.find(({ name }) => name === nameExtracted);
         if (matchedCardData === undefined) {
           toast(<MissingCardMessage nameExtracted={nameExtracted} />);
@@ -58,21 +60,27 @@ export default function ImportFromGame({ setLastSelectedCards, setSelectedMaster
             iD: IDENTIFIER_FOR_EMPTY_SLOT,
           };
         } else {
-          return matchedCardData;
+          return matchedCardData.iD;
         }
       });
+
+      const cardsOnDeckSlots = getCardWithDataByListOfId(cardIds);
+
+      /*
       const cardsOnDeckSlots = cards.map((card) => {
         return { card };
       });
+       */
 
       if (
         endOfMasterNamePos === -1 ||
-        cards.length === 0 ||
+        //cards.length === 0 ||
         cardNames[0] === "" ||
         cardsOnDeckSlots.length === 0
       ) {
         throw new Error("could not parse from game");
       }
+
       setLastSelectedCards(cardsOnDeckSlots);
       setSelectedMaster(masterName);
       mToast("Imported");

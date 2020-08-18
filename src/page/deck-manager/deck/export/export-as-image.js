@@ -8,6 +8,7 @@ import mToast from "components/mToast";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import css from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 
+// not used anymore
 export default function ExportAsImage({ url }) {
   const IMAGE_SERVER = `https://minionmastersmanager-286215.ew.r.appspot.com/screenshot`;
   const shareImageUrl = `${IMAGE_SERVER}/${encodeURIComponent(

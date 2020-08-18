@@ -1,4 +1,4 @@
-import AnalyzeDeck from "page/deck-manager/deck/savedeck/analyze-deck";
+import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
 import { DEFAULT_MASTER_NOT_SELECTED } from "page/page-config";
 import React, { useState } from "react";
 import { Deck } from "page/deck-manager/deck/deck";

@@ -1,7 +1,7 @@
 import findLastIndex from "lodash/findLastIndex";
 
 import DeckManager from "page/deck-manager/deck-manager";
-
+import qs from "qs";
 import { ROUTE_PATH_MANAGER } from "page/deck-manager/deck-manager-config";
 
 import Decks from "page/deck-manager/deck/decks/decks";
@@ -38,6 +38,18 @@ export function Page() {
     });
     console.log("pushed");
   }, [selectedMaster, lastSelectedCards]);
+*/
+  /*
+  const history = useHistory();
+  useEffect(() => {
+    return history.listen((location) => {
+      console.log(`You changed the page to: ${location.pathname}`);
+
+      const isCardModal = qs.parse(location.search).cardModal;
+      if (isCardModal) {
+      }
+    });
+  }, [history]);
 */
   return (
     <div className={css.pageContentContainer}>
