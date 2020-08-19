@@ -1,4 +1,4 @@
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import { MENU_LINKS_CONFIG } from "page/wiki/gamemodes/gamemodes";
 import { anchorLinkTarget } from "page/wiki/menu-helper";
 import cssStatic from "page/wiki/static-content.module.scss";

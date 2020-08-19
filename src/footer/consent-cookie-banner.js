@@ -1,5 +1,6 @@
 import { useCookie } from "@use-hook/use-cookie";
 import "firebase/analytics";
+import { isForImagePreview } from "components/helper";
 import firebase from "firebase/app";
 
 import css from "footer/consent-banner.module.scss";
@@ -19,15 +20,21 @@ export const useGaTrackView = (screen_name) => {
   }, []);
 };
 
-export default function ConsentBanner() {
+export default function ConsentCookieBanner() {
   const [isAllowCookies, setAllowCookies] = useCookie("isAllowCookies", null);
+
   const [isDeclinedTemporary, setIsDeclinedTemporary] = useState(false);
 
   useEffect(() => {
     window.ga = isAllowCookies ? firebase.analytics() : fakeGA;
   }, [isAllowCookies]);
 
-  if (isAllowCookies || isDeclinedTemporary || window.location.host.includes("localhost")) {
+  if (
+    isAllowCookies ||
+    isDeclinedTemporary ||
+    window.location.host.includes("localhost") ||
+    isForImagePreview
+  ) {
     return null;
   }
 

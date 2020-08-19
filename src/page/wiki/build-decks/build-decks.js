@@ -1,6 +1,6 @@
 import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import { anchorLinkTarget, Menu } from "page/wiki/menu-helper";
 
 import cssStatic from "page/wiki/static-content.module.scss";

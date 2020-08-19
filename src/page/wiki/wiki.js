@@ -1,4 +1,4 @@
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import Abilities from "page/wiki/abilities/abilities";
 import { ROUTE_PATH_ABILITIES } from "page/wiki/abilities/abilities-config";
 import { BuildDecks } from "page/wiki/build-decks/build-decks";

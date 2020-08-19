@@ -3,7 +3,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import mToast from "components/mToast";
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 
 import css from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";

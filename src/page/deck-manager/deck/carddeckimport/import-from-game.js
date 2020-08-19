@@ -1,5 +1,5 @@
 import mToast from "components/mToast";
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import cardData from "generated/jobCardProps.json";
 import {
   ButtonGroupStyle,
