@@ -1,4 +1,4 @@
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ROUTE_PATH_DECKMANAGER_BUILD } from "page/deck-manager/build/build-config";
 import FiltersWithCards from "page/deck-manager/build/filters-with-cards";
 

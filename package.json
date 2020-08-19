@@ -49,7 +49,7 @@
     "predeploy": "npm-run-all build moveToFunctions",
     "moveToFunctions": "mvy --force build/index.html functions/index2.html",
     "copyToFunctions": "cpy build/index.html functions/",
-    "deploy": "npm-run-all deployHosting deployFunctions",
+    "deploy": "npm-run-all deployFunctions deployHosting",
     "deployHosting": "firebase deploy --only hosting",
     "deployFunctions": "firebase deploy --only functions",
     "start": "react-scripts start",

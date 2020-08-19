@@ -24,17 +24,39 @@ export function toParams(selectedMaster, lastSelectedCards) {
   return params;
 }
 
-export function exportDeckUrl(selectedMaster, lastSelectedCards) {
+export function exportDeckUrl(
+  selectedMaster,
+  lastSelectedCards,
+  title = "My deck",
+  description = "open link to edit or copy deck to game"
+) {
   const params = toParams(selectedMaster, lastSelectedCards);
+  const titleParams = `&title=${encodeURIComponent(title)}`;
+  const descriptionParams = `&description=${encodeURIComponent(description)}`;
+
   const port = window.location.port === "3000" ? `:${window.location.port}` : "";
-  // const path = "preview"; // indicator for preview   //`${window.location.pathname}`;
-  const url = `${window.location.protocol}//${window.location.hostname}${port}/${params}`;
+  const url = `${window.location.protocol}//${window.location.hostname}${port}/${params}${titleParams}${descriptionParams}`;
   return url;
 }
 
-export function ExportAsUrl({ selectedMaster, lastSelectedCards }) {
-  const url = exportDeckUrl(selectedMaster, lastSelectedCards);
+export function ExportAsUrlFromSavedDeck({
+  title,
+  description,
+  deckId,
+  selectedMaster,
+  lastSelectedCards,
+}) {
+  const url = exportDeckUrl(selectedMaster, lastSelectedCards, title, description);
+  const deckIdParamPrefix = `&deckId=${deckId}`;
+  return <ExportAsUrl url={url + deckIdParamPrefix} />;
+}
 
+export function ExportAsUrlFromDeckManager({ selectedMaster, lastSelectedCards }) {
+  const url = exportDeckUrl(selectedMaster, lastSelectedCards);
+  return <ExportAsUrl url={url} />;
+}
+
+function ExportAsUrl({ url }) {
   return (
     <ButtonGroupStyle>
       <CopyToClipboard

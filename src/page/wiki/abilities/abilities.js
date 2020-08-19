@@ -1,5 +1,8 @@
-import { useGaTrackView } from "footer/consent-banner";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import { useGaTrackView } from "footer/consent-cookie-banner";
+import {
+  ButtonGroupStyle,
+  ButtonInGroupStyle,
+} from "page/deck-manager/build/filters/ButtonFilterGroup";
 import { TERMS_CONFIG } from "page/terms-config";
 import DeebuffIcon from "page/wiki/abilities/buff-icon";
 import BuffIcon from "page/wiki/abilities/debuff-icon";

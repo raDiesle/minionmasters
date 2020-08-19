@@ -1,14 +1,10 @@
-import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as classnames from "classnames";
-import mToast from "components/mToast";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import { ExportAsUrl, exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
-import React from "react";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import {
+  ExportAsUrl,
+  ExportAsUrlFromDeckManager,
+} from "page/deck-manager/deck/export/export-as-url";
 import css from "page/deck-manager/savedeck/analyse-deck.module.scss";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
+import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
+import React from "react";
 
 export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
   const cards = lastSelectedCards.filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT);
@@ -50,7 +46,10 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
         </div>
 
         <div className={css.rightTopLegend}>
-          <ExportAsUrl selectedMaster={selectedMaster} lastSelectedCards={lastSelectedCards} />
+          <ExportAsUrlFromDeckManager
+            selectedMaster={selectedMaster}
+            lastSelectedCards={lastSelectedCards}
+          />
         </div>
       </fieldset>
     </div>

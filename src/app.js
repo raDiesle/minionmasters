@@ -1,12 +1,13 @@
 import AppPreview from "app-preview";
 import { CURRENT_GAME_VERSION, isForImagePreview } from "components/helper";
-import ConsentBanner from "footer/consent-banner";
+import ConsentCookieBanner from "footer/consent-cookie-banner";
 import Footer from "footer/footer";
 
 import LoginLogout from "header/login-logout";
 import "modal.scss";
 
 import { Page } from "page/page";
+import qs from "qs";
 import React from "react";
 import Modal from "react-modal";
 import { BrowserRouter } from "react-router-dom";
@@ -54,7 +55,9 @@ const App = () => {
   toast.configure();
   Modal.setAppElement("body");
 
-  if (isForImagePreview) {
+  const isDeckPreview =
+    typeof qs.parse(window.location.search, { ignoreQueryPrefix: true }).iD !== "undefined";
+  if (isForImagePreview && isDeckPreview) {
     return <AppPreview />;
   }
 
@@ -84,7 +87,7 @@ const App = () => {
           <Page />
         </BrowserRouter>
       </div>
-      <ConsentBanner />
+      <ConsentCookieBanner />
       <Footer />
     </div>
   );

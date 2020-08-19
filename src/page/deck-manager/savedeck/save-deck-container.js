@@ -1,5 +1,5 @@
 import LoginRequired from "components/login-required";
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import SaveDeckPrimaryValidationAndForm from "page/deck-manager/savedeck/save-deck-content";
 import React from "react";
 

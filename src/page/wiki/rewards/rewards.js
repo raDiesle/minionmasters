@@ -1,4 +1,4 @@
-import { useGaTrackView } from "footer/consent-banner";
+import { useGaTrackView } from "footer/consent-cookie-banner";
 import { Menu } from "page/wiki/menu-helper";
 import Achievements from "page/wiki/rewards/achievements";
 import AdventureRewards from "page/wiki/rewards/adventure-rewards";
