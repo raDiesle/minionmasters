@@ -249,17 +249,9 @@ export const TERMS_CONFIG = [
       // Call Slitherbound
       {
         key: "Cohort",
-        display: "Slitherbound (1)",
+        display: "Slitherbound",
         description:
-          "Add a Slitherbound Minion to a Slither Card in your hand. Summon all Slitherbound when you play that Card (Max 3). Slitherbound Health: 35. Damage per sec: 5. Inflicts Poison on attack.",
-        isBuff: true,
-      },
-
-      {
-        key: "CohortTwo",
-        display: "Slitherbound (2)",
-        description:
-          "Add 2 Slitherbound Minions to a Slither Card in your hand. Summon all Slitherbound when you play that Card (Max 3).",
+          "Add Slitherbound Minion to a Slither Card in your hand. Summon all Slitherbound when you play that Card (Max 3). Slitherbound Health: 35. Damage per sec: 5. Inflicts Poison on attack.",
         isBuff: true,
       },
       {
@@ -359,7 +351,7 @@ export const TERMS_CONFIG = [
         key: "SoulStealBuff",
         display: "Soul Steal",
         description:
-          "Steals his enemies' souls when he kills them. Increase attack speed by 20% for each soul he has collected (Max 200%).",
+          "Steals his enemies' souls when he kills them. Increase attack speed by 15% for each soul he has collected (Max 200%).",
         isBuff: true,
       },
       {

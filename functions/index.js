@@ -14,7 +14,7 @@ exports.mm = functions.https.onRequest((request, response) => {
   const title = request.query.title || "Minionmasters Manager";
   const description = request.query.description || "";
 
-  const IS_PREVIEW_MODE = "&isPreview";
+  const IS_PREVIEW_MODE = request.originalUrl.includes("?") ? "&isPreview=true" : "?isPreview=true";
 
   const isPreviewModeWithReducedPage = isSavedDeckPreview || isDeckManagerWithAnyCardSelected;
 

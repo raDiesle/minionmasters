@@ -25,9 +25,7 @@
         "dps": 60,
         "iD": 0,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 698,
-        "image": "Cleaver"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -55,9 +53,7 @@
         "dps": 35,
         "iD": 1,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 794,
-        "image": "Warrior"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -85,9 +81,7 @@
         "dps": 16.66667,
         "iD": 2,
         "faction": "Outlander",
-        "targets": "Ground & Air",
-        "pageId": 758,
-        "image": "DroneContender"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -116,9 +110,7 @@
         "dps": 19.04762,
         "iD": 3,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 734,
-        "image": "GrenadierRat"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -137,9 +129,7 @@
         "travelSpeed": 0,
         "iD": 4,
         "faction": "ZenChi",
-        "targets": "Is Spell",
-        "pageId": 753,
-        "image": "LightningBolt"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -167,9 +157,7 @@
         "dps": 46.66667,
         "iD": 5,
         "faction": "Slither",
-        "targets": "Building",
-        "pageId": 755,
-        "image": "LivingStatue"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -197,9 +185,7 @@
         "dps": 45.45454,
         "iD": 6,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
-        "pageId": 721,
-        "image": "DragonWhelp"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -227,9 +213,7 @@
         "dps": 10,
         "iD": 7,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 768,
-        "image": "GangOfRats"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -257,9 +241,7 @@
         "dps": 62.5,
         "iD": 8,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 733,
-        "image": "GhostTurret"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -278,9 +260,7 @@
         "travelSpeed": 0,
         "iD": 9,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 726,
-        "image": "Explosion"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -309,9 +289,7 @@
         "dps": 25,
         "iD": 10,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 686,
-        "image": "Boomer"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -339,9 +317,7 @@
         "dps": 18.18182,
         "iD": 11,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 790,
-        "image": "SwarmerHorde"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -369,9 +345,7 @@
         "dps": 55.55556,
         "iD": 12,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
-        "pageId": 787,
-        "image": "Summoner"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -399,9 +373,7 @@
         "dps": 0,
         "iD": 13,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 788,
-        "image": "SpawnerShrine"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -429,9 +401,7 @@
         "dps": 50,
         "iD": 14,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 709,
-        "image": "DemonCommander"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -459,9 +429,7 @@
         "dps": 66.66667,
         "iD": 15,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 695,
-        "image": "ShockRoller"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -489,9 +457,7 @@
         "dps": 0,
         "iD": 16,
         "faction": "Accursed",
-        "targets": "Ground & Air",
-        "pageId": 732,
-        "image": "Ghost"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -510,9 +476,7 @@
         "travelSpeed": 0,
         "iD": 17,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 748,
-        "image": "Clone"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -540,9 +504,7 @@
         "dps": 28.57143,
         "iD": 19,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 774,
-        "image": "SniperRat"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -570,9 +532,7 @@
         "dps": 33.33333,
         "iD": 20,
         "faction": "Slither",
-        "targets": "Ground & Air",
-        "pageId": 776,
-        "image": "SpiritLeech"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -600,9 +560,7 @@
         "dps": 0,
         "iD": 21,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 690,
-        "image": "PowerShrine"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -615,7 +573,7 @@
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
-        "health": 130,
+        "health": 150,
         "attackspeed": 1000,
         "attackDelay": 600,
         "damage": 70,
@@ -630,9 +588,7 @@
         "dps": 70,
         "iD": 22,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 670,
-        "image": "Assassin"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -651,9 +607,7 @@
         "travelSpeed": 0,
         "iD": 23,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 680,
-        "image": "SpellPowerSummon"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -681,9 +635,7 @@
         "dps": 35,
         "iD": 24,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 712,
-        "image": "DivineWarrior"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -711,9 +663,7 @@
         "dps": 10,
         "iD": 25,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 765,
-        "image": "RatArmy"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -741,9 +691,7 @@
         "dps": 0,
         "iD": 26,
         "faction": "Puff",
-        "targets": "Ground",
-        "pageId": 757,
-        "image": "ManaPuff"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -771,9 +719,7 @@
         "dps": 17.85714,
         "iD": 27,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 706,
-        "image": "DefensoChopper2"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -801,9 +747,7 @@
         "dps": 15,
         "iD": 28,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 671,
-        "image": "BannerMan"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -822,9 +766,7 @@
         "travelSpeed": 0,
         "iD": 29,
         "faction": "ZenChi",
-        "targets": "Is Spell",
-        "pageId": 740,
-        "image": "HealingFireball"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -843,9 +785,7 @@
         "travelSpeed": 0,
         "iD": 30,
         "faction": "ZenChi",
-        "targets": "Is Spell",
-        "pageId": 770,
-        "image": "StunThunder"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -858,15 +798,13 @@
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 0,
-        "delay": 500,
+        "delay": 1000,
         "duration": 5000,
-        "radius": 5000,
+        "radius": 4000,
         "travelSpeed": 0,
         "iD": 31,
         "faction": "Outlander",
-        "targets": "Is Spell",
-        "pageId": 779,
-        "image": "Freeze"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -894,9 +832,7 @@
         "dps": 37.5,
         "iD": 32,
         "faction": "Puff",
-        "targets": "Ground & Air",
-        "pageId": 796,
-        "image": "WizardPuff"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -924,9 +860,7 @@
         "dps": 14.28571,
         "iD": 33,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 759,
-        "image": "Priestess"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -955,9 +889,7 @@
         "dps": 25,
         "iD": 34,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 781,
-        "image": "ReBoomer"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -986,9 +918,7 @@
         "dps": 68.75,
         "iD": 35,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 699,
-        "image": "Colossus"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1007,9 +937,7 @@
         "travelSpeed": 0,
         "iD": 36,
         "faction": "Outlander",
-        "targets": "Is Spell",
-        "pageId": 674,
-        "image": "DoomBeam"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1037,9 +965,7 @@
         "dps": 33.33333,
         "iD": 37,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 745,
-        "image": "LaserTurret"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1068,15 +994,13 @@
         "dps": 36.66667,
         "iD": 38,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 795,
-        "image": "WhirlyRat"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
         "name": "Illusory Cleaver",
         "manacost": 1,
-        "type": "Minion",
+        "type": "Building",
         "rarity": "Rare",
         "imageName": "IllusoryCleaver",
         "description": "Summons an illusion of a {\"Cleaver\", \"CARD_REF\",\"Cleaver\"} with little health and no damage - but it explodes when killed for 10 damage!Illusory Cleaver looks like a Cleaver to your opponent.",
@@ -1084,24 +1008,23 @@
         "ExcludeFromRandom": false,
         "count": 1,
         "health": 2,
-        "attackspeed": 5000,
-        "attackDelay": 400,
+        "attackspeed": 0,
+        "attackDelay": 0,
         "damage": 0,
-        "range": 1500,
+        "range": 0,
         "isRanged": "",
         "flying": "",
         "hitsFlying": "",
         "unitToSummon": "IllusoryCleaver",
         "UnitId": "45",
+        "InheritFromId": "14",
         "aOERange": 0,
         "attackOnlyStationary": "",
-        "speed": 10,
+        "speed": 0,
         "dps": 0,
         "iD": 39,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 741,
-        "image": "IllusoryCleaver"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1130,9 +1053,7 @@
         "dps": 66.66666,
         "iD": 40,
         "faction": "Stoutheart",
-        "targets": "Building",
-        "pageId": 792,
-        "image": "Troubadour"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -1160,9 +1081,7 @@
         "dps": 25,
         "iD": 41,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 773,
-        "image": "SpiritLeecher"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1190,9 +1109,7 @@
         "dps": 45.45454,
         "iD": 42,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
-        "pageId": 718,
-        "image": "DragonWhelps"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1220,9 +1137,7 @@
         "dps": 33.33333,
         "iD": 43,
         "faction": "Scrat",
-        "targets": "Building",
-        "pageId": 1197,
-        "image": "SiegeTurret"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -1250,9 +1165,7 @@
         "dps": 40.90909,
         "iD": 44,
         "faction": "Outlander",
-        "targets": "Ground & Air",
-        "pageId": 723,
-        "image": "DroneWalker"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1280,9 +1193,7 @@
         "dps": 20,
         "iD": 45,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 751,
-        "image": "Legionairs"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1310,9 +1221,7 @@
         "dps": 50,
         "iD": 46,
         "faction": "Slither",
-        "targets": "Ground & Air",
-        "pageId": 1677,
-        "image": "Harbinger"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1341,9 +1250,7 @@
         "dps": 38.09524,
         "iD": 47,
         "faction": "Outlander",
-        "targets": "Ground & Air",
-        "pageId": 668,
-        "image": "DroneContenderHeavy"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1371,9 +1278,7 @@
         "dps": 15,
         "iD": 48,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 782,
-        "image": "StunLancer"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1401,9 +1306,7 @@
         "dps": 0,
         "iD": 49,
         "faction": "Puff",
-        "targets": "Ground",
-        "pageId": 1950,
-        "image": "DisruptorPuff"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1412,7 +1315,7 @@
         "type": "Building",
         "rarity": "Legendary",
         "imageName": "DragonNest",
-        "description": "Summons a {\"Flightless Dragon\", \"CARD_REF\",\"FlightlessDragon\"} when you play a Spell.Summons a {\"Dragon Whelp\", \"CARD_REF\",\"DragonWhelp\"} instead if the Spell cost 4+ mana.",
+        "description": "{\"Mythic\", \"TERM\",\"MythicBuff\"}Summons a {\"Flightless Dragon\", \"CARD_REF\",\"FlightlessDragon\"} when you play a Spell.Summons a {\"Dragon Whelp\", \"CARD_REF\",\"DragonWhelp\"} instead if the Spell cost 4+ mana.",
         "isAOE": false,
         "ExcludeFromRandom": true,
         "count": 1,
@@ -1431,9 +1334,7 @@
         "dps": 0,
         "iD": 50,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 715,
-        "image": "DragonNest"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1461,9 +1362,7 @@
         "dps": 0,
         "iD": 51,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 702,
-        "image": "CrossbowGuild"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1482,9 +1381,7 @@
         "travelSpeed": 0,
         "iD": 52,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 727,
-        "image": "FuturePast"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1503,9 +1400,7 @@
         "travelSpeed": 0,
         "iD": 53,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 693,
-        "image": "CallToArms"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1533,9 +1428,7 @@
         "dps": 18.88889,
         "iD": 54,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 682,
-        "image": "BloodImps"
+        "targets": "Ground"
     },
     {
         "catagory": "AbilityCard",
@@ -1554,9 +1447,7 @@
         "travelSpeed": 0,
         "iD": 55,
         "faction": "Puff",
-        "targets": "Is Spell",
-        "pageId": 1635,
-        "image": "TrickSwap"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1584,9 +1475,7 @@
         "dps": 10.71429,
         "iD": 56,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 687,
-        "image": "CrossbowMan"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1605,9 +1494,7 @@
         "travelSpeed": 0,
         "iD": 57,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 675,
-        "image": "BlackHole"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -1626,9 +1513,7 @@
         "travelSpeed": 0,
         "iD": 58,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 1645,
-        "image": "\tBurnthebridges"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -1637,7 +1522,7 @@
         "type": "Building",
         "rarity": "Perk",
         "imageName": "tombstone",
-        "description": "Place a Tombstone that resurrects the next minion under your command that dies, after a delay.",
+        "description": "Place a Tombstone that resurrects the next minion belonging to Mordar that dies, after a delay.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -1656,9 +1541,7 @@
         "dps": 0,
         "iD": 59,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1639,
-        "image": "Tombstone"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1674,9 +1557,7 @@
         "delay": 0,
         "iD": 60,
         "faction": "Outlander",
-        "targets": "Is Spell",
-        "pageId": 743,
-        "image": "Infiltrators"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1695,9 +1576,7 @@
         "travelSpeed": 0,
         "iD": 61,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 703,
-        "image": "Barrage"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1725,9 +1604,7 @@
         "dps": 28.57143,
         "iD": 62,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 688,
-        "image": "BountySniper"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1756,9 +1633,7 @@
         "dps": 13.33333,
         "iD": 63,
         "faction": "Accursed",
-        "targets": "Ground & Air",
-        "pageId": 678,
-        "image": "Blastmancer"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1786,9 +1661,7 @@
         "dps": 50,
         "iD": 64,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 784,
-        "image": "Styxi"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1817,9 +1690,7 @@
         "dps": 20,
         "iD": 65,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
-        "pageId": 730,
-        "image": "Gax"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -1847,9 +1718,7 @@
         "dps": 60,
         "iD": 66,
         "faction": "Voidborne",
-        "targets": "Building",
-        "pageId": 761,
-        "image": "Rammer"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -1877,9 +1746,7 @@
         "dps": 33.33333,
         "iD": 67,
         "faction": "Scrat",
-        "targets": "Building",
-        "pageId": 1219,
-        "image": "ZeppelinBomber"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -1907,9 +1774,7 @@
         "dps": 100,
         "iD": 68,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 684,
-        "image": "BlueGolem"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1928,9 +1793,7 @@
         "travelSpeed": 0,
         "iD": 69,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 763,
-        "image": "Rampage"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -1958,9 +1821,7 @@
         "dps": 0,
         "iD": 70,
         "faction": "Puff",
-        "targets": "Ground",
-        "pageId": 737,
-        "image": "HealPuff"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -1989,9 +1850,7 @@
         "dps": 100,
         "iD": 71,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1260,
-        "image": "RedGolem"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2019,9 +1878,7 @@
         "dps": 30,
         "iD": 72,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 1503,
-        "image": "ScratTank"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2040,9 +1897,7 @@
         "travelSpeed": 0,
         "iD": 73,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 1253,
-        "image": "RagingReinforcements"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2070,9 +1925,7 @@
         "dps": 0,
         "iD": 74,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1223,
-        "image": "Wall"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2100,9 +1953,7 @@
         "dps": 13.33333,
         "iD": 76,
         "faction": "Accursed",
-        "targets": "Ground & Air",
-        "pageId": 1255,
-        "image": "Necromancer"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2131,9 +1982,7 @@
         "dps": 0,
         "iD": 77,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1218,
-        "image": "UndyingSkeleton"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2161,9 +2010,7 @@
         "dps": 0,
         "iD": 78,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1222,
-        "image": "WalkingBlindDate"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2191,9 +2038,7 @@
         "dps": 10,
         "iD": 79,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 1271,
-        "image": "PropellerScrats"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2221,9 +2066,7 @@
         "dps": 37.5,
         "iD": 80,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1299,
-        "image": "PrayingShiHou"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2251,9 +2094,7 @@
         "dps": 41.66667,
         "iD": 81,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1285,
-        "image": "AwarenessMonk"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2272,9 +2113,7 @@
         "travelSpeed": 0,
         "iD": 83,
         "faction": "ZenChi",
-        "targets": "Is Spell",
-        "pageId": 1277,
-        "image": "LightningBounces"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2302,9 +2141,7 @@
         "dps": 10,
         "iD": 84,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 1280,
-        "image": "SpearThrowers"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2333,9 +2170,7 @@
         "dps": 13.33333,
         "iD": 87,
         "faction": "CrystalElf",
-        "targets": "Ground",
-        "pageId": 1513,
-        "image": "\tGuardian"
+        "targets": "Ground"
     },
     {
         "catagory": "AbilityCard",
@@ -2363,9 +2198,7 @@
         "dps": 0,
         "iD": 88,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 1634,
-        "image": "ShieldTotem"
+        "targets": "Ground"
     },
     {
         "catagory": "AbilityCard",
@@ -2374,16 +2207,14 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "BlastEntry",
-        "description": "Settsu enters the battlefield and deals damage to nearby enemies on impact.Damage:  50 Shield Health:  300 ",
+        "description": "Settsu enters the battlefield and deals damage to nearby enemies on impact.Damage: 50Shield Health: 300",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "radius": 4500,
         "delay": 4000,
         "iD": 89,
         "faction": "Outlander",
-        "targets": "Is Spell",
-        "pageId": 1643,
-        "image": "\tBlastEntry"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2412,9 +2243,7 @@
         "dps": 12.5,
         "iD": 90,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1261,
-        "image": "SpiritVessel"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2442,9 +2271,7 @@
         "dps": 15.38462,
         "iD": 91,
         "faction": "ZenChi",
-        "targets": "Ground & Air",
-        "pageId": 1284,
-        "image": "TinyDragon"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2472,9 +2299,7 @@
         "dps": 75,
         "iD": 93,
         "faction": "Scrat",
-        "targets": "Building",
-        "pageId": 1269,
-        "image": "BazookaScrat"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -2483,7 +2308,7 @@
         "type": "Spell",
         "rarity": "Legendary",
         "imageName": "Hypnotize",
-        "description": "{\"Slitherbound (2)\", \"TERM\",\"CohortTwo\"}.For the duration Enemy Minions attack random friendly units within range, if able.",
+        "description": "{\"Call Slitherbound\", \"TERM\",\"Cohort\"} (2).For the duration Enemy Minions attack random friendly units within range, if able.",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 0,
@@ -2493,9 +2318,7 @@
         "travelSpeed": 0,
         "iD": 96,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 1372,
-        "image": "Hypnotize"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2514,9 +2337,7 @@
         "travelSpeed": 0,
         "iD": 99,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1301,
-        "image": "MagmaStorm"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2535,9 +2356,7 @@
         "travelSpeed": 0,
         "iD": 100,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1369,
-        "image": "SpiritInfusion"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2556,9 +2375,7 @@
         "travelSpeed": 25000,
         "iD": 103,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 1637,
-        "image": "\tArcaneMissiles"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2582,13 +2399,11 @@
         "unitToSummon": "ArcaneGolem",
         "UnitId": "91",
         "attackOnlyStationary": "",
-        "speed": 3,
+        "speed": 4,
         "dps": 23.07692,
         "iD": 104,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1638,
-        "image": "ArcaneGolem"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2617,9 +2432,7 @@
         "dps": 50,
         "iD": 105,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1330,
-        "image": "FireImp"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2638,9 +2451,7 @@
         "travelSpeed": 0,
         "iD": 106,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 1325,
-        "image": "FuturePresent"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2649,7 +2460,7 @@
         "type": "Minion",
         "rarity": "Rare",
         "imageName": "ShieldedCrossbowDudes",
-        "description": "{\"SingleShieldBuff\", \"TERM\", \"SingleShieldBuff\"}.If you do not control any bridges summon  1  extra.Still a group of weak ranged Minions. Still great friends.",
+        "description": "{\"Shield\", \"TERM\",\"SingleShieldBuff\"}.If your opponent controls both bridges, summon 1 extra.{\"Still a group of weak ranged Minions. Still great friends.\", \"SUBTEXT\"}",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 3,
@@ -2668,9 +2479,7 @@
         "dps": 10.71429,
         "iD": 108,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 1335,
-        "image": "ShieldedCrossbowDudes"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2698,9 +2507,7 @@
         "dps": 56.66667,
         "iD": 111,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 1489,
-        "image": "Prowler"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2728,9 +2535,7 @@
         "dps": 22.72727,
         "iD": 112,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1338,
-        "image": "EliteSwarmer"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2758,9 +2563,7 @@
         "dps": 22.72727,
         "iD": 113,
         "faction": "Outlander",
-        "targets": "Ground & Air",
-        "pageId": 1506,
-        "image": "SingleTrackInterceptor"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2788,9 +2591,7 @@
         "dps": 18.18182,
         "iD": 114,
         "faction": "Outlander",
-        "targets": "Ground & Air",
-        "pageId": 1371,
-        "image": "DroneBuzzers"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -2819,9 +2620,7 @@
         "dps": 10,
         "iD": 115,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 1389,
-        "image": "Armored-Scrats"
+        "targets": "Ground"
     },
     {
         "catagory": "AbilityCard",
@@ -2840,9 +2639,7 @@
         "travelSpeed": 0,
         "iD": 116,
         "faction": "Scrat",
-        "targets": "Is Spell",
-        "pageId": 1640,
-        "image": "\tMoreDakka"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2870,9 +2667,7 @@
         "dps": 65.21739,
         "iD": 117,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1690,
-        "image": "DemonCommanderShield"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2901,9 +2696,7 @@
         "dps": 70,
         "iD": 119,
         "faction": "Outlander",
-        "targets": "Ground",
-        "pageId": 1386,
-        "image": "Atg"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2931,9 +2724,7 @@
         "dps": 0,
         "iD": 122,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1515,
-        "image": "HealingShrine"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -2942,7 +2733,7 @@
         "type": "Spell",
         "rarity": "Legendary",
         "imageName": "Combustion",
-        "description": "After a delay, friendly minions explode, dealing 50 damage to themselves and nearby Enemies every 0.2 seconds, up to 5 times.",
+        "description": "After a delay, friendly minions explode, dealing 50 damage to themselves and nearby Enemies every 0.2 seconds, up to 4 times.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "damage": 50,
@@ -2952,9 +2743,7 @@
         "travelSpeed": 0,
         "iD": 123,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1660,
-        "image": "Combustion"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -2982,9 +2771,7 @@
         "dps": 65,
         "iD": 125,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 1510,
-        "image": "\tMusketeer"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3013,9 +2800,7 @@
         "dps": 22.72727,
         "iD": 128,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1509,
-        "image": "\tSwarmerKing"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3043,9 +2828,7 @@
         "dps": 92.85715,
         "iD": 129,
         "faction": "Stoutheart",
-        "targets": "Ground",
-        "pageId": 1596,
-        "image": "SaltyBarbarian"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3074,9 +2857,7 @@
         "dps": 45.45454,
         "iD": 133,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1588,
-        "image": "ClippedDragons"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3095,9 +2876,7 @@
         "travelSpeed": 0,
         "iD": 135,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1693,
-        "image": "SummoningRitual"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3116,9 +2895,7 @@
         "travelSpeed": 0,
         "iD": 138,
         "faction": "Scrat",
-        "targets": "Is Spell",
-        "pageId": 1654,
-        "image": "ScratAmbush"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3147,9 +2924,7 @@
         "dps": 0,
         "iD": 139,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1650,
-        "image": "CursedSkeleton"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3177,9 +2952,7 @@
         "dps": 62.5,
         "iD": 140,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
-        "pageId": 1649,
-        "image": "BurstCannon"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3207,9 +2980,7 @@
         "dps": 20,
         "iD": 142,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1655,
-        "image": "TwoLegionnaires"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3228,9 +2999,7 @@
         "travelSpeed": 0,
         "iD": 143,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 1656,
-        "image": "GamblersBall"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3258,9 +3027,7 @@
         "dps": 18.18182,
         "iD": 149,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1678,
-        "image": "CannibalSwarmers"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3288,9 +3055,7 @@
         "dps": 0,
         "iD": 158,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 1702,
-        "image": "ScreamingScrat"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3299,7 +3064,7 @@
         "type": "Minion",
         "rarity": "Supreme",
         "imageName": "DestructiveDemonDuo",
-        "description": "Summons a {\"Cleaver\", \"CARD_REF\", \"Cleaver\"}, but if the last card you played was a 3-mana Spell, also summons a {\"Rammer\", \"CARD_REF\", \"Rammer\"}.",
+        "description": "Summons a {\"Cleaver\", \"CARD_REF\",\"Cleaver\"}, but if the last card you played was a 3-mana Spell, also summons a {\"Rammer\", \"CARD_REF\",\"Rammer\"}.",
         "isAOE": false,
         "ExcludeFromRandom": true,
         "count": 1,
@@ -3318,9 +3083,7 @@
         "dps": 60,
         "iD": 161,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1688,
-        "image": "DestructiveDemonDuo"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3339,9 +3102,7 @@
         "travelSpeed": 0,
         "iD": 162,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1691,
-        "image": "Phase"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3369,9 +3130,7 @@
         "dps": 60,
         "iD": 163,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1661,
-        "image": "Incubus"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3399,9 +3158,7 @@
         "dps": 60,
         "iD": 164,
         "faction": "Voidborne",
-        "targets": "Building",
-        "pageId": 1680,
-        "image": "BetrayerRammer"
+        "targets": "Building"
     },
     {
         "catagory": "Standard",
@@ -3410,7 +3167,7 @@
         "type": "Minion",
         "rarity": "Supreme",
         "imageName": "SharsrakkTwins",
-        "description": "Summon an {\"Incubus\", \"CARD_REF\", \"Incubus\"}. If the last card you played was a 5+ Mana Spell, also summon a {\"Succubus\", \"CARD_REF\", \"Succubus\"}.",
+        "description": "Summon an {\"Incubus\", \"CARD_REF\",\"Incubus\"}. If the last card you played was a 5+ Mana Spell, also summon a {\"Succubus\", \"CARD_REF\",\"Succubus\"}.",
         "isAOE": false,
         "ExcludeFromRandom": true,
         "count": 1,
@@ -3429,9 +3186,7 @@
         "dps": 60,
         "iD": 169,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1689,
-        "image": "SharsrakkTwins"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3447,9 +3202,7 @@
         "delay": 2000,
         "iD": 170,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1692,
-        "image": "DragonBall"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3477,9 +3230,7 @@
         "dps": 40.90909,
         "iD": 172,
         "faction": "Outlander",
-        "targets": "Ground & Air",
-        "pageId": 1663,
-        "image": "AIMBot"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3507,9 +3258,7 @@
         "dps": 28.57143,
         "iD": 173,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 1662,
-        "image": "SniperSquad"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3528,9 +3277,7 @@
         "travelSpeed": 0,
         "iD": 175,
         "faction": "Scrat",
-        "targets": "Is Spell",
-        "pageId": 1703,
-        "image": "CheeseDate"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3549,9 +3296,7 @@
         "travelSpeed": 0,
         "iD": 178,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 1707,
-        "image": "SunBurn"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3570,9 +3315,7 @@
         "travelSpeed": 0,
         "iD": 180,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 1705,
-        "image": "ClearSkies"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3600,9 +3343,7 @@
         "dps": 56.66667,
         "iD": 182,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 1708,
-        "image": "RabidProwler"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3611,7 +3352,7 @@
         "type": "Minion",
         "rarity": "Rare",
         "imageName": "RageThrowers",
-        "description": "Summon [cv:RageThrowers.SummonAmount] {\"SpearThrowers\", \"CARD_REF\", \"SpearThrowers\"}, If you do not control any bridges summon [cv:RageThrowers.SummonAmounts*0] extra. They all gain {\"RageBuff\", \"TERM\", \"RageBuff\"}.",
+        "description": "Summon 2 {\"Spear Throwers\", \"CARD_REF\",\"SpearThrowers\"}, If your opponent controls both bridges, summon 1 extra. They all gain {\"Rage\", \"TERM\",\"RageBuff\"}.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 2,
@@ -3630,9 +3371,7 @@
         "dps": 10,
         "iD": 183,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 1704,
-        "image": "RageThrowers"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3641,7 +3380,7 @@
         "type": "Flying Minion",
         "rarity": "Common",
         "imageName": "PropellerHorde",
-        "description": "If a friendly minion has {\"RageBuff\", \"TERM\", \"RageBuff\"}, summon 2 more.",
+        "description": "If a friendly minion has {\"Rage\", \"TERM\",\"RageBuff\"}, summon 2 more.",
         "isAOE": false,
         "ExcludeFromRandom": true,
         "count": 6,
@@ -3660,9 +3399,7 @@
         "dps": 10,
         "iD": 184,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 1706,
-        "image": "PropellerHorde"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3690,9 +3427,7 @@
         "dps": 33.33333,
         "iD": 185,
         "faction": "Slither",
-        "targets": "Ground & Air",
-        "pageId": 1709,
-        "image": "EmpoweredSoulStealer"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3720,9 +3455,7 @@
         "dps": 12.5,
         "iD": 186,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1758,
-        "image": "CrystalArcher"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3750,9 +3483,7 @@
         "dps": 20,
         "iD": 187,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1761,
-        "image": "CrystalMage"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3771,9 +3502,7 @@
         "travelSpeed": 0,
         "iD": 188,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 1763,
-        "image": "ArcanePrison"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3801,9 +3530,7 @@
         "dps": 35.29412,
         "iD": 191,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1760,
-        "image": "CrystalSentry"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3822,9 +3549,7 @@
         "travelSpeed": 0,
         "iD": 192,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 1762,
-        "image": "ArmoredEscort"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3852,9 +3577,7 @@
         "dps": 13.33333,
         "iD": 193,
         "faction": "CrystalElf",
-        "targets": "Ground",
-        "pageId": 1759,
-        "image": "CrystalConstruct"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3882,9 +3605,7 @@
         "dps": 42.30769,
         "iD": 194,
         "faction": "CrystalElf",
-        "targets": "Ground",
-        "pageId": 1764,
-        "image": "CrystalCommander"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -3903,9 +3624,7 @@
         "travelSpeed": 0,
         "iD": 195,
         "faction": "Puff",
-        "targets": "Is Spell",
-        "pageId": 1757,
-        "image": "ManaPuffMadness"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3924,9 +3643,7 @@
         "travelSpeed": 25000,
         "iD": 196,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1766,
-        "image": "WheelOfDoom"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -3954,9 +3671,7 @@
         "dps": 31.81818,
         "iD": 197,
         "faction": "Voidborne",
-        "targets": "Ground & Air",
-        "pageId": 1776,
-        "image": "BlinkBat"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -3965,7 +3680,7 @@
         "type": "Minion",
         "rarity": "Common",
         "imageName": "WolfAmongSheep",
-        "description": "Summon [cv:WolfAmongSheep.SummonAmount] {\"Legionair\", \"CARD_REF\", \"Legionnaires\"}. One of them gains {\"LycanthropyBuff\", \"TERM\", \"LycanthropyBuff\"} at random.",
+        "description": "Summon 4 {\"Legionnaires\", \"CARD_REF\",\"Legionair\"}. One of them gains {\"Lycanthropy\", \"TERM\",\"LycanthropyBuff\"} at random.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 4,
@@ -3984,9 +3699,7 @@
         "dps": 20,
         "iD": 199,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1779,
-        "image": "WolfAmongSheep"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4005,9 +3718,7 @@
         "travelSpeed": 0,
         "iD": 201,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1777,
-        "image": "OnceBitten"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -4026,9 +3737,7 @@
         "travelSpeed": 0,
         "iD": 202,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1780,
-        "image": "BatSwarm"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4047,9 +3756,7 @@
         "travelSpeed": 0,
         "iD": 203,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1783,
-        "image": "GraspingThorns"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4058,7 +3765,7 @@
         "type": "Minion",
         "rarity": "Supreme",
         "imageName": "LoneWolf",
-        "description": "{\"Rage\", \"TERM\",\"RageBuff\"}.If there are no other Friendly Minions when this {\"Warrior\", \"CARD_REF\",\"Warrior\"} is summoned, she gains {\"Lycanthropy\", \"TERM\",\"LycanthropyBuff\"}.",
+        "description": "{\"Rage\", \"TERM\",\"RageBuff\"}.If there are no other Minions under your command when this {\"Warrior\", \"CARD_REF\",\"Warrior\"} is summoned, she gains {\"Lycanthropy\", \"TERM\",\"LycanthropyBuff\"}.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4077,9 +3784,7 @@
         "dps": 35,
         "iD": 204,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1782,
-        "image": "LoneWolf"
+        "targets": "Ground"
     },
     {
         "catagory": "AbilityCard",
@@ -4088,7 +3793,7 @@
         "type": "Trap",
         "rarity": "Perk",
         "imageName": "Diona_CrossbowTrap",
-        "description": "Fires bolts at nearby minions.DPS:  30 Health:  100 Duration: 15 seconds  secondsWhen used, this card becomes a Decoy Trap",
+        "description": "Fires bolts at nearby minions.DPS: 30Health: 100Duration: 15 secondsWhen used, this card becomes a Decoy Trap",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4107,9 +3812,7 @@
         "dps": 30,
         "iD": 207,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 1793,
-        "image": "Diona_CrossbowTrap"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "AbilityCard",
@@ -4118,7 +3821,7 @@
         "type": "Trap",
         "rarity": "Perk",
         "imageName": "Diona_DecoyTrap",
-        "description": "Taunts nearby minionsHealth:  300 Duration:  15  secWhen used, this card becomes a Crossbow Trap.",
+        "description": "Taunts nearby minionsHealth: 300Duration: 15 secWhen used, this card becomes a Crossbow Trap.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4137,9 +3840,7 @@
         "dps": 0,
         "iD": 208,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1794,
-        "image": "Diona_DecoyTrap"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4158,9 +3859,7 @@
         "travelSpeed": 0,
         "iD": 209,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1781,
-        "image": "HowlingMoon"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4188,9 +3887,7 @@
         "dps": 100,
         "iD": 210,
         "faction": "Accursed",
-        "targets": "Ground & Air",
-        "pageId": 1784,
-        "image": "WitchWolf"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4218,9 +3915,7 @@
         "dps": 35,
         "iD": 211,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1835,
-        "image": "Shieldguard"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4248,9 +3943,7 @@
         "dps": 50,
         "iD": 212,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1838,
-        "image": "Brothersoflight"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4278,9 +3971,7 @@
         "dps": 0,
         "iD": 214,
         "faction": "Puff",
-        "targets": "Ground",
-        "pageId": 1832,
-        "image": "Squirepuff"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4299,9 +3990,7 @@
         "travelSpeed": 0,
         "iD": 215,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1831,
-        "image": "Gorrakkgate"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4329,9 +4018,7 @@
         "dps": 60,
         "iD": 216,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1837,
-        "image": "Crakguldoomcleaver"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4359,9 +4046,7 @@
         "dps": 22.72727,
         "iD": 218,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1833,
-        "image": "MorgrulsRagers"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4390,14 +4075,12 @@
         "dps": 45.45454,
         "iD": 219,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1834,
-        "image": "Shadowwhelp"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
         "name": "Caeleth Dawnhammer",
-        "manacost": 8,
+        "manacost": 9,
         "type": "Minion",
         "rarity": "Legendary",
         "imageName": "CaelethDawnhammer",
@@ -4420,9 +4103,7 @@
         "dps": 50,
         "iD": 220,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1836,
-        "image": "Caelethdawnhammer"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4450,9 +4131,7 @@
         "dps": 25,
         "iD": 221,
         "faction": "ZenChi",
-        "targets": "Ground & Air",
-        "pageId": 1851,
-        "image": "Stormy"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4480,9 +4159,7 @@
         "dps": 92.10526,
         "iD": 222,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1864,
-        "image": "ShenStormstrike"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4501,9 +4178,7 @@
         "travelSpeed": 0,
         "iD": 224,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 1921,
-        "image": "PoisonStrike"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4522,9 +4197,7 @@
         "travelSpeed": 0,
         "iD": 226,
         "faction": "ZenChi",
-        "targets": "Is Spell",
-        "pageId": 1865,
-        "image": "JungleRumble"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4552,9 +4225,7 @@
         "dps": 0,
         "iD": 228,
         "faction": "ZenChi",
-        "targets": "Ground & Air",
-        "pageId": 1862,
-        "image": "ZapShrine"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4582,9 +4253,7 @@
         "dps": 100,
         "iD": 229,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1863,
-        "image": "RockRivals"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4612,9 +4281,7 @@
         "dps": 12.5,
         "iD": 234,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1882,
-        "image": "SkeletonHorde"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4643,9 +4310,7 @@
         "dps": 10,
         "iD": 235,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 1880,
-        "image": "HeroScrat"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -4664,9 +4329,7 @@
         "travelSpeed": 0,
         "iD": 236,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1881,
-        "image": "NyrvirsBreath"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4685,9 +4348,7 @@
         "travelSpeed": 0,
         "iD": 237,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1876,
-        "image": "TollOfTheDead"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4696,7 +4357,7 @@
         "type": "Minion",
         "rarity": "Common",
         "imageName": "LoneRanger",
-        "description": "{\"Mana Surge\", \"TERM\",\"ManaSurgeBuff\"}.If there are no other Friendly Minions when Lone Scout is Summoned, gain 1 Mana.{\"She works best in a party of one.\", \"SUBTEXT\"}",
+        "description": "{\"Mana Surge\", \"TERM\",\"ManaSurgeBuff\"}.If there are no other Minions under your command when Lone Scout is Summoned, gain 1 Mana.{\"She works best in a party of one.\", \"SUBTEXT\"}",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4715,9 +4376,7 @@
         "dps": 12.5,
         "iD": 238,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1879,
-        "image": "LoneRanger"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4745,9 +4404,7 @@
         "dps": 35.29412,
         "iD": 239,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1877,
-        "image": "BorderPatrol"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4756,7 +4413,7 @@
         "type": "Flying Minion",
         "rarity": "Rare",
         "imageName": "CuteGhost",
-        "description": "Give targets {\"Cursed\", \"TERM\",\"CursedBuff\"}.When the target dies, the Hugger reappears to find a new target.Progress 1 toward Accursed Ascension with each kill.{\"Hint: Accursed Ascension makes certain Accursed cards stronger.\", \"SUBTEXT\"}",
+        "description": "Give targets {\"Cursed\", \"TERM\",\"CursedBuff\"}.When the target dies, the Hugger reappears to find a new target.Progress 1 toward Accursed Ascension with each kill.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -4775,9 +4432,7 @@
         "dps": 20,
         "iD": 240,
         "faction": "Accursed",
-        "targets": "Ground & Air",
-        "pageId": 1878,
-        "image": "HauntingHugger"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4805,9 +4460,7 @@
         "dps": 40,
         "iD": 241,
         "faction": "Accursed",
-        "targets": "Ground & Air",
-        "pageId": 1884,
-        "image": "NyrvirAwakens"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -4826,9 +4479,7 @@
         "travelSpeed": 0,
         "iD": 242,
         "faction": "Voidborne",
-        "targets": "Is Spell",
-        "pageId": 1887,
-        "image": "SpawnofFury"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -4837,7 +4488,7 @@
         "type": "Spell",
         "rarity": "Perk",
         "imageName": "NyrvirQueensDragon",
-        "description": "The mighty Nyrvir enters the battlefield with  2000  Max Health and  320  Damage  (Dps: 40) ",
+        "description": "The mighty <b><color=orange>Nyrvir</color></b> enters the battlefield with <b><color=orange>2000 Max Health and 320 Damage (Dps: 40)</color></b>",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 325,
@@ -4847,9 +4498,7 @@
         "travelSpeed": 0,
         "iD": 243,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1907,
-        "image": "NyrvirQueensDragon"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -4868,9 +4517,7 @@
         "travelSpeed": 0,
         "iD": 244,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1905,
-        "image": "LichBook_Drain"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -4889,9 +4536,7 @@
         "travelSpeed": 0,
         "iD": 245,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1904,
-        "image": "LichBook_Spirit"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -4900,7 +4545,7 @@
         "type": "Minion",
         "rarity": "Perk",
         "imageName": "LichBook_Skeletons",
-        "description": "Summon 3 on Perk 1, 6 on Perk 2 Skelettons",
+        "description": "Summon 3 {\"Skeletons\", \"CARD_REF\",\"Skeleton\"}. Unholy Bargain: Summon 6 {\"Skeletons\", \"CARD_REF\",\"Skeleton\"}.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 3,
@@ -4919,9 +4564,7 @@
         "dps": 12.5,
         "iD": 246,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 1903,
-        "image": "LichBook_Skeletons"
+        "targets": "Ground"
     },
     {
         "catagory": "AbilityCard",
@@ -4940,9 +4583,7 @@
         "travelSpeed": 0,
         "iD": 247,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1906,
-        "image": "LichBook_Mana"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -4961,9 +4602,7 @@
         "travelSpeed": 0,
         "iD": 248,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "pageId": 1902,
-        "image": "LichQueenBook"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -4991,9 +4630,7 @@
         "dps": 5,
         "iD": 249,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 1925,
-        "image": "Slitherbound"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5021,9 +4658,7 @@
         "dps": 56.66666,
         "iD": 251,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 1929,
-        "image": "Wreckinator"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5051,9 +4686,7 @@
         "dps": 0,
         "iD": 252,
         "faction": "Slither",
-        "targets": "Ground",
-        "pageId": 1920,
-        "image": "CagedProwler"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5072,9 +4705,7 @@
         "travelSpeed": 0,
         "iD": 253,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 1931,
-        "image": "SlitheringSummons"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5083,7 +4714,7 @@
         "type": "Flying Minion",
         "rarity": "Legendary",
         "imageName": "HeraldAhmun",
-        "description": "{\"Call Slitherbound (2)\", \"TERM\",\"CohortTwo\"}.When Ah'Mun is about to die for the first time, {\"Sacrifice\", \"TERM\",\"SacrificeBuff\"}: Heal 75 health for each Slitherbound sacrificed instead.{\"The Eye of Xipetl grants its bearer eternal life. At a cost...\", \"SUBTEXT\"}",
+        "description": "{\"Call Slitherbound\", \"TERM\",\"Cohort\"} (2).When Ah'Mun is about to die for the first time, {\"Sacrifice\", \"TERM\",\"SacrificeBuff\"}: Heal 75 health for each Slitherbound sacrificed instead.{\"The Eye of Xipetl grants its bearer eternal life. At a cost...\", \"SUBTEXT\"}",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -5102,9 +4733,7 @@
         "dps": 66.66666,
         "iD": 254,
         "faction": "Slither",
-        "targets": "Ground & Air",
-        "pageId": 1924,
-        "image": "HeraldAhmun"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5133,9 +4762,7 @@
         "dps": 10,
         "iD": 255,
         "faction": "Scrat",
-        "targets": "Ground",
-        "pageId": 1930,
-        "image": "SewerScrat"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5151,9 +4778,7 @@
         "delay": 500,
         "iD": 257,
         "faction": "Scrat",
-        "targets": "Is Spell",
-        "pageId": 1928,
-        "image": "ScratStorm"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5181,9 +4806,7 @@
         "dps": 48,
         "iD": 258,
         "faction": "Scrat",
-        "targets": "Ground & Air",
-        "pageId": 1923,
-        "image": "BoomBuggy"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5202,9 +4825,7 @@
         "travelSpeed": 0,
         "iD": 259,
         "faction": "Slither",
-        "targets": "Is Spell",
-        "pageId": 1922,
-        "image": "RitualOfServitude"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5232,9 +4853,7 @@
         "dps": 45,
         "iD": 260,
         "faction": "Stoutheart",
-        "targets": "Ground",
-        "pageId": 1961,
-        "image": "Woodsman"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5262,9 +4881,7 @@
         "dps": 20,
         "iD": 261,
         "faction": "CrystalElf",
-        "targets": "Ground & Air",
-        "pageId": 1967,
-        "image": "CrystalElfLeiliel"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5283,9 +4900,7 @@
         "travelSpeed": 0,
         "iD": 262,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 1965,
-        "image": "LeilielsVortex"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -5304,9 +4919,7 @@
         "travelSpeed": 0,
         "iD": 263,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 1955,
-        "image": "ArcaneRing"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5325,9 +4938,7 @@
         "travelSpeed": 0,
         "iD": 264,
         "faction": "Stoutheart",
-        "targets": "Is Spell",
-        "pageId": 1963,
-        "image": "GlennsBrew"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5356,9 +4967,7 @@
         "dps": 45,
         "iD": 265,
         "faction": "Stoutheart",
-        "targets": "Ground",
-        "pageId": 1959,
-        "image": "CaberTosser"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5386,9 +4995,7 @@
         "dps": 10,
         "iD": 266,
         "faction": "Stoutheart",
-        "targets": "Ground & Air",
-        "pageId": 1957,
-        "image": "Frostfeathers"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5416,9 +5023,7 @@
         "dps": 100,
         "iD": 267,
         "faction": "Stoutheart",
-        "targets": "Ground",
-        "pageId": 1954,
-        "image": "FergusFlagonFighter"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5427,7 +5032,7 @@
         "type": "Spell",
         "rarity": "Legendary",
         "imageName": "Mountainshaper",
-        "description": "Strikes all enemies in a large area with an earthshattering {\"Ground Rupture\", \"TERM\",\"GroundRupture\"} for each charge on Mountainshaper.Mountainshaper gains a charge for every 6 seconds it is in your hand. (Max 5 charges).",
+        "description": "Strikes all enemies in a large area with an earthshattering {\"Ground Rupture\", \"TERM\",\"GroundRupture\"} for each charge on Mountainshaper.Mountainshaper gains a charge for every 5 seconds it is in your hand. (Max 5 charges).",
         "isAOE": true,
         "ExcludeFromRandom": false,
         "damage": 100,
@@ -5437,9 +5042,7 @@
         "travelSpeed": 0,
         "iD": 268,
         "faction": "Stoutheart",
-        "targets": "Is Spell",
-        "pageId": 1969,
-        "image": "Mountainshaper"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5458,9 +5061,7 @@
         "travelSpeed": 0,
         "iD": 269,
         "faction": "Stoutheart",
-        "targets": "Is Spell",
-        "pageId": 1971,
-        "image": "FrostfeatherFlyby"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5473,7 +5074,7 @@
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
-        "health": 130,
+        "health": 150,
         "attackspeed": 1000,
         "attackDelay": 600,
         "damage": 70,
@@ -5483,14 +5084,13 @@
         "hitsFlying": "",
         "unitToSummon": "Malshar",
         "UnitId": "183",
+        "InheritFromId": "30",
         "attackOnlyStationary": "",
         "speed": 5,
         "dps": 70,
         "iD": 270,
         "faction": "Voidborne",
-        "targets": "Ground",
-        "pageId": 1986,
-        "image": "Malshar"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5518,9 +5118,7 @@
         "dps": 10,
         "iD": 271,
         "faction": "ZenChi",
-        "targets": "Ground & Air",
-        "pageId": 2000,
-        "image": "JadeFlingers"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5548,9 +5146,7 @@
         "dps": 47.36842,
         "iD": 272,
         "faction": "ZenChi",
-        "targets": "Ground & Air",
-        "pageId": 2003,
-        "image": "TingTengTung"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5559,7 +5155,7 @@
         "type": "Minion",
         "rarity": "Legendary",
         "imageName": "ZealotLeader",
-        "description": "Ardera burns 6% of her max health each second while attacking.Upon death, she grants {\"DivineShield\", \"TERM\", \"DivineShield\"} and {\"RageBuff\", \"TERM\", \"RageBuff\"} to 5 nearby friendly Minions.",
+        "description": "Ardera burns 6% of her max health each second while attacking.Upon death, she grants {\"Divine Shield\", \"TERM\",\"DivineShield\"} and {\"Rage\", \"TERM\",\"RageBuff\"} to 5 nearby friendly Minions.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -5578,9 +5174,7 @@
         "dps": 54,
         "iD": 273,
         "faction": "Empyrean",
-        "targets": "Ground & Air",
-        "pageId": 2005,
-        "image": "HiArdera"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5608,9 +5202,7 @@
         "dps": 50,
         "iD": 274,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 2004,
-        "image": "BrotherOfTheBurningFist"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5619,7 +5211,7 @@
         "type": "Minion",
         "rarity": "Legendary",
         "imageName": "Jahun",
-        "description": "{\"MythicBuff\", \"TERM\", \"MythicBuff\"}.Pulls rocks from the earth and slams them back down, dealing 75 damage twice.When you play Jahun, add a one-use {\"Sunder\", \"TERM\", \"Sunder\"} card to the top of your deck.",
+        "description": "When you play Jahun, add a one-use {\"Sunder\", \"CARD_REF\", \"Sunder\"} card to the top of your deck.Jahun pulls rocks from the earth and slams them back down, dealing 75 damage twice.{\"Mythic\", \"TERM\",\"MythicBuff\"}.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 1,
@@ -5638,9 +5230,7 @@
         "dps": 30,
         "iD": 275,
         "faction": "ZenChi",
-        "targets": "Ground & Air",
-        "pageId": 2011,
-        "image": "Jahun"
+        "targets": "Ground & Air"
     },
     {
         "catagory": "Standard",
@@ -5668,9 +5258,7 @@
         "dps": 41.66667,
         "iD": 276,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 2002,
-        "image": "JadeSparkWatchers"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5689,9 +5277,7 @@
         "travelSpeed": 0,
         "iD": 277,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 2010,
-        "image": "Smite"
+        "targets": "Is Spell"
     },
     {
         "catagory": "AbilityCard",
@@ -5710,9 +5296,7 @@
         "travelSpeed": 0,
         "iD": 278,
         "faction": "Empyrean",
-        "targets": "Is Spell",
-        "pageId": 2009,
-        "image": "ArdentAegis"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5741,9 +5325,7 @@
         "dps": 41.66667,
         "iD": 279,
         "faction": "ZenChi",
-        "targets": "Ground",
-        "pageId": 1999,
-        "image": "Windwalker"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5762,9 +5344,26 @@
         "travelSpeed": 0,
         "iD": 280,
         "faction": "ZenChi",
-        "targets": "Is Spell",
-        "pageId": 2001,
-        "image": "ShensShockStick"
+        "targets": "Is Spell"
+    },
+    {
+        "catagory": "Standard",
+        "name": "Black Hole",
+        "manacost": 2,
+        "type": "Spell",
+        "rarity": "Supreme",
+        "imageName": "BlackHole",
+        "description": "Sucks up ALL minions in an area, removing them from the board for the rest of the spell's duration.",
+        "isAOE": true,
+        "ExcludeFromRandom": false,
+        "damage": 0,
+        "delay": 200,
+        "duration": 1800,
+        "radius": 5000,
+        "travelSpeed": 0,
+        "iD": 281,
+        "faction": "Voidborne",
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5793,9 +5392,7 @@
         "dps": 35,
         "iD": 285,
         "faction": "Empyrean",
-        "targets": "Ground",
-        "pageId": 1988,
-        "image": "BurningFistZealots"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5823,9 +5420,7 @@
         "dps": 40,
         "iD": 288,
         "faction": "CrystalElf",
-        "targets": "Ground",
-        "pageId": 2020,
-        "image": "LordFanriel"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5854,9 +5449,7 @@
         "dps": 13.33333,
         "iD": 289,
         "faction": "CrystalElf",
-        "targets": "Ground",
-        "pageId": 2022,
-        "image": "DormantDefenders"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
@@ -5875,9 +5468,7 @@
         "travelSpeed": 0,
         "iD": 290,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 2030,
-        "image": "Shield"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5886,7 +5477,7 @@
         "type": "Spell",
         "rarity": "Rare",
         "imageName": "SummonUndyingCorpse",
-        "description": "Summon 2 {\"Undying Corpse\", \"TERM\",\"UndyingCorpse\"}. Can only be played in your own arena.",
+        "description": "Summon 2 {\"Undying Corpse\", \"TERM\",\"UndyingCorpse\"} randomly in your arena. Can only be played in your own arena.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "damage": 0,
@@ -5896,8 +5487,7 @@
         "travelSpeed": 0,
         "iD": 291,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "image": "SummonUndyingCorpse"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5906,15 +5496,14 @@
         "type": "Spell",
         "rarity": "Supreme",
         "imageName": "GroundMinionsAndSummonSkeletons",
-        "description": "Summon a {\"Skeleton\", \"CARD_REF\",\"Skeleton\"} every other second. Enemy Minions in the area lose Flying.{\"Accursed Ascension\", \"TERM\",\"AccursedAffinity\"}: Summon an extra Skeleton every other second.",
+        "description": "Summon a {\"Skeleton\", \"CARD_REF\",\"Skeleton\"} every other second. Enemy Minions in the area lose Flying and are immobilized.{\"Accursed Ascension\", \"TERM\",\"AccursedAffinity\"}: Increase Unholy Ground's duration by 6 seconds.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "radius": 4500,
         "delay": 1000,
         "iD": 292,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "image": "GroundMinionsAndSummonSkeletons"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5927,14 +5516,13 @@
         "isAOE": false,
         "ExcludeFromRandom": false,
         "damage": 100,
-        "delay": 500,
+        "delay": 1000,
         "duration": 0,
-        "radius": 4500,
+        "radius": 3000,
         "travelSpeed": 0,
         "iD": 293,
         "faction": "Accursed",
-        "targets": "Is Spell",
-        "image": "CorpseExplosion"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -5943,7 +5531,7 @@
         "type": "Minion",
         "rarity": "Common",
         "imageName": "Skeletons",
-        "description": "{\"AccursedAffinity\", \"TERM\", \"AccursedAffinity\"}: Summon 3 more Skeletons.",
+        "description": "{\"Accursed Ascension\", \"TERM\",\"AccursedAffinity\"}: Summon 3 more Skeletons.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "count": 2,
@@ -5962,18 +5550,16 @@
         "dps": 12.5,
         "iD": 294,
         "faction": "Accursed",
-        "targets": "Ground",
-        "pageId": 2032,
-        "image": "Skeletons"
+        "targets": "Ground"
     },
     {
         "catagory": "Standard",
         "name": "Resonating Blast Crystal",
-        "manacost": 4,
+        "manacost": 3,
         "type": "Spell",
         "rarity": "Supreme",
         "imageName": "DealDamageConnected",
-        "description": "Deal damage in an area and drop a Blast Crystal.If you already have a Blast Crystal in play, instead detonate and destroy both.",
+        "description": "{\"Mana Freeze (1)\", \"TERM\",\"Overload\"}.Deal damage in an area and drop a Blast Crystal.If you already have a Blast Crystal in play, instead detonate and destroy both.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "damage": 130,
@@ -5983,9 +5569,7 @@
         "travelSpeed": 0,
         "iD": 295,
         "faction": "CrystalElf",
-        "targets": "Is Spell",
-        "pageId": 2024,
-        "image": "ResonatingBlast"
+        "targets": "Is Spell"
     },
     {
         "catagory": "Standard",
@@ -6014,8 +5598,81 @@
         "dps": 12.5,
         "iD": 297,
         "faction": "CrystalElf",
-        "targets": "Ground",
-        "pageId": 2031,
-        "image": "LadyInfray"
+        "targets": "Ground"
+    },
+    {
+        "catagory": "Standard",
+        "name": "Void Altar",
+        "manacost": 9,
+        "type": "Building",
+        "rarity": "Supreme",
+        "imageName": "DemonAlter",
+        "description": "When played, a Void Soul of an {\"Incubus\", \"CARD_REF\",\"Incubus\"}, {\"Succubus\", \"CARD_REF\",\"Succubus\"} or {\"Shadow Whelp\", \"CARD_REF\",\"ShadowWhelp\"} is spread across the arena every 10 seconds.When a friendly Minion consumes a Void Soul, the Minion contained within is summoned by the Void Altar.",
+        "isAOE": false,
+        "ExcludeFromRandom": false,
+        "count": 1,
+        "health": 500,
+        "attackspeed": 0,
+        "attackDelay": 0,
+        "damage": 0,
+        "range": 0,
+        "isRanged": "",
+        "flying": "",
+        "hitsFlying": "",
+        "unitToSummon": "DemonAlter",
+        "UnitId": "201",
+        "attackOnlyStationary": "",
+        "speed": 0,
+        "dps": 0,
+        "iD": 298,
+        "faction": "Voidborne",
+        "targets": "Ground"
+    },
+    {
+        "catagory": "Standard",
+        "name": "Mar'Dred, Prince of Nightmares",
+        "manacost": 10,
+        "type": "Minion",
+        "rarity": "Legendary",
+        "imageName": "Doompocalypse",
+        "description": "{\"Mythic\", \"TERM\",\"MythicBuff\"}.When Mar'Dred attacks a Minion with 40% or less health, {\"Destroy\", \"TERM\",\"DestroyBuff\"} it and inflict {\"Fear\", \"TERM\",\"FearBuff\"} on nearby enemy Minions.{\"\"The end is nigh\"\", \"SUBTEXT\"}",
+        "isAOE": false,
+        "ExcludeFromRandom": false,
+        "count": 1,
+        "health": 1200,
+        "attackspeed": 2000,
+        "attackDelay": 800,
+        "damage": 160,
+        "range": 2600,
+        "isRanged": "",
+        "flying": "",
+        "hitsFlying": "",
+        "unitToSummon": "Doompocalypse",
+        "UnitId": "202",
+        "attackOnlyStationary": "",
+        "speed": 2,
+        "dps": 80,
+        "iD": 299,
+        "faction": "Voidborne",
+        "targets": "Ground"
+    },
+    {
+        "catagory": "Standard",
+        "name": "Pincer of Dread",
+        "manacost": 3,
+        "type": "Spell",
+        "rarity": "Rare",
+        "imageName": "DealDamageAndGiveFear",
+        "description": "Deal damage to the highest health enemy Minion in the area.If it dies, all nearby enemy Minions are inflicted with {\"Fear\", \"TERM\",\"FearBuff\"}.",
+        "isAOE": false,
+        "ExcludeFromRandom": false,
+        "damage": 170,
+        "delay": 1000,
+        "duration": 0,
+        "radius": 4500,
+        "travelSpeed": 0,
+        "iD": 301,
+        "faction": "Voidborne",
+        "targets": "Is Spell"
     }
 ]

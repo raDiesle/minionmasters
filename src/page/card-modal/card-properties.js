@@ -1,3 +1,4 @@
+import React from "react";
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
@@ -8,7 +9,6 @@ import { imgPathFn } from "components/helper";
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
 import css from "page/card-details-modal.module.scss";
-import React from "react";
 import styled from "styled-components";
 
 const CardPropertyUlStyle = styled.div`
@@ -70,7 +70,7 @@ const LikeStyle = styled.div`
 
 export default function CardProperties({
   card: {
-    image,
+    imageName,
     count,
     attackdelay,
     attackspeed,
@@ -103,10 +103,10 @@ export default function CardProperties({
                                                                                         size={"xs"}/>
                                 </LikeStyle>
                                 */}
-          <CardImageStyle src={imgPathFn(image)} alt={image} />
+          <CardImageStyle src={imgPathFn(imageName)} alt={imageName} />
         </PortraitStyle>
       </CardPropertyLiStyle>
-      {image === "BloodImps.jpg" && (
+      {imageName === "BloodImps.jpg" && (
         <CardPropertyLiStyle>
           <PortraitStyle>
             <LikeStyle>

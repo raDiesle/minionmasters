@@ -10,8 +10,8 @@ export function HowToUse() {
         <code>long touch</code>
       ) : (
         <>
-          <code>left click mouse</code> to add card or master to deck.{" "}
-          <code>right click mouse</code> or <code>long hold left mouse</code>
+          <code>left click mouse</code> to add to deck. <code>right click mouse</code> or{" "}
+          <code>long hold left mouse</code>
         </>
       )}{" "}
       to open Master or Card information

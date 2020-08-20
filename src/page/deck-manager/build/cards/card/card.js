@@ -12,14 +12,14 @@ import React from "react";
 //onClick to be removed and setter go here
 export function Card({
   children,
-  card: { image, manacost, rarity, type, faction, targets, name },
+  card: { imageName, manacost, rarity, type, faction, targets, name },
   isShowDetailsOnCard = false,
   isShowNamesOnCards = false,
 }) {
   return (
     <div className={classnames(css.CardContainerStyle, css.CardContainerStyleFullWidth)}>
       <div className={css.CardContentStyle}>
-        <img src={`${imgPathFn(image)}`} alt={image} className={classnames(css.IMG)} />
+        <img src={`${imgPathFn(imageName)}`} alt={imageName} className={classnames(css.IMG)} />
         <div
           className={css.RightCornerStyle}
           style={{ borderTopColor: RarityMappingConfig[rarity] }}

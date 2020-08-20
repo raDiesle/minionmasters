@@ -12,6 +12,13 @@ if (!window.location.host.includes("localhost")) {
   Sentry.init({ dsn: "https://487d2f84e8784b78b2658663894c9073@o430881.ingest.sentry.io/5380445" });
 }
 
+// eslint-disable-next-line no-restricted-globals
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+  // eslint-disable-next-line no-restricted-globals
+  history.go(1);
+};
+
 ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
