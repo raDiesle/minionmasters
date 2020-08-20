@@ -75,7 +75,11 @@ export default function WikiEditorReadOnly({ value = "" }) {
           const matchedCard = cardData.find(({ iD }) => iD === target_key);
           return (
             <a onClick={() => handleCardClick(target_key, matchedCard)} className={css.mentionLink}>
-              <img width={OVERRIDEN_WIDTH} src={imgPathFn(matchedCard.image)} alt={target_key} />
+              <img
+                width={OVERRIDEN_WIDTH}
+                src={imgPathFn(matchedCard.imageName)}
+                alt={target_key}
+              />
               &nbsp;{display_value}
             </a>
           );

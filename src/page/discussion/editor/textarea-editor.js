@@ -61,10 +61,10 @@ export default function TextareaEditor({
 
   const mentions = [
     ...masters,
-    ...orderBy(cardData, ["manacost", "type"], ["asc", "asc"]).map(({ name, image, iD }) => ({
+    ...orderBy(cardData, ["manacost", "type"], ["asc", "asc"]).map(({ name, imageName, iD }) => ({
       id: TYPE_CARD + SEPARATOR + iD,
       display: name,
-      image,
+      imageName,
     })),
   ];
 
@@ -77,7 +77,7 @@ export default function TextareaEditor({
   };
 
   const renderSuggestion = (
-    { image, display },
+    { imageName, display },
     entry,
     search,
     highlightedDisplay,
@@ -87,11 +87,11 @@ export default function TextareaEditor({
     const IMG_FOLDER = "generated/img/";
     const FILE_ENDING = ".jpg"; //.webp
     const WIDTH = "_78";
-    const IMG_PATH = IMG_FOLDER + image + WIDTH + FILE_ENDING;
+    const IMG_PATH = IMG_FOLDER + imageName + WIDTH + FILE_ENDING;
 
     return (
       <div>
-        <img src={IMG_PATH} className={css.imgPicto} alt={image} />
+        <img src={IMG_PATH} className={css.imgPicto} alt={imageName} />
       </div>
     );
   };

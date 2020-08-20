@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import {
   ButtonGroupStyle,
@@ -7,7 +8,6 @@ import { TERMS_CONFIG } from "page/terms-config";
 import DeebuffIcon from "page/wiki/abilities/buff-icon";
 import BuffIcon from "page/wiki/abilities/debuff-icon";
 import css from "page/wiki/static-content.module.scss";
-import React, { useState } from "react";
 
 export default function Abilities() {
   useGaTrackView("/Basics/Abilities");
