@@ -83,7 +83,7 @@ const App = () => {
           </div>
         </Header>
 
-        <BrowserRouter>
+        <BrowserRouter basename={"/"}>
           <Page />
         </BrowserRouter>
       </div>

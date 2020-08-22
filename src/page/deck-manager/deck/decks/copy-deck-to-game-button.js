@@ -1,18 +1,14 @@
-import {
-  getCardIdsFromCount,
-  getCardNamesFromCount,
-} from "page/deck-manager/deck/export/export-helper";
-import React from "react";
 import { faCopy } from "@fortawesome/free-solid-svg-icons/faCopy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
-import css from "page/deck-manager/deck/decks/decks.module.scss";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { toast } from "react-toastify";
 
 import cssHelpers from "components/helper.module.scss";
+import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
+import { getCardNamesFromCount } from "page/deck-manager/deck/export/export-helper";
+import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
 
 export function CopyDeckToGameButton({ master, cards }) {
   const cardNamesFromCount = getCardNamesFromCount(cards);
@@ -28,7 +24,7 @@ export function CopyDeckToGameButton({ master, cards }) {
       title="Copy"
     >
       <ButtonGroupStyle>
-        <div className={classnames(css.copyDeck, cssButton.ButtonInGroupStyle)}>
+        <div className={classnames(cssButton.buttonSpacing, cssButton.ButtonInGroupStyle)}>
           <FontAwesomeIcon icon={faCopy} />
           <span className={cssHelpers.hideOnMobile}>Copy to game</span>
         </div>

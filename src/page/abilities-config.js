@@ -1,4 +1,4 @@
-export const TERMS_CONFIG = [
+export const ABILITIES_CONFIG = [
   {
     category: "GENERAL",
     display: "General",
@@ -133,6 +133,12 @@ export const TERMS_CONFIG = [
     key: "VOIDBORNE",
     display: "Voidborne",
     terms: [
+      {
+        key: "FearBuff",
+        display: "Fear",
+        description: `Run away in fear from the source in a straight line. Duration 5`,
+        isBuff: false,
+      },
       {
         key: "Voidborne Wound",
         display: "Voidborne Wound",

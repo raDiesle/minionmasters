@@ -34,6 +34,16 @@ export default function Wiki() {
 
   return (
     <div>
+      <script
+        src="https://redditjs.com/post.js"
+        data-url="http://www.techodrom.com/etc/star-trek-edges-closer-reality-tractor-beam-moves-object-using-nothing-power-ultrasound/"
+        data-height="500"
+        data-width="650"
+        data-post-finder="mostComments"
+        data-theme="light"
+        data-show-submit="true"
+      ></script>
+
       <Tabs selectedIndex={selectedTabIndex} onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}>
         <TabList>
           <Tab>

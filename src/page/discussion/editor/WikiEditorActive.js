@@ -1,6 +1,6 @@
 import firebase from "@firebase/app";
-import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CURRENT_GAME_VERSION } from "components/helper";

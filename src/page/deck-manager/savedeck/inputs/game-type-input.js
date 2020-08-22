@@ -5,7 +5,7 @@ export default function GameTypeInput({ gameType, setGameType, setGameTypeThird 
   return (
     <div>
       {" "}
-      <label htmlFor="gameType">Game Type</label>
+      <label htmlFor="gameType">Game Type * </label>
       <select
         name="gameType"
         onChange={(e) => {

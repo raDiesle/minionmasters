@@ -1,6 +1,6 @@
 import { useCookie } from "@use-hook/use-cookie";
-import "firebase/analytics";
 import { isForImagePreview } from "components/helper";
+import "firebase/analytics";
 import firebase from "firebase/app";
 
 import css from "footer/consent-banner.module.scss";

@@ -23,3 +23,11 @@
 .fixedWidth {
   width: 170px;
 }
+
+.buttonSpacing {
+  padding: 5px 8px;
+
+  & svg {
+    margin-right: 5px;
+  }
+}

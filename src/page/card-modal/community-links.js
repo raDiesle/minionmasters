@@ -1,12 +1,9 @@
-import React from "react";
 import { RedditIcon } from "components/community/reddit-icon";
 import { SteamIcon } from "components/community/steam-icon";
 import { YoutubeIcon } from "components/community/youtube-icon";
 import css from "page/card-details-modal.module.scss";
-import {
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "page/deck-manager/build/filters/ButtonFilterGroup";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import React from "react";
 
 export default function CommunityLinks({ name }) {
   return (

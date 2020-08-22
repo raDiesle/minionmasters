@@ -1,13 +1,10 @@
 import { GAME_TYPES, MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 
-export default function GameTypeThirdInput({ gameType, gameTypeThird, setGameTypeThird }) {
-  if (gameType !== MAYHEM) {
-    return null;
-  }
+export default function GameTypeThirdInput({ gameTypeThird, setGameTypeThird }) {
   return (
     <div>
-      <label htmlFor="gameTypeThird">Mayhem Type</label>
+      <label htmlFor="gameTypeThird">Mayhem Type *</label>
       <select
         name="gameTypeThird"
         onChange={(e) => setGameTypeThird(e.currentTarget.value)}

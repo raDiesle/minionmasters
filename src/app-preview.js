@@ -1,9 +1,9 @@
-import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
-import { DEFAULT_MASTER_NOT_SELECTED } from "page/page-config";
-import React, { useState } from "react";
 import { Deck } from "page/deck-manager/deck/deck";
 import { ImportFromUrl } from "page/deck-manager/deck/import-from-url";
 import { useLastSelectedCards } from "page/deck-manager/deck/useLastSelectedCards";
+import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
+import { DEFAULT_MASTER_NOT_SELECTED } from "page/page-config";
+import React, { useState } from "react";
 
 import css from "./app-preview.module.scss";
 

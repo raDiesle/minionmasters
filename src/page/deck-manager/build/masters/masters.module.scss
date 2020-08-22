@@ -1,11 +1,9 @@
 .masters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
 
-  @media (max-width: 767px) {
+  @media (max-width: 741px) {
     display: grid;
-    justify-content: unset;
     grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
   }
 }

@@ -1,3 +1,4 @@
+import findLastIndex from "lodash/findLastIndex";
 import { auth } from "mm-firestore";
 import qs from "qs";
 import React, { useEffect, useState } from "react";
@@ -95,3 +96,6 @@ export const useCurrentUser = () => {
 
   return currentUser;
 };
+
+export const matchSelectedTabOutOfPath = (tabsConfig) =>
+  findLastIndex(tabsConfig, (tab) => window.location.pathname.startsWith(tab));
