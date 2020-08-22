@@ -1,13 +1,10 @@
-import React, { useState } from "react";
 import { useGaTrackView } from "footer/consent-cookie-banner";
-import {
-  ButtonGroupStyle,
-  ButtonInGroupStyle,
-} from "page/deck-manager/build/filters/ButtonFilterGroup";
-import { TERMS_CONFIG } from "page/terms-config";
+import { ABILITIES_CONFIG } from "page/abilities-config";
+import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import DeebuffIcon from "page/wiki/abilities/buff-icon";
 import BuffIcon from "page/wiki/abilities/debuff-icon";
 import css from "page/wiki/static-content.module.scss";
+import React, { useState } from "react";
 
 export default function Abilities() {
   useGaTrackView("/Basics/Abilities");
@@ -36,7 +33,7 @@ export default function Abilities() {
           </ButtonInGroupStyle>
         </ButtonGroupStyle>
       </div>
-      {TERMS_CONFIG.map(({ display, terms }) => (
+      {ABILITIES_CONFIG.map(({ display, terms }) => (
         <fieldset style={{ marginTop: "20px" }} key={display}>
           <legend>{display}</legend>
           {terms
@@ -51,7 +48,7 @@ export default function Abilities() {
                   "OverloadMulti",
                   "Voidborne Wound",
                   "BerryBuffPlural",
-                  "CohortTwo",
+                  "CohortTwo", // obsolete
                 ].includes(key)
             )
             .filter(({ isBuff }) => {
@@ -66,7 +63,7 @@ export default function Abilities() {
             })
             .map(({ key, display, description }, index) => (
               <div key={index} style={{ padding: "5px" }}>
-                <div style={{ color: "yellow", fontWeight: "bold" }}>{display}:</div>
+                <div style={{ color: "yellow", fontWeight: "bold" }}>{display}</div>
                 <div>{description}</div>
               </div>
             ))}

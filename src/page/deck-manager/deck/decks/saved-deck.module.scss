@@ -1,0 +1,63 @@
+.singleDeck {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+
+.deckRightLegend {
+  position: absolute;
+  top: -0.2px;
+  right: 7px;
+  padding: 0 2px;
+  line-height: 1.2em;
+  background-color: #222;
+}
+
+.deckRightBottomLegend {
+  position: absolute;
+  bottom: -8.2px;
+  right: 7px;
+  padding: 0 2px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+}
+
+.deckLeftBottomLegend {
+  position: absolute;
+  bottom: -16px;
+  left: 8px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+}
+
+.deckLeftBottomSecondaryLegend {
+  position: absolute;
+  bottom: -16px;
+  left: 153px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+
+  @media (max-width: 767px) {
+    left: 52px;
+  }
+}
+
+.deckLeftBottomThirdLegend {
+  position: absolute;
+  bottom: -16px;
+  left: 265px;
+  line-height: 1.2em;
+  background-color: #222;
+  color: yellow;
+
+  @media (max-width: 767px) {
+    left: 90px;
+  }
+}

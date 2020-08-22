@@ -12,17 +12,16 @@
 
 # update game data
 1. Download and replace file manual from: https://drive.google.com/file/d/0B-3hJBoCehBpQVBUYVdxZDVNSms/view?usp=sharing
-2. `npm run generateData`
-3. download card image and move to folder
-4. give image url path name
-5. `npm run compressImages`
+in /batch_jobs/
+2. replace `: ,` with `: 0,`
+3. reformat with prettier
+6. Download card images from blog or if needed screenshot game: dimensions 555 x 658
+7. place it /batch_jobs/generated/img and rename accordingly: find imageName from GameData.json
+8. `npm run generateData`
+9. `npm run deploy`
 
 # another tool from another guy:
- https://steamcommunity.com/app/489520/discussions/0/1474222595297615799/?ctp=2
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+ https://github.com/Cadrach/mm-builder
 
 # history
 - previous there was jobCardTemplate.js to parse text from wiki
-- previous there was wiki job jobCardPropsByPageIds

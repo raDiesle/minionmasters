@@ -1,13 +1,10 @@
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
-import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
-import mToast from "components/mToast";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 
 import css from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
-import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import ExportAsImage from "page/deck-manager/deck/export/export-as-image";
 import { exportDeckUrl } from "page/deck-manager/deck/export/export-as-url";
 import cssGuide from "page/deck-manager/deck/Guide.module.scss";

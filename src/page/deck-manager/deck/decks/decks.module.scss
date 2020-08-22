@@ -1,57 +1,6 @@
 .pageContainer {
 }
 
-.singleDeck {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  margin: 20px 0;
-  padding-bottom: 20px;
-}
-
-.deckRightLegend {
-  position: absolute;
-  top: -0.2px;
-  right: 7px;
-  padding: 0 2px;
-  line-height: 1.2em;
-  background-color: #222;
-}
-
-.deckRightBottomLegend {
-  position: absolute;
-  bottom: -8.2px;
-  right: 7px;
-  padding: 0 2px;
-  line-height: 1.2em;
-  background-color: #222;
-  color: yellow;
-}
-
-.deckLeftBottomLegend {
-  position: absolute;
-  bottom: -16px;
-  left: 8px;
-  line-height: 1.2em;
-  background-color: #222;
-  color: yellow;
-}
-
-.deckLeftBottomSecondaryLegend {
-  position: absolute;
-  bottom: -16px;
-  left: 153px;
-  line-height: 1.2em;
-  background-color: #222;
-  color: yellow;
-
-  @media (max-width: 767px) {
-    left: 52px;
-  }
-}
-
 .deckName {
   color: yellow;
   font-size: 16px;
@@ -67,19 +16,5 @@
   padding-left: 101px;
   @media (max-width: 767px) {
     padding-left: 70px;
-  }
-}
-
-.description {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 5px;
-}
-
-.copyDeck {
-  padding: 5px 8px;
-
-  & svg {
-    margin-right: 5px;
   }
 }

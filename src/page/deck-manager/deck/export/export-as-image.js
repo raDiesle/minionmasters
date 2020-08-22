@@ -1,5 +1,3 @@
-import React from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
@@ -7,6 +5,8 @@ import cssHelpers from "components/helper.module.scss";
 import mToast from "components/mToast";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import css from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
+import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 // not used anymore
 export default function ExportAsImage({ url }) {

@@ -1,100 +1,64 @@
-import firebase from "@firebase/app";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons/faCheckCircle";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as classnames from "classnames";
-import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
-import mToast from "components/mToast";
-import { db, dbErrorHandlerPromise } from "mm-firestore";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
+import { REDDIT_LINK_PREFIX, REDDIT_PREFIX } from "components/community/reddit-icon";
+import { YOUTUBE_PREFIX, YOUTUBE_PREFIX_SECOND } from "components/community/youtube-icon";
 import css from "page/deck-manager/savedeck/save-db-button.module.scss";
 import { MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
-import React, { useState } from "react";
+import React from "react";
 
 export default function SaveDbButton({
-  lastSelectedCards,
-  selectedMaster,
-  name,
+  deckname,
   createdByDisplayName,
   description,
   gameType,
   gameTypeSecondary,
   gameTypeThird,
+  youtubeLink,
+  redditLink,
+  handleSaveButton,
 }) {
-  const dbRef = db.collection("decks");
-  const [isSaved, setSaved] = useState(false);
-  const currentUser = useCurrentUser();
-
   const formData = {
-    deckname: name,
+    deckname,
     createdByDisplayName,
     description,
     gameType,
     gameTypeSecondary,
     gameTypeThird,
+    youtubeLink,
+    redditLink,
   };
 
-  const handleSaveButton = () => {
-    const reduceCardData = lastSelectedCards.map(({ card: { iD }, count }) => ({
-      card: { iD },
-      count,
-    }));
+  const hasYoutubeError =
+    youtubeLink &&
+    !youtubeLink.startsWith(YOUTUBE_PREFIX) &&
+    !youtubeLink.startsWith(YOUTUBE_PREFIX_SECOND);
 
-    dbRef
-      .add({
-        ...formData,
-        createdAtVersion: CURRENT_GAME_VERSION,
-        cards: reduceCardData,
-        master: selectedMaster,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        createdByUid: currentUser.uid,
-      })
-      .then((result) => {
-        mToast("Successful saved to database!");
-        setSaved(true);
-      })
-      .catch(dbErrorHandlerPromise);
-  };
+  const hasRedditError = redditLink && !redditLink.startsWith(REDDIT_LINK_PREFIX);
 
   const hasValidationError =
     !formData.deckname ||
-    !description ||
     !gameType ||
     !gameTypeSecondary ||
-    (gameType === MAYHEM && !gameTypeThird);
-
+    (gameType === MAYHEM && !gameTypeThird) ||
+    (redditLink && !redditLink.startsWith(REDDIT_PREFIX)) ||
+    hasYoutubeError;
   return (
     <div>
       {hasValidationError && (
         <>
           <FontAwesomeIcon icon={faExclamationTriangle} color="orange" />{" "}
-          <span className={css.containsValidationError}>
-            Provide all properties to save your deck.
-          </span>
+          <ul className={css.containsValidationError}>
+            <li>Provide required fields</li>
+            {hasYoutubeError && (
+              <li>
+                Youtube link must start with either {YOUTUBE_PREFIX} or {YOUTUBE_PREFIX_SECOND}
+              </li>
+            )}
+            {hasRedditError && <li>Reddit Link must start with {REDDIT_PREFIX}</li>}
+          </ul>
         </>
       )}
-      {isSaved && (
-        <div style={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }}>
-          {" "}
-          <FontAwesomeIcon
-            icon={faCheckCircle}
-            size="4x"
-            color="green"
-            style={{ paddingRight: "10px" }}
-          />
-          Your deck was successful saved! Go to "Decks" page to check it out!
-        </div>
-      )}
-      <ButtonGroupStyle>
-        <button
-          className={classnames(cssButton.ButtonInGroupStyle, css.saveButton)}
-          onClick={() => handleSaveButton()}
-          disabled={hasValidationError}
-        >
-          Save
-        </button>
-      </ButtonGroupStyle>
+      {handleSaveButton(hasValidationError, formData)}
     </div>
   );
 }

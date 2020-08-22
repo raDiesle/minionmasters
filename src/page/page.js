@@ -1,16 +1,14 @@
-import findLastIndex from "lodash/findLastIndex";
+import { matchSelectedTabOutOfPath } from "components/helper";
 
 import DeckManager from "page/deck-manager/deck-manager";
-import qs from "qs";
 import { ROUTE_PATH_MANAGER } from "page/deck-manager/deck-manager-config";
-
 import Decks from "page/deck-manager/deck/decks/decks";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import { DEFAULT_MASTER_NOT_SELECTED, INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 import Wiki from "page/wiki/wiki";
 import { ROUTE_PATH_WIKI } from "page/wiki/wiki-config";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import css from "./page.module.scss";
 
@@ -23,12 +21,9 @@ export function Page() {
   const [selectedMaster, setSelectedMaster] = useState(DEFAULT_MASTER_NOT_SELECTED);
   const [lastSelectedCards, setLastSelectedCards] = useState(INITIAL_EMPTY_SLOT_DATA);
 
-  const pageTabsConfig = [ROUTE_PATH_MANAGER, ROUTE_PATH_DECKS, ROUTE_PATH_WIKI]; //
-  const initialSelectedTab = findLastIndex(pageTabsConfig, (tab) =>
-    window.location.pathname.startsWith(tab)
-  );
+  const PAGE_TABS_CONFIG = [ROUTE_PATH_MANAGER, ROUTE_PATH_DECKS, ROUTE_PATH_WIKI]; //
 
-  const [selectedTabIndex, setSelectedTabIndex] = useState(initialSelectedTab);
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   /*
   const history = useHistory();
   useEffect(() => {
@@ -51,23 +46,31 @@ export function Page() {
     });
   }, [history]);
 */
+
+  const location = useLocation();
+  useEffect(() => {
+    setSelectedTabIndex(matchSelectedTabOutOfPath(PAGE_TABS_CONFIG));
+  }, [location.pathname]);
+
   return (
     <div className={css.pageContentContainer}>
       <Tabs
         style={{ paddingTop: "20px" }}
         selectedIndex={selectedTabIndex}
-        onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}
+        onSelect={(tabIndex) => {
+          // setSelectedTabIndex(tabIndex);
+        }}
       >
         <TabList>
-          <Tab>
-            <Link to={ROUTE_PATH_MANAGER}>Deck Manager</Link>
-          </Tab>
-          <Tab>
-            <Link to={ROUTE_PATH_DECKS}>Decks</Link>
-          </Tab>
-          <Tab>
-            <Link to={ROUTE_PATH_WIKI}>Wiki</Link>
-          </Tab>
+          <Link to={ROUTE_PATH_MANAGER}>
+            <Tab>Deck Manager</Tab>
+          </Link>
+          <Link to={ROUTE_PATH_DECKS}>
+            <Tab>Decks</Tab>
+          </Link>
+          <Link to={ROUTE_PATH_WIKI}>
+            <Tab>Wiki</Tab>
+          </Link>
         </TabList>
         <TabPanel forceRender>
           <DeckManager

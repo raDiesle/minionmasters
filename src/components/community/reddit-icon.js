@@ -5,6 +5,11 @@ import classNames from "classnames";
 import css from "components/community/reddit-icon.module.scss";
 import React from "react";
 
+export const MINION_MASTERS_CHANNEL_TITLE = "r/MinionMasters";
+export const REDDIT_PREFIX = "https://www.reddit.com/";
+export const MINIONMASTERS_CHANNEL = REDDIT_PREFIX + MINION_MASTERS_CHANNEL_TITLE;
+export const REDDIT_LINK_PREFIX = MINIONMASTERS_CHANNEL + "/comments/";
+
 export function RedditIcon({ children }) {
   return (
     <div className={css.redditIcon}>

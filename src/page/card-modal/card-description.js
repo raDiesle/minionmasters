@@ -1,8 +1,8 @@
 import cardData from "generated/jobCardProps.json";
+import { ABILITIES_CONFIG } from "page/abilities-config";
 import CardDetailsModal from "page/card-modal/card-details-modal";
 import { TYPE_CARD_REF, TYPE_SUBTEXT, TYPE_TERM } from "page/discussion/editor/card-description-types";
 import css from "page/discussion/editor/mention-readonly.module.scss";
-import { TERMS_CONFIG } from "page/terms-config";
 import React, { useState } from "react";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function CardDescription({ description }) {
@@ -35,7 +35,7 @@ export default function CardDescription({ description }) {
     })();
 
     if (type === TYPE_TERM) {
-      const termConfigsWithoutCategories = Object.values(TERMS_CONFIG).reduce(
+      const termConfigsWithoutCategories = Object.values(ABILITIES_CONFIG).reduce(
         (result, { terms }) => result.concat(terms),
         []
       );

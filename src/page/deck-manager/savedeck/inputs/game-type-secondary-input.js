@@ -8,7 +8,7 @@ export default function GameTypeSecondaryInput({
 }) {
   return (
     <div>
-      <label htmlFor="gameTypeSecondary">Sub Game Type</label>
+      <label htmlFor="gameTypeSecondary">Sub Game Type * </label>
       <select
         name="gameTypeSecondary"
         onChange={(e) => setGameTypeSecondary(e.currentTarget.value)}
