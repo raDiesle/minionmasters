@@ -2,7 +2,8 @@ import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ROUTE_PATH_DECKMANAGER_BUILD } from "page/deck-manager/build/build-config";
 import FiltersWithCards from "page/deck-manager/build/filters-with-cards";
 
-import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay
+  from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Masters from "page/deck-manager/build/masters/masters";
 import ImportFromGame from "page/deck-manager/deck/carddeckimport/import-from-game";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
@@ -72,7 +73,6 @@ export default function DeckManager({
 
       <Tabs
         forceRenderTabPanel
-        style={{ paddingTop: "20px" }}
         selectedIndex={selectedTabIndex}
         onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}
       >

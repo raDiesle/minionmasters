@@ -1,59 +1,70 @@
-import React, { useEffect } from "react";
+import { faComment } from "@fortawesome/free-regular-svg-icons/faComment";
+import { faThumbsDown } from "@fortawesome/free-regular-svg-icons/faThumbsDown";
+import { faThumbsUp } from "@fortawesome/free-regular-svg-icons/faThumbsUp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import {
-  MINION_MASTERS_CHANNEL_TITLE,
-  MINIONMASTERS_CHANNEL,
-} from "components/community/reddit-icon";
+import { RedditIcon } from "components/community/reddit-icon";
 import css from "page/deck-manager/deck/decks/reddit/reddit-embed.module.scss";
+import React, { useEffect, useState } from "react";
 
 export function RedditEmbed({ redditLink }) {
+  const [redditData, setRedditData] = useState({});
   useEffect(() => {
-    /*
+    const REDDIT_JSON_SUFFIX = ".json?jsonp=&limit=1";
+
     axios
-      .get("https://www.reddit.com/user/radies_chen/comments/iemq3t/flying_only_deck/.json?jsonp=")
-      .then(function (response) {
-        // handle success
-        console.log(response);
+      .get(
+        "https://www.reddit.com/user/radies_chen/comments/iemq3t/flying_only_deck/" +
+          REDDIT_JSON_SUFFIX
+      )
+      .then((response) => {
+        const [
+          {
+            kind,
+            data: {
+              children: [
+                {
+                  data: { downs, ups, score, visited, num_comments, view_count = 0 },
+                },
+              ],
+            },
+          },
+        ] = response.data;
+        console.log(kind);
+        setRedditData({
+          score,
+          view_count,
+          visited,
+          ups,
+          downs,
+          num_comments,
+        });
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+        console.error(error);
       });
-*/
-    const identifierForDataRedditEmbed = "redditEmbed";
-    const tag = "script";
-
-    const isEmbedScriptAlreadyIncluded = document.querySelector(
-      `${tag}.${identifierForDataRedditEmbed}`
-    );
-    if (isEmbedScriptAlreadyIncluded) {
-      return;
-    }
-
-    const script = document.createElement(tag);
-    script.src = "//embed.redditmedia.com/widgets/platform.js";
-    script.async = true;
-    script.setAttribute("class", identifierForDataRedditEmbed);
-    document.body.appendChild(script);
   }, []);
 
-  // https://www.reddit.com/r/food/comments/60jxzo/homemade_breakfast_sugar_cookies/.json?limit=10
-
-  // data-card-width="200px"
   return (
-    <div className={css.redditBlockquote}>
-      <blockquote
-        className="reddit-card"
-        data-card-created="1513892582"
-        data-card-theme="dark"
-        data-card-align="left"
-      >
-        <style className="embedly-css">
-          {".reddit-title { font-size: 16px !important; color: white !important}"}
-        </style>
-        <a href={redditLink}>My game</a> from
-        <a href={MINIONMASTERS_CHANNEL}>{MINION_MASTERS_CHANNEL_TITLE}</a>
-      </blockquote>
+    <div>
+      <a href={redditLink} target="_blank" rel="noopener noreferrer" className={css.redditLink}>
+        <span>
+          <RedditIcon /> Discuss deck on Reddit:
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faThumbsUp} color="green" />
+          {redditData.ups}
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faThumbsDown} color="red" />
+          {redditData.downs}
+        </span>
+        <span>
+          <FontAwesomeIcon icon={faComment} color="white" />
+          {redditData.num_comments}
+        </span>
+      </a>
     </div>
   );
 }

@@ -18,6 +18,7 @@ export default function Gameplay() {
       </ol>
 
       <iframe
+        title="gameplay"
         src="https://www.youtube.com/embed/-1kOHvJX_wM"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

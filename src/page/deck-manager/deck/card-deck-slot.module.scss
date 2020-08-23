@@ -16,12 +16,11 @@
   font-weight: bolder;
 
   top: -101px;
-  right: 8px;
-  font-size: 14px;
+  right: 3px;
 
   @media (max-width: 767px) {
-    top: -65px;
-    right: 6px;
+    top: -63px;
+    right: 2px;
     font-size: 20px;
   }
 
@@ -36,13 +35,13 @@
   //color: rgb(240, 255, 51);
   font-weight: bolder;
 
-  top: -202px;
-  right: 16px;
+  top: -201px;
+  right: 6px;
   font-size: 14px;
 
   @media (max-width: 767px) {
-    top: -131px;
-    right: 11px;
+    top: -127px;
+    right: 4px;
   }
 
   &:hover {

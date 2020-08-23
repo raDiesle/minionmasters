@@ -1,3 +1,4 @@
+import { WildcardIcon } from "components/wildcard-icon";
 import { Card } from "page/deck-manager/build/cards/card/card";
 import CardDeckSlotStyle from "page/deck-manager/deck/card-deck-slot-style";
 import css from "page/deck-manager/deck/card-deck-slot.module.scss";
@@ -27,6 +28,7 @@ export function CardDeckSlot({
             <div className={css.wildcardOverlaySecondStyle}>
               <Card card={card} isDeckCard showDeck isFullWidthClickable>
                 {cardActionWrapper(card)}
+                <WildcardIcon />
               </Card>
             </div>
           )}
@@ -34,6 +36,8 @@ export function CardDeckSlot({
             <div className={css.wildcardOverlayThirdStyle}>
               <Card card={card} isDeckCard showDeck isFullWidthClickable>
                 {cardActionWrapper(card)}
+                <WildcardIcon />
+                <WildcardIcon isSecond />
               </Card>
             </div>
           )}

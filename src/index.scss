@@ -1,15 +1,68 @@
 @import "~sanitize.css";
 @import "~sanitize.css/forms.css";
-@import "~sanitize.css/typography.css";
 
 html {
-  font-size: 100%;
+  font-size: 12px;
+
+  @media (max-width: 767px) {
+    font-size: 8px;
+  }
+
+  font-family: "Roboto", system-ui, /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ "Segoe UI", /* Android 4+ */ "Roboto", /* Ubuntu 10.10+ */ "Ubuntu",
+    /* Gnome 3+ */ "Cantarell", /* KDE Plasma 5+ */ "Noto Sans", /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji";
+}
+
+h2 {
+  font-size: 14px;
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: yellow;
+  @media (max-width: 767px) {
+    margin-top: 10px;
+    font-size: 9px;
+  }
+}
+
+h4 {
+  margin: 8px 0 0 0;
 }
 
 body {
   background-color: #222;
   color: #fff;
   overflow: scroll;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-size: 12px;
+  @media (max-width: 767px) {
+    font-size: 8px;
+  }
+
+  font-family:
+          /* macOS 10.10+ */ "Menlo", /* Windows 6+ */ "Consolas",
+    /* Android 4+ */ "Roboto Mono", /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+    /* KDE Plasma 5+ */ "Noto Mono", /* KDE Plasma 4+ */ "Oxygen Mono",
+    /* Linux/OpenOffice fallback */ "Liberation Mono", /* fallback */ monospace,
+    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol", /* Linux emoji */ "Noto Color Emoji";
+}
+
+code {
+  background-color: black;
+  padding: 3px;
 }
 
 a {
@@ -19,19 +72,6 @@ a {
 
 a:hover {
   color: #375a7f;
-}
-
-h3 {
-  font-size: 16px;
-  margin-bottom: 5px;
-  color: yellow;
-  @media (max-width: 767px) {
-    margin-top: 10px;
-  }
-}
-
-h4 {
-  margin: 8px 0 0 0;
 }
 
 legend {
@@ -64,6 +104,9 @@ select {
   &:hover {
     cursor: pointer;
   }
+}
+.react-tabs {
+  padding-top: 3px;
 }
 
 .react-tabs__tab-list {
@@ -169,11 +212,6 @@ figure {
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
-}
-
-code {
-  background-color: black;
-  padding: 3px;
 }
 
 .browseOptionImage {

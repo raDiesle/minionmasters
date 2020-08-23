@@ -12,12 +12,12 @@ export const REDDIT_LINK_PREFIX = MINIONMASTERS_CHANNEL + "/comments/";
 
 export function RedditIcon({ children }) {
   return (
-    <div className={css.redditIcon}>
+    <span className={css.redditIcon}>
       <span className={classNames("fa-layers fa-fw")}>
         <FontAwesomeIcon icon={faSquare} />
         <FontAwesomeIcon icon={faReddit} color="#fd7e14" size="lg" mask={["far", "circle"]} />{" "}
       </span>
       <span> {children}</span>
-    </div>
+    </span>
   );
 }

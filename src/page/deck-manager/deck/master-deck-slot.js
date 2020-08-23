@@ -26,12 +26,12 @@ const MasterPlaceholder = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
-  padding: 20% 15%;
+  padding: 37% 5% 35% 30%;
   cursor: pointer;
   text-decoration: none;
 
   @media (max-width: 767px) {
-    font-size: 0.6rem;
+    //font-size: 0.6rem;
   }
 
   &:before {

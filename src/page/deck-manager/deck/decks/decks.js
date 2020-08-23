@@ -18,6 +18,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import useAsyncEffect from "use-async-effect";
 
+const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS];
+
 export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
   useGaTrackView("/ListOfDecks");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
@@ -33,8 +35,6 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
   const [isToggleAvailableCards, setIsToggleAvailableCards] = useState(false);
 
   const currentUser = useCurrentUser();
-
-  const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS];
 
   const location = useLocation();
   useEffect(() => {

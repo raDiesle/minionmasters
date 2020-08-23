@@ -60,6 +60,7 @@ export default function Abilities() {
                 case "DEBUFF":
                   return !isBuff;
               }
+              return null;
             })
             .map(({ key, display, description }, index) => (
               <div key={index} style={{ padding: "5px" }}>

@@ -95,15 +95,15 @@ export function SavedDeck({
           />
         </DeckMasterAndCardsContainerStyle>
 
+        {description && <DeckDescription description={description} />}
+
         {youtubeLink && (
-          <div>
+          <div className={css.youtubeElement}>
             <a href={youtubeLink} target="_blank" rel="noopener noreferrer">
               <YoutubeIcon>Watch replay</YoutubeIcon>
             </a>
           </div>
         )}
-
-        {description && <DeckDescription description={description} />}
 
         {redditLink && <RedditEmbed redditLink={redditLink} />}
 

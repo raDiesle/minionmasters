@@ -1,8 +1,6 @@
 @import "src/page/deck-manager/build/icon-style-size.module-style-size.module";
 
 %OverlayActionBackground {
-  @extend %IconStyleSize;
-
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px dotted rgba(0, 0, 0, 0.5);
   color: #fff;
