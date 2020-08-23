@@ -55,7 +55,6 @@ export function Page() {
   return (
     <div className={css.pageContentContainer}>
       <Tabs
-        style={{ paddingTop: "20px" }}
         selectedIndex={selectedTabIndex}
         onSelect={(tabIndex) => {
           // setSelectedTabIndex(tabIndex);

@@ -1,2 +1,8 @@
 .redditBlockquote {
 }
+
+.redditLink {
+  & > * {
+    margin-right: 10px;
+  }
+}

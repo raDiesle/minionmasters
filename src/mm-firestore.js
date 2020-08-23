@@ -4,7 +4,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import { toast } from "react-toastify";
 
-const config = {
+export const FIREBASE_API_CONFIG = {
   apiKey: "AIzaSyAJSnLNkSA4pvIfL6sTVJIUMnme-8gRdEM",
   authDomain: "minionmastersmanager.firebaseapp.com",
   databaseURL: "https://minionmastersmanager.firebaseio.com",
@@ -14,7 +14,7 @@ const config = {
   appId: "1:353468046845:web:0796bd8198b334f3fb4d94",
   measurementId: "G-0J3Y5FMREJ",
 };
-const firebaseApp = firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(FIREBASE_API_CONFIG);
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();

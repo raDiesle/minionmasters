@@ -1,5 +1,5 @@
 import AppPreview from "app-preview";
-import { CURRENT_GAME_VERSION, isForImagePreview } from "components/helper";
+import { isForImagePreview } from "components/helper";
 import ConsentCookieBanner from "footer/consent-cookie-banner";
 import Footer from "footer/footer";
 
@@ -47,10 +47,6 @@ const PageHeaderStyle = styled.h1`
   }
 `;
 
-const CapitalLetterStyle = styled.span`
-  font-weight: 700;
-`;
-
 const App = () => {
   toast.configure();
   Modal.setAppElement("body");
@@ -66,17 +62,7 @@ const App = () => {
       <div style={{ paddingBottom: "26px" }}>
         <Header>
           <PageHeaderStyle>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img src="/img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
-              <span style={{ paddingLeft: "10px" }}>
-                <CapitalLetterStyle>M</CapitalLetterStyle>inionmasters
-                <span>
-                  {" "}
-                  <CapitalLetterStyle>M</CapitalLetterStyle>anager
-                </span>
-                <div style={{ fontSize: "13px" }}>v{CURRENT_GAME_VERSION}</div>
-              </span>
-            </div>
+            <img src="/img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
           </PageHeaderStyle>
           <div style={{ paddingLeft: "10px" }}>
             <LoginLogout />

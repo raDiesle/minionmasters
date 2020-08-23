@@ -1,7 +1,4 @@
-import {
-  ExportAsUrl,
-  ExportAsUrlFromDeckManager,
-} from "page/deck-manager/deck/export/export-as-url";
+import { ExportAsUrlFromDeckManager } from "page/deck-manager/deck/export/export-as-url";
 import css from "page/deck-manager/savedeck/analyse-deck.module.scss";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";

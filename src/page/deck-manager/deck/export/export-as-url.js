@@ -4,13 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import cssHelpers from "components/helper.module.scss";
 import mToast from "components/mToast";
+
+import copy from "copy-to-clipboard";
+import { generateDynamicLink } from "mm-dynamic-link";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper";
 import { DEFAULT_MASTER_NOT_SELECTED } from "page/page-config";
+import Tooltip from "rc-tooltip";
 import React from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import css from "./export-button.module.scss";
 
 export function toParams(selectedMaster, lastSelectedCards) {
@@ -57,22 +60,33 @@ export function ExportAsUrlFromDeckManager({ selectedMaster, lastSelectedCards }
 }
 
 function ExportAsUrl({ url }) {
+  const handleCopyButtonClick = () => {
+    generateDynamicLink(url).then(({ data: { shortLink } }) => {
+      copy(shortLink);
+      mToast("Link copied to clipboard");
+    });
+  };
+
   return (
     <ButtonGroupStyle>
-      <CopyToClipboard
-        text={url}
-        onCopy={() => {
-          mToast("Link copied to clipboard");
-        }}
-        title="To share by Discord, Twitter, Facebook with Image Preview without saving to database."
+      <Tooltip
+        placement="topLeft"
+        overlay={
+          <span>
+            To share by Discord, Twitter, Facebook with Image Preview without saving to database.
+          </span>
+        }
       >
-        <button className={classnames(css.button, cssButton.ButtonInGroupStyle)}>
+        <button
+          className={classnames(css.button, cssButton.ButtonInGroupStyle)}
+          onClick={() => handleCopyButtonClick()}
+        >
           <FontAwesomeIcon icon={faLink} />
           <span style={{ paddingLeft: "4px" }} className={cssHelpers.hideOnMobile}>
             Copy link
           </span>
         </button>
-      </CopyToClipboard>
+      </Tooltip>
     </ButtonGroupStyle>
   );
 }

@@ -1,0 +1,88 @@
+.isFirst {
+  top: 25px;
+
+  @media (max-width: 767px) {
+    top: 12px;
+  }
+}
+.isSecond {
+  top: 50px;
+  @media (max-width: 767px) {
+    top: 29px;
+  }
+}
+
+.wildcard {
+  text-align: center;
+
+  width: 20px;
+  line-height: 12px;
+  padding: 2px 0 1px 0;
+}
+
+%beforeAfter {
+  content: "";
+  position: absolute;
+}
+
+.wildcardRibbon {
+  // @extend .wildcard;
+  background-color: #736c3c;
+  color: #d6ce84;
+  border-top: 1px solid #d6ce84;
+  border-right: 1px solid #d6ce84;
+  border-bottom: 1px solid #d6ce84;
+  font-weight: 600;
+
+  position: absolute;
+
+  padding: 1px 6px 0px 2px;
+
+  box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.3);
+
+  font-size: 8px;
+  @media (max-width: 767px) {
+    font-size: 6px;
+    padding: 1px 2px 0px 2px;
+  }
+
+  &:before {
+    @extend %beforeAfter;
+
+    border-left: 1px solid #d6ce84;
+    border-top: 1px solid #d6ce84;
+    border-bottom: 1px solid #d6ce84;
+
+    width: 7px;
+    height: 100%;
+    background: inherit;
+    border-radius: 5px 0 0 5px;
+
+    top: -1px;
+    left: -6.5px;
+    padding: 0px 0 18.5px;
+    @media (max-width: 767px) {
+      top: -1.5px;
+      left: -4px;
+      width: 4px;
+      padding: 0px 0 14.5px;
+      border-radius: 4px 0 0 3px;
+    }
+  }
+
+  &:after {
+    @extend %beforeAfter;
+    background: #d6ce84;
+    border-radius: 5px 0 0 5px;
+    width: 4px;
+    height: 5px;
+    bottom: -4.5px;
+    left: -3.5px;
+    @media (max-width: 767px) {
+      width: 2px;
+      height: 4px;
+      bottom: -4px;
+      left: -1.5px;
+    }
+  }
+}
