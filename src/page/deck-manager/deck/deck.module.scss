@@ -1,0 +1,34 @@
+.deckFieldset {
+  padding-top: 10px;
+  position: relative;
+}
+
+%topLegend {
+  position: absolute;
+  top: -4px;
+  padding: 0 2px;
+  line-height: 1.2em;
+  background-color: #222;
+}
+
+.rightTopLeftLeftLegend {
+  @extend %topLegend;
+  right: 203px;
+
+  @media (max-width: 767px) {
+    right: 88px;
+  }
+}
+
+.rightTopLeftLegend {
+  @extend %topLegend;
+  right: 102px;
+  @media (max-width: 767px) {
+    right: 47px;
+  }
+}
+
+.rightLeftLegend {
+  @extend %topLegend;
+  right: 8px;
+}

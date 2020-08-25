@@ -1,4 +1,4 @@
-.singleDeck {
+.singleDeckFieldset {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,45 +17,31 @@
   background-color: #222;
 }
 
-.deckRightBottomLegend {
+%bottomLegend {
   position: absolute;
-  bottom: -8.2px;
-  right: 7px;
-  padding: 0 2px;
+  bottom: -16px;
   line-height: 1.2em;
   background-color: #222;
   color: yellow;
 }
 
 .deckLeftBottomLegend {
-  position: absolute;
-  bottom: -16px;
+  @extend %bottomLegend;
   left: 8px;
-  line-height: 1.2em;
-  background-color: #222;
-  color: yellow;
 }
 
 .deckLeftBottomSecondaryLegend {
-  position: absolute;
-  bottom: -16px;
-  left: 153px;
-  line-height: 1.2em;
-  background-color: #222;
-  color: yellow;
+  @extend %bottomLegend;
 
+  left: 122px;
   @media (max-width: 767px) {
-    left: 52px;
+    left: 40px;
   }
 }
 
 .deckLeftBottomThirdLegend {
-  position: absolute;
-  bottom: -16px;
+  @extend %bottomLegend;
   left: 265px;
-  line-height: 1.2em;
-  background-color: #222;
-  color: yellow;
 
   @media (max-width: 767px) {
     left: 90px;

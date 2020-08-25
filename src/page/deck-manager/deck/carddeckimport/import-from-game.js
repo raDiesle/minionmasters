@@ -1,9 +1,12 @@
 import mToast from "components/mToast";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import cardData from "generated/jobCardProps.json";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
+import {
+  ButtonGroupStyle,
+  ButtonInGroupStyle,
+} from "page/deck-manager/build/filters/ButtonFilterGroup";
 import { getCardWithDataByListOfId } from "page/deck-manager/deck/carddeckimport/import-helper";
-import css from "page/deck-manager/deck/Guide.module.scss";
+import css from "page/deck-manager/deck/guide.module.scss";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
 import { toast } from "react-toastify";

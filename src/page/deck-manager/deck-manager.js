@@ -1,3 +1,4 @@
+import * as classnames from "classnames";
 import { matchSelectedTabOutOfPath } from "components/helper";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ROUTE_PATH_DECKMANAGER_BUILD } from "page/deck-manager/build/build-config";
@@ -12,10 +13,11 @@ import {
 import ImportFromGame from "page/deck-manager/deck/carddeckimport/import-from-game";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { Deck } from "page/deck-manager/deck/deck";
-import ExportDeck from "page/deck-manager/deck/export-deck";
+
 import { HowToUse } from "page/deck-manager/deck/how-to-use";
 import { ImportFromUrl } from "page/deck-manager/deck/import-from-url";
 import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
+import css from "page/deck-manager/savedeck/deck-manager.module.scss";
 import SaveDeckContainer from "page/deck-manager/savedeck/save-deck-container";
 import { ROUTE_PATH_DECKMANAGER_SAVE } from "page/deck-manager/savedeck/savedeck-config";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
@@ -99,13 +101,18 @@ export default function DeckManager({
             <Tab>Build</Tab>
           </Link>
           <Link to={ROUTE_PATH_DECKMANAGER_SAVE}>
-            <Tab>Save</Tab>
+            <Tab
+              className={classnames(
+                "react-tabs__tab",
+                lastSelectedCards.every(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) &&
+                  css.block
+              )}
+            >
+              Save
+            </Tab>
           </Link>
           <Link to={ROUTE_PATH_DECKMANAGER_IMPORT}>
             <Tab>Import</Tab>
-          </Link>
-          <Link to={ROUTE_PATH_DECKMANAGER_EXPORT}>
-            <Tab>Export</Tab>
           </Link>
         </TabList>
         <TabPanel>
@@ -132,9 +139,6 @@ export default function DeckManager({
               setSelectedMaster={setSelectedMaster}
             />
           </DeckOptionsStyle>
-        </TabPanel>
-        <TabPanel>
-          <ExportDeck lastSelectedCards={lastSelectedCards} selectedMaster={selectedMaster} />
         </TabPanel>
       </Tabs>
     </div>

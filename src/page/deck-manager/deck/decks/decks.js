@@ -131,27 +131,6 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
 
   return (
     <div className={css.pageContainer}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          paddingBottom: "15px",
-        }}
-      >
-        <div>
-          <FontAwesomeIcon
-            icon={faTools}
-            size="2x"
-            color="yellow"
-            style={{ paddingRight: "10px" }}
-          />
-          {"  "}Features under construction. Ready in some days. Ideas to share? - contact me! Sorry
-          that I had to delete some decks.
-        </div>
-      </div>
-
       <Tabs selectedIndex={selectedTabIndex} onSelect={(tabIndex) => {}}>
         <TabList>
           <Link to={ROUTE_PATH_DECKS}>
