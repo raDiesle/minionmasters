@@ -20,6 +20,7 @@ export function YourSavedDeckEdit({
     gameTypeThird,
     youtubeLink,
     redditLink,
+    tags,
   },
 }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -45,6 +46,7 @@ export function YourSavedDeckEdit({
             initialGameTypeThird={gameTypeThird}
             initialYoutubeLink={youtubeLink}
             initialRedditLink={redditLink}
+            initialTags={tags}
             setIsEditing={setIsEditing}
           />
         ) : (

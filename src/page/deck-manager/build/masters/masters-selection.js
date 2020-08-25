@@ -1,5 +1,4 @@
-import AddMasterToDeckOrOpenDetailsActionOverlay
-  from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Masters from "page/deck-manager/build/masters/masters";
 import React, { useMemo } from "react";
 

@@ -24,28 +24,6 @@ export function Page() {
   const PAGE_TABS_CONFIG = [ROUTE_PATH_MANAGER, ROUTE_PATH_DECKS, ROUTE_PATH_WIKI]; //
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
-  /*
-  const history = useHistory();
-  useEffect(() => {
-    history.push({
-      pathname: window.location.pathname,
-      search: toParams(selectedMaster, lastSelectedCards),
-    });
-    console.log("pushed");
-  }, [selectedMaster, lastSelectedCards]);
-*/
-  /*
-  const history = useHistory();
-  useEffect(() => {
-    return history.listen((location) => {
-      console.log(`You changed the page to: ${location.pathname}`);
-
-      const isCardModal = qs.parse(location.search).cardModal;
-      if (isCardModal) {
-      }
-    });
-  }, [history]);
-*/
 
   const location = useLocation();
   useEffect(() => {

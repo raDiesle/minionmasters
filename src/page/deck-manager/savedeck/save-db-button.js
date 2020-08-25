@@ -15,6 +15,7 @@ export default function SaveDbButton({
   gameTypeThird,
   youtubeLink,
   redditLink,
+  tags,
   handleSaveButton,
 }) {
   const formData = {
@@ -26,6 +27,7 @@ export default function SaveDbButton({
     gameTypeThird,
     youtubeLink,
     redditLink,
+    tags,
   };
 
   const hasYoutubeError =

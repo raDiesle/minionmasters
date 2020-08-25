@@ -1,7 +1,6 @@
 import { YoutubeIcon } from "components/community/youtube-icon";
 import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
-import AddMasterToDeckOrOpenDetailsActionOverlay
-  from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Master from "page/deck-manager/build/masters/master";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
@@ -25,6 +24,7 @@ export function SavedDeck({
     description,
     youtubeLink,
     redditLink,
+    tags,
     master,
     cards,
   },
@@ -37,14 +37,14 @@ export function SavedDeck({
   return (
     <fieldset className={css.singleDeck} key={dbid} data-dbid={dbid}>
       <legend>
-        <div className={css.deckLegend}>{deckname}</div>
+        <h3 className={css.deckLegend}>
+          {deckname} --- by {createdByDisplayName ? createdByDisplayName : "unknown"}
+        </h3>
       </legend>
       <div className={css.deckRightLegend}>
         v{createdAtVersion ? createdAtVersion : CURRENT_GAME_VERSION}
       </div>
-      <div className={css.deckRightBottomLegend}>
-        by {createdByDisplayName ? createdByDisplayName : "unknown"}
-      </div>
+      <div className={css.deckRightBottomLegend}></div>
 
       <div className={css.deckLeftBottomLegend}>
         <CopyDeckToGameButton master={master} cards={cards} />
@@ -94,6 +94,16 @@ export function SavedDeck({
             )}
           />
         </DeckMasterAndCardsContainerStyle>
+
+        {!!tags && (
+          <div className={css.tags}>
+            {tags.map((tag) => (
+              <div className={css.tag} key={tag.value}>
+                {tag.label}
+              </div>
+            ))}
+          </div>
+        )}
 
         {description && <DeckDescription description={description} />}
 

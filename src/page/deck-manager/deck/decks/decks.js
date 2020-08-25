@@ -79,6 +79,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
               gameTypeThird: deck.gameTypeThird,
               youtubeLink: deck.youtubeLink,
               redditLink: deck.redditLink,
+              tags: deck.tags,
             };
           });
           setDecks(normalizedDecks);

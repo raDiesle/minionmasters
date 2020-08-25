@@ -20,35 +20,6 @@ export default function CardDetailsModal({
   useGaTrackView(`/CardDetailsModal/${name}`);
 
   const [isNestedModalOpened, setIsNestedModalOpened] = useState(false);
-  /*
-  trying to make back button in browser to close modal
-  const history = useHistory();
-  const location = useLocation();
-  console.log("current:" + location.pathname + location.search);
-  const cardModalId = `/card-modal?iD=${iD}`;
-
-  console.log("rendered");
-  useEffect(() => {
-    history.push(cardModalId);
-    return () => {
-      history.goBack(-1);
-      console.log("close");
-    };
-  }, []);
-
-  useEffect(() => {
-    return history.listen((location) => {
-      if (cardModalId)
-        console.log(
-          `You changed the page from : ${cardModalId} to: ${location.pathname}${location.search}`
-        );
-
-      if (isNestedModalOpened === false && cardModalId !== location.pathname + location.search) {
-        setIsOpenDetails(false);
-      }
-    });
-  }, [history]);
-*/
 
   return (
     <div>

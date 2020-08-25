@@ -12,6 +12,31 @@ import css from "page/deck-manager/savedeck/save-deck-form.module.scss";
 import { MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
 import Tooltip from "rc-tooltip";
 import React, { useEffect, useState } from "react";
+import CreatableSelect from "react-select/creatable";
+
+const TAGS_CONFIG_INITIAL = [
+  "Voidborne",
+  "Elves",
+  "Zen-Chi",
+  "Accursed",
+  "Meta",
+  "Fun",
+  "Spell Intense",
+  "Big Minions",
+  "Medium Minions",
+  "Small Minions",
+  "Siege Pack",
+  "Ranged",
+  "Call to Arms",
+  "Early Game",
+  "Mid Game",
+  "Late Game",
+  "Easy skill",
+  "Medium skill",
+  "Hard skill",
+  "Experimental",
+  "Tournament Winner",
+].map((label) => ({ value: label.toLowerCase().replace(/\W/g, ""), label }));
 
 export default function SaveOrEditDeckForm({
   handleSaveButton,
@@ -23,6 +48,7 @@ export default function SaveOrEditDeckForm({
   initialGameTypeThird = "",
   initialYoutubeLink = "",
   initialRedditLink = "",
+  initialTags = [],
 }) {
   const [deckname, setDeckname] = useState(initialDeckname);
 
@@ -46,6 +72,9 @@ export default function SaveOrEditDeckForm({
 
   const [youtubeLink, setYoutubeLink] = useState(initialYoutubeLink);
   const [redditLink, setRedditLink] = useState(initialRedditLink);
+
+  const [tags, setTags] = useState(initialTags);
+  const [tagsConfig, setTagsConfig] = useState([...new Set([...TAGS_CONFIG_INITIAL, ...tags])]);
 
   return (
     <div>
@@ -128,6 +157,35 @@ export default function SaveOrEditDeckForm({
           />
         </div>
 
+        <div className={css.inputGroupStyle}>
+          <label htmlFor="tags">Tags</label>
+          <CreatableSelect
+            name="tags"
+            options={tagsConfig}
+            value={tags}
+            onChange={(newValue, actionMeta) => {
+              setTags(newValue || []);
+            }}
+            isValidNewOption={() => true}
+            formatCreateLabel={(value) => <span>add "{value}"</span>}
+            onCreateOption={(inputValue) => {
+              const newValueObject = {
+                value: inputValue.toLowerCase().replace(/\W/g, ""),
+                label: inputValue,
+              };
+              setTagsConfig((prevTags) => [...prevTags, newValueObject]);
+              setTags((prevTags) => [...prevTags, newValueObject]);
+            }}
+            isMulti
+            isClearable
+            isSearchable
+            classNamePrefix="react-select"
+            className={css.tagInput}
+            placeholder="Select multiple and add new"
+            closeMenuOnSelect={false}
+          />
+        </div>
+
         <div className={classnames(css.descriptionTextArea, css.inputGroupStyle)}>
           <label htmlFor="description">
             Description
@@ -158,6 +216,7 @@ export default function SaveOrEditDeckForm({
         gameTypeThird={gameTypeThird}
         youtubeLink={youtubeLink}
         redditLink={redditLink}
+        tags={tags}
         handleSaveButton={handleSaveButton}
       />
     </div>
