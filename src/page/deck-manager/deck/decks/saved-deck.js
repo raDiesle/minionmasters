@@ -5,12 +5,19 @@ import Master from "page/deck-manager/build/masters/master";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
 import { DeckMasterAndCardsContainerStyle } from "page/deck-manager/deck/deck-master-and-cards-container-style";
-import { CopyDeckToGameButton } from "page/deck-manager/deck/decks/copy-deck-to-game-button";
+import { CopyDeckToGameButton } from "page/deck-manager/deck/export/copy-deck-to-game-button";
 import DeckDescription from "page/deck-manager/deck/decks/deck-description";
 import { RedditEmbed } from "page/deck-manager/deck/decks/reddit-embed";
 import css from "page/deck-manager/deck/decks/saved-deck.module.scss";
 import { YourSavedDeckEdit } from "page/deck-manager/deck/decks/your-saved-deck-edit";
 import { ExportAsUrlFromSavedDeck } from "page/deck-manager/deck/export/export-as-url";
+import {
+  BOTH,
+  GAME_TYPES,
+  PLAYER_GAME_TYPE,
+  SOLO,
+  TEAM,
+} from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 
 export function SavedDeck({
@@ -25,6 +32,9 @@ export function SavedDeck({
     youtubeLink,
     redditLink,
     tags,
+    gameType,
+    gameTypeSecondary,
+    gameTypeThird,
     master,
     cards,
   },
@@ -34,8 +44,17 @@ export function SavedDeck({
 }) {
   const currentUser = useCurrentUser();
 
+  const gameTypeToTags = [{ label: gameType, key: gameType }];
+  const gameTypeSecondaryToTags =
+    gameTypeSecondary === BOTH
+      ? [
+          { key: SOLO, label: SOLO },
+          { key: TEAM, label: TEAM },
+        ]
+      : [{ key: gameTypeSecondary, label: gameTypeSecondary }];
+
   return (
-    <fieldset className={css.singleDeck} key={dbid} data-dbid={dbid}>
+    <fieldset className={css.singleDeckFieldset} key={dbid} data-dbid={dbid}>
       <legend>
         <h3 className={css.deckLegend}>
           {deckname} --- by {createdByDisplayName ? createdByDisplayName : "unknown"}
@@ -44,7 +63,6 @@ export function SavedDeck({
       <div className={css.deckRightLegend}>
         v{createdAtVersion ? createdAtVersion : CURRENT_GAME_VERSION}
       </div>
-      <div className={css.deckRightBottomLegend}></div>
 
       <div className={css.deckLeftBottomLegend}>
         <CopyDeckToGameButton master={master} cards={cards} />
@@ -97,7 +115,7 @@ export function SavedDeck({
 
         {!!tags && (
           <div className={css.tags}>
-            {tags.map((tag) => (
+            {[...gameTypeToTags, ...gameTypeSecondaryToTags, ...tags].map((tag) => (
               <div className={css.tag} key={tag.value}>
                 {tag.label}
               </div>

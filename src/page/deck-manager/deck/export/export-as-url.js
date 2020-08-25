@@ -8,13 +8,12 @@ import mToast from "components/mToast";
 import copy from "copy-to-clipboard";
 import { generateDynamicLink } from "mm-dynamic-link";
 import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper";
 import { DEFAULT_MASTER_NOT_SELECTED } from "page/page-config";
 import Tooltip from "rc-tooltip";
 import React from "react";
-import css from "./export-button.module.scss";
+import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 
 export function toParams(selectedMaster, lastSelectedCards) {
   const lastSelectedCardiDs = getCardIdsFromCount(lastSelectedCards);
@@ -69,22 +68,16 @@ function ExportAsUrl({ url }) {
 
   return (
     <ButtonGroupStyle>
-      <Tooltip
-        placement="topLeft"
-        overlay={
-          <span>
-            To share by Discord, Twitter, Facebook with Image Preview without saving to database.
-          </span>
-        }
-      >
+      <Tooltip placement="topLeft" overlay={<span>To share deck with others by link.</span>}>
         <button
-          className={classnames(css.button, cssButton.ButtonInGroupStyle)}
+          className={classnames(
+            cssButton.buttonSpacingNoTextOnMobile,
+            cssButton.ButtonInGroupStyle
+          )}
           onClick={() => handleCopyButtonClick()}
         >
           <FontAwesomeIcon icon={faLink} />
-          <span style={{ paddingLeft: "4px" }} className={cssHelpers.hideOnMobile}>
-            Copy link
-          </span>
+          <span className={cssHelpers.hideOnMobile}>Share link</span>
         </button>
       </Tooltip>
     </ButtonGroupStyle>

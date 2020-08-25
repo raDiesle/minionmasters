@@ -1,4 +1,3 @@
-import { ExportAsUrlFromDeckManager } from "page/deck-manager/deck/export/export-as-url";
 import css from "page/deck-manager/savedeck/analyse-deck.module.scss";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
@@ -40,13 +39,6 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
           <div className={css.property}>
             <b>Spells</b> <div>{spells}</div>
           </div>
-        </div>
-
-        <div className={css.rightTopLegend}>
-          <ExportAsUrlFromDeckManager
-            selectedMaster={selectedMaster}
-            lastSelectedCards={lastSelectedCards}
-          />
         </div>
       </fieldset>
     </div>

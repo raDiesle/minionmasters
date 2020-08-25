@@ -26,18 +26,21 @@ export const GAME_TYPES = [
   },
 ];
 
+export const SOLO = "Solo";
+export const TEAM = "Team";
+export const BOTH = "Both";
 export const PLAYER_GAME_TYPE = [
   {
-    key: "Solo",
+    key: SOLO,
   },
   {
-    key: "Team",
+    key: TEAM,
   },
   {
-    key: "Both",
+    key: BOTH,
   },
 ];
-
+// @deprecated
 export const PLAY_STYLES = [
   { key: "Aggressive", description: "" },
   { key: "Defensive", description: "" },

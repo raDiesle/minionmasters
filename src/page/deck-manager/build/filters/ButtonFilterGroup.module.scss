@@ -31,3 +31,13 @@
     margin-right: 5px;
   }
 }
+
+.buttonSpacingNoTextOnMobile {
+  @extend .buttonSpacing;
+
+  @media (max-width: 767px) {
+    & svg {
+      margin-right: 0;
+    }
+  }
+}

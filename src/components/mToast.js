@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
 
-export default function mToast(text) {
-  toast(text, { position: "bottom-right", autoClose: 2000 });
+export default function mToast(text, autoClose = 2000) {
+  toast(text, { position: "bottom-right", autoClose, type: "dark" });
 }
