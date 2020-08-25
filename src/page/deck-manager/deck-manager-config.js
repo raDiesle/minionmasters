@@ -1,1 +1,4 @@
 export const ROUTE_PATH_MANAGER = "/";
+
+export const ROUTE_PATH_DECKMANAGER_IMPORT = `${ROUTE_PATH_MANAGER}import`;
+export const ROUTE_PATH_DECKMANAGER_EXPORT = `${ROUTE_PATH_MANAGER}export`;

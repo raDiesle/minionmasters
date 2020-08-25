@@ -1,10 +1,14 @@
+import { matchSelectedTabOutOfPath } from "components/helper";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ROUTE_PATH_DECKMANAGER_BUILD } from "page/deck-manager/build/build-config";
 import FiltersWithCards from "page/deck-manager/build/filters-with-cards";
 
-import AddMasterToDeckOrOpenDetailsActionOverlay
-  from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Masters from "page/deck-manager/build/masters/masters";
+import {
+  ROUTE_PATH_DECKMANAGER_EXPORT,
+  ROUTE_PATH_DECKMANAGER_IMPORT,
+} from "page/deck-manager/deck-manager-config";
 import ImportFromGame from "page/deck-manager/deck/carddeckimport/import-from-game";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { Deck } from "page/deck-manager/deck/deck";
@@ -15,8 +19,8 @@ import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
 import SaveDeckContainer from "page/deck-manager/savedeck/save-deck-container";
 import { ROUTE_PATH_DECKMANAGER_SAVE } from "page/deck-manager/savedeck/savedeck-config";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
-import React, { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import styled from "styled-components";
 
@@ -53,6 +57,18 @@ export default function DeckManager({
   useGaTrackView("/DeckContainer");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
 
+  const PAGE_TABS_CONFIG = [
+    ROUTE_PATH_DECKMANAGER_BUILD,
+    ROUTE_PATH_DECKMANAGER_SAVE,
+    ROUTE_PATH_DECKMANAGER_IMPORT,
+    ROUTE_PATH_DECKMANAGER_EXPORT,
+  ];
+
+  const location = useLocation();
+  useEffect(() => {
+    setSelectedTabIndex(matchSelectedTabOutOfPath(PAGE_TABS_CONFIG));
+  }, [location.pathname]);
+
   return (
     <div>
       <ImportFromUrl
@@ -74,18 +90,23 @@ export default function DeckManager({
       <Tabs
         forceRenderTabPanel
         selectedIndex={selectedTabIndex}
-        onSelect={(tabIndex) => setSelectedTabIndex(tabIndex)}
+        onSelect={(tabIndex) => {
+          //setSelectedTabIndex(tabIndex)
+        }}
       >
         <TabList>
-          <Tab>
-            {" "}
-            <Link to={ROUTE_PATH_DECKMANAGER_BUILD}>Build</Link>
-          </Tab>
-          <Tab>
-            <Link to={ROUTE_PATH_DECKMANAGER_SAVE}>Save</Link>
-          </Tab>
-          <Tab>Import</Tab>
-          <Tab>Export</Tab>
+          <Link to={ROUTE_PATH_DECKMANAGER_BUILD}>
+            <Tab>Build</Tab>
+          </Link>
+          <Link to={ROUTE_PATH_DECKMANAGER_SAVE}>
+            <Tab>Save</Tab>
+          </Link>
+          <Link to={ROUTE_PATH_DECKMANAGER_IMPORT}>
+            <Tab>Import</Tab>
+          </Link>
+          <Link to={ROUTE_PATH_DECKMANAGER_EXPORT}>
+            <Tab>Export</Tab>
+          </Link>
         </TabList>
         <TabPanel>
           <HowToUse />

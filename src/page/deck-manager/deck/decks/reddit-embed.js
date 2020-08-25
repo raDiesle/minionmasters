@@ -13,10 +13,7 @@ export function RedditEmbed({ redditLink }) {
     const REDDIT_JSON_SUFFIX = ".json?jsonp=&limit=1";
 
     axios
-      .get(
-        "https://www.reddit.com/user/radies_chen/comments/iemq3t/flying_only_deck/" +
-          REDDIT_JSON_SUFFIX
-      )
+      .get(redditLink + REDDIT_JSON_SUFFIX)
       .then((response) => {
         const [
           {
@@ -30,7 +27,7 @@ export function RedditEmbed({ redditLink }) {
             },
           },
         ] = response.data;
-        console.log(kind);
+
         setRedditData({
           score,
           view_count,
