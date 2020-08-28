@@ -1,5 +1,3 @@
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { matchSelectedTabOutOfPath, useCurrentUser } from "components/helper";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import cardData from "generated/jobCardProps.json";
@@ -20,7 +18,7 @@ import useAsyncEffect from "use-async-effect";
 
 const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS];
 
-export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
+export default function Decks({ setSelectedMaster, setLastSelectedCards, availableCards }) {
   useGaTrackView("/ListOfDecks");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
 
@@ -30,9 +28,6 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
   const [gameTypeThirdFilter, setGameTypeThirdFilter] = useState("");
 
   const [masterFilter, setMasterFilter] = useState("");
-
-  const [availableCards, setAvailableCards] = useState("");
-  const [isToggleAvailableCards, setIsToggleAvailableCards] = useState(false);
 
   const currentUser = useCurrentUser();
 
@@ -79,7 +74,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
               gameTypeThird: deck.gameTypeThird,
               youtubeLink: deck.youtubeLink,
               redditLink: deck.redditLink,
-              tags: deck.tags,
+              tags: Array.isArray(deck.tags) ? deck.tags : [],
             };
           });
           setDecks(normalizedDecks);
@@ -110,18 +105,10 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
     : decksWithGameTypeThird.filter(({ master }) => master === masterFilter);
   // SORT BY VERSION DESC
 
-  const decksWithAvailableCards = !availableCards
-    ? decksWithMaster
-    : decksWithMaster.filter(({ cards }) =>
-        cards.every(({ iD }) =>
-          isToggleAvailableCards ? !availableCards.includes(iD) : availableCards.includes(iD)
-        )
-      );
-
   const isYourDecksSelected = selectedTabIndex === 1 && currentUser;
   const decksWithYoursFilter = !isYourDecksSelected
-    ? decksWithAvailableCards
-    : decksWithAvailableCards.filter(({ createdByUid }) => createdByUid === currentUser.uid);
+    ? decksWithMaster
+    : decksWithMaster.filter(({ createdByUid }) => createdByUid === currentUser.uid);
 
   const sortedByDateCards = orderBy(
     decksWithYoursFilter,
@@ -154,10 +141,6 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
         setGameTypeThird={setGameTypeThirdFilter}
         masterFiltr={masterFilter}
         setMasterFilter={setMasterFilter}
-        availableCards={availableCards}
-        setAvailableCards={setAvailableCards}
-        isToggleAvailableCards={isToggleAvailableCards}
-        setIsToggleAvailableCards={setIsToggleAvailableCards}
       />
       {sortedByDateCards.map((deck) => (
         <SavedDeck
@@ -165,6 +148,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards }) {
           key={deck.dbid}
           setSelectedMaster={setSelectedMaster}
           setLastSelectedCards={setLastSelectedCards}
+          availableCards={availableCards}
         />
       ))}
     </div>

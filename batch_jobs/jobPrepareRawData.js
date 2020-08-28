@@ -289,9 +289,10 @@ function normalizeGameCardData(propsAsMap) {
 const normalizedGameData = cardDataFromGame
   .filter(({ iD }) => {
     const SKIP_CARDS = [
-      18,
-      109,
+      18, // all in
+      109, // cursed fireball
       307, // Searing Light
+      281, // black hole adventure card
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })
@@ -304,4 +305,4 @@ fs.writeFileSync(TARGET_FILE, JSON.stringify(normalizedGameData, null, 4));
 
 errorList.forEach((err) => console.error(err));
 
-console.log("count of cards from game:" + cardDataFromGame.length);
+console.log("count of cards from game including perk cards:" + cardDataFromGame.length);

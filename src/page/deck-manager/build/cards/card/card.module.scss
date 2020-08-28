@@ -165,3 +165,20 @@
     border-bottom-width: 17px;
   }
 }
+
+@keyframes opacityAnimation {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+
+.notAvailable {
+  animation: opacityAnimation 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  background: rgba(76, 175, 80, 0.3);
+}

@@ -1,9 +1,13 @@
-.block {
-  background: linear-gradient(0deg, #000, #272727);
+// https://codepen.io/jackrugile/full/ABeIi
+
+//from https://codepen.io/giana/pen/qmKNeE
+.neonEffect {
+  position: relative;
+  // background: linear-gradient(0deg, #000, #272727);
 }
 
-.block:before,
-.block:after {
+.neonEffect:before,
+.neonEffect:after {
   content: "";
   position: absolute;
   left: -2px;
@@ -40,6 +44,6 @@
   }
 }
 
-.block:after {
-  filter: blur(50px);
+.neonEffect:after {
+  filter: blur(12px);
 }

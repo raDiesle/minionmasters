@@ -3,9 +3,9 @@ import { faSave } from "@fortawesome/free-regular-svg-icons/faSave";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import cssButton from "components/button.module.scss";
 import { CURRENT_GAME_VERSION } from "components/helper";
 import { auth, dbErrorHandlerPromise } from "mm-firestore";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import TextareaEditor from "page/discussion/editor/textarea-editor";
 import Tooltip from "rc-tooltip/es";
@@ -110,7 +110,7 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
           paddingBottom: "4px",
         }}
       >
-        <ButtonGroupStyle>
+        <div className={cssButton.ButtonGroupStyle}>
           <Tooltip
             placement="top"
             overlay={
@@ -120,15 +120,15 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
               </span>
             }
           >
-            <ButtonInGroupStyle>
+            <button className={cssButton.ButtonInGroupStyle}>
               <FontAwesomeIcon icon={faInfoCircle} size={"sm"} /> How to reference a Master or Card
               in the text {"  "}
-            </ButtonInGroupStyle>
+            </button>
           </Tooltip>
-        </ButtonGroupStyle>
+        </div>
 
-        <ButtonGroupStyle>
-          <ButtonInGroupStyle>
+        <div className={cssButton.ButtonGroupStyle}>
+          <button className={cssButton.ButtonInGroupStyle}>
             <HistorySelectStyle defaultValue="" onChange={(dbKey) => onHistorySelect(dbKey)}>
               {history.map((hist, idx) => (
                 <option value={hist.id} key={hist.id}>
@@ -136,8 +136,8 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
                 </option>
               ))}
             </HistorySelectStyle>
-          </ButtonInGroupStyle>
-        </ButtonGroupStyle>
+          </button>
+        </div>
       </div>
 
       <TextareaEditor
@@ -156,17 +156,18 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
           alignItems: "center",
         }}
       >
-        <ButtonGroupStyle>
+        <div className={cssButton.ButtonGroupStyle}>
           <>
-            <ButtonInGroupStyle
+            <button
+              className={cssButton.ButtonInGroupStyle}
               onClick={(editorStateEvent) => onSave(editorStateEvent)}
               disabled={isDisabledInput}
               isButtonActive={isDisabledInput}
             >
               <FontAwesomeIcon icon={faSave} /> Save
-            </ButtonInGroupStyle>
+            </button>
           </>
-        </ButtonGroupStyle>
+        </div>
         <a style={{ paddingLeft: "8px" }} onClick={() => setInEditMode(false)}>
           <FontAwesomeIcon icon={faTimesCircle} /> Discard
         </a>

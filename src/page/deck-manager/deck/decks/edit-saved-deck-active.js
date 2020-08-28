@@ -1,5 +1,5 @@
+import cssButton from "components/button.module.scss";
 import { db } from "mm-firestore";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import { ConfirmDeleteButtons } from "page/deck-manager/deck/decks/confirm-delete-buttons";
 import { EditButtons } from "page/deck-manager/deck/decks/edit-buttons";
 import SaveOrEditDeckForm from "page/deck-manager/savedeck/save-or-edit-deck-form";
@@ -39,7 +39,7 @@ export function EditSavedDeckActive({
           setIsEditing={setIsEditing}
           handleSaveButton={(hasValidationError, formData) => {
             return (
-              <ButtonGroupStyle>
+              <div className={cssButton.ButtonGroupStyle}>
                 {!isConfirmDelete ? (
                   <EditButtons
                     setIsEditing={setIsEditing}
@@ -55,7 +55,7 @@ export function EditSavedDeckActive({
                     dbRef={dbRef}
                   />
                 )}
-              </ButtonGroupStyle>
+              </div>
             );
           }}
         />

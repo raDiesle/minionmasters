@@ -32,7 +32,6 @@
 .wildcardOverlayThirdStyle {
   position: relative;
 
-  //color: rgb(240, 255, 51);
   font-weight: bolder;
 
   top: -201px;
@@ -47,4 +46,8 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.noOpacityOverride {
+  background-color: #222;
 }

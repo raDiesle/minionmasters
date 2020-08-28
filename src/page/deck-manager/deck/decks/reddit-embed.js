@@ -5,16 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { RedditIcon } from "components/community/reddit-icon";
 import css from "page/deck-manager/deck/decks/reddit/reddit-embed.module.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import useAsyncEffect from "use-async-effect";
 
 export function RedditEmbed({ redditLink }) {
   const [redditData, setRedditData] = useState({});
-  useEffect(() => {
+  useAsyncEffect((isMounted) => {
     const REDDIT_JSON_SUFFIX = ".json?jsonp=&limit=1";
 
     axios
       .get(redditLink + REDDIT_JSON_SUFFIX)
       .then((response) => {
+        if (!isMounted()) return;
         const [
           {
             kind,

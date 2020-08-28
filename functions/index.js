@@ -21,8 +21,10 @@ exports.mm = functions.https.onRequest((request, response) => {
   const queryEncoded = encodeURIComponent(
     request.protocol + "://" + request.hostname + request.originalUrl + IS_PREVIEW_MODE
   );
-  const ONLY_DECK_ON_HEIGHT = "190";
-  const WIDTH = `917`;
+
+  // should be in sync with export-as-image settings
+  const ONLY_DECK_ON_HEIGHT = "310";
+  const WIDTH = `945`;
   const height = isPreviewModeWithReducedPage ? ONLY_DECK_ON_HEIGHT : 1000;
   const dimensions = `?width=${WIDTH}&height=${height}`;
 

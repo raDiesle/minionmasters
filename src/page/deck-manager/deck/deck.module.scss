@@ -13,7 +13,7 @@
 
 .rightTopLeftLeftLegend {
   @extend %topLegend;
-  right: 203px;
+  right: 345px;
 
   @media (max-width: 767px) {
     right: 88px;
@@ -22,7 +22,7 @@
 
 .rightTopLeftLegend {
   @extend %topLegend;
-  right: 102px;
+  right: 240px;
   @media (max-width: 767px) {
     right: 47px;
   }

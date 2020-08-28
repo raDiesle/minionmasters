@@ -6,18 +6,27 @@ import { imgPathFn } from "components/helper";
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
 import CardBottomOverlay from "page/deck-manager/build/cards/card/card-bottom-overlay";
-import css from "page/deck-manager/card.module.scss";
+import css from "page/deck-manager/build/cards/card/card.module.scss";
 import React from "react";
 
 //onClick to be removed and setter go here
 export function Card({
   children,
-  card: { imageName, manacost, rarity, type, faction, targets, name },
+  card: { iD, imageName, manacost, rarity, type, faction, targets, name },
   isShowDetailsOnCard = false,
   isShowNamesOnCards = false,
+  availableCards = [],
 }) {
+  const isAvailableCardsDefined = availableCards.length > 0;
   return (
-    <div className={classnames(css.CardContainerStyle, css.CardContainerStyleFullWidth)}>
+    <div
+      className={classnames(
+        css.CardContainerStyle,
+
+        css.CardContainerStyleFullWidth,
+        isAvailableCardsDefined && !availableCards.includes(iD) && css.notAvailable
+      )}
+    >
       <div className={css.CardContentStyle}>
         <img src={`${imgPathFn(imageName)}`} alt={imageName} className={classnames(css.IMG)} />
         <div

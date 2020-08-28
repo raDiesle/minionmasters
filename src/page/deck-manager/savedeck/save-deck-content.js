@@ -3,13 +3,12 @@ import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExcla
 import { faSave } from "@fortawesome/free-solid-svg-icons/faSave";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
+import cssButton from "components/button.module.scss";
 import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
 import { LAST_USERNAME_LOCALSTORAGE_KEY } from "components/localstorage-username";
 import mToast from "components/mToast";
 import localStorage from "local-storage";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import css from "page/deck-manager/savedeck/save-db-button.module.scss";
 import SaveOrEditDeckForm from "page/deck-manager/savedeck/save-or-edit-deck-form";
@@ -49,7 +48,7 @@ export default function SaveDeckContent({ selectedMaster, lastSelectedCards }) {
   };
 
   const handleSaveButton = (hasValidationError, formData) => (
-    <ButtonGroupStyle>
+    <div className={cssButton.ButtonGroupStyle}>
       <button
         className={classnames(cssButton.ButtonInGroupStyle, cssButton.buttonSpacing)}
         onClick={() => saveForm(formData)}
@@ -58,7 +57,7 @@ export default function SaveDeckContent({ selectedMaster, lastSelectedCards }) {
         <FontAwesomeIcon icon={faSave} />
         Save
       </button>
-    </ButtonGroupStyle>
+    </div>
   );
 
   if (isIncompleteDeck || !selectedMaster) {

@@ -7,7 +7,7 @@ import { factionMapping } from "components/faction/factions-mapping-config";
 import { imgPathFn } from "components/helper";
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
-import css from "page/card-details-modal.module.scss";
+import css from "page/card-modal/card-properties.module.scss";
 import React from "react";
 import styled from "styled-components";
 

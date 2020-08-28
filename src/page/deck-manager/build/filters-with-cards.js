@@ -5,6 +5,7 @@ import { MANACOST } from "components/manacost/manacost";
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
 import cardData from "generated/jobCardProps.json";
+import isEmpty from "lodash.isempty";
 import orderBy from "lodash/orderBy";
 import Cards from "page/deck-manager/build/cards/cards";
 
@@ -37,15 +38,17 @@ export const ALL_UNIT_COUNT_DEFAULT_CONFIG = [0, 1, 2, 3, 4, 5, UNITS_COUNT_GREA
   })
 );
 
-export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickable }) {
+export default function FiltersWithCards({
+  cardActionWrapper,
+  isFullWidthClickable,
+  availableCards,
+}) {
   const [name, setName] = useState("");
   const [isShowDetailsOnCard, setIsShowDetailsOnCard] = useState(false);
   const [isShowNamesOnCards, setIsShowNamesOnCards] = useState(false);
   const [sortByMana, setSortByMana] = useState("asc");
 
   const [countFilter, setCountFilter] = useState(ALL_UNIT_COUNT_DEFAULT_CONFIG);
-  const [availableCards, setAvailableCards] = useState("");
-  const [isToggleAvailableCards, setIsToggleAvailableCards] = useState(false);
 
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
@@ -121,14 +124,8 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
           })
       );
 
-  const filteredCardsWithAvailableCards = !availableCards
-    ? filteredCardsDataWithCount
-    : filteredCardsDataWithCount.filter(({ iD }) =>
-        isToggleAvailableCards ? !availableCards.includes(iD) : availableCards.includes(iD)
-      );
-
   const sortedByManaCards = orderBy(
-    filteredCardsWithAvailableCards,
+    filteredCardsDataWithCount,
     ({ manacost }) => parseInt(manacost),
     sortByMana
   );
@@ -142,10 +139,6 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
         setName={setName}
         countFilter={countFilter}
         setCountFilter={setCountFilter}
-        availableCards={availableCards}
-        setAvailableCards={setAvailableCards}
-        isToggleAvailableCards={isToggleAvailableCards}
-        setIsToggleAvailableCards={setIsToggleAvailableCards}
         isShowDetailsOnCard={isShowDetailsOnCard}
         setIsShowDetailsOnCard={setIsShowDetailsOnCard}
         isShowNamesOnCards={isShowNamesOnCards}
@@ -155,12 +148,14 @@ export default function FiltersWithCards({ cardActionWrapper, isFullWidthClickab
       />
       <div className={css.results}>
         <div>
-          Results: {sortedByManaCards.length}/{fullCount}
+          Results: {sortedByManaCards.length}/{fullCount},{" "}
+          {!isEmpty(availableCards) && <span> {availableCards.length} you own</span>}
         </div>
       </div>
 
       <Cards
         cards={sortedByManaCards}
+        availableCards={availableCards}
         isShowDetailsOnCard={isShowDetailsOnCard}
         isShowNamesOnCards={isShowNamesOnCards}
         cardActionWrapper={cardActionWrapper}

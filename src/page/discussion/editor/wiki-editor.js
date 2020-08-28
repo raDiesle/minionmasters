@@ -1,10 +1,11 @@
 import { faEdit } from "@fortawesome/free-regular-svg-icons/faEdit";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import cssButton from "components/button.module.scss";
+
 import mToast from "components/mToast";
 import { auth, dbErrorHandlerPromise } from "mm-firestore";
-import { ButtonColor, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import WikiEditorActive from "page/discussion/editor/WikiEditorActive";
+import WikiEditorActive from "page/discussion/editor/wiki-editor-active";
 import WikiEditorReadOnly from "page/discussion/editor/WikiEditorReadOnly";
 
 import Tooltip from "rc-tooltip/es";
@@ -88,7 +89,8 @@ export default function WikiEditor({ dbRef }) {
             )}
           </EditorStyle>
           <Tooltip placement="bottomRight" overlay={<span>Edit</span>}>
-            <ButtonInGroupStyle
+            <button
+              className={cssButton.ButtonInGroupStyle}
               onClick={() => {
                 if (isLoggedIn) {
                   setInEditMode(true);
@@ -97,12 +99,12 @@ export default function WikiEditor({ dbRef }) {
                 }
               }}
             >
-              <ButtonColor>
+              <div className={cssButton.ButtonColor}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <FontAwesomeIcon icon={faEdit} />
                 </div>
-              </ButtonColor>
-            </ButtonInGroupStyle>
+              </div>
+            </button>
           </Tooltip>
         </EditWithButtonStyle>
         <LastEditedStyle>
