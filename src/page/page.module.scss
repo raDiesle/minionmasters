@@ -8,3 +8,21 @@
     width: 100%;
   }
 }
+
+.differentUserContext {
+  color: orange;
+  font-weight: bold;
+}
+
+.buttonLink {
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  font-weight: 700;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+    color: yellow;
+  }
+}

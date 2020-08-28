@@ -8,7 +8,9 @@ import { faSortAmountDown } from "@fortawesome/free-solid-svg-icons/faSortAmount
 import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as classnames from "classnames";
 import { targetsMapping } from "components/attack/targetsMapping";
+import cssButton from "components/button.module.scss";
 
 import { factionMapping } from "components/faction/factions-mapping-config";
 import { MANACOST } from "components/manacost/manacost";
@@ -17,15 +19,10 @@ import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
 import cloneDeep from "lodash/cloneDeep";
 import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/deck-manager/build/filters-with-cards";
-import AvailableCardsFilter from "page/deck-manager/build/filters/available-cards-filter";
-import {
-  ButtonFilterGroup,
-  ButtonGroupStyle,
-  ButtonInGroupStyle
-} from "page/deck-manager/build/filters/ButtonFilterGroup";
 import css from "page/deck-manager/build/filters/filter-inputs.module.scss";
+import { FilterButton } from "page/deck-manager/build/filters/filterButton";
 import Tooltip from "rc-tooltip";
-import React, { useState } from "react";
+import React from "react";
 
 export function FilterInputs({
   filters,
@@ -40,19 +37,14 @@ export function FilterInputs({
   setSortByMana,
   countFilter,
   setCountFilter,
-  availableCards,
-  setAvailableCards,
-  isToggleAvailableCards,
-  setIsToggleAvailableCards,
+
   children,
 }) {
-  const [toPasteAvailableCards, setToPasteAvailableCards] = useState(false);
-
   return (
     <div className={css.FilterContainerStyle}>
       <div>
         <div>Search</div>
-        <ButtonGroupStyle>
+        <div className={cssButton.ButtonGroupStyle}>
           <input
             className={css.InputTextStyle}
             type="text"
@@ -68,45 +60,47 @@ export function FilterInputs({
           />
 
           <Tooltip placement="bottomRight" overlay={<span>Search by Name & Description</span>}>
-            <ButtonInGroupStyle>
+            <button className={cssButton.ButtonInGroupStyle}>
               <FontAwesomeIcon icon={faInfoCircle} />
-            </ButtonInGroupStyle>
+            </button>
           </Tooltip>
-        </ButtonGroupStyle>
+        </div>
       </div>
 
-      <ButtonGroupStyle>
+      <div className={cssButton.ButtonGroupStyle}>
         <Tooltip placement="bottomRight" overlay={<span>Show Names</span>}>
-          <ButtonInGroupStyle
+          <button
+            className={cssButton.ButtonInGroupStyle}
             value={isShowNamesOnCards}
             onClick={() => setIsShowNamesOnCards((prevShowDetailsOnCard) => !prevShowDetailsOnCard)}
           >
             <FontAwesomeIcon icon={isShowNamesOnCards ? faEyeRegular : faEyeSlashRegular} />
-          </ButtonInGroupStyle>
+          </button>
         </Tooltip>
         <Tooltip placement="bottomRight" overlay={<span>Show details on cards</span>}>
-          <ButtonInGroupStyle
+          <button
+            className={cssButton.ButtonInGroupStyle}
             value={isShowDetailsOnCard}
             onClick={() =>
               setIsShowDetailsOnCard((prevShowDetailsOnCard) => !prevShowDetailsOnCard)
             }
           >
             <FontAwesomeIcon icon={isShowDetailsOnCard ? faEyeSolid : faEyeSlashSolid} />
-          </ButtonInGroupStyle>
+          </button>
         </Tooltip>
-      </ButtonGroupStyle>
+      </div>
 
       <div>
         Faction
-        <ButtonFilterGroup btnkey="faction" filters={filters.faction} setFilters={setFilters}>
+        <FilterButton btnkey="faction" filters={filters.faction} setFilters={setFilters}>
           {Object.keys(factionMapping).map((faction) => (
             <div key={factionMapping[faction]}>{factionMapping[faction]}</div>
           ))}
-        </ButtonFilterGroup>
+        </FilterButton>
       </div>
       <div style={{ paddingRight: "5px" }}>
         Manacost
-        <ButtonFilterGroup
+        <FilterButton
           btnkey="manacost"
           filters={filters.manacost}
           setFilters={setFilters}
@@ -115,29 +109,35 @@ export function FilterInputs({
           {MANACOST.map((number) => (
             <div key={number}>{number}</div>
           ))}
-        </ButtonFilterGroup>
+        </FilterButton>
       </div>
-      <ButtonGroupStyle>
-        <ButtonInGroupStyle
-          isButtonActive={sortByMana === "asc"}
+      <div className={cssButton.ButtonGroupStyle}>
+        <button
+          className={classnames([
+            sortByMana === "asc" ? cssButton.isButtonActive : cssButton.isButtonInactive,
+            cssButton.ButtonInGroupStyleWithState,
+          ])}
           onClick={() => setSortByMana("asc")}
         >
           <Tooltip placement="bottomRight" overlay={<span> Sort Mana Ascending</span>}>
             <FontAwesomeIcon icon={faSortAmountUp} />
           </Tooltip>
-        </ButtonInGroupStyle>
-        <ButtonInGroupStyle
-          isButtonActive={sortByMana === "desc"}
+        </button>
+        <button
+          className={classnames([
+            sortByMana === "desc" ? cssButton.isButtonActive : cssButton.isButtonInactive,
+            cssButton.ButtonInGroupStyleWithState,
+          ])}
           onClick={() => setSortByMana("desc")}
         >
           <Tooltip placement="bottomRight" overlay={<span> Sort Mana Descending</span>}>
             <FontAwesomeIcon icon={faSortAmountDown} />
           </Tooltip>
-        </ButtonInGroupStyle>
-      </ButtonGroupStyle>
+        </button>
+      </div>
       <div>
         Rarity
-        <ButtonFilterGroup btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
+        <FilterButton btnkey="rarity" filters={filters.rarity} setFilters={setFilters}>
           {Object.keys(RarityMappingConfig).map((rarity) => (
             <div key={rarity} style={{ color: RarityMappingConfig[rarity] }}>
               {rarity !== "Perk" ? (
@@ -147,32 +147,38 @@ export function FilterInputs({
               )}
             </div>
           ))}
-        </ButtonFilterGroup>
+        </FilterButton>
       </div>
       <div>
         Type
-        <ButtonFilterGroup btnkey="type" filters={filters.type} setFilters={setFilters}>
+        <FilterButton btnkey="type" filters={filters.type} setFilters={setFilters}>
           {Object.keys(typeMapping).map((type) => (
             <div key={type}>
               <FontAwesomeIcon icon={typeMapping[type]} size="xs" />
             </div>
           ))}
-        </ButtonFilterGroup>
+        </FilterButton>
       </div>
       <div>
         Attack
-        <ButtonFilterGroup btnkey="targets" filters={filters.targets} setFilters={setFilters}>
+        <FilterButton btnkey="targets" filters={filters.targets} setFilters={setFilters}>
           {Object.keys(targetsMapping).map((target) => (
             <div key={target}>{targetsMapping[target]}</div>
           ))}
-        </ButtonFilterGroup>
+        </FilterButton>
       </div>
 
       <div>
         <div>Unit Count</div>
-        <ButtonGroupStyle>
+        <div className={cssButton.ButtonGroupStyle}>
           {ALL_UNIT_COUNT_DEFAULT_CONFIG.map(({ btnkey }, position) => (
-            <ButtonInGroupStyle
+            <button
+              className={classnames(
+                countFilter[position].isActive
+                  ? cssButton.isButtonActive
+                  : cssButton.isButtonInactive,
+                cssButton.ButtonInGroupStyleWithState
+              )}
               key={`unitcount_${btnkey}`}
               onClick={() => {
                 setCountFilter((prevCounterFilter) => {
@@ -181,25 +187,16 @@ export function FilterInputs({
                   return newCounterFilter;
                 });
               }}
-              isButtonActive={countFilter[position].isActive}
             >
               {btnkey}
-            </ButtonInGroupStyle>
+            </button>
           ))}
-        </ButtonGroupStyle>
+        </div>
       </div>
 
-      <AvailableCardsFilter
-        availableCards={availableCards}
-        setAvailableCards={setAvailableCards}
-        isToggleAvailableCards={isToggleAvailableCards}
-        setIsToggleAvailableCards={setIsToggleAvailableCards}
-        toPasteAvailableCards={toPasteAvailableCards}
-        setToPasteAvailableCards={setToPasteAvailableCards}
-      />
-
-      <ButtonGroupStyle>
-        <ButtonInGroupStyle
+      <div className={cssButton.ButtonGroupStyle}>
+        <button
+          className={cssButton.ButtonInGroupStyle}
           onClick={() => {
             setFilters(setAllFilterStates(false));
             setIsShowNamesOnCards(false);
@@ -207,14 +204,11 @@ export function FilterInputs({
             setName("");
             setSortByMana("asc");
             setCountFilter(ALL_UNIT_COUNT_DEFAULT_CONFIG);
-            setToPasteAvailableCards(false);
-            setAvailableCards("");
-            setIsToggleAvailableCards(false);
           }}
         >
           <FontAwesomeIcon icon={faTrashAlt} /> Reset
-        </ButtonInGroupStyle>
-      </ButtonGroupStyle>
+        </button>
+      </div>
 
       {children}
     </div>

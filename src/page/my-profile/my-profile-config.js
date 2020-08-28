@@ -1,0 +1,2 @@
+export const ROUTE_PATH_PROFILE = "/profile";
+export const AVAILABLE_CARDS_LOCALSTORAGE_KEY = "AVAILABLE_CARDS";

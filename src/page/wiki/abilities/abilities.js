@@ -1,6 +1,6 @@
+import cssButton from "components/button.module.scss";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ABILITIES_CONFIG } from "page/abilities-config";
-import { ButtonGroupStyle, ButtonInGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
 import DeebuffIcon from "page/wiki/abilities/buff-icon";
 import BuffIcon from "page/wiki/abilities/debuff-icon";
 import css from "page/wiki/static-content.module.scss";
@@ -12,26 +12,29 @@ export default function Abilities() {
   return (
     <div className={css.container}>
       <div>
-        <ButtonGroupStyle>
-          <ButtonInGroupStyle
+        <div className={cssButton.ButtonGroupStyle}>
+          <button
+            className={cssButton.ButtonInGroupStyle}
             onClick={() => setSelectedBuff("ALL")}
             isButtonActive={selectedBuff === "ALL"}
           >
             All
-          </ButtonInGroupStyle>
-          <ButtonInGroupStyle
+          </button>
+          <button
+            className={cssButton.ButtonInGroupStyle}
             onClick={() => setSelectedBuff("DEBUFF")}
             isButtonActive={selectedBuff === "DEBUFF"}
           >
             <BuffIcon /> Debuff
-          </ButtonInGroupStyle>
-          <ButtonInGroupStyle
+          </button>
+          <button
+            className={cssButton.ButtonInGroupStyle}
             isButtonActive={selectedBuff === "BUFF"}
             onClick={() => setSelectedBuff("BUFF")}
           >
             <DeebuffIcon /> Buff
-          </ButtonInGroupStyle>
-        </ButtonGroupStyle>
+          </button>
+        </div>
       </div>
       {ABILITIES_CONFIG.map(({ display, terms }) => (
         <fieldset style={{ marginTop: "20px" }} key={display}>

@@ -1,7 +1,6 @@
 import * as classnames from "classnames";
+import cssButton from "components/button.module.scss";
 import css from "page/deck-manager/build/filters/available-cards-filter.module.scss";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
@@ -66,9 +65,9 @@ export default function AvailableCardsFilter({
   return (
     <div>
       <label>Filter by available cards</label>
-      <ButtonGroupStyle>
+      <div className={cssButton.ButtonGroupStyle}>
         {!toPasteAvailableCards ? copyCommand : !availableCards ? pasteHere : applied}
-      </ButtonGroupStyle>
+      </div>
     </div>
   );
 }

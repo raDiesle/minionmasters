@@ -1,15 +1,13 @@
 import { faCopy } from "@fortawesome/free-solid-svg-icons/faCopy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
+import cssButton from "components/button.module.scss";
 
 import cssHelpers from "components/helper.module.scss";
 import mToast from "components/mToast";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
 import { getCardNamesFromCount } from "page/deck-manager/deck/export/export-helper";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { toast } from "react-toastify";
 
 export function CopyDeckToGameButton({ master, cards }) {
   const cardNamesFromCount = getCardNamesFromCount(cards);
@@ -32,8 +30,8 @@ export function CopyDeckToGameButton({ master, cards }) {
       }}
       title="Copy"
     >
-      <ButtonGroupStyle>
-        <div
+      <div className={cssButton.ButtonGroupStyle}>
+        <button
           className={classnames(
             cssButton.buttonSpacingNoTextOnMobile,
             cssButton.ButtonInGroupStyle
@@ -41,8 +39,8 @@ export function CopyDeckToGameButton({ master, cards }) {
         >
           <FontAwesomeIcon icon={faCopy} />
           <span className={cssHelpers.hideOnMobile}>Copy to game</span>
-        </div>
-      </ButtonGroupStyle>
+        </button>
+      </div>
     </CopyToClipboard>
   );
 }

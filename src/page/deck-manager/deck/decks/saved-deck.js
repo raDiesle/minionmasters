@@ -1,23 +1,18 @@
 import { YoutubeIcon } from "components/community/youtube-icon";
 import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
-import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import AddMasterToDeckOrOpenDetailsActionOverlay
+  from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Master from "page/deck-manager/build/masters/master";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
 import { DeckMasterAndCardsContainerStyle } from "page/deck-manager/deck/deck-master-and-cards-container-style";
-import { CopyDeckToGameButton } from "page/deck-manager/deck/export/copy-deck-to-game-button";
 import DeckDescription from "page/deck-manager/deck/decks/deck-description";
 import { RedditEmbed } from "page/deck-manager/deck/decks/reddit-embed";
 import css from "page/deck-manager/deck/decks/saved-deck.module.scss";
 import { YourSavedDeckEdit } from "page/deck-manager/deck/decks/your-saved-deck-edit";
+import { CopyDeckToGameButton } from "page/deck-manager/deck/export/copy-deck-to-game-button";
 import { ExportAsUrlFromSavedDeck } from "page/deck-manager/deck/export/export-as-url";
-import {
-  BOTH,
-  GAME_TYPES,
-  PLAYER_GAME_TYPE,
-  SOLO,
-  TEAM,
-} from "page/deck-manager/savedeck/saved-decks-configs";
+import { BOTH, SOLO, TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 
 export function SavedDeck({
@@ -41,6 +36,7 @@ export function SavedDeck({
   deck,
   setSelectedMaster,
   setLastSelectedCards,
+  availableCards,
 }) {
   const currentUser = useCurrentUser();
 
@@ -48,10 +44,12 @@ export function SavedDeck({
   const gameTypeSecondaryToTags =
     gameTypeSecondary === BOTH
       ? [
-          { key: SOLO, label: SOLO },
-          { key: TEAM, label: TEAM },
+          { value: SOLO, label: SOLO },
+          { value: TEAM, label: TEAM },
         ]
-      : [{ key: gameTypeSecondary, label: gameTypeSecondary }];
+      : [{ value: gameTypeSecondary, label: gameTypeSecondary }];
+
+  const gameTypeThirdToTags = gameTypeThird ? [{ value: gameTypeThird, label: gameTypeThird }] : [];
 
   return (
     <fieldset className={css.singleDeckFieldset} key={dbid} data-dbid={dbid}>
@@ -78,17 +76,6 @@ export function SavedDeck({
         />
       </div>
 
-      {/*
-        <div className={css.deckLeftBottomThirdLegend}>
-          <ButtonGroupStyle>
-            <div className={classnames(cssButton.buttonSpacing, cssButton.ButtonInGroupStyle)}>
-              <FontAwesomeIcon icon={faEdit} />
-              <span className={cssHelpers.hideOnMobile}>Edit</span>
-            </div>
-          </ButtonGroupStyle>
-        </div>
-        */}
-
       <div>
         <DeckMasterAndCardsContainerStyle
           masterEl={
@@ -110,16 +97,19 @@ export function SavedDeck({
             cardActionWrapper={(card) => (
               <CardForDeckActionOverlay card={card} setLastSelectedCards={setLastSelectedCards} />
             )}
+            availableCards={availableCards}
           />
         </DeckMasterAndCardsContainerStyle>
 
         {!!tags && (
           <div className={css.tags}>
-            {[...gameTypeToTags, ...gameTypeSecondaryToTags, ...tags].map((tag) => (
-              <div className={css.tag} key={tag.value}>
-                {tag.label}
-              </div>
-            ))}
+            {[...gameTypeToTags, ...gameTypeSecondaryToTags, ...gameTypeThirdToTags, ...tags].map(
+              (tag) => (
+                <div className={css.tag} key={dbid + tag.value}>
+                  {tag.label}
+                </div>
+              )
+            )}
           </div>
         )}
 

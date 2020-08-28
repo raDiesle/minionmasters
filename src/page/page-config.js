@@ -9,4 +9,4 @@ export const INITIAL_EMPTY_SLOT_DATA = Slots.map((slot) => {
     count: 0,
   };
 });
-export const DEFAULT_MASTER_NOT_SELECTED = "";
+export const DEFAULT_MASTER_SELECTED = "Stormbringer";

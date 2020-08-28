@@ -11,6 +11,7 @@ import StormbringerContent from "page/deck-manager/build/masters/MasterDetails/S
 import VolcoContent from "page/deck-manager/build/masters/MasterDetails/VolcoContent";
 import React from "react";
 
+// TODO change to use master id all over instead of name
 export const mastersMapping = {
   Apep: {
     content: <ApepContent />,

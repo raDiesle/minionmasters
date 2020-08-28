@@ -1,8 +1,7 @@
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons/faPencilAlt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
-import { ButtonGroupStyle } from "page/deck-manager/build/filters/ButtonFilterGroup";
-import cssButton from "page/deck-manager/build/filters/ButtonFilterGroup.module.scss";
+import cssButton from "components/button.module.scss";
 import css from "page/deck-manager/deck/decks/description-edit.module.scss";
 import { EditSavedDeckActive } from "page/deck-manager/deck/decks/edit-saved-deck-active";
 import { ROUTE_PATH_DECKS_EDIT_MODE } from "page/deck-manager/deck/decks/your-saved-deck-edit-config";
@@ -52,15 +51,15 @@ export function YourSavedDeckEdit({
         ) : (
           <>
             <div className={css.editButton}>
-              <ButtonGroupStyle>
-                <div
+              <div className={cssButton.ButtonGroupStyle}>
+                <button
                   className={classnames(cssButton.buttonSpacing, cssButton.ButtonInGroupStyle)}
                   onClick={() => handleEditButtonClick()}
                 >
                   <FontAwesomeIcon icon={faPencilAlt} />
                   <span>Edit</span>
-                </div>
-              </ButtonGroupStyle>
+                </button>
+              </div>
             </div>
           </>
         )}

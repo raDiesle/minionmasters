@@ -1,5 +1,5 @@
 import { db } from "mm-firestore";
-import WikiEditor from "page/discussion/editor/WikiEditor";
+import WikiEditor from "page/discussion/editor/wiki-editor";
 import React from "react";
 
 export default function MasterTipsByCommunity({ masterKey: iD }) {

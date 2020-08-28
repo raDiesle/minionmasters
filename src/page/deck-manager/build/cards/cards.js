@@ -4,6 +4,7 @@ import React from "react";
 
 export default function Cards({
   cards,
+  availableCards,
   isShowDetailsOnCard,
   isShowNamesOnCards,
   cardActionWrapper,
@@ -18,6 +19,7 @@ export default function Cards({
                 card={card}
                 isShowDetailsOnCard={isShowDetailsOnCard}
                 isShowNamesOnCards={isShowNamesOnCards}
+                availableCards={availableCards}
               >
                 {cardActionWrapper(card)}
               </Card>
