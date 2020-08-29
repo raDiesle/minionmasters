@@ -182,12 +182,20 @@ export default function CardProperties({
         </CardPropertyLiStyle>
       )}
       {isAttacking && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>DPS</CardPropertyKeyStyle>
-          <div className={css.CardProperyValue}>
-            {Math.round((damage / attackspeed) * 10000) / 10}
-          </div>
-        </CardPropertyLiStyle>
+        <>
+          <CardPropertyLiStyle>
+            <CardPropertyKeyStyle>Single Dps</CardPropertyKeyStyle>
+            <div className={css.CardProperyValue}>
+              {Math.round((damage / attackspeed) * 10000) / 10}
+            </div>
+          </CardPropertyLiStyle>
+          <CardPropertyLiStyle>
+            <CardPropertyKeyStyle>Total Dps</CardPropertyKeyStyle>
+            <div className={css.CardProperyValue}>
+              {Math.round((damage / attackspeed) * count * 10000) / 10}
+            </div>
+          </CardPropertyLiStyle>
+        </>
       )}
       {isAttacking && (
         <CardPropertyLiStyle>

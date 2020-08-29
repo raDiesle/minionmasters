@@ -9,7 +9,6 @@ import { AVAILABLE_CARDS_LOCALSTORAGE_KEY } from "page/my-profile/my-profile-con
 import css from "page/my-profile/my-profile.module.scss";
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { toast } from "react-toastify";
 
 const normalizedValueFn = (pastedValue) => {
   const VOLCO_ALL_IN_CARD_ID = 18;
@@ -26,21 +25,30 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
 
   const totalCountOfCards = cardData.filter(({ rarity }) => rarity !== "Perk");
 
-  const cards = yourAvailableCardIds.map((idFromLocalstorage) => {
+  const availableCardsData = yourAvailableCardIds.map((idFromLocalstorage) => {
     const matchedCard = cardData.find((card) => {
       return card.iD === idFromLocalstorage;
     });
+
     return matchedCard;
   });
-  const availableCardsWithData = cards.filter(({ rarity }) => rarity !== "Perk");
+
+  const availableCardsWithData = availableCardsData.filter(
+    (card) => card && card.rarity !== "Perk"
+  );
 
   const handlePastedGaoc = (e) => {
     const pastedValue = e.currentTarget.value;
     if (pastedValue) {
-      const normalizedAvailableCards = normalizedValueFn(pastedValue);
-      localStorage(AVAILABLE_CARDS_LOCALSTORAGE_KEY, normalizedAvailableCards);
-      setAvailableCards(normalizedAvailableCards);
-      mToast("Successful imported all your cards.");
+      try {
+        const normalizedAvailableCards = normalizedValueFn(pastedValue);
+        localStorage(AVAILABLE_CARDS_LOCALSTORAGE_KEY, normalizedAvailableCards);
+        setAvailableCards(normalizedAvailableCards);
+        mToast("Successful imported all your availableCardsData.");
+      } catch (e) {
+        throw e;
+        mToast("Something went wrong.");
+      }
     }
   };
 
@@ -68,8 +76,12 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
           <CopyToClipboard
             text={"/gaoc"}
             onCopy={() => {
-              toast(
-                "Command copied. Paste it anywhere in Minionmasters game chat and press ENTER."
+              mToast(
+                <div>
+                  <h3>Command copied.</h3>
+                  <div>Paste it in Minionmasters game chat</div>
+                  <div>and send.</div>
+                </div>
               );
               setToPasteAvailableCards(true);
             }}
@@ -89,23 +101,11 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
       <div>
         <h4>How to</h4>
         <ol>
-          <li>Click button to copy chat command</li>
-          <li>Switch to game</li>
+          <li>Click button to copy command</li>
           <li>
-            Paste command and press <code>Enter</code>
+            Switch to game, paste command and press <code>Enter</code>
           </li>
           <li>Switch back to this page and paste command in Text-Input</li>
-          <li>Your cards will be remembered in browser.</li>
-        </ol>
-
-        <h4>Features</h4>
-        <ol>
-          <li>See available cards when building deck</li>
-          <li>Filter decks by your cards</li>
-          <li>
-            Let others see your available cards, so they can help you to build decks, whenever you
-            share link
-          </li>
         </ol>
       </div>
     </div>

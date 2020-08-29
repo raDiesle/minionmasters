@@ -5,10 +5,14 @@
 
 %topLegend {
   position: absolute;
-  top: -4px;
   padding: 0 2px;
   line-height: 1.2em;
   background-color: #222;
+  top: -4px;
+
+  @media (max-width: 767px) {
+    top: -6px;
+  }
 }
 
 .rightTopLeftLeftLegend {
@@ -16,7 +20,16 @@
   right: 345px;
 
   @media (max-width: 767px) {
-    right: 88px;
+    right: 82px;
+  }
+}
+
+.rightTopLeftLeftLegendWithoutAvailableCards {
+  @extend %topLegend;
+  right: 206px;
+
+  @media (max-width: 767px) {
+    right: 82px;
   }
 }
 
@@ -31,4 +44,26 @@
 .rightLeftLegend {
   @extend %topLegend;
   right: 8px;
+}
+
+.rightTopLeftExportImageLegend {
+  @extend %topLegend;
+  right: 8px;
+}
+
+.rightTopLeftExportUrlLegend {
+  @extend %topLegend;
+  right: 155px;
+  @media (max-width: 767px) {
+    right: 45px;
+  }
+}
+
+.rightTopLeftExportUrlLegendSelected {
+  @extend %topLegend;
+  right: 117px;
+
+  @media (max-width: 767px) {
+    right: 45px;
+  }
 }

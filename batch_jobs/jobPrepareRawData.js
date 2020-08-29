@@ -53,6 +53,7 @@ function normalizeGameCardData(propsAsMap) {
   }
 
   if (["Spell", "SummonSpell", "DefensiveSpell"].includes(propsAsMap.type)) {
+    propsAsMap.typeSpell = propsAsMap.type;
     propsAsMap.type = "Spell";
   } else if (["Minion", "MultiMinion"].includes(propsAsMap.type)) {
     if (propsAsMap.flying === "True") {

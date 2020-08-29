@@ -26,8 +26,9 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const [gameTypeFilter, setGameTypeFilter] = useState("");
   const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
   const [gameTypeThirdFilter, setGameTypeThirdFilter] = useState("");
-
   const [masterFilter, setMasterFilter] = useState("");
+  const [createdByFilter, setCreatedByFilter] = useState("");
+  const [createdByFilterOptions, setCreatedByFilterOptions] = useState([""]);
 
   const currentUser = useCurrentUser();
 
@@ -78,6 +79,9 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
             };
           });
           setDecks(normalizedDecks);
+          setCreatedByFilterOptions([
+            ...new Set(normalizedDecks.map(({ createdByDisplayName }) => createdByDisplayName)),
+          ]);
         })
         .catch(dbErrorHandlerPromise);
     },
@@ -110,8 +114,14 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     ? decksWithMaster
     : decksWithMaster.filter(({ createdByUid }) => createdByUid === currentUser.uid);
 
+  const decksWithAuthor = !createdByFilter
+    ? decksWithYoursFilter
+    : decksWithYoursFilter.filter(
+        ({ createdByDisplayName }) => createdByDisplayName === createdByFilter
+      );
+
   const sortedByDateCards = orderBy(
-    decksWithYoursFilter,
+    decksWithAuthor,
     ({ createdAt }) => createdAt.getTime(),
     "desc"
   );
@@ -141,6 +151,9 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
         setGameTypeThird={setGameTypeThirdFilter}
         masterFiltr={masterFilter}
         setMasterFilter={setMasterFilter}
+        createdByFilterOptions={createdByFilterOptions}
+        createdByFilter={createdByFilter}
+        setCreatedByFilter={setCreatedByFilter}
       />
       {sortedByDateCards.map((deck) => (
         <SavedDeck

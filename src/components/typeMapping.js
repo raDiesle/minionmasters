@@ -3,6 +3,10 @@ import { faHome } from "@fortawesome/free-solid-svg-icons/faHome";
 import { faMagic } from "@fortawesome/free-solid-svg-icons/faMagic";
 import { faShoePrints } from "@fortawesome/free-solid-svg-icons/faShoePrints";
 
+export const TYPES = {
+  Minion: "Minion",
+};
+
 export const typeMapping = {
   "Flying Minion": faDove,
   Minion: faShoePrints,
