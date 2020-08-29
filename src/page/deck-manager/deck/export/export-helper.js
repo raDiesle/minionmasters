@@ -13,3 +13,11 @@ export function getCardNamesFromCount(lastSelectedCards) {
     return mergeTotal;
   }, []);
 }
+
+export function getCardDataFromCount(lastSelectedCards) {
+  return lastSelectedCards.reduce((total, { count, card }) => {
+    const wildcardsToMultipleIds = [...Array(count).keys()].map(() => card);
+    const mergeTotal = [...total, ...wildcardsToMultipleIds];
+    return mergeTotal;
+  }, []);
+}

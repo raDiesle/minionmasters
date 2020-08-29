@@ -1,4 +1,6 @@
+import * as classnames from "classnames";
 import { isForImagePreview } from "components/helper";
+import isEmpty from "lodash.isempty";
 import BuildCardDeckActionOverlay from "page/deck-manager/deck/build-card-deck-action-overlay";
 import { ImportFromGameButton } from "page/deck-manager/deck/carddeckimport/import-from-game-button";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
@@ -19,30 +21,44 @@ export function Deck({
   lastSelectedCards,
   availableCards,
 }) {
+  const isAnySelectedCard =
+    !isForImagePreview &&
+    lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT);
   return (
     <fieldset className={css.deckFieldset}>
       <legend>Deck</legend>
 
-      {!isForImagePreview &&
-        lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
-          <>
-            <div className={css.rightTopLeftLeftLegend}>
-              <CopyDeckToGameButton master={selectedMaster} cards={lastSelectedCards} />
-            </div>
+      {isAnySelectedCard && (
+        <>
+          <div
+            className={
+              isEmpty(availableCards)
+                ? css.rightTopLeftLeftLegendWithoutAvailableCards
+                : css.rightTopLeftLeftLegend
+            }
+          >
+            <CopyDeckToGameButton master={selectedMaster} cards={lastSelectedCards} />
+          </div>
 
-            <div className={css.rightTopLeftLegend}>
-              <ExportAsImage url={exportDeckUrl(selectedMaster, lastSelectedCards)} />
-            </div>
+          <div className={css.rightTopLeftExportImageLegend}>
+            <ExportAsImage url={exportDeckUrl(selectedMaster, lastSelectedCards)} />
+          </div>
+        </>
+      )}
 
-            <div className={css.rightLeftLegend}>
-              <ExportAsUrlFromDeckManager
-                selectedMaster={selectedMaster}
-                lastSelectedCards={lastSelectedCards}
-                availableCards={availableCards}
-              />
-            </div>
-          </>
+      <div
+        className={classnames(
+          isAnySelectedCard
+            ? css.rightTopLeftExportUrlLegendSelected
+            : css.rightTopLeftExportUrlLegend
         )}
+      >
+        <ExportAsUrlFromDeckManager
+          selectedMaster={selectedMaster}
+          lastSelectedCards={lastSelectedCards}
+          availableCards={availableCards}
+        />
+      </div>
 
       {!isForImagePreview &&
         lastSelectedCards.every(({ card: { iD } }) => iD === IDENTIFIER_FOR_EMPTY_SLOT) && (

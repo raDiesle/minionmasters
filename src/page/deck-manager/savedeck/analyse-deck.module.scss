@@ -8,14 +8,28 @@
 .AnalysisDataStyle {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
   padding-top: 0;
 
   & > div {
     padding-right: 20px;
+    width: 120px;
   }
 }
 
 .analyzeFieldset {
   position: relative;
+}
+
+.disclaimer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 10px;
+
+  margin-bottom: -8px;
+  margin-right: -7px;
+  @media (max-width: 767px) {
+    font-size: 6px;
+    margin-right: 0;
+  }
 }

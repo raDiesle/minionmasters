@@ -28,10 +28,7 @@ export default function ExportAsImage({ url }) {
 
   return (
     <div className={cssButton.ButtonGroupStyle}>
-      <Tooltip
-        placement="topLeft"
-        overlay={<span>Link will be resolved as image without link in Discord automatically.</span>}
-      >
+      <Tooltip placement="topLeft" overlay={<span>To paste without edit link.</span>}>
         <button
           className={classnames(
             cssButton.buttonSpacingNoTextOnMobile,

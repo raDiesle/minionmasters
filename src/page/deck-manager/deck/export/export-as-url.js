@@ -78,7 +78,10 @@ function ExportAsUrl({ url, availableCards }) {
       <Tooltip
         placement="topLeft"
         overlay={
-          <span>Share link, so others can help you complete deck or suggest other cards.</span>
+          <span>
+            Deck is stored in URL to edit temporary. You can ask others to complete deck{" "}
+            {!isEmpty(availableCards) && <span>with your available cards</span>}.
+          </span>
         }
       >
         <button
@@ -90,7 +93,7 @@ function ExportAsUrl({ url, availableCards }) {
         >
           <FontAwesomeIcon icon={faLink} />
           <span className={cssHelpers.hideOnMobile}>
-            Share link {!isEmpty(availableCards) && <span>with your available cards</span>}
+            Get link {!isEmpty(availableCards) && <span>with your available cards</span>}
           </span>
         </button>
       </Tooltip>

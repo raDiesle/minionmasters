@@ -48,6 +48,7 @@ export function ImportFromGameButton({ setSelectedMaster, setLastSelectedCards }
     } catch (e) {
       mToast("Could not copy paste from game. Jahun and Ting Teng Tung does not work right now.");
       throw e;
+      console.error(value);
     }
   };
 
