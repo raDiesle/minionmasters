@@ -9,3 +9,13 @@
 .statusOk {
   color: green;
 }
+
+.howTo {
+  & > li {
+    padding-bottom: 15px;
+  }
+}
+
+.pasteHereInput {
+  padding-top: 5px;
+}

@@ -12,7 +12,7 @@ import MaythemResources from "page/wiki/rewards/maythem-resources";
 import Quests from "page/wiki/rewards/quests";
 import RankRewards from "page/wiki/rewards/rank-rewards";
 import ResourceVideos from "page/wiki/rewards/resource-videos";
-import Resources from "page/wiki/rewards/resources";
+import ResourcesTypes from "page/wiki/rewards/resources-types";
 import SeasonHouseRewards from "page/wiki/rewards/season-houserewards";
 import SeasonRewards from "page/wiki/rewards/season-rewards";
 import Shop from "page/wiki/rewards/shop";
@@ -65,7 +65,7 @@ export default function ResourceMngmt() {
   return (
     <div className={css.container}>
       <Menu menuitems={MENU_ORDER} />
-      <Resources />
+      <ResourcesTypes />
       <Tokens />
       <Shop />
       <Achievements />

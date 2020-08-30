@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 
 import ChatCommands from "page/wiki/main-screen/chat-commands";
+import { GraphicSettings } from "page/wiki/main-screen/graphic-settings";
 import Replays from "page/wiki/main-screen/replays";
 import YoutubeVideosMainScreen from "page/wiki/main-screen/youtube-videos-main-screen";
 import { anchorLinkTarget } from "page/wiki/menu-helper";
@@ -17,6 +18,7 @@ export const MENU_LINKS_CONFIG = {
   "Chat Commands: Functional": "Chat Commands: Functional",
   "Chat Commands: Emoji": "Chat Commands: Emoji",
   Replays: "Replays",
+  "Graphic Settings": "Graphic Settings",
   "Youtube Videos": "Youtube Videos",
 };
 export default function MainScreen() {
@@ -28,6 +30,7 @@ export default function MainScreen() {
     MENU_LINKS_CONFIG["Power Tower"],
     MENU_LINKS_CONFIG["Chat Commands: Functional"],
     MENU_LINKS_CONFIG["Chat Commands: Emoji"],
+    MENU_LINKS_CONFIG["Graphic Settings"],
     MENU_LINKS_CONFIG["Youtube Videos"],
   ];
 
@@ -82,6 +85,7 @@ export default function MainScreen() {
 
       <ChatCommands />
 
+      <GraphicSettings />
       <YoutubeVideosMainScreen />
     </div>
   );

@@ -1813,15 +1813,32 @@ export function BuildDecks() {
       </div>
 
       {anchorLinkTarget(MENU_LINKS_CONFIG["Youtube Videos"])}
-      <iframe
-        title="Build deck"
-        width="1280"
-        height="720"
-        src="https://www.youtube.com/embed/ArjvkktCens"
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+
+      <div className={cssStatic.youtubeContent}>
+        <iframe
+          title="Build deck"
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/ArjvkktCens"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className={cssStatic.youtubeContent}>
+        <iframe
+          title="Build deck"
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/Kjah7T5qSD8?showinfo=0&autohide=1&fs=1&hd=1&modestbranding=1&rel=0&showsearch=0&wmode=direct"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1440565383">
+          Enhanced description provided to the video from Edelweis
+        </a>
+      </div>
     </div>
   );
 }

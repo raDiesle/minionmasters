@@ -1,0 +1,18 @@
+.image {
+  padding-top: 5px;
+
+  width: 30px;
+  height: auto;
+  @media (max-width: 767px) {
+    width: 20px;
+    height: auto;
+  }
+}
+
+.nameCell {
+  width: 130px;
+
+  @media (max-width: 767px) {
+    width: 101px;
+  }
+}

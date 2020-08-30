@@ -3,7 +3,7 @@ import { MENU_LINKS_CONFIG } from "page/wiki/rewards/rewards";
 import { CardImg, GoldImg, RubiesImg, ShardsImg, TokenImg } from "page/wiki/thegame-icons";
 import React from "react";
 
-export default function Resources() {
+export default function ResourcesTypes() {
   return (
     <div>
       {anchorLinkTarget(MENU_LINKS_CONFIG["Resources"])}
