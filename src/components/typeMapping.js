@@ -5,6 +5,7 @@ import { faShoePrints } from "@fortawesome/free-solid-svg-icons/faShoePrints";
 
 export const TYPES = {
   Minion: "Minion",
+  "Flying Minion": "Flying Minion",
 };
 
 export const typeMapping = {

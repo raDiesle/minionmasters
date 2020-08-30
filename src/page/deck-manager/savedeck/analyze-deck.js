@@ -64,21 +64,21 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
     ? Math.round(avgAttackSpeed.sum / avgAttackSpeed.count / 100).toFixed(0)
     : 0;
 
-  const totalPossibleForBridge = numberOfCardsConsideringWildcards * 2;
-  const bridgeControl =
-    (selectedCards.reduce(
-      (total, { card: { type, count: unitCount, typeSpell, manacost } }) =>
-        type === TYPES.Minion
-          ? (unitCount > 1 ? 2 : 1) / manacost
-          : typeSpell === "SummonSpell"
-          ? 1
-          : 0,
-      0
-    ) /
-      totalPossibleForBridge) *
-    100;
+  const bridgeControl = selectedCards.reduce(
+    (total, { card: { type, count: count, typeSpell, manacost } }) =>
+      [TYPES["Flying Minion"], TYPES.Minion].includes(type)
+        ? total + (count > 1 ? 2 : 1) / manacost + 1
+        : typeSpell === "SummonSpell"
+        ? total + 1
+        : total + 0,
+    0
+  );
 
-  const bridgeControlForDisplay = Math.round(bridgeControl).toFixed(0);
+  const totalPossibleForBridge = numberOfCardsConsideringWildcards * 2;
+
+  const bridgeControlRatio = (bridgeControl / totalPossibleForBridge) * 100;
+
+  const bridgeControlForDisplay = Math.round(bridgeControlRatio).toFixed(0);
 
   return (
     <div>
@@ -103,20 +103,6 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
             </div>
           </Tooltip>
 
-          <Tooltip
-            placement="top"
-            overlay={
-              <span>
-                If game data has no Area of Effect icon, its not included. Ask fdmfdm to fix ;)
-              </span>
-            }
-          >
-            <div className={css.property}>
-              <b>Minions with AOE</b>
-              <div>{minionsWithAoe}</div>
-            </div>
-          </Tooltip>
-
           <div className={css.property}>
             <b>Spells</b> <div>{spells}</div>
           </div>
@@ -128,13 +114,6 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
             <div className={css.property}>
               <b>Total Dps</b>
               <div>{dpsForDisplay}</div>
-            </div>
-          </Tooltip>
-
-          <Tooltip placement="top" overlay={<span>attackdelay * unitcount </span>}>
-            <div className={css.property}>
-              <b>Avg Attack Delay</b>
-              <div>{avgAttackDelayForDisplay}</div>
             </div>
           </Tooltip>
 
@@ -157,6 +136,27 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
             <div className={css.property}>
               <b>Bridge Control</b>
               <div>{bridgeControlForDisplay}%</div>
+            </div>
+          </Tooltip>
+
+          <Tooltip placement="top" overlay={<span>attackdelay * unitcount </span>}>
+            <div className={css.property}>
+              <b>Avg Attack Delay</b>
+              <div>{avgAttackDelayForDisplay}</div>
+            </div>
+          </Tooltip>
+
+          <Tooltip
+            placement="top"
+            overlay={
+              <span>
+                If game data has no Area of Effect icon, its not included. Ask fdmfdm to fix ;)
+              </span>
+            }
+          >
+            <div className={css.property}>
+              <b>Minions with AOE</b>
+              <div>{minionsWithAoe}</div>
             </div>
           </Tooltip>
         </div>

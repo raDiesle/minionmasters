@@ -5,9 +5,11 @@ import cssNeon from "components/neon-effect.module.scss";
 import cardData from "generated/jobCardProps.json";
 import localStorage from "local-storage";
 import isEmpty from "lodash/isEmpty";
+import { DEFAULT_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
+import { ExportAsUrlFromDeckManager } from "page/deck-manager/deck/export/export-as-url";
 import { AVAILABLE_CARDS_LOCALSTORAGE_KEY } from "page/my-profile/my-profile-config";
 import css from "page/my-profile/my-profile.module.scss";
-import React, { useState } from "react";
+import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const normalizedValueFn = (pastedValue) => {
@@ -21,8 +23,6 @@ const normalizedValueFn = (pastedValue) => {
 };
 
 export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
-  const [toPasteAvailableCards, setToPasteAvailableCards] = useState(false);
-
   const totalCountOfCards = cardData.filter(({ rarity }) => rarity !== "Perk");
 
   const availableCardsData = yourAvailableCardIds.map((idFromLocalstorage) => {
@@ -67,45 +67,58 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
               {availableCardsWithData.length}/{totalCountOfCards.length}
             </b>{" "}
             cards
+            <ExportAsUrlFromDeckManager
+              selectedMaster={DEFAULT_MASTER_SELECTED}
+              lastSelectedCards={[]}
+              availableCards={yourAvailableCardIds}
+              buttonLabel="Click to copy link and share your available cards with others"
+            />
           </div>
         )}
       </fieldset>
 
-      <div className={classnames(cssButton.ButtonGroupStyle)}>
-        {!toPasteAvailableCards ? (
-          <CopyToClipboard
-            text={"/gaoc"}
-            onCopy={() => {
-              mToast(
-                <div>
-                  <h3>Command copied.</h3>
-                  <div>Paste it in Minionmasters game chat</div>
-                  <div>and send.</div>
-                </div>
-              );
-              setToPasteAvailableCards(true);
-            }}
-            title="Import your available cards from game"
-          >
-            <button className={classnames(cssButton.ButtonInGroupStyle)}>
-              <div className={classnames(isEmpty(yourAvailableCardIds) && cssNeon.neonEffect)}>
-                Click here to copy command
-              </div>
-            </button>
-          </CopyToClipboard>
-        ) : (
-          <input type="text" placeholder="paste here" onChange={(e) => handlePastedGaoc(e)} />
-        )}
-      </div>
-
       <div>
         <h4>How to</h4>
-        <ol>
-          <li>Click button to copy command</li>
+        <ol className={css.howTo}>
           <li>
-            Switch to game, paste command and press <code>Enter</code>
+            Click button
+            <div className={classnames(cssButton.ButtonGroupStyle, css.pasteHereInput)}>
+              <CopyToClipboard
+                text={"/gaoc"}
+                onCopy={() => {
+                  mToast(
+                    <div>
+                      <h3>Command copied.</h3>
+                      <div>Paste it in Minionmasters game chat</div>
+                      <div>and send.</div>
+                    </div>,
+                    12000
+                  );
+                }}
+                title="Import your available cards from game"
+              >
+                <button className={classnames(cssButton.ButtonInGroupStyle)}>
+                  <div className={classnames(isEmpty(yourAvailableCardIds) && cssNeon.neonEffect)}>
+                    Copy <code>/gaoc</code> command
+                  </div>
+                </button>
+              </CopyToClipboard>
+            </div>
           </li>
-          <li>Switch back to this page and paste command in Text-Input</li>
+
+          <li>
+            <div>
+              Switch to game, paste <code>/gaoc</code> anywhere in chat and send it by{" "}
+              <code>Enter</code>
+            </div>
+            - all your cards will be copied to clipboard.
+          </li>
+          <li>
+            Paste results here by <code>right click mouse - insert</code> or <code>CTRL+V</code>:
+            <div className={css.pasteHereInput}>
+              <input type="text" placeholder="paste here" onChange={(e) => handlePastedGaoc(e)} />
+            </div>
+          </li>
         </ol>
       </div>
     </div>

@@ -9,9 +9,9 @@ import mToast from "components/mToast";
 import copy from "copy-to-clipboard";
 import isEmpty from "lodash.isempty";
 import { generateDynamicLink } from "mm-dynamic-link";
-import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
+import { DEFAULT_MASTER_SELECTED, mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper";
-import { DEFAULT_MASTER_SELECTED } from "page/page-config";
+
 import Tooltip from "rc-tooltip";
 import React from "react";
 
@@ -22,8 +22,9 @@ export function toParams(selectedMaster, lastSelectedCards) {
   const masterParam = `master=${
     mastersMapping[selectedMaster] ? mastersMapping[selectedMaster].iD : DEFAULT_MASTER_SELECTED
   }`;
-  const params = `?${masterParam}&iD=${iDsToParam}`;
-  return params;
+  const paramsMaster = `?${masterParam}`;
+  const paramsCards = iDsToParam ? `&iD=${iDsToParam}` : "";
+  return paramsMaster + paramsCards;
 }
 
 export function exportDeckUrl(
@@ -56,16 +57,27 @@ export function ExportAsUrlFromSavedDeck({
 export const AVAILABLE_CARDS_BY_URL_KEY = `availableCards`;
 
 /* TODO: should only calculate url, when clicked on button */
-export function ExportAsUrlFromDeckManager({ selectedMaster, lastSelectedCards, availableCards }) {
+export function ExportAsUrlFromDeckManager({
+  selectedMaster,
+  lastSelectedCards,
+  availableCards,
+  buttonLabel,
+}) {
   const url = exportDeckUrl(selectedMaster, lastSelectedCards);
   const urlWithYourAvailableCards = `${url}&${AVAILABLE_CARDS_BY_URL_KEY}=${availableCards.join(
     ","
   )}`;
 
-  return <ExportAsUrl url={urlWithYourAvailableCards} availableCards={availableCards} />;
+  return (
+    <ExportAsUrl
+      url={urlWithYourAvailableCards}
+      availableCards={availableCards}
+      buttonLabel={buttonLabel}
+    />
+  );
 }
 
-function ExportAsUrl({ url, availableCards }) {
+function ExportAsUrl({ url, availableCards, buttonLabel = null }) {
   const handleCopyButtonClick = () => {
     generateDynamicLink(url).then(({ data: { shortLink } }) => {
       copy(shortLink);
@@ -93,7 +105,11 @@ function ExportAsUrl({ url, availableCards }) {
         >
           <FontAwesomeIcon icon={faLink} />
           <span className={cssHelpers.hideOnMobile}>
-            Get link {!isEmpty(availableCards) && <span>with your available cards</span>}
+            {buttonLabel ? (
+              buttonLabel
+            ) : (
+              <>Get link {!isEmpty(availableCards) && <span>with your available cards</span>}</>
+            )}
           </span>
         </button>
       </Tooltip>
