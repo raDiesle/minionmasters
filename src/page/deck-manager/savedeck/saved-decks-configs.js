@@ -1,8 +1,9 @@
 export const MAYHEM = "Mayhem";
 
+export const LADDER = "Ladder";
 export const GAME_TYPES = [
   {
-    key: "Ladder",
+    key: LADDER,
     subitems: [],
   },
   {
@@ -29,6 +30,7 @@ export const GAME_TYPES = [
 export const SOLO = "Solo";
 export const TEAM = "Team";
 export const BOTH = "Both";
+export const PREMADE_TEAM = "Premade Team";
 export const PLAYER_GAME_TYPE = [
   {
     key: SOLO,
@@ -36,8 +38,12 @@ export const PLAYER_GAME_TYPE = [
   {
     key: TEAM,
   },
+  ,
   {
     key: BOTH,
+  },
+  {
+    key: PREMADE_TEAM,
   },
 ];
 // @deprecated

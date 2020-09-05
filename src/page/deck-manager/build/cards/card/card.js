@@ -22,10 +22,10 @@ export function Card({
     <div
       className={classnames(
         css.CardContainerStyle,
-
         css.CardContainerStyleFullWidth,
         isAvailableCardsDefined && !availableCards.includes(iD) && css.notAvailable
       )}
+      style={{ height: isShowNamesOnCards ? "127px" : null }}
     >
       <div className={css.CardContentStyle}>
         <img src={`${imgPathFn(imageName)}`} alt={imageName} className={classnames(css.IMG)} />

@@ -15,7 +15,7 @@ export function CreatedByDisplayInput({
       >
         <option value="">-</option>
         {createdByFilterOptions.map((option) => (
-          <option>{option}</option>
+          <option key={option}>{option}</option>
         ))}
       </select>
     </div>

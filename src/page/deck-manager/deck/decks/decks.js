@@ -54,22 +54,26 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
             ...doc.data(),
           }));
           const normalizedDecks = dbDecks.map((deck) => {
-            const mappedCardData = deck.cards.map(({ card: { iD: iDFromDb }, count }) => {
-              return {
-                card: cardData.find(({ iD }) => iD === iDFromDb),
-                count,
-              };
-            });
+            const mapToCardData = (cardsToMap) =>
+              cardsToMap.map(({ card: { iD: iDFromDb }, count }) => {
+                return {
+                  card: cardData.find(({ iD }) => iD === iDFromDb),
+                  count,
+                };
+              });
+
             return {
               dbid: deck.id,
               deckname: deck.deckname,
-              cards: mappedCardData,
               createdAt: deck.createdAt.toDate(),
               createdAtVersion: deck.createdAtVersion,
               createdByDisplayName: deck.createdByDisplayName,
               createdByUid: deck.createdByUid,
               gameType: deck.gameType,
               master: deck.master,
+              cards: mapToCardData(deck.cards),
+              premadeMaster: deck.premadeMaster,
+              premadeCards: deck.premadeCards && mapToCardData(deck.premadeCards),
               description: deck.description,
               gameTypeSecondary: deck.gameTypeSecondary,
               gameTypeThird: deck.gameTypeThird,

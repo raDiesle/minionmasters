@@ -3,7 +3,13 @@ import { useGaTrackView } from "footer/consent-cookie-banner";
 import SaveDeckPrimaryValidationAndForm from "page/deck-manager/savedeck/save-deck-content";
 import React from "react";
 
-export default function SaveDeckContainer({ lastSelectedCards, selectedMaster }) {
+export default function SaveDeckContainer({
+  lastSelectedCards,
+  selectedMaster,
+  lastSelectedPremadeCards,
+  selectedPremadeMaster,
+  isPremadeDeckActive,
+}) {
   useGaTrackView("/SaveDeckContainer");
 
   return (
@@ -18,6 +24,9 @@ export default function SaveDeckContainer({ lastSelectedCards, selectedMaster })
       <SaveDeckPrimaryValidationAndForm
         lastSelectedCards={lastSelectedCards}
         selectedMaster={selectedMaster}
+        lastSelectedPremadeCards={lastSelectedPremadeCards}
+        selectedPremadeMaster={selectedPremadeMaster}
+        isPremadeDeckActive={isPremadeDeckActive}
       />
     </div>
   );

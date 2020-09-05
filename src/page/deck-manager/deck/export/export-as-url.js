@@ -9,7 +9,10 @@ import mToast from "components/mToast";
 import copy from "copy-to-clipboard";
 import isEmpty from "lodash.isempty";
 import { generateDynamicLink } from "mm-dynamic-link";
-import { DEFAULT_MASTER_SELECTED, mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
+import {
+  INITIAL_MASTER_SELECTED,
+  mastersMapping,
+} from "page/deck-manager/build/masters/mastersMapping";
 import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper";
 
 import Tooltip from "rc-tooltip";
@@ -20,7 +23,7 @@ export function toParams(selectedMaster, lastSelectedCards) {
   const iDsToParam = lastSelectedCardiDs.join("&iD=");
 
   const masterParam = `master=${
-    mastersMapping[selectedMaster] ? mastersMapping[selectedMaster].iD : DEFAULT_MASTER_SELECTED
+    mastersMapping[selectedMaster] ? mastersMapping[selectedMaster].iD : INITIAL_MASTER_SELECTED
   }`;
   const paramsMaster = `?${masterParam}`;
   const paramsCards = iDsToParam ? `&iD=${iDsToParam}` : "";
@@ -64,9 +67,10 @@ export function ExportAsUrlFromDeckManager({
   buttonLabel,
 }) {
   const url = exportDeckUrl(selectedMaster, lastSelectedCards);
-  const urlWithYourAvailableCards = `${url}&${AVAILABLE_CARDS_BY_URL_KEY}=${availableCards.join(
-    ","
-  )}`;
+  const availableCardsParam = availableCards
+    ? `&${AVAILABLE_CARDS_BY_URL_KEY}=${availableCards.join(",")}`
+    : "";
+  const urlWithYourAvailableCards = `${url}}${availableCardsParam}`;
 
   return (
     <ExportAsUrl

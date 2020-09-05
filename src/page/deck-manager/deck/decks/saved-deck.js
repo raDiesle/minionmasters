@@ -1,7 +1,7 @@
 import { YoutubeIcon } from "components/community/youtube-icon";
 import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
-import AddMasterToDeckOrOpenDetailsActionOverlay
-  from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import isEmpty from "lodash.isempty";
+import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Master from "page/deck-manager/build/masters/master";
 import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actionoverlay";
 import { DeckCardsContainerStyle } from "page/deck-manager/deck/deck-cards-container-style";
@@ -18,7 +18,6 @@ import React from "react";
 export function SavedDeck({
   deck: {
     dbid,
-    createdAt,
     createdAtVersion,
     createdByDisplayName,
     createdByUid,
@@ -32,6 +31,8 @@ export function SavedDeck({
     gameTypeThird,
     master,
     cards,
+    premadeMaster,
+    premadeCards,
   },
   deck,
   setSelectedMaster,
@@ -54,7 +55,7 @@ export function SavedDeck({
   return (
     <fieldset className={css.singleDeckFieldset} key={dbid} data-dbid={dbid}>
       <legend>
-        <h3 className={css.deckLegend}>
+        <h3>
           {deckname} --- by {createdByDisplayName ? createdByDisplayName : "unknown"}
         </h3>
       </legend>
@@ -62,19 +63,23 @@ export function SavedDeck({
         v{createdAtVersion ? createdAtVersion : CURRENT_GAME_VERSION}
       </div>
 
-      <div className={css.deckLeftBottomLegend}>
-        <CopyDeckToGameButton master={master} cards={cards} />
-      </div>
+      {isEmpty(premadeCards) && (
+        <>
+          <div className={css.deckLeftBottomLegend}>
+            <CopyDeckToGameButton master={master} cards={cards} />
+          </div>
 
-      <div className={css.deckLeftBottomSecondaryLegend}>
-        <ExportAsUrlFromSavedDeck
-          deckId={dbid}
-          title={deckname}
-          description={description}
-          selectedMaster={master}
-          lastSelectedCards={cards}
-        />
-      </div>
+          <div className={css.deckLeftBottomSecondaryLegend}>
+            <ExportAsUrlFromSavedDeck
+              deckId={dbid}
+              title={deckname}
+              description={description}
+              selectedMaster={master}
+              lastSelectedCards={cards}
+            />
+          </div>
+        </>
+      )}
 
       <div>
         <DeckMasterAndCardsContainerStyle
@@ -100,6 +105,58 @@ export function SavedDeck({
             availableCards={availableCards}
           />
         </DeckMasterAndCardsContainerStyle>
+
+        {!isEmpty(premadeCards) && (
+          <>
+            <div className={css.inlineButtons}>
+              <CopyDeckToGameButton master={master} cards={cards} />
+              <ExportAsUrlFromSavedDeck
+                deckId={dbid}
+                title={deckname}
+                description={description}
+                selectedMaster={master}
+                lastSelectedCards={cards}
+              />
+            </div>
+
+            <DeckMasterAndCardsContainerStyle
+              masterEl={
+                <div>
+                  <Master
+                    masterKey={premadeMaster}
+                    actionRegistrationComponent={(selectedMasterKey) => (
+                      <AddMasterToDeckOrOpenDetailsActionOverlay
+                        masterKey={selectedMasterKey}
+                        setSelectedMaster={setSelectedMaster}
+                      />
+                    )}
+                  />
+                </div>
+              }
+            >
+              <DeckCardsContainerStyle
+                lastSelectedCards={premadeCards}
+                cardActionWrapper={(card) => (
+                  <CardForDeckActionOverlay
+                    card={card}
+                    setLastSelectedCards={setLastSelectedCards}
+                  />
+                )}
+                availableCards={availableCards}
+              />
+            </DeckMasterAndCardsContainerStyle>
+            <div className={css.inlineButtons}>
+              <CopyDeckToGameButton master={premadeMaster} cards={premadeCards} />
+              <ExportAsUrlFromSavedDeck
+                deckId={dbid}
+                title={deckname}
+                description={description}
+                selectedMaster={premadeMaster}
+                lastSelectedCards={premadeCards}
+              />
+            </div>
+          </>
+        )}
 
         {!!tags && (
           <div className={css.tags}>

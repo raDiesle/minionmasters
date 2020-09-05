@@ -12,16 +12,25 @@ import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import css from "page/deck-manager/savedeck/save-db-button.module.scss";
 import SaveOrEditDeckForm from "page/deck-manager/savedeck/save-or-edit-deck-form";
+import { PREMADE_TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-export default function SaveDeckContent({ selectedMaster, lastSelectedCards }) {
+export default function SaveDeckContent({
+  selectedMaster,
+  lastSelectedCards,
+  lastSelectedPremadeCards,
+  selectedPremadeMaster,
+  isPremadeDeckActive,
+}) {
   const maxNumberOfCards = 10; // verify
   const isIncompleteDeck = lastSelectedCards.length < maxNumberOfCards;
-  const reducedCardData = lastSelectedCards.map(({ card: { iD }, count }) => ({
-    card: { iD },
-    count,
-  }));
+
+  const reduceCardDataToIds = (cards) =>
+    cards.map(({ card: { iD }, count }) => ({
+      card: { iD },
+      count,
+    }));
 
   const currentUser = useCurrentUser();
 
@@ -29,15 +38,25 @@ export default function SaveDeckContent({ selectedMaster, lastSelectedCards }) {
 
   const dbRef = db.collection("decks");
   const saveForm = (formData) => {
+    let request = {
+      ...formData,
+      createdAtVersion: CURRENT_GAME_VERSION,
+      cards: reduceCardDataToIds(lastSelectedCards),
+      master: selectedMaster,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      createdByUid: currentUser.uid,
+    };
+
+    if (formData.gameTypeSecondary === PREMADE_TEAM) {
+      request = {
+        ...request,
+        premadeMaster: selectedPremadeMaster,
+        premadeCards: reduceCardDataToIds(lastSelectedPremadeCards),
+      };
+    }
+
     dbRef
-      .add({
-        ...formData,
-        createdAtVersion: CURRENT_GAME_VERSION,
-        cards: reducedCardData,
-        master: selectedMaster,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        createdByUid: currentUser.uid,
-      })
+      .add(request)
       .then((result) => {
         mToast("Successful saved to database!");
 
@@ -80,9 +99,8 @@ export default function SaveDeckContent({ selectedMaster, lastSelectedCards }) {
   } else {
     return (
       <SaveOrEditDeckForm
-        reduceCardData={reducedCardData}
-        selectedMaster={selectedMaster}
         handleSaveButton={handleSaveButton}
+        isPremadeDeckActive={isPremadeDeckActive}
       />
     );
   }
