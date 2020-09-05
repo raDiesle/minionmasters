@@ -7,6 +7,7 @@ import mToast from "components/mToast";
 import copy from "copy-to-clipboard";
 import cardData from "generated/jobCardProps.json";
 import { getCardWithDataByListOfId } from "page/deck-manager/deck/carddeckimport/import-helper";
+import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 import Tooltip from "rc-tooltip";
 import React, { useState } from "react";
 
@@ -16,15 +17,42 @@ export function ImportFromGameButton({ setSelectedMaster, setLastSelectedCards }
       let endOfMasterNamePos = value.indexOf(":");
 
       const masterName = value.substring(0, endOfMasterNamePos);
-      const cardNamesValue = value.substring(endOfMasterNamePos + 2);
+      const Jahun = "Jahun";
+      const Ting = "Ting";
+      const tingLong = "Ting, Teng & Tung";
+      const jahunLong = "Jahun, Keeper of Jadespark";
+
+      const markdred = "Tardred";
+      const mardredLong = "Mar'Dred, Prince of Nightmares";
+
+      const cardNamesValue = value
+        .substring(endOfMasterNamePos + 2)
+        .replace(/Ting\, Teng \& Tung/g, "Ting")
+        .replace(/Jahun\, Keeper of Jadespark/g, Jahun)
+        .replace(/Mar\'Dred\, Prince of Nightmares/g, markdred);
+
       const cardNames = cardNamesValue.split(", ");
 
       const cardIds = cardNames.map((nameExtracted) => {
+        if (nameExtracted === Ting) {
+          nameExtracted = tingLong;
+        }
+        if (nameExtracted === Jahun) {
+          nameExtracted = jahunLong;
+        }
+        if (nameExtracted === markdred) {
+          nameExtracted = mardredLong;
+        }
+
         const matchedCardData = cardData.find(({ name }) => name === nameExtracted);
         return matchedCardData.iD;
       });
 
       const cardsOnDeckSlots = getCardWithDataByListOfId(cardIds);
+
+      const cardsOnDeckSlotsFilled = INITIAL_EMPTY_SLOT_DATA.map((data, index) =>
+        cardsOnDeckSlots[index] ? cardsOnDeckSlots[index] : data
+      );
 
       /*
       const cardsOnDeckSlots = cards.map((card) => {
@@ -36,17 +64,17 @@ export function ImportFromGameButton({ setSelectedMaster, setLastSelectedCards }
         endOfMasterNamePos === -1 ||
         //cards.length === 0 ||
         cardNames[0] === "" ||
-        cardsOnDeckSlots.length === 0
+        cardsOnDeckSlotsFilled.length === 0
       ) {
         throw new Error("could not parse from game");
       }
 
-      setLastSelectedCards(cardsOnDeckSlots);
+      setLastSelectedCards(cardsOnDeckSlotsFilled);
       setSelectedMaster(masterName);
       setIsCopiedCommand(false);
       mToast("Imported");
     } catch (e) {
-      mToast("Could not copy paste from game. Jahun and Ting Teng Tung does not work right now.");
+      mToast("Could not copy paste from game.");
       throw e;
       console.error(value);
     }

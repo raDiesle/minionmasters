@@ -3,14 +3,17 @@ import { matchSelectedTabOutOfPath } from "components/helper";
 import cssNeonEffect from "components/neon-effect.module.scss";
 import localStorage from "local-storage";
 import isEmpty from "lodash/isEmpty";
-import { DEFAULT_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
+import { INITIAL_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
 import DeckManager from "page/deck-manager/deck-manager";
 import { ROUTE_PATH_MANAGER } from "page/deck-manager/deck-manager-config";
 import Decks from "page/deck-manager/deck/decks/decks";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import { AVAILABLE_CARDS_BY_URL_KEY } from "page/deck-manager/deck/export/export-as-url";
 import { MyProfile } from "page/my-profile/my-profile";
-import { AVAILABLE_CARDS_LOCALSTORAGE_KEY, ROUTE_PATH_PROFILE } from "page/my-profile/my-profile-config";
+import {
+  AVAILABLE_CARDS_LOCALSTORAGE_KEY,
+  ROUTE_PATH_PROFILE,
+} from "page/my-profile/my-profile-config";
 import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 import Wiki from "page/wiki/wiki";
 import { ROUTE_PATH_WIKI } from "page/wiki/wiki-config";
@@ -26,7 +29,7 @@ export function Page() {
     typeof qs.parse(window.location.search, { ignoreQueryPrefix: true }).master !== "undefined";
 */
   // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
-  const [selectedMaster, setSelectedMaster] = useState(DEFAULT_MASTER_SELECTED);
+  const [selectedMaster, setSelectedMaster] = useState(INITIAL_MASTER_SELECTED);
   const [lastSelectedCards, setLastSelectedCards] = useState(INITIAL_EMPTY_SLOT_DATA);
 
   const [availableCards, setAvailableCards] = useState(

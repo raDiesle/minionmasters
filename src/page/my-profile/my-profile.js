@@ -5,7 +5,7 @@ import cssNeon from "components/neon-effect.module.scss";
 import cardData from "generated/jobCardProps.json";
 import localStorage from "local-storage";
 import isEmpty from "lodash/isEmpty";
-import { DEFAULT_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
+import { INITIAL_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
 import { ExportAsUrlFromDeckManager } from "page/deck-manager/deck/export/export-as-url";
 import { AVAILABLE_CARDS_LOCALSTORAGE_KEY } from "page/my-profile/my-profile-config";
 import css from "page/my-profile/my-profile.module.scss";
@@ -68,7 +68,7 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
             </b>{" "}
             cards
             <ExportAsUrlFromDeckManager
-              selectedMaster={DEFAULT_MASTER_SELECTED}
+              selectedMaster={INITIAL_MASTER_SELECTED}
               lastSelectedCards={[]}
               availableCards={yourAvailableCardIds}
               buttonLabel="Click to copy link and share your available cards with others"

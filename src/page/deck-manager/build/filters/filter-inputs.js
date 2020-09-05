@@ -18,7 +18,10 @@ import PerkMasterIcon from "components/rarity/perk-master-icon";
 import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
 import cloneDeep from "lodash/cloneDeep";
-import { ALL_UNIT_COUNT_DEFAULT_CONFIG, setAllFilterStates } from "page/deck-manager/build/filters-with-cards";
+import {
+  ALL_UNIT_COUNT_DEFAULT_CONFIG,
+  setAllFilterStates,
+} from "page/deck-manager/build/filters-with-cards";
 import css from "page/deck-manager/build/filters/filter-inputs.module.scss";
 import { FilterButton } from "page/deck-manager/build/filters/filterButton";
 import Tooltip from "rc-tooltip";

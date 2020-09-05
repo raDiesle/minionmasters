@@ -7,6 +7,7 @@ import FiltersWithCards from "page/deck-manager/build/filters-with-cards";
 
 import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
 import Masters from "page/deck-manager/build/masters/masters";
+import { INITIAL_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
 import {
   ROUTE_PATH_DECKMANAGER_EXPORT,
   ROUTE_PATH_DECKMANAGER_IMPORT,
@@ -19,22 +20,22 @@ import { ImportFromUrl } from "page/deck-manager/deck/import-from-url";
 import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
 import SaveDeckContainer from "page/deck-manager/savedeck/save-deck-container";
 import { ROUTE_PATH_DECKMANAGER_SAVE } from "page/deck-manager/savedeck/savedeck-config";
-import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
-import React, { useEffect, useMemo, useState } from "react";
+import { IDENTIFIER_FOR_EMPTY_SLOT, INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
-const MastersMemo = ({ setSelectedMaster }) => {
-  return useMemo(() => {
-    const mastersActionWrapper = (selectedMasterKey) => (
-      <AddMasterToDeckOrOpenDetailsActionOverlay
-        masterKey={selectedMasterKey}
-        setSelectedMaster={setSelectedMaster}
-      />
-    );
+const MasterSelector = ({ setSelectedMaster }) => {
+  //  return useMemo(() => {
+  const mastersActionWrapper = (selectedMasterKey) => (
+    <AddMasterToDeckOrOpenDetailsActionOverlay
+      masterKey={selectedMasterKey}
+      setSelectedMaster={setSelectedMaster}
+    />
+  );
 
-    return <Masters actionRegistrationComponent={mastersActionWrapper} />;
-  }, []);
+  return <Masters actionRegistrationComponent={mastersActionWrapper} />;
+  //}, []);
 };
 
 export const DEFAULT_SELECTED_TAB = 0;
@@ -56,6 +57,10 @@ export default function DeckManager({
   useGaTrackView("/DeckContainer");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
 
+  const [selectedPremadeMaster, setSelectedPremadeMaster] = useState(INITIAL_MASTER_SELECTED);
+  const [lastSelectedPremadeCards, setLastSelectedPremadeCards] = useState(INITIAL_EMPTY_SLOT_DATA);
+  const [isPremadeDeckActive, setIsPremadeDeckActive] = useState(null);
+
   const PAGE_TABS_CONFIG = [
     ROUTE_PATH_DECKMANAGER_BUILD,
     ROUTE_PATH_DECKMANAGER_SAVE,
@@ -76,11 +81,17 @@ export default function DeckManager({
       />
 
       <Deck
-        setLastSelectedCards={setLastSelectedCards}
         selectedMaster={selectedMaster}
         setSelectedMaster={setSelectedMaster}
         lastSelectedCards={lastSelectedCards}
+        setLastSelectedCards={setLastSelectedCards}
         availableCards={availableCards}
+        selectedPremadeMaster={selectedPremadeMaster}
+        setSelectedPremadeMaster={setSelectedPremadeMaster}
+        lastSelectedPremadeCards={lastSelectedPremadeCards}
+        setLastSelectedPremadeCards={setLastSelectedPremadeCards}
+        isPremadeDeckActive={isPremadeDeckActive}
+        setIsPremadeDeckActive={setIsPremadeDeckActive}
       />
 
       {lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
@@ -102,8 +113,14 @@ export default function DeckManager({
             <Tab
               className={classnames(
                 "react-tabs__tab",
-                lastSelectedCards.every(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) &&
-                  cssNeonEffect.neonEffect
+                (isPremadeDeckActive === null
+                  ? lastSelectedCards.every(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
+                  : lastSelectedPremadeCards.every(
+                      ({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT
+                    ) &&
+                    lastSelectedCards.every(
+                      ({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT
+                    )) && cssNeonEffect.neonEffect
               )}
             >
               Save
@@ -112,11 +129,20 @@ export default function DeckManager({
         </TabList>
         <TabPanel>
           <HowToUse />
-          <MastersMemo setSelectedMaster={setSelectedMaster} />
+          <MasterSelector
+            setSelectedMaster={
+              isPremadeDeckActive === true ? setSelectedPremadeMaster : setSelectedMaster
+            }
+          />
           <FiltersWithCards
             availableCards={availableCards}
             cardActionWrapper={(card) => (
-              <CardForDeckActionOverlay card={card} setLastSelectedCards={setLastSelectedCards} />
+              <CardForDeckActionOverlay
+                card={card}
+                setLastSelectedCards={
+                  isPremadeDeckActive === true ? setLastSelectedPremadeCards : setLastSelectedCards
+                }
+              />
             )}
           />
         </TabPanel>
@@ -124,6 +150,9 @@ export default function DeckManager({
           <SaveDeckContainer
             lastSelectedCards={lastSelectedCards}
             selectedMaster={selectedMaster}
+            lastSelectedPremadeCards={lastSelectedPremadeCards}
+            selectedPremadeMaster={selectedPremadeMaster}
+            isPremadeDeckActive={isPremadeDeckActive}
           />
         </TabPanel>
       </Tabs>

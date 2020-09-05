@@ -9,7 +9,7 @@ import GameTypeSecondaryInput from "page/deck-manager/savedeck/inputs/game-type-
 import GameTypeThirdInput from "page/deck-manager/savedeck/inputs/game-type-third-input";
 import SaveOrEditToDatabaseButton from "page/deck-manager/savedeck/save-db-button";
 import css from "page/deck-manager/savedeck/save-deck-form.module.scss";
-import { MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
+import { LADDER, MAYHEM, PREMADE_TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
 import Tooltip from "rc-tooltip";
 import React, { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
@@ -49,6 +49,7 @@ export default function SaveOrEditDeckForm({
   initialYoutubeLink = "",
   initialRedditLink = "",
   initialTags = [],
+  isPremadeDeckActive = null,
 }) {
   const [deckname, setDeckname] = useState(initialDeckname);
 
@@ -68,6 +69,13 @@ export default function SaveOrEditDeckForm({
   const [description, setDescription] = useState(initialDescription);
   const [gameType, setGameType] = useState(initialGameType);
   const [gameTypeSecondary, setGameTypeSecondary] = useState(initialGameTypeSecondary);
+  useEffect(() => {
+    if (isPremadeDeckActive !== null) {
+      setGameType(LADDER);
+      setGameTypeSecondary(PREMADE_TEAM);
+    }
+  }, [isPremadeDeckActive]);
+
   const [gameTypeThird, setGameTypeThird] = useState(initialGameTypeThird);
 
   const [youtubeLink, setYoutubeLink] = useState(initialYoutubeLink);

@@ -2,6 +2,7 @@ import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExcla
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { REDDIT_LINK_PREFIX, REDDIT_PREFIX } from "components/community/reddit-icon";
 import { YOUTUBE_PREFIX, YOUTUBE_PREFIX_SECOND } from "components/community/youtube-icon";
+import { useCurrentUser } from "components/helper";
 import css from "page/deck-manager/savedeck/save-db-button.module.scss";
 import { MAYHEM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
@@ -29,6 +30,7 @@ export default function SaveDbButton({
     redditLink,
     tags,
   };
+  const currentUser = useCurrentUser();
 
   const hasYoutubeError =
     youtubeLink &&
@@ -38,12 +40,15 @@ export default function SaveDbButton({
   const hasRedditError = redditLink && !redditLink.startsWith(REDDIT_LINK_PREFIX);
 
   const hasValidationError =
+    !currentUser ||
+    !currentUser.uid ||
     !formData.deckname ||
     !gameType ||
     !gameTypeSecondary ||
     (gameType === MAYHEM && !gameTypeThird) ||
     (redditLink && !redditLink.startsWith(REDDIT_PREFIX)) ||
     hasYoutubeError;
+
   return (
     <div>
       {hasValidationError && (
