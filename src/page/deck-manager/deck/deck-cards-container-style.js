@@ -1,6 +1,6 @@
 import orderBy from "lodash/orderBy";
-import { findFirstNextFreeSlot } from "page/deck-manager/deck-manager";
 import { CardDeckSlot } from "page/deck-manager/deck/card-deck-slot";
+import { findFirstNextFreeSlot } from "page/page-config";
 import React from "react";
 
 export function DeckCardsContainerStyle({ lastSelectedCards, cardActionWrapper, availableCards }) {

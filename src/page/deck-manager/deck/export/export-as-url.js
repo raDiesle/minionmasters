@@ -13,6 +13,7 @@ import {
   INITIAL_MASTER_SELECTED,
   mastersMapping,
 } from "page/deck-manager/build/masters/mastersMapping";
+import { ROUTE_PATH_ID_FROM_PARAM } from "page/deck-manager/deck/decks/decks-config";
 import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper";
 
 import Tooltip from "rc-tooltip";
@@ -34,14 +35,15 @@ export function exportDeckUrl(
   selectedMaster,
   lastSelectedCards,
   title = "My deck",
-  description = "open link to edit or copy deck to game"
+  description = "open link to edit or copy deck to game",
+  pagePath = ""
 ) {
   const params = toParams(selectedMaster, lastSelectedCards);
   const titleParams = `&title=${encodeURIComponent(title)}`;
   const descriptionParams = `&description=${encodeURIComponent(description)}`;
 
   const port = window.location.port === "3000" ? `:${window.location.port}` : "";
-  const url = `${window.location.protocol}//${window.location.hostname}${port}/${params}${titleParams}${descriptionParams}`;
+  const url = `${window.location.protocol}//${window.location.hostname}${port}/${pagePath}${params}${titleParams}${descriptionParams}`;
   return url;
 }
 
@@ -52,7 +54,13 @@ export function ExportAsUrlFromSavedDeck({
   selectedMaster,
   lastSelectedCards,
 }) {
-  const url = exportDeckUrl(selectedMaster, lastSelectedCards, title, description);
+  const url = exportDeckUrl(
+    selectedMaster,
+    lastSelectedCards,
+    title,
+    description,
+    ROUTE_PATH_ID_FROM_PARAM.replace("/", "")
+  );
   const deckIdParamPrefix = `&deckId=${encodeURIComponent(deckId)}`;
   return <ExportAsUrl url={url + deckIdParamPrefix} />;
 }

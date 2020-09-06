@@ -1,5 +1,6 @@
 import * as classnames from "classnames";
-import { matchSelectedTabOutOfPath } from "components/helper";
+import { isForImagePreview, matchSelectedTabOutOfPath } from "components/helper";
+import cssHelper from "components/helper.module.scss";
 import cssNeonEffect from "components/neon-effect.module.scss";
 import localStorage from "local-storage";
 import isEmpty from "lodash/isEmpty";
@@ -67,7 +68,11 @@ export function Page() {
   }, [location.pathname]);
 
   return (
-    <div className={css.pageContentContainer}>
+    <div
+      className={classnames(
+        isForImagePreview ? css.containerForImagePreview : css.pageContentContainer
+      )}
+    >
       {isAvailableCardsFromUrl && (
         <div className={css.differentUserContext}>
           You see available cards of the person who shared link. Click{" "}
@@ -83,7 +88,11 @@ export function Page() {
           // setSelectedTabIndex(tabIndex);
         }}
       >
-        <TabList>
+        <TabList
+          className={classnames(
+            isForImagePreview ? cssHelper.hideForImagePreview : "react-tabs__tab-list"
+          )}
+        >
           <Link to={ROUTE_PATH_MANAGER}>
             <Tab>Deck Manager</Tab>
           </Link>

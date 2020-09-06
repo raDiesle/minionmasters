@@ -8,6 +8,10 @@
     width: 100%;
   }
 }
+.containerForImagePreview {
+  // must be in sync with server width setting
+  width: 945px;
+}
 
 .differentUserContext {
   color: orange;

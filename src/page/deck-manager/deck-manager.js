@@ -40,13 +40,6 @@ const MasterSelector = ({ setSelectedMaster }) => {
 
 export const DEFAULT_SELECTED_TAB = 0;
 
-export const Slots = [...Array(10).keys()];
-
-export const findFirstNextFreeSlot = (lastSelectedCards) =>
-  Slots.find(
-    (slotPosition) => lastSelectedCards[slotPosition].card.iD === IDENTIFIER_FOR_EMPTY_SLOT
-  );
-
 export default function DeckManager({
   lastSelectedCards,
   setLastSelectedCards,

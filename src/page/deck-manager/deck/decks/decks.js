@@ -1,11 +1,19 @@
-import { matchSelectedTabOutOfPath, useCurrentUser } from "components/helper";
+import {
+  deckIdFromUrl,
+  isForImagePreview,
+  matchSelectedTabOutOfPath,
+  useCurrentUser,
+} from "components/helper";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import cardData from "generated/jobCardProps.json";
 import orderBy from "lodash/orderBy";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { DEFAULT_SELECTED_TAB } from "page/deck-manager/deck-manager";
 import DecklistFilters from "page/deck-manager/deck/decks/decklist-filters";
-import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
+import {
+  ROUTE_PATH_DECKS,
+  ROUTE_PATH_ID_FROM_PARAM,
+} from "page/deck-manager/deck/decks/decks-config";
 
 import css from "page/deck-manager/deck/decks/decks.module.scss";
 import { SavedDeck } from "page/deck-manager/deck/decks/saved-deck";
@@ -16,7 +24,10 @@ import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import useAsyncEffect from "use-async-effect";
 
-const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS];
+const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS, ROUTE_PATH_ID_FROM_PARAM];
+
+const isSingleDeckTabSelected = (selectedTabIndex) =>
+  selectedTabIndex === PAGE_TABS_CONFIG.findIndex((config) => config === ROUTE_PATH_ID_FROM_PARAM);
 
 export default function Decks({ setSelectedMaster, setLastSelectedCards, availableCards }) {
   useGaTrackView("/ListOfDecks");
@@ -39,7 +50,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
 
   useAsyncEffect(
     (isMounted) => {
-      if (!PAGE_TABS_CONFIG.includes(location.pathname)) return;
+      if (!PAGE_TABS_CONFIG.includes(location.pathname.split("?")[0])) return;
 
       console.debug("fetched decks");
 
@@ -92,9 +103,13 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     [location.pathname]
   );
 
-  const decksWithGameType = !gameTypeFilter
+  const decksByDeckId = !isSingleDeckTabSelected(selectedTabIndex)
     ? decks
-    : decks.filter(({ gameType }) => gameType === gameTypeFilter);
+    : decks.filter(({ dbid }) => dbid === deckIdFromUrl);
+
+  const decksWithGameType = !gameTypeFilter
+    ? decksByDeckId
+    : decksByDeckId.filter(({ gameType }) => gameType === gameTypeFilter);
 
   const decksWithGameTypeSecondary = !gameTypeSecondaryFilter
     ? decksWithGameType
@@ -118,11 +133,12 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     ? decksWithMaster
     : decksWithMaster.filter(({ createdByUid }) => createdByUid === currentUser.uid);
 
-  const decksWithAuthor = !createdByFilter
-    ? decksWithYoursFilter
-    : decksWithYoursFilter.filter(
-        ({ createdByDisplayName }) => createdByDisplayName === createdByFilter
-      );
+  const decksWithAuthor =
+    !createdByFilter || deckIdFromUrl
+      ? decksWithYoursFilter
+      : decksWithYoursFilter.filter(
+          ({ createdByDisplayName }) => createdByDisplayName === createdByFilter
+        );
 
   const sortedByDateCards = orderBy(
     decksWithAuthor,
@@ -132,33 +148,45 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
 
   return (
     <div className={css.pageContainer}>
-      <Tabs selectedIndex={selectedTabIndex} onSelect={(tabIndex) => {}}>
-        <TabList>
-          <Link to={ROUTE_PATH_DECKS}>
-            <Tab>All Decks</Tab>
-          </Link>
-          {currentUser && (
-            <Link to={ROUTE_PATH_YOUR_DECKS}>
-              <Tab>Your Decks</Tab>
-            </Link>
-          )}
-        </TabList>
-        <TabPanel></TabPanel>
-        {currentUser && <TabPanel></TabPanel>}
-      </Tabs>
-      <DecklistFilters
-        gameType={gameTypeFilter}
-        setGameType={setGameTypeFilter}
-        gameTypeSecondary={gameTypeSecondaryFilter}
-        setGameTypeSecondary={setGameTypeSecondaryFilter}
-        gameTypeThird={gameTypeThirdFilter}
-        setGameTypeThird={setGameTypeThirdFilter}
-        masterFiltr={masterFilter}
-        setMasterFilter={setMasterFilter}
-        createdByFilterOptions={createdByFilterOptions}
-        createdByFilter={createdByFilter}
-        setCreatedByFilter={setCreatedByFilter}
-      />
+      {!isForImagePreview && (
+        <>
+          <Tabs selectedIndex={selectedTabIndex} onSelect={(tabIndex) => {}}>
+            <TabList>
+              <Link to={ROUTE_PATH_DECKS}>
+                <Tab>All Decks</Tab>
+              </Link>
+              {currentUser && (
+                <Link to={ROUTE_PATH_YOUR_DECKS}>
+                  <Tab>Your Decks</Tab>
+                </Link>
+              )}
+              {deckIdFromUrl && (
+                <Link to={ROUTE_PATH_ID_FROM_PARAM}>
+                  <Tab>From Url</Tab>
+                </Link>
+              )}
+            </TabList>
+            <TabPanel></TabPanel>
+            {currentUser && <TabPanel></TabPanel>}
+            {isSingleDeckTabSelected(selectedTabIndex) && <TabPanel></TabPanel>}
+          </Tabs>
+
+          <DecklistFilters
+            gameType={gameTypeFilter}
+            setGameType={setGameTypeFilter}
+            gameTypeSecondary={gameTypeSecondaryFilter}
+            setGameTypeSecondary={setGameTypeSecondaryFilter}
+            gameTypeThird={gameTypeThirdFilter}
+            setGameTypeThird={setGameTypeThirdFilter}
+            masterFiltr={masterFilter}
+            setMasterFilter={setMasterFilter}
+            createdByFilterOptions={createdByFilterOptions}
+            createdByFilter={createdByFilter}
+            setCreatedByFilter={setCreatedByFilter}
+          />
+        </>
+      )}
+
       {sortedByDateCards.map((deck) => (
         <SavedDeck
           deck={deck}
