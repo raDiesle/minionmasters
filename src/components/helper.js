@@ -36,6 +36,8 @@ export const CURRENT_GAME_VERSION = "1.16";
 export const isForImagePreview =
   typeof qs.parse(window.location.search, { ignoreQueryPrefix: true }).isPreview !== "undefined";
 
+export const deckIdFromUrl = qs.parse(window.location.search, { ignoreQueryPrefix: true }).deckId;
+
 // unused at the moment
 export const insertAtCaret = (txtarea, text, setValue) => {
   const scrollPos = txtarea.scrollTop;

@@ -27,13 +27,13 @@
 
 .deckLeftBottomLegend {
   @extend %bottomLegend;
-  left: 8px;
+  left: 90px;
 }
 
 .deckLeftBottomSecondaryLegend {
   @extend %bottomLegend;
 
-  left: 122px;
+  left: 8px;
   @media (max-width: 767px) {
     left: 40px;
   }

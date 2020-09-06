@@ -8,7 +8,6 @@ exports.mm = functions.https.onRequest((request, response) => {
   const file = fs.readFileSync("./index2.html");
 
   const isSavedDeckPreview = !!request.query.deckId;
-
   const isDeckManagerWithAnyCardSelected = request.path === "/" && !!request.query.iD;
 
   const title = request.query.title || "Minionmasters Manager";
@@ -23,9 +22,15 @@ exports.mm = functions.https.onRequest((request, response) => {
   );
 
   // should be in sync with export-as-image settings
-  const ONLY_DECK_ON_HEIGHT = "310";
+  const DECK_MANAGER_HEIGHT = "310";
+  const PREMADE_HEIGHT = "347";
+
   const WIDTH = `945`;
-  const height = isPreviewModeWithReducedPage ? ONLY_DECK_ON_HEIGHT : 1000;
+  const height = isPreviewModeWithReducedPage
+    ? isDeckManagerWithAnyCardSelected
+      ? DECK_MANAGER_HEIGHT
+      : PREMADE_HEIGHT
+    : 1000;
   const dimensions = `?width=${WIDTH}&height=${height}`;
 
   const imageMeta = (property) =>
