@@ -2,12 +2,13 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons/faSignInAlt";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import css from "header/login-logout.module.scss";
 import { auth as authInstance } from "mm-firestore";
 import React, { useEffect, useState } from "react";
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ReactModal from "react-modal";
-import styled from "styled-components";
 
 export default function LoginLogout() {
   const [isLoginModalShown, setIsLoginModalShown] = useState(false);
@@ -48,39 +49,20 @@ export default function LoginLogout() {
     },
   };
 
-  const ModalCloseStyle = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    & > svg {
-      &:hover {
-        color: #a0a0a0;
-        filter: drop-shadow(1px 1px 1px #a0a0a0);
-        cursor: pointer;
-      }
-    }
-  `;
-
-  const SignInLinkStyle = styled.a`
-    &:hover {
-      cursor: pointer;
-      color: #34aadc;
-    }
-  `;
-
   return (
     <>
       {isSignedIn === true ? (
         <div>
-          <SignInLinkStyle onClick={logout}>
+          <button className={css.SignInLinkStyle} onClick={logout}>
             <FontAwesomeIcon icon={faSignOutAlt} />
-          </SignInLinkStyle>
+          </button>
         </div>
       ) : (
         <>
           <div>
-            <SignInLinkStyle onClick={() => setIsLoginModalShown(true)}>
+            <button className={css.SignInLinkStyle} onClick={() => setIsLoginModalShown(true)}>
               Login <FontAwesomeIcon icon={faSignInAlt} />
-            </SignInLinkStyle>
+            </button>
           </div>
           <ReactModal
             className="modalContentStyle"
@@ -88,13 +70,13 @@ export default function LoginLogout() {
             isOpen={isLoginModalShown}
             onRequestClose={() => setIsLoginModalShown(false)}
           >
-            <ModalCloseStyle>
+            <div className={css.ModalCloseStyle}>
               <FontAwesomeIcon
                 icon={faTimesCircle}
                 size={"2x"}
                 onClick={() => setIsLoginModalShown(false)}
               />
-            </ModalCloseStyle>
+            </div>
             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={authInstance} />
           </ReactModal>
         </>

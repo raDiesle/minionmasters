@@ -46,8 +46,8 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
         setAvailableCards(normalizedAvailableCards);
         mToast("Successful imported all your availableCardsData.");
       } catch (e) {
-        throw e;
         mToast("Something went wrong.");
+        throw e;
       }
     }
   };

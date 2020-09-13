@@ -22,7 +22,6 @@ import css from "page/wiki/static-content.module.scss";
 import React from "react";
 
 export const MENU_LINKS_CONFIG = {
-  "Youtube Videos": "Youtube Videos",
   Resources: "Resource Types",
   Tokens: "Tokens",
   Shop: "Shop",
@@ -33,12 +32,14 @@ export const MENU_LINKS_CONFIG = {
   Freebies: "Freebies",
   "Level up Rewards": "Level up Rewards",
   "Rank Rewards": "Rank Rewards",
+  Glory: "Glory",
   "Season Battle Pass Rewards": "Season Battle Pass Rewards",
   "Season House Rewards": "Season House Rewards",
   "Guild Rewards": "Guild Rewards",
   "Maythem Rewards": "Maythem Rewards",
   "Draft Rewards": "Draft Rewards",
   "Challenges Rewards": "Challenges Rewards",
+  "Youtube Videos": "Youtube Videos",
 };
 
 export default function ResourceMngmt() {
@@ -54,6 +55,7 @@ export default function ResourceMngmt() {
     MENU_LINKS_CONFIG["Freebies"],
     MENU_LINKS_CONFIG["Level up Rewards"],
     MENU_LINKS_CONFIG["Rank Rewards"],
+    MENU_LINKS_CONFIG.Glory,
     MENU_LINKS_CONFIG["Season Battle Pass Rewards"],
     MENU_LINKS_CONFIG["Season House Rewards"],
     MENU_LINKS_CONFIG["Guild Rewards"],

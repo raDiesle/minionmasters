@@ -64,7 +64,7 @@ export default function SaveOrEditDeckForm({
         usernameFromLocalStorage ? usernameFromLocalStorage : currentUser.displayName
       );
     }
-  }, [currentUser]);
+  }, [currentUser, initialCreatedByDisplayName, usernameFromLocalStorage]);
 
   const [description, setDescription] = useState(initialDescription);
   const [gameType, setGameType] = useState(initialGameType);

@@ -25,11 +25,6 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import css from "./page.module.scss";
 
 export function Page() {
-  /*
-  const isUrlImport =
-    typeof qs.parse(window.location.search, { ignoreQueryPrefix: true }).master !== "undefined";
-*/
-  // Morellia: S.T.INT, Healing Fireball, Chain Lightning, Drone Buzzers, Lightning Bolt, Morgrul the Swarmer King, Whirly Scrat, Annihilator, Scrat Launcher, Shen Stormstrike
   const [selectedMaster, setSelectedMaster] = useState(INITIAL_MASTER_SELECTED);
   const [lastSelectedCards, setLastSelectedCards] = useState(INITIAL_EMPTY_SLOT_DATA);
 
@@ -65,7 +60,7 @@ export function Page() {
   const location = useLocation();
   useEffect(() => {
     setSelectedTabIndex(matchSelectedTabOutOfPath(PAGE_TABS_CONFIG));
-  }, [location.pathname]);
+  }, [location.pathname, PAGE_TABS_CONFIG]);
 
   return (
     <div
@@ -118,6 +113,7 @@ export function Page() {
         </TabList>
 
         <TabPanel forceRender>
+          {/* peformance optimization !isForImagePreview && !deckIdFromUrl */}
           <DeckManager
             lastSelectedCards={lastSelectedCards}
             setLastSelectedCards={setLastSelectedCards}

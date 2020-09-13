@@ -1,0 +1,18 @@
+.FullWidthMasterOverlay {
+  position: absolute;
+  top: 0;
+  padding: 90px 90px 0px 0;
+  left: 0px;
+
+  @media (max-width: 767px) {
+    padding: 50px 50px 0 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > div {
+    color: yellow;
+  }
+}

@@ -1,3 +1,4 @@
+import * as classnames from "classnames";
 import cardData from "generated/jobCardProps.json";
 import orderBy from "lodash/orderBy";
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
@@ -7,44 +8,6 @@ import { SEPARATOR, TYPE_CARD, TYPE_MASTER } from "page/discussion/editor/mentio
 import css from "page/discussion/editor/textarea-editor.module.scss";
 import React, { useLayoutEffect } from "react";
 import { Mention, MentionsInput } from "react-mentions";
-
-import styled from "styled-components";
-
-const EditorStyle = styled.div`
-  //border: 1px dotted grey;
-
-  max-width: 1000px;
-  ${({ isEditable }) =>
-    isEditable &&
-    ` background: 
-            linear-gradient(90deg, #000 50%, transparent 50%),
-            linear-gradient(0deg, #000 50%, transparent 50%),
-            linear-gradient(90deg, #000 50%, transparent 50%),
-            linear-gradient(0deg, #000 50%, transparent 50%);
-          background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
-          background-size: 15px 2px, 2px 15px, 15px 2px, 2px 15px;
-          background-position: left top, right top, left bottom, left top;
-          animation: border-dance 20s infinite linear;
-        }
-        
-        @keyframes border-dance 
-        {
-          0%
-          {
-            background-position: left top, right top, right bottom, left bottom;
-          }
-          100% 
-          {
-            background-position: right top, right bottom, left bottom, left top;
-          }
-  `}
-
-  & textarea[readonly] {
-    border: none !important;
-    outline: none;
-    cursor: default;
-  }
-`;
 
 export default function TextareaEditor({
   value,
@@ -97,7 +60,7 @@ export default function TextareaEditor({
   };
 
   return (
-    <EditorStyle isEditable={!isDisabledInput}>
+    <div className={classnames(css.maxWidth, !isDisabledInput && css.editable)}>
       <MentionsInput
         inputRef={editorRef}
         value={value}
@@ -113,6 +76,6 @@ export default function TextareaEditor({
           style={defaultMentionStyle}
         />
       </MentionsInput>
-    </EditorStyle>
+    </div>
   );
 }

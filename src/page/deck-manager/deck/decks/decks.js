@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   deckIdFromUrl,
   isForImagePreview,
@@ -6,8 +7,8 @@ import {
 } from "components/helper";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import cardData from "generated/jobCardProps.json";
+import isEmpty from "lodash.isempty";
 import orderBy from "lodash/orderBy";
-import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { DEFAULT_SELECTED_TAB } from "page/deck-manager/deck-manager";
 import DecklistFilters from "page/deck-manager/deck/decks/decklist-filters";
 import {
@@ -54,6 +55,75 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
 
       console.debug("fetched decks");
 
+      axios
+        .get(
+          "https://firestore.googleapis.com/v1/projects/minionmastersmanager/databases/(default)/documents/decks?key=AIzaSyAJSnLNkSA4pvIfL6sTVJIUMnme-8gRdEM"
+        )
+        .then((response) => {
+          if (!isMounted()) return;
+
+          const dbDecks = response.data.documents.map((document) => ({
+            iD: document.name.substr(document.name.lastIndexOf("/") + 1),
+            ...document.fields,
+          }));
+
+          const normalizedDecks = dbDecks.map((deck) => {
+            //
+            const mapToCardData = (cardsToMap) =>
+              cardsToMap.map(
+                ({
+                  mapValue: {
+                    fields: {
+                      card: {
+                        mapValue: {
+                          fields: {
+                            iD: { integerValue: iDFromDb },
+                          },
+                        },
+                      },
+                      count: { integerValue: count },
+                    },
+                  },
+                }) => {
+                  return {
+                    card: cardData.find(({ iD }) => iD === parseInt(iDFromDb)),
+                    count: parseInt(count),
+                  };
+                }
+              );
+
+            return {
+              dbid: deck.iD,
+              deckname: deck.deckname.stringValue,
+              createdAt: new Date(deck.createdAt.timestampValue),
+              createdAtVersion: deck.createdAtVersion.stringValue,
+              createdByDisplayName: deck.createdByDisplayName.stringValue,
+              createdByUid: deck.createdByUid.stringValue,
+              gameType: deck.gameType.stringValue,
+              master: deck.master.stringValue,
+              cards: mapToCardData(deck.cards.arrayValue.values),
+              premadeMaster: deck.premadeMaster && deck.premadeMaster.stringValue,
+              premadeCards: deck.premadeCards && mapToCardData(deck.premadeCards.arrayValue.values),
+              description: deck.description.stringValue,
+              gameTypeSecondary: deck.gameTypeSecondary.stringValue,
+              gameTypeThird: deck.gameTypeThird && deck.gameTypeThird.stringValue,
+              youtubeLink: deck.youtubeLink && deck.youtubeLink.stringValue,
+              redditLink: deck.redditLink && deck.redditLink.stringValue,
+              tags: !isEmpty(deck.tags)
+                ? deck.tags.arrayValue.values.map(({ mapValue: { fields } }) => ({
+                    label: fields.label.stringValue,
+                    value: fields.value.stringValue,
+                  }))
+                : [],
+            };
+          });
+
+          setDecks(normalizedDecks);
+          setCreatedByFilterOptions([
+            ...new Set(normalizedDecks.map(({ createdByDisplayName }) => createdByDisplayName)),
+          ]);
+        });
+      /*
       db.collection("decks")
         .orderBy("createdAt", "desc")
         .get()
@@ -99,6 +169,8 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
           ]);
         })
         .catch(dbErrorHandlerPromise);
+
+ */
     },
     [location.pathname]
   );

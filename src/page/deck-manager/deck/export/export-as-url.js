@@ -19,6 +19,16 @@ import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper
 import Tooltip from "rc-tooltip";
 import React from "react";
 
+const encodeMyUrl = (url) =>
+  encodeURIComponent(url)
+    // Note that although RFC3986 reserves "!", RFC5987 does not,
+    // so we do not need to escape it
+    .replace(/['()]/g, escape) // i.e., %27 %28 %29
+    .replace(/\*/g, "%2A")
+    // The following are not required for percent-encoding per RFC5987,
+    // so we can allow for a little better readability over the wire: |`^
+    .replace(/%(?:7C|60|5E)/g, unescape);
+
 export function toParams(selectedMaster, lastSelectedCards) {
   const lastSelectedCardiDs = getCardIdsFromCount(lastSelectedCards);
   const iDsToParam = lastSelectedCardiDs.join("&iD=");
@@ -39,8 +49,8 @@ export function exportDeckUrl(
   pagePath = ""
 ) {
   const params = toParams(selectedMaster, lastSelectedCards);
-  const titleParams = `&title=${encodeURIComponent(title)}`;
-  const descriptionParams = `&description=${encodeURIComponent(description)}`;
+  const titleParams = `&title=${encodeMyUrl(title)}`;
+  const descriptionParams = `&description=${encodeMyUrl(description)}`;
 
   const port = window.location.port === "3000" ? `:${window.location.port}` : "";
   const url = `${window.location.protocol}//${window.location.hostname}${port}/${pagePath}${params}${titleParams}${descriptionParams}`;
@@ -61,7 +71,7 @@ export function ExportAsUrlFromSavedDeck({
     description,
     ROUTE_PATH_ID_FROM_PARAM.replace("/", "")
   );
-  const deckIdParamPrefix = `&deckId=${encodeURIComponent(deckId)}`;
+  const deckIdParamPrefix = `&deckId=${encodeMyUrl(deckId)}`;
   return <ExportAsUrl url={url + deckIdParamPrefix} />;
 }
 

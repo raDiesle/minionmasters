@@ -1,10 +1,7 @@
 import * as classnames from "classnames";
 import { WildcardIcon } from "components/wildcard-icon";
-import isEmpty from "lodash/isEmpty";
 import { Card } from "page/deck-manager/build/cards/card/card";
-import CardDeckSlotStyle from "page/deck-manager/deck/card-deck-slot-style";
 import css from "page/deck-manager/deck/card-deck-slot.module.scss";
-import EmptyCardSlotSelected from "page/deck-manager/deck/empty-card-slot-selected";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
 
@@ -18,9 +15,8 @@ export function CardDeckSlot({
   cardActionWrapper,
   availableCards,
 }) {
-  const isAvailableCardsDefined = !isEmpty(availableCards);
   return (
-    <CardDeckSlotStyle isSelectedSlot={isSelectedSlot}>
+    <div isSelectedSlot={isSelectedSlot} className={css.CardDeckSlotStyleDefinition}>
       {iD !== IDENTIFIER_FOR_EMPTY_SLOT ? (
         <>
           <div className={css.oneCardStyle}>
@@ -66,10 +62,10 @@ export function CardDeckSlot({
           )}
         </>
       ) : isSelectedSlot ? (
-        <EmptyCardSlotSelected>Select Card</EmptyCardSlotSelected>
+        <div className={css.EmptyCardSlotSelectedStyle}>Select Card</div>
       ) : (
         <div className={css.EmptyCardSlotUnselectedStyle}>&nbsp;</div>
       )}
-    </CardDeckSlotStyle>
+    </div>
   );
 }

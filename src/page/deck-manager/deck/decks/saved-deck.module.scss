@@ -4,17 +4,29 @@
   flex-direction: column;
   align-items: flex-start;
 
-  margin: 20px 0;
   padding-bottom: 20px;
+  margin: 40px 0 55px 0;
+
+  @media (max-width: 767px) {
+    margin: 15px 0 30px 0;
+  }
 }
 
-.deckRightLegend {
+.deckName {
+  margin: 0;
+}
+
+.legendGameVersion {
   position: absolute;
-  top: -0.2px;
+  top: 1.8px;
   right: 7px;
   padding: 0 2px;
   line-height: 1.2em;
   background-color: #222;
+
+  @media (max-width: 767px) {
+    top: -0.2px;
+  }
 }
 
 %bottomLegend {
@@ -22,20 +34,26 @@
   bottom: -16px;
   line-height: 1.2em;
   background-color: #222;
-  color: yellow;
+  // color: yellow;
+  @media (max-width: 767px) {
+    bottom: -14px;
+  }
 }
 
-.deckLeftBottomLegend {
+.legendCopyToGame {
   @extend %bottomLegend;
   left: 90px;
+  @media (max-width: 767px) {
+    left: 35px;
+  }
 }
 
-.deckLeftBottomSecondaryLegend {
+.legendShareLink {
   @extend %bottomLegend;
 
   left: 8px;
   @media (max-width: 767px) {
-    left: 40px;
+    left: 3px;
   }
 }
 
@@ -45,6 +63,16 @@
 
   @media (max-width: 767px) {
     left: 90px;
+  }
+}
+
+.lastCreatedAt {
+  bottom: -7px;
+  @extend %bottomLegend;
+  right: 3px;
+
+  @media (max-width: 767px) {
+    right: 15px;
   }
 }
 

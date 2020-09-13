@@ -1,9 +1,10 @@
-import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useGaTrackView } from "footer/consent-cookie-banner";
+import { Community } from "page/wiki/community/community";
 
 import ChatCommands from "page/wiki/main-screen/chat-commands";
+import DeckCardsWiki from "page/wiki/main-screen/deck-cards-wiki";
 import { GraphicSettings } from "page/wiki/main-screen/graphic-settings";
+import MastersWiki from "page/wiki/main-screen/masters-wiki";
 import Replays from "page/wiki/main-screen/replays";
 import YoutubeVideosMainScreen from "page/wiki/main-screen/youtube-videos-main-screen";
 import { anchorLinkTarget } from "page/wiki/menu-helper";
@@ -11,10 +12,13 @@ import cssStatic from "page/wiki/static-content.module.scss";
 import React from "react";
 
 export const MENU_LINKS_CONFIG = {
+  Community: "Community",
   Overview: "Overview",
   Profile: "Profile",
   "Power Tower": "Power Tower",
   "Game Modes": "Game Modes",
+  Masters: "Masters",
+  "Deck & Cards": "Deck & Cards",
   "Chat Commands: Functional": "Chat Commands: Functional",
   "Chat Commands: Emoji": "Chat Commands: Emoji",
   Replays: "Replays",
@@ -22,12 +26,15 @@ export const MENU_LINKS_CONFIG = {
   "Youtube Videos": "Youtube Videos",
 };
 export default function MainScreen() {
-  useGaTrackView("/Basics/MainScreen");
+  useGaTrackView("/Basics/BasicsWiki");
   const MENU_ORDER = [
+    MENU_LINKS_CONFIG.Community,
     MENU_LINKS_CONFIG.Overview,
     MENU_LINKS_CONFIG.Profile,
-    MENU_LINKS_CONFIG.Replays,
     MENU_LINKS_CONFIG["Power Tower"],
+    MENU_LINKS_CONFIG.Masters,
+    MENU_LINKS_CONFIG["Deck & Cards"],
+    MENU_LINKS_CONFIG.Replays,
     MENU_LINKS_CONFIG["Chat Commands: Functional"],
     MENU_LINKS_CONFIG["Chat Commands: Emoji"],
     MENU_LINKS_CONFIG["Graphic Settings"],
@@ -37,11 +44,6 @@ export default function MainScreen() {
   return (
     <div className={cssStatic.container}>
       <div>
-        <FontAwesomeIcon icon={faTools} size="2x" color="yellow" style={{ paddingRight: "10px" }} />
-        {"  "} Page under construction
-      </div>
-
-      <div>
         <ol>
           {MENU_ORDER.map((key) => (
             <li key={key}>
@@ -50,6 +52,8 @@ export default function MainScreen() {
           ))}
         </ol>
       </div>
+
+      <Community />
 
       <img
         src="/img/basics/main_menu.jpg"
@@ -80,8 +84,11 @@ export default function MainScreen() {
             The contest area is very important since it can provide you with some powerful reward.
             See Resource Management.
           </fieldset>
+          <MastersWiki />
         </div>
       </div>
+
+      <DeckCardsWiki />
 
       <ChatCommands />
 

@@ -7,7 +7,7 @@ import cssStatic from "page/wiki/static-content.module.scss";
 import React from "react";
 
 export const MENU_LINKS_CONFIG = {
-  "Youtube Videos": "Youtube Videos",
+  Wildcards: "Wildcards",
   Basics: "Basics",
   "Basic Rules": "Basic Rules",
   "Masters Easy": "Masters Easy",
@@ -17,12 +17,14 @@ export const MENU_LINKS_CONFIG = {
   Strategies: "Strategies",
   "Testing & Gameplay": "Testing & Gameplay",
   Combos: "Combos",
+  "Youtube Videos": "Youtube Videos",
 };
 
 export function BuildDecks() {
   useGaTrackView("/Basics/BuilddeckGuide");
 
   const MENU_ORDER = [
+    MENU_LINKS_CONFIG.Wildcards,
     MENU_LINKS_CONFIG.Basics,
     MENU_LINKS_CONFIG["Basic Rules"],
     MENU_LINKS_CONFIG["Masters Easy"],
@@ -42,6 +44,12 @@ export function BuildDecks() {
       </div>
 
       <Menu menuitems={MENU_ORDER} />
+
+      <div>
+        {anchorLinkTarget(MENU_LINKS_CONFIG.Wildcards)}
+        Wild Cards allow a player to include either 3 copies of a single card or 2 copies of two
+        different cards in their deck.
+      </div>
 
       <div className="subSection detailBox" id={2894054}>
         {anchorLinkTarget(MENU_LINKS_CONFIG.Basics)}

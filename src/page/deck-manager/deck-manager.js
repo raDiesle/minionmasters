@@ -64,7 +64,7 @@ export default function DeckManager({
   const location = useLocation();
   useEffect(() => {
     setSelectedTabIndex(matchSelectedTabOutOfPath(PAGE_TABS_CONFIG));
-  }, [location.pathname]);
+  }, [location.pathname, PAGE_TABS_CONFIG]);
 
   return (
     <div>

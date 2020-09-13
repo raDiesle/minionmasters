@@ -1,6 +1,6 @@
 export const MAYHEM = "Mayhem";
-
 export const LADDER = "Ladder";
+
 export const GAME_TYPES = [
   {
     key: LADDER,
@@ -38,7 +38,6 @@ export const PLAYER_GAME_TYPE = [
   {
     key: TEAM,
   },
-  ,
   {
     key: BOTH,
   },

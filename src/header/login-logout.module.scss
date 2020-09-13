@@ -1,0 +1,19 @@
+.ModalCloseStyle {
+  display: flex;
+  justify-content: flex-end;
+  & > svg {
+    &:hover {
+      color: #a0a0a0;
+      filter: drop-shadow(1px 1px 1px #a0a0a0);
+      cursor: pointer;
+    }
+  }
+}
+
+.SignInLinkStyle {
+  border: none;
+  &:hover {
+    cursor: pointer;
+    color: #34aadc;
+  }
+}

@@ -9,64 +9,6 @@ import { RarityMappingConfig } from "components/rarity/rarity-mapping-config";
 import { typeMapping } from "components/typeMapping";
 import css from "page/card-modal/card-properties.module.scss";
 import React from "react";
-import styled from "styled-components";
-
-const CardPropertyUlStyle = styled.div`
-  @media (max-width: 767px) {
-    padding-top: 0;
-    grid-row-gap: 5px;
-    grid-column-gap: 2px;
-    padding-bottom: 0px;
-  }
-  padding-bottom: 40px;
-
-  padding-top: 30px;
-  grid-row-gap: 25px;
-  grid-column-gap: 10px;
-
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  text-align: center;
-  list-style-type: none;
-  padding-inline-start: 0;
-
-  & > div {
-    //  margin: 1rem;
-  }
-
-  @media (max-width: 950px) {
-    grid-auto-flow: unset;
-    grid-template-columns: auto auto auto;
-  }
-`;
-
-const CardPropertyKeyStyle = styled.div`
-  font-weight: bold;
-`;
-
-const CardPropertyLiStyle = styled.div``;
-
-const CardImageStyle = styled.img`
-  width: 60px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-`;
-
-const RarityStyle = styled.div`
-  color: ${({ rarity }) => RarityMappingConfig[rarity]};
-`;
-
-const PortraitStyle = styled.div`
-  color: gold;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const LikeStyle = styled.div`
-  // display: flex;
-  // justify-content: center;
-`;
 
 export default function CardProperties({
   card: {
@@ -90,57 +32,57 @@ export default function CardProperties({
   const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
 
   return (
-    <CardPropertyUlStyle>
-      <CardPropertyLiStyle>
-        <CardPropertyKeyStyle></CardPropertyKeyStyle>
-        <PortraitStyle>
+    <div className={css.CardPropertyUlStyle}>
+      <li className={css.CardPropertyLiStyle}>
+        <div className={css.CardPropertyKeyStyle}></div>
+        <div className={css.PortraitStyle}>
           {/*
-                                <LikeStyle>
+                                <div>
                                     <FontAwesomeIcon icon={faHeartSolid} size={"xs"}/><FontAwesomeIcon
                                     icon={faHeartSolid} size={"xs"}/>
                                     <FontAwesomeIcon icon={faHeartRegular} size={"xs"}/><FontAwesomeIcon
                                     icon={faHeartRegular} size={"xs"}/><FontAwesomeIcon icon={faHeartRegular}
                                                                                         size={"xs"}/>
-                                </LikeStyle>
+                                </div>
                                 */}
-          <CardImageStyle src={imgPathFn(imageName)} alt={imageName} />
-        </PortraitStyle>
-      </CardPropertyLiStyle>
+          <img className={css.CardImageStyle} src={imgPathFn(imageName)} alt={imageName} />
+        </div>
+      </li>
       {imageName === "BloodImps.jpg" && (
-        <CardPropertyLiStyle>
-          <PortraitStyle>
-            <LikeStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.PortraitStyle}>
+            <div>
               <FontAwesomeIcon icon={faHeartSolid} size={"xs"} color={"transparent"} />
-            </LikeStyle>
+            </div>
             <img src="bloodimp_inline.jpg" width="60px" alt="bloodimp" />
-          </PortraitStyle>
-        </CardPropertyLiStyle>
+          </div>
+        </li>
       )}
-      <CardPropertyLiStyle>
-        <CardPropertyKeyStyle>Cost</CardPropertyKeyStyle>
+      <li className={css.CardPropertyLiStyle}>
+        <div className={css.CardPropertyKeyStyle}>Cost</div>
         <div className={css.CardProperyValue}>{manacost}</div>
-      </CardPropertyLiStyle>
-      <CardPropertyLiStyle>
-        <CardPropertyKeyStyle>Faction</CardPropertyKeyStyle>
+      </li>
+      <li className={css.CardPropertyLiStyle}>
+        <div className={css.CardPropertyKeyStyle}>Faction</div>
         <div className={css.CardProperyValue}>
           {factionMapping[faction]} {faction}
         </div>
-      </CardPropertyLiStyle>
-      <CardPropertyLiStyle>
-        <CardPropertyKeyStyle>Type</CardPropertyKeyStyle>
+      </li>
+      <li className={css.CardPropertyLiStyle}>
+        <div className={css.CardPropertyKeyStyle}>Type</div>
         <div className={css.CardProperyValue}>
           <FontAwesomeIcon icon={typeMapping[type]} size={"xs"} /> {type}
         </div>
-      </CardPropertyLiStyle>
+      </li>
       {!isNaN(count) && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Unit Count</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Unit Count</div>
           <div className={css.CardProperyValue}>{count}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {isAttacking && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Targets</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Targets</div>
           <div className={css.CardProperyValue}>
             {targetsMapping[targets] && (
               <>
@@ -148,81 +90,81 @@ export default function CardProperties({
               </>
             )}
           </div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {!isNaN(health) && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Health</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Health</div>
           <div className={css.CardProperyValue}>{health}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {isAttacking && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Attack Speed</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Attack Speed</div>
           <div className={css.CardProperyValue}>{attackspeed / 1000} s</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
 
       {!isNaN(attackdelay) && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Attack Delay</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Attack Delay</div>
           <div className={css.CardProperyValue}>{attackdelay}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {!isNaN(radius) && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Radius</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Radius</div>
           <div className={css.CardProperyValue}>{radius / 1000}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {!isNaN(damage) && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Damage</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Damage</div>
           <div className={css.CardProperyValue}>{damage === 0 ? "-" : damage}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {isAttacking && (
         <>
-          <CardPropertyLiStyle>
-            <CardPropertyKeyStyle>Single Dps</CardPropertyKeyStyle>
+          <li className={css.CardPropertyLiStyle}>
+            <div className={css.CardPropertyKeyStyle}>Single Dps</div>
             <div className={css.CardProperyValue}>
               {Math.round((damage / attackspeed) * 10000) / 10}
             </div>
-          </CardPropertyLiStyle>
-          <CardPropertyLiStyle>
-            <CardPropertyKeyStyle>Total Dps</CardPropertyKeyStyle>
+          </li>
+          <li className={css.CardPropertyLiStyle}>
+            <div className={css.CardPropertyKeyStyle}>Total Dps</div>
             <div className={css.CardProperyValue}>
               {Math.round((damage / attackspeed) * count * 10000) / 10}
             </div>
-          </CardPropertyLiStyle>
+          </li>
         </>
       )}
       {isAttacking && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Range</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Range</div>
           <div className={css.CardProperyValue}>{range / 1000}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {speed && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Speed</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Speed</div>
           <div className={css.CardProperyValue}>{speed}</div>
-        </CardPropertyLiStyle>
+        </li>
       )}
       {[true, false].includes(flying) && (
-        <CardPropertyLiStyle>
-          <CardPropertyKeyStyle>Flying</CardPropertyKeyStyle>
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Flying</div>
           <div className={css.CardProperyValue}>
             <FontAwesomeIcon icon={flying ? faCheck : faTimes} />
           </div>
-        </CardPropertyLiStyle>
+        </li>
       )}
-      <CardPropertyLiStyle>
-        <CardPropertyKeyStyle>Rarity</CardPropertyKeyStyle>
-        <RarityStyle className={css.CardProperyValue} rarity={rarity}>
+      <li className={css.CardPropertyLiStyle}>
+        <div className={css.CardPropertyKeyStyle}>Rarity</div>
+        <div className={css.CardProperyValue} style={{ color: RarityMappingConfig[rarity] }}>
           {rarity}
-        </RarityStyle>
-      </CardPropertyLiStyle>
-    </CardPropertyUlStyle>
+        </div>
+      </li>
+    </div>
   );
 }

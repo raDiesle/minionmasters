@@ -10,13 +10,7 @@ import { auth, dbErrorHandlerPromise } from "mm-firestore";
 import TextareaEditor from "page/discussion/editor/textarea-editor";
 import Tooltip from "rc-tooltip/es";
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-
-const HistorySelectStyle = styled.select`
-  height: 18px;
-  font-size: 10px;
-  background-color: #444;
-`;
+import css from "./wiki-editor-active.module.scss";
 
 function listenUserAuth(setCurrentUsername) {
   return auth.onAuthStateChanged((user) => {
@@ -129,13 +123,17 @@ export default function WikiEditorActive({ setInEditMode, dbRef, placeholder }) 
 
         <div className={cssButton.ButtonGroupStyle}>
           <button className={cssButton.ButtonInGroupStyle}>
-            <HistorySelectStyle defaultValue="" onChange={(dbKey) => onHistorySelect(dbKey)}>
+            <select
+              className={css.HistorySelectStyle}
+              defaultValue=""
+              onChange={(dbKey) => onHistorySelect(dbKey)}
+            >
               {history.map((hist, idx) => (
                 <option value={hist.id} key={hist.id}>
                   {hist.createdAt.toLocaleString()} {idx === 0 && "latest"}
                 </option>
               ))}
-            </HistorySelectStyle>
+            </select>
           </button>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import { ABILITIES_CONFIG } from "page/abilities-config";
@@ -14,22 +15,28 @@ export default function Abilities() {
       <div>
         <div className={cssButton.ButtonGroupStyle}>
           <button
-            className={cssButton.ButtonInGroupStyle}
+            className={classnames(
+              cssButton.ButtonInGroupStyle,
+              selectedBuff === "ALL" && cssButton.isButtonActive
+            )}
             onClick={() => setSelectedBuff("ALL")}
-            isButtonActive={selectedBuff === "ALL"}
           >
             All
           </button>
           <button
-            className={cssButton.ButtonInGroupStyle}
+            className={classnames(
+              cssButton.ButtonInGroupStyle,
+              selectedBuff === "DEBUFF" && cssButton.isButtonActive
+            )}
             onClick={() => setSelectedBuff("DEBUFF")}
-            isButtonActive={selectedBuff === "DEBUFF"}
           >
             <BuffIcon /> Debuff
           </button>
           <button
-            className={cssButton.ButtonInGroupStyle}
-            isButtonActive={selectedBuff === "BUFF"}
+            className={classnames(
+              cssButton.ButtonInGroupStyle,
+              selectedBuff === "BUFF" && cssButton.isButtonActive
+            )}
             onClick={() => setSelectedBuff("BUFF")}
           >
             <DeebuffIcon /> Buff
@@ -62,6 +69,7 @@ export default function Abilities() {
                   return isBuff;
                 case "DEBUFF":
                   return !isBuff;
+                default:
               }
               return null;
             })

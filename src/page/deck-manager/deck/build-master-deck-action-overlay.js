@@ -1,4 +1,5 @@
-import { FullWidthMasterOverlay } from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";
+import css from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay.module.scss";
+
 import { MasterModal } from "page/deck-manager/build/masters/MasterModal";
 import React, { useState } from "react";
 import ClickNHold from "react-click-n-hold";
@@ -19,12 +20,13 @@ export default function BuildMasterDeckActionOverlay({ masterKey, setSelectedMas
           setIsOpenMasterModal(true);
         }}
       >
-        <FullWidthMasterOverlay
+        <div
+          className={css.FullWidthMasterOverlay}
           onClick={() => {
             // nothing
           }}
           onContextMenu={(event) => handleOnContextMenu(event)}
-        ></FullWidthMasterOverlay>
+        ></div>
       </ClickNHold>
 
       {isOpenMasterModal && (
