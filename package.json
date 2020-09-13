@@ -28,7 +28,7 @@
     "lodash.mapvalues": "4.6.0",
     "lodash.noop": "^3.0.1",
     "lodash.sortby": "4.7.0",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "qs": "6.9.4",
     "rc-tooltip": "5.0.0",
     "react": "16.13.1",
