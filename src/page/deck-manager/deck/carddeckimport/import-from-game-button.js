@@ -27,9 +27,9 @@ export function ImportFromGameButton({ setSelectedMaster, setLastSelectedCards }
 
       const cardNamesValue = value
         .substring(endOfMasterNamePos + 2)
-        .replace(/Ting\, Teng \& Tung/g, "Ting")
-        .replace(/Jahun\, Keeper of Jadespark/g, Jahun)
-        .replace(/Mar\'Dred\, Prince of Nightmares/g, markdred);
+        .replace(/Ting, Teng & Tung/g, "Ting")
+        .replace(/Jahun, Keeper of Jadespark/g, Jahun)
+        .replace(/Mar'Dred, Prince of Nightmares/g, markdred);
 
       const cardNames = cardNamesValue.split(", ");
 
@@ -75,8 +75,8 @@ export function ImportFromGameButton({ setSelectedMaster, setLastSelectedCards }
       mToast("Imported");
     } catch (e) {
       mToast("Could not copy paste from game.");
-      throw e;
       console.error(value);
+      throw e;
     }
   };
 

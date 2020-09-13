@@ -8,7 +8,7 @@ import { ROUTE_PATH_GAMEMODES } from "page/wiki/gamemodes/gamemodes-config";
 import Gameplay from "page/wiki/gameplay/gameplay";
 import { ROUTE_PATH_GAMEPLAY } from "page/wiki/gameplay/gameplay-config";
 
-import MainScreen from "page/wiki/main-screen/main-screen";
+import BasicsWiki from "page/wiki/main-screen/main-screen";
 import { ROUTE_PATH_MAINSCREEN } from "page/wiki/main-screen/main-screen-config";
 import Rewards from "page/wiki/rewards/rewards";
 import { ROUTE_PATH_REWARDS } from "page/wiki/rewards/rewards-config";
@@ -51,7 +51,7 @@ export default function Wiki() {
           </Tab>
 
           <Tab>
-            <Link to={ROUTE_PATH_MAINSCREEN}>Mainscreen</Link>
+            <Link to={ROUTE_PATH_MAINSCREEN}>Basics</Link>
           </Tab>
 
           <Tab>
@@ -76,7 +76,7 @@ export default function Wiki() {
         </TabPanel>
 
         <TabPanel>
-          <MainScreen />
+          <BasicsWiki />
         </TabPanel>
 
         <TabPanel>

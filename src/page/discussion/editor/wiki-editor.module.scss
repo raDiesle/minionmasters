@@ -3,3 +3,22 @@
     padding: 4px;
   }
 }
+
+.EditorStyle {
+  border-right: 0;
+  padding-right: 5px;
+  max-width: 1000px;
+}
+
+.LastEditedStyle {
+  padding-top: 5px;
+  font-size: 8px;
+}
+
+.EditWithButtonStyle {
+  display: flex;
+
+  & > button {
+    padding: 4px;
+  }
+}

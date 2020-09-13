@@ -19,7 +19,6 @@ export function RedditEmbed({ redditLink }) {
         if (!isMounted()) return;
         const [
           {
-            kind,
             data: {
               children: [
                 {

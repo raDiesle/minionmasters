@@ -15,11 +15,13 @@ import { CopyDeckToGameButton } from "page/deck-manager/deck/export/copy-deck-to
 import { ExportAsUrlFromSavedDeck } from "page/deck-manager/deck/export/export-as-url";
 import { BOTH, SOLO, TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
+import ReactTimeAgo from "react-time-ago";
 
 export function SavedDeck({
   deck: {
     dbid,
     createdAtVersion,
+    createdAt,
     createdByDisplayName,
     createdByUid,
     deckname,
@@ -60,20 +62,24 @@ export function SavedDeck({
       data-dbid={dbid}
     >
       <legend>
-        <h3>
+        <h3 className={css.deckName}>
           {deckname} --- by {createdByDisplayName ? createdByDisplayName : "unknown"}
         </h3>
       </legend>
-      <div className={css.deckRightLegend}>
+
+      <div className={css.lastCreatedAt}>
+        created <ReactTimeAgo date={createdAt} />
+      </div>
+      <div className={css.legendGameVersion}>
         v{createdAtVersion ? createdAtVersion : CURRENT_GAME_VERSION}
       </div>
 
       {isEmpty(premadeCards) && (
-        <div className={css.deckLeftBottomLegend}>
+        <div className={css.legendCopyToGame}>
           <CopyDeckToGameButton master={master} cards={cards} />
         </div>
       )}
-      <div className={css.deckLeftBottomSecondaryLegend}>
+      <div className={css.legendShareLink}>
         <ExportAsUrlFromSavedDeck
           deckId={dbid}
           title={deckname}

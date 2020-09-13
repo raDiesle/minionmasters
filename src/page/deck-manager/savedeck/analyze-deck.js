@@ -65,7 +65,7 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
     : 0;
 
   const bridgeControl = selectedCards.reduce(
-    (total, { card: { type, count: count, typeSpell, manacost } }) =>
+    (total, { card: { type, count, typeSpell, manacost } }) =>
       [TYPES["Flying Minion"], TYPES.Minion].includes(type)
         ? total + (count > 1 ? 2 : 1) / manacost + 1
         : typeSpell === "SummonSpell"

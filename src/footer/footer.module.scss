@@ -5,3 +5,13 @@
   height: 25px;
   text-align: right;
 }
+
+.SubheaderLinkStyle {
+  font-size: 100%;
+  line-height: 1;
+  padding-right: 5px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}

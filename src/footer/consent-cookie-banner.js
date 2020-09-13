@@ -17,6 +17,7 @@ window.ga = Cookies.get("isAllowCookies") ? firebaseApp && firebase.analytics() 
 export const useGaTrackView = (screen_name) => {
   useEffect(() => {
     window.ga.logEvent("screen_view", { screen_name });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

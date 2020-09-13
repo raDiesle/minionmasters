@@ -30,9 +30,7 @@ export const getSelectedCardsByUrl = (selectediDsFromUrl) => {
 
 const convertUrlToSelections = ({ urlParams, setSelectedMaster, setLastSelectedCards }) => {
   try {
-    if (urlParams.master) {
-      setSelectedMaster(getSelectedMasterByUrl(urlParams.master));
-    }
+    setSelectedMaster(getSelectedMasterByUrl(urlParams.master));
     const selectedCardsByUrl = getSelectedCardsByUrl(urlParams.iD);
     if (selectedCardsByUrl !== null) {
       setLastSelectedCards(selectedCardsByUrl);
@@ -47,9 +45,12 @@ const convertUrlToSelections = ({ urlParams, setSelectedMaster, setLastSelectedC
 
 export function ImportFromUrl({ setLastSelectedCards, setSelectedMaster }) {
   useEffect(() => {
-    let urlParams = qs.parse(window.location.search, {
+    const urlParams = qs.parse(window.location.search, {
       ignoreQueryPrefix: true,
     });
+    if (!urlParams.master) {
+      return;
+    }
     convertUrlToSelections({ urlParams, setSelectedMaster, setLastSelectedCards });
   }, []); // eslint-disable-line  react-hooks/exhaustive-deps
 

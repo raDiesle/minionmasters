@@ -6,32 +6,11 @@ import cssButton from "components/button.module.scss";
 import mToast from "components/mToast";
 import { auth, dbErrorHandlerPromise } from "mm-firestore";
 import WikiEditorActive from "page/discussion/editor/wiki-editor-active";
+import css from "page/discussion/editor/wiki-editor.module.scss";
 import WikiEditorReadOnly from "page/discussion/editor/WikiEditorReadOnly";
 
 import Tooltip from "rc-tooltip/es";
-
 import React, { useEffect, useState } from "react";
-
-import styled from "styled-components";
-
-const EditorStyle = styled.div`
-  border-right: 0;
-  padding-right: 5px;
-  max-width: 1000px;
-`;
-
-const LastEditedStyle = styled.div`
-  padding-top: 5px;
-  font-size: 8px;
-`;
-
-const EditWithButtonStyle = styled.div`
-  display: flex;
-
-  & > button {
-    padding: 4px;
-  }
-`;
 
 export default function WikiEditor({ dbRef }) {
   const [currentWikiData, setCurrentWikiData] = useState({
@@ -80,14 +59,14 @@ export default function WikiEditor({ dbRef }) {
   } else {
     return (
       <div>
-        <EditWithButtonStyle>
-          <EditorStyle>
+        <div className={css.EditWithButtonStyle}>
+          <div className={css.EditorStyle}>
             {currentWikiData.createdAt ? (
               <WikiEditorReadOnly value={currentWikiData.val} />
             ) : (
               <WikiEditorReadOnly value={currentWikiData.val} placeholder="None added, yet." />
             )}
-          </EditorStyle>
+          </div>
           <Tooltip placement="bottomRight" overlay={<span>Edit</span>}>
             <button
               className={cssButton.ButtonInGroupStyle}
@@ -106,8 +85,8 @@ export default function WikiEditor({ dbRef }) {
               </div>
             </button>
           </Tooltip>
-        </EditWithButtonStyle>
-        <LastEditedStyle>
+        </div>
+        <div className={css.LastEditedStyle}>
           {currentWikiData.createdAt && (
             <div>
               last edit:{" "}
@@ -117,7 +96,7 @@ export default function WikiEditor({ dbRef }) {
               - {currentWikiData.createdBy}
             </div>
           )}
-        </LastEditedStyle>
+        </div>
       </div>
     );
   }

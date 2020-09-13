@@ -1,5 +1,7 @@
 import * as Sentry from "@sentry/react";
 import App from "app";
+import JavascriptTimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
 import "rc-tooltip/assets/bootstrap_white.css";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -8,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
+JavascriptTimeAgo.addLocale(en);
 if (!window.location.host.includes("localhost")) {
   Sentry.init({ dsn: "https://487d2f84e8784b78b2658663894c9073@o430881.ingest.sentry.io/5380445" });
 }

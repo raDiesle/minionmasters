@@ -1,27 +1,8 @@
 import mToast from "components/mToast";
+import css from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay.module.scss";
 import { MasterModal } from "page/deck-manager/build/masters/MasterModal";
 import React, { useEffect, useState } from "react";
 import ClickNHold from "react-click-n-hold";
-import styled from "styled-components";
-
-export const FullWidthMasterOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  padding: 90px 90px 0px 0;
-  left: 0px;
-
-  @media (max-width: 767px) {
-    padding: 50px 50px 0 0;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover > div {
-    color: yellow;
-  }
-`;
 
 export default function AddMasterToDeckOrOpenDetailsActionOverlay({
   setSelectedMaster,
@@ -48,7 +29,8 @@ export default function AddMasterToDeckOrOpenDetailsActionOverlay({
           setIsOpenMasterModal(true);
         }}
       >
-        <FullWidthMasterOverlay
+        <div
+          className={css.FullWidthMasterOverlay}
           onClick={() => {
             setSelectedMaster(masterKey);
             mToast("Master added to deck.");

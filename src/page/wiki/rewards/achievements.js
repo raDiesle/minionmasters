@@ -189,11 +189,13 @@ export default function Achievements() {
         <div className={cssStatic.table}>
           <div className={cssStatic.tableRow}>
             {["Picture", "Achievement", "Description"].map((header) => (
-              <div className={classnames(cssStatic.tableCell, cssStatic.tableHeader)}>{header}</div>
+              <div key={header} className={classnames(cssStatic.tableCell, cssStatic.tableHeader)}>
+                {header}
+              </div>
             ))}
           </div>
           {achievementsConfig.map(({ name, picture, description }) => (
-            <div className={cssStatic.tableRow}>
+            <div key={name} className={cssStatic.tableRow}>
               <div className={cssStatic.tableCell}>
                 <img src={`/img/basics/achievements/${picture}`} alt={name} className={css.image} />
               </div>
