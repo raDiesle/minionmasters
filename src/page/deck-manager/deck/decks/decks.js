@@ -26,6 +26,7 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import useAsyncEffect from "use-async-effect";
 
 const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS, ROUTE_PATH_ID_FROM_PARAM];
+const API_KEY_FIREBASE_REST = "AIzaSyBA96Wmq53h-6j3p37JAe_gJ8sX-emkuzY";
 
 const isSingleDeckTabSelected = (selectedTabIndex) =>
   selectedTabIndex === PAGE_TABS_CONFIG.findIndex((config) => config === ROUTE_PATH_ID_FROM_PARAM);
@@ -53,11 +54,11 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     (isMounted) => {
       if (!PAGE_TABS_CONFIG.includes(location.pathname.split("?")[0])) return;
 
-      console.debug("fetched decks");
-
-      axios
+      // be aware its missing orderBy right now. to be changed to post and pagination later on
+      const unsubscribePromise = axios
         .get(
-          "https://firestore.googleapis.com/v1/projects/minionmastersmanager/databases/(default)/documents/decks?key=AIzaSyAJSnLNkSA4pvIfL6sTVJIUMnme-8gRdEM"
+          "https://firestore.googleapis.com/v1/projects/minionmastersmanager/databases/(default)/documents/decks?pageSize=500&key=" +
+            API_KEY_FIREBASE_REST
         )
         .then((response) => {
           if (!isMounted()) return;
@@ -109,12 +110,15 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
               gameTypeThird: deck.gameTypeThird && deck.gameTypeThird.stringValue,
               youtubeLink: deck.youtubeLink && deck.youtubeLink.stringValue,
               redditLink: deck.redditLink && deck.redditLink.stringValue,
-              tags: !isEmpty(deck.tags)
-                ? deck.tags.arrayValue.values.map(({ mapValue: { fields } }) => ({
-                    label: fields.label.stringValue,
-                    value: fields.value.stringValue,
-                  }))
-                : [],
+              tags:
+                !isEmpty(deck.tags) &&
+                !isEmpty(deck.tags.arrayValue.values) &&
+                !isEmpty(deck.tags.arrayValue.values)
+                  ? deck.tags.arrayValue.values.map(({ mapValue: { fields } }) => ({
+                      label: fields.label.stringValue,
+                      value: fields.value.stringValue,
+                    }))
+                  : [],
             };
           });
 
@@ -123,11 +127,13 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
             ...new Set(normalizedDecks.map(({ createdByDisplayName }) => createdByDisplayName)),
           ]);
         });
+
+      // .catch(dbErrorHandlerPromise);
       /*
-      db.collection("decks")
+      const unsubscribePromise = db
+        .collection("decks")
         .orderBy("createdAt", "desc")
-        .get()
-        .then((documentSnapshots) => {
+        .onSnapshot((documentSnapshots) => {
           if (!isMounted()) return;
 
           const dbDecks = documentSnapshots.docs.map((doc) => ({
@@ -167,10 +173,13 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
           setCreatedByFilterOptions([
             ...new Set(normalizedDecks.map(({ createdByDisplayName }) => createdByDisplayName)),
           ]);
-        })
-        .catch(dbErrorHandlerPromise);
+        });
 
- */
+       */
+      return unsubscribePromise;
+    },
+    (promiseUnsubscribe) => {
+      promiseUnsubscribe && promiseUnsubscribe();
     },
     [location.pathname]
   );
@@ -258,6 +267,10 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
           />
         </>
       )}
+
+      <div className={css.totalCount}>
+        count: {sortedByDateCards.length}/{decks.length}
+      </div>
 
       {sortedByDateCards.map((deck) => (
         <SavedDeck

@@ -94,11 +94,9 @@ export function Deck({
         </>
       )}
 
-      {!isForImagePreview &&
-        isPremadeDeckActive === null &&
-        lastSelectedCards.every(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
-          <SaveAsPremadeDeckButton setIsPremadeDeckActive={setIsPremadeDeckActive} />
-        )}
+      {!isForImagePreview && isPremadeDeckActive === null && (
+        <SaveAsPremadeDeckButton setIsPremadeDeckActive={setIsPremadeDeckActive} />
+      )}
     </fieldset>
   );
 }
