@@ -21,7 +21,7 @@ const auth = firebase.auth();
 
 const dbErrorHandlerPromise = (error) => {
   console.error(error);
-  const errorMessage = "You must be logged in to edit data.";
+  const errorMessage = "Some error occured. You may need to be logged in to edit data.";
   toast(errorMessage);
   return Promise.reject();
 };

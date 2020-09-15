@@ -16,7 +16,7 @@ export function CardDeckSlot({
   availableCards,
 }) {
   return (
-    <div isSelectedSlot={isSelectedSlot} className={css.CardDeckSlotStyleDefinition}>
+    <div className={css.CardDeckSlotStyleDefinition}>
       {iD !== IDENTIFIER_FOR_EMPTY_SLOT ? (
         <>
           <div className={css.oneCardStyle}>

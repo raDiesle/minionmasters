@@ -57,7 +57,7 @@ export default function SaveDeckContent({
 
     dbRef
       .add(request)
-      .then((result) => {
+      .then((docRef) => {
         mToast("Successful saved to database!");
 
         localStorage(LAST_USERNAME_LOCALSTORAGE_KEY, formData.createdByDisplayName);
