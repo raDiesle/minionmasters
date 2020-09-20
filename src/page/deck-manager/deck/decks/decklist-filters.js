@@ -4,6 +4,7 @@ import { MasterFilterInput } from "page/deck-manager/deck/decks/master-filter-in
 import GameTypeInput from "page/deck-manager/savedeck/inputs/game-type-input";
 import GameTypeSecondaryInput from "page/deck-manager/savedeck/inputs/game-type-secondary-input";
 import GameTypeThirdInput from "page/deck-manager/savedeck/inputs/game-type-third-input";
+import { TagsInput } from "page/deck-manager/savedeck/tags-input";
 import React from "react";
 
 export default function DecklistFilters({
@@ -18,6 +19,8 @@ export default function DecklistFilters({
   createdByFilterOptions,
   createdByFilter,
   setCreatedByFilter,
+  tagsFilter,
+  setTagsFilter
 }) {
   return (
     <div className={css.formLayout}>
@@ -45,6 +48,11 @@ export default function DecklistFilters({
         createdByFilter={createdByFilter}
         setCreatedByFilter={setCreatedByFilter}
       />
+
+      <div>
+        <label htmlFor="tags">Tags</label>
+        <TagsInput tags={tagsFilter} setTags={setTagsFilter}/>
+      </div>
     </div>
   );
 }

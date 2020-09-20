@@ -1834,6 +1834,19 @@ export function BuildDecks() {
         ></iframe>
       </div>
       <div className={cssStatic.youtubeContent}>
+
+
+        <div style={{paddingBottom: "20px"}}>
+          <iframe
+            title="Basics and Build Deck"
+            src="https://www.youtube.com/embed/Hq2jFas0TRI"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ width: "600px", maxWidth: "100%", height: "337.5px" }}
+          ></iframe>
+        </div>
+
         <iframe
           title="Build deck"
           width="1280"
