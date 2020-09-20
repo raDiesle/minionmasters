@@ -10,33 +10,11 @@ import GameTypeThirdInput from "page/deck-manager/savedeck/inputs/game-type-thir
 import SaveOrEditToDatabaseButton from "page/deck-manager/savedeck/save-db-button";
 import css from "page/deck-manager/savedeck/save-deck-form.module.scss";
 import { LADDER, MAYHEM, PREMADE_TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
+import { TagsInput } from "page/deck-manager/savedeck/tags-input";
 import Tooltip from "rc-tooltip";
 import React, { useEffect, useState } from "react";
 import CreatableSelect from "react-select/creatable";
 
-const TAGS_CONFIG_INITIAL = [
-  "Voidborne",
-  "Elves",
-  "Zen-Chi",
-  "Accursed",
-  "Meta",
-  "Fun",
-  "Spell Intense",
-  "Big Minions",
-  "Medium Minions",
-  "Small Minions",
-  "Siege Pack",
-  "Ranged",
-  "Call to Arms",
-  "Early Game",
-  "Mid Game",
-  "Late Game",
-  "Easy skill",
-  "Medium skill",
-  "Hard skill",
-  "Experimental",
-  "Tournament Winner",
-].map((label) => ({ value: label.toLowerCase().replace(/\W/g, ""), label }));
 
 export default function SaveOrEditDeckForm({
   handleSaveButton,
@@ -82,7 +60,6 @@ export default function SaveOrEditDeckForm({
   const [redditLink, setRedditLink] = useState(initialRedditLink);
 
   const [tags, setTags] = useState(initialTags);
-  const [tagsConfig, setTagsConfig] = useState([...new Set([...TAGS_CONFIG_INITIAL, ...tags])]);
 
   return (
     <div>
@@ -167,31 +144,7 @@ export default function SaveOrEditDeckForm({
 
         <div className={css.inputGroupStyle}>
           <label htmlFor="tags">Tags</label>
-          <CreatableSelect
-            name="tags"
-            options={tagsConfig}
-            value={tags}
-            onChange={(newValue, actionMeta) => {
-              setTags(newValue || []);
-            }}
-            isValidNewOption={() => true}
-            formatCreateLabel={(value) => <span>add "{value}"</span>}
-            onCreateOption={(inputValue) => {
-              const newValueObject = {
-                value: inputValue.toLowerCase().replace(/\W/g, ""),
-                label: inputValue,
-              };
-              setTagsConfig((prevTags) => [...prevTags, newValueObject]);
-              setTags((prevTags) => [...prevTags, newValueObject]);
-            }}
-            isMulti
-            isClearable
-            isSearchable
-            classNamePrefix="react-select"
-            className={css.tagInput}
-            placeholder="Select multiple and add new"
-            closeMenuOnSelect={false}
-          />
+          <TagsInput tags={tags} setTags={setTags}/>
         </div>
 
         <div className={classnames(css.descriptionTextArea, css.inputGroupStyle)}>
