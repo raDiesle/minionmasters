@@ -105,7 +105,7 @@ export default function DionaContent() {
           <div className={css.MasterAbilityHeaderStyle}>
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src={imgPathFn("Diona_Perk3_78")}
+              src={imgPathFn("Diona_Perk3")}
               alt="Diona Perk3"
             />
             <div>Thrill of the Hunt</div>
