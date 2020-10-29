@@ -43,7 +43,10 @@ const generateImages = (file, width) =>
     .resize({ width })
     // .webp({quality: 80})
     .jpeg({ quality: 90 })
-    .toFile(TARGET_FOLDER + file.name + "_" + width + FILE_EXT, function (err, info) {
+    .toFile(TARGET_FOLDER + file.name.split("-CAB", 1)[0] + "_" + width + FILE_EXT, function (
+      err,
+      info
+    ) {
       if (err) {
         console.log("error:");
         console.log(err);

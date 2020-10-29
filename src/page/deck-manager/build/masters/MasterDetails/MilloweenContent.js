@@ -67,7 +67,7 @@ export default function MiloweenContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src={imgPathFn("Arcane_Missiles_78")}
+              src={imgPathFn("ArcaneMissiles")}
               alt="Miloween Perk2"
             />
             <div>Arcane Missiles</div>
