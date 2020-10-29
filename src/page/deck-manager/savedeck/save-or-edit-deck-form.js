@@ -13,8 +13,6 @@ import { LADDER, MAYHEM, PREMADE_TEAM } from "page/deck-manager/savedeck/saved-d
 import { TagsInput } from "page/deck-manager/savedeck/tags-input";
 import Tooltip from "rc-tooltip";
 import React, { useEffect, useState } from "react";
-import CreatableSelect from "react-select/creatable";
-
 
 export default function SaveOrEditDeckForm({
   handleSaveButton,
@@ -144,7 +142,7 @@ export default function SaveOrEditDeckForm({
 
         <div className={css.inputGroupStyle}>
           <label htmlFor="tags">Tags</label>
-          <TagsInput tags={tags} setTags={setTags}/>
+          <TagsInput tags={tags} setTags={setTags} />
         </div>
 
         <div className={classnames(css.descriptionTextArea, css.inputGroupStyle)}>

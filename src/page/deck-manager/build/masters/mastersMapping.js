@@ -8,6 +8,7 @@ import RatboContent from "page/deck-manager/build/masters/MasterDetails/RatboCon
 import RavagerContent from "page/deck-manager/build/masters/MasterDetails/RavagerContent";
 import SettsuContent from "page/deck-manager/build/masters/MasterDetails/SettsuContent";
 import StormbringerContent from "page/deck-manager/build/masters/MasterDetails/StormbringerContent";
+import { ValorianContent } from "page/deck-manager/build/masters/MasterDetails/valorian-content";
 import VolcoContent from "page/deck-manager/build/masters/MasterDetails/VolcoContent";
 import React from "react";
 
@@ -69,5 +70,10 @@ export const mastersMapping = {
     content: <VolcoContent />,
     icon: "Volco_Icon",
     iD: 1,
+  },
+  Valorian: {
+    content: <ValorianContent />,
+    icon: "Valorian_Icon",
+    iD: 12,
   },
 };

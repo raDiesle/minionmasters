@@ -9,14 +9,9 @@ import DeckManager from "page/deck-manager/deck-manager";
 import { ROUTE_PATH_MANAGER } from "page/deck-manager/deck-manager-config";
 import Decks from "page/deck-manager/deck/decks/decks";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
-import { AVAILABLE_CARDS_BY_URL_KEY } from "page/deck-manager/deck/export/export-as-url";
-import { Fun } from "page/fun/fun";
-import { ROUTE_PATH_FUN } from "page/fun/fun-config";
+import { AVAILABLE_CARDS_BY_URL_KEY } from "page/deck-manager/deck/import-export/url-import-export/export-as-url";
 import { MyProfile } from "page/my-profile/my-profile";
-import {
-  AVAILABLE_CARDS_LOCALSTORAGE_KEY,
-  ROUTE_PATH_PROFILE,
-} from "page/my-profile/my-profile-config";
+import { AVAILABLE_CARDS_LOCALSTORAGE_KEY, ROUTE_PATH_PROFILE } from "page/my-profile/my-profile-config";
 import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 import { Tournaments } from "page/tournaments/tournaments";
 import { ROUTE_PATH_TOURNAMENTS } from "page/tournaments/tournaments-config";
@@ -58,7 +53,6 @@ export function Page() {
     ROUTE_PATH_WIKI,
     ROUTE_PATH_PROFILE,
     ROUTE_PATH_TOURNAMENTS,
-    ROUTE_PATH_FUN
   ];
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -117,14 +111,7 @@ export function Page() {
             </Tab>
           </Link>
           <Link to={ROUTE_PATH_TOURNAMENTS}>
-            <Tab>
-              Tournaments
-            </Tab>
-          </Link>
-          <Link to={ROUTE_PATH_FUN}>
-            <Tab>
-              Fun
-            </Tab>
+            <Tab>Tournaments</Tab>
           </Link>
         </TabList>
 
@@ -156,11 +143,7 @@ export function Page() {
         </TabPanel>
 
         <TabPanel>
-          <Tournaments/>
-        </TabPanel>
-
-        <TabPanel>
-          <Fun />
+          <Tournaments />
         </TabPanel>
       </Tabs>
     </div>

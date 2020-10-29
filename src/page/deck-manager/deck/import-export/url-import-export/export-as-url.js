@@ -14,7 +14,14 @@ import {
   mastersMapping,
 } from "page/deck-manager/build/masters/mastersMapping";
 import { ROUTE_PATH_ID_FROM_PARAM } from "page/deck-manager/deck/decks/decks-config";
-import { getCardIdsFromCount } from "page/deck-manager/deck/export/export-helper";
+import { getCardIdsFromCount } from "page/deck-manager/deck/import-export/export/export-helper";
+import {
+  CARD_PARAM_KEY,
+  MASTER_PARAM_KEY,
+  PREMADE_CARD_PARAM_KEY,
+  PREMADE_MASTER_PARAM_KEY,
+} from "page/deck-manager/deck/import-export/url-import-export/url-export-import-config";
+import { IDENTIFIER_FOR_EMPTY_SLOT, INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 
 import Tooltip from "rc-tooltip";
 import React from "react";
@@ -29,32 +36,60 @@ const encodeMyUrl = (url) =>
     // so we can allow for a little better readability over the wire: |`^
     .replace(/%(?:7C|60|5E)/g, unescape);
 
-export function toParams(selectedMaster, lastSelectedCards) {
+function masterCardsToParams({ selectedMaster, lastSelectedCards, masterParamKey, cardParamKey }) {
   const lastSelectedCardiDs = getCardIdsFromCount(lastSelectedCards);
-  const iDsToParam = lastSelectedCardiDs.join("&iD=");
+  const iDsToParam = lastSelectedCardiDs.join("&" + cardParamKey + "=");
 
-  const masterParam = `master=${
+  const masterParam = `${masterParamKey}=${
     mastersMapping[selectedMaster] ? mastersMapping[selectedMaster].iD : INITIAL_MASTER_SELECTED
   }`;
-  const paramsMaster = `?${masterParam}`;
-  const paramsCards = iDsToParam ? `&iD=${iDsToParam}` : "";
+  const paramsMaster = `&${masterParam}`;
+  const paramsCards = iDsToParam ? `&${cardParamKey}=${iDsToParam}` : "";
   return paramsMaster + paramsCards;
 }
 
-export function exportDeckUrl(
+export function exportDeckUrl({
   selectedMaster,
   lastSelectedCards,
+  selectedPremadeMaster,
+  lastSelectedPremadeCards = INITIAL_EMPTY_SLOT_DATA,
   title = "My deck",
   description = "open link to edit or copy deck to game",
-  pagePath = ""
-) {
-  const params = toParams(selectedMaster, lastSelectedCards);
+  pagePath = "",
+}) {
+  const masterAndCardsParams = masterCardsToParams({
+    selectedMaster,
+    lastSelectedCards,
+    masterParamKey: MASTER_PARAM_KEY,
+    cardParamKey: CARD_PARAM_KEY,
+  });
+
+  const isAnyPremadeCardSelected = lastSelectedPremadeCards.some(
+    ({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT
+  );
+
+  const premadeMasterAndCardsParams = isAnyPremadeCardSelected
+    ? masterCardsToParams({
+        selectedMaster: selectedPremadeMaster,
+        lastSelectedCards: lastSelectedPremadeCards,
+        masterParamKey: PREMADE_MASTER_PARAM_KEY,
+        cardParamKey: PREMADE_CARD_PARAM_KEY,
+      })
+    : "";
+
+  return (
+    basicUrlBuilding({ title, description, pagePath }) +
+    masterAndCardsParams +
+    premadeMasterAndCardsParams
+  );
+}
+
+function basicUrlBuilding({ title, description, pagePath }) {
   const titleParams = `&title=${encodeMyUrl(title)}`;
   const descriptionParams = `&description=${encodeMyUrl(description)}`;
-
   const port = window.location.port === "3000" ? `:${window.location.port}` : "";
-  const url = `${window.location.protocol}//${window.location.hostname}${port}/${pagePath}${params}${titleParams}${descriptionParams}`;
-  return url;
+  const START_OF_PARAMS = `?p`;
+  return `${window.location.protocol}//${window.location.hostname}${port}/${pagePath}${START_OF_PARAMS}${titleParams}${descriptionParams}`;
 }
 
 export function ExportAsUrlFromSavedDeck({
@@ -63,16 +98,24 @@ export function ExportAsUrlFromSavedDeck({
   deckId,
   selectedMaster,
   lastSelectedCards,
+  selectedPremadeMaster,
+  lastSelectedPremadeCards,
 }) {
-  const url = exportDeckUrl(
-    selectedMaster,
-    lastSelectedCards,
-    title,
-    description,
-    ROUTE_PATH_ID_FROM_PARAM.replace("/", "")
-  );
-  const deckIdParamPrefix = `&deckId=${encodeMyUrl(deckId)}`;
-  return <ExportAsUrl url={url + deckIdParamPrefix} />;
+  const urlFn = () => {
+    const url = exportDeckUrl({
+      selectedMaster,
+      lastSelectedCards,
+      selectedPremadeMaster,
+      lastSelectedPremadeCards,
+      title,
+      description,
+      pagePath: ROUTE_PATH_ID_FROM_PARAM.replace("/", ""),
+    });
+    const deckIdParamPrefix = `&deckId=${encodeMyUrl(deckId)}`;
+    return url + deckIdParamPrefix;
+  };
+
+  return <ExportAsUrl urlFn={urlFn} />;
 }
 
 export const AVAILABLE_CARDS_BY_URL_KEY = `availableCards`;
@@ -81,27 +124,31 @@ export const AVAILABLE_CARDS_BY_URL_KEY = `availableCards`;
 export function ExportAsUrlFromDeckManager({
   selectedMaster,
   lastSelectedCards,
+  selectedPremadeMaster,
+  lastSelectedPremadeCards,
   availableCards,
   buttonLabel,
 }) {
-  const url = exportDeckUrl(selectedMaster, lastSelectedCards);
-  const availableCardsParam = availableCards
-    ? `&${AVAILABLE_CARDS_BY_URL_KEY}=${availableCards.join(",")}`
-    : "";
-  const urlWithYourAvailableCards = `${url}}${availableCardsParam}`;
+  const urlFn = () => {
+    const masterAndCardsUrl = exportDeckUrl({
+      selectedMaster,
+      lastSelectedCards,
+      selectedPremadeMaster,
+      lastSelectedPremadeCards,
+    });
+    const availableCardsParam = availableCards
+      ? `&${AVAILABLE_CARDS_BY_URL_KEY}=${availableCards.join(",")}`
+      : "";
+    const urlWithYourAvailableCards = `${masterAndCardsUrl}}${availableCardsParam}`;
+    return urlWithYourAvailableCards;
+  };
 
-  return (
-    <ExportAsUrl
-      url={urlWithYourAvailableCards}
-      availableCards={availableCards}
-      buttonLabel={buttonLabel}
-    />
-  );
+  return <ExportAsUrl urlFn={urlFn} availableCards={availableCards} buttonLabel={buttonLabel} />;
 }
 
-function ExportAsUrl({ url, availableCards, buttonLabel = null }) {
+function ExportAsUrl({ urlFn, availableCards, buttonLabel = null }) {
   const handleCopyButtonClick = () => {
-    generateDynamicLink(url).then(({ data: { shortLink } }) => {
+    generateDynamicLink(urlFn()).then(({ data: { shortLink } }) => {
       copy(shortLink);
       mToast("Link copied to clipboard");
     });

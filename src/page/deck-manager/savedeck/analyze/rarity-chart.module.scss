@@ -1,0 +1,12 @@
+.rarityChart {
+  display: flex;
+  width: 300px;
+  border: 1px solid black;
+  margin-bottom: 3px;
+}
+
+.rarityLabel {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 2px;
+}

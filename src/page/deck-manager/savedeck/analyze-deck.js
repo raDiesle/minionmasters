@@ -1,11 +1,12 @@
 import { TYPES } from "components/typeMapping";
-import { getCardDataFromCount } from "page/deck-manager/deck/export/export-helper";
+import { getCardDataFromCount } from "page/deck-manager/deck/import-export/export/export-helper";
 import css from "page/deck-manager/savedeck/analyse-deck.module.scss";
+import { RarityChart } from "page/deck-manager/savedeck/analyze/rarity-chart";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import Tooltip from "rc-tooltip";
 import React from "react";
 
-export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
+export default function AnalyzeDeck({ lastSelectedCards }) {
   const selectedCards = getCardDataFromCount(
     lastSelectedCards.filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
   ).map((card) => ({ card }));
@@ -81,88 +82,87 @@ export default function AnalyzeDeck({ lastSelectedCards, selectedMaster }) {
   const bridgeControlForDisplay = Math.round(bridgeControlRatio).toFixed(0);
 
   return (
-    <div>
-      <fieldset className={css.analyzeFieldset}>
-        <legend>Analysis</legend>
-        <div className={css.AnalysisDataStyle}>
-          <div className={css.property}>
-            <b>Average Mana</b> <div>{avgMana}</div>
-          </div>
-
-          <Tooltip
-            placement="top"
-            overlay={
-              <span>
-                Only minions. If you want to include attack flying spells, ask fdmfdm for providing
-                it ;)
-              </span>
-            }
-          >
-            <div className={css.property}>
-              <b>Attack Flying</b> <div>{attackFlying}</div>
-            </div>
-          </Tooltip>
-
-          <div className={css.property}>
-            <b>Spells</b> <div>{spells}</div>
-          </div>
-
-          <Tooltip
-            placement="top"
-            overlay={<span>Damage / Attackspeed * Unit count (ignoring attack delay)</span>}
-          >
-            <div className={css.property}>
-              <b>Total Dps</b>
-              <div>{dpsForDisplay}</div>
-            </div>
-          </Tooltip>
-
-          <Tooltip placement="top" overlay={<span>attackspeed * unitcount</span>}>
-            <div className={css.property}>
-              <b>Avg Attack Speed</b>
-              <div>{avgAttackSpeedForDisplay}</div>
-            </div>
-          </Tooltip>
-
-          <Tooltip
-            placement="top"
-            overlay={
-              <span>
-                (if unitCount === 1 -> 1. if unitCount > 1 -> 2. if summonUnitSpell -> 1) /
-                maxMana=10 : maxUnits=20
-              </span>
-            }
-          >
-            <div className={css.property}>
-              <b>Bridge Control</b>
-              <div>{bridgeControlForDisplay}%</div>
-            </div>
-          </Tooltip>
-
-          <Tooltip placement="top" overlay={<span>attackdelay * unitcount </span>}>
-            <div className={css.property}>
-              <b>Avg Attack Delay</b>
-              <div>{avgAttackDelayForDisplay}</div>
-            </div>
-          </Tooltip>
-
-          <Tooltip
-            placement="top"
-            overlay={
-              <span>
-                If game data has no Area of Effect icon, its not included. Ask fdmfdm to fix ;)
-              </span>
-            }
-          >
-            <div className={css.property}>
-              <b>Minions with AOE</b>
-              <div>{minionsWithAoe}</div>
-            </div>
-          </Tooltip>
+    <fieldset className={css.analyzeFieldset}>
+      <legend>Analysis</legend>
+      <div className={css.AnalysisDataStyle}>
+        <div className={css.property}>
+          <b>Average Mana</b> <div>{avgMana}</div>
         </div>
 
-        <div className={css.disclaimer}>summoned units do not count to statistics</div>
-      </fieldset>
-    </div>
+        <Tooltip
+          placement="top"
+          overlay={
+            <span>
+              Only minions. If you want to include attack flying spells, ask fdmfdm for providing it
+              ;)
+            </span>
+          }
+        >
+          <div className={css.property}>
+            <b>Attack Flying</b> <div>{attackFlying}</div>
+          </div>
+        </Tooltip>
+
+        <div className={css.property}>
+          <b>Spells</b> <div>{spells}</div>
+        </div>
+
+        <Tooltip
+          placement="top"
+          overlay={<span>Damage / Attackspeed * Unit count (ignoring attack delay)</span>}
+        >
+          <div className={css.property}>
+            <b>Total Dps</b>
+            <div>{dpsForDisplay}</div>
+          </div>
+        </Tooltip>
+
+        <Tooltip placement="top" overlay={<span>attackspeed * unitcount</span>}>
+          <div className={css.property}>
+            <b>Avg Attack Speed</b>
+            <div>{avgAttackSpeedForDisplay}</div>
+          </div>
+        </Tooltip>
+
+        <Tooltip
+          placement="top"
+          overlay={
+            <span>
+              (if unitCount === 1 -> 1. if unitCount > 1 -> 2. if summonUnitSpell -> 1) / maxMana=10
+              : maxUnits=20
+            </span>
+          }
+        >
+          <div className={css.property}>
+            <b>Bridge Control</b>
+            <div>{bridgeControlForDisplay}%</div>
+          </div>
+        </Tooltip>
+
+        <Tooltip placement="top" overlay={<span>attackdelay * unitcount </span>}>
+          <div className={css.property}>
+            <b>Avg Attack Delay</b>
+            <div>{avgAttackDelayForDisplay}</div>
+          </div>
+        </Tooltip>
+
+        <Tooltip
+          placement="top"
+          overlay={
+            <span>
+              If game data has no Area of Effect icon, its not included. Ask fdmfdm to fix ;)
+            </span>
+          }
+        >
+          <div className={css.property}>
+            <b>Minions with AOE</b>
+            <div>{minionsWithAoe}</div>
+          </div>
+        </Tooltip>
+      </div>
+      <RarityChart lastSelectedCards={lastSelectedCards} />
+
+      <div className={css.disclaimer}>summoned units do not count to statistics</div>
+    </fieldset>
   );
 }

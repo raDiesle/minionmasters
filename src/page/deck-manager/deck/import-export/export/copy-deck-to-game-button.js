@@ -5,7 +5,7 @@ import cssButton from "components/button.module.scss";
 
 import cssHelpers from "components/helper.module.scss";
 import mToast from "components/mToast";
-import { getCardNamesFromCount } from "page/deck-manager/deck/export/export-helper";
+import { getCardNamesFromCount } from "page/deck-manager/deck/import-export/export/export-helper";
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 

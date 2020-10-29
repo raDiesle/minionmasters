@@ -11,13 +11,15 @@ import React from "react";
 
 // not used anymore
 const IMAGE_SERVER = `https://minionmastersmanager-286215.ew.r.appspot.com/screenshot`;
-export default function ExportAsImage({ url }) {
+export default function ExportAsImage({ urlFn }) {
   const handleCopyButtonClick = () => {
     // should be in sync with backend rendering meta tag height
     const HEIGHT = `301`;
     const WIDTH = `945`;
+    // TODO IF PREMADE
+
     const shareImageUrl = `${IMAGE_SERVER}/${encodeURIComponent(
-      url + "&isPreview"
+      urlFn() + "&isPreview"
     )}?width=${WIDTH}&height=${HEIGHT}`;
 
     generateDynamicLink(shareImageUrl).then(({ data: { shortLink } }) => {

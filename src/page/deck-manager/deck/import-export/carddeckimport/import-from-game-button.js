@@ -6,7 +6,7 @@ import cssHelpers from "components/helper.module.scss";
 import mToast from "components/mToast";
 import copy from "copy-to-clipboard";
 import cardData from "generated/jobCardProps.json";
-import { getCardWithDataByListOfId } from "page/deck-manager/deck/carddeckimport/import-helper";
+import { getCardWithDataByListOfId } from "page/deck-manager/deck/import-export/carddeckimport/import-helper";
 import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 import Tooltip from "rc-tooltip";
 import React, { useState } from "react";

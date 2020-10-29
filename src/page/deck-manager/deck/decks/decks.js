@@ -1,11 +1,19 @@
-import { deckIdFromUrl, isForImagePreview, matchSelectedTabOutOfPath, useCurrentUser } from "components/helper";
+import {
+  deckIdFromUrl,
+  isForImagePreview,
+  matchSelectedTabOutOfPath,
+  useCurrentUser,
+} from "components/helper";
 import { useGaTrackView } from "footer/consent-cookie-banner";
 import isEmpty from "lodash.isempty";
 import orderBy from "lodash/orderBy";
 
 import { DEFAULT_SELECTED_TAB } from "page/deck-manager/deck-manager";
 import DecklistFilters from "page/deck-manager/deck/decks/decklist-filters";
-import { ROUTE_PATH_DECKS, ROUTE_PATH_ID_FROM_PARAM } from "page/deck-manager/deck/decks/decks-config";
+import {
+  ROUTE_PATH_DECKS,
+  ROUTE_PATH_ID_FROM_PARAM,
+} from "page/deck-manager/deck/decks/decks-config";
 
 import css from "page/deck-manager/deck/decks/decks.module.scss";
 import { SavedDeck } from "page/deck-manager/deck/decks/saved-deck";
@@ -37,7 +45,8 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const [createdByFilter, setCreatedByFilter] = useState("");
 
   const deckTagFromUrl = qs.parse(window.location.search, { ignoreQueryPrefix: true }).tag;
-  const deckTagFromUrlObject = deckTagFromUrl && simpleLabelToValue(decodeURIComponent(deckTagFromUrl));
+  const deckTagFromUrlObject =
+    deckTagFromUrl && simpleLabelToValue(decodeURIComponent(deckTagFromUrl));
   const [tagsFilter, setTagsFilter] = useState(deckTagFromUrl ? [deckTagFromUrlObject] : []);
 
   const currentUser = useCurrentUser();
@@ -50,8 +59,16 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     ? decks
     : decks.filter(({ dbid }) => dbid === deckIdFromUrl);
 
-  const decksByTag = isEmpty(tagsFilter) ? decksByDeckId :
-    decksByDeckId.filter(({ tags }) => !isEmpty(tagsFilter.map(({ value }) => value).filter(tag => tags.map(({ value }) => value).includes(tag))));
+  const decksByTag = isEmpty(tagsFilter)
+    ? decksByDeckId
+    : decksByDeckId.filter(
+        ({ tags }) =>
+          !isEmpty(
+            tagsFilter
+              .map(({ value }) => value)
+              .filter((tag) => tags.map(({ value }) => value).includes(tag))
+          )
+      );
 
   const decksWithGameType = !gameTypeFilter
     ? decksByTag
@@ -60,14 +77,14 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const decksWithGameTypeSecondary = !gameTypeSecondaryFilter
     ? decksWithGameType
     : decksWithGameType.filter(
-      ({ gameTypeSecondary }) => gameTypeSecondary === gameTypeSecondaryFilter
-    );
+        ({ gameTypeSecondary }) => gameTypeSecondary === gameTypeSecondaryFilter
+      );
 
   const decksWithGameTypeThird = !gameTypeThirdFilter
     ? decksWithGameTypeSecondary
     : decksWithGameTypeSecondary.filter(
-      ({ gameTypeThird }) => gameTypeThird === gameTypeThirdFilter
-    );
+        ({ gameTypeThird }) => gameTypeThird === gameTypeThirdFilter
+      );
 
   const decksWithMaster = !masterFilter
     ? decksWithGameTypeThird
@@ -83,8 +100,8 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     !createdByFilter || deckIdFromUrl
       ? decksWithYoursFilter
       : decksWithYoursFilter.filter(
-      ({ createdByDisplayName }) => createdByDisplayName === createdByFilter
-      );
+          ({ createdByDisplayName }) => createdByDisplayName === createdByFilter
+        );
 
   const sortedByDateCards = orderBy(
     decksWithAuthor,
@@ -126,12 +143,13 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
             setGameTypeThird={setGameTypeThirdFilter}
             masterFiltr={masterFilter}
             setMasterFilter={setMasterFilter}
-            createdByFilterOptions={decks ? [
-              ...new Set(decks.map(({ createdByDisplayName }) => createdByDisplayName))
-            ] : [""]}
+            createdByFilterOptions={
+              decks
+                ? [...new Set(decks.map(({ createdByDisplayName }) => createdByDisplayName))]
+                : [""]
+            }
             createdByFilter={createdByFilter}
             setCreatedByFilter={setCreatedByFilter}
-
             tagsFilter={tagsFilter}
             setTagsFilter={setTagsFilter}
           />
