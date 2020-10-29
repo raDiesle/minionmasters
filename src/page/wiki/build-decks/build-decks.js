@@ -1834,9 +1834,7 @@ export function BuildDecks() {
         ></iframe>
       </div>
       <div className={cssStatic.youtubeContent}>
-
-
-        <div style={{paddingBottom: "20px"}}>
+        <div style={{ paddingBottom: "20px" }}>
           <iframe
             title="Basics and Build Deck"
             src="https://www.youtube.com/embed/Hq2jFas0TRI"

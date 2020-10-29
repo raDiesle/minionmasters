@@ -3,7 +3,7 @@ const path = require("path");
 const sharp = require("sharp");
 
 // SOURCE FOLDER
-const SRC_FOLDER = "batch_jobs/generated/img";
+const SRC_FOLDER = "batch_jobs/images_highres_from_game/img";
 const TARGET_FOLDER = "./public/generated/img/";
 
 function readFilesSync(dir) {

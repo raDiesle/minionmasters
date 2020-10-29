@@ -1,4 +1,5 @@
 import { isForImagePreview } from "components/helper";
+import { AddPremadeDeckButton } from "page/deck-manager/deck/add-premade-deck-button";
 
 import BuildCardDeckActionOverlay from "page/deck-manager/deck/build-card-deck-action-overlay";
 import { DeckButtons } from "page/deck-manager/deck/deck-buttons";
@@ -7,7 +8,7 @@ import { DeckMasterAndCardsContainerStyle } from "page/deck-manager/deck/deck-ma
 import css from "page/deck-manager/deck/deck.module.scss";
 import MasterDeckSlot from "page/deck-manager/deck/master-deck-slot";
 import { RadioButton } from "page/deck-manager/deck/radio-button";
-import { SaveAsPremadeDeckButton } from "page/deck-manager/deck/save-as-premade-deck-button";
+import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
 
@@ -45,6 +46,8 @@ export function Deck({
               lastSelectedCards,
               setSelectedMaster,
               setLastSelectedCards,
+              selectedPremadeMaster,
+              lastSelectedPremadeCards,
             }}
           />
         )}
@@ -62,10 +65,14 @@ export function Deck({
             )}
           />
         </DeckMasterAndCardsContainerStyle>
+
+        {lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
+          <AnalyzeDeck lastSelectedCards={lastSelectedCards} selectedMaster={selectedMaster} />
+        )}
       </div>
 
       {isPremadeDeckActive !== null && (
-        <>
+        <div>
           <RadioButton
             value={true}
             checked={isPremadeDeckActive === true}
@@ -91,11 +98,20 @@ export function Deck({
               )}
             />
           </DeckMasterAndCardsContainerStyle>
-        </>
+
+          {lastSelectedPremadeCards.some(
+            ({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT
+          ) && (
+            <AnalyzeDeck
+              lastSelectedCards={lastSelectedPremadeCards}
+              selectedMaster={selectedPremadeMaster}
+            />
+          )}
+        </div>
       )}
 
       {!isForImagePreview && isPremadeDeckActive === null && (
-        <SaveAsPremadeDeckButton setIsPremadeDeckActive={setIsPremadeDeckActive} />
+        <AddPremadeDeckButton setIsPremadeDeckActive={setIsPremadeDeckActive} />
       )}
     </fieldset>
   );

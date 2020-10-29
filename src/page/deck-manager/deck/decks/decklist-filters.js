@@ -20,7 +20,7 @@ export default function DecklistFilters({
   createdByFilter,
   setCreatedByFilter,
   tagsFilter,
-  setTagsFilter
+  setTagsFilter,
 }) {
   return (
     <div className={css.formLayout}>
@@ -51,7 +51,7 @@ export default function DecklistFilters({
 
       <div>
         <label htmlFor="tags">Tags</label>
-        <TagsInput tags={tagsFilter} setTags={setTagsFilter}/>
+        <TagsInput tags={tagsFilter} setTags={setTagsFilter} />
       </div>
     </div>
   );

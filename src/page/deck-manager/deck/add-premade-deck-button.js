@@ -7,7 +7,7 @@ import mToast from "components/mToast";
 import Tooltip from "rc-tooltip";
 import React from "react";
 
-export function SaveAsPremadeDeckButton({ setIsPremadeDeckActive }) {
+export function AddPremadeDeckButton({ setIsPremadeDeckActive }) {
   const handleButtonClick = () => {
     setIsPremadeDeckActive(true);
 

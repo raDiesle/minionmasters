@@ -1,14 +1,14 @@
 import * as classnames from "classnames";
 import { isForImagePreview } from "components/helper";
 import isEmpty from "lodash.isempty";
-import { ImportFromGameButton } from "page/deck-manager/deck/carddeckimport/import-from-game-button";
 import css from "page/deck-manager/deck/deck.module.scss";
-import { CopyDeckToGameButton } from "page/deck-manager/deck/export/copy-deck-to-game-button";
-import ExportAsImage from "page/deck-manager/deck/export/export-as-image";
+import { ImportFromGameButton } from "page/deck-manager/deck/import-export/carddeckimport/import-from-game-button";
+import { CopyDeckToGameButton } from "page/deck-manager/deck/import-export/export/copy-deck-to-game-button";
+import ExportAsImage from "page/deck-manager/deck/import-export/url-import-export/export-as-image";
 import {
   ExportAsUrlFromDeckManager,
-  exportDeckUrl,
-} from "page/deck-manager/deck/export/export-as-url";
+  exportDeckUrl
+} from "page/deck-manager/deck/import-export/url-import-export/export-as-url";
 import { RadioButton } from "page/deck-manager/deck/radio-button";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
@@ -22,6 +22,8 @@ export function DeckButtons({
   lastSelectedCards,
   setSelectedMaster,
   setLastSelectedCards,
+  selectedPremadeMaster,
+  lastSelectedPremadeCards,
 }) {
   return (
     <div>
@@ -46,7 +48,16 @@ export function DeckButtons({
           </div>
 
           <div className={css.rightTopLeftExportImageLegend}>
-            <ExportAsImage url={exportDeckUrl(selectedMaster, lastSelectedCards)} />
+            <ExportAsImage
+              urlFn={() =>
+                exportDeckUrl({
+                  selectedMaster,
+                  lastSelectedCards,
+                  selectedPremadeMaster,
+                  lastSelectedPremadeCards,
+                })
+              }
+            />
           </div>
         </>
       )}
@@ -61,6 +72,8 @@ export function DeckButtons({
         <ExportAsUrlFromDeckManager
           selectedMaster={selectedMaster}
           lastSelectedCards={lastSelectedCards}
+          lastSelectedPremadeCards={lastSelectedPremadeCards}
+          selectedPremadeMaster={selectedPremadeMaster}
           availableCards={availableCards}
         />
       </div>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import cardData from "generated/jobCardProps.json";
 import isEmpty from "lodash.isempty";
+import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -8,7 +9,7 @@ import useAsyncEffect from "use-async-effect";
 
 const API_KEY_FIREBASE_REST = "AIzaSyBA96Wmq53h-6j3p37JAe_gJ8sX-emkuzY";
 
-export function useDecks(){
+export function useDecks() {
   const location = useLocation();
   const [decks, setDecks] = useState([]);
   useAsyncEffect(
@@ -20,7 +21,7 @@ export function useDecks(){
       const unsubscribePromise = axios
         .get(
           "https://firestore.googleapis.com/v1/projects/minionmastersmanager/databases/(default)/documents/decks?pageSize=500&key=" +
-          API_KEY_FIREBASE_REST
+            API_KEY_FIREBASE_REST
         )
         .then((response) => {
           if (!isMounted()) return;
@@ -35,21 +36,26 @@ export function useDecks(){
             const mapToCardData = (cardsToMap) =>
               cardsToMap.map(
                 ({
-                   mapValue: {
-                     fields: {
-                       card: {
-                         mapValue: {
-                           fields: {
-                             iD: { integerValue: iDFromDb },
-                           },
-                         },
-                       },
-                       count: { integerValue: count },
-                     },
-                   },
-                 }) => {
+                  mapValue: {
+                    fields: {
+                      card: {
+                        mapValue: {
+                          fields: {
+                            iD: { integerValue: iDFromDb },
+                          },
+                        },
+                      },
+                      count: { integerValue: count },
+                    },
+                  },
+                }) => {
+                  const matchedCard = cardData.find(({ iD }) => iD === parseInt(iDFromDb));
+
                   return {
-                    card: cardData.find(({ iD }) => iD === parseInt(iDFromDb)),
+                    card:
+                      typeof matchedCard === "undefined"
+                        ? cardData.find(({ iD }) => iD === 26)
+                        : matchedCard,
                     count: parseInt(count),
                   };
                 }
@@ -77,9 +83,9 @@ export function useDecks(){
                 !isEmpty(deck.tags.arrayValue.values) &&
                 !isEmpty(deck.tags.arrayValue.values)
                   ? deck.tags.arrayValue.values.map(({ mapValue: { fields } }) => ({
-                    label: fields.label.stringValue,
-                    value: fields.value.stringValue,
-                  }))
+                      label: fields.label.stringValue,
+                      value: fields.value.stringValue,
+                    }))
                   : [],
             };
           });

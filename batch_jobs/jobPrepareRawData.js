@@ -265,7 +265,7 @@ function normalizeGameCardData(propsAsMap) {
     `{"$1", "${TYPE_TERM}", "$1"}`
   );
 
-  // propsAsMap.description = propsAsMap.description.replace(/ERROR_/, "");
+  propsAsMap.description = propsAsMap.description.replace(/ERROR_/, "");
 
   /*
   propsAsMap.description = propsAsMap.description.replace(

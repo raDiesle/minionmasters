@@ -11,8 +11,9 @@ import DeckDescription from "page/deck-manager/deck/decks/deck-description";
 import { RedditEmbed } from "page/deck-manager/deck/decks/reddit-embed";
 import css from "page/deck-manager/deck/decks/saved-deck.module.scss";
 import { YourSavedDeckEdit } from "page/deck-manager/deck/decks/your-saved-deck-edit";
-import { CopyDeckToGameButton } from "page/deck-manager/deck/export/copy-deck-to-game-button";
-import { ExportAsUrlFromSavedDeck } from "page/deck-manager/deck/export/export-as-url";
+import { CopyDeckToGameButton } from "page/deck-manager/deck/import-export/export/copy-deck-to-game-button";
+import { ExportAsUrlFromSavedDeck } from "page/deck-manager/deck/import-export/url-import-export/export-as-url";
+import { RarityChart } from "page/deck-manager/savedeck/analyze/rarity-chart";
 import { BOTH, SOLO, TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
 import ReactTimeAgo from "react-time-ago";
@@ -86,6 +87,8 @@ export function SavedDeck({
           description={description}
           selectedMaster={master}
           lastSelectedCards={cards}
+          selectedPremadeMaster={premadeMaster}
+          lastSelectedPremadeCards={premadeCards}
         />
       </div>
 
@@ -113,6 +116,8 @@ export function SavedDeck({
             availableCards={availableCards}
           />
         </DeckMasterAndCardsContainerStyle>
+
+        <RarityChart lastSelectedCards={cards} />
 
         {!isEmpty(premadeCards) && (
           <>
@@ -148,6 +153,8 @@ export function SavedDeck({
                 availableCards={availableCards}
               />
             </DeckMasterAndCardsContainerStyle>
+
+            <RarityChart lastSelectedCards={premadeCards} />
 
             {!isForImagePreview && (
               <div className={css.inlineButtons}>

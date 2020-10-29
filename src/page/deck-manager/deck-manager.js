@@ -16,11 +16,11 @@ import CardForDeckActionOverlay from "page/deck-manager/deck/cardfordeck-actiono
 import { Deck } from "page/deck-manager/deck/deck";
 
 import { HowToUse } from "page/deck-manager/deck/how-to-use";
-import { ImportFromUrl } from "page/deck-manager/deck/import-from-url";
-import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
+import { ImportDecksFromUrl } from "page/deck-manager/deck/import-export/url-import-export/import-decks-from-url";
 import SaveDeckContainer from "page/deck-manager/savedeck/save-deck-container";
 import { ROUTE_PATH_DECKMANAGER_SAVE } from "page/deck-manager/savedeck/savedeck-config";
 import { IDENTIFIER_FOR_EMPTY_SLOT, INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
+import qs from "qs";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
@@ -52,7 +52,15 @@ export default function DeckManager({
 
   const [selectedPremadeMaster, setSelectedPremadeMaster] = useState(INITIAL_MASTER_SELECTED);
   const [lastSelectedPremadeCards, setLastSelectedPremadeCards] = useState(INITIAL_EMPTY_SLOT_DATA);
-  const [isPremadeDeckActive, setIsPremadeDeckActive] = useState(null);
+
+  const isPremadeActiveByUrlImport =
+    typeof qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    }).pMaster !== "undefined";
+
+  const [isPremadeDeckActive, setIsPremadeDeckActive] = useState(
+    isPremadeActiveByUrlImport ? true : null
+  );
 
   const PAGE_TABS_CONFIG = [
     ROUTE_PATH_DECKMANAGER_BUILD,
@@ -68,9 +76,11 @@ export default function DeckManager({
 
   return (
     <div>
-      <ImportFromUrl
+      <ImportDecksFromUrl
         setLastSelectedCards={setLastSelectedCards}
         setSelectedMaster={setSelectedMaster}
+        setSelectedPremadeMaster={setSelectedPremadeMaster}
+        setLastSelectedPremadeCards={setLastSelectedPremadeCards}
       />
 
       <Deck
@@ -86,10 +96,6 @@ export default function DeckManager({
         isPremadeDeckActive={isPremadeDeckActive}
         setIsPremadeDeckActive={setIsPremadeDeckActive}
       />
-
-      {lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
-        <AnalyzeDeck lastSelectedCards={lastSelectedCards} selectedMaster={selectedMaster} />
-      )}
 
       <Tabs
         forceRenderTabPanel
