@@ -54,10 +54,10 @@
   "scripts": {
     "updateData": "npm-run-all generateData compressImages",
     "compressImages": "node batch_jobs/jobCompressImages",
-    "predeploy": "npm-run-all build moveToFunctions",
+    "predeploy": "npm-run-all build",
     "moveToFunctions": "mvy --force build/index.html functions/index2.html",
     "copyToFunctions": "cpy build/index.html functions/",
-    "deploy": "npm-run-all deployFunctions deployHosting",
+    "deploy": "npm-run-all deployHosting",
     "deployHosting": "firebase deploy --only hosting",
     "deployFunctions": "firebase deploy --only functions",
     "start": "react-scripts start",
