@@ -290,7 +290,7 @@ export const ABILITIES_CONFIG = [
         key: "EmpyreanArmy",
         display: "Empyrean Army",
         description:
-          "If you have 5 or more Empyrean cards in your deck at the time this card is played.",
+          "If you have 5 or more Empyrean cards  (non-Wild Carded) in your deck at the time this card is played.",
         isBuff: true,
       },
       {
@@ -340,6 +340,12 @@ export const ABILITIES_CONFIG = [
     category: "UNIT_SPECIFIC",
     display: "Unit Specific",
     terms: [
+      {
+        key: "ShieldOfLight",
+        display: "Shield of Light",
+        description: `      When taking damage give up to 4 nearby allies Shield. Cooldown: 12. Radius: 4`,
+        isBuff: true,
+      },
       {
         key: "Netherstep",
         display: "Netherstep",

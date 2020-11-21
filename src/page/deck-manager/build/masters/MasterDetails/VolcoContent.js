@@ -36,16 +36,22 @@ export default function VolcoContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src={imgPathFn("Volco_Fireball")}
+              src={imgPathFn("Volco_BurntheBridges")}
               alt="Volco Perk1"
             />
-            <div>Afterburner</div>
+            <div>Burn the Bridges</div>
           </div>
         </legend>
         <div className={css.MasterAbilityDescriptionStyle}>
-          When Volco hols the Marked bridge and plays a card, they fire a firebolt at the enemy
-          Master dealing 60 Damage.
+          Add the card Burn The Bridges to Volco's deck.
         </div>
+
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Both bridges get covered in flames, dealing 200 damage to ground enemies. Lasts 5 sec.
+        </div>
+        <div>Ember of Flame</div>
+        <div className={css.MasterAbilityDescriptionStyle}>Pickup Radius: 1 Effect</div>
+        <div className={css.MasterAbilityDescriptionStyle}>Radius: 8</div>
         <div className={css.MasterAbilityUnlocksHeaderStyle}>
           20 XP <FontAwesomeIcon icon={faUnlock} />
         </div>
@@ -57,19 +63,16 @@ export default function VolcoContent() {
             {" "}
             <img
               className={css.MasterAbilityImageRoundedStyle}
-              src={imgPathFn("Volco_BurntheBridges")}
-              alt="Volco Perk2"
+              src={imgPathFn("Volco_TempersFlaring2")}
+              alt="Volco Perk1"
             />
-            <div>Burn the Bridges</div>
+            <div> Templers Flaring</div>
           </div>
         </legend>
         <div className={css.MasterAbilityDescriptionStyle}>
-          Add the card Burn The Bridges to Volco's deck.
-        </div>
-
-        <div className={css.MasterAbilityDescriptionStyle}>
-          Both bridges get covered in flames, dealing 40 damage per sec to unfortunate ground
-          enemies. Lasts 5 sec.
+          Summon an Ember of Flame. Every 15 seconds on a random bridge. When a friendly Melee
+          Minion picks up the ember all nearby friendly Melee Minions gain Rage Rage +50% Attack
+          damage
         </div>
         <div className={css.MasterAbilityUnlocksHeaderStyle}>
           60 XP <FontAwesomeIcon icon={faUnlock} />
@@ -84,11 +87,14 @@ export default function VolcoContent() {
               src={imgPathFn("Volco_TempersFlaring2")}
               alt="Volco Perk3"
             />
-            <div>Tempers Flaring</div>
+            <div>Tempers Burning</div>
           </div>
         </legend>
-        <div className={css.MasterAbilityDescriptionStyle}>All friendly melee Units have Rage</div>
-        <div className={css.MasterAbilityDescriptionStyle}>+50% Attack damage.</div>
+        Ember of Flame now gives Berserker's Rage instead. Berserker's Rage:
+        <div className={css.MasterAbilityDescriptionStyle}>+100% Attack damage.</div>
+        <div className={css.MasterAbilityDescriptionStyle}>
+          Also self inflickt 10% of the damage
+        </div>
         <div className={css.MasterAbilityUnlocksHeaderStyle}>
           120 XP <FontAwesomeIcon icon={faUnlock} />
         </div>

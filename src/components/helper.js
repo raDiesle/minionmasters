@@ -3,6 +3,8 @@ import { auth } from "mm-firestore";
 import qs from "qs";
 import { useEffect, useState } from "react";
 
+export const CURRENT_GAME_VERSION = "1.18";
+
 const ABSOLUTE_PREFIX = "/";
 const IMG_FOLDER = `${ABSOLUTE_PREFIX}generated/img/`;
 const FILE_ENDING = ".jpg";
@@ -30,8 +32,6 @@ export function is_touch_device() {
     return false;
   }
 }
-
-export const CURRENT_GAME_VERSION = "1.16";
 
 export const isForImagePreview =
   typeof qs.parse(window.location.search, { ignoreQueryPrefix: true }).isPreview !== "undefined";

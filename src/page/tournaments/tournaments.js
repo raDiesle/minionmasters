@@ -18,8 +18,16 @@ export function Tournaments() {
   const tournamentsConfig = [
     {
       publisher: "BadAsAFish80",
+      name: "BadAsAFish80's MM 1v1 #14",
+      number: "14",
+      type: TYPE["1v1"],
+      platform: PLATFORM.PC,
+      endDate: new Date(2020, 10, 14),
+    },
+    {
+      publisher: "BadAsAFish80",
       name: "BadAsAFish80's MM 1v1 #13",
-      number: "8",
+      number: "13",
       type: TYPE["1v1"],
       platform: PLATFORM.PC,
       endDate: new Date(2020, 7, 20),

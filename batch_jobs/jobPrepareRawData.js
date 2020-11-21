@@ -93,6 +93,86 @@ function normalizeGameCardData(propsAsMap) {
     propsAsMap.rarity = "Perk";
   }
 
+  propsAsMap.description = propsAsMap.description.replace(
+    "[actorskillinfo:OverloadMulti,[mec:",
+    ``
+  );
+  propsAsMap.description = propsAsMap.description.replace(
+    "([cv:ShieldFromOutsideAttacks.Variable])]]",
+    ``
+  );
+
+  propsAsMap.description = propsAsMap.description.replace("[v:Illusion.DAMAGE]", `30`);
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:SmallFireDragonIllusory.SummonAmounts*0]",
+    `2`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace("[cv:RageThrowers.SummonAmount]", `2`);
+
+  propsAsMap.description = propsAsMap.description.replace("[cv:RageThrowers.SummonAmounts*0]", `1`);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:GroundMinionsAndSummonSkeletons.Variable]",
+    `6`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "GroundMinionsAndSummonSkeletons",
+    `Unholy Ground`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace("([cv:Hypnotize.Variable])", `(2)`);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:ShieldedCrossbowDudes.SummonAmounts*0]",
+    `1`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[f:Still a group of weak ranged Minions. Still great friends.]",
+    ``
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:PropellerHorde.SummonAmounts*0]",
+    `2`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `[actorskillinfo:SingleShieldBuff,[mec:[r:SingleShieldBuff"}`,
+    `Shield`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace("[cv:WolfAmongSheep.SummonAmount]", `4`);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[math:[v:DamageSelfOnAttack.SELF_DAMAGE_PERCENT]/[av:ZealotLeader.AttackCooldown]]",
+    `6`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:DynamicDuo.AdditionalUnitTriggerVariable]",
+    `3`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "ERROR_[actorskillinfo:ShieldOfLight,[mec:[r:ShieldOfLight]]][mec:Quest:]",
+    ``
+  );
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[cv:QuestingMilitiaKnight.Variable]",
+    `5`
+  );
+
+  propsAsMap.description = propsAsMap.description.replace("[mec:Reward:]", ``);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "[v:SummonLegionnairesIfQuestIsCompleted.SUMMON_AMOUNT]",
+    `4`
+  );
+
   /*
   propsAsMap.description = propsAsMap.description.replace(
     "[cv:DeadlyTwins.AdditionalUnitTriggerVariable]",
