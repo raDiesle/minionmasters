@@ -252,6 +252,23 @@ export const ABILITIES_CONFIG = [
     category: "SLITHER",
     display: "Slither",
     terms: [
+      {
+        key: "SlitherBeastPoisonAttack",
+        display: "Poison Spit",
+        description:
+          "Akinlep's Gong of Pestilence Spits its potent saliva at its target inflicting 4 seconds of Poison to it and all nearby enemy Minions.",
+        isBuff: false,
+      },
+
+      {
+        key: "SlitherBeastSlamAttack",
+        display: "Slam Attack",
+        description:
+          "Akinlep's Gong of Pestilence forcibly slams its head into buildings. (Damage: 100, Range.2, Cooldown: 2)",
+        isBuff: false,
+      },
+
+
       // Call Slitherbound
       {
         key: "Cohort",

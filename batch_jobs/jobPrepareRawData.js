@@ -94,6 +94,12 @@ function normalizeGameCardData(propsAsMap) {
   }
 
   propsAsMap.description = propsAsMap.description.replace(
+    "<b><color=orange><link=\"spell_info:ResolveAllPoisonDamage>Ring The Gong</link></color></b>",
+    `Ring The Gong (All nearby Enemy Minions take all Poison damage immediately. This card stays in your hand until Akinlep's Gong of Pestilence dies,  then it is replaced with Akinlep's Gong of Pestilence and sent to the bottom of your deck. Range: 15. Delay: 0.5 Sec.)`
+  );
+
+
+  propsAsMap.description = propsAsMap.description.replace(
     "[actorskillinfo:OverloadMulti,[mec:",
     ``
   );

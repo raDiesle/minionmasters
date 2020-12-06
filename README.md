@@ -10,6 +10,12 @@
 4. `npm start`
 5. `npm run deploy`
 
+# first time setup:
+- npm install
+- cd functions && npm install
+- npm install -g firebase-tools
+- firebase login
+
 # update game data
 1. Download and replace file manual from: https://drive.google.com/file/d/0B-3hJBoCehBpQVBUYVdxZDVNSms/view?usp=sharing
 in /batch_jobs/
@@ -19,6 +25,7 @@ in /batch_jobs/
 7. place it /batch_jobs/generated/img and rename accordingly: find imageName from GameData.json
 8. `npm run generateData`
 9. `npm run deploy`
+
 
 # update images from game
 - download https://github.com/DerPopo/UABE/releases/tag/2.2stabled
