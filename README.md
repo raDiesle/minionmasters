@@ -20,6 +20,18 @@ in /batch_jobs/
 8. `npm run generateData`
 9. `npm run deploy`
 
+# update images from game
+- download https://github.com/DerPopo/UABE/releases/tag/2.2stabled
+- open AssetBundleExtractor.exe
+- open C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\cards highres
+- unpack it somewhere e.g. C:\Downloads
+- open "info"
+- sort by type
+- select all Texture3d
+- click on Plugins
+- select png
+- create new folder and select it to be exported
+
 # another tool from another guy:
  https://github.com/Cadrach/mm-builder
 
