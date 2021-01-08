@@ -84,6 +84,13 @@ export const ABILITIES_CONFIG = [
         description: "Becomes invisible while not attacking or taking damage for 2 seconds.",
         isBuff: true,
       },
+      {
+        key: "TransformBuff",
+        display: "Transform",
+        description: "Transforms a random enemy Minion or Building into a friendly ManaPuff.",
+        isBuff: false,
+      },
+
     ],
   },
   {
@@ -153,11 +160,18 @@ export const ABILITIES_CONFIG = [
         isBuff: true,
       },
       {
+        key: "BloodConnection",
+        display: "Blood Pact",
+        description: "Your Master loses health equal to half of the damage taken by this Minion - even overkill damage.",
+        isBuff: false,
+      },
+      {
         key: "TurncoatBuff",
         display: "Turncoat",
         description: "Switches sides the first time it drops below 50% health",
         isBuff: false,
       },
+
     ],
   },
   {

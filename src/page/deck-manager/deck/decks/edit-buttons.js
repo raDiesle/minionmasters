@@ -5,7 +5,7 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons/faTrashAlt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
-import { CURRENT_GAME_VERSION } from "components/helper";
+import { CURRENT_GAME_VERSION } from "components/version";
 import { LAST_USERNAME_LOCALSTORAGE_KEY } from "components/localstorage-username";
 import mToast from "components/mToast";
 import localStorage from "local-storage";

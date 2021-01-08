@@ -3,7 +3,7 @@ import { auth } from "mm-firestore";
 import qs from "qs";
 import { useEffect, useState } from "react";
 
-export const CURRENT_GAME_VERSION = "1.19";
+
 
 const ABSOLUTE_PREFIX = "/";
 const IMG_FOLDER = `${ABSOLUTE_PREFIX}generated/img/`;

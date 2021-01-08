@@ -4,7 +4,9 @@ import { faSave } from "@fortawesome/free-solid-svg-icons/faSave";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
-import { CURRENT_GAME_VERSION, useCurrentUser } from "components/helper";
+import { useCurrentUser } from "components/helper";
+import { CURRENT_GAME_VERSION } from "components/version";
+
 import { LAST_USERNAME_LOCALSTORAGE_KEY } from "components/localstorage-username";
 import mToast from "components/mToast";
 import localStorage from "local-storage";
