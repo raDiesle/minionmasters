@@ -1,9 +1,7 @@
 import * as classnames from "classnames";
 import { isForImagePreview, matchSelectedTabOutOfPath } from "components/helper";
 import cssHelper from "components/helper.module.scss";
-import cssNeonEffect from "components/neon-effect.module.scss";
 import localStorage from "local-storage";
-import isEmpty from "lodash/isEmpty";
 import { INITIAL_MASTER_SELECTED } from "page/deck-manager/build/masters/mastersMapping";
 import DeckManager from "page/deck-manager/deck-manager";
 import { ROUTE_PATH_MANAGER } from "page/deck-manager/deck-manager-config";
@@ -103,8 +101,7 @@ export function Page() {
           <Link to={ROUTE_PATH_PROFILE}>
             <Tab
               className={classnames(
-                "react-tabs__tab",
-                isEmpty(availableCards) && cssNeonEffect.neonEffect
+                "react-tabs__tab"
               )}
             >
               My Profile

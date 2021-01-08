@@ -4,7 +4,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cssButton from "components/button.module.scss";
-import { CURRENT_GAME_VERSION } from "components/helper";
+import { CURRENT_GAME_VERSION } from "components/version";
 import { auth, dbErrorHandlerPromise } from "mm-firestore";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import TextareaEditor from "page/discussion/editor/textarea-editor";

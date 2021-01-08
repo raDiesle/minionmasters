@@ -34,10 +34,12 @@ in /batch_jobs/
 - unpack it somewhere e.g. C:\Downloads
 - open "info"
 - sort by type
-- select all Texture3d
+- select all Texture2d
 - click on Plugins
 - select png
 - create new folder and select it to be exported
+- copy images to the folder in batch_jobs/images_highres_from_game/img
+- run npm run compressImages and test app. commit all new images to git
 
 # another tool from another guy:
  https://github.com/Cadrach/mm-builder
