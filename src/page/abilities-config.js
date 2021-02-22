@@ -90,7 +90,12 @@ export const ABILITIES_CONFIG = [
         description: "Transforms a random enemy Minion or Building into a friendly ManaPuff.",
         isBuff: false,
       },
-
+      {
+        key: "HealsKeyword",
+        display: "Heal",
+        description: "Replenish a Minions health. Flying Minions only gain half health back.",
+        isBuff: true,
+      },
     ],
   },
   {
