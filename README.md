@@ -1,29 +1,26 @@
-
-
-
-# getting started
-1. `npm install`
-2. `npm run compressImages`
-3. `npm start` 
-
-# Later on
-4. `npm start`
-5. `npm run deploy`
-
 # first time setup:
 - npm install
 - cd functions && npm install
 - npm install -g firebase-tools
 - firebase login
 
+# run app
+1. `npm install`
+3. `npm start` 
+
+# deployment
+5. `npm run deploy`
+
 # update game data
 1. Download and replace file manual from: https://drive.google.com/file/d/0B-3hJBoCehBpQVBUYVdxZDVNSms/view?usp=sharing
 in /batch_jobs/
 2. replace `: ,` with `: 0,`
 3. reformat with prettier
-6. Download card images from blog or if needed screenshot game: dimensions 555 x 658
-7. place it /batch_jobs/generated/img and rename accordingly: find imageName from GameData.json
-8. `npm run generateData`
+4. `npm run generateData`
+5. in general, with every release new formattings in text are expected , those should be handled in the job* file to replace properly.
+6. also there might be new abilities added, which needs to be defined in abilities-config.js
+7. see `update images from game`
+8. test changes on run app
 9. `npm run deploy`
 
 

@@ -12,6 +12,7 @@ import Cards from "page/deck-manager/build/cards/cards";
 import css from "page/deck-manager/build/filters-with-cards.module.scss";
 import { FilterInputs } from "page/deck-manager/build/filters/filter-inputs";
 import React, { useCallback, useState } from "react";
+import groupBy from "lodash.groupby";
 
 export function setAllFilterStates(isActive) {
   const setFilterState = (key) => {
@@ -124,13 +125,22 @@ export default function FiltersWithCards({
           })
       );
 
+  const cardsBeforeByMana = filteredCardsDataWithCount.map(({ manacost, ...rest }) => ({...rest, ...{manacost: parseInt(manacost)}}));
   const sortedByManaCards = orderBy(
-    filteredCardsDataWithCount,
-    ({ manacost }) => parseInt(manacost),
-    sortByMana
+    cardsBeforeByMana,
+    ["manacost", "name"],
+    sortByMana, name
   );
 
-  return (
+  const cardsByMana = groupBy(sortedByManaCards, "manacost");
+  const cardsByGroup =
+    sortByMana === "asc"
+      ? Object.keys(cardsByMana).map((mana) => ({ mana, cards: cardsByMana[mana] }))
+      : Object.keys(cardsByMana)
+          .reverse()
+          .map((mana) => ({ mana, cards: cardsByMana[mana] }));
+
+    return (
     <div>
       <FilterInputs
         setFilters={setFiltersMemoized}
@@ -148,13 +158,13 @@ export default function FiltersWithCards({
       />
       <div className={css.results}>
         <div>
-          Results: {sortedByManaCards.length}/{fullCount},{" "}
-          {!isEmpty(availableCards) && <span> {availableCards.length} you own</span>}
+          Results: {sortedByManaCards.length}/{fullCount}
+          {!isEmpty(availableCards) && <span>,{" "} {availableCards.length} you own</span>}
         </div>
       </div>
 
       <Cards
-        cards={sortedByManaCards}
+        cards={cardsByGroup}
         availableCards={availableCards}
         isShowDetailsOnCard={isShowDetailsOnCard}
         isShowNamesOnCards={isShowNamesOnCards}
