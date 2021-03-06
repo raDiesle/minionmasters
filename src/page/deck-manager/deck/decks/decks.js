@@ -19,10 +19,10 @@ import css from "page/deck-manager/deck/decks/decks.module.scss";
 import { SavedDeck } from "page/deck-manager/deck/decks/saved-deck";
 import { useDecks } from "page/deck-manager/deck/decks/use-decks";
 import { ROUTE_PATH_YOUR_DECKS } from "page/deck-manager/deck/decks/your-saved-decks-config";
-import { simpleLabelToValue } from "page/deck-manager/savedeck/tags-input";
+import { labelToObjectMapping } from "page/deck-manager/savedeck/tags-input";
 import qs from "qs";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
@@ -35,6 +35,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   useGaTrackView("/ListOfDecks");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
   const location = useLocation();
+  const history = useHistory();
 
   const decks = useDecks();
 
@@ -44,10 +45,22 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const [masterFilter, setMasterFilter] = useState("");
   const [createdByFilter, setCreatedByFilter] = useState("");
 
-  const deckTagFromUrl = qs.parse(window.location.search, { ignoreQueryPrefix: true }).tag;
-  const deckTagFromUrlObject =
-    deckTagFromUrl && simpleLabelToValue(decodeURIComponent(deckTagFromUrl));
-  const [tagsFilter, setTagsFilter] = useState(deckTagFromUrl ? [deckTagFromUrlObject] : []);
+  const [tagsFilter, setTagsFilter] = useState([]);
+  useEffect(() => {
+    const deckTagFromUrl = qs.parse(window.location.search, { ignoreQueryPrefix: true }).tag;
+    if (deckTagFromUrl) {
+      // why i stored label and not value in url ?
+      const deckTagFromUrlObject = deckTagFromUrl.map(tag => labelToObjectMapping(decodeURIComponent(tag)));
+
+      setTagsFilter(deckTagFromUrlObject );
+    }
+  }, []);
+  const handleSetTags = (tags) => {
+    setTagsFilter(tags);
+    // const qs.parse(location.search,{ comma: true });
+    const tagsAsQuery = qs.stringify({ tag: tags.map(({ value }) => value) });
+    history.push({ search: tagsAsQuery });
+  };
 
   const currentUser = useCurrentUser();
 
@@ -151,7 +164,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
             createdByFilter={createdByFilter}
             setCreatedByFilter={setCreatedByFilter}
             tagsFilter={tagsFilter}
-            setTagsFilter={setTagsFilter}
+            setTagsFilter={handleSetTags}
           />
         </>
       )}

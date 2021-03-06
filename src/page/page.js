@@ -95,7 +95,10 @@ export function Page() {
           </Link>
 
           <Link to={ROUTE_PATH_WIKI}>
+            <span className={css.managerSpacer}>
             <Tab>Wiki</Tab>
+
+            </span>
           </Link>
 
           <Link to={ROUTE_PATH_PROFILE}>

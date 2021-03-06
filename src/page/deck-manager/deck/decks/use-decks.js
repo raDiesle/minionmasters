@@ -1,13 +1,10 @@
-import axios from "axios";
 import cardData from "generated/jobCardProps.json";
-import isEmpty from "lodash.isempty";
-import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import useAsyncEffect from "use-async-effect";
 
-const API_KEY_FIREBASE_REST = "AIzaSyBA96Wmq53h-6j3p37JAe_gJ8sX-emkuzY";
+import { db, dbErrorHandlerPromise } from "mm-firestore";
 
 export function useDecks() {
   const location = useLocation();
@@ -18,104 +15,32 @@ export function useDecks() {
       // if (!PAGE_TABS_CONFIG.includes(location.pathname.split("?")[0])) return;
 
       // be aware its missing orderBy right now. to be changed to post and pagination later on
-      const unsubscribePromise = axios
-        .get(
-          "https://firestore.googleapis.com/v1/projects/minionmastersmanager/databases/(default)/documents/decks?pageSize=500&key=" +
-            API_KEY_FIREBASE_REST
-        )
-        .then((response) => {
-          if (!isMounted()) return;
-
-          const dbDecks = response.data.documents.map((document) => ({
-            iD: document.name.substr(document.name.lastIndexOf("/") + 1),
-            ...document.fields,
-          }));
-
-          const normalizedDecks = dbDecks.map((deck) => {
-            //
-            const mapToCardData = (cardsToMap) =>
-              cardsToMap.map(
-                ({
-                  mapValue: {
-                    fields: {
-                      card: {
-                        mapValue: {
-                          fields: {
-                            iD: { integerValue: iDFromDb },
-                          },
-                        },
-                      },
-                      count: { integerValue: count },
-                    },
-                  },
-                }) => {
-                  const matchedCard = cardData.find(({ iD }) => iD === parseInt(iDFromDb));
-
-                  return {
-                    card:
-                      typeof matchedCard === "undefined"
-                        ? cardData.find(({ iD }) => iD === 26)
-                        : matchedCard,
-                    count: parseInt(count),
-                  };
-                }
-              );
-
-            return {
-              dbid: deck.iD,
-              deckname: deck.deckname.stringValue,
-              createdAt: new Date(deck.createdAt.timestampValue),
-              createdAtVersion: deck.createdAtVersion.stringValue,
-              createdByDisplayName: deck.createdByDisplayName.stringValue,
-              createdByUid: deck.createdByUid.stringValue,
-              gameType: deck.gameType.stringValue,
-              master: deck.master.stringValue,
-              cards: mapToCardData(deck.cards.arrayValue.values),
-              premadeMaster: deck.premadeMaster && deck.premadeMaster.stringValue,
-              premadeCards: deck.premadeCards && mapToCardData(deck.premadeCards.arrayValue.values),
-              description: deck.description.stringValue,
-              gameTypeSecondary: deck.gameTypeSecondary.stringValue,
-              gameTypeThird: deck.gameTypeThird && deck.gameTypeThird.stringValue,
-              youtubeLink: deck.youtubeLink && deck.youtubeLink.stringValue,
-              redditLink: deck.redditLink && deck.redditLink.stringValue,
-              tags:
-                !isEmpty(deck.tags) &&
-                !isEmpty(deck.tags.arrayValue.values) &&
-                !isEmpty(deck.tags.arrayValue.values)
-                  ? deck.tags.arrayValue.values.map(({ mapValue: { fields } }) => ({
-                      label: fields.label.stringValue,
-                      value: fields.value.stringValue,
-                    }))
-                  : [],
-            };
-          });
-
-          setDecks(normalizedDecks);
-        });
-
-      // .catch(dbErrorHandlerPromise);
-      /*
-      const unsubscribePromise = db
-        .collection("decks")
+      db.collection("decks")
         .orderBy("createdAt", "desc")
-        .onSnapshot((documentSnapshots) => {
+        .limit(999)
+        .get()
+
+        .then((documentSnapshots) => {
           if (!isMounted()) return;
 
           const dbDecks = documentSnapshots.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
           }));
+
           const normalizedDecks = dbDecks.map((deck) => {
             const mapToCardData = (cardsToMap) =>
-              cardsToMap.map(({ card: { iD: iDFromDb }, count }) => {
-                return {
-                  card: cardData.find(({ iD }) => iD === iDFromDb),
-                  count,
-                };
-              });
-
+                cardsToMap.map(({ card: { iD: iDFromDb }, count }) => {
+                  const mappedCard = cardData.find(({ iD }) => iD === iDFromDb);
+                  const defaultCleaverCardFn = () => cardData.find(({ iD }) => iD === 26);
+                  return {
+                    card: typeof mappedCard === "undefined"
+                      ? defaultCleaverCardFn() : mappedCard,
+                    count: parseInt(count),
+                  };
+                })
             return {
-              dbid: deck.id,
+              dbid: deck.iD,
               deckname: deck.deckname,
               createdAt: deck.createdAt.toDate(),
               createdAtVersion: deck.createdAtVersion,
@@ -128,26 +53,18 @@ export function useDecks() {
               premadeCards: deck.premadeCards && mapToCardData(deck.premadeCards),
               description: deck.description,
               gameTypeSecondary: deck.gameTypeSecondary,
-              gameTypeThird: deck.gameTypeThird,
-              youtubeLink: deck.youtubeLink,
-              redditLink: deck.redditLink,
-              tags: Array.isArray(deck.tags) ? deck.tags : [],
+              gameTypeThird: deck.gameTypeThird && deck.gameTypeThird,
+              youtubeLink: deck.youtubeLink && deck.youtubeLink,
+              redditLink: deck.redditLink && deck.redditLink,
+              tags:
+                Array.isArray(deck.tags) ? deck.tags : [],
             };
           });
-          setDecks(normalizedDecks);
-          setCreatedByFilterOptions([
-            ...new Set(normalizedDecks.map(({ createdByDisplayName }) => createdByDisplayName)),
-          ]);
-        });
 
-       */
-      return unsubscribePromise;
-    },
-    (promiseUnsubscribe) => {
-      promiseUnsubscribe && promiseUnsubscribe();
-    },
-    [location.pathname]
-  );
+          setDecks(normalizedDecks);
+        }).catch(dbErrorHandlerPromise);
+}, [location.pathname]);
 
   return decks;
+
 }

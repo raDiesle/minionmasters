@@ -2,7 +2,7 @@ import css from "page/deck-manager/savedeck/save-deck-form.module.scss";
 import React, { useState } from "react";
 import CreatableSelect from "react-select/creatable/dist/react-select.esm";
 
-export const simpleLabelToValue = (label) => ({
+export const labelToObjectMapping = (label) => ({
   value: label.toLowerCase().replace(/\W/g, ""),
   label,
 });
@@ -29,7 +29,7 @@ const TAGS_CONFIG_INITIAL = [
   "Hard skill",
   "Experimental",
   "Tournament Winner",
-].map((label) => simpleLabelToValue(label));
+].map((label) => labelToObjectMapping(label));
 
 export function TagsInput({ tags, setTags }) {
   const [tagsConfig, setTagsConfig] = useState([...new Set([...TAGS_CONFIG_INITIAL, ...tags])]);

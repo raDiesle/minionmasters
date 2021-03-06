@@ -16,8 +16,8 @@ export default function Cards({
     <div>
       <div className={css.cardsContainer}>
         <div className={css.cardRows}>
-        {cardsByMana.map(({ cards }) => (
-            <div className={css.CardsStyle}>
+        {cardsByMana.map(({ cards, mana }) => (
+            <div key={mana} className={css.CardsStyle}>
               {cards.map((card) => (
                 <div key={card.iD}>
                   <Card
@@ -34,12 +34,12 @@ export default function Cards({
         ))}
         </div>
         <div className={css.swipeHint}>
-          {Array.from(Array(3)).map(() => (
-            <FontAwesomeIcon icon={faChevronUp} />
+          {Array.from(Array(3)).map((_, pos) => (
+            <FontAwesomeIcon key={pos} icon={faChevronUp} />
           ))}
           <div className={css.here}> swipe here</div>{" "}
-          {Array.from(Array(3)).map(() => (
-            <FontAwesomeIcon icon={faChevronDown} />
+          {Array.from(Array(3)).map((_, pos) => (
+            <FontAwesomeIcon key={pos} icon={faChevronDown} />
           ))}
         </div>
       </div>

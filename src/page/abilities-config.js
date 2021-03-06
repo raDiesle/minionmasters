@@ -99,6 +99,26 @@ export const ABILITIES_CONFIG = [
     ],
   },
   {
+    category: "OUTLANDER",
+    display: "Outlander",
+    terms: [
+      {
+        key: "TargetedBuff",
+        display: "Marked",
+        description:
+          "If in range, Enemy Ranged Minions will attack this unit first and deal + 25% damage. Remove Stealth.",
+        isBuff: false,
+      },
+      {
+        key: "ScrapTech",
+        display: "Outlander Tech",
+        description:
+          "Whenever you draw an Outlander Card gain 5 Tech per mana, even if this card is not in your hand.",
+        isBuff: false,
+      },
+    ],
+  },
+  {
     category: "CRYSTAL_ELVES",
     display: "Crystal Elves",
     terms: [
@@ -167,7 +187,8 @@ export const ABILITIES_CONFIG = [
       {
         key: "BloodConnection",
         display: "Blood Pact",
-        description: "Your Master loses health equal to half of the damage taken by this Minion - even overkill damage.",
+        description:
+          "Your Master loses health equal to half of the damage taken by this Minion - even overkill damage.",
         isBuff: false,
       },
       {
@@ -176,7 +197,6 @@ export const ABILITIES_CONFIG = [
         description: "Switches sides the first time it drops below 50% health",
         isBuff: false,
       },
-
     ],
   },
   {
@@ -286,7 +306,6 @@ export const ABILITIES_CONFIG = [
           "Akinlep's Gong of Pestilence forcibly slams its head into buildings. (Damage: 100, Range.2, Cooldown: 2)",
         isBuff: false,
       },
-
 
       // Call Slitherbound
       {
