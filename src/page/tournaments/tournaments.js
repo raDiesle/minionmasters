@@ -1,63 +1,15 @@
-import { DecksForTournament } from "page/deck-manager/deck/decks/decks-for-tournament";
-import { useDecks } from "page/deck-manager/deck/decks/use-decks";
-
 import css from "page/tournaments/tournaments.module.scss";
 import React from "react";
 
-const PLATFORM = {
-  PC: "PC",
-  XBOX: "XBOX",
-};
-
-const TYPE = {
-  "1v1": "1v1",
-  "2v2": "2v2",
-};
 
 export function Tournaments() {
-  const tournamentsConfig = [
-    {
-      publisher: "BadAsAFish80",
-      name: "BadAsAFish80's MM 1v1 #14",
-      number: "14",
-      type: TYPE["1v1"],
-      platform: PLATFORM.PC,
-      endDate: new Date(2020, 10, 14),
-    },
-    {
-      publisher: "BadAsAFish80",
-      name: "BadAsAFish80's MM 1v1 #13",
-      number: "13",
-      type: TYPE["1v1"],
-      platform: PLATFORM.PC,
-      endDate: new Date(2020, 7, 20),
-    },
-    {
-      publisher: "BadAsAFish80",
-      name: "BadAsAFish80's MM 2v2 #8",
-      number: "8",
-      type: TYPE["2v2"],
-      platform: PLATFORM.PC,
-      endDate: new Date(2020, 7, 27),
-    },
-    {
-      publisher: "Team Mana Frenzy",
-      name: "TEAM MANA FRENZY XBOX #11",
-      number: "11",
-      type: TYPE["1v1"],
-      platform: PLATFORM.XBOX,
-      endDate: new Date(2020, 8, 29),
-    },
-  ];
-
-  const decks = useDecks();
 
   return (
     <div>
       <fieldset>
         <legend>Upcoming Tournaments</legend>
         <div className={css.upcomingTournaments}>
-          Can all be found here:
+          Can all be found here or you can participate:
           <h4>
             <a href="https://www.toornament.com/en_GB/tournaments/?_locale=en_GB&q%5Bdiscipline%5D=minion_masters&q%5Bplatform%5D=&q%5Bsearch%5D=&q%5Btype%5D=upcoming">
               www.toornament.com
@@ -68,13 +20,20 @@ export function Tournaments() {
 
       <fieldset>
         <legend>Past Tournaments</legend>
-        Click on them to see stored decks & replays.
+        You can watch the games here:
         <ul>
-          {tournamentsConfig.map((config) => (
-            <li key={"tournament" + config.name}>
-              <DecksForTournament config={config} decks={decks} />
+            <li>
+              <a href="https://www.youtube.com/c/Badasafish80/videos">BadasaFish80</a>
             </li>
-          ))}
+          <li>
+            <a href="https://www.youtube.com/c/KingPuffCup/videos">KingPuffCup</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UC9SN3rP2tco0NFzYmB-DcQw">Last Elf</a>
+          </li>
+
+          <li><a href="https://www.youtube.com/watch?v=_QtPa3Rlbk4">GGTour (Several linked)</a></li>
+
         </ul>
       </fieldset>
     </div>

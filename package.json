@@ -38,6 +38,7 @@
     "react-copy-to-clipboard": "5.0.2",
     "react-dom": "16.13.1",
     "react-firebaseui": "4.1.0",
+    "react-infinite-scroll-component": "^6.0.0",
     "react-localstorage-helper": "0.1.0",
     "react-mentions": "4.0.2",
     "react-modal": "3.11.2",

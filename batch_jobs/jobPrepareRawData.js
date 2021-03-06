@@ -94,6 +94,9 @@ function normalizeGameCardData(propsAsMap) {
   }
 
   propsAsMap.description = propsAsMap.description.replace(
+  `<b><color=orange><link="spell_info:Airstrike>H3LL-F1R3</link></color></b>`, `H3LL-F1R3`);
+
+  propsAsMap.description = propsAsMap.description.replace(
     "<b><color=orange><link=\"spell_info:ResolveAllPoisonDamage>Ring The Gong</link></color></b>",
     `Ring The Gong (All nearby Enemy Minions take all Poison damage immediately. This card stays in your hand until Akinlep's Gong of Pestilence dies,  then it is replaced with Akinlep's Gong of Pestilence and sent to the bottom of your deck. Range: 15. Delay: 0.5 Sec.)`
   );
@@ -107,6 +110,20 @@ function normalizeGameCardData(propsAsMap) {
     "([cv:ShieldFromOutsideAttacks.Variable])]]",
     ``
   );
+
+  propsAsMap.description = propsAsMap.description.replace("[cv:DroneBuzzerElite.Variable]", `50`);
+
+  propsAsMap.description = propsAsMap.description.replace("[cv:AIMWalker.Variable] [r:Scraps]", `50 Tech`);
+
+
+  propsAsMap.description = propsAsMap.description.replace("[r:Scraps]", `50`);
+
+  propsAsMap.description = propsAsMap.description.replace("[cv:AIMWalker.Variable]", `40`);
+
+  propsAsMap.description = propsAsMap.description.replace("[textinfo:[r:MarksmanshipBuffDescription],[mec:[r:MarksmanshipBuff]]]", `{\"Marksmanship\", \"TERM\",\"Marksmanship\"}`);
+
+  propsAsMap.description = propsAsMap.description.replace("[f:This drone has the Automated Intelligent Murder system upgrade.]", ``);
+
 
   propsAsMap.description = propsAsMap.description.replace("[v:Illusion.DAMAGE]", `30`);
   propsAsMap.description = propsAsMap.description.replace(
@@ -380,6 +397,8 @@ const normalizedGameData = cardDataFromGame
       109, // cursed fireball
       307, // Searing Light
       281, // black hole adventure card
+      126, // R3-KT
+      127, // one punch blast
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })
