@@ -1,30 +1,38 @@
 import cardData from "generated/jobCardProps.json";
 
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import useAsyncEffect from "use-async-effect";
 
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 
 export function useDecks() {
-  const location = useLocation();
   const [decks, setDecks] = useState([]);
-  useAsyncEffect(
-    (isMounted) => {
+ // const [lastVisible, setLastVisible] = useState(null);
+ // const [hasMore, setHasMore] = useState(true);
+
+
+  const loadDecks = () => {
       // TODO why this is required ?
       // if (!PAGE_TABS_CONFIG.includes(location.pathname.split("?")[0])) return;
 
       // be aware its missing orderBy right now. to be changed to post and pagination later on
-      db.collection("decks")
-        .orderBy("createdAt", "desc")
-        .limit(999)
-        .get()
+    let query = db.collection("decks")
+      .orderBy("createdAt", "desc");
+      //.limit(3);
 
+/*
+    if(lastVisible){
+      query = query.startAfter(lastVisible);
+    }
+*/
+    query
+        .get()
         .then((documentSnapshots) => {
-          if (!isMounted()) return;
+          //const lastItem = documentSnapshots.docs[documentSnapshots.docs.length-1];
+       //   setLastVisible( lastItem);
+          // setHasMore(documentSnapshots.docs.length === 3);
 
           const dbDecks = documentSnapshots.docs.map((doc) => ({
-            id: doc.id,
+            iD: doc.id,
             ...doc.data(),
           }));
 
@@ -61,10 +69,15 @@ export function useDecks() {
             };
           });
 
-          setDecks(normalizedDecks);
+          setDecks((prevDecks) => {
+            return [...prevDecks, ...normalizedDecks];
+          });
+
         }).catch(dbErrorHandlerPromise);
-}, [location.pathname]);
+  }
 
-  return decks;
-
+  return {
+    decks,
+    loadDecks
+  };
 }

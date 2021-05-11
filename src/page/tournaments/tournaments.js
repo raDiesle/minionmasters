@@ -6,6 +6,38 @@ export function Tournaments() {
 
   return (
     <div>
+
+      <div>Missing links? You can inform me and I will add them!</div>
+
+      <fieldset>
+        <legend>Streams</legend>
+
+          <ul>
+            <li>
+              <a href="https://www.twitch.tv/directory/game/Minion%20Masters">More Twitch channels</a>
+            </li>
+            <li>
+              <a href="https://www.twitch.tv/badasafish80">badasafish80</a>
+            </li>
+          </ul>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Videos</legend>
+
+          <ul>
+            <li>
+              <a href="https://www.youtube.com/results?search_query=minionmasters">More Youtube videos</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC9SN3rP2tco0NFzYmB-DcQw">Last Elf</a>
+            </li>
+          </ul>
+
+      </fieldset>
+
+
       <fieldset>
         <legend>Upcoming Tournaments</legend>
         <div className={css.upcomingTournaments}>
@@ -36,6 +68,7 @@ export function Tournaments() {
 
         </ul>
       </fieldset>
+
     </div>
   );
 }

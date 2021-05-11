@@ -111,7 +111,7 @@ export function Page() {
             </Tab>
           </Link>
           <Link to={ROUTE_PATH_TOURNAMENTS}>
-            <Tab>Tournaments</Tab>
+            <Tab>Community</Tab>
           </Link>
         </TabList>
 

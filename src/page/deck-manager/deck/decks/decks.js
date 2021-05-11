@@ -25,6 +25,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import InfiniteScroll from "react-infinite-scroll-component";
+import useAsyncEffect from "use-async-effect";
 
 export const PAGE_TABS_CONFIG = [ROUTE_PATH_DECKS, ROUTE_PATH_YOUR_DECKS, ROUTE_PATH_ID_FROM_PARAM];
 
@@ -37,7 +39,11 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const location = useLocation();
   const history = useHistory();
 
-  const decks = useDecks();
+  const [limit, setLimit] = useState(3);
+  const {decks, loadDecks} = useDecks();
+  useAsyncEffect((isMounted) => {
+    loadDecks();
+  }, []);
 
   const [gameTypeFilter, setGameTypeFilter] = useState("");
   const [gameTypeSecondaryFilter, setGameTypeSecondaryFilter] = useState("");
@@ -122,6 +128,8 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     "desc"
   );
 
+  const cardsWithLimit = sortedByDateCards.slice(0, limit);
+
   return (
     <div className={css.pageContainer}>
       {!isForImagePreview && (
@@ -173,7 +181,23 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
         count: {sortedByDateCards.length}/{decks.length}
       </div>
 
-      {sortedByDateCards.map((deck) => (
+      <InfiniteScroll
+        dataLength={limit} //This is important field to render the next data
+        next={() => {
+          setLimit((prevLimit) => prevLimit * 2);
+        }}
+        hasMore={() => {
+          return limit < sortedByDateCards.length;
+        }}
+        loader={<h4>Loading...</h4>}
+        endMessage={
+          <p style={{ textAlign: 'center' }}>
+            <b>Yay! You have seen it all</b>
+          </p>
+        }
+      >
+
+      {cardsWithLimit.map((deck) => (
         <SavedDeck
           deck={deck}
           key={deck.dbid}
@@ -182,6 +206,9 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
           availableCards={availableCards}
         />
       ))}
+
+      </InfiniteScroll>
+
     </div>
   );
 }

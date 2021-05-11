@@ -397,8 +397,9 @@ const normalizedGameData = cardDataFromGame
       109, // cursed fireball
       307, // Searing Light
       281, // black hole adventure card
-      126, // R3-KT
-      127, // one punch blast
+      // 126, // R3-KT
+       127, // one punch blast
+      126, // shadow dance
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })
