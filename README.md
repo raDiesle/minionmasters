@@ -28,15 +28,17 @@ in /batch_jobs/
 - download https://github.com/DerPopo/UABE/releases/tag/2.2stabled
 - open AssetBundleExtractor.exe
 - open C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\cards highres
-- unpack it somewhere e.g. C:\Downloads
+- answer "yes" on "do you want to extract?"
+- unpack it somewhere e.g. C:\Downloads\mm_file give it some name
 - open "info"
 - sort by type
 - select all Texture2d
 - click on Plugins
 - select png
-- create new folder and select it to be exported
+- create some new folder again and select it to be exported
 - copy images to the folder in batch_jobs/images_highres_from_game/img
-- run npm run compressImages and test app. commit all new images to git
+- say "skip for all " to not override  
+- run 'npm run compressImages' and test app if all images are correct. commit all new images to git
 
 # another tool from another guy:
  https://github.com/Cadrach/mm-builder

@@ -11,6 +11,7 @@ import StormbringerContent from "page/deck-manager/build/masters/MasterDetails/S
 import { ValorianContent } from "page/deck-manager/build/masters/MasterDetails/valorian-content";
 import VolcoContent from "page/deck-manager/build/masters/MasterDetails/VolcoContent";
 import React from "react";
+import R3KtContent from "page/deck-manager/build/masters/MasterDetails/R3KtContent";
 
 export const INITIAL_MASTER_SELECTED = "Stormbringer";
 
@@ -75,5 +76,10 @@ export const mastersMapping = {
     content: <ValorianContent />,
     icon: "Valorian_Icon",
     iD: 12,
+  },
+  R3KT: {
+    content: <R3KtContent />,
+    icon: "R3_kt",
+    iD: 9,
   },
 };
