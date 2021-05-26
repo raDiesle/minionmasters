@@ -14,7 +14,9 @@ export default function R3KtContent() {
       <h3 className={css.MasterHeaderStyle}>R3-KT</h3>
 
       <div className={css.MasterAbilityDescriptionStyle}>
-        Wielding dual 38-PR Autoblasters R3-KT poses a threat to any foe standing in it's way. Using the secrets of the shadows it will enter the battlefield joined by illusions to take matters into it's own hands.
+        Wielding dual 38-PR Autoblasters R3-KT poses a threat to any foe standing in it's way. Using
+        the secrets of the shadows it will enter the battlefield joined by illusions to take matters
+        into it's own hands.
       </div>
 
       <div>
@@ -24,9 +26,8 @@ export default function R3KtContent() {
             Basic Attack
           </legend>
           <ul className={css.AbilityUlStyle}>
-            R3-KT shoots at targets within a range of 8, dealing 20 damage every 1 seconds.
-
-            For every card with a mana cost of 4 or more in your deck R3-KT gains +5% Attack Speed.
+            R3-KT shoots at targets within a range of 8, dealing 20 damage every 1 seconds. For
+            every card with a mana cost of 4 or more in your deck R3-KT gains +5% Attack Speed.
           </ul>
         </fieldset>
 
@@ -37,18 +38,18 @@ export default function R3KtContent() {
                 className={css.MasterAbilityImageRoundedStyle}
                 src={imgPathFn("Shadow_Dance")}
                 alt="Shadow Dance"
-              /></div>
-              <div>Shadow Dance</div>
+              />
+            </div>
+            <div>Shadow Dance</div>
           </legend>
 
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             20 XP <FontAwesomeIcon icon={faUnlock} />
           </div>
           <div>
-            Add 2 Shadow Dance cards to R3-KT's deck.
-            R3-KT enters the field with a 150 shield, accompanied by a Shadow Clone.
-
-            Shadow Clones have little health and reduced damage - it explodes when killed for 50 damage.
+            Add 2 Shadow Dance cards to R3-KT's deck. R3-KT enters the field with a 150 shield,
+            accompanied by a Shadow Clone. Shadow Clones have little health and reduced damage - it
+            explodes when killed for 50 damage.
           </div>
         </fieldset>
 
@@ -67,7 +68,6 @@ export default function R3KtContent() {
             60 XP <FontAwesomeIcon icon={faUnlock} />
           </div>
           <div className={css.MasterAbilityDescriptionStyle}>
-
             Add an additional Shadow Dance card to R3-KT's deck.
           </div>
         </fieldset>
@@ -84,9 +84,8 @@ export default function R3KtContent() {
             </div>
           </legend>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Add the card One Punch Blast to R3-KT's deck.
-
-            R3-KT deals 250 damage to a target within a range of 8.
+            Add the card One Punch Blast to R3-KT's deck. R3-KT deals 250 damage to a target within
+            a range of 8.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             120XP <FontAwesomeIcon icon={faUnlock} />

@@ -3,8 +3,6 @@ import { auth } from "mm-firestore";
 import qs from "qs";
 import { useEffect, useState } from "react";
 
-
-
 const ABSOLUTE_PREFIX = "/";
 const IMG_FOLDER = `${ABSOLUTE_PREFIX}generated/img/`;
 const FILE_ENDING = ".jpg";

@@ -39,6 +39,8 @@ export const ALL_UNIT_COUNT_DEFAULT_CONFIG = [0, 1, 2, 3, 4, 5, UNITS_COUNT_GREA
   })
 );
 
+export const ALL_NORMAL_CARDS = cardData.filter(({ rarity }) => rarity !== "Perk");
+
 export default function FiltersWithCards({
   cardActionWrapper,
   isFullWidthClickable,
@@ -54,7 +56,7 @@ export default function FiltersWithCards({
   const [filters, setFilters] = useState(setAllFilterStates(false));
   const setFiltersMemoized = useCallback((filtrs) => setFilters(filtrs), []);
 
-  const filteredMasterCards = cardData.filter(({ rarity }) => rarity !== "Perk");
+  const filteredMasterCards = ALL_NORMAL_CARDS;
 
   const fullCount = filteredMasterCards.length;
 
@@ -125,12 +127,11 @@ export default function FiltersWithCards({
           })
       );
 
-  const cardsBeforeByMana = filteredCardsDataWithCount.map(({ manacost, ...rest }) => ({...rest, ...{manacost: parseInt(manacost)}}));
-  const sortedByManaCards = orderBy(
-    cardsBeforeByMana,
-    ["manacost", "name"],
-    sortByMana, name
-  );
+  const cardsBeforeByMana = filteredCardsDataWithCount.map(({ manacost, ...rest }) => ({
+    ...rest,
+    ...{ manacost: parseInt(manacost) },
+  }));
+  const sortedByManaCards = orderBy(cardsBeforeByMana, ["manacost", "name"], sortByMana, name);
 
   const cardsByMana = groupBy(sortedByManaCards, "manacost");
   const cardsByGroup =
@@ -140,7 +141,7 @@ export default function FiltersWithCards({
           .reverse()
           .map((mana) => ({ mana, cards: cardsByMana[mana] }));
 
-    return (
+  return (
     <div>
       <FilterInputs
         setFilters={setFiltersMemoized}
@@ -159,7 +160,7 @@ export default function FiltersWithCards({
       <div className={css.results}>
         <div>
           Results: {sortedByManaCards.length}/{fullCount}
-          {!isEmpty(availableCards) && <span>,{" "} {availableCards.length} you own</span>}
+          {!isEmpty(availableCards) && <span>, {availableCards.length} you own</span>}
         </div>
       </div>
 

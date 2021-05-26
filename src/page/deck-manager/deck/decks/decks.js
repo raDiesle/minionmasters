@@ -40,7 +40,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const history = useHistory();
 
   const [limit, setLimit] = useState(3);
-  const {decks, loadDecks} = useDecks();
+  const { decks, loadDecks } = useDecks();
   useAsyncEffect((isMounted) => {
     loadDecks();
   }, []);
@@ -56,9 +56,11 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     const deckTagFromUrl = qs.parse(window.location.search, { ignoreQueryPrefix: true }).tag;
     if (deckTagFromUrl) {
       // why i stored label and not value in url ?
-      const deckTagFromUrlObject = deckTagFromUrl.map(tag => labelToObjectMapping(decodeURIComponent(tag)));
+      const deckTagFromUrlObject = deckTagFromUrl.map((tag) =>
+        labelToObjectMapping(decodeURIComponent(tag))
+      );
 
-      setTagsFilter(deckTagFromUrlObject );
+      setTagsFilter(deckTagFromUrlObject);
     }
   }, []);
   const handleSetTags = (tags) => {
@@ -191,24 +193,21 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
         }}
         loader={<h4>Loading...</h4>}
         endMessage={
-          <p style={{ textAlign: 'center' }}>
+          <p style={{ textAlign: "center" }}>
             <b>Yay! You have seen it all</b>
           </p>
         }
       >
-
-      {cardsWithLimit.map((deck) => (
-        <SavedDeck
-          deck={deck}
-          key={deck.dbid}
-          setSelectedMaster={setSelectedMaster}
-          setLastSelectedCards={setLastSelectedCards}
-          availableCards={availableCards}
-        />
-      ))}
-
+        {cardsWithLimit.map((deck) => (
+          <SavedDeck
+            deck={deck}
+            key={deck.dbid}
+            setSelectedMaster={setSelectedMaster}
+            setLastSelectedCards={setLastSelectedCards}
+            availableCards={availableCards}
+          />
+        ))}
       </InfiniteScroll>
-
     </div>
   );
 }

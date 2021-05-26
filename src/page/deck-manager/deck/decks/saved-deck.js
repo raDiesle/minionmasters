@@ -1,7 +1,7 @@
 import * as classnames from "classnames";
 import { YoutubeIcon } from "components/community/youtube-icon";
-import {  isForImagePreview, useCurrentUser } from "components/helper";
-import {  CURRENT_GAME_VERSION } from "components/version";
+import { isForImagePreview, useCurrentUser } from "components/helper";
+import { CURRENT_GAME_VERSION } from "components/version";
 
 import isEmpty from "lodash.isempty";
 import AddMasterToDeckOrOpenDetailsActionOverlay from "page/deck-manager/build/masters/add-master-to-deck-or-open-details-action-overlay";

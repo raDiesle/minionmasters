@@ -9,7 +9,10 @@ import Decks from "page/deck-manager/deck/decks/decks";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import { AVAILABLE_CARDS_BY_URL_KEY } from "page/deck-manager/deck/import-export/url-import-export/export-as-url";
 import { MyProfile } from "page/my-profile/my-profile";
-import { AVAILABLE_CARDS_LOCALSTORAGE_KEY, ROUTE_PATH_PROFILE } from "page/my-profile/my-profile-config";
+import {
+  AVAILABLE_CARDS_LOCALSTORAGE_KEY,
+  ROUTE_PATH_PROFILE,
+} from "page/my-profile/my-profile-config";
 import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
 import { Tournaments } from "page/tournaments/tournaments";
 import { ROUTE_PATH_TOURNAMENTS } from "page/tournaments/tournaments-config";
@@ -96,19 +99,12 @@ export function Page() {
 
           <Link to={ROUTE_PATH_WIKI}>
             <span className={css.managerSpacer}>
-            <Tab>Wiki</Tab>
-
+              <Tab>Wiki</Tab>
             </span>
           </Link>
 
           <Link to={ROUTE_PATH_PROFILE}>
-            <Tab
-              className={classnames(
-                "react-tabs__tab"
-              )}
-            >
-              My Profile
-            </Tab>
+            <Tab className={classnames("react-tabs__tab")}>My Profile</Tab>
           </Link>
           <Link to={ROUTE_PATH_TOURNAMENTS}>
             <Tab>Community</Tab>
