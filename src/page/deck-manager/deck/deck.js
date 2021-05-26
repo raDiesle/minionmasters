@@ -65,7 +65,6 @@ export function Deck({
             )}
           />
         </DeckMasterAndCardsContainerStyle>
-
         {lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
           <AnalyzeDeck lastSelectedCards={lastSelectedCards} selectedMaster={selectedMaster} />
         )}

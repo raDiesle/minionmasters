@@ -8,10 +8,10 @@
   padding: 0 2px;
   line-height: 1.2em;
   background-color: #222;
-  top: -4px;
+  top: -23px;
 
   @media (max-width: 767px) {
-    top: -6px;
+    top: -20px;
   }
 }
 
@@ -65,5 +65,14 @@
 
   @media (max-width: 767px) {
     right: 45px;
+  }
+}
+
+.rightTopLeftLeftRandomLegend {
+  @extend %topLegend;
+  right: 240px;
+
+  @media (max-width: 767px) {
+    right: 80px;
   }
 }

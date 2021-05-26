@@ -16,7 +16,7 @@ export default function Cards({
     <div>
       <div className={css.cardsContainer}>
         <div className={css.cardRows}>
-        {cardsByMana.map(({ cards, mana }) => (
+          {cardsByMana.map(({ cards, mana }) => (
             <div key={mana} className={css.CardsStyle}>
               {cards.map((card) => (
                 <div key={card.iD}>
@@ -31,7 +31,7 @@ export default function Cards({
                 </div>
               ))}
             </div>
-        ))}
+          ))}
         </div>
         <div className={css.swipeHint}>
           {Array.from(Array(3)).map((_, pos) => (

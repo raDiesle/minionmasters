@@ -7,11 +7,16 @@ import { CopyDeckToGameButton } from "page/deck-manager/deck/import-export/expor
 import ExportAsImage from "page/deck-manager/deck/import-export/url-import-export/export-as-image";
 import {
   ExportAsUrlFromDeckManager,
-  exportDeckUrl
+  exportDeckUrl,
 } from "page/deck-manager/deck/import-export/url-import-export/export-as-url";
 import { RadioButton } from "page/deck-manager/deck/radio-button";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import React from "react";
+import cssButton from "components/button.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons/faCopy";
+import cssHelpers from "components/helper.module.scss";
+import { RandomGenerateDeck } from "page/deck-manager/deck/random-generate-deck";
 
 export function DeckButtons({
   isPremadeDeckActive,
@@ -60,6 +65,16 @@ export function DeckButtons({
             />
           </div>
         </>
+      )}
+
+      {!isAnySelectedCard && (
+        <div className={css.rightTopLeftLeftRandomLegend}>
+          <RandomGenerateDeck
+            setCards={setLastSelectedCards}
+            setSelectedMaster={setSelectedMaster}
+            availableCards={availableCards}
+          />
+        </div>
       )}
 
       <div
