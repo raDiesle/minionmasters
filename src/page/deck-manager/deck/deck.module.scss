@@ -68,9 +68,18 @@
   }
 }
 
-.rightTopLeftLeftRandomLegend {
+.rightTopLeftLeftRandomLegendWithoutAvailableCards{
   @extend %topLegend;
   right: 240px;
+
+  @media (max-width: 767px) {
+    right: 80px;
+  }
+}
+
+.rightTopLeftLeftRandomLegend {
+  @extend %topLegend;
+  right: 375px;
 
   @media (max-width: 767px) {
     right: 80px;

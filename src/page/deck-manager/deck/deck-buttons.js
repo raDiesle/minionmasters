@@ -68,7 +68,7 @@ export function DeckButtons({
       )}
 
       {!isAnySelectedCard && (
-        <div className={css.rightTopLeftLeftRandomLegend}>
+        <div className={isEmpty(availableCards) ? css.rightTopLeftLeftRandomLegendWithoutAvailableCards : css.rightTopLeftLeftRandomLegend}>
           <RandomGenerateDeck
             setCards={setLastSelectedCards}
             setSelectedMaster={setSelectedMaster}

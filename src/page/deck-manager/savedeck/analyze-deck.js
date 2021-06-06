@@ -10,7 +10,7 @@ export default function AnalyzeDeck({ lastSelectedCards }) {
   const selectedCards = getCardDataFromCount(
     lastSelectedCards.filter(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT)
   ).map((card) => ({ card }));
-  debugger;
+
   const totalMana = selectedCards.reduce((total, { card: { manacost } }) => {
     return total + manacost;
   }, 0);
