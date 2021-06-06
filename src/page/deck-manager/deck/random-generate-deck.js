@@ -9,9 +9,11 @@ import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import { faCogs } from "@fortawesome/free-solid-svg-icons/faCogs";
 import { ALL_NORMAL_CARDS } from "page/deck-manager/build/filters-with-cards";
 import Tooltip from "rc-tooltip";
+import cardData from "generated/jobCardProps.json";
 
 export function RandomGenerateDeck({ setCards, setSelectedMaster, availableCards }) {
-  const poolOfCardsToChoose = availableCards.length === 0 ? ALL_NORMAL_CARDS : availableCards;
+
+  const poolOfCardsToChoose = availableCards.length === 0 ? ALL_NORMAL_CARDS : availableCards.map((idFromLocalstorage) => cardData.find((card) => card.iD === idFromLocalstorage)).filter(({ rarity }) => rarity !== "Perk");
 
   const getRandomDeckSlots = () => {
     return INITIAL_EMPTY_SLOT_DATA.map((current, index, all) => {
