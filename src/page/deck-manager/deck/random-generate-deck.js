@@ -12,8 +12,13 @@ import Tooltip from "rc-tooltip";
 import cardData from "generated/jobCardProps.json";
 
 export function RandomGenerateDeck({ setCards, setSelectedMaster, availableCards }) {
-
-  const poolOfCardsToChoose = availableCards.length === 0 ? ALL_NORMAL_CARDS : availableCards.map((idFromLocalstorage) => cardData.find((card) => card.iD === idFromLocalstorage)).filter(({ rarity }) => rarity !== "Perk");
+  const poolOfCardsToChoose =
+    availableCards.length === 0
+      ? ALL_NORMAL_CARDS
+      : availableCards
+          .map((idFromLocalstorage) => cardData.find((card) => card.iD === idFromLocalstorage))
+        .filter(matchedCard => typeof matchedCard !== 'undefined')
+        .filter(({ rarity }) => rarity !== "Perk");
 
   const getRandomDeckSlots = () => {
     return INITIAL_EMPTY_SLOT_DATA.map((current, index, all) => {
