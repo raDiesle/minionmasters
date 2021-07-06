@@ -159,6 +159,14 @@ export const ABILITIES_CONFIG = [
         description: "+50% Attack Speed while you have 6 or more Mana.",
         isBuff: true,
       },
+      {
+        key: "CrystallineSweep",
+        display: "Crystalline Sweep",
+        description: "Deal damage to enemies in range and Mana Freeze (1)\n" +
+          "Range: 6; Damage: 100; Radius: 6; Cooldown: 2",
+        isBuff: true,
+      },
+
     ],
   },
   {

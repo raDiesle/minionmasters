@@ -219,6 +219,13 @@ function normalizeGameCardData(propsAsMap) {
 
   propsAsMap.description = propsAsMap.description.replace("ERROR_[r:ZealotLeaderFirst]", "Ardera");
 */
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<b><color=orange>Crystalline Sweep</color></b>`,
+    `Crystalline Sweep`
+  );
+
+
   propsAsMap.description = propsAsMap.description.replace(
     `<link="actor_info:ShiHouMonkey>Shi-Hou</link>`,
     `{"Shi-Hou", "${TYPE_CARD_REF}", "Windwalker Shi-Hou "}`
@@ -400,6 +407,7 @@ const normalizedGameData = cardDataFromGame
       // 126, // R3-KT
        127, // one punch blast
       126, // shadow dance
+      332, // Drain life
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })

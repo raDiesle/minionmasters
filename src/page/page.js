@@ -14,7 +14,7 @@ import {
   ROUTE_PATH_PROFILE,
 } from "page/my-profile/my-profile-config";
 import { INITIAL_EMPTY_SLOT_DATA } from "page/page-config";
-import { Tournaments } from "page/tournaments/tournaments";
+import { Community } from "page/tournaments/community";
 import { ROUTE_PATH_TOURNAMENTS } from "page/tournaments/tournaments-config";
 import Wiki from "page/wiki/wiki";
 import { ROUTE_PATH_WIKI } from "page/wiki/wiki-config";
@@ -139,7 +139,7 @@ export function Page() {
         </TabPanel>
 
         <TabPanel>
-          <Tournaments />
+          <Community />
         </TabPanel>
       </Tabs>
     </div>
