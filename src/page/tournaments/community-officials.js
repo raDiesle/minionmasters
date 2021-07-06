@@ -2,11 +2,12 @@ import { MENU_LINKS_CONFIG } from "page/wiki/main-screen/main-screen";
 import { anchorLinkTarget } from "page/wiki/menu-helper";
 import React from "react";
 
-export function Community() {
+export function CommunityOfficials() {
   return (
     <div>
-      {anchorLinkTarget(MENU_LINKS_CONFIG.Community)}
-      Useful links:
+      <fieldset>
+        <legend>More useful links</legend>
+
       <ul>
         <li>
           <a href="http://blog.betadwarf.com/">Developer Blog</a>
@@ -45,19 +46,35 @@ export function Community() {
 
         <li>
           <h4>Discord Channels:</h4>
+          <ul>
+            <li>
           <a href="https://discord.com/invite/minionmasters">Main channel</a>
 
+            </li>
+<li>
           <a href="https://discordapp.com/invite/7cKFhkh">Russian</a>
 
+</li>
+<li>
           <a href="https://discord.gg/N9tgShA Italian: https://discord.gg/DYfpjCk">French</a>
 
-          <a href="https://discord.gg/vyXXnua Brazilian: https://discord.gg/XCDUeDa">Polish</a>
+</li>
+<li>
 
+          <a href="https://discord.gg/vyXXnua Brazilian: https://discord.gg/XCDUeDa">Polish</a>
+</li>
+<li>
           <a href="https://discord.gg/9nMvEqY Japanese: https://discord.gg/TGgw2ys">Vietnamese</a>
 
+</li>
+
           <a href="https://discord.gg/5JM2pf4 Latin America: https://discord.gg/b8JY424">Spanish</a>
+          </ul>
         </li>
       </ul>
+      </fieldset>
+
+
     </div>
   );
 }

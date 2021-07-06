@@ -1,5 +1,5 @@
 import { useGaTrackView } from "footer/consent-cookie-banner";
-import { Community } from "page/wiki/community/community";
+import { CommunityOfficials } from "page/tournaments/community-officials";
 
 import ChatCommands from "page/wiki/main-screen/chat-commands";
 import DeckCardsWiki from "page/wiki/main-screen/deck-cards-wiki";
@@ -52,8 +52,6 @@ export default function MainScreen() {
           ))}
         </ol>
       </div>
-
-      <Community />
 
       <img
         src="/img/basics/main_menu.jpg"
