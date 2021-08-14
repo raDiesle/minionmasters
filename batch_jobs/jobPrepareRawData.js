@@ -94,6 +94,11 @@ function normalizeGameCardData(propsAsMap) {
   }
 
   propsAsMap.description = propsAsMap.description.replace(
+    `<b><color=orange><link="spell_info:MoveScratSpawner>Emergency Tunneling</link></color></b>`, `Emergency Tunneling`);
+
+
+
+  propsAsMap.description = propsAsMap.description.replace(
   `<b><color=orange><link="spell_info:Airstrike>H3LL-F1R3</link></color></b>`, `H3LL-F1R3`);
 
   propsAsMap.description = propsAsMap.description.replace(
@@ -236,6 +241,10 @@ function normalizeGameCardData(propsAsMap) {
     `{"Mu-Hou", "${TYPE_CARD_REF}", "Jade Flingers"}`
   );
 
+/*
+  propsAsMap.description = propsAsMap.description.replace(`<link="actor_skill:PlaySelf>Impatient</link>`,
+    `{"Impatient", "${TYPE_TERM}", "Impatient"}`);
+*/
   propsAsMap.description = propsAsMap.description.replace(
     `<link="plain_text:+2 range><b><color=orange>Marksmanship</color></b></link>`,
     `{"Marksmanship", "${TYPE_TERM}","Marksmanship"}`
@@ -284,6 +293,7 @@ function normalizeGameCardData(propsAsMap) {
     /<link="actor_info:([ a-zA-Z]+?)><b><color=orange>([ a-zA-Z]+?)<\/color><\/b><\/link>/gm,
     `{"$2", "${TYPE_CARD_REF}","$1"}`
   );
+
 
   // <link="actor_skill:SoulDetonateBuff><b><color=orange>Soul Detonate</color></b></link>
   // <link="actor_skill:ManaSurgeBuff><b><color=orange>Mana Surge</color></b></link>
