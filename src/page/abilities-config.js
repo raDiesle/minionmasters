@@ -96,6 +96,12 @@ export const ABILITIES_CONFIG = [
         description: "Replenish a Minions health. Flying Minions only gain half health back.",
         isBuff: true,
       },
+      {
+        key: "PlaySelf",
+        display: "Impatient",
+        description: "This card will play itself if you have had enough mana and have not played a card for 7 seconds",
+        isBuff: false,
+      },
     ],
   },
   {
