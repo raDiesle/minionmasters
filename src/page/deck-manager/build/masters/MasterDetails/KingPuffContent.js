@@ -23,8 +23,14 @@ export default function KingPuffContent() {
             <div>Basic Attack</div>
           </div>
         </legend>
-        A slow but powerful attack dealing 75 damage to a single unit every 2.5 sec, with a range of
-        8.
+        A slow but powerful attack.
+        <ul>
+          <li>Damage: 75 ( 30 DPS)</li>
+          <li>Cooldown: 2.5 seconds</li>
+          <li>Range: 8</li>
+        </ul>
+
+        The King`s Birthday: Celebrate the king`s birthday every 40 seconds. Reduced the cooldown by half the cost of every 4-6 mana card you play.
       </fieldset>
       <fieldset className={css.abilityContainer}>
         <legend>
@@ -46,7 +52,13 @@ export default function KingPuffContent() {
           Add the card Trick Swap to King Puff's deck.
         </div>
         <div className={css.MasterAbilityDescriptionStyle}>
-          Swaps the location of ALL minions on both bridges and Stuns enemies for 4 sec.
+          Add a one-use copy of Trick Swap to King Puff`s deck every time the king`s birthday is celebrated ( YOu can only have one Trick Swap at any time).
+
+          Trick Swap
+          Swaps the location of ALL Minions on both bridges and Stuns enemies for 4 seconds.
+
+          Stuns
+          Stunned units are unable to move or attack.
         </div>
       </fieldset>
 
@@ -58,17 +70,19 @@ export default function KingPuffContent() {
               src={imgPathFn("KingPuff_Inspire")}
               alt="KingPuff Perk2"
             />
-            <div>King Buff</div>
+            <div>Royal Gifts</div>
           </div>
         </legend>
         <div className={css.MasterAbilityUnlocksHeaderStyle}>
           60 XP <FontAwesomeIcon icon={faUnlock} />
         </div>
-        King Puff's 4 and 5 mana Minion Cards gain either Rage or Shield when played.
-        <ul className={css.AbilityUlStyle}>
-          <li>Rage: +50% Attack damage.</li>
-          <li>Shield: Blocks all damage from the next damage source.</li>
-        </ul>
+
+
+        When the king`s birthday is celebrated a Rage Puff and a Shield Puff appears in your arena.
+
+        Rage Puff: If picked up by a friendly minion give it and up to 4  nearby friendly Minions Rage.
+
+        Shield Puff: If picked up by a friendly minion give it and up to 4 nearby friendly Minions Shield.
       </fieldset>
 
       <fieldset className={css.abilityContainer}>
@@ -80,15 +94,23 @@ export default function KingPuffContent() {
               src={imgPathFn("KingPuff_BridgeShield")}
               alt="KingPuff Perk3"
             />
-            <div>Bridge Shield</div>
+            <div>Send Forth the Horde!</div>
           </div>
         </legend>
         <div className={css.MasterAbilityUnlocksHeaderStyle}>
           120 XP <FontAwesomeIcon icon={faUnlock} />
         </div>
         <div className={css.MasterAbilityDescriptionStyle}>
-          King Puff marks the bottom bridge and is immune to damage when controlling the marked
-          bridge.
+
+
+          Summon a Kingt Puff for each friendly Minion affected by Trick Swap ( Max 5).
+
+          Knight Puff:
+          Health: 50
+          Range: 8
+          Damage: 50(25 dps)
+
+          Using their magical weapons these majestic puffs will do anything in their power to defend the king`s honor
         </div>
         <div className={css.MasterAbilityDescriptionStyle}>Trick Swap moves the mark.</div>
       </fieldset>

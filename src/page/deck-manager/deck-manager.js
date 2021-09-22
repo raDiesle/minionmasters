@@ -128,7 +128,6 @@ export default function DeckManager({
         </TabList>
         <TabPanel>
           <HowToUse />
-          <div style={{color: 'yellow'}}>Masters description are not up to date with version 1.26, yet!</div>
           <MasterSelector
             setSelectedMaster={
               isPremadeDeckActive === true ? setSelectedPremadeMaster : setSelectedMaster

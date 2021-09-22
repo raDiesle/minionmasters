@@ -26,7 +26,8 @@ export default function ApepContent() {
             Basic Attack
           </legend>
           <ul className={css.AbilityUlStyle}>
-            <li>30 damage every 2.5 sec.</li>
+            <li>30 damage (12 DPS)</li>
+            <li>Cooldown 2.5 seconds</li>
             <li>Range: 10</li>
             <li>For each card that costs 5 or more in his hand, Apep gains +35% attack speed.</li>
           </ul>
@@ -68,8 +69,7 @@ export default function ApepContent() {
             60 XP <FontAwesomeIcon icon={faUnlock} />
           </div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Add the card Shield Totem to Apep's deck. Summon a Shield Totem that makes the Master
-            Tower immune to damage as long as it is alive.
+            Summon a Shield Totem that makes the Master Tower immune to damage. Health: 250. Duration: 7 seconds.
           </div>
         </fieldset>
 

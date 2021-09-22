@@ -26,11 +26,27 @@ export default function MordarContent() {
           </div>
         </legend>
         <div className={css.MasterAbilityDescriptionStyle}>
-          Deals 10 damage to all enemies on his side of the arena.
+          Mordar slams his staff into the ground, emitting a wave of rot unto all Minions in his Arena.
+
+          <ul>
+            <li>
+              Damage: 10
+            </li>
+            <li>
+              Cooldown: 4 seconds
+            </li>
+            <li>
+              Start DPS: 2.5
+
+            </li>
+            <li>
+              Max DPS: 10
+            </li>
+          </ul>
+              Damages All Enemy Minions in your arena.
+              Attacks faster and faster for as long as there are Minions in your Arena.
         </div>
-        <div className={css.MasterAbilityDescriptionStyle}>
-          They attack faster and faster ( from every 4 sec to 1 sec).
-        </div>
+
       </fieldset>
 
       <fieldset className={css.abilityContainer}>
@@ -53,8 +69,16 @@ export default function MordarContent() {
           Add the card Tombstone to Mordar's deck.
         </div>
         <div className={css.MasterAbilityDescriptionStyle}>
-          A tombstone with 400 health that activates after 10 seconds and resurrecting the next
-          friendly minion that dies.
+          Add the card Tombstone to Mordar`s deck.
+
+          Tombstone
+          Place a charging Tombstone that resurrects the next minion belonging to Mordar that dies.
+          The unit`s health will be based on the tombstone charge.
+
+          Activation delay: 10
+          Health: 400
+          Duration: 40 seconds
+
         </div>
       </fieldset>
 
@@ -76,10 +100,6 @@ export default function MordarContent() {
           Add another Tombstone card to Mordar's deck.
         </div>
 
-        <div className={css.MasterAbilityDescriptionStyle}>
-          A tombstone with 400 health that activates after 10 seconds and resurrecting the next
-          friendly minion that dies.
-        </div>
       </fieldset>
       <fieldset className={css.abilityContainer}>
         <legend>

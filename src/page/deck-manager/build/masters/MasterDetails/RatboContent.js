@@ -24,7 +24,21 @@ export default function RatboContent() {
           </div>
         </legend>
         <div className={css.MasterAbilityDescriptionStyle}>
-          Fires a barrage of bullets a enemies from a range of 10, every 0.3 sec for 6 damage.
+          Fires a barrage of bullets at enemies from his minigun, but it takes 2 seconds to charge it to full speed.
+<ul>
+  <li>
+    Damage: 5 ( 16.67 DPS)
+  </li>
+  <li>
+    Cooldown: 0.3 seconds
+  </li>
+  <li>
+    Range: 10
+  </li>
+</ul>
+
+
+
         </div>
       </fieldset>
 
@@ -43,7 +57,7 @@ export default function RatboContent() {
           20 XP <FontAwesomeIcon icon={faUnlock} />
         </div>
         <div className={css.MasterAbilityDescriptionStyle}>
-          Summons a Scrat every time Ratbo plays a Minion card, or an "Armored" Scrat instead if the
+          Summons a Scrat every time Ratbo plays a Minion card, or an "Barrel" Scrat instead if the
           Minion card cost 5+ Mana.
         </div>
 

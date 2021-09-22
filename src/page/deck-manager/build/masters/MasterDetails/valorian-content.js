@@ -13,8 +13,7 @@ export function ValorianContent() {
       <h3 className={css.MasterHeaderStyle}>Valorian</h3>
       <div className={css.MasterAbilityDescriptionStyle}>
         Valorian is devoted to the light. He wields it to heal his allies and invoke rightous fury
-        on his enemies. Hint: Add Empyrean cards to your deck to empower Valorian's attack, and use
-        Searing Light to pick off weak enemies.
+        on his enemies. Hint: Works well with groups of midrange health Minions such as Legionaires, and use Searing Light to pick off weak enemies.
       </div>
 
       <fieldset className={css.abilityContainer}>
@@ -29,9 +28,6 @@ export function ValorianContent() {
         <div className={css.MasterAbilityDescriptionStyle}>Damage: 40 ( 20DPS)</div>
         <div className={css.MasterAbilityDescriptionStyle}>Cooldown: 2 seconds</div>
         <div className={css.MasterAbilityDescriptionStyle}>Range: 10</div>
-        <div className={css.MasterAbilityDescriptionStyle}>
-          +5 damage for each Empyrean card in hand.
-        </div>
       </fieldset>
 
       <fieldset className={css.abilityContainer}>
@@ -47,7 +43,7 @@ export function ValorianContent() {
           </div>
         </legend>
         <div className={css.MasterAbilityDescriptionStyle}>
-          Valorian heals up to 5 injured friendly Minions for 15 health. Cooldown: 5 seconds
+          Valorian heals up to 5 injured friendly Minions for 13 health. Cooldown: 5 seconds
           (Unlocks at 20 XP)
         </div>
         <div className={css.MasterAbilityUnlocksHeaderStyle}>
