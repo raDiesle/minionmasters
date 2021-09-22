@@ -25,6 +25,11 @@ export default function MiloweenContent() {
         </legend>
         <div className={css.MasterAbilityDescriptionStyle}>
           Fires 3 arcane sparks at nearby enemies every 2 seconds for 8 damage each.
+          <ul>
+            <li>Damage: 27 (DPS: 13.5)</li>
+            <li>Cooldown: 2 seconds</li>
+            <li>Range: 10</li>
+          </ul>
         </div>
         <div className={css.MasterAbilityDescriptionStyle}>
           For each Spell in hand, Milloween fires an additional spark.
@@ -51,7 +56,7 @@ export default function MiloweenContent() {
 
         <ul className={css.AbilityUlStyle}>
           <li>Health: 250</li>
-          <li>Damage: 30</li>
+          <li>23.08 DPS</li>
           <li>Range 8</li>
         </ul>
 
@@ -82,7 +87,7 @@ export default function MiloweenContent() {
 
         <div className={css.MasterAbilityDescriptionStyle}>
           Fires 5 arcane missiles in the selected direction. Each missile hits the first enemy in
-          the way and deals 30 damage.
+          the way and deals 30 damage = 150 damage.
         </div>
       </fieldset>
 
