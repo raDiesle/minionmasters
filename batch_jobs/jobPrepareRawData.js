@@ -96,8 +96,6 @@ function normalizeGameCardData(propsAsMap) {
   propsAsMap.description = propsAsMap.description.replace(
     `<b><color=orange><link="spell_info:MoveScratSpawner>Emergency Tunneling</link></color></b>`, `Emergency Tunneling`);
 
-
-
   propsAsMap.description = propsAsMap.description.replace(
   `<b><color=orange><link="spell_info:Airstrike>H3LL-F1R3</link></color></b>`, `H3LL-F1R3`);
 
@@ -115,6 +113,12 @@ function normalizeGameCardData(propsAsMap) {
     "([cv:ShieldFromOutsideAttacks.Variable])]]",
     ``
   );
+
+
+  propsAsMap.description = propsAsMap.description.replace("ERROR_[actorskillinfo:Myriad,[mec:[r:Myriad]([cv:EarthElementalPebbleCard.Variable])]]", `Myriad`);
+  propsAsMap.description = propsAsMap.description.replace("[v:PlayAllCopiesOfCard.COST_INCREASE_PER_COPY]", `1`);
+  propsAsMap.description = propsAsMap.description.replace(/\[r\:EarthElementalPebbleCard\]/gi, `Sapphire Pebble`);
+
 
   propsAsMap.description = propsAsMap.description.replace("[cv:DroneBuzzerElite.Variable]", `50`);
 
@@ -190,6 +194,13 @@ function normalizeGameCardData(propsAsMap) {
   );
 
   propsAsMap.description = propsAsMap.description.replace(
+    "ERROR_[actorskillinfo:Overload,[mec:[r:Overload] ([cv:ArcaneBolt.Variable])]]",
+    `Stuns`
+  );
+
+
+
+  propsAsMap.description = propsAsMap.description.replace(
     "[cv:QuestingMilitiaKnight.Variable]",
     `5`
   );
@@ -224,6 +235,17 @@ function normalizeGameCardData(propsAsMap) {
 
   propsAsMap.description = propsAsMap.description.replace("ERROR_[r:ZealotLeaderFirst]", "Ardera");
 */
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `[v:SpellStunHighestHealthKillIfLowHealth.KILL_HEALTH_MAX]`,
+    `400`
+  );
+
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<b><color=orange> Skeleton</color></b>`,
+    `Skeleton`
+  );
 
   propsAsMap.description = propsAsMap.description.replace(
     `<b><color=orange>Crystalline Sweep</color></b>`,

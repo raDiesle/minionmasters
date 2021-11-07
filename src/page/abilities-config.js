@@ -217,6 +217,12 @@ export const ABILITIES_CONFIG = [
     category: "ACCURSED",
     display: "Accursed",
     terms: [
+    {
+      key: "HypnotizeBuff",
+      display: "Hypnotize",
+      description: "Attack random friendly units within range, if able.",
+      isBuff: false,
+    },
       {
         key: "AccursedAffinity",
         display: "Accursed Ascension",
@@ -256,6 +262,13 @@ export const ABILITIES_CONFIG = [
     category: "HIGHLANDER",
     display: "Stoutheart",
     terms: [
+{
+  key: "ThickHide",
+    display: "Thick Hide",
+  description:
+  "Reduce any damage taken by 7 (min. 1)",
+    isBuff: true,
+},
       // Revelry
       {
         key: "HiglandRevelry",
