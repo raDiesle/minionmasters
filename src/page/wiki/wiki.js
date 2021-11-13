@@ -15,6 +15,8 @@ import { ROUTE_PATH_REWARDS } from "page/wiki/rewards/rewards-config";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { ROUTE_PATH_ONCE_BITTEN } from "page/wiki/once-bitten/once-bitten-config";
+import { OnceBitten } from "page/wiki/once-bitten/once-bitten";
 
 export default function Wiki() {
   useGaTrackView("/Basics");
@@ -26,6 +28,7 @@ export default function Wiki() {
     ROUTE_PATH_GAMEPLAY,
     ROUTE_PATH_ABILITIES,
     ROUTE_PATH_GAMEMODES,
+    ROUTE_PATH_ONCE_BITTEN
   ];
 
   const initialSelectedTab = pageTabsConfig.findIndex((tab) => tab === window.location.pathname);
@@ -69,6 +72,11 @@ export default function Wiki() {
           <Tab>
             <Link to={ROUTE_PATH_GAMEMODES}>Game Modes</Link>
           </Tab>
+
+          <Tab>
+            <Link to={ROUTE_PATH_ONCE_BITTEN}>Once Bitten</Link>
+          </Tab>
+
         </TabList>
 
         <TabPanel>
@@ -93,6 +101,10 @@ export default function Wiki() {
 
         <TabPanel>
           <GameModes />
+        </TabPanel>
+
+        <TabPanel>
+          <OnceBitten />
         </TabPanel>
       </Tabs>
     </div>

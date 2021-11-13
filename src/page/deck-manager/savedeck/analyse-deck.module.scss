@@ -1,3 +1,23 @@
+.propertyBarContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar{
+  position: relative;
+  display: flex;
+  border: 1px solid #000;
+}
+
+.currentPropValueLine{
+  position: absolute;
+  display: flex;
+}
+
+.propLine{
+  border-left: 1px solid #fff;
+}
+
 .property {
   display: flex;
   flex-wrap: wrap;
@@ -8,13 +28,17 @@
 .AnalysisDataStyle {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   padding-top: 0;
 
   & > div {
     padding-right: 20px;
     width: 120px;
   }
+}
+
+.advancedPropertiesRow{
+  padding: 10px 0;
 }
 
 .analyzeFieldset {
@@ -33,4 +57,16 @@
     font-size: 6px;
     margin-right: 0;
   }
+}
+
+.goodColor {
+  color: #28a745;
+}
+
+.normalColor {
+  color: #375a7f;
+}
+
+.warnColor {
+  color: darkred;
 }

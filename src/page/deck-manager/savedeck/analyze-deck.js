@@ -1,10 +1,12 @@
+import React from "react";
+import classNames from "classnames";
 import { TYPES } from "components/typeMapping";
 import { getCardDataFromCount } from "page/deck-manager/deck/import-export/export/export-helper";
 import css from "page/deck-manager/savedeck/analyse-deck.module.scss";
 import { RarityChart } from "page/deck-manager/savedeck/analyze/rarity-chart";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
 import Tooltip from "rc-tooltip";
-import React from "react";
+import orderBy from "lodash/orderBy";
 
 export default function AnalyzeDeck({ lastSelectedCards }) {
   const selectedCards = getCardDataFromCount(
@@ -80,6 +82,34 @@ export default function AnalyzeDeck({ lastSelectedCards }) {
   const bridgeControlRatio = (bridgeControl / totalPossibleForBridge) * 100;
 
   const bridgeControlForDisplay = Math.round(bridgeControlRatio).toFixed(0);
+
+  const highestCardsMana = orderBy(selectedCards.map(({ card: { manacost } }) => manacost));
+  const highestThreeCardsMana = [
+    highestCardsMana[0] || 0,
+    highestCardsMana[1] || 0,
+    highestCardsMana[2] || 0,
+  ].reduce((total, mana) => mana + total, 0);
+  const minimumDeckCycleMana = selectedCards.reduce(
+    (total, { card: { manacost } }) => total + manacost,
+    0
+  );
+
+  /*const minimumDeckCycleManaEvaluation =
+    minimumDeckCycleMana <= 18
+      ? css.goodColor
+      : minimumDeckCycleMana <= 29
+      ? css.normalColor
+      : css.warnColor;*/
+
+  const minimumCycleMinusHighestCards = minimumDeckCycleMana - highestThreeCardsMana;
+
+  const maxWidthOfProperty = 100;
+  const maxValue = 35;
+
+  const percentageOfCurrentCycleMana =  minimumDeckCycleMana / maxValue * 100;
+  const percentageOfMin = 18 / maxValue * 100;
+  const percentageOfMid = (29 - 18)/ maxValue * 100;
+  const percentageOfMax = (maxValue - 29) / maxValue * 100;
 
   return (
     <fieldset className={css.analyzeFieldset}>
@@ -159,6 +189,49 @@ export default function AnalyzeDeck({ lastSelectedCards }) {
             <div>{minionsWithAoe}</div>
           </div>
         </Tooltip>
+
+        <div className={css.advancedPropertiesRow}>
+        <Tooltip
+          placement="top"
+          overlay={
+            <div>
+              <div>The minimum amount of mana it requires to cycle the deck once in practice.</div>
+              <div>It is calculated by: </div>
+              <div>
+                <b>total amount of mana</b> - <b>mana of 3 most expensive cards</b>
+              </div>
+              <div>
+                A cheap Apep cycle deck is around{" "}
+                <span className={css.goodColor}>2 2 2 2 3 3 4 x x x = 18 mana</span>
+              </div>
+              <div>
+                A medium deck is around{" "}
+                <span className={css.normalColor}>2 4 4 4 4 5 6 x x x = 29 mana</span>
+              </div>
+              <div>
+                A heavy Mordar deck is around{" "}
+                <span className={css.warnColor}>4 4 5 5 6 6 7 x x x = 37 mana</span>.
+              </div>
+            </div>
+          }
+        >
+          <div className={css.propertyBarContainer}>
+            <div className={classNames(css.property)}>
+              <b>Deck cycle mana</b>
+            </div>
+            <div className={css.bar}>
+              <div style={{ left: maxWidthOfProperty * percentageOfCurrentCycleMana / 100 +"px"}} className={css.currentPropValueLine}>
+                <div className={css.propLine}>&nbsp;</div>
+                <span>{minimumCycleMinusHighestCards || "?"}</span>
+              </div>
+              <div style={{backgroundColor: "#28a745", width: maxWidthOfProperty * percentageOfMin / 100  + "px"}}>&nbsp;</div>
+              <div style={{backgroundColor: "#375a7f", width: maxWidthOfProperty * percentageOfMid / 100 + "px"}}>&nbsp;</div>
+              <div style={{backgroundColor: "darkred", width: maxWidthOfProperty * percentageOfMax / 100 + "px"}}>&nbsp;</div>
+            </div>
+          </div>
+        </Tooltip>
+        </div>
+
       </div>
       <RarityChart lastSelectedCards={lastSelectedCards} />
 
