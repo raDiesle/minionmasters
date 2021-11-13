@@ -29,6 +29,7 @@ export function DeckButtons({
   setLastSelectedCards,
   selectedPremadeMaster,
   lastSelectedPremadeCards,
+  CopyAsImageToClipboardButton
 }) {
   return (
     <div>
@@ -53,16 +54,7 @@ export function DeckButtons({
           </div>
 
           <div className={css.rightTopLeftExportImageLegend}>
-            <ExportAsImage
-              urlFn={() =>
-                exportDeckUrl({
-                  selectedMaster,
-                  lastSelectedCards,
-                  selectedPremadeMaster,
-                  lastSelectedPremadeCards,
-                })
-              }
-            />
+             <CopyAsImageToClipboardButton />
           </div>
         </>
       )}

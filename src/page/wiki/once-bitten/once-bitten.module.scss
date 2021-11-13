@@ -1,0 +1,63 @@
+.page{
+  display: flex;
+  flex-direction: column;
+}
+
+.introduction{
+  font-size: 16px;
+  padding: 25px 0;
+}
+
+.containerLayout{
+  padding-top: 30px;
+  display: flex;
+}
+
+.table {
+  display: flex;
+  //grid-template-columns: 80px;
+  //grid-auto-flow: column;
+  flex-direction: column;
+}
+
+.otherColumns{
+  display: flex;
+}
+
+.defendingHeader{
+  display: flex;
+  padding-left: 50px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  padding-right: 20px;
+}
+
+.cardWithInfo{
+  margin-bottom: 20px;
+}
+
+.twoValues{
+  display: flex;
+  justify-content: space-between;
+}
+
+.transformAfter{
+  font-weight: bold;
+}
+
+.surviveHeader {
+  color: #28a745;
+}
+
+.surviveHits {
+  display: flex;
+  flex-direction: column;
+}
+
+.noHitHeader {
+  color : darkred;
+}

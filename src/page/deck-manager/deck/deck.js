@@ -10,7 +10,9 @@ import MasterDeckSlot from "page/deck-manager/deck/master-deck-slot";
 import { RadioButton } from "page/deck-manager/deck/radio-button";
 import AnalyzeDeck from "page/deck-manager/savedeck/analyze-deck";
 import { IDENTIFIER_FOR_EMPTY_SLOT } from "page/page-config";
-import React from "react";
+import React, { useRef } from "react";
+import { DeckWithAnalysis } from "page/deck-manager/deck/deck-with-analysis";
+import { Copyasimagetoclipboardbutton } from "page/deck-manager/deck/copyasimagetoclipboardbutton";
 
 // refactor to only pass selectedCardId
 export function Deck({
@@ -30,6 +32,9 @@ export function Deck({
     !isForImagePreview &&
     lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT);
 
+  const deckWithAnalysisRef = useRef(null);
+  const createCopyAsImageToClipboardButton = () =>   <Copyasimagetoclipboardbutton deckWithAnalysisRef={deckWithAnalysisRef} />;
+
   return (
     <fieldset className={css.deckFieldset}>
       <legend>Deck</legend>
@@ -48,26 +53,15 @@ export function Deck({
               setLastSelectedCards,
               selectedPremadeMaster,
               lastSelectedPremadeCards,
+              deckWithAnalysisRef
             }}
+            CopyAsImageToClipboardButton={createCopyAsImageToClipboardButton}
           />
         )}
 
-        <DeckMasterAndCardsContainerStyle
-          masterEl={
-            <MasterDeckSlot selectedMaster={selectedMaster} setSelectedMaster={setSelectedMaster} />
-          }
-        >
-          <DeckCardsContainerStyle
-            lastSelectedCards={lastSelectedCards}
-            availableCards={availableCards}
-            cardActionWrapper={(card) => (
-              <BuildCardDeckActionOverlay setLastSelectedCards={setLastSelectedCards} card={card} />
-            )}
-          />
-        </DeckMasterAndCardsContainerStyle>
-        {lastSelectedCards.some(({ card: { iD } }) => iD !== IDENTIFIER_FOR_EMPTY_SLOT) && (
-          <AnalyzeDeck lastSelectedCards={lastSelectedCards} selectedMaster={selectedMaster} />
-        )}
+        <DeckWithAnalysis {...{selectedMaster, setSelectedMaster, lastSelectedCards, availableCards, setLastSelectedCards}}
+              ref={deckWithAnalysisRef}
+        />
       </div>
 
       {isPremadeDeckActive !== null && (
