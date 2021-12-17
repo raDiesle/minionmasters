@@ -296,6 +296,19 @@ export const ABILITIES_CONFIG = [
         isBuff: true,
       },
       {
+        key: "SmallBouncyBerriesBuff",
+        display: "Bouncy Berries Small",
+        description: `Attacks bounce to the nearest nearby enemy for 50% damage. Range: 6. Damage: 15`,
+        isBuff: true,
+      },
+      {
+        key: "GiantGrowth",
+        display: "Giant Growth",
+        description: `The creatures of the Jadespark Jungle are sometimes bigger... and stronger. Damage Bonus: +30%. Health Bonus: +30%.`,
+        isBuff: true,
+      },
+
+      {
         key: "BerryBuff",
         display: "Growthburst Shroom (1)",
         description: `When drawn, plant 1 Growthburst Shrooms in your arena that gives a friendly Zen-Chi Minion Giant Growth when picked up.
