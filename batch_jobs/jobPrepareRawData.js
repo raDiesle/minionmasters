@@ -97,6 +97,18 @@ function normalizeGameCardData(propsAsMap) {
     `<b><color=orange><link="spell_info:MoveScratSpawner>Emergency Tunneling</link></color></b>`, `Emergency Tunneling`);
 
   propsAsMap.description = propsAsMap.description.replace(
+    `<link=\"actor_skill:AccursedAffinity><b><color=orange>Accursed Ascension</color></b></link>`, `Accursed Ascension`);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<b><color=orange><link=\"actor_info:Skeleton>Skeleton</link></color></b>`, `Skeleton`);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link=\"actor_skill:CrystallineSweep><b><color=orange>Crystalline Sweep</color></b></link>`, `Crystalline Sweep`);
+
+
+
+
+  propsAsMap.description = propsAsMap.description.replace(
   `<b><color=orange><link="spell_info:Airstrike>H3LL-F1R3</link></color></b>`, `H3LL-F1R3`);
 
   propsAsMap.description = propsAsMap.description.replace(

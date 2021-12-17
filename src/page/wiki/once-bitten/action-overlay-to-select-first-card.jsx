@@ -1,7 +1,7 @@
 import css from "page/deck-manager/deck/carddeck-actionoverlay.module.scss";
 import React from "react";
 
-export function ActionOverlay({card, setCurrentSelectedCard}){
+export function ActionOverlayToSelectFirstCard({card, setCurrentSelectedCard}){
   const handleOnClick = () => {
     setCurrentSelectedCard(card);
   }

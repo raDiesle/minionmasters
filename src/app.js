@@ -15,6 +15,7 @@ import { Events } from "react-scroll";
 import { toast } from "react-toastify";
 
 import css from "./app.module.scss";
+import { ConquestCountdown } from "header/conquest-countdown";
 
 const App = () => {
   toast.configure();
@@ -33,6 +34,9 @@ const App = () => {
           <h1 className={css.PageHeaderStyle}>
             <img src="/img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
           </h1>
+          <div>
+            <ConquestCountdown />
+          </div>
           <div style={{ paddingLeft: "10px" }}>
             <LoginLogout />
           </div>
