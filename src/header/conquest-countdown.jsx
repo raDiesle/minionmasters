@@ -49,7 +49,8 @@ function calcTime() {
   // 19.12 09:00
   // 1d 16h 14m
   const diffSinceReferenceConquestFromPast = NOW.getTime() + (NOW.getTimezoneOffset() * 1000 * 60) - DATE_TO_ALIGN_CYCLE.getTime();
-  const remainingTimeInMs = CYCLE_TIME_IN_MS - diffSinceReferenceConquestFromPast; //  % CYCLE_TIME_IN_MS
+  const remainingTimeInMsAbsolute = diffSinceReferenceConquestFromPast - CYCLE_TIME_IN_MS;
+  const remainingTimeInMs = CYCLE_TIME_IN_MS - (remainingTimeInMsAbsolute % CYCLE_TIME_IN_MS); //
 
   let number = Date.now() + remainingTimeInMs;
 
