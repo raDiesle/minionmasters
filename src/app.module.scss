@@ -30,3 +30,13 @@
     font-size: 17px;
   }
 }
+
+
+.middle{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > div {
+    padding-right: 30px;
+  }
+}
