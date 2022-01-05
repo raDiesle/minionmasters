@@ -21,8 +21,7 @@ const useAudio = url => {
   audio.ontimeupdate= function(i) {
     // 50 ms
     const isJustFinishedPlaying = this.currentTime / this.duration;
-    console.log(isJustFinishedPlaying);
-    debugger;
+
     if(playing === true && isJustFinishedPlaying === 1){
       const DURATION = 237;
       setTimeout(() => {
@@ -48,30 +47,22 @@ export default useAudio;
 export function XpTimer(){
 
 
-  const [playing, toggle] = useAudio("https://freesound.org/data/previews/263/263133_2064400-lq.mp3");
+  useEffect(() => {
+    var audio_bell = document.getElementById("audio_timer");
+    setInterval(function(){
+      audio_bell.play();
+    }, 3600);
+  }, []);
 
 
   const handleButtonClick = () => {
-    toggle();
+
   }
 
-  const [remainingTime, setRemainingTime] = useState(3600);
-  useEffect(() => {
-   const REFRESH_TIME = 10;
-    if(playing){
-      const timer = setTimeout(() => {
-       setRemainingTime(prev => {
-         if(prev < 0){
-           return 3600;
-         }
-         return prev - REFRESH_TIME;
-       });
-      }, REFRESH_TIME);
-    return () => clearTimeout(timer);
-    }
-  });
-
   return  <div className={cssButton.ButtonGroupStyle}>
+    <audio id="audio_timer">
+      <source src="https://freesound.org/data/previews/263/263133_2064400-lq.mp3" type="audio/mpeg" />
+    </audio>
     <Tooltip placement="bottomLeft" overlay={<span>3.6 seconds to know whenever XP is retrieved.</span>}>
       <button
         className={classnames(
@@ -81,7 +72,7 @@ export function XpTimer(){
         onClick={() => handleButtonClick()}
       >
         <FontAwesomeIcon icon={faUserFriends} />
-        <span className={cssHelpers.hideOnMobile}>XP Timer ( {remainingTime})</span>
+        <span className={cssHelpers.hideOnMobile}>XP Timer ( )</span>
       </button>
     </Tooltip>
   </div>

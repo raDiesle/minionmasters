@@ -452,6 +452,8 @@ const normalizedGameData = cardDataFromGame
        127, // one punch blast
       126, // shadow dance
       332, // Drain life
+      344, // DroneTankBoss
+      343// SpellDroneEscort
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })

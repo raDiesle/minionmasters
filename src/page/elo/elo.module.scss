@@ -1,0 +1,18 @@
+.table {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    list-style: none;
+    display: flex; /* turn children li elements into flex children */
+    flex: 1;
+    flex-wrap: wrap;
+
+    li {
+      background: grey;
+      flex: 1;
+      padding: 10px;
+      border-bottom: 1px solid greenyellow;
+    }
+  }
+}

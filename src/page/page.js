@@ -23,6 +23,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import css from "./page.module.scss";
+import { ROUTE_PATH_ELO } from "page/elo/elo-config";
+import { Elo } from "page/elo/elo";
 
 export function Page() {
   const [selectedMaster, setSelectedMaster] = useState(INITIAL_MASTER_SELECTED);
@@ -54,6 +56,7 @@ export function Page() {
     ROUTE_PATH_WIKI,
     ROUTE_PATH_PROFILE,
     ROUTE_PATH_TOURNAMENTS,
+    ROUTE_PATH_ELO,
   ];
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -109,6 +112,10 @@ export function Page() {
           <Link to={ROUTE_PATH_TOURNAMENTS}>
             <Tab>Community</Tab>
           </Link>
+
+          <Link to={ROUTE_PATH_ELO}>
+            <Tab>Elo</Tab>
+          </Link>
         </TabList>
 
         <TabPanel forceRender>
@@ -140,6 +147,10 @@ export function Page() {
 
         <TabPanel>
           <Community />
+        </TabPanel>
+
+        <TabPanel>
+          <Elo />
         </TabPanel>
       </Tabs>
     </div>
