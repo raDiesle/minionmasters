@@ -16,7 +16,6 @@ import { toast } from "react-toastify";
 
 import css from "./app.module.scss";
 import { ConquestCountdown } from "header/conquest-countdown";
-import { XpTimer } from "header/xp-timer";
 
 const App = () => {
   toast.configure();
@@ -36,7 +35,6 @@ const App = () => {
             <img src="/img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
           </h1>
           <div className={css.middle}>
-            <XpTimer />
             <ConquestCountdown />
           </div>
           <div style={{ paddingLeft: "10px" }}>
