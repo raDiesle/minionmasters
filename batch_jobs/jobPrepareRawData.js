@@ -105,7 +105,14 @@ function normalizeGameCardData(propsAsMap) {
   propsAsMap.description = propsAsMap.description.replace(
     `<link=\"actor_skill:CrystallineSweep><b><color=orange>Crystalline Sweep</color></b></link>`, `Crystalline Sweep`);
 
+  propsAsMap.description = propsAsMap.description.replace(
+    `<link="actor_info:BattleDrone>Gn4ts</link>`, `Gn4ts: 15 Health, 10 Damage (DPS: 14.3), 0,7 Sec. Attack delay, Ground & Air attack, Range: 10, Movement Speed: 10`);
 
+  propsAsMap.description = propsAsMap.description.replace(
+    `<b><color=orange><link="actor_skill:SideCannons>Side Cannons</link></color></b>.<link="actor_skill:AbilityCard>Ability</link>`, `Side Cannons: Each of the two Side Cannons target idependently of one another, wreaking havoc to nearby Enemies: Damage 8, Cooldown 0.2, Range 6`);
+
+  propsAsMap.description = propsAsMap.description.replace(
+    `<b><color=orange><link=\"spell_info:SpellMainCannon>Plasma Blast</link></color></b>`, `Plasma Blast: Ruby shoots her main cannon on target location to deal damage to enemies in the area. Increase the cost of Plasma Blast by 1 mana and replace it in your hand: 180 damage, 90 damage on tower, 4.5 radius, delay 2 Sec`);
 
 
   propsAsMap.description = propsAsMap.description.replace(
@@ -452,8 +459,6 @@ const normalizedGameData = cardDataFromGame
        127, // one punch blast
       126, // shadow dance
       332, // Drain life
-      344, // DroneTankBoss
-      343// SpellDroneEscort
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })

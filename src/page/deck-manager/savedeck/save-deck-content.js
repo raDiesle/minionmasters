@@ -1,4 +1,4 @@
-import firebase from "@firebase/app";
+import firebase from 'firebase/compat/app';
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import { faSave } from "@fortawesome/free-solid-svg-icons/faSave";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

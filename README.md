@@ -28,7 +28,7 @@ in /batch_jobs/
 # update images from game
 - download https://github.com/DerPopo/UABE/releases/tag/2.2stabled
 - open AssetBundleExtractor.exe
-- "File" and "open". Select C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\cards highres
+- "File" and "open". Select C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\ and cards highres
 - answer "yes" on "do you want to extract?"
 - unpack it somewhere e.g. C:\Downloads\mm_files give it some folder name
 - open "info"

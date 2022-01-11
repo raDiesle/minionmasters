@@ -1,4 +1,4 @@
-import firebase from "@firebase/app";
+import firebase from 'firebase/compat/app';
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
 import { faSave } from "@fortawesome/free-solid-svg-icons/faSave";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons/faTrashAlt";
