@@ -1,7 +1,7 @@
 import { useCookie } from "@use-hook/use-cookie";
 import { isForImagePreview } from "components/helper";
 import "firebase/analytics";
-import firebase from "firebase/app";
+import firebase from 'firebase/compat/app';
 
 import css from "footer/consent-banner.module.scss";
 import * as Cookies from "js-cookie";
@@ -22,7 +22,9 @@ export const useGaTrackView = (screen_name) => {
 };
 
 export default function ConsentCookieBanner() {
-  const [isAllowCookies, setAllowCookies] = useCookie("isAllowCookies", null);
+ // const [isAllowCookies, setAllowCookies] = useCookie("isAllowCookies", null);
+  const isAllowCookies = true;
+  const setAllowCookies = () => {};
 
   const [isDeclinedTemporary, setIsDeclinedTemporary] = useState(false);
 

@@ -13,7 +13,7 @@ import Modal from "react-modal";
 import { BrowserRouter } from "react-router-dom";
 import { Events } from "react-scroll";
 import { toast } from "react-toastify";
-
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import css from "./app.module.scss";
 import { ConquestCountdown } from "header/conquest-countdown";
 
@@ -25,8 +25,31 @@ const App = () => {
     window.location.hash = encodeURIComponent(to);
   });
 
+  let theme = createTheme({
+    mode: 'dark',
+    MuiSvgIcon: {
+      htmlColor: '#aa0011',
+    },
+    props : {
+      MuiSvgIcon: {
+        htmlColor: '#aa0011',
+      }
+    },
+    "overrides": {
+      MuiSvgIcon: {
+        colorPrimary: {
+          color: ["#625b5b", "!important"],
+        },
+        colorSecondary: {
+          color: ["#d5d7d8", "!important"],
+        },
+      }
+    }
+  });
+
   return (
     <div style={{ position: "relative", minHeight: "100vh" }}>
+      <ThemeProvider theme={theme}>
       <div style={{ paddingBottom: "26px" }}>
         <header
           className={classnames(isForImagePreview ? cssHelper.hideForImagePreview : css.Header)}
@@ -48,6 +71,7 @@ const App = () => {
       </div>
       <ConsentCookieBanner />
       <Footer />
+      </ThemeProvider>
     </div>
   );
 };
