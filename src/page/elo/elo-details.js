@@ -5,18 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBalanceScale, faBalanceScaleRight, faBalanceScaleLeft } from '@fortawesome/free-solid-svg-icons'
 
 import { Line, CartesianGrid, XAxis, YAxis, LineChart, Tooltip, Legend } from "recharts";
-import { DataGrid } from "@mui/x-data-grid";
+
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons/faArrowDown";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons/faEllipsisH";
+import { ReactTable } from "page/elo/react-table";
 
 
 
 const renderCellFn = ({params, isUpGood, userData}) => {
-  const currentRowPos = params.api.getRowIndex(params.row.date);
-  const field = params.field;
+  const currentRowPos = params.row.index;
+  const field = params.column.id;
 
-  const isReferenceRow = currentRowPos === userData.length -1;
+  const isReferenceRow = currentRowPos === params.rows.length -1;
   if(isReferenceRow){
     return <div><FontAwesomeIcon icon={faEllipsisH} color="#222"/>{params.value}</div>;
   }
@@ -47,9 +48,8 @@ export function EloDetails() {
     });
     const data = await response.json();
 
-    const dataReverted = [...data].reverse();
-    setUserData(dataReverted);
-
+    const dataReverse = [...data].reverse();
+    setUserData(dataReverse);
     const allProps = Object.keys(data[0]).filter(prop => !["User_id", "Id", "date"].includes(prop));
 
     const allPropsEntries = allProps.map(propKey => {
@@ -73,79 +73,67 @@ export function EloDetails() {
 
   const columns = [
     {
-      field: "date", headerName: "Date", width: "120"
+      accessor: "date", Header: "Date", width: "70"
     },
     {
-      field: "overallRank", headerName: "Rank: Overall", width: "120",
-      renderCell : (params) => renderCellFn({params, isUpGood : true, userData})
+    Header: "Ranks by Elo",
+    columns: [
+    {
+      accessor: "overallRank", Header: "Overall", width: "80",
+      Cell : (params) => renderCellFn({params, isUpGood : true, userData})
     },
     /*  {
-        field: 'overallRankAbsolute', headerName: "Rank Sum / 3", width: "120"
+        accessor: 'overallRankAbsolute', Header: "Rank Sum / 3", width: "120"
       },*/
     {
-      field: "Elo2v2SoloRank", headerName: "Rank: 2v2Solo", width: "120",
-      renderCell : (params) => renderCellFn({params, isUpGood : true, userData})
+      accessor: "Elo2v2SoloRank", Header: "2v2Solo", width: "80",
+      Cell : (params) => renderCellFn({params, isUpGood : true, userData})
     },
     {
-      field: "Elo2v2TeamRank", headerName: "Rank: 2v2Team", width: "140",
-      renderCell : (params) => renderCellFn({params, isUpGood : true, userData})
+      accessor: "Elo2v2TeamRank", Header: "2v2Team", width: "80",
+      Cell : (params) => renderCellFn({params, isUpGood : true, userData})
     },
     {
-      field: "Elo1v1Rank", headerName: "Rank: 1v1",
-      renderCell : (params) => renderCellFn({params, isUpGood : true, userData})
+      accessor: "Elo1v1Rank", Header: "1v1", width: "80",
+      Cell : (params) => renderCellFn({params, isUpGood : true, userData})
+    }]
     },
     {
-      field: "Elo2v2Solo", headerName: "Elo: 2v2Solo",
-      renderCell : (params) => renderCellFn({params, isUpGood : false, userData})
+      Header: "Elo points"
+      ,
+      columns: [
+    {
+      accessor: "Elo2v2Solo", Header: "2v2Solo", width: "80",
+      Cell : (params) => renderCellFn({params, isUpGood : false, userData})
     },
     {
-      field: "Elo2v2Team", headerName: "Elo: 2v2Team",
-      renderCell : (params) => renderCellFn({params, isUpGood : false, userData})
+      accessor: "Elo2v2Team", Header: "2v2Team",
+      width: "80",
+      Cell : (row) =>
+      {
+       return  renderCellFn({params: row, isUpGood : false, userData});
+      }
     },
     {
-      field: "Elo1v1", headerName: "Elo: 1v1",
-      renderCell : (params) => renderCellFn({params, isUpGood : false, userData})
-    },
+      accessor: "Elo1v1", Header: "1v1",
+      Cell : (params) => renderCellFn({params, isUpGood : false, userData})
+    }]},
     {
-      field: "id", headerName: "User_id",
-      valueGetter: (params) => `${params.getValue(params.id, "User_id")}`
+      accessor: "User_id", Header: "User_id", width: "80", isVisible: false
     }
   ];
 
   return <div>
     <a href="/elo">Back</a>
     <h2>Table view</h2>
-    {/*
-    <div style={{ display: "flex", height: "300px" }}>
-      <div style={{ flexGrow: 1 }}>
-        <DataGrid
-          rows={userData}
-          columns={columns}
-          pageSize={13}
-          rowsPerPageOptions={[5]}
-          getRowId={(r) => r.date}
-          onRowsScrollEnd
-          sx={{
-            color: "white"
-          }}
-          componentsProps={{
-            pagination: {
-              color: "white",
-              SelectProps: {
-                MenuProps: {
-                  sx: {
-                    color: "red",
-                    "& .MuiMenuItem-root": {
-                      fontSize: 30
-                    }
-                  }
-                }
-              }
-            }
-          }}
-        />*/}
-      </div>
-    </div>
+    <ReactTable
+      columns={columns}
+      data={userData}
+      sortBy={[]}
+      minTableHeight={200}
+      hiddenColumns={["User_id"]}
+    />
+
     <h2>Charts</h2>
     Type "by Elo-Score" or "by Elo-Score-Leaderboard-Rank".
     <div>Ending with "Rank" is your leaderboard position of all players based on your elo score.</div>

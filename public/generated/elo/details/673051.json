@@ -41,14 +41,14 @@
 	{
 		"User_id": 673051,
 		"Id": 7717,
-		"Elo1v1": 1521,
+		"Elo1v1": 1441,
 		"Elo2v2Team": 2513,
 		"Elo2v2Solo": 2072,
-		"Elo1v1Rank": 10268,
-		"Elo2v2SoloRank": 1129,
-		"Elo2v2TeamRank": 66,
-		"overallRankAbsolute": 11419,
-		"overallRank": 2683,
+		"Elo1v1Rank": 14849,
+		"Elo2v2SoloRank": 1154,
+		"Elo2v2TeamRank": 63,
+		"overallRankAbsolute": 16024,
+		"overallRank": 4993,
 		"date": "2022-1-16"
 	}
 ]

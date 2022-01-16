@@ -15,7 +15,7 @@ const scrollbarWidth = () => {
 
 export default scrollbarWidth;
 
-export function ReactTable({ columns, data, sortBy  }) {
+export function ReactTable({ columns, data, sortBy, minTableHeight, hiddenColumns = []  }) {
 
   const defaultColumn = React.useMemo(
     () => ({
@@ -38,7 +38,7 @@ export function ReactTable({ columns, data, sortBy  }) {
       columns,
       data,
       defaultColumn,
-      initialState: {sortBy}
+      initialState: {sortBy,  hiddenColumns}
     },
     useSortBy,
     useBlockLayout
@@ -91,7 +91,7 @@ export function ReactTable({ columns, data, sortBy  }) {
 
       <div {...getTableBodyProps()}>
         <FixedSizeList
-          height={400}
+          height={minTableHeight}
           itemCount={rows.length}
           itemSize={35}
           width={totalColumnsWidth + scrollBarSize}

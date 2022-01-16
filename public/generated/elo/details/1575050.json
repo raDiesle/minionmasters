@@ -68,13 +68,13 @@
 		"User_id": 1575050,
 		"Id": 52462,
 		"Elo1v1": 2290,
-		"Elo2v2Team": 2589,
+		"Elo2v2Team": 2563,
 		"Elo2v2Solo": 2148,
-		"Elo1v1Rank": 472,
-		"Elo2v2SoloRank": 388,
-		"Elo2v2TeamRank": 33,
-		"overallRankAbsolute": 871,
-		"overallRank": 94,
+		"Elo1v1Rank": 480,
+		"Elo2v2SoloRank": 398,
+		"Elo2v2TeamRank": 41,
+		"overallRankAbsolute": 891,
+		"overallRank": 92,
 		"date": "2022-1-16"
 	}
 ]

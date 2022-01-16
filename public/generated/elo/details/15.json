@@ -69,12 +69,12 @@
 		"Id": 2012,
 		"Elo1v1": 2244,
 		"Elo2v2Team": 2401,
-		"Elo2v2Solo": 2315,
-		"Elo1v1Rank": 666,
-		"Elo2v2SoloRank": 18,
-		"Elo2v2TeamRank": 154,
-		"overallRankAbsolute": 735,
-		"overallRank": 74,
+		"Elo2v2Solo": 2181,
+		"Elo1v1Rank": 681,
+		"Elo2v2SoloRank": 234,
+		"Elo2v2TeamRank": 156,
+		"overallRankAbsolute": 967,
+		"overallRank": 96,
 		"date": "2022-1-16"
 	}
 ]

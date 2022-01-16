@@ -1,24 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
-import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 
 import { ReactTable } from "page/elo/react-table";
 
-const useStyles = makeStyles({
-  root: {
-    color: "green",
-    "& .styledrows": {
-      backgroundColor: ["green", "!important"]
-    },
-    MuiSvgIcon: {
-      htmlColor: ["green", "!important"]
-    }
-  }
-});
 
 export function EloRanking() {
-  const classes = useStyles();
+
   // const sortedBy = orderBy(normalized, ["Elo2v2Team"], ["desc"]);
 
   const fetchJSONDataFrom = useCallback(async (path) => {
@@ -144,10 +132,10 @@ export function EloRanking() {
       </li>
       <li>On this page, there is <b>no</b>leadership ranking visible like in game, but only about your Elo</li>
       <li>
-        Default sorting is by overall ranking by elo.
+        Default sorting is by users who registered username.
       </li>
       <li>
-        You can sort by the modes ranking by clicking on the columns.
+        <b>You can sort by the modes ranking by clicking on the columns.</b>
       </li>
       <li>
         You can search by your User_id or Username by clicking on the column.
@@ -159,37 +147,8 @@ export function EloRanking() {
       columns={columns}
       data={allEloData}
       sortBy={[{ id: "Username", desc: true }]}
+      minTableHeight={400}
     />
-
-    {/*   <DataGrid
-          sortModel={sortModel}
-          onSortModelChange={(model) => setSortModel(model)}
-          rows={allEloData}
-          columns={columns}
-          pageSize={13}
-          rowsPerPageOptions={[13, 25, 50, 100]}
-          getRowId={(r) => r.User_id}
-          onRowsScrollEnd
-          className={classes.root}
-          sx={{
-            color: "white"
-          }}
-          componentsProps={{
-            pagination: {
-              color: "white",
-              SelectProps: {
-                MenuProps: {
-                  sx: {
-                    color: "red",
-                    "& .MuiMenuItem-root": {
-                      fontSize: 30
-                    }
-                  }
-                }
-              }
-            }
-          }}
-        />*/}
   </div>
     ;
 }
