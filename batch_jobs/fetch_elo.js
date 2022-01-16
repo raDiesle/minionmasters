@@ -2,11 +2,11 @@ const orderBy = require("lodash/orderBy");
 
 const fetch = require("node-fetch");
 
-const http = require("http");
 const fs = require("fs");
 
 
-const TARGET_FOLDER = "./batch_jobs/elo";
+const ELO_GENERATED_ROOT_PATH = "./public/generated/elo/";
+
 
 
 const totalResults = [];
@@ -38,8 +38,9 @@ console.log("start downloading");
     const prevLimited = normalized.filter(({
                                              Elo1v1,
                                              Elo2v2Team,
-                                             Elo2v2Solo
-                                           }) => Elo1v1 > 1800 || Elo2v2Team > 1800 || Elo2v2Solo > 1800);
+                                             Elo2v2Solo,
+                                             User_id,
+                                           }) => Elo1v1 > 1800 || Elo2v2Team > 1800 || Elo2v2Solo > 1800 || User_id === 15);
     console.log(prevLimited.length);
     // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
@@ -71,7 +72,7 @@ console.log("start downloading");
   const withOverallEloRank = sortedByOverallRanking.map(data => ({...data, ...{overallRank :  overallRankingUserIds.indexOf(data.User_id) + 1}}));
 
   console.log("writing file ...");
-  fs.writeFile(`./batch_jobs/elo/all.json`, JSON.stringify(withOverallEloRank), err => {
+  fs.writeFile(`${ELO_GENERATED_ROOT_PATH}all.json`, JSON.stringify(withOverallEloRank), err => {
     if (err) {
       console.error(err);
       return;
@@ -90,9 +91,7 @@ console.log("start downloading");
 
   const db = getFirestore();
 
-
-
-  var docRef = db.collection("playermappings").get()
+  db.collection("playermappings").get()
     .then((querySnapshot) => {
       const playersObject = {};
       querySnapshot.forEach((doc) => {
@@ -103,6 +102,7 @@ console.log("start downloading");
 
       const players = Object.keys(playersObject);
       let pos = 0;
+
       (async function loopSingles() {
         if (pos < players.length) {
 
@@ -113,9 +113,12 @@ console.log("start downloading");
           const currentPlayerId = parseInt(players[pos]);
           const singlePlayer = withOverallEloRank.find(({User_id}) => User_id === currentPlayerId);
           if(typeof singlePlayer === "undefined"){
-            console.log("Player could not be found: " + playersObject[pos]);
+            console.log("Player could not be found: " + currentPlayerId);
+            pos = pos + 1;
+            await loopSingles();
+            return;
           }
-          const playerFilePath = `./batch_jobs/elo/details/${singlePlayer.User_id}.json`;
+          const playerFilePath = `${ELO_GENERATED_ROOT_PATH}details/${singlePlayer.User_id}.json`;
 
           let playerFileContent = null;
           try{
@@ -137,8 +140,8 @@ console.log("start downloading");
           }
           const newPlayerHistory = {...singlePlayer, ...{date}};
           playerFileContent.push(newPlayerHistory);
-          debugger;
-          fs.writeFileSync(playerFilePath, JSON.stringify(playerFileContent));
+
+          fs.writeFileSync(playerFilePath, JSON.stringify(playerFileContent, null, "\t"));
 
           pos = pos + 1;
           await loopSingles();
@@ -150,3 +153,5 @@ console.log("start downloading");
 }());
 
 
+
+fs.writeFileSync(`${ELO_GENERATED_ROOT_PATH}status.json`, JSON.stringify({ timeFetched : Date.now(), totalResultsSize : totalResults.length }, null, "\t"));

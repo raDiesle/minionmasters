@@ -16,11 +16,11 @@ const renderCellFn = ({params, isUpGood, userData}) => {
   const currentRowPos = params.api.getRowIndex(params.row.date);
   const field = params.field;
 
-  const isFirstRow = currentRowPos === 0;
-  if(isFirstRow){
+  const isReferenceRow = currentRowPos === userData.length -1;
+  if(isReferenceRow){
     return <div><FontAwesomeIcon icon={faEllipsisH} color="#222"/>{params.value}</div>;
   }
-  const previousRowValue = userData[currentRowPos - 1][field];
+  const previousRowValue = userData[currentRowPos + 1][field];
   const isUnchanged = previousRowValue === params.value;
   if(isUnchanged){
     return <div><FontAwesomeIcon icon={faEllipsisH} color="#222"/>{params.value}</div>;
@@ -47,7 +47,8 @@ export function EloDetails() {
     });
     const data = await response.json();
 
-    setUserData(data);
+    const dataReverted = [...data].reverse();
+    setUserData(dataReverted);
 
     const allProps = Object.keys(data[0]).filter(prop => !["User_id", "Id", "date"].includes(prop));
 
@@ -114,6 +115,7 @@ export function EloDetails() {
   return <div>
     <a href="/elo">Back</a>
     <h2>Table view</h2>
+    {/*
     <div style={{ display: "flex", height: "300px" }}>
       <div style={{ flexGrow: 1 }}>
         <DataGrid
@@ -141,10 +143,12 @@ export function EloDetails() {
               }
             }
           }}
-        />
+        />*/}
       </div>
     </div>
     <h2>Charts</h2>
+    Type "by Elo-Score" or "by Elo-Score-Leaderboard-Rank".
+    <div>Ending with "Rank" is your leaderboard position of all players based on your elo score.</div>
 
     {propsData.map(prop => (<div key={prop.propKey}>
         <h3>{prop.propKey}</h3>
@@ -154,7 +158,7 @@ export function EloDetails() {
           <Tooltip />
           <Legend />
           <XAxis dataKey="date" />
-          <YAxis domain={['auto', 'auto']} /> />
+          <YAxis domain={['auto', 'auto']}  reversed={prop.propKey.includes("Rank")} />
         </LineChart>
       </div>
     ))}

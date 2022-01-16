@@ -1,21 +1,18 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
-
-import { DataGrid } from "@mui/x-data-grid";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 
-// must stay here
-import css from "./elo.module.scss";
+import { ReactTable } from "page/elo/react-table";
 
 const useStyles = makeStyles({
   root: {
     color: "green",
     "& .styledrows": {
-      backgroundColor:  ["green", "!important"]
+      backgroundColor: ["green", "!important"]
     },
     MuiSvgIcon: {
-      htmlColor: ["green", "!important"],
+      htmlColor: ["green", "!important"]
     }
   }
 });
@@ -32,16 +29,27 @@ export function EloRanking() {
       }
     });
     const data = await response.json();
-    setElo(data);
+    return data;
   });
 
+  const [sortModel, setSortModel] = React.useState([{
+    accessor: "username",
+    sort: "desc"
+  }]);
+
+  const [statusData, setStatusData] = useState({ timeFetched: Date.now(), totalResultsSize: 0 });
+
   const [mappedPlayers, setMappedPlayers] = useState({});
-  const [elo, setElo] = useState([]);
+  const [allEloData, setAllEloData] = useState([]);
   useEffect(() => {
     console.log("fetching data");
+
+    fetchJSONDataFrom(`/generated/elo/status.json`).then((data) => {
+      setStatusData(data);
+    });
+
     var docRef = db.collection("playermappings").get()
       .then((querySnapshot) => {
-
         const playersObject = {};
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
@@ -50,70 +58,89 @@ export function EloRanking() {
         });
 
         fetchJSONDataFrom(`/generated/elo/all.json`).then((data) => {
+          setAllEloData(data);
           setMappedPlayers(playersObject);
+
+          setSortModel([{
+            accessor: "username",
+            sort: "desc"
+          }]);
         });
       })
       .catch(dbErrorHandlerPromise);
   }, []);
 
-  const columns = [
+
+  const columns = React.useMemo(() => [
     {
-      field: "placement", headerName: "Order",
-      valueGetter: (params) => {
-        return `${params.api.getRowIndex(params.row.User_id) + 1}`;
-      },
-      width: "55"
-    },
-    {
-      field: "overallRank", headerName: "Elo Rank: Overall",
-      width: "110"
-    },
-    /*  {
-        field: 'overallRankAbsolute', headerName: "Rank Sum / 3", width: "120"
-      },*/
-    {
-      field: "username", headerName: "Username",
-      valueGetter: (params) => mappedPlayers[params.id],
-      width: "120"
-    },
-    {
-      field: "details", headerName: "Details",
-      valueGetter: (params) => mappedPlayers[params.id],
-      renderCell: (params) => <div><Link to={`/elo?id=${params.id}`} >{mappedPlayers[params.id] ? "here" : " "}</Link> </div>,
+      accessor: (row, i) => i,
+      Header: "Order",
       width: "60"
     },
     {
-      field: "Elo2v2SoloRank", headerName: "Elo Rank: 2v2Solo", width: "120"
-    },
-    {
-      field: "Elo2v2TeamRank", headerName: "Elo Rank: 2v2Team", width: "140"
-    },
-    {
-      field: "Elo1v1Rank", headerName: "Elo Rank: 1v1"
-    },
-    {
-      field: "Elo2v2Solo", headerName: "Elo: 2v2Solo"
-    },
-    {
-      field: "Elo2v2Team", headerName: "Elo: 2v2Team"
-    },
-    {
-      field: "Elo1v1", headerName: "Elo: 1v1",
+      accessor: (row, i) => row.User_id,
+      Header: "User_id",
       width: "70"
     },
     {
-      field: "id", headerName: "User_id",
-      valueGetter: (params) => params.row.User_id
+      accessor: (row, i) => mappedPlayers[row.User_id],
+      Header: "Username",
+      width: "150"
     },
-  ];
+    {
+      accessor: (row, i) => mappedPlayers[row.User_id] + "_details", Header: "Details",
+      Cell: ({ row: { values } }) => {
+        return <div><Link
+          to={`/elo?id=${values.User_id}`}>{mappedPlayers[values.User_id] ? "here" : " "}</Link></div>;
+      }
+      ,
+      width: "50"
+    },
+    {
+      Header: "Ranks by Elo",
+      columns: [
+        {
+          accessor: "overallRank", Header: "Overall",
+          width: "60"
+        },
+        {
+          accessor: "Elo2v2SoloRank", Header: "2v2Solo", width: "60"
+        },
+        {
+          accessor: "Elo2v2TeamRank", Header: "2v2Team", width: "65"
+        },
+        {
+          accessor: "Elo1v1Rank", Header: "1v1", width: "60"
+        }
+      ]
+    },
+    {
+      Header: "Elo points"
+      ,
+      columns: [
 
+        {
+          accessor: "Elo2v2Solo", Header: "2v2Solo"
+        },
+        {
+          accessor: "Elo2v2Team", Header: "2v2Team"
+        },
+        {
+          accessor: "Elo1v1", Header: "1v1",
+          width: "70"
+        }
+      ]
+    }
+  ], [allEloData, mappedPlayers]);
+
+  const timeDataWasUpdated = new Date(statusData.timeFetched).toLocaleString();
   return <div><h2>Elo Ranking</h2>
     <ul>
-<li>
-  The data are up-to-date whenever FdmFdm updates data: <b>Last Update: 01.10.2022</b>
-</li>
       <li>
-        Only players with <b> > 1800 elo</b> (around 1000 points in game) in any mode are listed = total of {elo.length} players
+        Latest game data update: <b>{timeDataWasUpdated}</b>
+      </li>
+      <li>
+        Only players with <b> > 1800 elo</b> in any mode are listed = total of {statusData.totalResultsSize} players
       </li>
       <li>On this page, there is <b>no</b>leadership ranking visible like in game, but only about your Elo</li>
       <li>
@@ -128,13 +155,19 @@ export function EloRanking() {
       <li>Already mapped players = {Object.values(mappedPlayers).join(", ")}</li>
       <li>Data is quite big to load, so dont load by mobile phone</li>
     </ul>
-    <div style={{ display: "flex", height: "800px" }}>
-      <div style={{ flexGrow: 1 }}>
-        <DataGrid
-          rows={elo}
+    <ReactTable
+      columns={columns}
+      data={allEloData}
+      sortBy={[{ id: "Username", desc: true }]}
+    />
+
+    {/*   <DataGrid
+          sortModel={sortModel}
+          onSortModelChange={(model) => setSortModel(model)}
+          rows={allEloData}
           columns={columns}
           pageSize={13}
-          rowsPerPageOptions={[5]}
+          rowsPerPageOptions={[13, 25, 50, 100]}
           getRowId={(r) => r.User_id}
           onRowsScrollEnd
           className={classes.root}
@@ -156,9 +189,7 @@ export function EloRanking() {
               }
             }
           }}
-        />
-      </div>
-    </div>
+        />*/}
   </div>
     ;
 }
