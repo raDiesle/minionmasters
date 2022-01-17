@@ -1,0 +1,32 @@
+import { LineChart, Line, CartesianGrid, Tooltip, Legend, XAxis, YAxis } from "recharts";
+import React from "react";
+
+export function EloChart({propKey, header, description = "", propsData}){
+
+  const rankKey = propKey + "Rank";
+  const elo2v2Solo = propsData.find(prop => prop.propKey === propKey) || {propKey: propKey, data : []};
+  const elo2v2SoloRank = propsData.find(prop => prop.propKey === rankKey)  || {propKey: rankKey, data : []};
+  const elo2v2SoloMergedData = elo2v2Solo.data.map((single, pos) => ({
+    valueA: single.value,
+    date: single.date,
+    valueB: elo2v2SoloRank.data[pos].value
+  }));
+
+
+  return <div>
+    <h3>{header}</h3>
+    <div>
+      {description}
+    </div>
+  <LineChart width={600} height={300} data={elo2v2SoloMergedData}>
+    <Line yAxisId="left" type="monotone" name="Elo-Score" dataKey="valueA" stroke="#8884d8" activeDot={{ r: 8 }} />
+    <Line yAxisId="right" type="monotone" name="Elo-Ranking" dataKey="valueB" stroke="#82ca9d"/>
+    <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+    <Tooltip />
+    <Legend />
+    <XAxis dataKey="date" type="category" />
+    <YAxis yAxisId="left" domain={["auto", "auto"]} type="number" />
+    <YAxis yAxisId="right" orientation="right" domain={["auto", "auto"]} type="number" reversed={true}/>
+  </LineChart>
+  </div>
+}

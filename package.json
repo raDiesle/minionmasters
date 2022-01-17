@@ -65,6 +65,7 @@
     "use-react-screenshot": "1.0.2"
   },
   "scripts": {
+    "eloDeploy": "npm-run-all fetchElo deploy",
     "fetchElo": "node batch_jobs/fetch_elo",
     "updateData": "npm-run-all generateData compressImages",
     "compressImages": "node batch_jobs/jobCompressImages",
