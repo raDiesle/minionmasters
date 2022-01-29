@@ -118,7 +118,7 @@ export function Page() {
           </Link>
         </TabList>
 
-        <TabPanel forceRender>
+        <TabPanel>
           {/* peformance optimization !isForImagePreview && !deckIdFromUrl */}
           <DeckManager
             lastSelectedCards={lastSelectedCards}

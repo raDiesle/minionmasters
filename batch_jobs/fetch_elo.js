@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 const fs = require("fs");
 
 
-const ELO_GENERATED_ROOT_PATH = "./public/generated/elo/";
+const ELO_GENERATED_ROOT_PATH = "./src/generated/elo/";
 
 
 
@@ -150,8 +150,7 @@ console.log("start downloading");
       }());
     });
 
+  fs.writeFileSync(`${ELO_GENERATED_ROOT_PATH}status.json`, JSON.stringify({ timeFetched : Date.now(), totalResultsSize : totalResults.length }, null, "\t"));
+
 }());
 
-
-
-fs.writeFileSync(`${ELO_GENERATED_ROOT_PATH}status.json`, JSON.stringify({ timeFetched : Date.now(), totalResultsSize : totalResults.length }, null, "\t"));

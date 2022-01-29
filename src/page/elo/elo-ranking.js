@@ -29,15 +29,14 @@ export function EloRanking() {
 
   const [mappedPlayers, setMappedPlayers] = useState({});
   const [allEloData, setAllEloData] = useState([]);
-  useEffect(() => {
+  useEffect(async () => {
     console.log("fetching data");
 
-    fetchJSONDataFrom(`/generated/elo/status.json`).then((data) => {
-      setStatusData(data);
-    });
+    const  result = await import(`./../../generated/elo/status.json`);
+    setStatusData(result.default);
 
     var docRef = db.collection("playermappings").get()
-      .then((querySnapshot) => {
+      .then(async (querySnapshot) => {
         const playersObject = {};
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
@@ -45,15 +44,13 @@ export function EloRanking() {
           playersObject[doc.id] = doc.data().username;
         });
 
-        fetchJSONDataFrom(`/generated/elo/all.json`).then((data) => {
-          setAllEloData(data);
-          setMappedPlayers(playersObject);
-
-          setSortModel([{
-            accessor: "username",
-            sort: "desc"
-          }]);
-        });
+        const result = await import(`./../../generated/elo/all.json`);
+        setAllEloData(result.default);
+        setMappedPlayers(playersObject);
+        setSortModel([{
+          accessor: "username",
+          sort: "desc"
+        }]);
       })
       .catch(dbErrorHandlerPromise);
   }, []);

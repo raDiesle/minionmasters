@@ -60,7 +60,7 @@ function normalizeGameCardData(propsAsMap) {
       propsAsMap.type = "Flying Minion";
     } else {
       propsAsMap.type =
-        propsAsMap.type === "Trap" || propsAsMap.speed === 0 ? "Building" : "Minion";
+        propsAsMap.type === "Trap" || (propsAsMap.speed === 0 && ![39, 77, 139].includes(propsAsMap.iD))   ? "Building" : "Minion";
     }
   }
 

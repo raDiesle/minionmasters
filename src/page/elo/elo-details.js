@@ -1,17 +1,14 @@
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import React, { useState, useCallback, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBalanceScale, faBalanceScaleRight, faBalanceScaleLeft } from "@fortawesome/free-solid-svg-icons";
-
-import { Line, CartesianGrid, XAxis, YAxis, LineChart, Tooltip, Legend } from "recharts";
 
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons/faArrowDown";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons/faEllipsisH";
 import { ReactTable } from "page/elo/react-table";
 import { EloChart } from "page/elo/elo-chart";
-
+import css from "./elo-details.module.scss";
 
 const renderCellFn = ({ params, isUpGood, userData }) => {
   const currentRowPos = params.row.index;
@@ -40,15 +37,11 @@ export function EloDetails() {
   const [userData, setUserData] = useState([]);
   const [propsData, setPropsData] = useState([]);
 
-  const fetchJSONDataFrom = useCallback(async (path) => {
-    const response = await fetch(path, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    });
-    const data = await response.json();
 
+
+  useEffect(async() => {
+    const result = await import(`./../../generated/elo/details/${paramsObj.get("id")}.json`);
+    const data = result.default;
     const dataReverse = [...data].reverse();
     setUserData(dataReverse);
     const allProps = Object.keys(data[0]).filter(prop => !["User_id", "Id", "date"].includes(prop));
@@ -65,12 +58,7 @@ export function EloDetails() {
       );
     });
     setPropsData(allPropsEntries);
-  }, []);
-
-  useEffect(() => {
-    fetchJSONDataFrom(`/generated/elo/details/${paramsObj.get("id")}.json`);
   }, [paramsObj.get("id")]);
-
 
   const columns = [
     {
@@ -138,11 +126,10 @@ export function EloDetails() {
 
     <h2>Charts</h2>
 
-    <EloChart propKey="Elo2v2Solo" header="2 vs.2 Random" propsData={propsData}/>
-
-    <EloChart propKey="Elo2v2Team" header="2 vs.2 Premade" propsData={propsData}/>
-
-    <EloChart propKey="Elo1v1" header="1 vs.1" propsData={propsData}/>
-
+    <div className={css.chartsLayout}>
+      <EloChart propKey="Elo2v2Solo" header="2 vs.2 Random" propsData={propsData}/>
+      <EloChart propKey="Elo2v2Team" header="2 vs.2 Premade" propsData={propsData}/>
+      <EloChart propKey="Elo1v1" header="1 vs.1" propsData={propsData}/>
+    </div>
   </div>;
 }
