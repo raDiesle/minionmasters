@@ -50,5 +50,44 @@
 		"overallRankAbsolute": 533,
 		"overallRank": 46,
 		"date": "2022-1-29"
+	},
+	{
+		"User_id": 1554971,
+		"Id": 10129,
+		"Elo1v1": 2689,
+		"Elo2v2Team": 2473,
+		"Elo2v2Solo": 2064,
+		"Elo1v1Rank": 17,
+		"Elo2v2SoloRank": 2090,
+		"Elo2v2TeamRank": 114,
+		"overallRankAbsolute": 2145,
+		"overallRank": 240,
+		"date": "2022-1-30"
+	},
+	{
+		"User_id": 1554971,
+		"Id": 10129,
+		"Elo1v1": 2689,
+		"Elo2v2Team": 2473,
+		"Elo2v2Solo": 1961,
+		"Elo1v1Rank": 17,
+		"Elo2v2SoloRank": 5451,
+		"Elo2v2TeamRank": 111,
+		"overallRankAbsolute": 5505,
+		"overallRank": 817,
+		"date": "2022-1-31"
+	},
+	{
+		"User_id": 1554971,
+		"Id": 10129,
+		"Elo1v1": 2689,
+		"Elo2v2Team": 2473,
+		"Elo2v2Solo": 1961,
+		"Elo1v1Rank": 20,
+		"Elo2v2SoloRank": 5527,
+		"Elo2v2TeamRank": 117,
+		"overallRankAbsolute": 5586,
+		"overallRank": 835,
+		"date": "2022-2-1"
 	}
 ]

@@ -11,8 +11,8 @@ import css from "./save-mapping.module.scss";
 export function SaveMapping({isMappingMode, setIsMappingMode}){
   const [playerId, setPlayerId] = useState("");
   const [username, setUsername] = useState("");
-  const handlePlayerId = (e) => {setPlayerId(e.currentTarget.value)};
-  const handleUsername = (e) => {setUsername(e.currentTarget.value)};
+  const handlePlayerId = (e) => {setPlayerId(e.currentTarget.value.trim())};
+  const handleUsername = (e) => {setUsername(e.currentTarget.value.trim())};
   const handleSave = () => {
 
     db.collection("playermappings").doc(playerId).set({ username }).then((docRef) => {

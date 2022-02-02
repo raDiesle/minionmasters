@@ -9,17 +9,6 @@ export function EloRanking() {
 
   // const sortedBy = orderBy(normalized, ["Elo2v2Team"], ["desc"]);
 
-  const fetchJSONDataFrom = useCallback(async (path) => {
-    const response = await fetch(path, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    });
-    const data = await response.json();
-    return data;
-  });
-
   const [sortModel, setSortModel] = React.useState([{
     accessor: "username",
     sort: "desc"
@@ -70,7 +59,7 @@ export function EloRanking() {
     {
       accessor: (row, i) => mappedPlayers[row.User_id],
       Header: "Username",
-      width: "150"
+      width: "200"
     },
     {
       accessor: (row, i) => mappedPlayers[row.User_id] + "_details", Header: "Details",
@@ -140,12 +129,14 @@ export function EloRanking() {
       <li>Already mapped players = {Object.values(mappedPlayers).join(", ")}</li>
       <li>Data is quite big to load, so dont load by mobile phone</li>
     </ul>
+    <div style={{width: "1020px"}}>
     <ReactTable
       columns={columns}
       data={allEloData}
       sortBy={[{ id: "Username", desc: true }]}
       minTableHeight={400}
     />
+    </div>
   </div>
     ;
 }

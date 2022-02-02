@@ -115,7 +115,14 @@ export function EloDetails() {
 
   return <div>
     <a href="/elo">Back</a>
+
+    <div>
+      Data is updated randomly over the days. If you want hourly updated data, visit &nbsp;
+      <a href="http://fdmfdm.nl/EloChecker.html">http://fdmfdm.nl/EloChecker.html</a>
+    </div>
+
     <h2>Table view</h2>
+    <div style={{width: "728px"}}>
     <ReactTable
       columns={columns}
       data={userData}
@@ -123,6 +130,7 @@ export function EloDetails() {
       minTableHeight={200}
       hiddenColumns={["User_id"]}
     />
+    </div>
 
     <h2>Charts</h2>
 
