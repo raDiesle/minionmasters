@@ -128,5 +128,57 @@
 		"overallRankAbsolute": 3622,
 		"overallRank": 446,
 		"date": "2022-2-1"
+	},
+	{
+		"User_id": 2510813,
+		"Id": 179539,
+		"Elo1v1": 2191,
+		"Elo2v2Team": 2260,
+		"Elo2v2Solo": 2071,
+		"Elo1v1Rank": 1424,
+		"Elo2v2SoloRank": 2038,
+		"Elo2v2TeamRank": 655,
+		"overallRankAbsolute": 3680,
+		"overallRank": 458,
+		"date": "2022-2-2"
+	},
+	{
+		"User_id": 2510813,
+		"Id": 179539,
+		"Elo1v1": 2191,
+		"Elo2v2Team": 2260,
+		"Elo2v2Solo": 2071,
+		"Elo1v1Rank": 1316,
+		"Elo2v2SoloRank": 1839,
+		"Elo2v2TeamRank": 609,
+		"overallRankAbsolute": 3358,
+		"overallRank": 391,
+		"date": "2022-2-3"
+	},
+	{
+		"User_id": 2510813,
+		"Id": 179539,
+		"Elo1v1": 2072,
+		"Elo2v2Team": 2103,
+		"Elo2v2Solo": 1977,
+		"Elo1v1Rank": 1999,
+		"Elo2v2SoloRank": 3281,
+		"Elo2v2TeamRank": 1305,
+		"overallRankAbsolute": 5715,
+		"overallRank": 816,
+		"date": "2022-2-4"
+	},
+	{
+		"User_id": 2510813,
+		"Id": 179539,
+		"Elo1v1": 2072,
+		"Elo2v2Team": 2103,
+		"Elo2v2Solo": 1953,
+		"Elo1v1Rank": 1907,
+		"Elo2v2SoloRank": 3928,
+		"Elo2v2TeamRank": 1228,
+		"overallRankAbsolute": 6244,
+		"overallRank": 983,
+		"date": "2022-2-6"
 	}
 ]

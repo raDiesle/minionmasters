@@ -47,3 +47,10 @@ in /batch_jobs/
 
 # history
 - previous there was jobCardTemplate.js to parse text from wiki
+
+
+# find gamelogs
+
+%appdata%\..\LocalLow\BetaDwarf ApS\Minion Masters
+
+TeamWon. Team: 0 Matchmade: None Online Game: False I won: True

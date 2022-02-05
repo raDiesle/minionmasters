@@ -128,5 +128,31 @@
 		"overallRankAbsolute": 24202,
 		"overallRank": 10669,
 		"date": "2022-2-1"
+	},
+	{
+		"User_id": 504014,
+		"Id": 2813,
+		"Elo1v1": 1584,
+		"Elo2v2Team": 1639,
+		"Elo2v2Solo": 1882,
+		"Elo1v1Rank": 10273,
+		"Elo2v2SoloRank": 9028,
+		"Elo2v2TeamRank": 8831,
+		"overallRankAbsolute": 22244,
+		"overallRank": 8782,
+		"date": "2022-2-2"
+	},
+	{
+		"User_id": 504014,
+		"Id": 2813,
+		"Elo1v1": 1546,
+		"Elo2v2Team": 1538,
+		"Elo2v2Solo": 1922,
+		"Elo1v1Rank": 9815,
+		"Elo2v2SoloRank": 5125,
+		"Elo2v2TeamRank": 8855,
+		"overallRankAbsolute": 17891,
+		"overallRank": 6195,
+		"date": "2022-2-6"
 	}
 ]
