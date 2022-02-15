@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 export function SecondColumn({ minions, header }) {
   return (
-    <div className={classNames(css.column, css.otherColumn)}>
+    <div className={classNames(css.column, css.otherColumns)}>
       <div className={css.headerOfOtherColumns}>{header}</div>
       {minions.map(
         ({ card, howManyHits, remainingHealth, transformAfterHits, manaEfficiency}) => (

@@ -18,7 +18,15 @@ function normalizeGameCardData(propsAsMap) {
   // match by id manual
   propsAsMap.iD = parseInt(propsAsMap.iD);
 
-  propsAsMap.faction = propsAsMap.Faction;
+  const possiblePropsTypeNumber = ["manacost", "CardCount", "damage", "delay", "duration", "radius", "travelSpeed", "count", "attackspeed", "attackDelay", "range", "UnitId", "Weight", "speed", "dps"];
+
+
+  possiblePropsTypeNumber.forEach(prop => {
+    if(typeof propsAsMap[prop] !== "undefined" && propsAsMap[prop] !== null){
+      propsAsMap[prop] = parseInt(propsAsMap[prop]);
+    }
+  })
+
 
   propsAsMap.faction = propsAsMap.faction === "Highlander" ? "Stoutheart" : propsAsMap.faction;
 

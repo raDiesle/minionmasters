@@ -75,11 +75,11 @@ export function EloDetails() {
             accessor: 'overallRankAbsolute', Header: "Rank Sum / 3", width: "120"
           },*/
         {
-          accessor: "Elo2v2SoloRank", Header: "2v2Solo", width: "80",
+          accessor: "Elo2v2SoloRank", Header: "2v2 solo", width: "80",
           Cell: (params) => renderCellFn({ params, isUpGood: true, userData })
         },
         {
-          accessor: "Elo2v2TeamRank", Header: "2v2Team", width: "80",
+          accessor: "Elo2v2TeamRank", Header: "2v2 premade", width: "80",
           Cell: (params) => renderCellFn({ params, isUpGood: true, userData })
         },
         {
@@ -92,11 +92,11 @@ export function EloDetails() {
       ,
       columns: [
         {
-          accessor: "Elo2v2Solo", Header: "2v2Solo", width: "80",
+          accessor: "Elo2v2Solo", Header: "2v2 solo", width: "80",
           Cell: (params) => renderCellFn({ params, isUpGood: false, userData })
         },
         {
-          accessor: "Elo2v2Team", Header: "2v2Team",
+          accessor: "Elo2v2Team", Header: "2v2 premade",
           width: "80",
           Cell: (row) => {
             return renderCellFn({ params: row, isUpGood: false, userData });
@@ -135,9 +135,9 @@ export function EloDetails() {
     <h2>Charts</h2>
 
     <div className={css.chartsLayout}>
-      <EloChart propKey="Elo2v2Solo" header="2 vs.2 Random" propsData={propsData}/>
-      <EloChart propKey="Elo2v2Team" header="2 vs.2 Premade" propsData={propsData}/>
-      <EloChart propKey="Elo1v1" header="1 vs.1" propsData={propsData}/>
+      <EloChart propKey="Elo2v2Solo" header="2v2 solo" propsData={propsData}/>
+      <EloChart propKey="Elo2v2Team" header="2v2 premade" propsData={propsData}/>
+      <EloChart propKey="Elo1v1" header="1v1" propsData={propsData}/>
     </div>
   </div>;
 }

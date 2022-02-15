@@ -13,6 +13,7 @@ import React from "react";
 export default function CardProperties({
   card: {
     imageName,
+    CardCount,
     count,
     attackdelay,
     attackspeed,
@@ -27,6 +28,7 @@ export default function CardProperties({
     targets,
     type,
     radius,
+    Weight
   },
 }) {
   const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
@@ -58,6 +60,10 @@ export default function CardProperties({
           </div>
         </li>
       )}
+      <li className={css.CardPropertyLiStyle}>
+        <div className={css.CardPropertyKeyStyle}>Allowed Wildcards</div>
+        <div className={css.CardProperyValue}>{CardCount}</div>
+      </li>
       <li className={css.CardPropertyLiStyle}>
         <div className={css.CardPropertyKeyStyle}>Cost</div>
         <div className={css.CardProperyValue}>{manacost}</div>
@@ -159,6 +165,13 @@ export default function CardProperties({
           </div>
         </li>
       )}
+      {Weight &&
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Weight</div>
+          <div className={css.CardProperyValue}>{Weight}</div>
+        </li>
+      }
+
       <li className={css.CardPropertyLiStyle}>
         <div className={css.CardPropertyKeyStyle}>Rarity</div>
         <div className={css.CardProperyValue} style={{ color: RarityMappingConfig[rarity] }}>

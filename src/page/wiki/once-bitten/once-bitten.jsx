@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import css from "page/wiki/once-bitten/once-bitten.module.scss";
+
 import cardData from "generated/jobCardProps.json";
 import { Card } from "page/deck-manager/build/cards/card/card";
 import { ActionOverlayToSelectFirstCard } from "page/wiki/once-bitten/action-overlay-to-select-first-card";
@@ -19,12 +20,12 @@ export const remainingHealth = ({ health, damage }) => {
   return health - howManyHits({ health, damage }) * damage;
 };
 
-export const transformAfterHits = ({ health, damage }) => {
+export const transformAfterHits = ({ health = 0, damage = 0 }) => {
   const halfPercentHealth = health / 2;
   let count = 0;
   let remainingHealth = health;
   if(damage === 0){
-    return 999;
+    return 9999999999;
   }
   while (remainingHealth >= halfPercentHealth) {
     count++;
@@ -69,6 +70,7 @@ export const ORDER = "asc";
 const OnceBittenCard = () => <Card card={cardData.find(({name}) => "Once Bitten" === name)} />;
 
 export function OnceBitten() {
+
   const [sortByProp, setSortByProp] = useState(BY_REMAINING_HEALTH);
   const [order, setOrder] = useState(ORDER);
 
@@ -78,6 +80,10 @@ export function OnceBitten() {
 
   const enrichedCalculatedMinionsData = minions.map((card) => {
     const {damage} = card;
+    if(damage === null){
+    debugger;
+
+    }
     return ({
       card,
       damage,
