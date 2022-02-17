@@ -121,23 +121,23 @@ export function EloDetails() {
       <a href="http://fdmfdm.nl/EloChecker.html">http://fdmfdm.nl/EloChecker.html</a>
     </div>
 
-    <h2>Table view</h2>
-    <div style={{width: "728px"}}>
-    <ReactTable
-      columns={columns}
-      data={userData}
-      sortBy={[]}
-      minTableHeight={200}
-      hiddenColumns={["User_id"]}
-    />
-    </div>
-
     <h2>Charts</h2>
 
     <div className={css.chartsLayout}>
       <EloChart propKey="Elo2v2Solo" header="2v2 solo" propsData={propsData}/>
       <EloChart propKey="Elo2v2Team" header="2v2 premade" propsData={propsData}/>
       <EloChart propKey="Elo1v1" header="1v1" propsData={propsData}/>
+    </div>
+
+    <h2>Table view</h2>
+    <div style={{width: "728px"}}>
+      <ReactTable
+        columns={columns}
+        data={userData}
+        sortBy={[]}
+        minTableHeight={200}
+        hiddenColumns={["User_id"]}
+      />
     </div>
   </div>;
 }
