@@ -40,7 +40,7 @@ console.log("start downloading");
                                              Elo2v2Team,
                                              Elo2v2Solo,
                                              User_id,
-                                           }) => Elo1v1 > 1800 || Elo2v2Team > 1800 || Elo2v2Solo > 1800 || User_id === 15);
+                                           }) => Elo1v1 > 1800 || Elo2v2Team > 1800 || Elo2v2Solo > 1800 || [15, 218347, 5537284].includes(User_id));
     console.log(prevLimited.length);
     // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
