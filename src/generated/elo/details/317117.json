@@ -1,0 +1,28 @@
+[
+	{
+		"User_id": 317117,
+		"Id": 128524,
+		"Elo1v1": 2552,
+		"Elo2v2Team": 2653,
+		"Elo2v2Solo": 2150,
+		"Elo1v1Rank": 49,
+		"Elo2v2SoloRank": 543,
+		"Elo2v2TeamRank": 15,
+		"overallRankAbsolute": 597,
+		"overallRank": 54,
+		"date": "2022-2-17"
+	},
+	{
+		"User_id": 317117,
+		"Id": 128524,
+		"Elo1v1": 2574,
+		"Elo2v2Team": 2715,
+		"Elo2v2Solo": 2158,
+		"Elo1v1Rank": 43,
+		"Elo2v2SoloRank": 531,
+		"Elo2v2TeamRank": 6,
+		"overallRankAbsolute": 576,
+		"overallRank": 59,
+		"date": "2022-2-18"
+	}
+]
