@@ -88,7 +88,8 @@
 		"Elo2v2TeamRank": 100,
 		"overallRankAbsolute": 2121,
 		"overallRank": 216,
-		"date": "2022-2-15",
+		"date": "2022-2-15"
+	},
 	{
 		"User_id": 771053,
 		"Id": 19497,
@@ -115,5 +116,17 @@
 		"overallRank": 251,
 		"date": "2022-2-18"
 	},
+	{
+		"User_id": 771053,
+		"Id": 19497,
+		"Elo1v1": 2191,
+		"Elo2v2Team": 2528,
+		"Elo2v2Solo": 2122,
+		"Elo1v1Rank": 1089,
+		"Elo2v2SoloRank": 923,
+		"Elo2v2TeamRank": 67,
+		"overallRankAbsolute": 2034,
+		"overallRank": 213,
+		"date": "2022-2-19"
 	}
 ]
