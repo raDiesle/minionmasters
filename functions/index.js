@@ -127,7 +127,7 @@ async function loop() {
           let playerFileContent = null;
           try{
             const file = bucket.file(playerFilePath);
-            await data = file.download();
+            const data = await file.download();
             playerFileContent = JSON.parse(data);
           }catch(error){
             playerFileContent = [];
