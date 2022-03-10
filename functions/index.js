@@ -1,13 +1,28 @@
+
 const orderBy = require("lodash/orderBy");
 
 const fetch = require("node-fetch");
 
 const fs = require("fs");
+const functions = require('firebase-functions');
+const { getStorage } = require('firebase-admin/storage');
 
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
 
-const ELO_GENERATED_ROOT_PATH = "./src/generated/elo/";
+const serviceAccount = require('./minionmastersmanager-54a5965bae76.json');
 
+initializeApp({
+  credential: cert(serviceAccount)
+  , storageBucket: 'minionmastersmanager.appspot.com'
+});
 
+const db = getFirestore();
+const bucket = getStorage().bucket();
+
+exports.scheduledFunction = functions.pubsub.schedule('every 24 hours').onRun(async (context) => {
+
+const ELO_GENERATED_ROOT_PATH = "src/generated/elo/";
 
 const totalResults = [];
 let currentResults = null;
@@ -16,7 +31,11 @@ let limitStart = 0;
 let count = 0;
 // http://fdmfdm.nl/EloChecker.html
 console.log("start downloading");
-(async function loop() {
+
+/* eslint-disable */
+
+
+async function loop() {
   if (currentResults === null || currentResults.length !== 0) {
     const url = `http://fdmfdm.nl/GetAllUserElo.php?limitStart=${limitStart}&limitStep=${limitStep}`;
     console.log(url);
@@ -71,25 +90,13 @@ console.log("start downloading");
   const overallRankingUserIds = sortedByOverallRanking.map(({User_id}) => User_id);
   const withOverallEloRank = sortedByOverallRanking.map(data => ({...data, ...{overallRank :  overallRankingUserIds.indexOf(data.User_id) + 1}}));
 
-  console.log("writing file ...");
-  fs.writeFile(`${ELO_GENERATED_ROOT_PATH}all.json`, JSON.stringify(withOverallEloRank), err => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-  });
-  console.log("file written");
 
-  const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
-  const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+  async function uploadFromMemoryAll() {
+    await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).save(JSON.stringify(withOverallEloRank));
+  }
+  await uploadFromMemoryAll().catch(console.error);
 
-  const serviceAccount = require('./minionmastersmanager-54a5965bae76.json');
 
-  initializeApp({
-    credential: cert(serviceAccount)
-  });
-
-  const db = getFirestore();
 
   db.collection("playermappings").get()
     .then((querySnapshot) => {
@@ -141,16 +148,30 @@ console.log("start downloading");
           const newPlayerHistory = {...singlePlayer, ...{date}};
           playerFileContent.push(newPlayerHistory);
 
-          fs.writeFileSync(playerFilePath, JSON.stringify(playerFileContent, null, "\t"));
+          const finalPlayerDetailsDataContent = JSON.stringify(playerFileContent, null, "\t");
+
+          async function uploadFromMemory() {
+            await bucket.file(playerFilePath).save(finalPlayerDetailsDataContent);
+          }
+          await uploadFromMemory().catch(console.error);
 
           pos = pos + 1;
           await loopSingles();
-          return;
+          return null;
         }
       }());
-    });
+    }).catch(console.error);
 
-  fs.writeFileSync(`${ELO_GENERATED_ROOT_PATH}status.json`, JSON.stringify({ timeFetched : Date.now(), totalResultsSize : totalResults.length }, null, "\t"));
+  const statusContents = JSON.stringify({ timeFetched : Date.now(), totalResultsSize : totalResults.length }, null, "\t");
 
-}());
+  async function uploadFromMemoryStatus() {
+    await bucket.file(`${ELO_GENERATED_ROOT_PATH}status.json`).save(statusContents);
+  }
+  await uploadFromMemoryStatus().catch(console.error);
 
+}
+
+  await loop();
+
+  return null;
+});
