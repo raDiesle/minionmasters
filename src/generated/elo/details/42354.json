@@ -284,5 +284,18 @@
 		"overallRankAbsolute": 192,
 		"overallRank": 16,
 		"date": "2022-3-9"
+	},
+	{
+		"User_id": 42354,
+		"Id": 54726,
+		"Elo1v1": 2559,
+		"Elo2v2Team": 2457,
+		"Elo2v2Solo": 2211,
+		"Elo1v1Rank": 33,
+		"Elo2v2SoloRank": 145,
+		"Elo2v2TeamRank": 91,
+		"overallRankAbsolute": 208,
+		"overallRank": 19,
+		"date": "2022-3-10"
 	}
 ]
