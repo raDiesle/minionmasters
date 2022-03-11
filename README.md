@@ -49,3 +49,9 @@ in /batch_jobs/
 %appdata%\..\LocalLow\BetaDwarf ApS\Minion Masters
 
 TeamWon. Team: 0 Matchmade: None Online Game: False I won: True
+
+
+# elo Bucket: update
+
+e.g.
+https://firebasestorage.googleapis.com/v0/b/minionmastersmanager.appspot.com/o/src%2Fgenerated%2Felo%2Fdetails%2F1091792.json?alt=media&token=5d145bde-24dc-4367-8621-941deac59f4d

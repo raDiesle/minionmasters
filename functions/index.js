@@ -3,7 +3,6 @@ const orderBy = require("lodash/orderBy");
 
 const fetch = require("node-fetch");
 
-const fs = require("fs");
 const functions = require('firebase-functions');
 const { getStorage } = require('firebase-admin/storage');
 
@@ -96,8 +95,6 @@ async function loop() {
   }
   await uploadFromMemoryAll().catch(console.error);
 
-
-
   db.collection("playermappings").get()
     .then((querySnapshot) => {
       const playersObject = {};
@@ -129,8 +126,9 @@ async function loop() {
 
           let playerFileContent = null;
           try{
-            const content = fs.readFileSync(playerFilePath, 'utf8');
-            playerFileContent = JSON.parse(content);
+            const file = bucket.file(playerFilePath);
+            const data = await file.download();
+            playerFileContent = JSON.parse(data);
           }catch(error){
             playerFileContent = [];
           }
