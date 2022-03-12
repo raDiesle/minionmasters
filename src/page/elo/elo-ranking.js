@@ -3,6 +3,9 @@ import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { Link } from "react-router-dom";
 
 import { ReactTable } from "page/elo/react-table";
+import { getStorage, getDownloadURL, ref } from "firebase/storage";
+import axios from "axios";
+import { STORAGE_URL_PREFIX } from "page/elo/elo-config";
 
 
 export function EloRanking() {
@@ -19,10 +22,13 @@ export function EloRanking() {
   const [mappedPlayers, setMappedPlayers] = useState({});
   const [allEloData, setAllEloData] = useState([]);
   useEffect(async () => {
-    console.log("fetching data");
 
-    const  result = await import(`./../../generated/elo/status.json`);
-    setStatusData(result.default);
+
+    const storage = getStorage();
+
+    const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}status.json`));
+    const { data : result } = await axios.get(url);
+    setStatusData(result);
 
     var docRef = db.collection("playermappings").get()
       .then(async (querySnapshot) => {
@@ -33,8 +39,10 @@ export function EloRanking() {
           playersObject[doc.id] = doc.data().username;
         });
 
-        const result = await import(`./../../generated/elo/all.json`);
-        setAllEloData(result.default);
+        const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
+        const { data : result } = await axios.get(url);
+
+        setAllEloData(result);
         setMappedPlayers(playersObject);
         setSortModel([{
           accessor: "username",
@@ -126,7 +134,6 @@ export function EloRanking() {
       <li>
         You can search by your User_id or Username by clicking on the column.
       </li>
-      <li>Already mapped players = {Object.values(mappedPlayers).join(", ")}</li>
       <li>Data is quite big to load, so dont load by mobile phone</li>
     </ul>
     <div style={{width: "1020px"}}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Route, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { SaveMapping } from "page/elo/save-mapping";
 import { EloRanking } from "page/elo/elo-ranking";
 import { EloDetails } from "page/elo/elo-details";

@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import React, { useState, useCallback, useEffect } from "react";
-
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp";
@@ -9,6 +9,11 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons/faEllipsisH";
 import { ReactTable } from "page/elo/react-table";
 import { EloChart } from "page/elo/elo-chart";
 import css from "./elo-details.module.scss";
+import axios from "axios";
+import { STORAGE_URL_PREFIX, FILTER_CURRENT_SEASON, FILTER_PREVIOUS_SEASON, FILTER_ALL } from "page/elo/elo-config";
+import { ChartFilters } from "page/elo/chart-filters";
+import * as classnames from "classnames";
+import cssButton from "components/button.module.scss";
 
 const renderCellFn = ({ params, isUpGood, userData }) => {
   const currentRowPos = params.row.index;
@@ -39,9 +44,13 @@ export function EloDetails() {
 
 
 
+  const [filter, setFilter] = useState(FILTER_CURRENT_SEASON);
+
   useEffect(async() => {
-    const result = await import(`./../../generated/elo/details/${paramsObj.get("id")}.json`);
-    const data = result.default;
+    const storage = getStorage();
+    const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}details/${paramsObj.get("id")}.json`));
+    const { data } = await axios.get(url);
+
     const dataReverse = [...data].reverse();
     setUserData(dataReverse);
     const allProps = Object.keys(data[0]).filter(prop => !["User_id", "Id", "date"].includes(prop));
@@ -112,21 +121,33 @@ export function EloDetails() {
     }
   ];
 
+  const FILTER_CONFIG = {
+    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2022-02-27") )})),
+    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date) < new Date("2022-02-20") )})),
+    [FILTER_ALL] : () => propsData
+  }
+
+  const propsDataFiltered = FILTER_CONFIG[filter]();
 
   return <div>
-    <a href="/elo">Back</a>
+
+    <a href="/elo"
+       className={classnames(cssButton.ButtonInGroupStyle, cssButton.buttonSpacing, css.backButton)}
+    >&lt; Back</a>
 
     <div>
-      Data is updated randomly over the days. If you want hourly updated data, visit &nbsp;
+      Right now, data is updated once per day. If you want hourly updated data, you can visit &nbsp;
       <a href="http://fdmfdm.nl/EloChecker.html">http://fdmfdm.nl/EloChecker.html</a>
     </div>
 
     <h2>Charts</h2>
 
+    <ChartFilters {...{filter, setFilter}}/>
+
     <div className={css.chartsLayout}>
-      <EloChart propKey="Elo2v2Solo" header="2v2 solo" propsData={propsData}/>
-      <EloChart propKey="Elo2v2Team" header="2v2 premade" propsData={propsData}/>
-      <EloChart propKey="Elo1v1" header="1v1" propsData={propsData}/>
+      <EloChart propKey="Elo2v2Solo" header="2v2 solo" propsData={propsDataFiltered}/>
+      <EloChart propKey="Elo2v2Team" header="2v2 premade" propsData={propsDataFiltered}/>
+      <EloChart propKey="Elo1v1" header="1v1" propsData={propsDataFiltered}/>
     </div>
 
     <h2>Table view</h2>

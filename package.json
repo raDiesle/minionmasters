@@ -37,6 +37,7 @@
     "lodash.noop": "3.0.1",
     "lodash.reverse": "^4.0.1",
     "lodash.sortby": "4.7.0",
+    "luxon": "^2.3.1",
     "node-fetch": "2.6.0",
     "qs": "6.9.4",
     "rc-tooltip": "5.0.0",
