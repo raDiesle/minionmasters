@@ -6645,7 +6645,7 @@
         "type": "Spell",
         "rarity": "Supreme",
         "imageName": "SpellMultipleMissiles",
-        "description": "ERROR_{\"Overload\", \"TERM\", \"Overload\"} ([cv:SpellMultipleMissiles.Variable])]].On each draw: add [v:SpellMultipleMissiles.MISSILES_PER_DRAW] {\"SpellMultipleMissileStacks\", \"TERM\", \"SpellMultipleMissileStacks\"} stacks (Max. [v:SpellMultipleMissiles.MAX_STACKS], starts at [v:SpellMultipleMissiles.STARTING_MISSILES]).Fire an {\"SpellMultipleMissile\", \"TERM\", \"SpellMultipleMissile\"} at a random target in the area for each {\"SpellMultipleMissileStacks\", \"TERM\", \"SpellMultipleMissileStacks\"} stack.",
+        "description": "{\"Overload\", \"TERM\", \"Overload\"} .On each draw: add 1 Barrage stacks  (Max. 10, starts at 3).Fire an Arcane projectile at a random target in the area for each Barrage stack.",
         "isAOE": false,
         "ExcludeFromRandom": false,
         "Faction": "CrystalElf",

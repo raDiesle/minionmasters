@@ -104,6 +104,10 @@ function normalizeGameCardData(propsAsMap) {
     `([cv:SpellMultipleMissiles.Variable])]].On each draw: add [v:SpellMultipleMissiles.MISSILES_PER_DRAW] SpellMultipleMissileStacks stacks (Max. [v:SpellMultipleMissiles.MAX_STACKS], starts at [v:SpellMultipleMissiles.STARTING_MISSILES]).Fire an SpellMultipleMissile at a random target in the area for each SpellMultipleMissileStacks stack`,
     `On each draw: add 1 Barrage stacks (Max. 10, starts at 3). Fire an Arcane Projectile at a random target in the area for each Barrage stack.`);
 
+  propsAsMap.description = propsAsMap.description.replace(`ERROR_ERROR_[actorskillinfo:OverloadMulti,[mec:[r:Overload] ([cv:SpellMultipleMissiles.Variable])]].On each draw: add [v:SpellMultipleMissiles.MISSILES_PER_DRAW] [r:SpellMultipleMissileStacks] stacks (Max. [v:SpellMultipleMissiles.MAX_STACKS], starts at [v:SpellMultipleMissiles.STARTING_MISSILES]).Fire an [r:SpellMultipleMissile] at a random target in the area for each [r:SpellMultipleMissileStacks] stack.`,
+    `[r:Overload] .On each draw: add 1 Barrage stacks  (Max. 10, starts at 3).Fire an Arcane projectile at a random target in the area for each Barrage stack.`
+    );
+
 
   propsAsMap.description = propsAsMap.description.replace(
     `<b><color=orange><link="spell_info:MoveScratSpawner>Emergency Tunneling</link></color></b>`, `Emergency Tunneling`);
