@@ -27,8 +27,8 @@ export function EloChart({propKey, header, description = "", propsData}){
     return <div style={{backgroundColor: "#444"}}>
       <div style={{padding: "5px"}}>
         <div><strong>Date: {label}</strong></div>
-        {payload.length && <><div style={{color: "#8884d8"}}>{payload[0].name}: {payload[0].value}</div>
-        <div style={{color: "#82ca9d"}}>{payload[1].name}: {payload[1].value}</div>
+        {payload?.length && <><div style={{color: "#8884d8"}}>{payload?.[0].name}: {payload?.[0].value}</div>
+        <div style={{color: "#82ca9d"}}>{payload?.[1].name}: {payload?.[1].value}</div>
       </>}
       </div>
     </div>

@@ -122,8 +122,8 @@ export function EloDetails() {
   ];
 
   const FILTER_CONFIG = {
-    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2022-02-27") )})),
-    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date) < new Date("2022-02-20") )})),
+    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2022-02-27").getTime())})),
+    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date("2022-02-20").getTime() )})),
     [FILTER_ALL] : () => propsData
   }
 

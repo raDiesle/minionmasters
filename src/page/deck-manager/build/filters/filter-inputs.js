@@ -209,7 +209,7 @@ export function FilterInputs({
             setCountFilter(ALL_UNIT_COUNT_DEFAULT_CONFIG);
           }}
         >
-          <FontAwesomeIcon icon={faTrashAlt} /> Reset
+          <FontAwesomeIcon icon={faTrashAlt} /> &nbsp;Reset
         </button>
       </div>
 

@@ -169,7 +169,7 @@ export default function AnalyzeDeck({ lastSelectedCards }) {
           </div>
         </Tooltip>
 
-        <Tooltip placement="top" overlay={<span>attackdelay * unitcount </span>}>
+        <Tooltip placement="top" overlay={<span>attackDelay * unitcount </span>}>
           <div className={css.property}>
             <b>Avg Attack Delay</b>
             <div>{avgAttackDelayForDisplay}</div>

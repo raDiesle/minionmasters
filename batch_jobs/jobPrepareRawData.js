@@ -28,9 +28,8 @@ function normalizeGameCardData(propsAsMap) {
   })
 
 
-  propsAsMap.faction = propsAsMap.faction === "Highlander" ? "Stoutheart" : propsAsMap.faction;
+  propsAsMap.faction = propsAsMap.Faction === "Highlander" ? "Stoutheart" : propsAsMap.Faction;
 
-  delete propsAsMap.Faction;
 
   const isIllusoryCleaver = propsAsMap.iD === 39;
   if (typeof propsAsMap.InheritFromId != "undefined" && !isIllusoryCleaver) {
@@ -224,6 +223,13 @@ function normalizeGameCardData(propsAsMap) {
     "ERROR_[actorskillinfo:ShieldOfLight,[mec:[r:ShieldOfLight]]][mec:Quest:]",
     ``
   );
+
+
+  propsAsMap.description = propsAsMap.description.replace(
+    "ERROR_ERROR_[actorskillinfo:Overload,[mec:[r:Overload] ([cv:ArcaneRing.Variable])]].[v:SpellCirclingProjectiles.PROJECTILES]",
+    `[r:Overload] 8`
+  );
+
 
   propsAsMap.description = propsAsMap.description.replace(
     "ERROR_[actorskillinfo:Overload,[mec:[r:Overload] ([cv:ArcaneBolt.Variable])]]",

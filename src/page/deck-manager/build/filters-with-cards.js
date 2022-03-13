@@ -13,6 +13,15 @@ import css from "page/deck-manager/build/filters-with-cards.module.scss";
 import { FilterInputs } from "page/deck-manager/build/filters/filter-inputs";
 import React, { useCallback, useState } from "react";
 import groupBy from "lodash.groupby";
+import { CardsTable } from "page/deck-manager/build/cardstable/cards-table";
+import cssButton from "components/button.module.scss";
+import Tooltip from "rc-tooltip";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye as faEyeRegular } from "@fortawesome/free-regular-svg-icons/faEye";
+import { faEyeSlash as faEyeSlashRegular } from "@fortawesome/free-regular-svg-icons/faEyeSlash";
+import { faTable } from "@fortawesome/free-solid-svg-icons/faTable";
+import * as classnames from "classnames";
+import { faImage } from "@fortawesome/free-regular-svg-icons/faImage";
 
 export function setAllFilterStates(isActive) {
   const setFilterState = (key) => {
@@ -59,6 +68,8 @@ export default function FiltersWithCards({
   const filteredMasterCards = ALL_NORMAL_CARDS;
 
   const fullCount = filteredMasterCards.length;
+
+  const [tableView, setTableView] = useState(false);
 
   const filteredCardsDataWithRarity = filters.rarity.every(({ isActive }) => !isActive)
     ? filteredMasterCards
@@ -164,7 +175,36 @@ export default function FiltersWithCards({
         </div>
       </div>
 
-      <Cards
+      <div className={css.cardsView}>
+      <div className={cssButton.ButtonGroupStyle}>
+        <Tooltip placement="bottomRight" overlay={<span>Card Image View</span>}>
+          <button
+            className={classnames([
+              !tableView ? cssButton.isButtonActive : cssButton.isButtonInactive,
+              cssButton.ButtonInGroupStyleWithState,
+            ])}
+            onClick={() => setTableView(false)}
+          >
+            <FontAwesomeIcon icon={faImage} />
+          </button>
+        </Tooltip>
+
+        <Tooltip placement="bottomRight" overlay={<span>Table View</span>}>
+          <button
+            className={classnames([
+              tableView ? cssButton.isButtonActive : cssButton.isButtonInactive,
+              cssButton.ButtonInGroupStyleWithState,
+            ])}
+
+            onClick={() => setTableView(true)}
+          >
+            <FontAwesomeIcon icon={faTable} />
+          </button>
+        </Tooltip>
+      </div>
+      </div>
+
+      {tableView ? <CardsTable cards={sortedByManaCards}/> : <Cards
         cards={cardsByGroup}
         availableCards={availableCards}
         isShowDetailsOnCard={isShowDetailsOnCard}
@@ -172,7 +212,7 @@ export default function FiltersWithCards({
         cardActionWrapper={cardActionWrapper}
         fullCount={fullCount}
         isFullWidthClickable={isFullWidthClickable}
-      />
+      /> }
     </div>
   );
 }
