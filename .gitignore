@@ -27,3 +27,7 @@ yarn-error.log*
 
 
 /.idea
+/.firebase/hosting.YnVpbGQ.cache
+/batch_jobs/minionmastersmanager-54a5965bae76.json
+/functions/minionmastersmanager-54a5965bae76.json
+/package-lock.json

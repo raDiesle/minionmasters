@@ -17,6 +17,7 @@ export default function SaveDbButton({
   youtubeLink,
   redditLink,
   tags,
+                                       isPrivate,
   handleSaveButton,
 }) {
   const formData = {
@@ -29,6 +30,7 @@ export default function SaveDbButton({
     youtubeLink,
     redditLink,
     tags,
+    isPrivate
   };
   const currentUser = useCurrentUser();
 

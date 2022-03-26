@@ -39,6 +39,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   const location = useLocation();
   const history = useHistory();
 
+
   const [limit, setLimit] = useState(3);
   const { decks, loadDecks } = useDecks();
   useAsyncEffect((isMounted) => {
@@ -124,13 +125,17 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
           ({ createdByDisplayName }) => createdByDisplayName === createdByFilter
         );
 
+
   const sortedByDateCards = orderBy(
     decksWithAuthor,
     ({ createdAt }) => createdAt.getTime(),
     "desc"
   );
 
-  const cardsWithLimit = sortedByDateCards.slice(0, limit);
+  const cardsWithPublic = sortedByDateCards.filter(({ isPrivate,createdByUid }) => (typeof isPrivate === "undefined" || isPrivate === false || (currentUser && currentUser.uid === createdByUid)));
+
+
+  const cardsWithLimit = cardsWithPublic.slice(0, limit);
 
   return (
     <div className={css.pageContainer}>

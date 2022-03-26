@@ -16,6 +16,7 @@ export function EditSavedDeckActive({
   initialYoutubeLink,
   initialRedditLink,
   initialTags,
+  initialIsPrivate,
 
   setIsEditing,
 }) {
@@ -36,6 +37,7 @@ export function EditSavedDeckActive({
           initialYoutubeLink={initialYoutubeLink}
           initialRedditLink={initialRedditLink}
           initialTags={initialTags}
+          initialIsPrivate={initialIsPrivate}
           setIsEditing={setIsEditing}
           handleSaveButton={(hasValidationError, formData) => {
             return (

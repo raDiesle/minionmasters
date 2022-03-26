@@ -62,6 +62,7 @@ export function useDecks() {
             youtubeLink: deck.youtubeLink && deck.youtubeLink,
             redditLink: deck.redditLink && deck.redditLink,
             tags: Array.isArray(deck.tags) ? deck.tags : [],
+            isPrivate: deck.isPrivate
           };
         });
 

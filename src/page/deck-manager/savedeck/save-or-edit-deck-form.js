@@ -13,6 +13,8 @@ import { LADDER, MAYHEM, PREMADE_TEAM } from "page/deck-manager/savedeck/saved-d
 import { TagsInput } from "page/deck-manager/savedeck/tags-input";
 import Tooltip from "rc-tooltip";
 import React, { useEffect, useState } from "react";
+import cssButton from "components/button.module.scss";
+import { faSortAmountUp } from "@fortawesome/free-solid-svg-icons/faSortAmountUp";
 
 export default function SaveOrEditDeckForm({
   handleSaveButton,
@@ -25,6 +27,7 @@ export default function SaveOrEditDeckForm({
   initialYoutubeLink = "",
   initialRedditLink = "",
   initialTags = [],
+  initialIsPrivate = false,
   isPremadeDeckActive = null,
 }) {
   const [deckname, setDeckname] = useState(initialDeckname);
@@ -58,6 +61,8 @@ export default function SaveOrEditDeckForm({
   const [redditLink, setRedditLink] = useState(initialRedditLink);
 
   const [tags, setTags] = useState(initialTags);
+
+  const [isPrivate, setIsPrivate] = useState(initialIsPrivate);
 
   return (
     <div>
@@ -145,6 +150,38 @@ export default function SaveOrEditDeckForm({
           <TagsInput tags={tags} setTags={setTags} />
         </div>
 
+        <div className={classnames( css.inputGroupStyle)}>
+          <label htmlFor="isPrivate">Visibility</label>
+
+        <div className={cssButton.ButtonGroupStyle}>
+          <button
+            className={classnames([
+              isPrivate === true ? cssButton.isButtonActive : cssButton.isButtonInactive,
+              cssButton.ButtonInGroupStyleWithState,
+            ])}
+            onClick={() => setIsPrivate(true)}
+          >
+            <Tooltip placement="bottomRight" overlay={<span> Only you will see the deck. You need to stay login to see your decks.</span>}>
+              <span>Private</span>
+            </Tooltip>
+          </button>
+
+          <button
+            className={classnames([
+              isPrivate === false ? cssButton.isButtonActive : cssButton.isButtonInactive,
+              cssButton.ButtonInGroupStyleWithState,
+            ])}
+            onClick={() => setIsPrivate(false)}
+          >
+            <Tooltip placement="bottomRight" overlay={<span> After save, all will see your deck.</span>}>
+              <span>Public</span>
+            </Tooltip>
+          </button>
+
+          </div>
+        </div>
+
+
         <div className={classnames(css.descriptionTextArea, css.inputGroupStyle)}>
           <label htmlFor="description">
             Description
@@ -164,6 +201,8 @@ export default function SaveOrEditDeckForm({
             rows={3}
           />
         </div>
+
+
       </div>
 
       <SaveOrEditToDatabaseButton
@@ -176,6 +215,7 @@ export default function SaveOrEditDeckForm({
         youtubeLink={youtubeLink}
         redditLink={redditLink}
         tags={tags}
+        isPrivate={isPrivate}
         handleSaveButton={handleSaveButton}
       />
     </div>
