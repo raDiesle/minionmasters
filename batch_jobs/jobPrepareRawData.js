@@ -100,6 +100,9 @@ function normalizeGameCardData(propsAsMap) {
     propsAsMap.rarity = "Perk";
   }
 
+
+  propsAsMap.description = propsAsMap.description.replace(`<link="actor_skill:PermafrostBuff><b><color=orange>Defrost: (35)</color></b></link>`, "Defrost");
+
   propsAsMap.description = propsAsMap.description.replace(
     `([cv:SpellMultipleMissiles.Variable])]].On each draw: add [v:SpellMultipleMissiles.MISSILES_PER_DRAW] SpellMultipleMissileStacks stacks (Max. [v:SpellMultipleMissiles.MAX_STACKS], starts at [v:SpellMultipleMissiles.STARTING_MISSILES]).Fire an SpellMultipleMissile at a random target in the area for each SpellMultipleMissileStacks stack`,
     `On each draw: add 1 Barrage stacks (Max. 10, starts at 3). Fire an Arcane Projectile at a random target in the area for each Barrage stack.`);
@@ -482,6 +485,8 @@ const normalizedGameData = cardDataFromGame
        127, // one punch blast
       126, // shadow dance
       332, // Drain life
+      358, // RitualStatue
+      359, // FanaticSlave
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })
