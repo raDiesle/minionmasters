@@ -17,13 +17,14 @@ let count = 0;
 // http://fdmfdm.nl/EloChecker.html
 console.log("start downloading");
 (async function loop() {
-  if (currentResults === null || currentResults.length !== 0) {
+  const isMoreDataToFetch = currentResults === null || currentResults.length !== 0;
+  if (isMoreDataToFetch) {
     const url = `http://fdmfdm.nl/GetAllUserElo.php?limitStart=${limitStart}&limitStep=${limitStep}`;
     console.log(url);
     console.log(`Fetching count : ${count} totalResults: ${totalResults.length}`);
     const response = await fetch(url);
     const data = await response.json();
-    console.log("returned dataset");
+    console.log("returned dataset:" + data.length);
     currentResults = data;
 
     const normalized = currentResults.map(({ User_id, Id, Elo1v1, Elo2v2Team, Elo2v2Solo }) => ({
@@ -41,7 +42,7 @@ console.log("start downloading");
                                              Elo2v2Solo,
                                              User_id,
                                            }) => Elo1v1 > 1800 || Elo2v2Team > 1800 || Elo2v2Solo > 1800 || [15, 218347, 5537284, 218347, 5537284].includes(User_id));
-    console.log(prevLimited.length);
+    console.log("filtered data to proceed:" + prevLimited.length);
     // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
     totalResults.push(...prevLimited);
@@ -50,6 +51,8 @@ console.log("start downloading");
     await loop();
     return;
   }
+
+  console.log("proceed with fetched data:" + totalResults.length);
 
   const sortedByElo1v1 = orderBy(totalResults, ["Elo1v1"], ["desc"]).map(({User_id}) => User_id);
   const sortedByElo2v2Solo = orderBy(totalResults, ["Elo2v2Solo"], ["desc"]).map(({User_id}) => User_id);
@@ -71,14 +74,9 @@ console.log("start downloading");
   const overallRankingUserIds = sortedByOverallRanking.map(({User_id}) => User_id);
   const withOverallEloRank = sortedByOverallRanking.map(data => ({...data, ...{overallRank :  overallRankingUserIds.indexOf(data.User_id) + 1}}));
 
-  console.log("writing file ...");
-  fs.writeFile(`${ELO_GENERATED_ROOT_PATH}all.json`, JSON.stringify(withOverallEloRank), err => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-  });
-  console.log("file written");
+  console.log("writing file of size:" + withOverallEloRank.length);
+  fs.writeFileSync(`${ELO_GENERATED_ROOT_PATH}all.json`, JSON.stringify(withOverallEloRank));
+  console.log("file written to disc");
 
   const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
   const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');

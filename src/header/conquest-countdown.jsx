@@ -39,7 +39,7 @@ const CYCLE_TIME_IN_MS = 1000*60*60*24*3;
 
 
 function calcTime() {
-  const DATE_TO_ALIGN_CYCLE  = new Date(2022, 0, 22, 7,0,0,0);
+  const DATE_TO_ALIGN_CYCLE  = new Date(2022, 0, 23, 7,0,0,0);
 
   const NOW = new Date();
 

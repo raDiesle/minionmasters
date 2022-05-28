@@ -58,7 +58,7 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
           Elo2v2Solo > 1800 ||
           [15, 218347, 5537284, 218347, 5537284].includes(User_id)
       );
-      console.log(prevLimited.length);
+      console.log("used data to proceed" + prevLimited.length);
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
       totalResults.push(...prevLimited);
@@ -67,6 +67,7 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
       await loop();
       return;
     }
+    console.log("Continue with fetched data: " + totalResults.length)
 
     const sortedByElo1v1 = orderBy(totalResults, ["Elo1v1"], ["desc"]).map(
       ({ User_id }) => User_id
@@ -105,10 +106,13 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
       ...{ overallRank: overallRankingUserIds.indexOf(data.User_id) + 1 },
     }));
 
+
     async function uploadFromMemoryAll() {
+      console.log("start uploading of all.json: " + withOverallEloRank.length);
       await bucket
         .file(`${ELO_GENERATED_ROOT_PATH}all.json`)
         .save(JSON.stringify(withOverallEloRank), requestHeader);
+      console.log("finished uploading all.json");
     }
     await uploadFromMemoryAll().catch(console.error);
 
@@ -118,7 +122,7 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
         const playersObject = {};
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
+          // console.log(doc.id, " => ", doc.data());
           playersObject[doc.id] = doc.data().username;
         });
 
@@ -126,12 +130,14 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
         let pos = 0;
 
         (async function loopSingles() {
+          try{
           if (pos < players.length) {
             /* const response = await fetch(`http://fdmfdm.nl/GetUserElo.php?userID=${players[pos]}`);
           const playerResponse = await response.json();
           const singlePlayer = playerResponse[0];*/
-
+            console.log("fetch data mapping of " + players[pos]);
             const currentPlayerId = parseInt(players[pos]);
+            console.log("Current playerId: " + currentPlayerId);
             const singlePlayer = withOverallEloRank.find(
               ({ User_id }) => User_id === currentPlayerId
             );
@@ -139,7 +145,7 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
               console.log("Player could not be found: " + currentPlayerId);
               pos = pos + 1;
               await loopSingles();
-              return;
+              return null;
             }
             const playerFilePath = `${ELO_GENERATED_ROOT_PATH}details/${singlePlayer.User_id}.json`;
 
@@ -181,7 +187,12 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
             await loopSingles();
             return null;
           }
+          }catch(error){
+            console.error(error);
+            console.error("of player:" + players[pos])
+          }
         })();
+
       })
       .catch(console.error);
 

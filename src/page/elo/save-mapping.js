@@ -43,7 +43,7 @@ export function SaveMapping({isMappingMode, setIsMappingMode}){
 
       {isMappingMode && <div className={css.form}>
 
-        <input type="text" placeholder="UserId" onChange={(e) => handlePlayerId(e)} />
+        <input type="number" placeholder="UserId" onChange={(e) => handlePlayerId(e)} />
 
 
         <input type="text" placeholder="Username" onChange={(e) => handleUsername(e)} />
