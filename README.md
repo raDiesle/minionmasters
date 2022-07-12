@@ -20,9 +20,11 @@ in /batch_jobs/
 5. in general, with every release new formattings in text are expected , those should be handled in the job* file to replace properly.
 6. also there might be new abilities added, which needs to be defined in abilities-config.js
 7. see `update images from game`
-8. update version in src/version.js export const CURRENT_GAME_VERSION = "1.25";   
-9. test changes on run app
-10. `npm run deploy`
+8. update version in src/version.js export const CURRENT_GAME_VERSION = "1.25";
+9. elo-detail.js find and adjust [FILTER_CURRENT_SEASON] [FILTER_PREVIOUS_SEASON]
+10. adjust by try error  const DATE_TO_ALIGN_CYCLE for correct conquest circle by increasing only some hours or some days. dont try to give correct date in the future
+11. test changes on run app
+12. `npm run deploy`
 
 
 # update images from game

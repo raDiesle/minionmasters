@@ -2,7 +2,9 @@ const orderBy = require("lodash/orderBy");
 
 const fetch = require("node-fetch");
 
-const functions = require("firebase-functions");
+ const functions = require("firebase-functions");
+//const functions = require('@google-cloud/functions-framework');
+
 const { getStorage } = require("firebase-admin/storage");
 
 const { initializeApp, applicationDefault, cert } = require("firebase-admin/app");
@@ -17,8 +19,8 @@ initializeApp({
 
 const db = getFirestore();
 const bucket = getStorage().bucket();
-
 exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(async (context) => {
+// functions.cloudEvent("eloUpdate", async (cloudEvent) => {
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
   const totalResults = [];
@@ -116,6 +118,7 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
     }
     await uploadFromMemoryAll().catch(console.error);
 
+    console.log("continue to read playermappings.");
     db.collection("playermappings")
       .get()
       .then((querySnapshot) => {
