@@ -35,7 +35,7 @@ in /batch_jobs/
 - export Texture2d files as png
 - create some new folder again e.g. "imgs" and select it to be exported into
 - copy images to the folder in batch_jobs/images_highres_from_game/img
-- say "skip for all " to not override  
+- say "override all" to get updated images  
 - run 'npm run compressImages' and test app if all images are correct. commit all original and compressed new images to git
 - delete folder you created
 
