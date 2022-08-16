@@ -1,7 +1,8 @@
-import { LineChart, Line, CartesianGrid, Tooltip, Legend, XAxis, YAxis } from "recharts";
+import { LineChart, Line, CartesianGrid, Tooltip, Legend, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import React from "react";
 
-export function EloChart({propKey, header, description = "", propsData}){
+export function EloChart({propKey, header, description = "", isBiggerCharts, propsData}){
+
 
   const rankKey = propKey + "Rank";
   const elo2v2Solo = propsData.find(prop => prop.propKey === propKey) || {propKey: propKey, data : []};
@@ -13,12 +14,16 @@ export function EloChart({propKey, header, description = "", propsData}){
   }));
 
 
-  return <div>
+
+  return <div style={{width: isBiggerCharts ? "100%" : 350, height: isBiggerCharts ? "calc(100vh -20%)" : 200, marginBottom: isBiggerCharts ? "10px" : 0}}>
     <h3>{header}</h3>
+
     <div>
       {description}
     </div>
-  <LineChart width={350} height={200} data={elo2v2SoloMergedData}>
+
+      <ResponsiveContainer>
+  <LineChart data={elo2v2SoloMergedData}>
     <Line yAxisId="left" type="monotone" name="Elo-Score" dataKey="valueA" stroke="#8884d8" activeDot={{ r: 8 }} />
     <Line yAxisId="right" type="monotone" name="Elo-Ranking" dataKey="valueB" stroke="#82ca9d"/>
     <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
@@ -39,5 +44,6 @@ export function EloChart({propKey, header, description = "", propsData}){
     <YAxis yAxisId="left" domain={["auto", "auto"]} type="number" tick={{stroke: '#8884d8', strokeWidth: 0.1}} stroke={'#8884d8'}/>
     <YAxis yAxisId="right" orientation="right" domain={["auto", "auto"]} tick={{stroke: '#82ca9d', strokeWidth: 0.1}}  stroke={'#82ca9d'} type="number" reversed={true}/>
   </LineChart>
+      </ResponsiveContainer>
   </div>
 }

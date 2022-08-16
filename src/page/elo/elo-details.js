@@ -14,6 +14,7 @@ import { STORAGE_URL_PREFIX, FILTER_CURRENT_SEASON, FILTER_PREVIOUS_SEASON, FILT
 import { ChartFilters } from "page/elo/chart-filters";
 import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
+import { db } from "mm-firestore";
 
 const renderCellFn = ({ params, isUpGood, userData }) => {
   const currentRowPos = params.row.index;
@@ -46,9 +47,10 @@ export function EloDetails() {
 
   const [filter, setFilter] = useState(FILTER_CURRENT_SEASON);
 
+  const userId = paramsObj.get("id");
   useEffect(async() => {
     const storage = getStorage();
-    const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}details/${paramsObj.get("id")}.json`));
+    const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}details/${userId}.json`));
     const { data } = await axios.get(url);
 
     const dataReverse = [...data].reverse();
@@ -67,7 +69,7 @@ export function EloDetails() {
       );
     });
     setPropsData(allPropsEntries);
-  }, [paramsObj.get("id")]);
+  }, [userId]);
 
   const columns = [
     {
@@ -125,12 +127,28 @@ export function EloDetails() {
     // "2022-02-27"
     // "2022-02-20"
     // "2022-05-03"
-    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2022-07-07").getTime())})),
-    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date().getTime("2022-04-06") )})),
+    // "2022-04-06"
+    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2022-08-04").getTime())})),
+    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date("2022-07-07").getTime() )})),
     [FILTER_ALL] : () => propsData
   }
 
   const propsDataFiltered = FILTER_CONFIG[filter]();
+
+
+    const[username, setUsername] = useState("");
+  useEffect(() => {
+    try{
+      db.collection("playermappings").doc(userId).get()
+        .then(async (querySnapshot) => {
+          setUsername(querySnapshot.data()?.username);
+      });
+    } catch(e){
+      console.error(e);
+    }
+  },[userId]);
+
+  const [isBiggerCharts, setIsBiggerCharts] = useState(false);
 
   return <div>
 
@@ -138,19 +156,22 @@ export function EloDetails() {
        className={classnames(cssButton.ButtonInGroupStyle, cssButton.buttonSpacing, css.backButton)}
     >&lt; Back</a>
 
+
+
+
     <div>
       Right now, data is updated once per day. If you want hourly updated data, you can visit &nbsp;
       <a href="http://fdmfdm.nl/EloChecker.html">http://fdmfdm.nl/EloChecker.html</a>
     </div>
 
-    <h2>Charts</h2>
+    <h2>Charts: {username}</h2>
 
-    <ChartFilters {...{filter, setFilter}}/>
+    <ChartFilters {...{filter, setFilter, isBiggerCharts, setIsBiggerCharts}}/>
 
     <div className={css.chartsLayout}>
-      <EloChart propKey="Elo2v2Solo" header="2v2 solo" propsData={propsDataFiltered}/>
-      <EloChart propKey="Elo2v2Team" header="2v2 premade" propsData={propsDataFiltered}/>
-      <EloChart propKey="Elo1v1" header="1v1" propsData={propsDataFiltered}/>
+      <EloChart propKey="Elo2v2Solo" header="2v2 solo" propsData={propsDataFiltered} isBiggerCharts={isBiggerCharts}/>
+      <EloChart propKey="Elo2v2Team" header="2v2 premade" propsData={propsDataFiltered} isBiggerCharts={isBiggerCharts}/>
+      <EloChart propKey="Elo1v1" header="1v1" propsData={propsDataFiltered} isBiggerCharts={isBiggerCharts}/>
     </div>
 
     <h2>Table view</h2>
