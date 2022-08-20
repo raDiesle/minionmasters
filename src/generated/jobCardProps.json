@@ -5458,7 +5458,7 @@
         "name": "Black Hole",
         "manacost": 3,
         "type": "Spell",
-        "rarity": "Supreme",
+        "rarity": "Perk",
         "imageName": "BlackHole",
         "description": "Sucks up ALL minions in an area, removing them from the board for the rest of the spell's duration.",
         "isAOE": false,

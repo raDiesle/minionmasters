@@ -38,7 +38,7 @@ export default function CardDetailsModal({
         className="modalContentStyle"
         overlayClassName="modalOverlayStyle"
       >
-        <div className={css.ModalContainerStyle} data-name={name}>
+        <div className={css.ModalContainerStyle} data-name={name} data-card-id={iD}>
           <div className={css.ModalAlignCloseStyle}>
             <div className={css.ModalCloseStyle}>
               <FontAwesomeIcon

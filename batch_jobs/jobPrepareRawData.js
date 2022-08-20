@@ -94,6 +94,7 @@ function normalizeGameCardData(propsAsMap) {
     207, // crossbow trap
     208, // decoy trap
     243, // queen dragon
+    282, // voidborne black hole
   ];
 
   if (iDsMasterAbilitySpells.includes(propsAsMap.iD)) {

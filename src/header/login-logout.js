@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import ReactModal from "react-modal";
+import firebase from "firebase/compat/app";
 
 export default function LoginLogout() {
   const [isLoginModalShown, setIsLoginModalShown] = useState(false);
@@ -38,10 +39,11 @@ export default function LoginLogout() {
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
     signInSuccessUrl: "/",
     signInOptions: [
-      //  "emailLink",
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
       "facebook.com",
       "twitter.com",
       "google.com",
+
     ],
     callbacks: {
       // Avoid redirects after sign-in.
