@@ -28,16 +28,17 @@ in /batch_jobs/
 
 
 # update images from game
-- download https://github.com/Perfare/AssetStudio -https://github.com/DerPopo/UABE/releases/tag/2.2stabled-
+- download https://github.com/Perfare/AssetStudio -https://github.com/DerPopo/UABE/releases/tag/2.2stabled- or https://github.com/SeriousCache/UABE/releases
 - open AssetStudioGUI.exe
-- Open. Select C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\cards highres
-- sort by type
+- Click in menu on "Open". Select folder C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\
+- Select "cards highres"
+- Data are loaded. Go to Asset List tab. Sort by type
 - export Texture2d files as png
-- create some new folder again e.g. "imgs" and select it to be exported into
+- create some new folder again e.g. in your user downloads folder "imgs" and select it to be exported into
 - copy images to the folder in batch_jobs/images_highres_from_game/img
 - say "override all" to get updated images  
 - run 'npm run compressImages' and test app if all images are correct. commit all original and compressed new images to git
-- delete folder you created
+- delete old folder you created
 
 # another tool from another guy:
  https://github.com/Cadrach/mm-builder

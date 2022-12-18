@@ -488,6 +488,10 @@ const normalizedGameData = cardDataFromGame
       332, // Drain life
       358, // RitualStatue
       359, // FanaticSlave
+
+      372, // city patrol
+      370, // banner of last stand
+      374 // Bearvalanche
     ];
     return !SKIP_CARDS.includes(parseInt(iD));
   })
