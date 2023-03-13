@@ -23,12 +23,17 @@ in /batch_jobs/
 8. update version in src/version.js export const CURRENT_GAME_VERSION = "1.25";
 9. elo-detail.js find and adjust [FILTER_CURRENT_SEASON] [FILTER_PREVIOUS_SEASON]
 10. adjust by try error  const DATE_TO_ALIGN_CYCLE for correct conquest circle by increasing only some hours or some days. dont try to give correct date in the future
-11. test changes on run app
+11. test changes on run app by `npm start`
 12. `npm run deploy`
 
 
 # update images from game
-- download https://github.com/Perfare/AssetStudio -https://github.com/DerPopo/UABE/releases/tag/2.2stabled- or https://github.com/SeriousCache/UABE/releases
+- download one of ( they dont work on mm different versions from time to time): 
+  - or https://github.com/SeriousCache/UABE/releases -> requires to rename files after: powershell Get-Item .\*.* | ForEach-Object { Rename-Item $_ ($_.Name -replace "(\.jpg.*).png", ".png") }
+  - https://github.com/SeriousCache/UABE/releases/download/2.2stabled/AssetsBundleExtractor_2.2stabled_64bit.zip 
+  - 
+  - https://github.com/Perfare/AssetStudio -https://github.com/DerPopo/UABE/releases/tag/2.2stabled- 
+  
 - open AssetStudioGUI.exe
 - Click in menu on "Open". Select folder C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\AssetBundles\gui\
 - Select "cards highres"

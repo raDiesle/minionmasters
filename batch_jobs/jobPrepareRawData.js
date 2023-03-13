@@ -478,6 +478,7 @@ function normalizeGameCardData(propsAsMap) {
 const normalizedGameData = cardDataFromGame
   .filter(({ iD }) => {
     const SKIP_CARDS = [
+      379,// big tombstone
       18, // all in
       109, // cursed fireball
       307, // Searing Light
