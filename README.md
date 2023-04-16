@@ -29,7 +29,7 @@ in /batch_jobs/
 
 # update images from game
 - download one of ( they dont work on mm different versions from time to time): 
-  - or https://github.com/SeriousCache/UABE/releases -> requires to rename files after: powershell Get-Item .\*.* | ForEach-Object { Rename-Item $_ ($_.Name -replace "(\.jpg.*).png", ".png") }
+  - or https://github.com/SeriousCache/UABE/releases -> requires to rename files after in powershell  `Get-Item .\*.* | ForEach-Object { Rename-Item $_ ($_.Name -replace "(\.jpg.*).png", ".png") }`
   - https://github.com/SeriousCache/UABE/releases/download/2.2stabled/AssetsBundleExtractor_2.2stabled_64bit.zip 
   - 
   - https://github.com/Perfare/AssetStudio -https://github.com/DerPopo/UABE/releases/tag/2.2stabled- 

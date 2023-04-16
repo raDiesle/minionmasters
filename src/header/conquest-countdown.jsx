@@ -39,7 +39,10 @@ const CYCLE_TIME_IN_MS = 1000*60*60*24*3;
 
 
 function calcTime() {
-  const DATE_TO_ALIGN_CYCLE  = new Date(2022, 0, 28, 8,0,0,0);
+  /**
+   * Here to adjust every season to some referenced date ( e.g. -2 days on date and hours)
+   */
+  const DATE_TO_ALIGN_CYCLE  = new Date(2022, 0, 27, 8,0,0,0);
 
   const NOW = new Date();
 
