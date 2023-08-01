@@ -11,6 +11,7 @@ export function ValorianContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Valorian</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Valorian is devoted to the light. He wields it to heal his allies and invoke rightous fury
         on his enemies. Hint: Works well with groups of midrange health Minions such as Legionaires, and use Searing Light to pick off weak enemies.

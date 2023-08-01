@@ -13,6 +13,7 @@ export default function ApepContent() {
     <div>
       <h3 className={css.MasterHeaderStyle}>Apep</h3>
 
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Apep, the mighty Slither God gifts you with random Minions and spits powerful acid at all
         minions that dare approach. His worshippers power the Shield Totem that makes him immune to

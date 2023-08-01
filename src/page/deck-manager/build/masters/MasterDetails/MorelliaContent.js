@@ -12,6 +12,7 @@ export default function MorelliaContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Morellia</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Morellia the Lich Queen, Ruler of the Cursed lands, Queen of Souls, and Dragon Binder.
         Wielding the Book of the Dead, she can call upon a host of powerful Death Magic to decimate

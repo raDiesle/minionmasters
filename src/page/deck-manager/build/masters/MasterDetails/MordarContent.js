@@ -11,6 +11,7 @@ export default function MordarContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Mordar</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
 
       <div className={css.MasterAbilityDescriptionStyle}>
         Mordar uses his tombstones to raise the dead and his staff to slowly kill all attacking

@@ -11,6 +11,7 @@ export default function VolcoContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Volco</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Volco is not scared of swarms, but he hates flying enemies he can't reach.
       </div>

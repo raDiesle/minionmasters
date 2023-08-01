@@ -11,6 +11,7 @@ export default function SettsuContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Settsu</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Settsu is a bad-ass ex-soldier that never plays by the rules.
       </div>

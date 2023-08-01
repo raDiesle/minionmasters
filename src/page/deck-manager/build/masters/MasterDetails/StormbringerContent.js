@@ -11,6 +11,7 @@ export default function StormbringerContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Stormbringer</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Stormbringer excels at everything that has to do with range!
       </div>

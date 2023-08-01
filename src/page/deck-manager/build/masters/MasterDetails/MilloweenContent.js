@@ -11,6 +11,7 @@ export default function MiloweenContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Milloween</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Milloween is a master of the arcane, using spells to power her golems and attacks.
       </div>

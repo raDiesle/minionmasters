@@ -11,6 +11,7 @@ export default function KingPuffContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>King Puff</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         King Puff is a trickster, he loves to confuse his opponents and keep bridge control just as
         he loves kingdom control.

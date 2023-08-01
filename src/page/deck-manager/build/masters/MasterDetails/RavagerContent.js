@@ -11,6 +11,7 @@ export default function RavagerContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Ravager</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         Ravager is a fierce Master, able to quickly tear through close combat minions, but if they
         are ranged, he has a problem and that's where he needs Brutus!

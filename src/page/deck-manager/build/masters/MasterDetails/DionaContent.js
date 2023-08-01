@@ -11,6 +11,7 @@ export default function DionaContent() {
   return (
     <div>
       <h3 className={css.MasterHeaderStyle}>Diona</h3>
+      <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
       <div className={css.MasterAbilityDescriptionStyle}>
         The Witch Hunter Diona uses a variety of traps to deal with any threat. Her trusty sidekick
         Ruffles fetches useful items from the battlefield for his master.
