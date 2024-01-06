@@ -129,8 +129,10 @@ export function EloDetails() {
     // "2022-05-03"
     // "2022-04-06"
     // "2022-08-04"
-    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2023-05-18").getTime())})),
-    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date("2023-07-22").getTime() )})),
+    // "2023-05-18"
+    // "2023-07-22"
+    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2023-07-22").getTime())})),
+    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date("2023-09-27").getTime() )})),
     [FILTER_ALL] : () => propsData
   }
 
