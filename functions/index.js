@@ -2,15 +2,20 @@ const orderBy = require("lodash/orderBy");
 
 const fetch = require("node-fetch");
 
- const functions = require("firebase-functions");
-//const functions = require('@google-cloud/functions-framework');
+// const functions = require("firebase-functions");
+const functions = require('@google-cloud/functions-framework');
 
 const { getStorage } = require("firebase-admin/storage");
 
 const { initializeApp, applicationDefault, cert } = require("firebase-admin/app");
 const { getFirestore, Timestamp, FieldValue } = require("firebase-admin/firestore");
 
+const {onSchedule} = require("firebase-functions/v2/scheduler");
+
 const serviceAccount = require("./minionmastersmanager-54a5965bae76.json");
+
+const {setGlobalOptions} = require("firebase-functions/v2");
+setGlobalOptions({maxInstances: 1, });
 
 initializeApp({
   credential: cert(serviceAccount),
@@ -19,7 +24,14 @@ initializeApp({
 
 const db = getFirestore();
 const bucket = getStorage().bucket();
-exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(async (context) => {
+
+// Run once a day at midnight, to clean up the users
+// Manually run the task here https://console.cloud.google.com/cloudscheduler
+exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory: "512MB", timeoutSeconds: 540}, async (event) => {
+//functions.cloudEvent('refreshEloV2', async(cloudEvent) => {
+// http('scheduledFunctionGen2', (req, res) => {
+// onSchedule("every day 00:00", async (event) => {
+//functions.pubsub.schedule("every 24 hours").onRun(async (context) => {
 // functions.cloudEvent("eloUpdate", async (cloudEvent) => {
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
@@ -60,15 +72,17 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
           Elo2v2Solo > 1700 ||
           [15, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
-      console.log("used data to proceed" + prevLimited.length);
+      console.log("used data to proceed: " + prevLimited.length);
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
       totalResults.push(...prevLimited);
       limitStart = limitStart + limitStep;
       count = count + 1;
       await loop();
-      return;
+      return Promise.resolve();
     }
+
+
     console.log("Continue with fetched data: " + totalResults.length)
 
     const sortedByElo1v1 = orderBy(totalResults, ["Elo1v1"], ["desc"]).map(
@@ -121,7 +135,7 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
     console.log("continue to read playermappings.");
     db.collection("playermappings")
       .get()
-      .then((querySnapshot) => {
+      .then(async (querySnapshot) => {
         const playersObject = {};
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
@@ -129,75 +143,83 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
           playersObject[doc.id] = doc.data().username;
         });
 
-        const players = Object.keys(playersObject);
-        let pos = 0;
+      const players = Object.keys(playersObject);
+      let pos = 0;
 
-        (async function loopSingles() {
-          try{
-          if (pos < players.length) {
-            /* const response = await fetch(`http://fdmfdm.nl/GetUserElo.php?userID=${players[pos]}`);
-          const playerResponse = await response.json();
-          const singlePlayer = playerResponse[0];*/
-            console.log("fetch data mapping of " + players[pos]);
-            const currentPlayerId = parseInt(players[pos]);
-            console.log("Current playerId: " + currentPlayerId);
-            const singlePlayer = withOverallEloRank.find(
-              ({ User_id }) => User_id === currentPlayerId
-            );
-            if (typeof singlePlayer === "undefined") {
-              console.log("Player could not be found: " + currentPlayerId);
-              pos = pos + 1;
-              await loopSingles();
-              return null;
-            }
-            const playerFilePath = `${ELO_GENERATED_ROOT_PATH}details/${singlePlayer.User_id}.json`;
-
-            let playerFileContent = null;
-            try {
-              const file = bucket.file(playerFilePath);
-              const data = await file.download();
-              playerFileContent = JSON.parse(data);
-            } catch (error) {
-              playerFileContent = [];
-            }
-
-            const date =
-              new Date().getFullYear() +
-              "-" +
-              (1 + new Date().getMonth()) +
-              "-" +
-              new Date().getDate();
-
-            if (playerFileContent.length !== 0) {
-              const lastEntryDate = playerFileContent[playerFileContent.length - 1].date;
-              const todayDataWasAlreadyWritten = lastEntryDate === date;
-              if (todayDataWasAlreadyWritten) {
-                console.log("for date there was already data. Will update.");
-                playerFileContent.pop();
-              }
-            }
-            const newPlayerHistory = { ...singlePlayer, ...{ date } };
-            playerFileContent.push(newPlayerHistory);
-
-            const finalPlayerDetailsDataContent = JSON.stringify(playerFileContent, null, "\t");
-
-            async function uploadFromMemory() {
-              await bucket.file(playerFilePath).save(finalPlayerDetailsDataContent, requestHeader);
-            }
-            await uploadFromMemory().catch(console.error);
-
+      async function loopSingles() {
+        try{
+          const isContinueLoop = pos < players.length;
+          console.log("Continue with next player: " + String(isContinueLoop));
+        if (isContinueLoop) {
+          /* const response = await fetch(`http://fdmfdm.nl/GetUserElo.php?userID=${players[pos]}`);
+        const playerResponse = await response.json();
+        const singlePlayer = playerResponse[0];*/
+          console.log("fetch data mapping of " + players[pos]);
+          const currentPlayerId = parseInt(players[pos]);
+          console.log("Current playerId: " + currentPlayerId);
+          const singlePlayer = withOverallEloRank.find(
+            ({ User_id }) => User_id === currentPlayerId
+          );
+          if (typeof singlePlayer === "undefined") {
+            console.log("Player could not be found: " + currentPlayerId);
             pos = pos + 1;
             await loopSingles();
-            return null;
+            return Promise.resolve();
           }
-          }catch(error){
-            console.error(error);
-            console.error("of player:" + players[pos])
-          }
-        })();
+          const playerFilePath = `${ELO_GENERATED_ROOT_PATH}details/${singlePlayer.User_id}.json`;
 
-      })
-      .catch(console.error);
+          let playerFileContent = null;
+          try {
+            const file = bucket.file(playerFilePath);
+            const data = await file.download();
+            playerFileContent = JSON.parse(data);
+          } catch (error) {
+            playerFileContent = [];
+          }
+
+          const date =
+            new Date().getFullYear() +
+            "-" +
+            (1 + new Date().getMonth()) +
+            "-" +
+            new Date().getDate();
+
+          if (playerFileContent.length !== 0) {
+            const lastEntryDate = playerFileContent[playerFileContent.length - 1].date;
+            const todayDataWasAlreadyWritten = lastEntryDate === date;
+            if (todayDataWasAlreadyWritten) {
+              console.log("for date there was already data. Will update.");
+              playerFileContent.pop();
+            }
+          }
+          const newPlayerHistory = { ...singlePlayer, ...{ date } };
+          playerFileContent.push(newPlayerHistory);
+
+          const finalPlayerDetailsDataContent = JSON.stringify(playerFileContent, null, "\t");
+
+          async function uploadFromMemory() {
+            await bucket.file(playerFilePath).save(finalPlayerDetailsDataContent, requestHeader);
+          }
+          await uploadFromMemory().catch(console.error);
+
+          pos = pos + 1;
+          await loopSingles();
+          return Promise.resolve();
+        }else{
+          console.log("Finished player details.");
+          return Promise.resolve();
+        }
+        }catch(error){
+          console.error(error);
+          console.error("of player:" + players[pos])
+        }
+      }
+
+      await loopSingles();
+    })
+    .catch(e => console.error(e));
+
+    
 
     const statusContents = JSON.stringify(
       { timeFetched: Date.now(), totalResultsSize: totalResults.length },
@@ -211,9 +233,17 @@ exports.scheduledFunction = functions.pubsub.schedule("every 24 hours").onRun(as
         .save(statusContents, requestHeader);
     }
     await uploadFromMemoryStatus().catch(console.error);
+    console.log("Successfully uploaded status.json");
   }
 
-  await loop();
+  try{
+    console.log("Start all");
+    await loop();
+    console.log("Finished all");
+  }catch(e) {
+    console.error(e)
+  }
 
-  return null;
+  console.log("Finished everything successfully!");
+  return Promise.resolve();
 });

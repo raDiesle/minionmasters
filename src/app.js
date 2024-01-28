@@ -35,9 +35,7 @@ const App = () => {
           <h1 className={css.PageHeaderStyle}>
             <img src="/img/mm_logo.png" alt="mm logo" style={{ height: "50px" }} />
           </h1>
-          <div className={css.middle}>
-            <ConquestCountdown />
-          </div>
+        
           <div style={{ paddingLeft: "10px" }}>
             <LoginLogout />
           </div>

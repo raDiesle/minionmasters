@@ -28,6 +28,15 @@ in /batch_jobs/
 
 
 # update images from game
+
+## new version
+1. https://github.com/Perfare/AssetStudio
+2. Load folder
+3. C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\aa\StandaloneWind
+4. sort by asset type
+
+
+## deprecated old mm version:
 - download one of ( they dont work on mm different versions from time to time): 
   - or https://github.com/SeriousCache/UABE/releases -> requires to rename files after in powershell  `Get-Item .\*.* | ForEach-Object { Rename-Item $_ ($_.Name -replace "(\.jpg.*).png", ".png") }`
   - https://github.com/SeriousCache/UABE/releases/download/2.2stabled/AssetsBundleExtractor_2.2stabled_64bit.zip 

@@ -1,6 +1,7 @@
 import css from "page/deck-manager/savedeck/save-deck-form.module.scss";
 import React, { useState } from "react";
-import CreatableSelect from "react-select/creatable/dist/react-select.esm";
+//import CreatableSelect from "react-select/creatable/dist/react-select.esm";
+import CreatableSelect from 'react-select/creatable';
 
 export const labelToObjectMapping = (label) => ({
   value: label.toLowerCase().replace(/\W/g, ""),
