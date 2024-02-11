@@ -6,7 +6,7 @@ import css from "page/deck-manager/deck/decks/description-edit.module.scss";
 import { EditSavedDeckActive } from "page/deck-manager/deck/decks/edit-saved-deck-active";
 import { ROUTE_PATH_DECKS_EDIT_MODE } from "page/deck-manager/deck/decks/your-saved-deck-edit-config";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function YourSavedDeckEdit({
   deck: {
@@ -23,11 +23,11 @@ export function YourSavedDeckEdit({
   },
 }) {
   const [isEditing, setIsEditing] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleEditButtonClick = () => {
     setIsEditing(true);
-    history.push(ROUTE_PATH_DECKS_EDIT_MODE(dbid));
+    navigate(ROUTE_PATH_DECKS_EDIT_MODE(dbid));
   };
 
   return (

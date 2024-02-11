@@ -22,7 +22,7 @@ import { ROUTE_PATH_YOUR_DECKS } from "page/deck-manager/deck/decks/your-saved-d
 import { labelToObjectMapping } from "page/deck-manager/savedeck/tags-input";
 import qs from "qs";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -37,7 +37,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
   useGaTrackView("/ListOfDecks");
   const [selectedTabIndex, setSelectedTabIndex] = useState(DEFAULT_SELECTED_TAB);
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
 
   const [limit, setLimit] = useState(3);
@@ -68,7 +68,7 @@ export default function Decks({ setSelectedMaster, setLastSelectedCards, availab
     setTagsFilter(tags);
     // const qs.parse(location.search,{ comma: true });
     const tagsAsQuery = qs.stringify({ tag: tags.map(({ value }) => value) });
-    history.push({ search: tagsAsQuery });
+    navigate({ search: tagsAsQuery });
   };
 
   const currentUser = useCurrentUser();

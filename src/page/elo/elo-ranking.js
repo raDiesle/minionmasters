@@ -21,16 +21,16 @@ export function EloRanking() {
 
   const [mappedPlayers, setMappedPlayers] = useState({});
   const [allEloData, setAllEloData] = useState([]);
-  useEffect(async () => {
+  useEffect( () => {
 
-
+    const init = async() => {
     const storage = getStorage();
 
     const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}status.json`));
     const { data : result } = await axios.get(url);
     setStatusData(result);
 
-    var docRef = db.collection("playermappings").get()
+    var docRef = await db.collection("playermappings").get()
       .then(async (querySnapshot) => {
         const playersObject = {};
         querySnapshot.forEach((doc) => {
@@ -50,6 +50,9 @@ export function EloRanking() {
         }]);
       })
       .catch(dbErrorHandlerPromise);
+
+    };
+    init();
   }, []);
 
 

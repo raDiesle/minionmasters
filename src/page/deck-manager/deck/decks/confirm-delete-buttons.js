@@ -7,10 +7,10 @@ import mToast from "components/mToast";
 import { dbErrorHandlerPromise } from "mm-firestore";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function ConfirmDeleteButtons({ dbRef, setIsConfirmDelete, setIsEditing }) {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleDelete = () => {
     dbRef
@@ -19,7 +19,7 @@ export function ConfirmDeleteButtons({ dbRef, setIsConfirmDelete, setIsEditing }
         mToast("Deck was deleted.");
         setIsConfirmDelete(false);
         setIsEditing(false);
-        history.push(ROUTE_PATH_DECKS);
+        navigate(ROUTE_PATH_DECKS);
       })
       .catch(dbErrorHandlerPromise);
   };

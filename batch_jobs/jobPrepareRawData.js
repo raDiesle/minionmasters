@@ -88,6 +88,7 @@ function normalizeGameCardData(propsAsMap) {
     55, // trick swap
     58, // burn the bridges
     59, // tombstone
+    387, // tombstone 2
     88, // shield totem
     89, // blast entry
     116, // more dakka

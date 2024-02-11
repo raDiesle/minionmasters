@@ -12,7 +12,7 @@ import localStorage from "local-storage";
 import { dbErrorHandlerPromise } from "mm-firestore";
 import { ROUTE_PATH_DECKS } from "page/deck-manager/deck/decks/decks-config";
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function EditButtons({
   hasValidationError,
@@ -21,7 +21,7 @@ export function EditButtons({
   setIsConfirmDelete,
   dbRef,
 }) {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const editForm = (formData) => {
     dbRef
@@ -35,7 +35,7 @@ export function EditButtons({
 
         localStorage(LAST_USERNAME_LOCALSTORAGE_KEY, formData.createdByDisplayName);
         setIsEditing(false);
-        history.push(ROUTE_PATH_DECKS);
+        navigate(ROUTE_PATH_DECKS);
       })
       .catch(dbErrorHandlerPromise);
   };

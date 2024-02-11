@@ -16,7 +16,7 @@ import css from "page/deck-manager/savedeck/save-db-button.module.scss";
 import SaveOrEditDeckForm from "page/deck-manager/savedeck/save-or-edit-deck-form";
 import { PREMADE_TEAM } from "page/deck-manager/savedeck/saved-decks-configs";
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SaveDeckContent({
   selectedMaster,
@@ -36,7 +36,7 @@ export default function SaveDeckContent({
 
   const currentUser = useCurrentUser();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const dbRef = db.collection("decks");
   const saveForm = (formData) => {
@@ -63,7 +63,7 @@ export default function SaveDeckContent({
         mToast("Successful saved to database!");
 
         localStorage(LAST_USERNAME_LOCALSTORAGE_KEY, formData.createdByDisplayName);
-        history.push(ROUTE_PATH_DECKS);
+        navigate(ROUTE_PATH_DECKS);
       })
       .catch(dbErrorHandlerPromise);
   };

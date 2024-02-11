@@ -31,9 +31,11 @@ export function SaveMapping({isMappingMode, setIsMappingMode}){
       <ul>
       <li>Visitors will see username in the list.</li>
       <li>All registered players, elo will be stored over time to compare in charts.</li>
-        <li><b>HowTo:</b> Check the log can be found at the directory:
-          %appdata%\..\LocalLow\BetaDwarf ApS\Minion Masters. You can find your userID in the output log by looking for the line:
-          "OnProfileDataReceived. UserId:"</li>
+        <li><b>HowTo:</b> </li> <li>1) Open the following directory in Windows Explorer:
+%AppData%\..\LocalLow\BetaDwarf ApS\MinionMasters 
+(Care with Discord fucking these paths since it uses some of the characters for formatting if you don't enclose in backticks `)
+</li>2) <li>Here you will see your replay folder which is called "replays_123456" with 123456 being your player id.
+</li>
       </ul>
       {!isMappingMode && <button
         className={classnames(cssButton.ButtonInGroupStyle, cssButton.buttonSpacing)}

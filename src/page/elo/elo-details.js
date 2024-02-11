@@ -49,6 +49,7 @@ export function EloDetails() {
 
   const userId = paramsObj.get("id");
   useEffect(async() => {
+  
     const storage = getStorage();
     const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}details/${userId}.json`));
     const { data } = await axios.get(url);
