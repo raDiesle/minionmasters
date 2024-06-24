@@ -682,7 +682,7 @@ const newManualCards = [
   },
   {
     "catagory": "Standard",
-    "name": "Kamikazeppelin",
+    "name": "KamikaZeppelin",
     "manacost": 6,
     "type": "Spell",
     "rarity": "Supreme",
