@@ -8,16 +8,15 @@ import MasterTipsByCommunity from "page/deck-manager/build/masters/MasterDetails
 import { mastersMapping } from "page/deck-manager/build/masters/mastersMapping";
 import React from "react";
 
-export default function R3KtContent() {
+export default function TronveirContent() {
   return (
     <div>
-      <h3 className={css.MasterHeaderStyle}>R3-KT</h3>
+      <h3 className={css.MasterHeaderStyle}>Tronveir</h3>
       <h4>Page is outdated. Want to help on this website? Contact me at Discord: radies_chen</h4>
 
       <div className={css.MasterAbilityDescriptionStyle}>
-        Wielding dual 38-PR Autoblasters R3-KT poses a threat to any foe standing in it's way. Using
-        the secrets of the shadows it will enter the battlefield joined by illusions to take matters
-        into it's own hands.
+        Tronveir is a Master of the Runewyrd, an ancient magic unoque to the Stoutheart. 
+        Runeshapers carve Runes into stone, imbuing it with the power of wind, frost and their ancestral legends.
       </div>
 
       <div>
@@ -27,8 +26,10 @@ export default function R3KtContent() {
             Basic Attack
           </legend>
           <ul className={css.AbilityUlStyle}>
-            R3-KT shoots at targets within a range of 8, dealing 20 damage every 1 seconds. For
-            every card with a mana cost of 4 or more in your deck R3-KT gains +5% Attack Speed.
+            Tronveir hurls a stone that knocks enemies back.<br/><br/>
+            Damage:     150 (25 DPS)<br/>
+            Cooldown:   6 seconds<br/>
+            Range:      10
           </ul>
         </fieldset>
 
@@ -37,19 +38,25 @@ export default function R3KtContent() {
             <div className={css.MasterAbilityHeaderStyle}>
               <img
                 className={css.MasterAbilityImageRoundedStyle}
-                src={imgPathFn("Shadow_Dance")}
-                alt="Shadow Dance"/>
-                Shadow Dance
+                src={imgPathFn("RuneshaperPerk1")}
+                alt="Tronveir Perk1"/>
+                Rune Carving
             </div>
+
           </legend>
 
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             20 XP <FontAwesomeIcon icon={faUnlock} />
           </div>
           <div>
-            Add 2 Shadow Dance cards to R3-KT's deck. R3-KT enters the field with a 150 shield,
-            accompanied by a Shadow Clone. Shadow Clones have little health and reduced damage - it
-            explodes when killed for 50 damage.
+            Add a one-use Runestone card to the top of your deck every 30 seconds. It gets a new Runic Carving every time it's played.<br/>
+            <ul className={css.AbilityUlStyle}>
+                <li>Rune of Wind: +6 Range and deals 200 damage.</li>
+                <li>Rune of Frost: Gets Taunt and a 300 Health Shield that inflicts Frozen on nearby enemy ground Minions when depleted.</li>
+                <li>Rune of Ancestry: Summons 2 Ancestor Minions. (DPS: 22.5, Health: 100)</li>
+                <br/>Cost: 2 Mana, Range: 6 - 36, Health: 150, Duration: 15 secs.
+            </ul>
+            
           </div>
         </fieldset>
 
@@ -58,17 +65,22 @@ export default function R3KtContent() {
             <div className={css.MasterAbilityHeaderStyle}>
               <img
                 className={css.MasterAbilityImageRoundedStyle}
-                src={imgPathFn("Shadow_Dance")}
-                alt="Shadow Dance"
+                src={imgPathFn("RuneshaperPerk2")}
+                alt="Tronveir Perk2"
               />
-              <div>Shadow Dance</div>
+              <div>Runic Empowerment</div>
             </div>
           </legend>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             60 XP <FontAwesomeIcon icon={faUnlock} />
           </div>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Add an additional Shadow Dance card to R3-KT's deck.
+            When you play a Runestone, the next Ground Minion card you play gets a Runic Power of the same type.
+            <ul className={css.AbilityUlStyle}>
+                <li>Rune of Wind: The next attack deals +50 of damage in an area.</li>
+                <li>Rune of Frost: Gets Taunt and a shield equal to its health. Max 200. It inflicts frozen on nearby ground minions when depleted.</li>
+                <li>Rune of Ancestry: Summon 2 Ancestor Minions.</li>
+            </ul>
           </div>
         </fieldset>
 
@@ -77,22 +89,22 @@ export default function R3KtContent() {
             <div className={css.MasterAbilityHeaderStyle}>
               <img
                 className={css.MasterAbilityImageRoundedStyle}
-                src={imgPathFn("OnePunchBlast")}
-                alt="One Punch blast"
+                src={imgPathFn("RuneshaperPerk3")}
+                alt="Tronveir Perk3"
               />
-              One Punch Blast
+              Runic Mastery
             </div>
           </legend>
           <div className={css.MasterAbilityDescriptionStyle}>
-            Add the card One Punch Blast to R3-KT's deck. R3-KT deals 250 damage to a target within
-            a range of 8.
+            Reduce Rune Carving Cooldown by 5 seconds. The next time you would get a Runestone, gain a Wyrdstone instead.<br/>
+            Wyrdstone: Toss a Wyrdstone, endowed with all three Rune Carvings. Gives the next Minion you play all three Runic Empowerments.
           </div>
           <div className={css.MasterAbilityUnlocksHeaderStyle}>
             120XP <FontAwesomeIcon icon={faUnlock} />
           </div>
         </fieldset>
 
-        <MasterTipsByCommunity masterKey={mastersMapping.R3KT.iD} />
+        <MasterTipsByCommunity masterKey={mastersMapping.Tronveir.iD} />
       </div>
     </div>
   );
