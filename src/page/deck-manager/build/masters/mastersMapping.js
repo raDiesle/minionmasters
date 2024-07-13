@@ -6,12 +6,14 @@ import MordarContent from "page/deck-manager/build/masters/MasterDetails/MordarC
 import MorelliaContent from "page/deck-manager/build/masters/MasterDetails/MorelliaContent";
 import RatboContent from "page/deck-manager/build/masters/MasterDetails/RatboContent";
 import RavagerContent from "page/deck-manager/build/masters/MasterDetails/RavagerContent";
+import R3KtContent from "page/deck-manager/build/masters/MasterDetails/R3KtContent";
 import SettsuContent from "page/deck-manager/build/masters/MasterDetails/SettsuContent";
 import StormbringerContent from "page/deck-manager/build/masters/MasterDetails/StormbringerContent";
+import TronveirContent from "page/deck-manager/build/masters/MasterDetails/TronveirContent";
 import { ValorianContent } from "page/deck-manager/build/masters/MasterDetails/valorian-content";
 import VolcoContent from "page/deck-manager/build/masters/MasterDetails/VolcoContent";
 import React from "react";
-import R3KtContent from "page/deck-manager/build/masters/MasterDetails/R3KtContent";
+
 
 export const INITIAL_MASTER_SELECTED = "Stormbringer";
 
@@ -82,4 +84,9 @@ export const mastersMapping = {
     icon: "R3_kt",
     iD: 9,
   },
+  Tronveir: {
+    content: <TronveirContent />,
+    icon: "PortraitTronveir",
+    iD: 13,
+  }
 };
