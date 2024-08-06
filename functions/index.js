@@ -67,10 +67,10 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
 
       const prevLimited = normalized.filter(
         ({ Elo1v1, Elo2v2Team, Elo2v2Solo, User_id }) =>
-          Elo1v1 > 1700 ||
-          Elo2v2Team > 1700 ||
-          Elo2v2Solo > 1700 ||
-          [15, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
+          Elo1v1 > 1200 ||
+          Elo2v2Team > 1200 ||
+          Elo2v2Solo > 1200 
+          //|| [15, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
       console.log("used data to proceed: " + prevLimited.length);
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
