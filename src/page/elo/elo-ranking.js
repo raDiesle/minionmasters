@@ -146,7 +146,7 @@ export function EloRanking() {
         <ul>
           <li>Elo points: based on the Minionmasters new elo system. Updated every 24 hours. on every players page you can also read how to get hourly updated elo points.</li>
           <li>Ranks by Elo: position of players when sorted elo of players descending</li>
-          <li>Overall: the sum of ranking of all modes based on elo divided by number of modes</li>
+          <li>Overall: the sum of elo points of all modes</li>
           <li>Username: alias provided on this website by players</li>
           <li>Details: see historized data for every player with saved alias name upon from the point of time its provided with detailed charts</li>
         </ul>
