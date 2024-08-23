@@ -12,7 +12,7 @@ const { getFirestore, Timestamp, FieldValue } = require("firebase-admin/firestor
 
 const {onSchedule} = require("firebase-functions/v2/scheduler");
 
-const serviceAccount = require("./minionmastersmanager-54a5965bae76.json");
+const serviceAccount = require("./key.json");
 
 const {setGlobalOptions} = require("firebase-functions/v2");
 setGlobalOptions({maxInstances: 1, });
@@ -65,12 +65,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         Elo2v2Solo: parseInt(Elo2v2Solo),
       }));
 
-      const prevLimited = normalized.filter(
+      const prevLimited = normalized.
+      filter(
         ({ Elo1v1, Elo2v2Team, Elo2v2Solo, User_id }) =>
-          Elo1v1 > 1700 ||
-          Elo2v2Team > 1700 ||
-          Elo2v2Solo > 1700 ||
-          [15, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
+          Elo1v1 > 1600 ||
+          Elo2v2Team > 1600 ||
+          Elo2v2Solo > 1600 
+          || [15, 602373, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
       console.log("used data to proceed: " + prevLimited.length);
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
@@ -104,7 +105,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       };
       const overallRankAbsolute = {
         overallRankAbsolute: Math.floor(
-          eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank / 3
+          (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
         ),
       };
       const merged = { ...singlePlayer, ...eloRanks, ...overallRankAbsolute };
@@ -146,6 +147,8 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       const players = Object.keys(playersObject);
       let pos = 0;
 
+      const notFoundPlayers = [];
+
       async function loopSingles() {
         try{
           const isContinueLoop = pos < players.length;
@@ -154,14 +157,15 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           /* const response = await fetch(`http://fdmfdm.nl/GetUserElo.php?userID=${players[pos]}`);
         const playerResponse = await response.json();
         const singlePlayer = playerResponse[0];*/
-          console.log("fetch data mapping of " + players[pos]);
-          const currentPlayerId = parseInt(players[pos]);
+          console.log("next data mapping of " + players[pos]);
+          const currentPlayerId = Number(players[pos]);
           console.log("Current playerId: " + currentPlayerId);
           const singlePlayer = withOverallEloRank.find(
             ({ User_id }) => User_id === currentPlayerId
           );
           if (typeof singlePlayer === "undefined") {
             console.log("Player could not be found: " + currentPlayerId);
+            notFoundPlayers.push(currentPlayerId);
             pos = pos + 1;
             await loopSingles();
             return Promise.resolve();
@@ -207,6 +211,8 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           return Promise.resolve();
         }else{
           console.log("Finished player details.");
+
+          console.log("Not found total players:" + JSON.stringify(notFoundPlayers));
           return Promise.resolve();
         }
         }catch(error){

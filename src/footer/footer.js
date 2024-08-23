@@ -8,7 +8,7 @@ export default function Footer() {
       <button
         className={css.SubheaderLinkStyle}
         onClick={() =>
-          toast("Contact me in Discord: raDies_chen#4904 or david@amend.online", {
+          toast("Contact me in Discord: raDies_chen#4904 or amend6@gmail.com", {
             position: "bottom-right",
           })
         }

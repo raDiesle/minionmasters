@@ -1,3 +1,14 @@
+/***
+ * THIS FILE IS UNUSED. JUST FOR TESTING PURPOSE.
+ * THIS FILE IS UNUSED. JUST FOR TESTING PURPOSE.
+ * THIS FILE IS UNUSED. JUST FOR TESTING PURPOSE.
+ * THIS FILE IS UNUSED. JUST FOR TESTING PURPOSE.
+ * THIS FILE IS UNUSED. JUST FOR TESTING PURPOSE.
+ * 
+ * A COPY IS in /functions/index.js and should be used instead
+ */
+
+
 const orderBy = require("lodash/orderBy");
 
 const fetch = require("node-fetch");

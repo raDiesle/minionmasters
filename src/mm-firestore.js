@@ -21,10 +21,11 @@ const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
 const dbErrorHandlerPromise = (error) => {
+  debugger;
   console.error(error);
   const errorMessage = "Some error occured. You may need to be logged in to edit data.";
   toast(errorMessage);
-  return Promise.reject();
+  return Promise.resolve("something went wrong");
 };
 
 export { db, auth, firebaseApp, dbErrorHandlerPromise };
