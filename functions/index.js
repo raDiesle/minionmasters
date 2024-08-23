@@ -63,6 +63,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         Elo1v1: parseInt(Elo1v1),
         Elo2v2Team: parseInt(Elo2v2Team),
         Elo2v2Solo: parseInt(Elo2v2Solo),
+        EloTotal: parseInt(Elo1v1) + parseInt(Elo2v2Solo) + parseInt(Elo2v2Team)
       }));
 
       const prevLimited = normalized.
@@ -95,6 +96,9 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
     const sortedByElo2v2Team = orderBy(totalResults, ["Elo2v2Team"], ["desc"]).map(
       ({ User_id }) => User_id
     );
+    const sortedByEloTotal = orderBy(totalResults, ["EloTotal"], ["desc"]).map(
+      ({ User_id }) => User_id
+    );
 
     const enhancedByEveryEloRankingData = totalResults.map((singlePlayer) => {
       const { User_id } = singlePlayer;
@@ -102,11 +106,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         Elo1v1Rank: sortedByElo1v1.indexOf(User_id) + 1,
         Elo2v2SoloRank: sortedByElo2v2Solo.indexOf(User_id) + 1,
         Elo2v2TeamRank: sortedByElo2v2Team.indexOf(User_id) + 1,
+        EloTotalRank: sortedByEloTotal.indexOf(User_id) + 1,
       };
       const overallRankAbsolute = {
-        overallRankAbsolute: Math.floor(
-          (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
-        ),
+        // overallRankAbsolute: Math.floor(
+        //   (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
+        // ),
+        overallRankAbsolute: eloRanks.EloTotalRank
       };
       const merged = { ...singlePlayer, ...eloRanks, ...overallRankAbsolute };
       return merged;
