@@ -13,14 +13,23 @@ export function SaveMapping({isMappingMode, setIsMappingMode}){
   const [username, setUsername] = useState("");
   const handlePlayerId = (e) => {setPlayerId(e.currentTarget.value.trim())};
   const handleUsername = (e) => {setUsername(e.currentTarget.value.trim())};
-  const handleSave = () => {
+  const handleSave = async () => {
 
-    db.collection("playermappings").doc(playerId).set({ username }).then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
+    db.collection("playermappings").doc(playerId).get()
+    .then(async (querySnapshot) => {
+    
+      if(querySnapshot.exists) {
+        mToast("username for this id was already stored. If you are that person please contact admin.", 7000);
+      }else{
+        db.collection("playermappings").doc(playerId).set({ username }).then((docRef) => {
+          mToast("Mapping is stored");
+        })
+        .catch(dbErrorHandlerPromise);
+      }
+    
+      setIsMappingMode(false);  
     })
     .catch(dbErrorHandlerPromise);
-    setIsMappingMode(false);
-    mToast("Mapping is stored");
 
   };
 
@@ -51,6 +60,7 @@ export function SaveMapping({isMappingMode, setIsMappingMode}){
         <input type="text" placeholder="Username" onChange={(e) => handleUsername(e)} />
 
 
+        <h3>You must be logged in to save it!</h3>
         <button type="button"
                 className={classnames(cssButton.ButtonInGroupStyle, cssButton.buttonSpacing, css.saveButton)}
                 onClick={() => handleSave()}> <FontAwesomeIcon icon={faSave} /> Save</button>

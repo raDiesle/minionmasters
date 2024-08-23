@@ -105,7 +105,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       };
       const overallRankAbsolute = {
         overallRankAbsolute: Math.floor(
-          eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank / 3
+          (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
         ),
       };
       const merged = { ...singlePlayer, ...eloRanks, ...overallRankAbsolute };
