@@ -93,14 +93,15 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       );
 
       prevLimited.forEach(
-        ({ User_id, Elo1v1, Elo2v2Team, Elo2v2Solo, lastActivity }) => {
+        ( newData ) => {
+          let { User_id, Elo1v1, Elo2v2Team, Elo2v2Solo } = newData
           let oldData = oldPlayerData[User_id];
           if (oldData == undefined || oldData.Elo1v1 != Elo1v1 || oldData.Elo2v2Team != Elo2v2Team || oldData.Elo2v2Solo != Elo2v2Solo){
             //which function can we use here?
-            lastActivity = startOfToday();
+            newData.lastActivity = startOfToday();
           }
           else{
-            lastActivity = oldData.lastActivity;
+            newData.lastActivity = oldData.lastActivity;
           }
         }
       )
