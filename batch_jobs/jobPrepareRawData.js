@@ -682,11 +682,11 @@ const newManualCards = [
   },
   {
     "catagory": "Standard",
-    "name": "KamikaZeppelin",
+    "name": "Kamikazeppelin",
     "manacost": 6,
     "type": "Spell",
     "rarity": "Supreme",
-    "imageName": "Kamikazeppelin",
+    "imageName": "KamikaZeppelin",
     "description": "A Kamikazeppelin flies towards and crashes into targeted area dropping bombs along the way. Piloted.",
     "isAOE": true,
     "ExcludeFromRandom": false,

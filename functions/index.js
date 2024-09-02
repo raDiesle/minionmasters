@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 // const functions = require("firebase-functions");
 const functions = require('@google-cloud/functions-framework');
 
-const { getStorage } = require("firebase-admin/storage");
+const { getStorage, getDownloadURL, ref } = require("firebase-admin/storage");
 
 const { initializeApp, applicationDefault, cert } = require("firebase-admin/app");
 const { getFirestore, Timestamp, FieldValue } = require("firebase-admin/firestore");
@@ -15,6 +15,8 @@ const {onSchedule} = require("firebase-functions/v2/scheduler");
 const serviceAccount = require("./key.json");
 
 const {setGlobalOptions} = require("firebase-functions/v2");
+const { last } = require("lodash");
+const { startOfToday } = require("date-fns");
 setGlobalOptions({maxInstances: 1, });
 
 initializeApp({
@@ -24,7 +26,8 @@ initializeApp({
 
 const db = getFirestore();
 const bucket = getStorage().bucket();
-
+const storage = getStorage();
+// const storageRef = admin.storage().bucket()
 // Run once a day at midnight, to clean up the users
 // Manually run the task here https://console.cloud.google.com/cloudscheduler
 exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory: "512MB", timeoutSeconds: 540}, async (event) => {
@@ -42,6 +45,19 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   let count = 0;
   // http://fdmfdm.nl/EloChecker.html
   console.log("start downloading");
+
+  result = await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).download();
+  // const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
+  const oldAllJson = JSON.parse(result);
+  const oldPlayerData = {}
+  oldAllJson.forEach(({User_id, Elo1v1, Elo2v2Team, Elo2v2Solo, lastActivity}) => { 
+    oldPlayerData[User_id] = {
+      Elo1v1: Elo1v1,
+      Elo2v2Team: Elo2v2Team,
+      Elo2v2Solo: Elo2v2Solo,
+      lastActivity: lastActivity
+    }; 
+  })
 
   const requestHeader = { gzip: true, contentType: "application/json" };
 
@@ -63,6 +79,8 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         Elo1v1: parseInt(Elo1v1),
         Elo2v2Team: parseInt(Elo2v2Team),
         Elo2v2Solo: parseInt(Elo2v2Solo),
+        EloTotal: parseInt(Elo1v1) + parseInt(Elo2v2Solo) + parseInt(Elo2v2Team),
+        lastActivity: 0
       }));
 
       const prevLimited = normalized.
@@ -73,6 +91,21 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           Elo2v2Solo > 1600 
           || [15, 602373, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
+
+      prevLimited.forEach(
+        ( newData ) => {
+          let { User_id, Elo1v1, Elo2v2Team, Elo2v2Solo } = newData
+          let oldData = oldPlayerData[User_id];
+          if (oldData == undefined || oldData.Elo1v1 != Elo1v1 || oldData.Elo2v2Team != Elo2v2Team || oldData.Elo2v2Solo != Elo2v2Solo){
+            //which function can we use here?
+            newData.lastActivity = startOfToday();
+          }
+          else{
+            newData.lastActivity = oldData.lastActivity;
+          }
+        }
+      )
+
       console.log("used data to proceed: " + prevLimited.length);
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
@@ -95,6 +128,9 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
     const sortedByElo2v2Team = orderBy(totalResults, ["Elo2v2Team"], ["desc"]).map(
       ({ User_id }) => User_id
     );
+    const sortedByEloTotal = orderBy(totalResults, ["EloTotal"], ["desc"]).map(
+      ({ User_id }) => User_id
+    );
 
     const enhancedByEveryEloRankingData = totalResults.map((singlePlayer) => {
       const { User_id } = singlePlayer;
@@ -102,11 +138,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         Elo1v1Rank: sortedByElo1v1.indexOf(User_id) + 1,
         Elo2v2SoloRank: sortedByElo2v2Solo.indexOf(User_id) + 1,
         Elo2v2TeamRank: sortedByElo2v2Team.indexOf(User_id) + 1,
+        EloTotalRank: sortedByEloTotal.indexOf(User_id) + 1,
       };
       const overallRankAbsolute = {
-        overallRankAbsolute: Math.floor(
-          (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
-        ),
+        // overallRankAbsolute: Math.floor(
+        //   (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
+        // ),
+        overallRankAbsolute: eloRanks.EloTotalRank
       };
       const merged = { ...singlePlayer, ...eloRanks, ...overallRankAbsolute };
       return merged;
