@@ -91,7 +91,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           Elo2v2Solo > 1600 
           || [15, 602373, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
-
+      console.log("prepare to attach data about player activity")
       prevLimited.forEach(
         ( newData ) => {
           let { User_id, Elo1v1, Elo2v2Team, Elo2v2Solo } = newData
