@@ -1,6 +1,5 @@
 const orderBy = require("lodash/orderBy");
 
-const fetch = require("node-fetch");
 
 // const functions = require("firebase-functions");
 const functions = require('@google-cloud/functions-framework');
@@ -36,6 +35,9 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
 // onSchedule("every day 00:00", async (event) => {
 //functions.pubsub.schedule("every 24 hours").onRun(async (context) => {
 // functions.cloudEvent("eloUpdate", async (cloudEvent) => {
+  
+  const {default: fetch} = await import("node-fetch");
+  
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
   const totalResults = [];
