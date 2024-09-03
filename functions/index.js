@@ -1,6 +1,9 @@
 const orderBy = require("lodash/orderBy");
 
 
+// only works with v3, otherwise see below the fetch import
+const fetch = require("node-fetch-retry");
+
 // const functions = require("firebase-functions");
 const functions = require('@google-cloud/functions-framework');
 
@@ -36,7 +39,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
 //functions.pubsub.schedule("every 24 hours").onRun(async (context) => {
 // functions.cloudEvent("eloUpdate", async (cloudEvent) => {
   
-  const {default: fetch} = await import("node-fetch");
+  // with v3 const {default: fetch} = await import("node-fetch");
   
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
@@ -47,6 +50,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   let count = 0;
   // http://fdmfdm.nl/EloChecker.html
   console.log("start downloading");
+  console.log("fetch old data to detect inactive players");
 
   result = await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).download();
   // const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
@@ -70,7 +74,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       const url = `http://fdmfdm.nl/GetAllUserElo.php?limitStart=${limitStart}&limitStep=${limitStep}`;
       console.log(url);
       console.log(`Fetching count : ${count} totalResults: ${totalResults.length}`);
-      const response = await fetch(url);
+      const response = await fetch(url, { method: 'GET', retry: 1, pause: 2000});
       const data = await response.json();
       console.log("returned dataset");
       currentResults = data;
