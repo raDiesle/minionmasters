@@ -102,14 +102,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           Elo2v2Solo > 1600 
           || [15, 602373, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
-
+      console.log("prepare to attach data about player activity")
       prevLimited.forEach(
         ( newData ) => {
           let { User_id, Elo1v1, Elo2v2Team, Elo2v2Solo } = newData
           let oldData = oldPlayerData[User_id];
           if (oldData == undefined || oldData.Elo1v1 != Elo1v1 || oldData.Elo2v2Team != Elo2v2Team || oldData.Elo2v2Solo != Elo2v2Solo){
-            //which function can we use here?
-            newData.lastActivity = startOfToday();
+            newData.lastActivity = new Date();
           }
           else{
             newData.lastActivity = oldData.lastActivity;
