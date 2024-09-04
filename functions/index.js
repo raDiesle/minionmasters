@@ -52,18 +52,23 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   console.log("start downloading");
   console.log("fetch old data to detect inactive players");
 
-  result = await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).download();
-  // const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
-  const oldAllJson = JSON.parse(result);
-  const oldPlayerData = {}
-  oldAllJson.forEach(({User_id, Elo1v1, Elo2v2Team, Elo2v2Solo, lastActivity}) => { 
-    oldPlayerData[User_id] = {
-      Elo1v1: Elo1v1,
-      Elo2v2Team: Elo2v2Team,
-      Elo2v2Solo: Elo2v2Solo,
-      lastActivity: lastActivity
-    }; 
-  })
+  const oldPlayerData = {};
+    try{
+      result = await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).download();
+      // const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
+      const oldAllJson = JSON.parse(result);
+    
+      oldAllJson.forEach(({User_id, Elo1v1, Elo2v2Team, Elo2v2Solo, lastActivity}) => { 
+        oldPlayerData[User_id] = {
+          Elo1v1: Elo1v1,
+          Elo2v2Team: Elo2v2Team,
+          Elo2v2Solo: Elo2v2Solo,
+          lastActivity: lastActivity
+        }; 
+      });
+  }catch(e){
+    console.error("Fetching old data failed:", e);
+  }
 
   const requestHeader = { gzip: true, contentType: "application/json" };
 
@@ -74,7 +79,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       const url = `http://fdmfdm.nl/GetAllUserElo.php?limitStart=${limitStart}&limitStep=${limitStep}`;
       console.log(url);
       console.log(`Fetching count : ${count} totalResults: ${totalResults.length}`);
-      const response = await fetch(url, { method: 'GET', retry: 1, pause: 2000});
+      const response = await fetch(url, { method: 'GET', retry: 2, pause: 2000});
       const data = await response.json();
       console.log("returned dataset");
       currentResults = data;
