@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { db, dbErrorHandlerPromise } from "mm-firestore";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,11 @@ export function EloRanking() {
   const [statusData, setStatusData] = useState({ timeFetched: Date.now(), totalResultsSize: 0 });
 
   const [mappedPlayers, setMappedPlayers] = useState({});
+  const [isIncludingInactivePlayers, setIsIncludingInactivePlayers] = useState(false);
   const [allEloData, setAllEloData] = useState([]);
+  const [activeEloData, setActiveEloData] = useState([]);
+  const selectedEloData = useMemo(() => isIncludingInactivePlayers ? allEloData : activeEloData, [isIncludingInactivePlayers]);
+
   useEffect( () => {
 
     const init = async() => {
@@ -39,10 +43,15 @@ export function EloRanking() {
           playersObject[doc.id] = doc.data().username;
         });
 
-        const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
-        const { data : result } = await axios.get(url);
+        let url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}active.json`));
+        const { data : activeResult } = await axios.get(url);
+        setActiveEloData(activeResult);
 
-        setAllEloData(result);
+        url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
+        const { data : allResult } = await axios.get(url);
+        setAllEloData(allResult);
+        
+
         setMappedPlayers(playersObject);
         setSortModel([{
           accessor: "username",
@@ -116,7 +125,7 @@ export function EloRanking() {
         }
       ]
     }
-  ], [allEloData, mappedPlayers]);
+  ], [ mappedPlayers]);
 
   const timeDataWasUpdated = new Date(statusData.timeFetched).toLocaleString();
   return <div><h2>Elo Ranking</h2>
@@ -125,7 +134,7 @@ export function EloRanking() {
         Latest game data update: <b>{timeDataWasUpdated}</b>
       </li>
       <li>
-        Only players with <b> > 1800 elo</b> in any mode are listed = total of {statusData.totalResultsSize} players
+        Only players with <b> {'>'} 1800 elo</b> in any mode are listed = total of {statusData.totalResultsSize} players
       </li>
       <li>On this page, there is <b>no</b>leadership ranking visible like in game, but only about your Elo</li>
       <li>
@@ -151,10 +160,28 @@ export function EloRanking() {
           <li>Details: see historized data for every player with saved alias name upon from the point of time its provided with detailed charts</li>
         </ul>
       </div>
+    <span style={{
+      display: "inline-block",
+      width: "12px",
+    }}></span>
+    Include inactive players:
+    <span style={{
+      display: "inline-block",
+      width: "8px",
+    }}></span>
+    <input 
+      type="checkbox" 
+      id = "include_inactive_players"
+      value={isIncludingInactivePlayers || false}
+      onChange={e => {
+        setIsIncludingInactivePlayers(e.target.checked);
+        // onChange(e.target.value);
+      }}
+    ></input>
 
     <ReactTable
       columns={columns}
-      data={allEloData}
+      data={selectedEloData}
       sortBy={[{ id: "Username", desc: true }]}
       minTableHeight={400}
     />

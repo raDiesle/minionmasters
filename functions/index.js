@@ -1,3 +1,5 @@
+const RESET_ACTIVITY = false;
+
 const orderBy = require("lodash/orderBy");
 
 
@@ -44,6 +46,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
   const totalResults = [];
+  const activeResults = [];
   let currentResults = null;
   const limitStep = 100000;
   let limitStart = 0;
@@ -111,15 +114,23 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
             newData.lastActivity = new Date();
           }
           else{
-            newData.lastActivity = oldData.lastActivity;
+            newData.lastActivity = RESET_ACTIVITY ? new Date("2024-08-01T00:00:00.000Z") : oldData.lastActivity;
           }
         }
       )
 
-      console.log("used data to proceed: " + prevLimited.length);
+      const inactivityThreshold = 30;   //in days
+      const inactivityDate = new Date();
+      inactivityDate.setDate(inactivityDate.getDate() - inactivityThreshold);
+      const filteredActive = prevLimited.filter(data => new Date(data.lastActivity) > inactivityDate)
+
+      console.log("used data to proceed: " + prevLimited.length + " (" + filteredActive.length + " active)");
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
 
+      
       totalResults.push(...prevLimited);
+      activeResults.push(...filteredActive);
+
       limitStart = limitStart + limitStep;
       count = count + 1;
       await loop();
@@ -129,57 +140,79 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
 
     console.log("Continue with fetched data: " + totalResults.length)
 
-    const sortedByElo1v1 = orderBy(totalResults, ["Elo1v1"], ["desc"]).map(
-      ({ User_id }) => User_id
-    );
-    const sortedByElo2v2Solo = orderBy(totalResults, ["Elo2v2Solo"], ["desc"]).map(
-      ({ User_id }) => User_id
-    );
-    const sortedByElo2v2Team = orderBy(totalResults, ["Elo2v2Team"], ["desc"]).map(
-      ({ User_id }) => User_id
-    );
-    const sortedByEloTotal = orderBy(totalResults, ["EloTotal"], ["desc"]).map(
-      ({ User_id }) => User_id
-    );
+    const allPlayersRanked = {
+      sortedByElo1v1 : orderBy(totalResults, ["Elo1v1"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+      sortedByElo2v2Solo : orderBy(totalResults, ["Elo2v2Solo"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+      sortedByElo2v2Team : orderBy(totalResults, ["Elo2v2Team"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+      sortedByEloTotal : orderBy(totalResults, ["EloTotal"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+    }
 
-    const enhancedByEveryEloRankingData = totalResults.map((singlePlayer) => {
+    const activePlayersRanked = {
+      sortedByElo1v1 : orderBy(activeResults, ["Elo1v1"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+      sortedByElo2v2Solo : orderBy(activeResults, ["Elo2v2Solo"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+      sortedByElo2v2Team : orderBy(activeResults, ["Elo2v2Team"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+      sortedByEloTotal : orderBy(activeResults, ["EloTotal"], ["desc"]).map(
+        ({ User_id }) => User_id
+      ),
+    }
+
+    const allEloRankingData = totalResults.map((singlePlayer) => {
       const { User_id } = singlePlayer;
+      const { sortedByElo1v1, sortedByElo2v2Solo, sortedByElo2v2Team, sortedByEloTotal } = allPlayersRanked;
       const eloRanks = {
         Elo1v1Rank: sortedByElo1v1.indexOf(User_id) + 1,
         Elo2v2SoloRank: sortedByElo2v2Solo.indexOf(User_id) + 1,
         Elo2v2TeamRank: sortedByElo2v2Team.indexOf(User_id) + 1,
-        EloTotalRank: sortedByEloTotal.indexOf(User_id) + 1,
+        overallRank: sortedByEloTotal.indexOf(User_id) + 1,
       };
-      const overallRankAbsolute = {
-        // overallRankAbsolute: Math.floor(
-        //   (eloRanks.Elo1v1Rank + eloRanks.Elo2v2SoloRank + eloRanks.Elo2v2TeamRank) / 3
-        // ),
-        overallRankAbsolute: eloRanks.EloTotalRank
-      };
-      const merged = { ...singlePlayer, ...eloRanks, ...overallRankAbsolute };
+      const merged = { ...singlePlayer, ...eloRanks};
       return merged;
     });
 
-    const sortedByOverallRanking = orderBy(
-      enhancedByEveryEloRankingData,
-      ["overallRankAbsolute"],
-      ["asc"]
-    );
-    const overallRankingUserIds = sortedByOverallRanking.map(({ User_id }) => User_id);
-    const withOverallEloRank = sortedByOverallRanking.map((data) => ({
-      ...data,
-      ...{ overallRank: overallRankingUserIds.indexOf(data.User_id) + 1 },
-    }));
+    const activeEloRankingData = activeResults.map((singlePlayer) => {
+      const { User_id } = singlePlayer;
+      const { sortedByElo1v1, sortedByElo2v2Solo, sortedByElo2v2Team, sortedByEloTotal } = activePlayersRanked;
+      const eloRanks = {
+        Elo1v1Rank: sortedByElo1v1.indexOf(User_id) + 1,
+        Elo2v2SoloRank: sortedByElo2v2Solo.indexOf(User_id) + 1,
+        Elo2v2TeamRank: sortedByElo2v2Team.indexOf(User_id) + 1,
+        overallRank: sortedByEloTotal.indexOf(User_id) + 1,
+      };
+      const merged = { ...singlePlayer, ...eloRanks};
+      return merged;
+    });
 
 
     async function uploadFromMemoryAll() {
-      console.log("start uploading of all.json: " + withOverallEloRank.length);
+      console.log("start uploading of all.json: " + allEloRankingData.length);
       await bucket
         .file(`${ELO_GENERATED_ROOT_PATH}all.json`)
-        .save(JSON.stringify(withOverallEloRank), requestHeader);
+        .save(JSON.stringify(allEloRankingData), requestHeader);
       console.log("finished uploading all.json");
+
+      console.log("start uploading of active.json: " + activeEloRankingData.length);
+      await bucket
+        .file(`${ELO_GENERATED_ROOT_PATH}active.json`)
+        .save(JSON.stringify(activeEloRankingData), requestHeader);
+      console.log("finished uploading active.json");
     }
     await uploadFromMemoryAll().catch(console.error);
+
+
 
     console.log("continue to read playermappings.");
     db.collection("playermappings")
@@ -208,7 +241,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           console.log("next data mapping of " + players[pos]);
           const currentPlayerId = Number(players[pos]);
           console.log("Current playerId: " + currentPlayerId);
-          const singlePlayer = withOverallEloRank.find(
+          const singlePlayer = allEloRankingData.find(
             ({ User_id }) => User_id === currentPlayerId
           );
           if (typeof singlePlayer === "undefined") {
