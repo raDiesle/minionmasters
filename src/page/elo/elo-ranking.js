@@ -23,7 +23,7 @@ export function EloRanking() {
   const [isIncludingInactivePlayers, setIsIncludingInactivePlayers] = useState(false);
   const [allEloData, setAllEloData] = useState([]);
   const [activeEloData, setActiveEloData] = useState([]);
-  const selectedEloData = useMemo(() => isIncludingInactivePlayers ? allEloData : activeEloData, [isIncludingInactivePlayers]);
+  const selectedEloData = useMemo(() => isIncludingInactivePlayers ? allEloData : activeEloData, [isIncludingInactivePlayers, allEloData, activeEloData]);
 
   useEffect( () => {
 
