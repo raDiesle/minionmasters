@@ -47,14 +47,6 @@ function GlobalFilter({
 }
 
 export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumns = []}) => {
-  const [isIncludingInactivePlayers, setIsIncludingInactivePlayers] = React.useState(false);
-  
-  const inactivityThreshold = 30;   //in days
-  const displayedData = React.useMemo(() => {
-    const inactivityDate = new Date();
-    inactivityDate.setDate(inactivityDate.getDate() - inactivityThreshold);
-    return isIncludingInactivePlayers ? data : data.filter(item => new Date(item.lastActivity) > inactivityDate)
-  }, [data, isIncludingInactivePlayers]);
 
   const defaultColumn = React.useMemo(
     () => ({
@@ -106,7 +98,7 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
     {
 
       columns,
-      data: displayedData,
+      data,
       defaultColumn,
       initialState: {sortBy,  hiddenColumns},
       filterTypes
@@ -147,25 +139,6 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
       globalFilter={state.globalFilter}
       setGlobalFilter={setGlobalFilter}
     />
-    <span style={{
-      display: "inline-block",
-      width: "32px",
-    }}></span>
-    Include inactive players:
-    <span style={{
-      display: "inline-block",
-      width: "8px",
-    }}></span>
-    <input 
-      type="checkbox" 
-      id = "include_inactive_players"
-      value={isIncludingInactivePlayers || false}
-      onChange={e => {
-
-        setIsIncludingInactivePlayers(e.target.checked);
-        // onChange(e.target.value);
-      }}
-    ></input>
     <div {...getTableProps()} className={css.table}>
       <div>
         {headerGroups.map(headerGroup => (
