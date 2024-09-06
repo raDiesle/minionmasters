@@ -44,10 +44,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   // with v3 const {default: fetch} = await import("node-fetch");
   
   const ELO_GENERATED_ROOT_PATH = "elo/";
+  const inactivityThreshold = 30;   //in days
+  const inactivityDate = new Date();
+  inactivityDate.setDate(inactivityDate.getDate() - inactivityThreshold);
 
   const totalResults = [];
   const activeResults = [];
-  let currentResults = null;
+  let continueLoop = true;
   const limitStep = 100000;
   let limitStart = 0;
   let count = 0;
@@ -78,16 +81,17 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   /* eslint-disable */
 
   async function loop() {
-    if (currentResults === null || currentResults.length !== 0) {
+    if (continueLoop) {
       const url = `http://fdmfdm.nl/GetAllUserElo.php?limitStart=${limitStart}&limitStep=${limitStep}`;
       console.log(url);
       console.log(`Fetching count : ${count} totalResults: ${totalResults.length}`);
-      const response = await fetch(url, { method: 'GET', retry: 2, pause: 2000});
-      const data = await response.json();
+      let response = await fetch(url, { method: 'GET', retry: 2, pause: 2000});
+      let data = await response.json();
+      response = null;
       console.log("returned dataset");
-      currentResults = data;
+      continueLoop = data.length !== 0;
 
-      const normalized = currentResults.map(({ User_id, Id, Elo1v1, Elo2v2Team, Elo2v2Solo }) => ({
+      const prevLimited = data.map(({ User_id, Id, Elo1v1, Elo2v2Team, Elo2v2Solo }) => ({
         User_id: parseInt(User_id),
         Id: parseInt(Id),
         Elo1v1: parseInt(Elo1v1),
@@ -95,16 +99,16 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         Elo2v2Solo: parseInt(Elo2v2Solo),
         EloTotal: parseInt(Elo1v1) + parseInt(Elo2v2Solo) + parseInt(Elo2v2Team),
         lastActivity: 0
-      }));
-
-      const prevLimited = normalized.
-      filter(
+      })).filter(
         ({ Elo1v1, Elo2v2Team, Elo2v2Solo, User_id }) =>
           Elo1v1 > 1600 ||
           Elo2v2Team > 1600 ||
           Elo2v2Solo > 1600 
           || [15, 602373, 218347, 5537284, 218347, 5537284, 848452].includes(User_id)
       );
+
+      data = null;
+
       console.log("prepare to attach data about player activity")
       prevLimited.forEach(
         ( newData ) => {
@@ -119,10 +123,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
         }
       )
 
-      const inactivityThreshold = 30;   //in days
-      const inactivityDate = new Date();
-      inactivityDate.setDate(inactivityDate.getDate() - inactivityThreshold);
-      const filteredActive = prevLimited.filter(data => new Date(data.lastActivity) > inactivityDate)
+      const filteredActive = prevLimited.filter(data => new Date(data.lastActivity) > inactivityDate);
 
       console.log("used data to proceed: " + prevLimited.length + " (" + filteredActive.length + " active)");
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
