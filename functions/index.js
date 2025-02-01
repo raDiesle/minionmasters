@@ -44,10 +44,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   // with v3 const {default: fetch} = await import("node-fetch");
   
   const ELO_GENERATED_ROOT_PATH = "elo/";
-  const inactivityThreshold = 30;   //in days
-  const inactivityDate = new Date();
-  inactivityDate.setDate(inactivityDate.getDate() - inactivityThreshold);
 
+  // every 35 days should be a new Season
+  const seasonStartDate = new Date("2025-01-25T22:00:00.000Z");
+  const seasonDuration = 35;   //in days
+  const seasonDay = Math.floor((new Date() - seasonStartDate)/(1000*60*60*24));
+  const inactivityDate = seasonStartDate.setDate(seasonStartDate.getDate() + seasonDuration*Math.floor(seasonDay/seasonDuration));
+  
   const totalResults = [];
   const activeResults = [];
   let continueLoop = true;
