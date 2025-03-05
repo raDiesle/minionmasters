@@ -45,12 +45,13 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
-  // every 35 days should be a new Season
-  const seasonStartDate = new Date("2025-01-25T22:00:00.000Z");
-  const seasonDuration = 35;   //in days
-  const seasonDay = Math.floor((new Date() - seasonStartDate)/(1000*60*60*24));
-  const inactivityDate = seasonStartDate.setDate(seasonStartDate.getDate() + seasonDuration*Math.floor(seasonDay/seasonDuration));
-  
+  // Seasons start at the last saturday of the month (usually)
+  const seasonStartDate = new Date(date);
+  seasonStartDate.setHours(22,0,0,0)
+  seasonStartDate.setDate(date.getDate() + (6 - date.getDay()));  //next Saturday
+  seasonStartDate.setDate(seasonStartDate.getDate() - 7*Math.ceil(seasonStartDate.getDate()/7))   //go back full weeks to previous month (last saturday of month)
+  const inactivityDate = new Date(seasonStartDate)
+  inactivityDate.setDate(seasonStartDate.getDate() + 1);
   const totalResults = [];
   const activeResults = [];
   let continueLoop = true;
