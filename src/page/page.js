@@ -25,6 +25,8 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import css from "./page.module.scss";
 import { ROUTE_PATH_ELO } from "page/elo/elo-config";
 import { Elo } from "page/elo/elo";
+import { ROUTE_PATH_PUBLIC_STATS } from "./public-stats/public-stats-config";
+import { PublicStats } from "./public-stats/public-stats";
 
 export function Page() {
   const [selectedMaster, setSelectedMaster] = useState(INITIAL_MASTER_SELECTED);
@@ -57,6 +59,7 @@ export function Page() {
     ROUTE_PATH_PROFILE,
     ROUTE_PATH_TOURNAMENTS,
     ROUTE_PATH_ELO,
+    ROUTE_PATH_PUBLIC_STATS,
   ];
 
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -116,6 +119,10 @@ export function Page() {
           <Link to={ROUTE_PATH_ELO}>
             <Tab>Elo</Tab>
           </Link>
+
+          <Link to={ROUTE_PATH_PUBLIC_STATS}>
+            <Tab>Public Stats</Tab>
+          </Link>
         </TabList>
 
         <TabPanel>
@@ -151,6 +158,10 @@ export function Page() {
 
         <TabPanel>
           <Elo />
+        </TabPanel>
+
+        <TabPanel>
+          <PublicStats />
         </TabPanel>
       </Tabs>
     </div>

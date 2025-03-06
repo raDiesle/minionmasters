@@ -3,6 +3,7 @@ import css from "./elo-ranking-table.module.scss";
 import { useTable, useBlockLayout, useSortBy, useGlobalFilter, useFilters, useAsyncDebounce } from "react-table";
 import { FixedSizeList } from "react-window";
 import {matchSorter} from 'match-sorter';
+import { color } from "html2canvas";
 
 const scrollbarWidth = () => {
   // thanks too https://davidwalsh.name/detect-scrollbar-width
@@ -26,7 +27,6 @@ function GlobalFilter({
   const onChange = useAsyncDebounce(value => {
     setGlobalFilter(value || undefined)
   }, 200)
-
   return (
     <span>
       Search:{' '}
@@ -46,14 +46,27 @@ function GlobalFilter({
   )
 }
 
-export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumns = []}) => {
+export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumns = [], showGlobalFilter = true}) => {
 
-  const defaultColumn = React.useMemo(
-    () => ({
-      width: 150
-    }),
-    []
-  );
+  const defaultColumn = React.useMemo(() => ({
+    width: 150,
+    sortType: (rowA, rowB, columnId) => {
+        const a = rowA.values[columnId];
+        const b = rowB.values[columnId];
+
+        const numA = parseFloat(a);
+        const numB = parseFloat(b);
+
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return numA - numB;
+        }
+        if (a == null || b == null){
+          return a==null? 1 : -1
+        }
+
+        return (String(a) > String(b)) -1/2;
+    }
+  }), []);
 
   const scrollBarSize = React.useMemo(() => scrollbarWidth(), []);
 
@@ -121,10 +134,20 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
           className={css.tr}
         >
           {row.cells.map(cell => {
+            const align = cell.column.align || 'right';
+            const bgColor = cell.column.getColor;
             return (
-              <div {...cell.getCellProps()} className={css.td}>
+              <div{...cell.getCellProps({
+                style: {
+                    ...cell.getCellProps().style,
+                    ...cell.column.getCellProps?.(cell).style,
+                    textAlign: align,
+                    // backgroundColor: bgColor
+                }
+            })} className={css.td}>
                 {cell.render("Cell")}
               </div>
+              
             );
           })}
         </div>
@@ -134,11 +157,14 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
   );
 
   return <div className={css.tableContainer}>
-    <GlobalFilter
-      preGlobalFilteredRows={preGlobalFilteredRows}
-      globalFilter={state.globalFilter}
-      setGlobalFilter={setGlobalFilter}
-    />
+    {showGlobalFilter && (
+      <GlobalFilter
+        preGlobalFilteredRows={preGlobalFilteredRows}
+        globalFilter={state.globalFilter}
+        setGlobalFilter={setGlobalFilter}
+      />
+    )}
+
     <div {...getTableProps()} className={css.table}>
       <div>
         {headerGroups.map(headerGroup => (
