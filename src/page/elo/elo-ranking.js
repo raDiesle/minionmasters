@@ -7,6 +7,7 @@ import { getStorage, getDownloadURL, ref } from "firebase/storage";
 import axios from "axios";
 import { STORAGE_URL_PREFIX } from "page/elo/elo-config";
 
+import { GoogleSheetTable } from "page/public-stats/card-stats-table";
 
 export function EloRanking() {
 
@@ -14,7 +15,7 @@ export function EloRanking() {
 
   const [sortModel, setSortModel] = React.useState([{
     accessor: "username",
-    sort: "desc"
+    sort: "asc"
   }]);
 
   const [statusData, setStatusData] = useState({ timeFetched: Date.now(), totalResultsSize: 0 });
@@ -55,7 +56,7 @@ export function EloRanking() {
         setMappedPlayers(playersObject);
         setSortModel([{
           accessor: "username",
-          sort: "desc"
+          sort: "asc"
         }]);
       })
       .catch(dbErrorHandlerPromise);
@@ -79,7 +80,8 @@ export function EloRanking() {
     {
       accessor: (row, i) => mappedPlayers[row.User_id],
       Header: "Username",
-      width: "200"
+      width: "200",
+      // align: "left"
     },
     {
       accessor: (row, i) => mappedPlayers[row.User_id] + "_details", Header: "Details",
@@ -88,7 +90,7 @@ export function EloRanking() {
           to={`/elo?id=${values.User_id}`}>{mappedPlayers[values.User_id] ? "here" : " "}</Link></div>;
       }
       ,
-      width: "50"
+      width: "55"
     },
     {
       Header: "Ranks by Elo",
@@ -109,8 +111,7 @@ export function EloRanking() {
       ]
     },
     {
-      Header: "Elo points"
-      ,
+      Header: "Elo points",
       columns: [
 
         {
@@ -121,7 +122,7 @@ export function EloRanking() {
         },
         {
           accessor: "Elo1v1", Header: "1v1",
-          width: "70"
+          width: "65",
         }
       ]
     }
@@ -182,7 +183,7 @@ export function EloRanking() {
     <ReactTable
       columns={columns}
       data={selectedEloData}
-      sortBy={[{ id: "Username", desc: true }]}
+      sortBy={[{ id: "Username", asc: true }]}
       minTableHeight={400}
     />
     </div>
