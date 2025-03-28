@@ -76,3 +76,6 @@ https://firebasestorage.googleapis.com/v0/b/minionmastersmanager.appspot.com/o/s
 ## set cors
 cd functions
 gsutil cors set cors.json gs://minionmastersmanager.appspot.com
+
+## add batch job command
+go to package.json -> scripts

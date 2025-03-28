@@ -122,7 +122,7 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
             </div>
           </li>
           <button className={classnames(cssButton.ButtonInGroupStyle)}
-          onClick={() => {setAvailableCards([]); mToast("All available cards have been reset");}}>
+          onClick={() => {localStorage(AVAILABLE_CARDS_LOCALSTORAGE_KEY, []); setAvailableCards([]); mToast("All available cards have been reset");}}>
                   <div>
                     Reset cards
                   </div>
