@@ -754,8 +754,8 @@
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
     },
     "Kamikazeppelin": {
-        "Damage": 200,
-        "TowerDamage": 100,
+        "Damage": 160,
+        "TowerDamage": 80,
         "Radius": 5000,
         "Duration": 0,
         "EffectDelay": 0,
@@ -789,7 +789,7 @@
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
     },
     "SpellDamageAndHolyFire": {
-        "Damage": 180,
+        "Damage": 150,
         "TowerDamage": 0,
         "Radius": 4500,
         "Duration": 0,
@@ -1173,9 +1173,9 @@
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
     },
     "SpellIceDragonsBreath": {
-        "Damage": 180,
-        "TowerDamage": 18,
-        "Radius": 3000,
+        "Damage": 200,
+        "TowerDamage": 20,
+        "Radius": 2500,
         "Duration": 5000,
         "EffectDelay": 0,
         "Delay": 2000,

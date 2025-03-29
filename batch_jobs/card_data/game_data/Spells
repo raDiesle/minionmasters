@@ -837,8 +837,8 @@
   </Spells>
   <Spells>
     <Identifier>Kamikazeppelin</Identifier>
-    <Damage>200</Damage>
-    <TowerDamage>100</TowerDamage>
+    <Damage>160</Damage>
+    <TowerDamage>80</TowerDamage>
     <Radius>5000</Radius>
     <Duration>0</Duration>
     <EffectDelay>0</EffectDelay>
@@ -875,7 +875,7 @@
   </Spells>
   <Spells>
     <Identifier>SpellDamageAndHolyFire</Identifier>
-    <Damage>180</Damage>
+    <Damage>150</Damage>
     <TowerDamage>0</TowerDamage>
     <Radius>4500</Radius>
     <Duration>0</Duration>
@@ -1297,9 +1297,9 @@
   </Spells>
   <Spells>
     <Identifier>SpellIceDragonsBreath</Identifier>
-    <Damage>180</Damage>
-    <TowerDamage>18</TowerDamage>
-    <Radius>3000</Radius>
+    <Damage>200</Damage>
+    <TowerDamage>20</TowerDamage>
+    <Radius>2500</Radius>
     <Duration>5000</Duration>
     <EffectDelay>0</EffectDelay>
     <Delay>2000</Delay>

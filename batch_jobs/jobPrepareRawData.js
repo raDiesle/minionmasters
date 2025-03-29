@@ -6,7 +6,7 @@ const fs = require("fs");
 const SRC_GAMEDATA = "./batch_jobs/CardData.JSON";
 const TARGET_FILE = "./src/generated/jobCardProps.json";
 
-// https://drive.google.com/open?id=0B-3hJBoCehBpQVBUYVdxZDVNSms
+// outdated data: https://drive.google.com/open?id=0B-3hJBoCehBpQVBUYVdxZDVNSms
 const cardDataFromGameRaw = fs.readFileSync(SRC_GAMEDATA);
 let cardDataFromGame = JSON.parse(cardDataFromGameRaw);
 const gameData = loadAllParsedGameData();
@@ -62,21 +62,33 @@ function normalizeGameCardData(propsAsMap) {
   return propsAsMap
 }
 
+
 function applyFormatting(text, calledRecursively = false){
-  //formatting and highlighting
-  text = text.replace(
-    /\[mec:([^\]]*?)\]/gm,
-    `$1`
+  let blocks = splitBrackets(text);
+  let preparedText = text;
+  if (blocks.length > 1) {
+    formattedBlocks = blocks.map(blockText => {
+      if (blockText.match(/^\[.*\]$/)) return applyFormatting(blockText, true);
+      return blockText;
+    });
+    preparedText = formattedBlocks.join("");
+  }
+  // formatting and highlighting
+  preparedText = preparedText.replace(
+    /\[mec:([^\[]*?)\]/gm,
+    // `$1`
+    (match, text) => {return `{"${text}", "${TYPE_HIGHLIGHT}", ""}`}
   );
-  text = text.replace(
-    /\[b:([^\]]*?)\]/gm,
+  preparedText = preparedText.replace(
+    /\[b:([^\[]*?)\]/gm,
     (match, text) => {return `{"${text}", "${TYPE_BOLD}", ""}`}
   );
-  text = text.replace(
-    /\[f:([^\]]*?)\]/gm,
+  preparedText = preparedText.replace(
+    /\[f:([^\[]*?)\]/gm,
     (match, text) => {return `{"${text}", "${TYPE_FLAVOR}", ""}`}
   );
-  text = text.replace(
+  //this can be improved, some links don't work. (because actor != card)
+  preparedText = preparedText.replace(
     /\[actor(?:skill)*?info:([^\[]*?)\,([^\[]*?)\]/gm,
     (match, infoKey, text) => {
       if (gameData.actorsMap.has(infoKey)) return `{"${text}", "${TYPE_CARD_REF}", "${infoKey}"}`
@@ -85,29 +97,35 @@ function applyFormatting(text, calledRecursively = false){
   );
 
   //actorskill-, actor- and spell-info
-  if (calledRecursively) {
-    text = text.replace(
-      /\[(?!text).+?info:([^\[]*?)\,([^\[]*?)\]/gm,
-      (match, infoKey, text) => {return `{"${text}", "${TYPE_HIGHLIGHT}", ""}`}
-    );
-    //escape quotation marks
-    text = text.replaceAll('"', '"*');
-  }
-  else {
-    text = text.replace(
-      /\[(?!text).+?info:([^\[]*?)\,([^\[]*?)\]/gm,
+  if (!calledRecursively || true) {
+    preparedText = preparedText.replace(
+      /\[(?!text)[^\[]+?info:([^\[]*?)\,([^\[]*?)\]/gm,
       (match, infoKey, text) => {return `{"${text}", "${TYPE_TERM}", "${getInfoText(infoKey + "Description")}"}`}
     );
-    text = text.replace(
+    preparedText = preparedText.replace(
       /\[textinfo:([^\[]*?)\,([^\[]*?)\]/gm,
       (match, infoText, text) => {return `{"${text}", "${TYPE_TERM}", "${infoText}"}`}
     );
-    text = text.replace(
+  }
+  // this might be necessary if there are loops in the info references
+  // if (calledRecursively) {
+  //   preparedText = preparedText.replace(
+  //     /\[(?!text)[^\[]+?info:([^\[]*?)\,([^\[]*?)\]/gm,
+  //     (match, infoKey, text) => {return `{"${text}", "${TYPE_HIGHLIGHT}", ""}`}
+  //   );
+  // }
+
+  //escape quotation marks
+  if(calledRecursively) {
+    preparedText = preparedText.replaceAll('"', '"*');
+  }
+  else {
+    preparedText = preparedText.replace(
       /(?:\\n)+/g,
       (match) => `{${match}}`,
     );
-  }
-  return text
+  }     
+  return preparedText
 }
 
 function getInfoText(key){
@@ -117,9 +135,28 @@ function getInfoText(key){
   if (OVERWRITE_INFO_KEYS.has(key)){
     key = OVERWRITE_INFO_KEYS.get(key);
   }
-  //recursive, hopefully nothing breaks
   // console.log(`key: ${key} \n` +getText(key, gameData));
   return applyFormatting(getText(key, gameData), calledRecursively = true);
+}
+
+function splitBrackets(str, brackets = ["[","]"], depth = 1) {
+  let results = [];
+  let startIndexes = [];
+  let outsideIndex = 0;
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] === brackets[0]) {
+          if (startIndexes.length === depth && outsideIndex < i) results.push(str.substring(outsideIndex, i));
+          startIndexes.push(i);
+      } else if (str[i] === brackets[1]) {
+          if (startIndexes.length > 0) {
+              let start = startIndexes.pop();
+              if (startIndexes.length === depth || depth < 0) results.push(str.substring(start, i + 1)); // Capture the bracketed expression
+              if (startIndexes.length === depth) outsideIndex = i + 1;
+          }
+      }
+  }
+  if (outsideIndex < str.length) results.push(str.substring(outsideIndex, str.length));
+  return results;
 }
 
 const normalizedGameData = cardDataFromGame.map((cardData) => {

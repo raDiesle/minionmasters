@@ -9,30 +9,27 @@
 3. `npm start` 
 
 # deployment
-5. `npm run deploy`
+- `npm run deploy`
 
 # update game data
-1. Download and replace file manual from: https://drive.google.com/file/d/0B-3hJBoCehBpQVBUYVdxZDVNSms/view?usp=sharing
-in /batch_jobs/
-2. replace `: ,` with `: 0,`
-3. optional: reformat with prettier
-4. `npm run generateData`
-5. in general, with every release new formattings in text are expected , those should be handled in the job* file to replace properly.
-6. also there might be new abilities added, which needs to be defined in abilities-config.js
-7. see `update images from game`
-8. update version in src/version.js export const CURRENT_GAME_VERSION = "1.25";
-9. src/page/elo/elo-detail.js find line 132 and adjust [FILTER_CURRENT_SEASON] [FILTER_PREVIOUS_SEASON]
-10. adjust by try and error  const DATE_TO_ALIGN_CYCLE for correct conquest circle by increasing only some hours or some days (by running app local). dont try to give correct date in the future
-11. test changes on run app by `npm start`
-12. `npm run deploy`
-
+1. use AssetStudio to get Actors, Cards and Spell files  
+from `C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\data.unity3d`
+2. get English_ToDownload  
+from `C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\aa\StandaloneWindows\platform_common_ondemand_assets_all.bundle`
+3. get global-metadata.dat  from `C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\il2cpp_data\Metadata`  
+  by using Il2CppDumper https://github.com/Perfare/Il2CppDumper/releases  
+  -> open GameAssembly.dll first, then global-metadata.dat, the results will be saved in dump.cs in the Il2CppDumper Directory
+4. copypaste all files in the `/batch_jobs/card_data/game_data` folder
+5. `npm run updateCardData`
+6. test changes on run app by `npm start`
+7. `npm run deploy`
 
 # update images from game
 
 ## new version
 1. https://github.com/Perfare/AssetStudio
 2. Load folder
-3. C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\aa\StandaloneWind
+3. `C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters_Data\StreamingAssets\aa\StandaloneWindows`
 4. sort by asset type
 
 

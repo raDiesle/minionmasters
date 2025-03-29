@@ -102,6 +102,8 @@
     <Rarity>Common</Rarity>
     <RankRequirement>stone</RankRequirement>
     <Buckets>Beefy</Buckets>
+    <LogicScriptName>GiveSlitherCohort</LogicScriptName>
+    <Variable>1</Variable>
 	<PreviewAssetPath>LivingStatueVisual</PreviewAssetPath>
   </Cards>
   <Cards>
@@ -117,6 +119,8 @@
     <Rarity>Common</Rarity>
     <Buckets>Flying</Buckets>
     <Buckets>VoidborneArmy</Buckets>
+    <ComboCardTrigger>TriggerOnVoidbornAffinity</ComboCardTrigger>
+    <LogicScriptName>SummonWithRageOnVoidbornAffinity</LogicScriptName>
 	<PreviewAssetPath>DragonWhelpVisual</PreviewAssetPath>
   </Cards>
   <Cards>
@@ -833,7 +837,8 @@
     <ImageName>DroneWalker</ImageName>
     <Rarity>Common</Rarity>
     <Buckets>Straight</Buckets>
-	<PreviewAssetPath>DroneWalkerVisual</PreviewAssetPath>
+    <LogicScriptName>GetSingleDroneEscort</LogicScriptName>
+	  <PreviewAssetPath>DroneWalkerVisual</PreviewAssetPath>
   </Cards>
   <Cards>
     <ValueItemRarityId>46</ValueItemRarityId>
@@ -845,12 +850,16 @@
     <Type>Minion</Type>
     <MainUnitsToSummon>Legionair</MainUnitsToSummon>
     <MainUnitsToSummon>Legionair</MainUnitsToSummon>
-    <MainUnitsToSummon>Legionair</MainUnitsToSummon>
     <ExtraUnitsToSummon>Legionair</ExtraUnitsToSummon>
     <ImageName>Legionairs</ImageName>
     <PreviewAssetPath>LegionairPreview</PreviewAssetPath>
     <LogicScriptName>SummonEmpyreanAffinity</LogicScriptName>
     <LogicScriptName>EmpyreanArmyCostIncrease</LogicScriptName>
+    <LogicScriptName>ShuffleSingleCityPatrol</LogicScriptName>
+    <VisualScriptName>
+      <LogicScriptName>ShuffleCityPatrol</LogicScriptName>
+      <VisualScriptName>ShuffleCityPatrolOnTriggerVisual</VisualScriptName>
+    </VisualScriptName>
     <ComboCardTrigger>TriggerOnEmpyreanAffinity</ComboCardTrigger>
     <Rarity>Common</Rarity>
     <Buckets>Beefy</Buckets>
@@ -1212,7 +1221,7 @@
   <Cards>
     <ValueItemRarityId>79</ValueItemRarityId>
     <CardIndex>63</CardIndex>
-    <Cost>5</Cost>
+    <Cost>4</Cost>
     <Faction>Accursed</Faction>
     <Title>Blastmancer</Title>
     <Description>BlastmancerDescription</Description>
@@ -1692,7 +1701,7 @@
   <Cards>
     <ValueItemRarityId>136</ValueItemRarityId>
     <CardIndex>93</CardIndex>
-    <Cost>3</Cost>
+    <Cost>2</Cost>
     <Faction>Scrat</Faction>
     <Title>BazookaScrat</Title>
     <Description>BazookaScratDescription</Description>
@@ -1733,7 +1742,6 @@
     <ImageName>Hypnotize</ImageName>
     <CursorSize>4.5</CursorSize>
     <Rarity>Supreme</Rarity>
-    <Variable>2</Variable>
     <RankRequirement>none</RankRequirement>
     <LogicScriptName>SpellHypnotize</LogicScriptName>
     <Buckets>SmallSpells</Buckets>
@@ -1921,6 +1929,7 @@
     <FilterTag>SwarmFilterTag</FilterTag>
     <Type>Minion</Type>
     <LogicScriptName>SummonMinionWithShield</LogicScriptName>
+    <LogicScriptName>SummonMinionWithMarksmanship</LogicScriptName>
     <PreviewAssetPath>ShieldedCrossbowDudesPreview</PreviewAssetPath>
     <ComboCardTrigger>TriggerOnOpponentControlsAllBridges</ComboCardTrigger>
     <MainUnitsToSummon>CrossbowDude</MainUnitsToSummon>
@@ -2789,7 +2798,7 @@
   <Cards>
     <ValueItemRarityId>302</ValueItemRarityId>
     <CardIndex>172</CardIndex>
-    <Cost>5</Cost>
+    <Cost>6</Cost>
     <Faction>Outlander</Faction>
     <Title>AIMWalker</Title>
     <Description>AIMWalkerDescription</Description>
@@ -2799,6 +2808,7 @@
     <Rarity>Supreme</Rarity>
     <LogicScriptName>AimbotScrapLogic</LogicScriptName>
     <LogicScriptName>UsesScraps</LogicScriptName>
+    <LogicScriptName>GetDroneEscort</LogicScriptName>
     <Variable>35</Variable>
     <Buckets>Tech</Buckets>
 	<PreviewAssetPath>DroneWalkerMarkmanshipPreview</PreviewAssetPath>
@@ -2960,7 +2970,7 @@
   <Cards>
     <ValueItemRarityId>351</ValueItemRarityId>
     <CardIndex>183</CardIndex>
-    <Cost>2</Cost>
+    <Cost>3</Cost>
     <Faction>Empyrean</Faction>
     <Title>RageThrowers</Title>
     <Description>RageThrowersDescription</Description>
@@ -2971,14 +2981,15 @@
     <InvertedAdditionalLogicScriptScriptName>RemoveSpearsOnSpawn</InvertedAdditionalLogicScriptScriptName>
     <MainUnitsToSummon>SpearThrowers</MainUnitsToSummon>
     <MainUnitsToSummon>SpearThrowers</MainUnitsToSummon>
+    <MainUnitsToSummon>SpearThrowers</MainUnitsToSummon>
     <PreviewAssetPath>RageThrowersPreview</PreviewAssetPath>
     <ImageName>RageThrowers</ImageName>
     <Rarity>Rare</Rarity>
     <RankRequirement>stone</RankRequirement>
     <Search>TantrumThrowers</Search>
     <LogicScriptName>SummonMinionEnraged</LogicScriptName>
-    <SummonFormation>HorizontalLine</SummonFormation>
     <Buckets>Rage</Buckets>
+
   </Cards>
   <Cards>
     <ValueItemRarityId>352</ValueItemRarityId>
@@ -3612,7 +3623,7 @@
     <ValueItemRarityId>1907</ValueItemRarityId>
     <AvailableOnPTR>true</AvailableOnPTR>
     <CardIndex>218</CardIndex>
-    <Cost>5</Cost>
+    <Cost>4</Cost>
     <Faction>Voidborne</Faction>
     <Title>MorgrulsRagers</Title>
     <Description>MorgrulsRagersDescription</Description>
@@ -3625,6 +3636,7 @@
     <Rarity>Rare</Rarity>
     <LogicScriptName>SummonOnVoidbornAffinityVoidbornMinionsRage</LogicScriptName>
     <LogicScriptName>SummonMinionEnraged</LogicScriptName>
+    <LogicScriptName>VoidbornWoundCostIncrease</LogicScriptName>
     <ComboCardTrigger>TriggerOnVoidbornAffinity</ComboCardTrigger>
     <Buckets>VoidborneArmy</Buckets>
   </Cards>
@@ -4732,7 +4744,7 @@
   <Cards>
     <ValueItemRarityId>2266</ValueItemRarityId>
     <CardIndex>276</CardIndex>
-    <Cost>9</Cost>
+    <Cost>10</Cost>
     <Faction>ZenChi</Faction>
     <Title>MonkeyBusiness</Title>
     <Description>MonkeyBusinessDescription</Description>
@@ -4754,7 +4766,7 @@
   <Cards>
     <ValueItemRarityId>2267</ValueItemRarityId>
     <CardIndex>277</CardIndex>
-    <Cost>5</Cost>
+    <Cost>4</Cost>
     <Faction>Empyrean</Faction>
     <Title>DamageAndHolyFire</Title>
     <Description>DamageAndHolyFireDescription</Description>
@@ -4777,6 +4789,8 @@
     <HighlightCursorRules>EnemyNegative</HighlightCursorRules>
     <HighlightCursorRules>AllyPositive</HighlightCursorRules>
     <HighlightCursorRules>IgnoreBuildings</HighlightCursorRules>
+    <LogicScriptName>EmpyreanArmyCostIncrease</LogicScriptName>
+    <ComboCardTrigger>TriggerOnEmpyreanAffinity</ComboCardTrigger>
 	<IndicatorCursorRules>Global</IndicatorCursorRules>
 	<IndicatorCursorRules>Default</IndicatorCursorRules>
   </Cards>
@@ -5394,6 +5408,7 @@
     <MainUnitsToSummon>QuestingMilitiaKnight</MainUnitsToSummon>
     <ComboCardTrigger>TriggerOnQuestCard</ComboCardTrigger>
     <LogicScriptName>SummonLegionnairesIfQuestIsCompleted</LogicScriptName>
+    <LogicScriptName>SummonMinionWithShield</LogicScriptName>
     <Variable>4</Variable>
     <ImageName>QuestingMilitiaKnight</ImageName>
     <Rarity>Legendary</Rarity>
@@ -5920,7 +5935,7 @@
     <MainUnitsToSummon>MalfunctioningDroneWalker</MainUnitsToSummon>
     <ImageName>MalfunctioningDroneWalker</ImageName>
     <Variable>30</Variable>
-    <LogicScriptName>GetDroneEscortIfScraps</LogicScriptName>
+    <LogicScriptName>GetSingleDroneEscortIfScraps</LogicScriptName>
     <LogicScriptName>UsesScraps</LogicScriptName>
     <Rarity>Rare</Rarity>
     <Buckets>Tech</Buckets>
@@ -6388,7 +6403,7 @@
   <Cards>
     <ValueItemRarityId>2516</ValueItemRarityId>
     <CardIndex>355</CardIndex>
-    <Cost>3</Cost>
+    <Cost>4</Cost>
     <Faction>Highlander</Faction>
     <Title>AdventurePartyLeader</Title>
     <Description>AdventurePartyLeaderDescription</Description>
@@ -6447,7 +6462,7 @@
     <IndicatorCursorRules>Global</IndicatorCursorRules>
     <FilterTag>AoEFilterTag</FilterTag>
     <FilterTag>CrowdControlFilterTag</FilterTag>
-    <CursorSize>6</CursorSize>
+    <CursorSize>5</CursorSize>
     <Buckets>BigSpells</Buckets>
     <Buckets>Frozen</Buckets>
     <HighlightCursorRules>EnemyNegative</HighlightCursorRules>
@@ -6706,7 +6721,7 @@
   <Cards>
     <ValueItemRarityId>2566</ValueItemRarityId>
     <CardIndex>371</CardIndex>
-    <Cost>6</Cost>
+    <Cost>4</Cost>
     <Faction>Empyrean</Faction>
     <Title>CityWatch</Title>
     <Description>CityWatchDescription</Description>
@@ -6721,6 +6736,7 @@
     <ImageName>CityWatch</ImageName>
     <Rarity>Supreme</Rarity>
     <LogicScriptName>ShuffleCityPatrolOnTrigger</LogicScriptName>
+    <LogicScriptName>EmpyreanArmyCostIncrease2</LogicScriptName>
     <VisualScriptName>
       <LogicScriptName>ShuffleCityPatrolOnTrigger</LogicScriptName>
       <VisualScriptName>ShuffleCityPatrolOnTriggerVisual</VisualScriptName>
@@ -7003,7 +7019,7 @@
   <Cards>
     <ValueItemRarityId>712120</ValueItemRarityId>
     <CardIndex>386</CardIndex>
-    <Cost>3</Cost>
+    <Cost>2</Cost>
     <Faction>Voidborne</Faction>
     <Title>NetherReach</Title>
     <Description>NetherReachDescription</Description>
@@ -7421,7 +7437,7 @@
   <Cards>
     <ValueItemRarityId>2704</ValueItemRarityId>
     <CardIndex>406</CardIndex>
-    <Cost>5</Cost>
+    <Cost>4</Cost>
     <Faction>Scrat</Faction>
     <Title>Kamikazeppelin</Title>
     <Description>KamikazeppelinDescription</Description>
@@ -7579,7 +7595,7 @@
     <ValueItemRarityId>257964</ValueItemRarityId>
     <CardIndex>415</CardIndex>
     <Cost>0</Cost>
-    <Faction>Voidborne</Faction>
+    <Faction>ZenChi</Faction>
     <Title>CloudCover</Title>
     <Category>AbilityCard</Category>
     <Description>CloudCoverDescription</Description>
@@ -7751,7 +7767,7 @@
   <Cards>
     <ValueItemRarityId>267945</ValueItemRarityId>
     <CardIndex>424</CardIndex>
-    <Cost>3</Cost>
+    <Cost>2</Cost>
     <Faction>Empyrean</Faction>
     <Title>FerventWarrior</Title>
     <Description>FerventWarriorDescription</Description>
@@ -7759,6 +7775,7 @@
     <MainUnitsToSummon>FerventWarrior</MainUnitsToSummon>
     <ImageName>Valorian_FervorPerk_Icon</ImageName>
     <Rarity>Legendary</Rarity>
+    <LogicScriptName>SummonMinionWithShield</LogicScriptName>
     <PreviewAssetPath>FerventWarriorVisual</PreviewAssetPath>
     <Category>AbilityCard</Category>
   </Cards>

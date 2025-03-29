@@ -114,6 +114,8 @@
         "Rarity": "Common",
         "RankRequirement": "stone",
         "Buckets": "Beefy",
+        "LogicScriptName": "GiveSlitherCohort",
+        "Variable": 1,
         "PreviewAssetPath": "LivingStatueVisual",
         "ManaCost": 5,
         "MainSummonAmounts*0": 1,
@@ -133,6 +135,8 @@
             "Flying",
             "VoidborneArmy"
         ],
+        "ComboCardTrigger": "TriggerOnVoidbornAffinity",
+        "LogicScriptName": "SummonWithRageOnVoidbornAffinity",
         "PreviewAssetPath": "DragonWhelpVisual",
         "ManaCost": 3,
         "MainSummonAmounts*0": 1,
@@ -971,6 +975,7 @@
         "ImageName": "DroneWalker",
         "Rarity": "Common",
         "Buckets": "Straight",
+        "LogicScriptName": "GetSingleDroneEscort",
         "PreviewAssetPath": "DroneWalkerVisual",
         "ManaCost": 4,
         "MainSummonAmounts*0": 1,
@@ -985,7 +990,6 @@
         "Type": "Minion",
         "MainUnitsToSummon": [
             "Legionair",
-            "Legionair",
             "Legionair"
         ],
         "ExtraUnitsToSummon": "Legionair",
@@ -993,14 +997,19 @@
         "PreviewAssetPath": "LegionairPreview",
         "LogicScriptName": [
             "SummonEmpyreanAffinity",
-            "EmpyreanArmyCostIncrease"
+            "EmpyreanArmyCostIncrease",
+            "ShuffleSingleCityPatrol"
         ],
+        "VisualScriptName": {
+            "LogicScriptName": "ShuffleCityPatrol",
+            "VisualScriptName": "ShuffleCityPatrolOnTriggerVisual"
+        },
         "ComboCardTrigger": "TriggerOnEmpyreanAffinity",
         "Rarity": "Common",
         "Buckets": "Beefy",
         "ManaCost": 4,
-        "MainSummonAmounts*0": 3,
-        "MainSummonAmount": 3,
+        "MainSummonAmounts*0": 2,
+        "MainSummonAmount": 2,
         "ExtraSummonAmounts*0": 1,
         "ExtraSummonAmount": 1
     },
@@ -1420,7 +1429,7 @@
     "Blastmancer": {
         "ValueItemRarityId": 79,
         "CardIndex": 63,
-        "Cost": 5,
+        "Cost": 4,
         "Faction": "Accursed",
         "Description": "BlastmancerDescription",
         "FilterTag": "AoEFilterTag",
@@ -1431,7 +1440,7 @@
         "RankRequirement": "none",
         "Buckets": "GlassCannons",
         "PreviewAssetPath": "BlastmancerVisual",
-        "ManaCost": 5,
+        "ManaCost": 4,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },
@@ -1959,7 +1968,7 @@
     "BazookaScrat": {
         "ValueItemRarityId": 136,
         "CardIndex": 93,
-        "Cost": 3,
+        "Cost": 2,
         "Faction": "Scrat",
         "Description": "BazookaScratDescription",
         "FilterTag": [
@@ -1972,7 +1981,7 @@
         "Rarity": "Common",
         "Buckets": "GlassCannons",
         "PreviewAssetPath": "BazookaScratVisual",
-        "ManaCost": 3,
+        "ManaCost": 2,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },
@@ -1995,7 +2004,6 @@
         "ImageName": "Hypnotize",
         "CursorSize": 4.5,
         "Rarity": "Supreme",
-        "Variable": 2,
         "RankRequirement": "none",
         "LogicScriptName": "SpellHypnotize",
         "Buckets": "SmallSpells",
@@ -2179,7 +2187,10 @@
         "Description": "ShieldedCrossbowDudesDescription",
         "FilterTag": "SwarmFilterTag",
         "Type": "Minion",
-        "LogicScriptName": "SummonMinionWithShield",
+        "LogicScriptName": [
+            "SummonMinionWithShield",
+            "SummonMinionWithMarksmanship"
+        ],
         "PreviewAssetPath": "ShieldedCrossbowDudesPreview",
         "ComboCardTrigger": "TriggerOnOpponentControlsAllBridges",
         "MainUnitsToSummon": [
@@ -3047,7 +3058,7 @@
     "AIMWalker": {
         "ValueItemRarityId": 302,
         "CardIndex": 172,
-        "Cost": 5,
+        "Cost": 6,
         "Faction": "Outlander",
         "Description": "AIMWalkerDescription",
         "Type": "Minion",
@@ -3056,12 +3067,13 @@
         "Rarity": "Supreme",
         "LogicScriptName": [
             "AimbotScrapLogic",
-            "UsesScraps"
+            "UsesScraps",
+            "GetDroneEscort"
         ],
         "Variable": 35,
         "Buckets": "Tech",
         "PreviewAssetPath": "DroneWalkerMarkmanshipPreview",
-        "ManaCost": 5,
+        "ManaCost": 6,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },
@@ -3222,7 +3234,7 @@
     "RageThrowers": {
         "ValueItemRarityId": 351,
         "CardIndex": 183,
-        "Cost": 2,
+        "Cost": 3,
         "Faction": "Empyrean",
         "Description": "RageThrowersDescription",
         "FilterTag": [
@@ -3234,6 +3246,7 @@
         "InvertedAdditionalLogicScriptScriptName": "RemoveSpearsOnSpawn",
         "MainUnitsToSummon": [
             "SpearThrowers",
+            "SpearThrowers",
             "SpearThrowers"
         ],
         "PreviewAssetPath": "RageThrowersPreview",
@@ -3242,11 +3255,10 @@
         "RankRequirement": "stone",
         "Search": "TantrumThrowers",
         "LogicScriptName": "SummonMinionEnraged",
-        "SummonFormation": "HorizontalLine",
         "Buckets": "Rage",
-        "ManaCost": 2,
-        "MainSummonAmounts*0": 2,
-        "MainSummonAmount": 2
+        "ManaCost": 3,
+        "MainSummonAmounts*0": 3,
+        "MainSummonAmount": 3
     },
     "PropellerHorde": {
         "ValueItemRarityId": 352,
@@ -3949,7 +3961,7 @@
         "ValueItemRarityId": 1907,
         "AvailableOnPTR": true,
         "CardIndex": 218,
-        "Cost": 5,
+        "Cost": 4,
         "Faction": "Voidborne",
         "Description": "MorgrulsRagersDescription",
         "FilterTag": "BufferFilterTag",
@@ -3963,11 +3975,12 @@
         "Rarity": "Rare",
         "LogicScriptName": [
             "SummonOnVoidbornAffinityVoidbornMinionsRage",
-            "SummonMinionEnraged"
+            "SummonMinionEnraged",
+            "VoidbornWoundCostIncrease"
         ],
         "ComboCardTrigger": "TriggerOnVoidbornAffinity",
         "Buckets": "VoidborneArmy",
-        "ManaCost": 5,
+        "ManaCost": 4,
         "MainSummonAmounts*0": 2,
         "MainSummonAmount": 2
     },
@@ -5236,7 +5249,7 @@
     "MonkeyBusiness": {
         "ValueItemRarityId": 2266,
         "CardIndex": 276,
-        "Cost": 9,
+        "Cost": 10,
         "Faction": "ZenChi",
         "Description": "MonkeyBusinessDescription",
         "PreviewAssetPath": [
@@ -5259,7 +5272,7 @@
         "LogicScriptName": "DropLifeBurstBerryOnDraw",
         "Variable": 1,
         "Buckets": "Berries",
-        "ManaCost": 9,
+        "ManaCost": 10,
         "MainSummonAmounts*0": 2,
         "MainSummonAmounts*1": 2,
         "MainSummonAmount": 4
@@ -5267,7 +5280,7 @@
     "DamageAndHolyFire": {
         "ValueItemRarityId": 2267,
         "CardIndex": 277,
-        "Cost": 5,
+        "Cost": 4,
         "Faction": "Empyrean",
         "Description": "DamageAndHolyFireDescription",
         "FilterTag": [
@@ -5281,7 +5294,10 @@
             "VisualScriptName": "SpellDamageAndHolyFireVisual"
         },
         "SpellIdentifier": "SpellDamageAndHolyFire",
-        "LogicScriptName": "SpellDamageAndHolyFire",
+        "LogicScriptName": [
+            "SpellDamageAndHolyFire",
+            "EmpyreanArmyCostIncrease"
+        ],
         "ImageName": "Smite",
         "CursorSize": 4.5,
         "Rarity": "Rare",
@@ -5293,11 +5309,12 @@
             "AllyPositive",
             "IgnoreBuildings"
         ],
+        "ComboCardTrigger": "TriggerOnEmpyreanAffinity",
         "IndicatorCursorRules": [
             "Global",
             "Default"
         ],
-        "ManaCost": 5
+        "ManaCost": 4
     },
     "TeleportAndHolyFire": {
         "ValueItemRarityId": 2268,
@@ -6029,7 +6046,10 @@
         "Type": "Minion",
         "MainUnitsToSummon": "QuestingMilitiaKnight",
         "ComboCardTrigger": "TriggerOnQuestCard",
-        "LogicScriptName": "SummonLegionnairesIfQuestIsCompleted",
+        "LogicScriptName": [
+            "SummonLegionnairesIfQuestIsCompleted",
+            "SummonMinionWithShield"
+        ],
         "Variable": 4,
         "ImageName": "QuestingMilitiaKnight",
         "Rarity": "Legendary",
@@ -6646,7 +6666,7 @@
         "ImageName": "MalfunctioningDroneWalker",
         "Variable": 30,
         "LogicScriptName": [
-            "GetDroneEscortIfScraps",
+            "GetSingleDroneEscortIfScraps",
             "UsesScraps"
         ],
         "Rarity": "Rare",
@@ -7195,7 +7215,7 @@
     "AdventurePartyLeader": {
         "ValueItemRarityId": 2516,
         "CardIndex": 355,
-        "Cost": 3,
+        "Cost": 4,
         "Faction": "Highlander",
         "Description": "AdventurePartyLeaderDescription",
         "Type": "Minion",
@@ -7218,7 +7238,7 @@
             "HealingFilterTag"
         ],
         "Buckets": "InTheMountains",
-        "ManaCost": 3,
+        "ManaCost": 4,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },
@@ -7269,7 +7289,7 @@
             "AoEFilterTag",
             "CrowdControlFilterTag"
         ],
-        "CursorSize": 6,
+        "CursorSize": 5,
         "Buckets": [
             "BigSpells",
             "Frozen"
@@ -7581,7 +7601,7 @@
     "CityWatch": {
         "ValueItemRarityId": 2566,
         "CardIndex": 371,
-        "Cost": 6,
+        "Cost": 4,
         "Faction": "Empyrean",
         "Description": "CityWatchDescription",
         "PreviewAssetPath": [
@@ -7601,7 +7621,10 @@
         ],
         "ImageName": "CityWatch",
         "Rarity": "Supreme",
-        "LogicScriptName": "ShuffleCityPatrolOnTrigger",
+        "LogicScriptName": [
+            "ShuffleCityPatrolOnTrigger",
+            "EmpyreanArmyCostIncrease2"
+        ],
         "VisualScriptName": {
             "LogicScriptName": "ShuffleCityPatrolOnTrigger",
             "VisualScriptName": "ShuffleCityPatrolOnTriggerVisual"
@@ -7609,7 +7632,7 @@
         "ComboCardTrigger": "TriggerOnEmpyreanAffinity",
         "Buckets": "EmpyreanArmy",
         "ExcludeFromRandom": true,
-        "ManaCost": 6,
+        "ManaCost": 4,
         "MainSummonAmounts*0": 1,
         "MainSummonAmounts*1": 2,
         "MainSummonAmount": 3
@@ -7940,7 +7963,7 @@
     "NetherReach": {
         "ValueItemRarityId": 712120,
         "CardIndex": 386,
-        "Cost": 3,
+        "Cost": 2,
         "Faction": "Voidborne",
         "Description": "NetherReachDescription",
         "VisualScriptName": {
@@ -7966,7 +7989,7 @@
         "AdditionalUnitTriggerScriptName": "AlwaysTrigger",
         "Category": "AbilityCard",
         "UnitPreviewCursorRules": "NetherReach",
-        "ManaCost": 3,
+        "ManaCost": 2,
         "MainSummonAmounts*0": 2,
         "MainSummonAmount": 2,
         "ExtraSummonAmounts*0": 4,
@@ -8429,7 +8452,7 @@
     "Kamikazeppelin": {
         "ValueItemRarityId": 2704,
         "CardIndex": 406,
-        "Cost": 5,
+        "Cost": 4,
         "Faction": "Scrat",
         "Description": "KamikazeppelinDescription",
         "Type": "SummonSpell",
@@ -8453,7 +8476,7 @@
             "InRange",
             "EnemyNegative"
         ],
-        "ManaCost": 5
+        "ManaCost": 4
     },
     "Scratat": {
         "ValueItemRarityId": 2703,
@@ -8614,7 +8637,7 @@
         "ValueItemRarityId": 257964,
         "CardIndex": 415,
         "Cost": 0,
-        "Faction": "Voidborne",
+        "Faction": "ZenChi",
         "Category": "AbilityCard",
         "Description": "CloudCoverDescription",
         "Type": "Passive",
@@ -8800,16 +8823,17 @@
     "FerventWarrior": {
         "ValueItemRarityId": 267945,
         "CardIndex": 424,
-        "Cost": 3,
+        "Cost": 2,
         "Faction": "Empyrean",
         "Description": "FerventWarriorDescription",
         "Type": "Minion",
         "MainUnitsToSummon": "FerventWarrior",
         "ImageName": "Valorian_FervorPerk_Icon",
         "Rarity": "Legendary",
+        "LogicScriptName": "SummonMinionWithShield",
         "PreviewAssetPath": "FerventWarriorVisual",
         "Category": "AbilityCard",
-        "ManaCost": 3,
+        "ManaCost": 2,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },

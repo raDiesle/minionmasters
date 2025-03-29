@@ -808,8 +808,8 @@
         "Id": 43,
         "Faction": "Scrat",
         "MaxHealth": 300,
-        "Damage": 40,
-        "AttackCooldown": 1200,
+        "Damage": 35,
+        "AttackCooldown": 1100,
         "AttackDelay": 900,
         "Radius": 2100,
         "Range": 11000,
@@ -1015,6 +1015,7 @@
         "ActorSkill": [
             "StayOnBridge",
             "TeleportBetweenBridges",
+            "StunAttackers",
             "SilentDeath"
         ],
         "CantAttack": true,
@@ -1110,7 +1111,7 @@
         "Faction": "Outlander",
         "MaxHealth": 150,
         "Damage": 40,
-        "AttackCooldown": 1100,
+        "AttackCooldown": 1500,
         "AttackDelay": 200,
         "Radius": 1500,
         "Range": 8000,
@@ -3687,9 +3688,12 @@
     "QuestingMilitiaKnight": {
         "Id": 205,
         "InheritFromId": 193,
-        "MaxHealth": 500,
+        "ActorSkill": [
+            "ReceiveReducedRangedDamage",
+            "ShieldOfLight"
+        ],
+        "MaxHealth": 450,
         "Faction": "Empyrean",
-        "ActorSkill": "ShieldOfLight",
         "Damage": 80,
         "AttackCooldown": 2100,
         "OverwritePicturePath": "Warrior",
@@ -4117,7 +4121,7 @@
     "LegendaryHighlandBear": {
         "Id": 225,
         "Faction": "Highlander",
-        "MaxHealth": 800,
+        "MaxHealth": 700,
         "Damage": 75,
         "AttackCooldown": 3000,
         "AttackDelay": 2000,
@@ -4291,7 +4295,7 @@
         "Id": 233,
         "InheritFromId": 168,
         "Damage": 70,
-        "MaxHealth": 250,
+        "MaxHealth": 210,
         "AttackCooldown": 1800,
         "ActorSkill": "IsFanaticSlave",
         "Faction": "Slither",
@@ -4682,7 +4686,7 @@
     "Denver": {
         "Id": 254,
         "Faction": "Slither",
-        "MaxHealth": 1000,
+        "MaxHealth": 1125,
         "Damage": 150,
         "AttackCooldown": 3000,
         "AttackDelay": 900,
@@ -5213,7 +5217,7 @@
         "Id": 280,
         "DescriptionLink": "AnkaheshDescription",
         "Faction": "Slither",
-        "MaxHealth": 700,
+        "MaxHealth": 600,
         "Damage": 60,
         "AttackCooldown": 1800,
         "AttackDelay": 600,

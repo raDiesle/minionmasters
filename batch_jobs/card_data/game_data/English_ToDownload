@@ -1826,7 +1826,7 @@
     },
     {
       "Id": "DisruptorPuffsDescription",
-      "Text": "[actorskillinfo:BridgeHugger,[r:BridgeHugger]].\\nWhile on a bridge it teleports to the other bridge every [math:[v:TeleportBetweenBridges.TELEPORT_COOLDOWN]/1000+[v:TeleportBetweenBridges.TELEPORT_DELAY]/1000] seconds and [actorskillinfo:StunBuff,[mec:[r:StunBuff]]] enemies for [math:[v:TeleportBetweenBridges.STUN_DURATION]/1000] seconds."
+      "Text": "[actorskillinfo:BridgeHugger,[r:BridgeHugger]].\\nWhile on a bridge it teleports to the other bridge every [math:[v:TeleportBetweenBridges.TELEPORT_COOLDOWN]/1000+[v:TeleportBetweenBridges.TELEPORT_DELAY]/1000] seconds and [actorskillinfo:StunBuff,[mec:[r:StunBuff]]] enemies for [math:[v:TeleportBetweenBridges.STUN_DURATION]/1000] seconds.\\n\\n[mec:Stuns] attackers for [math:[v:StunAttackers.STUN_DURATION]/1000] seconds."
     },
     {
       "Id": "PuffPlural",
@@ -2222,7 +2222,7 @@
     },
     {
       "Id": "HypnotizeDescription",
-      "Text": "[actorskillinfo:Cohort,[mec:[r:Cohort]]] ([cv:Hypnotize.Variable]).\\n\\nFor the duration Enemy Minions attack random friendly units within range, if able."
+      "Text": "For the duration Enemy Minions attack random friendly units within range, if able."
     },
     {
       "Id": "FairyBottle",
@@ -2318,7 +2318,7 @@
     },
     {
       "Id": "ShieldedCrossbowDudesDescription",
-      "Text": "[actorskillinfo:SingleShieldBuff,[mec:[r:SingleShieldBuff]]].\\n\\nIf your opponent controls both bridges, summon [cv:ShieldedCrossbowDudes.ExtraSummonAmount] extra."
+      "Text": "[actorskillinfo:SingleShieldBuff,[mec:[r:SingleShieldBuff]]], [mec:[r:MarksmanshipBuff]].\\n\\nIf your opponent controls both bridges, summon [cv:ShieldedCrossbowDudes.ExtraSummonAmount] extra."
     },
     {
       "Id": "CursedFireball",
@@ -7974,7 +7974,7 @@
     },
     {
       "Id": "AIMWalkerDescription",
-      "Text": "Start with [actorskillinfo:SingleShieldBuff,[mec:[r:SingleShieldBuff]]].\\n\\n[actorskillinfo:ScrapTech,[mec:[r:ScrapTech]]]: Spend [cv:AIMWalker.Variable] [r:Scraps] to gain [actorskillinfo:MarksmanshipBuff,[mec:[r:MarksmanshipBuff]]].\\nSpend [cv:AIMWalker.Variable] more to also summon 2 [actorskillinfo:BattleDrone,[r:BattleDrones]] with [actorskillinfo:MarksmanshipBuff,[mec:[r:MarksmanshipBuff]]]."
+      "Text": "Start with [actorskillinfo:SingleShieldBuff,[mec:[r:SingleShieldBuff]]], Inflicts [actorskillinfo:TargetedBuff,[mec:[r:TargetedBuff]]].\\nEscorted by 2 [actorskillinfo:BattleDrone,[r:BattleDrones]]\\n\\n[actorskillinfo:ScrapTech,[mec:[r:ScrapTech]]]: Spend [cv:AIMWalker.Variable] [r:Scraps] to gain [actorskillinfo:MarksmanshipBuff,[mec:[r:MarksmanshipBuff]]]."
     },
     {
       "Id": "MarksmanshipBuff",
@@ -10466,7 +10466,7 @@
     },
     {
       "Id": "CrystalConstructDescription",
-      "Text": "Gain [v:Give2ManaOnSpawn.GIVE_MANA] Mana on death."
+      "Text": "[actorskillinfo:FrenzyBuff,[mec:[r:FrenzyBuff]]].\\n\\nGain [v:Give2ManaOnSpawn.GIVE_MANA] Mana on death."
     },
     {
       "Id": "ArcaneBolt",
@@ -12134,7 +12134,7 @@
     },
     {
       "Id": "MorgrulsRagersDescription",
-      "Text": "[actorskillinfo:RageBuff,[r:RageBuff]]\\n\\n[actorskillinfo:VoidborneWound,[mec:[r:VoidborneWound]]]: When [r:MorgrulsRagers] are Summoned, all friendly Minions gain [actorskillinfo:RageBuff,[mec:[r:RageBuff]]]."
+      "Text": "[actorskillinfo:RageBuff,[r:RageBuff]]\\n\\n[actorskillinfo:VoidborneWound,[mec:[r:VoidborneWound]]]: Increase Mana cost by [v:VoidbornWoundCostIncrease.INCREASE] Mana and gain: When [r:MorgrulsRagers] are Summoned, all friendly Minions gain [actorskillinfo:RageBuff,[mec:[r:RageBuff]]]."
     },
     {
       "Id": "VoidborneWoundDescription",
@@ -16486,7 +16486,7 @@
     },
     {
       "Id": "DamageAndHolyFireDescription",
-      "Text": "Deal damage to ground Minions in an area.\\n\\n[actorskillinfo:EmpyreanArmy,[mec:[r:EmpyreanArmy]]]: Set [actorskillinfo:HolyFireBuff,[mec:[r:HolyFireBuff]]] to the ground."
+      "Text": "Deal damage to ground Minions in an area.\\n\\n[actorskillinfo:EmpyreanArmy,[mec:[r:EmpyreanArmy]]]: Incease Mana cost by 1 and set [actorskillinfo:HolyFireBuff,[mec:[r:HolyFireBuff]]] to the ground."
     },
     {
       "Id": "MonkeyFistfighterStaff",
@@ -17886,7 +17886,7 @@
     },
     {
       "Id": "WardancerAssassinDescription",
-      "Text": "[actorskillinfo:ManaSurgeBuff,[mec:[r:ManaSurgeBuff]]]. [actorskillinfo:StealthBuff,[mec:[r:StealthBuff]]].\\nWhile [actorskillinfo:Invisible,[mec:[r:Invisible]]]: reduce Speed to [v:StealthAssassinationAttack.STEALTH_SPEED], and if an enemy is in range teleport behind it and do a [actorskillinfo:CrystallineSweep,[mec:[r:CrystallineSweep]]].\\n\\nAlso do a [actorskillinfo:CrystallineSweep,[mec:[r:CrystallineSweep]]] whenever you play a spell card."
+      "Text": "[actorskillinfo:ManaSurgeBuff,[mec:[r:ManaSurgeBuff]]]. [actorskillinfo:StealthBuff,[mec:[r:StealthBuff]]].\\nWhile [actorskillinfo:Invisible,[mec:[r:Invisible]]]: reduce Speed to [v:StealthAssassinationAttack.STEALTH_SPEED], and if an enemy is in range teleport behind it and do a [actorskillinfo:CrystallineSweep,[mec:[r:CrystallineSweep]]]."
     },
     {
       "Id": "MountedElfLord",
@@ -18518,7 +18518,7 @@
     },
     {
       "Id": "AbilityMassiveDamageInAreaDescription",
-      "Text": "Add the card [mec:[r:BrotherHeroMasterCard]] to [r:BrotherHeroFirstName]'s deck.\\n\\n[mec:[r:BrotherHeroMasterCard]]\\n[r:BrotherHeroMasterCardDescription]"
+      "Text": "Add a one-use copy of the card [mec:[r:BrotherHeroMasterCard]] to [r:BrotherHeroFirstName]'s deck every [math:[v:AddSearingLightOnTimer.COOLDOWN]/1000] seconds.\\n\\n[mec:[r:BrotherHeroMasterCard]]\\n[r:BrotherHeroMasterCardDescription]"
     },
     {
       "Id": "AbilityDoubleDamageAndHealing",
@@ -18590,7 +18590,7 @@
     },
     {
       "Id": "QuestingMilitiaKnightDescription",
-      "Text": "[actorskillinfo:ShieldOfLight,[mec:[r:ShieldOfLight]]]\\n\\nWhenever Avea shields at least one other Minion, gain [actorskillinfo:LegionBuff,[mec:[r:LegionBuff] (1)]]."
+      "Text": "[actorskillinfo:SingleShieldBuff,[mec:[r:SingleShieldBuff]]], [actorskillinfo:BulwarkBuff,[mec:[r:BulwarkBuff]]], [actorskillinfo:ShieldOfLight,[mec:[r:ShieldOfLight]]]\\n\\nWhenever Avea shields at least one other Minion, gain [actorskillinfo:LegionBuff,[mec:[r:LegionBuff] (1)]]."
     },
     {
       "Id": "ShieldOfLight",
@@ -19134,7 +19134,7 @@
     },
     {
       "Id": "PasiveSkillSummonRagePickUpDescription",
-      "Text": "Summon an Ember of Flame Every 25 seconds on a random bridge. When a friendly Minion picks it up, all nearby friendly Minions gain [actorskillinfo:RageBuff,[mec:[r:RageBuff]]]\\n\\n[mec:[r:RageBuff]]\\n[r:RageBuffDescription]"
+      "Text": "Summon an Ember of Flame Every 30 seconds on a random bridge. When a friendly Minion picks it up, all nearby friendly Minions gain [actorskillinfo:RageBuff,[mec:[r:RageBuff]]]\\n\\n[mec:[r:RageBuff]]\\n[r:RageBuffDescription]"
     },
     {
       "Id": "PasiveSkillSUpgradeRagePickUps",
@@ -20198,7 +20198,7 @@
     },
     {
       "Id": "MalfunctioningDroneWalkerDescription",
-      "Text": "[actorskillinfo:ScrapTech,[mec:[r:ScrapTech]]]: Spend [v:GetDroneEscortIfScraps.SCRAP_COST] [r:Scraps] to summon 2 [actorskillinfo:BattleDrone,[r:BattleDrones]] to protect [r:MalfunctioningDroneWalker]."
+      "Text": "[actorskillinfo:ScrapTech,[mec:[r:ScrapTech]]]: Spend [v:GetDroneEscortIfScraps.SCRAP_COST] [r:Scraps] to summon a [actorskillinfo:BattleDrone,[r:BattleDrone]] to protect [r:MalfunctioningDroneWalker]."
     },
     {
       "Id": "SpinningProjectileFromHero",
@@ -21266,7 +21266,7 @@
     },
     {
       "Id": "CityWatchDescription",
-      "Text": "Summon a [actorinfo:Legionair,[r:Legionair]] and 2 [actorskillinfo:CrossbowDude,[r:CrossbowDudes]].\\n\\n[actorskillinfo:EmpyreanArmy,[mec:[r:EmpyreanArmy]]]: [actorskillinfo:LegionBuff,[mec:[r:LegionBuff] (3)]]."
+      "Text": "Summon a [actorinfo:Legionair,[r:Legionair]] and 2 [actorskillinfo:CrossbowDude,[r:CrossbowDudes]].\\n\\n[actorskillinfo:EmpyreanArmy,[mec:[r:EmpyreanArmy]]]: Increase Mana cost by [v:EmpyreanArmyCostIncrease2.INCREASE] and gain [actorskillinfo:LegionBuff,[mec:[r:LegionBuff] (3)]]."
     },
     {
       "Id": "CardBuffGorrakkGateEliteSwarmerDescription",
@@ -27614,7 +27614,7 @@
     },
     {
       "Id": "LichCurseBuffDescription",
-      "Text": "When killed, Minion comes alive under your control after a delay.\\nIt has -50% max health and damage and is [mec:[r:CursedBuff]].\\n\\n[mec:[r:CursedBuff]]\\n[r:CursedBuffDescription]"
+      "Text": "Affected Minion is [mec:[r:CursedBuff]] and when killed the Minion comes alive under your control after a delay.\\nIt has -50% max health and damage and is [mec:[r:CursedBuff]].\\n\\n[mec:[r:CursedBuff]]\\n[r:CursedBuffDescription]"
     },
     {
       "Id": "BombardBuff",
@@ -30070,7 +30070,7 @@
     },
     {
       "Id": "AnkaheshDescription",
-      "Text": "Inflicts [math:[v:PoisonAndSpiderlingsOnBasicAttack.POISON_DURATION]/1000] seconds of [actorskillinfo:PoisonBuff,[mec:[r:PoisonBuff]]] and [actorskillinfo:PoisonAndSpiderlingsOnBasicAttack,[mec:[r:PoisonAndSpiderlingsOnBasicAttack]]] on attack.\\n\\nAttack deals bonus damage equal to the remaining [actorskillinfo:PoisonBuff,[mec:[r:PoisonBuff]]] damage on the target.\\n\\n[actorskillinfo:SacrificeBuff,[mec:[r:SacrificeBuff]]]: All your Slitherbound die, each bursting into 3 [actorskillinfo:Spiderlings,[mec:[r:Spiderlings]]]."
+      "Text": "[actorskillinfo:ThickHide,[mec:[r:ThickHide]]].\\n\\nInflicts [math:[v:PoisonAndSpiderlingsOnBasicAttack.POISON_DURATION]/1000] seconds of [actorskillinfo:PoisonBuff,[mec:[r:PoisonBuff]]] and [actorskillinfo:PoisonAndSpiderlingsOnBasicAttack,[mec:[r:PoisonAndSpiderlingsOnBasicAttack]]] on attack.\\n\\nAttack deals bonus damage equal to the remaining [actorskillinfo:PoisonBuff,[mec:[r:PoisonBuff]]] damage on the target.\\n\\n[actorskillinfo:SacrificeBuff,[mec:[r:SacrificeBuff]]]: All your Slitherbound die, each bursting into 3 [actorskillinfo:Spiderlings,[mec:[r:Spiderlings]]]."
     },
     {
       "Id": "PoisonAndAOEOnBasicAttack",
@@ -30186,7 +30186,7 @@
     },
     {
       "Id": "EndlessRageDescription",
-      "Text": "Gain 7 mana over 7 seconds. Spawn both Embers of Flame. Embers are not consumed while [mec:[r:EndlessRage]] is active."
+      "Text": "Gain 7 mana over 10 seconds. Spawn both Embers of Flame. Embers are not consumed while [mec:[r:EndlessRage]] is active."
     },
     {
       "Id": "RitesOfTheDead",
@@ -30222,7 +30222,7 @@
     },
     {
       "Id": "RunicAttunementDescription",
-      "Text": "Gain [mec:[r:Runestone]s] depending on mana spent.\\n[r:RunestoneDescription]\\n\\nEach time you spend [v:RuneStoneOnManaSpent.MINION_MANA_SPEND_DELTA] mana on [yellow:Minion] cards, gain a [mec:[r:FrostStone]] [r:Runestone] card.\\n[mec:[r:FrostStone]]: Gets [mec:[r:TauntBuff]] and a 300 Health shield that inflicts Frozen on nearby enemy ground Minions when depleted.\\n\\nEach time you spend [v:RuneStoneOnManaSpent.SPELL_MANA_SPEND_DELTA] mana on [yellow:Spell] cards, gain a [mec:[r:AncestryStone]] [r:Runestone] card.\\n[mec:[r:AncestryStone]]: Summons 2 [r:Ancestor] Minions.\\n[r:AncestorDescription]\\n\\nEach time you spend [v:RuneStoneOnManaSpent.BUILDING_MANA_SPEND_DELTA] mana on [yellow:Building] cards, gain a [mec:[r:WindStone]] [r:Runestone] card.\\n[mec:[r:WindStone]]: +6 Range and deals 200 damage."
+      "Text": "Gain [mec:[r:Runestone]s] depending on mana spent.\\n[r:RunestoneDescription]\\n\\nEach time you spend [v:RuneStoneOnManaSpent.MINION_MANA_SPEND_DELTA] mana on [yellow:Minion] cards, gain a [mec:[r:WindStone]] [r:Runestone] card.\\n[mec:[r:WindStone]]: +6 Range and deals 200 damage.\\n\\nEach time you spend [v:RuneStoneOnManaSpent.SPELL_MANA_SPEND_DELTA] mana on [yellow:Spell] cards, gain a [mec:[r:AncestryStone]] [r:Runestone] card.\\n[mec:[r:AncestryStone]]: Summons 2 [r:Ancestor] Minions.\\n[r:AncestorDescription]\\n\\nEach time you spend [v:RuneStoneOnManaSpent.BUILDING_MANA_SPEND_DELTA] mana on [yellow:Building] cards, gain a [mec:[r:FrostStone]] [r:Runestone] card.\\n[mec:[r:FrostStone]]: Gets [mec:[r:TauntBuff]] and a 300 Health shield that inflicts Frozen on nearby enemy ground Minions when depleted."
     },
     {
       "Id": "XanianSpellbook",
@@ -30459,6 +30459,18 @@
     {
       "Id": "BP45Title",
       "Text": "Scratpocalypse"
+    },
+    {
+      "Id": "BP46Title",
+      "Text": "STR1K3 F0RC3"
+    },
+    {
+      "Id": "BP47Title",
+      "Text": "Monkey Business"
+    },
+    {
+      "Id": "BP48Title",
+      "Text": "Shackles of the Serpent"
     }
   ]
 }

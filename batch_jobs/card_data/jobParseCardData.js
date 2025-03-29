@@ -37,6 +37,7 @@ function getCardData(card){
     object.name = getText(card.Title, dataMaps);
     object.description = getText(card.Description, dataMaps);
     object.manacost = card.Cost;
+    object.CardCount = "?";
     object.type = card.Type;
     object.rarity = makeArray(card.Rarity)[0];
     object.Faction = card.Faction;

@@ -399,6 +399,9 @@
     "EmpyreanArmyCostIncrease2": {
         "INCREASE": "2"
     },
+    "GetSingleDroneEscortIfScraps": {
+        "SCRAP_COST": "30"
+    },
     "BecomeActiveOnManaSurgePreload": {
         "ARCANERING_CARD_ID": "263"
     },
@@ -421,7 +424,7 @@
         "COST_REDUCTION": "2"
     },
     "EndlessRageSpell": {
-        "DURATION": "7000",
+        "DURATION": "10000",
         "MANA": "7"
     },
     "PerkAirStrike": {
@@ -2083,7 +2086,7 @@
     },
     "RegeneratingShield": {
         "NO_DAMAGE_TIME": "2000",
-        "SHIELD_AMOUNT": "100",
+        "SHIELD_AMOUNT": "75",
         "SHIELD_REGEN_PER_TICK": "2"
     },
     "SkillGunKataOnTrigger": {
@@ -2206,7 +2209,8 @@
         "ROCKET_HIT_DELAY": "1700",
         "ROCKET_DAMAGE": "35",
         "ROCKET_COUNT": "6",
-        "ROCKET_RANGE": "20000"
+        "ROCKET_RANGE": "20000",
+        "ROCKET_RADIUS": "2000"
     },
     "FlameThrowerOrGrapplingHook": {
         "HOOK_MIN_RANGE": "4000",
@@ -2620,7 +2624,7 @@
         "STUN_DURATION": "2000"
     },
     "StunAttackers": {
-        "STUN_DURATION": "2000"
+        "STUN_DURATION": "3000"
     },
     "GainHealthOnFriendlyRevelry": {
         "HEAL_AMOUNT": "100"

@@ -829,8 +829,8 @@
     <VisualPrefabPath>LaserTurretVisual</VisualPrefabPath>
     <Faction>Scrat</Faction>
     <MaxHealth>300</MaxHealth>
-    <Damage>40</Damage>
-    <AttackCooldown>1200</AttackCooldown>
+    <Damage>35</Damage>
+    <AttackCooldown>1100</AttackCooldown>
     <AttackDelay>900</AttackDelay>
     <Radius>2100</Radius>
     <Range>11000</Range>
@@ -1033,6 +1033,7 @@
     <Speed>10</Speed>
     <ActorSkill>StayOnBridge</ActorSkill>
     <ActorSkill>TeleportBetweenBridges</ActorSkill>
+    <ActorSkill>StunAttackers</ActorSkill>
     <CantAttack>true</CantAttack>
     <FromMasterCard>false</FromMasterCard>
     <ActorSkill>SilentDeath</ActorSkill>
@@ -1124,7 +1125,7 @@
     <Faction>Outlander</Faction>
     <MaxHealth>150</MaxHealth>
     <Damage>40</Damage>
-    <AttackCooldown>1100</AttackCooldown>
+    <AttackCooldown>1500</AttackCooldown>
     <AttackDelay>200</AttackDelay>
     <Radius>1500</Radius>
     <Range>8000</Range>
@@ -3651,7 +3652,8 @@
     <Id>205</Id>
     <InheritFromId>193</InheritFromId>
     <VisualPrefabPath>QuestingMilitiaKnightVisual</VisualPrefabPath>
-    <MaxHealth>500</MaxHealth>
+    <ActorSkill>ReceiveReducedRangedDamage</ActorSkill>
+    <MaxHealth>450</MaxHealth>
     <Faction>Empyrean</Faction>
     <ActorSkill>ShieldOfLight</ActorSkill>
   </Actors>
@@ -4009,7 +4011,7 @@
     <Id>225</Id>
     <VisualPrefabPath>LegendaryHighlandBearVisual</VisualPrefabPath>
     <Faction>Highlander</Faction>
-    <MaxHealth>800</MaxHealth>
+    <MaxHealth>700</MaxHealth>
     <Damage>75</Damage>
     <AttackCooldown>3000</AttackCooldown>
     <AttackDelay>2000</AttackDelay>
@@ -4153,7 +4155,7 @@
     <InheritFromId>168</InheritFromId>
     <VisualPrefabPath>FanaticSlitherSlaveVisual</VisualPrefabPath>
     <Damage>70</Damage>
-    <MaxHealth>250</MaxHealth>
+    <MaxHealth>210</MaxHealth>
     <AttackCooldown>1800</AttackCooldown>
     <ActorSkill>IsFanaticSlave</ActorSkill>
   </Actors>
@@ -4505,7 +4507,7 @@
     <Id>254</Id>
     <VisualPrefabPath>DenverVisual</VisualPrefabPath>
     <Faction>Slither</Faction>
-    <MaxHealth>1000</MaxHealth>
+    <MaxHealth>1125</MaxHealth>
     <Damage>150</Damage>
     <AttackCooldown>3000</AttackCooldown>
     <AttackDelay>900</AttackDelay>
@@ -4944,7 +4946,7 @@
     <VisualPrefabPath>AnkaheshVisual</VisualPrefabPath>
     <DescriptionLink>AnkaheshDescription</DescriptionLink>
     <Faction>Slither</Faction>
-    <MaxHealth>700</MaxHealth>
+    <MaxHealth>600</MaxHealth>
     <Damage>60</Damage>
     <AttackCooldown>1800</AttackCooldown>
     <AttackDelay>600</AttackDelay>
