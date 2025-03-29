@@ -1,0 +1,1314 @@
+{
+    "Explode": {
+        "Damage": 200,
+        "TowerDamage": 100,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "HealingFireball": {
+        "Damage": 0,
+        "Radius": 6000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions",
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "Healing",
+                "Value": 350,
+                "OverrideIconPath": "Healing"
+            }
+        }
+    },
+    "LightningBolt": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "AllIn": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "BridgeGuards": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "BorderBuffer": 2500,
+        "AIPlayHints": "None"
+    },
+    "BlindDate": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "BorderBuffer": 1000,
+        "AIPlayHints": "Defensive_Summoning_Spell"
+    },
+    "Freeze": {
+        "Damage": 0,
+        "Radius": 4000,
+        "Duration": 4000,
+        "EffectDelay": 500,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "Stun": {
+        "Damage": 25,
+        "TowerDamage": 25,
+        "Radius": 2500,
+        "Duration": 2000,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "Beam": {
+        "Damage": 600,
+        "TowerDamage": 150,
+        "Radius": 3000,
+        "Duration": 2800,
+        "EffectDelay": 700,
+        "Delay": 700,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "FuturePast": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "CallToArms": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "TrickSwap": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 4000,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Enemies_On_Bridges"
+    },
+    "BlackHole": {
+        "Damage": 0,
+        "Radius": 5000,
+        "Duration": 5000,
+        "EffectDelay": 1000,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Minions_Neutral"
+    },
+    "BurnTheBridges": {
+        "Damage": 200,
+        "Radius": 0,
+        "Duration": 5000,
+        "EffectDelay": 0,
+        "Delay": 200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Enemies_On_Bridges"
+    },
+    "Infiltrators": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "BorderBuffer": 1000,
+        "AIPlayHints": "None"
+    },
+    "Barrage": {
+        "Damage": 50,
+        "TowerDamage": 50,
+        "Radius": 8000,
+        "Duration": 0,
+        "EffectDelay": 750,
+        "Delay": 1500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "Rampage": {
+        "Damage": 0,
+        "Radius": 6000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "RandomReinforcements": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "BorderBuffer": 800,
+        "AIPlayHints": "None"
+    },
+    "ChainLightning": {
+        "Damage": 100,
+        "TowerDamage": 100,
+        "Radius": 6000,
+        "Duration": 2000,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "BlastEntry": {
+        "Damage": 50,
+        "TowerDamage": 50,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 4000,
+        "TravelSpeed": 0,
+        "BorderBuffer": 1500,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "BridgeImmunity": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Enemies_On_Bridges"
+    },
+    "SacrificeAndDealDamage": {
+        "Damage": 200,
+        "Radius": 3000,
+        "Duration": 1000,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "TimeBombAndDealDamage": {
+        "Damage": 200,
+        "TowerDamage": 10,
+        "Radius": 3000,
+        "Duration": 2500,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "Hypnotize": {
+        "Damage": 0,
+        "Radius": 4500,
+        "Duration": 4000,
+        "EffectDelay": 250,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "SpellShrinkingHealAreaOverTime": {
+        "Damage": 400,
+        "Radius": 7000,
+        "Duration": 15000,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "DemolishRun": {
+        "Damage": 0,
+        "Radius": 5000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "MultipleExplosion": {
+        "Damage": 180,
+        "TowerDamage": 18,
+        "Radius": 9000,
+        "Duration": 5000,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "MultipleExplosionControlled": {
+        "Damage": 150,
+        "Radius": 9000,
+        "Duration": 5000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "GiveSpirits": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellCloneMinion": {
+        "Damage": 0,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellAggroNearbyEnemies": {
+        "Damage": 0,
+        "Radius": 2000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "ArcaneMissiles": {
+        "Damage": 30,
+        "TowerDamage": 3,
+        "Radius": 500,
+        "Duration": 4000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 20000,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
+    },
+    "FuturePastBig": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "SpellManaBurnBolt": {
+        "Damage": 100,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 5000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellCurseFireball": {
+        "Damage": 0,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ArcaneNullifier": {
+        "Damage": 100,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 1200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellMassRecall": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellFocusSingleTargetBoost": {
+        "Damage": 40,
+        "TowerDamage": 15,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellShieldAlliesInArea": {
+        "Damage": 0,
+        "Radius": 6000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "ShadowDance": {
+        "Damage": 0,
+        "Radius": 2000,
+        "Duration": 200,
+        "EffectDelay": 250,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "GunKata": {
+        "Damage": 0,
+        "Radius": 2000,
+        "Duration": 200,
+        "EffectDelay": 250,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "SpellPowerSkillShot": {
+        "Damage": 250,
+        "Radius": 2000,
+        "Duration": 0,
+        "EffectDelay": 500,
+        "Delay": 200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Minions_With_TravelSpeed"
+    },
+    "SummonArmoredScrats": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "SpellRitualCleaver": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SummonScratsOnBridges": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 750,
+        "TravelSpeed": 0,
+        "AIPlayHints": "None"
+    },
+    "GamblersBall": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "BlinkMinionsForward": {
+        "Damage": 0,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions",
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "Teleport distance",
+                "Value": 6,
+                "OverrideIconPath": "Range"
+            }
+        }
+    },
+    "SpellDealDamageAndEnrage": {
+        "Damage": 80,
+        "TowerDamage": 80,
+        "Radius": 4000,
+        "Duration": 1000,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellStunHighestHealthKillIfLowHealth": {
+        "Radius": 4500,
+        "Duration": 5000,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
+    },
+    "StunSuperCharged": {
+        "Damage": 40,
+        "Radius": 3000,
+        "Duration": 2000,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ChainLightningSuperCharged": {
+        "Damage": 100,
+        "Radius": 7000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellSummonSentryOnNextPlayedRangedMinion": {
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ManaPuffMadness": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 600,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "WheelOfDoom": {
+        "Damage": 300,
+        "TowerDamage": 150,
+        "Radius": 2500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 25000,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Minions_With_TravelSpeed"
+    },
+    "SpellGiveLycanthropy": {
+        "Damage": 0,
+        "Radius": 6000,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Ground_Minions"
+    },
+    "SpellBatSwarm": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 5000,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellHowlingMoon": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_All_Minions_Negative"
+    },
+    "SpellSpawnSquirePuff": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 750,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellGorrakkGate": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 750,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellVoidGlyph": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 750,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellPoisonball": {
+        "Damage": 0,
+        "Radius": 6000,
+        "Duration": 8000,
+        "EffectDelay": 750,
+        "Delay": 1500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "SpellPoisonMortar": {
+        "Damage": 0,
+        "Radius": 3000,
+        "Duration": 8000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "SpellJungleRumble": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Anywhere"
+    },
+    "DragonFlameLine": {
+        "Damage": 175,
+        "TowerDamage": 15,
+        "Radius": 3000,
+        "Duration": 3000,
+        "EffectDelay": 0,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellDancer": {
+        "Damage": 130,
+        "TowerDamage": 13,
+        "Radius": 3000,
+        "Duration": 3000,
+        "EffectDelay": 0,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "TollOfTheDead": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Anywhere"
+    },
+    "NyrvirsSlumber": {
+        "Damage": 120,
+        "Radius": 3000,
+        "Duration": 4000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Anywhere"
+    },
+    "SpawnOfFury": {
+        "Damage": 0,
+        "Radius": 3000,
+        "Duration": 3000,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SealofKorrrgoth": {
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "BookOfDeadDrain": {
+        "Damage": 100,
+        "Radius": 60000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 2200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "BookOfDeadDrain2": {
+        "Damage": 100,
+        "Radius": 8000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 2200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "BookOfDead": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Anywhere"
+    },
+    "MultipleRockets": {
+        "Damage": 40,
+        "TowerDamage": 20,
+        "Radius": 3500,
+        "Duration": 3000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellStormbolt": {
+        "Damage": 200,
+        "TowerDamage": 200,
+        "Radius": 0,
+        "Duration": 2000,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellBarrier": {
+        "Damage": 0,
+        "Radius": 5000,
+        "Duration": 5000,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellDealDamageInVerticalLine": {
+        "Damage": 60,
+        "Radius": 2000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellCrystalVortex": {
+        "Damage": 65,
+        "Radius": 7000,
+        "Duration": 5000,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Neutral_Enemy_Damage"
+    },
+    "SpellHealAndDisappear": {
+        "Radius": 4500,
+        "Duration": 6000,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellFreezeAndHeal": {
+        "Radius": 4500,
+        "Duration": 3000,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellCirclingProjectiles": {
+        "Damage": 35,
+        "TowerDamage": 15,
+        "Radius": 4000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellOwlsAttack": {
+        "Damage": 154,
+        "TowerDamage": 77,
+        "Radius": 5500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "Kamikazeppelin": {
+        "Damage": 160,
+        "TowerDamage": 80,
+        "Radius": 5000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ClearSkies": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_All_Minions_Positive",
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "Healing",
+                "Value": 250,
+                "OverrideIconPath": "Healing"
+            }
+        }
+    },
+    "SpellPlantBerries": {
+        "Damage": 0,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellDamageAndHolyFire": {
+        "Damage": 150,
+        "TowerDamage": 0,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
+    },
+    "SpellHolyFire": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
+    },
+    "SpellTeleportAndHolyFire": {
+        "Damage": 0,
+        "Radius": 4000,
+        "EffectDelay": 0,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Ground_Minions"
+    },
+    "SpellShootMultipleShockRocks": {
+        "Damage": 25,
+        "TowerDamage": 25,
+        "Radius": 3000,
+        "Duration": 2000,
+        "EffectDelay": 1000,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellDealDamageTwiceInArea": {
+        "Damage": 150,
+        "TowerDamage": 50,
+        "Radius": 2500,
+        "Duration": 0,
+        "EffectDelay": 500,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellSummonReinforcements": {
+        "Damage": 0,
+        "Radius": 4000,
+        "EffectDelay": 0,
+        "Delay": 3500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Ground_Minions"
+    },
+    "SpellSlowAndDealDamageInArea": {
+        "Damage": 150,
+        "TowerDamage": 0,
+        "Radius": 3500,
+        "Duration": 10000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellShieldFromOutsideAttacks": {
+        "Damage": 0,
+        "Radius": 5000,
+        "Duration": 3000,
+        "EffectDelay": 500,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "GiveSpiritAndAbsorbDamage": {
+        "Damage": 0,
+        "Radius": 5000,
+        "Duration": 5000,
+        "EffectDelay": 500,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SummonUndyingCorpse": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_Anywhere"
+    },
+    "GroundMinionsAndSummonSkeletons": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 4500,
+        "Duration": 6000,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ExplodeUndyingCorpses": {
+        "Damage": 80,
+        "TowerDamage": 80,
+        "Radius": 3000,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ExplodeUndyingCorpsesTrigger": {
+        "Damage": 100,
+        "TowerDamage": 100,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 250,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "DealDamageConnected": {
+        "Damage": 80,
+        "TowerDamage": 40,
+        "Radius": 6500,
+        "Duration": 0,
+        "EffectDelay": 500,
+        "Delay": 1200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "DealDamageAndGiveFear": {
+        "Damage": 140,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "FearRadius",
+                "Value": 4.5,
+                "OverrideIconPath": "Radius"
+            }
+        },
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "SpeedAdjustAndHeal": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 0,
+        "Duration": 6000,
+        "EffectDelay": 0,
+        "Delay": 800,
+        "TravelSpeed": 0,
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "Healing",
+                "Value": 150,
+                "OverrideIconPath": "Healing"
+            }
+        },
+        "AIPlayHints": "Target_All_Minions_Friendly_Positive_Enemy_Damage"
+    },
+    "BrotherHeroMasterCard": {
+        "Damage": 250,
+        "TowerDamage": 250,
+        "Radius": 8000,
+        "Duration": 2500,
+        "EffectDelay": 0,
+        "Delay": 900,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "CombustMinionsOnLowHP": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellExplodeAndRollAndBlueGolem": {
+        "Damage": 300,
+        "TowerDamage": 0,
+        "Radius": 6000,
+        "Duration": 2000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "DealWhipDamageInArea": {
+        "Damage": 200,
+        "TowerDamage": 20,
+        "Radius": 2000,
+        "Duration": 7000,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "DealDamageOnSacrifice": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 0,
+        "Duration": 3500,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "ResolveAllPoisonDamage": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 15000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "FreezeAllNearbyEnemyMinions": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 8000,
+        "Duration": 0,
+        "EffectDelay": 1100,
+        "Delay": 900,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellClusterGrenade": {
+        "Damage": 50,
+        "TowerDamage": 25,
+        "Radius": 3000,
+        "Duration": 0,
+        "EffectDelay": 500,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellAirStrike": {
+        "Damage": 180,
+        "TowerDamage": 90,
+        "Radius": 2000,
+        "Duration": 2000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "PerkAirStrike": {
+        "Damage": 180,
+        "TowerDamage": 90,
+        "Radius": 4000,
+        "Duration": 2000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "MoveScratSpawner": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellDealDamageOrGiveSouls": {
+        "Damage": 80,
+        "TowerDamage": 0,
+        "Radius": 4500,
+        "Duration": 3000,
+        "EffectDelay": 0,
+        "Delay": 1500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "SpinningProjectileFromHero": {
+        "Damage": 110,
+        "TowerDamage": 11,
+        "Radius": 2000,
+        "Duration": 5000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 25000,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Minions_With_TravelSpeed"
+    },
+    "SpawnPebblesArtifact": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "MultipleSunderArtifact": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 2500,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellMainCannon": {
+        "Damage": 180,
+        "TowerDamage": 90,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 200,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "TailWhipAbility": {
+        "Damage": 100,
+        "TowerDamage": 50,
+        "Radius": 4000,
+        "Duration": 1200,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
+    },
+    "SpellDroneEscort": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 2500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+    },
+    "SpellMultipleMissiles": {
+        "Damage": 60,
+        "TowerDamage": 10,
+        "Radius": 8000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 1000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Minions_With_TravelSpeed"
+    },
+    "SpellKnockbackAndDamage": {
+        "Damage": 15,
+        "TowerDamage": 15,
+        "Radius": 4500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Minions_With_TravelSpeed"
+    },
+    "GiveFrozen": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 8000,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SlowEnemiesAndMakeFrozenField": {
+        "Damage": 35,
+        "TowerDamage": 0,
+        "Radius": 6000,
+        "Duration": 3000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions"
+    },
+    "SpellIceDragonsBreath": {
+        "Damage": 200,
+        "TowerDamage": 20,
+        "Radius": 2500,
+        "Duration": 5000,
+        "EffectDelay": 0,
+        "Delay": 2000,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellRegrow": {
+        "Radius": 6000,
+        "Duration": 2000,
+        "EffectDelay": 250,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions",
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "Healing",
+                "Value": 75,
+                "OverrideIconPath": "Healing"
+            }
+        }
+    },
+    "PowerUpAbility": {
+        "Damage": 80,
+        "Radius": 10000
+    },
+    "SpellIllusion": {
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0
+    },
+    "MagneticBombs": {
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0
+    },
+    "CityPatrol": {},
+    "Bearvalanche": {
+        "Damage": 140,
+        "TowerDamage": 14,
+        "Radius": 6000,
+        "Duration": 5000,
+        "EffectDelay": 250,
+        "Delay": 2000,
+        "TravelSpeed": 4000,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Ground_Minions",
+        "ExtraStats": {
+            "Stat": {
+                "Identifier": "Speed",
+                "Value": 4,
+                "OverrideIconPath": "Speed"
+            }
+        }
+    },
+    "CastMechSuitMiniBossHookOnTargetedEnemy": {
+        "Radius": 4500,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
+    },
+    "SpellGiveTauntAndSpawnSwarmers": {
+        "Damage": 0,
+        "TowerDamage": 0,
+        "Radius": 5000,
+        "Duration": 4000,
+        "EffectDelay": 0,
+        "Delay": 500,
+        "TravelSpeed": 0,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions",
+        "ExtraStats": {
+            "Stat": [
+                {
+                    "Identifier": "Count",
+                    "Value": 5,
+                    "OverrideIconPath": "Count"
+                },
+                {
+                    "Identifier": "Duration",
+                    "Value": 3,
+                    "OverrideIconPath": "Duration"
+                },
+                {
+                    "Identifier": "ProductionSpeed",
+                    "Value": 0.8,
+                    "OverrideIconPath": "Duration"
+                }
+            ]
+        }
+    },
+    "NetherReachAbility": {},
+    "EmergencyReserves": {
+        "Damage": 0,
+        "Radius": 0,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 0,
+        "TravelSpeed": 0,
+        "BorderBuffer": 800,
+        "AIPlayHints": "None"
+    },
+    "SpellSpaceMarineEntry": {
+        "Damage": 25,
+        "TowerDamage": 25,
+        "Radius": 2500,
+        "Duration": 0,
+        "EffectDelay": 0,
+        "Delay": 1500,
+        "TravelSpeed": 0,
+        "BorderBuffer": 1500,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SpellRuneStone": {
+        "Delay": 500,
+        "BorderBuffer": 1500,
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
+    },
+    "SingleStealth": {
+        "Delay": 0,
+        "AIPlayHints": "None"
+    },
+    "MassIllusion": {
+        "Delay": 0,
+        "AIPlayHints": "None"
+    },
+    "EndlessRage": {
+        "Delay": 0,
+        "AIPlayHints": "None"
+    },
+    "SpellMakeflyingAndGiveMarksmanShip": {
+        "Delay": 500,
+        "Duration": 5000,
+        "Radius": 2500,
+        "AIPlayHints": "None"
+    }
+}

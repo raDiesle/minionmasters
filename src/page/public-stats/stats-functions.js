@@ -1,10 +1,22 @@
 import { clamp } from "lodash";
 
 export function getSeasonStartDate(date){
-    const seasonStartDate = new Date(date)
-    seasonStartDate.setHours(10,0,0,0)      // 
-    seasonStartDate.setDate(date.getDate() + (6 - date.getDay()));  //next Saturday
-    seasonStartDate.setDate(seasonStartDate.getDate() - 7*Math.ceil(seasonStartDate.getDate()/7))   //go back full weeks to previous month (last saturday of month)
+    // last Saturday of a month - does not match the actual schedule
+    // const seasonStartDate = new Date(date)
+    // seasonStartDate.setHours(10,0,0,0)      // 
+    // seasonStartDate.setDate(date.getDate() + (6 - date.getDay()));  //next Saturday
+    // seasonStartDate.setDate(seasonStartDate.getDate() - 7*Math.ceil(seasonStartDate.getDate()/7))   //go back full weeks to previous month (last saturday of month)
+    
+    // the plan is to detect season start dates by elo reset
+    const seasonDates = [
+        new Date(0),
+        new Date("2025-02-22T10:00Z"),
+        new Date("2025-03-22T10:00Z"),
+    ]
+    let seasonStartDate = seasonDates[0];
+    for (let sDate of seasonDates) {
+        if (sDate < date) seasonStartDate = sDate;
+    }
     return seasonStartDate
 }
 

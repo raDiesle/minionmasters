@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ReactTable } from '../elo/react-table';
-import { fetchGoogleSheetData, fetchSheetMetaData } from './fetch-google-sheet-data';
+import { fetchGoogleSheetData } from './fetch-google-sheet-data';
 import { API_KEY, SHEET_ID } from "./public-stats-config";
 import { getCellColorWinrate, getCellColorPlayrate } from './stats-functions';
-// import { color } from 'html2canvas';
+import cardData from "generated/jobCardProps.json";
 
 export function CardStatsTable({showPlayrates = false})
 {
@@ -25,7 +25,6 @@ export function CardStatsTable({showPlayrates = false})
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
@@ -41,7 +40,6 @@ export function CardStatsTable({showPlayrates = false})
         return <p>No data found.</p>;
     }
     
-    //calculate number of matches in 1v1 / 2v2 (needed for playrates)
     const indexes = {
         cardID : 0,
         cardName: 1,
@@ -52,7 +50,7 @@ export function CardStatsTable({showPlayrates = false})
         gamesOverall: 6,
         winrateOverall: 7,
     }
-
+    //calculate total number of matches in 1v1 / 2v2 (needed for playrates)
     const totalMatches1v1 = data.slice(1)
         .map((value) => value[indexes.games1v1])
         .reduce((previousValue, currentValue,) => parseInt(previousValue) + parseInt(currentValue)
@@ -71,10 +69,15 @@ export function CardStatsTable({showPlayrates = false})
     const numberOfCards = data.length - 1
     const averagePlayRate = 10/numberOfCards
     
-
+    const cardMap = new Map(cardData.map(card => {
+        let {iD, ...props} = card;
+        return [iD, props]
+    }))
 
     const processedData = data.slice(1).map(row => {
         const newRow = [...row]; // copy the row to avoid mutating
+        const id = parseInt(row[indexes.cardID]);
+        newRow[indexes.cardName] = cardMap.get(id).name;
         if (showPlayrates) {
             newRow[indexes.games1v1] = (row[indexes.games1v1] / totalMatches1v1 * 100).toFixed(1) + " %";
             newRow[indexes.games2v2] = (row[indexes.games2v2] / totalMatches2v2 * 100).toFixed(1) + " %";
@@ -82,13 +85,25 @@ export function CardStatsTable({showPlayrates = false})
         }
         return newRow;
     });
+
+    // console.log(cardMap.get(0));
+    const filteredData = processedData.map(row => {
+        // implement filter functionality here
+        let prop = -1;
+        let id = parseInt(row[0])
+        if (cardMap.has(id)) {
+            // prop = cardMap.get(id).name;
+            prop = id;
+        }
+        return [prop , ...row.slice(1)] 
+    });
     
     const columns = data[0].map((title, n) => 
-        ({
+        ({  
             accessor: (row, i) => row[n],
             Header: title,
-            width: n == indexes.cardName ? 225 : 120,
-            align: n == indexes.cardName ? "left" : "right",
+            width: n === indexes.cardName ? 225 : 120,
+            align: n === indexes.cardName ? "left" : "right",
             getCellProps: (cell) => {
                 let bgColor = ""
                 switch (n){
@@ -106,8 +121,8 @@ export function CardStatsTable({showPlayrates = false})
                             bgColor = getCellColorPlayrate(deviation);
                         }
                         else {
-                            let deviation = n == indexes.games1v1 ? cell.value/totalMatches1v1 : 
-                                n == indexes.games2v2 ? cell.value/totalMatches2v2 :
+                            let deviation = n === indexes.games1v1 ? cell.value/totalMatches1v1 : 
+                                n === indexes.games2v2 ? cell.value/totalMatches2v2 :
                                 cell.value/totalMatchesOverall;
                             deviation =  deviation/averagePlayRate;
                             bgColor = getCellColorPlayrate(deviation);
@@ -133,9 +148,9 @@ export function CardStatsTable({showPlayrates = false})
         <div>
             <ReactTable
             columns={columns}
-            data={processedData}
+            data={filteredData}
             sortBy={[{ id: "winrateTotal", desc: true }]}
-            minTableHeight={520}
+            minTableHeight={480}
             />
         </div>
     )

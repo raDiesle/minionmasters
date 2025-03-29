@@ -1,0 +1,3621 @@
+{
+    "SimpleCollator": {
+        "UnsafeFlagLength": "96"
+    },
+    "Random": {
+        "MBIG": "2147483647",
+        "MSEED": "161803398",
+        "MZ": "0"
+    },
+    "SignatureHelper": {
+        "UnspecifiedTypeSize": "0"
+    },
+    "CalendarData": {
+        "MAX_CALENDARS": "23"
+    },
+    "CompareInfo": {
+        "LINGUISTIC_IGNORECASE": "16",
+        "NORM_IGNORECASE": "1",
+        "NORM_IGNOREKANATYPE": "65536",
+        "LINGUISTIC_IGNOREDIACRITIC": "32",
+        "NORM_IGNORENONSPACE": "2",
+        "NORM_IGNORESYMBOLS": "4",
+        "NORM_IGNOREWIDTH": "131072",
+        "SORT_STRINGSORT": "4096",
+        "COMPARE_OPTIONS_ORDINAL": "1073741824",
+        "NORM_LINGUISTIC_CASING": "134217728",
+        "RESERVED_FIND_ASCII_STRING": "536870912",
+        "SORT_VERSION_WHIDBEY": "4096",
+        "SORT_VERSION_V4": "393473"
+    },
+    "TextInfo": {
+        "wordSeparatorMask": "536672256"
+    },
+    "CultureInfo": {
+        "InvariantCultureId": "127",
+        "CalendarTypeBits": "8"
+    },
+    "CancellationTokenSource": {
+        "CANNOT_BE_CANCELED": "0",
+        "NOT_CANCELED": "1",
+        "NOTIFYING": "2",
+        "NOTIFYINGCOMPLETE": "3"
+    },
+    "ManualResetEventSlim": {
+        "DEFAULT_SPIN_SP": "1",
+        "DEFAULT_SPIN_MP": "10",
+        "SignalledState_ShiftCount": "31",
+        "Dispose_BitMask": "1073741824",
+        "SpinCountState_BitMask": "1073217536",
+        "SpinCountState_ShiftCount": "19",
+        "SpinCountState_MaxValue": "2047",
+        "NumWaitersState_BitMask": "524287",
+        "NumWaitersState_ShiftCount": "0",
+        "NumWaitersState_MaxValue": "524287"
+    },
+    "SemaphoreSlim": {
+        "NO_MAXIMUM": "2147483647"
+    },
+    "Task": {
+        "OptionsMask": "65535",
+        "TASK_STATE_STARTED": "65536",
+        "TASK_STATE_DELEGATE_INVOKED": "131072",
+        "TASK_STATE_DISPOSED": "262144",
+        "TASK_STATE_EXCEPTIONOBSERVEDBYPARENT": "524288",
+        "TASK_STATE_CANCELLATIONACKNOWLEDGED": "1048576",
+        "TASK_STATE_FAULTED": "2097152",
+        "TASK_STATE_CANCELED": "4194304",
+        "TASK_STATE_WAITING_ON_CHILDREN": "8388608",
+        "TASK_STATE_RAN_TO_COMPLETION": "16777216",
+        "TASK_STATE_WAITINGFORACTIVATION": "33554432",
+        "TASK_STATE_COMPLETION_RESERVED": "67108864",
+        "TASK_STATE_THREAD_WAS_ABORTED": "134217728",
+        "TASK_STATE_WAIT_COMPLETION_NOTIFICATION": "268435456",
+        "TASK_STATE_EXECUTIONCONTEXT_IS_NULL": "536870912",
+        "TASK_STATE_TASKSCHEDULED_WAS_FIRED": "1073741824",
+        "TASK_STATE_COMPLETED_MASK": "23068672",
+        "CANCELLATION_REQUESTED": "1"
+    },
+    "StackGuard": {
+        "MAX_UNCHECKED_INLINING_DEPTH": "20"
+    },
+    "HashtableDebugView": {
+        "HashPrime": "101",
+        "InitialSize": "3"
+    },
+    "SortedListDebugView": {
+        "_defaultCapacity": "16"
+    },
+    "List": {
+        "_defaultCapacity": "4"
+    },
+    "StackTrace": {
+        "METHODS_TO_SKIP": "0"
+    },
+    "Uri": {
+        "c_Max16BitUtf8SequenceLength": "12",
+        "c_MaxUriBufferSize": "65520",
+        "c_MaxUriSchemeName": "1024"
+    },
+    "Queue": {
+        "MinimumGrow": "4",
+        "GrowFactor": "200"
+    },
+    "SortedSet": {
+        "StackAllocThreshold": "100"
+    },
+    "Stack": {
+        "DefaultCapacity": "4"
+    },
+    "IPAddress": {
+        "IPv4AddressBytes": "4",
+        "IPv6AddressBytes": "16",
+        "NumberOfLabels": "8"
+    },
+    "IPEndPoint": {
+        "MinPort": "0",
+        "MaxPort": "65535",
+        "AnyPort": "0"
+    },
+    "Socket": {
+        "SOCKET_CLOSED_CODE": "10004"
+    },
+    "HashSet": {
+        "Lower31BitMask": "2147483647",
+        "StackAllocThreshold": "100",
+        "ShrinkThreshold": "3"
+    },
+    "BaseActorImpl": {
+        "STUN1_DURATION": "1000",
+        "STUN2_DURATION": "2000",
+        "STUN3_DURATION": "3000",
+        "STUN4_DURATION": "4000",
+        "STUN5_DURATION": "5000",
+        "INVULNERABLE_DURATION": "5000",
+        "INVULNERABLE_END_SOON": "4000",
+        "INSPIRE_BUFF_DAMAGE_ADDED": "15",
+        "RAGE_DAMAGE_MULTIPLIER": "500",
+        "RAGE_DAMAGE_DIVIDER_DISPLAY": "50",
+        "SUPERRAGE_DAMAGE_MULTIPLIER": "1000",
+        "SUPERRAGE_DAMAGE_DIVIDER_DISPLAY": "100",
+        "GIANT_GROWTH_DAMAGE_MULTIPLIER": "200",
+        "GIANT_GROWTH_DAMAGE_MULTIPLIER_DISPLAY": "20",
+        "GIANT_GROWTH_HEALTH_MULTIPLIER": "20",
+        "SUPERRAGE_SELF_DAMAGE_PERCENT": "10",
+        "FRENZY_PERCENTAGE": "330",
+        "FRENZY_PERCENTAGE_DISPLAY": "33",
+        "ANTI_FRENZY_PERCENTAGE": "200",
+        "ANTI_FRENZY_PERCENTAGE_DISPLAY": "20",
+        "SINGLE_SHIELD_PROJECTED_DAMAGE_REDUCTION": "10000",
+        "MARKMANSHIP_RANGE": "2000",
+        "HEAL_AMOUNT": "50",
+        "SOULS_PER_SPIRIT": "1",
+        "SPIRIT_HEALTH_AMOUNT": "200",
+        "SPIRIT_HEALTH_FLYING_AMOUNT": "100",
+        "SPIRIT_PERCENTAGE_MAXHEALTH": "40",
+        "SPIRIT_FLAT_MAXHEALTH": "350",
+        "SPIRIT_FLAT_MINHEALTH": "100",
+        "FROZEN_DURATION": "4000",
+        "HYPNOTIZE_DURATION": "6000",
+        "CurseHealthPercent": "3",
+        "TARGETED_EXTRA_DAMAGE_PERCENT": "35",
+        "MYTHIC_DESTROY_DAMAGE": "1000",
+        "MYTHIC_STUN_TIME_ON_TEAM_SWITCH": "5000"
+    },
+    "MythicHandler": {
+        "PLAY_BUFFER": "1000"
+    },
+    "Random40": {
+        "MBIG": "2147483647",
+        "MSEED": "161803398",
+        "MZ": "0"
+    },
+    "ActorCreator": {
+        "DEFAULT_SUMMONING_SICKNESS": "1000"
+    },
+    "Constants": {
+        "MAX_PLAYERS": "4",
+        "BASE_HEALTH_1v1": "3000",
+        "BASE_HEALTH_2v2": "3000",
+        "POSITION_INT_UNITS_PER_VISUAL_UNIT": "1000",
+        "POSITION_INT_PRECISION_MULTIPLIER": "100",
+        "TIME_INT_UNITS_PER_SEC": "1000",
+        "TIME_INT_UNITS_PER_TICK": "100",
+        "BRIDGE_GRAB_TIME": "1500",
+        "POSITION_ARENA_WIDTH": "62000",
+        "POSITION_ARENA_HEIGHT": "32000",
+        "HERO_LEVELS": "5",
+        "CARDS_IN_HAND": "4",
+        "MAX_MANA": "10",
+        "ALLOWED_NUMER_OF_EACH_CARD": "1",
+        "MANA_GAIN_DELTA_TIME_1v1": "2620",
+        "MANA_GAIN_DELTA_TIME_1v1_DECREASE_PER_MINUTE": "220",
+        "MANA_GAIN_DELTA_TIME_2V2": "3150",
+        "MANA_GAIN_DELTA_TIME_2v2_DECREASE_PER_MINUTE": "205",
+        "MANA_GAIN_DELTA_REDUCTION_DELTA": "40000",
+        "ZONE_XP_EARN_DELAY": "3600",
+        "BASE_XP_EARN_DELAY": "3200"
+    },
+    "HeroSkillsHandler": {
+        "ADDED_ABILITIES_OFFSET": "5"
+    },
+    "MathI": {
+        "halfPi": "1570",
+        "inverseTwoPi": "159",
+        "pi": "3141",
+        "twoPi": "6282"
+    },
+    "PlayerHandHandler": {
+        "CalculateCardCostOrderCount": "2"
+    },
+    "SceneManager": {
+        "MaxLoadingSteps": "6",
+        "MaxUnloadingSteps": "5"
+    },
+    "PassiveSkillShadowDance": {
+        "R3KT_CHANCE": "25",
+        "MAX_SPAWNS_BEFORE_ACTUAL_R3KT": "5"
+    },
+    "ChanceToCastAllCardsTwice": {
+        "CHANCETOCASTTWICE": "1",
+        "DELAY": "1350"
+    },
+    "GainFasterManaForEveryTwoPercentDamagePlayerTake": {
+        "MANA_PERCENTAGE": "1",
+        "DAMAGE_PERCENTAGE": "2"
+    },
+    "SpawnRandomTraps": {
+        "DELAY": "30000",
+        "TRAP_COUNT": "5"
+    },
+    "GiveSpiritOnDeath": {
+        "SPIRITHEALTH": "300"
+    },
+    "GivePoisonToHighestHPMinionEveryXSeconds": {
+        "DELAY": "1000",
+        "POISONSECONDS": "2500"
+    },
+    "SwapBoardStateEveryXSeconds": {
+        "DELAY": "30000"
+    },
+    "GenerateXPAndManaOverTime": {
+        "PLAYERMANADELAY": "1900",
+        "AIMANADELAY": "2500",
+        "PLAYERXPDELAY": "2500",
+        "AIXPDELAY": "3500",
+        "MANADELTATIMEREDUCTIONAI": "1000",
+        "MANADELTATIMEREDUCTIONPLAYER": "1200"
+    },
+    "SpawnWavesEvery40SecondsAccursed": {
+        "WAVEDELAY": "45000",
+        "DELAY": "45000"
+    },
+    "StartFightsWithCheapAccursedCard": {
+        "CARD_AMOUNT": "1"
+    },
+    "SpawnWavesEvery40Seconds": {
+        "WAVEDELAY": "45000",
+        "DELAY": "45000"
+    },
+    "ReduceCostOfCardsInHandEvery5Second": {
+        "REDUCTION_AMOUNT": "1",
+        "INTERVAL": "10000"
+    },
+    "StartFightsWithFreeBuffCard": {
+        "CARD_AMOUNT": "1"
+    },
+    "BridgesGiveMoreXP": {
+        "XP_MULTIPLIER": "5"
+    },
+    "ChangeCardCostOnDraw": {
+        "BIG_STEP_CHANCE_PERCENT": "20",
+        "BIG_STEP_VALUE": "2",
+        "SMALL_STEP_VALUE": "1"
+    },
+    "ChangeManaGainSpeed": {
+        "MANA_MULTIPLIER": "3"
+    },
+    "DropRandomGifts": {
+        "START_GIFT_DROP_COOLDOWN": "15000",
+        "END_GIFT_DROP_COOLDOWN": "5000",
+        "GIFT_MAX_TIME": "300000",
+        "GIFT_LIFETIME": "30000",
+        "GIFT_RADIUS": "2500",
+        "GIFT_ACTIVATION_DELAY": "1000",
+        "TEAM_GIFT_CHANCE": "50"
+    },
+    "FasterManagrainOnHighFactionUsageAtStart": {
+        "MANASPEEDINCREASE": "20"
+    },
+    "ReduceCheapestCardsInDeck": {
+        "REDUCED_CARDS_NUMBER": "2"
+    },
+    "SpawnElvesWavesAtTick": {
+        "TICK_RATE": "30000",
+        "MELEE_AMOUNT": "1",
+        "RANGED_AMOUNT": "1",
+        "TIME_BETWEEN_SPAWNS": "1500"
+    },
+    "JinxedGameRule": {
+        "DELAY": "5000",
+        "SPAWN_OF_FURY_CARD_ID": "242",
+        "GORRAK_SACRIFICE_CARD_ID": "135",
+        "ARDENT_AEGIS_CARD_ID": "278"
+    },
+    "SpawnRandomMineOrTurretInArena": {
+        "DELAY": "20000",
+        "MINE_SPAWN_COUNT": "2",
+        "TURRET_SPAWN_COUNT": "1"
+    },
+    "SpawnMysteryWavesAtTick": {
+        "TICK_RATE": "30000",
+        "MELEE_AMOUNT": "1",
+        "RANGED_AMOUNT": "0",
+        "TIME_BETWEEN_SPAWNS": "1500"
+    },
+    "SpawnRandomMinionOnTwoMinionsPlayed": {
+        "MAX_TIME_BETWEEN_CARDS": "5000"
+    },
+    "PassesHealthOnMinionDeath": {
+        "FLY_TIME": "1000"
+    },
+    "SpellsCostHealth": {
+        "MANA_HEALTH_CONVERSION": "50"
+    },
+    "MinionsExplodeOnDeath": {
+        "EXPLOSION_DAMAGE": "50",
+        "EXPLOSION_RADIUS": "6000"
+    },
+    "ReduceCardCostEachTimePlayed": {
+        "MINIMUM_COST": "1"
+    },
+    "SpawnWavesAtTick": {
+        "TICK_RATE": "30000",
+        "MELEE_AMOUNT": "3",
+        "RANGED_AMOUNT": "2",
+        "TIME_BETWEEN_SPAWNS": "1500"
+    },
+    "BottomBridgeKillAndXP": {
+        "ZONE_INDEX": "0",
+        "DAMAGE": "8",
+        "INTERVAL": "200"
+    },
+    "RemoveManaFreezeIfQuestIsCompleted": {
+        "REMOVE_AMOUNT": "2"
+    },
+    "AddCityPatrollersOnBuildingPlay": {
+        "CITYPATROLCARDINDEX": "372",
+        "MIN_DELAY": "15000"
+    },
+    "CastGraspingThornsOnStunnedEnemies": {
+        "GRASPINGTHORWNSCARDINDEX": "203",
+        "DELAY": "5000"
+    },
+    "DealDamageOnStunnedAndFrozenMinions": {
+        "DAMAGE": "50",
+        "DELAY": "1000"
+    },
+    "ExtendedFrozenAndBetterSlow": {
+        "EXTRA_FROZEN_DURATION": "6000",
+        "EXTRA_ANTI_FRENZY_PERCENTAGE": "200"
+    },
+    "Play12CostCardFromDeckOn6CostCard": {
+        "MINIMUM_CARD_COST": "6"
+    },
+    "PlayVortexInFrontOnRangedMinionPlay": {
+        "ARCANERINGINDEX": "262",
+        "DISTANCE": "8000"
+    },
+    "SpawnKnightPuffOnMinionBuffed": {
+        "MIN_DELAY": "3000"
+    },
+    "SpawnMarineOnTechSpend": {
+        "SCRAPSPERMARINE": "10",
+        "EJECT_AMOUNT": "1",
+        "SPAWN_DELAY": "700",
+        "EJECT_RADIUS": "16000"
+    },
+    "RecastSpellsWithDelay": {
+        "DELAY": "20000"
+    },
+    "StartWithAccursedAscensionStacks": {
+        "STACKS": "50"
+    },
+    "SummonSwarmerWhenThreeFriendlyUnitsDies": {
+        "DEATHSNEEDED": "3"
+    },
+    "UpgradeRageGain": {
+        "CAPPED_CARD_COST": "5"
+    },
+    "SpawnRangedUnitsWithSugiliteBarrier": {
+        "SUGILITE_INDEX": "290"
+    },
+    "GiveLycanthropyWhenMoreThanXMaxHP": {
+        "HEALTH": "100"
+    },
+    "AdventurePartyLogic": {
+        "COST_INCREASE_PER_PARTY_MEMBER": "2"
+    },
+    "EmpyreanArmyCostIncrease2": {
+        "INCREASE": "2"
+    },
+    "GetSingleDroneEscortIfScraps": {
+        "SCRAP_COST": "30"
+    },
+    "BecomeActiveOnManaSurgePreload": {
+        "ARCANERING_CARD_ID": "263"
+    },
+    "SummonSpiderlingsPerSacrifice": {
+        "SPIDERLINGS_PER_SACRIFICE": "3"
+    },
+    "PapyrusOfTheBlackObeliskBook": {
+        "BACKUP_CARD_ID": "315"
+    },
+    "EmpyreanArmyCostIncrease": {
+        "INCREASE": "1"
+    },
+    "VoidbornWoundCostIncrease": {
+        "INCREASE": "1"
+    },
+    "OnslaughtCodexCard": {
+        "COST_REDUCTION": "2"
+    },
+    "XanianSpellBookCard": {
+        "COST_REDUCTION": "2"
+    },
+    "EndlessRageSpell": {
+        "DURATION": "10000",
+        "MANA": "7"
+    },
+    "PerkAirStrike": {
+        "TICK_TIME": "100",
+        "DESIRED_RAY": "200000",
+        "LONGEST_RAY": "20000"
+    },
+    "SpellMakeflyingAndGiveMarksmanShip": {
+        "DAMAGE_INCREASE": "50"
+    },
+    "SpellMassIllusion": {
+        "ILLUSION_COUNT": "8"
+    },
+    "GiveHasteIfScraps": {
+        "SCRAP_COST": "40"
+    },
+    "CleanseEnemiesAndDealDamage": {
+        "EXTRA_DAMAGE": "50"
+    },
+    "Get1DroneEscortIf25Scraps": {
+        "SCRAP_COST": "25"
+    },
+    "FrostField": {
+        "DURATION": "5000",
+        "TICK_COOLDOWN": "200",
+        "DELAY": "200",
+        "DAMAGE": "0",
+        "RADIUS": "6000"
+    },
+    "NetherReachAbility": {
+        "ELITE_SWARMER_COUNT": "2",
+        "CROSSBOW_IMP_COUNT": "4",
+        "PORTAL_DELAY": "400",
+        "PORTAL_DISTANCE": "2500",
+        "DELAY": "1200",
+        "POST_SUMMON_DELAY": "600",
+        "REPEAT_DELAY": "500",
+        "OFFSET": "4000"
+    },
+    "PlayAllCopiesOfCard": {
+        "CARD_INDEX": "339",
+        "COST_INCREASE_PER_COPY": "1"
+    },
+    "PlaceCrystalBlastOnKill": {
+        "ADD_CARD_INDEX": "295",
+        "COOLDOWN": "20000"
+    },
+    "ReduceCostIfScraps": {
+        "SCRAP_COST": "60",
+        "MANA_REDUCTION": "1"
+    },
+    "GetDroneEscortIfScraps": {
+        "SCRAP_COST": "30"
+    },
+    "ClaimBridgeIfScraps": {
+        "BRIDGE_GRAB_DELAY": "300"
+    },
+    "GamblersLightning": {
+        "MAX_BOUNCES": "12",
+        "ACTIVATIONCOUNT": "40"
+    },
+    "CombustMinionsOnLowHP": {
+        "COMBUSTIONPROMILE": "500",
+        "NEXT_EXPLOSION_DELAY": "2500"
+    },
+    "AbilityAttackMultipleTargets": {
+        "TARGETS": "4",
+        "DELAY_BEFORE_DAMAGE": "200",
+        "FULL_ATTACK_TIME": "800",
+        "HERO_RAIDUS": "1000"
+    },
+    "Obelisk": {
+        "PROJECTILE_TRAVEL_TIME": "200",
+        "POISON_DURATION": "2000",
+        "BASE_SHOTS": "1",
+        "SHOTS_PER_STACK": "4"
+    },
+    "DealWhipDamageInArea": {
+        "MASTER_DAMAGE_PERCENT": "10",
+        "MAX_ATTACKS": "2"
+    },
+    "DrainFriendlyMinions": {
+        "DRAIN_TARGETS": "1",
+        "PERK2_DRAIN_TARGETS": "2",
+        "HEAL_DELAY": "1000"
+    },
+    "ResetAttack": {
+        "REPLAY_DELAY": "2000"
+    },
+    "FreezeAllNearbyEnemyMinions": {
+        "MOVEMENT_DELAY_BUFFER": "400"
+    },
+    "ShuffleSingleCityPatrol": {
+        "CITYPATROLCARDINDEX": "372"
+    },
+    "ShuffleCityPatrol": {
+        "CITYPATROLCARDINDEX": "372",
+        "CITY_PATROL_COUNT": "3"
+    },
+    "ShuffleCityPatrolOnTrigger": {
+        "CITYPATROLCARDINDEX": "372",
+        "CITY_PATROL_COUNT": "3"
+    },
+    "SpellAddRandomCyclingCardToDeckBase": {
+        "MAX_CYCLE_CARDS": "7"
+    },
+    "SpellAddRandomCyclingCardToDeckReduceCostByOne": {
+        "COST": "1",
+        "MAX_CYCLE_CARDS": "7"
+    },
+    "SpellAddRandomCyclingCardToDeckReduceCostByTwo": {
+        "COST": "2",
+        "MAX_CYCLE_CARDS": "7"
+    },
+    "SpellBearvalanche": {
+        "TICK_RATE": "100",
+        "MAX_SLOW": "3",
+        "WIDTH": "8000",
+        "HEIGHT": "5000"
+    },
+    "SpellBlinkMinionsRandomDirection": {
+        "RANGE": "12000"
+    },
+    "SpellDroneEscort": {
+        "DRONE_DISTANCE": "1000"
+    },
+    "SpellGiveTauntAndSpawnSwarmers": {
+        "SPAWN_COUNT": "5",
+        "SPAWN_DELAY": "800"
+    },
+    "SpellRuneStone": {
+        "ANCESTRY_RUNESTONE_CARDINDEX": "395",
+        "WIND_RUNESTONE_CARDINDEX": "396",
+        "FROST_RUNESTONE_CARDINDEX": "397",
+        "WYRD_RUNESTONE_CARDINDEX": "398",
+        "RADIUS": "3000",
+        "DAMAGE": "100",
+        "WIND_EXTRA_DAMAGE": "150",
+        "KNOCK_BACK": "2000",
+        "KNOCK_BACK_DURATION": "500",
+        "EXTRA_WIND_RANGE": "6000",
+        "MIN_DISTANCE": "11000",
+        "MAX_DISTANCE": "36000"
+    },
+    "SpellSealofKorrrgoth": {
+        "KORRRGOTH_CARDID": "366",
+        "CASTS_NEEDED": "2"
+    },
+    "SpellFreezeAndHeal": {
+        "HEAL_AMOUNT": "175",
+        "HEAL_DURATION": "3000",
+        "HEAL_STEPS": "6"
+    },
+    "SpellRegrow": {
+        "HEAL": "75",
+        "DELAY": "1500",
+        "FLYTIME": "500",
+        "FLYDELAY": "200",
+        "DURATION": "5000",
+        "STUNDURATION": "1000",
+        "KNOCKBACK": "2000",
+        "KNOCKBACKDURATION": "500",
+        "TICKS": "5"
+    },
+    "SpellIceDragonsBreath": {
+        "DELAY_BETWEEN_PASSES": "1000",
+        "SPEED": "6000",
+        "TICKS": "10"
+    },
+    "SpellKnockbackAndDamage": {
+        "KNOCKBACK_DISTANCE": "10000",
+        "KNOCKBACK_DURATION": "200"
+    },
+    "SpellMultipleMissiles": {
+        "STARTING_MISSILES": "3",
+        "MISSILES_PER_DRAW": "1",
+        "MAX_STACKS": "10",
+        "DELAY_BETWEEN_MISSILES": "400"
+    },
+    "MagneticBombs": {
+        "SPAWN_AMOUNT": "4",
+        "SPAWN_DELAY": "300",
+        "SPAWN_OFFSET": "6000"
+    },
+    "SpellShieldXAlliesInAreaAndSummonSentryOnNextPlayedRangedMinion": {
+        "SHIELD_COUNT": "3",
+        "MANA_FREEZE": "3"
+    },
+    "SpellSpaceMarineEntry": {
+        "MAX_JUMP_RANGE": "12000"
+    },
+    "SpellSummonRandomEmergencyReserves": {
+        "DAMAGE_INCREASE_MULTIPLIER": "2",
+        "AMOUNT_OF_MARINES": "6",
+        "AMOUNT_OF_BUZZERS": "3",
+        "AMOUNT_OF_TANKS": "1"
+    },
+    "StartWithArcaneringBallsAbility": {
+        "ARCANERING_CARD_ID": "263",
+        "ARCANEBARRAGE_CARD_ID": "348",
+        "BARRAGE_MISSILES": "3",
+        "RADIUS": "3000",
+        "OVERLOAD": "2"
+    },
+    "SwapForPerkAirStrike": {
+        "_thisCardIndex": "416",
+        "BLAST_ENTRY_CARD_INDEX": "89"
+    },
+    "SwapForNetherReach": {
+        "_thisCardIndex": "385",
+        "_connectedCardIndex": "386"
+    },
+    "SwapForResetAttack": {
+        "_thisCardIndex": "362",
+        "_connectedCardIndex": "363",
+        "MAXPLAYS": "3"
+    },
+    "SwapForFrostNova": {
+        "_thisCardIndex": "404",
+        "_connectedCardIndex": "405"
+    },
+    "SwapForSpaceMarineEntry": {
+        "_thisCardIndex": "391",
+        "_connectedCardIndex": "392"
+    },
+    "TailWhipAbility": {
+        "MAX_JUMP_RANGE": "8000",
+        "_thisCardIndex": "347",
+        "_parentCardIndex": "346"
+    },
+    "MultipleSunderArtifact": {
+        "CURSOR_MOVE_SPEED": "4000",
+        "MAX_CHARGES": "3",
+        "DELAY_BETWEEN_CHARGES": "1000",
+        "SPELL_INDEX": "284"
+    },
+    "PlaySelfOnMana": {
+        "FIRE_DELAY": "7000",
+        "FIRE_DELAY_BUFFER": "1000"
+    },
+    "EnterEnemyArenaQuest": {
+        "LEVEL_TO_TRIGGER": "5"
+    },
+    "SwapForTailWhipAbility": {
+        "_thisCardIndex": "346",
+        "_connectedCardIndex": "347"
+    },
+    "SpellMainCannon": {
+        "TURRET_TURN_TIME": "1800",
+        "TURRET_FASTER_TURN_TIME": "200",
+        "MINIMUM_TURRET_RANGE": "12000",
+        "_thisCardIndex": "345",
+        "_parentCardIndex": "344"
+    },
+    "SwapForMainCannon": {
+        "_thisCardIndex": "344",
+        "_connectedCardIndex": "345"
+    },
+    "VoidbornWoundCostReduction": {
+        "REDUCTION": "1"
+    },
+    "SpawnPebblesArtifact": {
+        "STARTING_STACKS": "5",
+        "STACK_DELAY": "10000"
+    },
+    "SpellDealDamageOrGiveSouls": {
+        "SOUL_AMOUNT": "5",
+        "SOUL_ASCENSION_AMOUNT": "1",
+        "SOUL_TRAVEL_TIME": "300",
+        "SOUL_TRAVEL_HOME_TIME": "1000",
+        "SOUL_COOLDOWN": "300",
+        "SOUL_PER_ASCENSION": "1",
+        "ADDITIONAL_ASCENSION_SOULS": "3"
+    },
+    "SpinningProjectileFromHero": {
+        "EDGE_X_OFFSET": "5000",
+        "SPEED": "60",
+        "BOUNCE_GRACE_RADIUS": "0",
+        "DAMAGE_COOLDOWN": "0",
+        "COLLISION_COOLDOWN": "0",
+        "MAX_HITS": "10"
+    },
+    "SwapForMoveScratSwarmer": {
+        "_thisCardIndex": "324",
+        "_connectedCardIndex": "325"
+    },
+    "EarthElementalPebblePickUp": {
+        "PICKUP_RADIUS": "1500",
+        "PICKUP_DURATION": "20000"
+    },
+    "UsesScraps": {
+        "MAX_TRIGGERS": "1"
+    },
+    "GainShieldWithScraps": {
+        "MAX_TRIGGERS": "1"
+    },
+    "ReduceCostIfVoidborneCardsInHand": {
+        "COST_REDUCTION": "1"
+    },
+    "SpellAirStrike": {
+        "TICK_TIME": "100",
+        "DESIRED_RAY": "200000",
+        "LONGEST_RAY": "20000"
+    },
+    "SpellClusterGrenade": {
+        "SCRAP_PER_EXTRA_EPLOSSION": "25",
+        "MAX_EXTRA_EPLOSSION": "3"
+    },
+    "SpellExplodeAndRollAndBlueGolem": {
+        "TICK_RATE": "200",
+        "MOVEMENT_SPEED": "3"
+    },
+    "SwapForAirStrike": {
+        "_thisCardIndex": "322",
+        "_connectedCardIndex": "323"
+    },
+    "SwapForResolvePoisonDamage": {
+        "_thisCardIndex": "312",
+        "_connectedCardIndex": "313"
+    },
+    "ActivateWerewolfRufflesOnEnemyUnitDeath": {
+        "RUFFLES_COOLDOWN": "25000"
+    },
+    "AddOnslaughtCodexOnTimer": {
+        "COOLDOWN": "30000",
+        "CARDID": "426"
+    },
+    "AddOnePunchBlastOnFieldJump": {
+        "ONEPUNCHBLAST_CARD_ID": "127",
+        "SHADOWDANCE_CARD_ID": "126",
+        "GUNKATA_CARD_ID": "423"
+    },
+    "AddApepTotemOnTimer": {
+        "COOLDOWN": "30000",
+        "CARDID": "88"
+    },
+    "AddPapyrusOfTheBlackObliskbookOnTimer": {
+        "COOLDOWN": "30000",
+        "CARDID": "422",
+        "BUFFER_TIME": "5000"
+    },
+    "AddHolyFireOnTimer": {
+        "COOLDOWN": "25000",
+        "CARDID": "427"
+    },
+    "AddXanianSpellbook": {
+        "COOLDOWN": "25000",
+        "CARDID": "417",
+        "BUFFER_TIME": "5000"
+    },
+    "AddMassIllusionOnTimer": {
+        "COOLDOWN": "25000",
+        "CARDID": "411"
+    },
+    "AddSlitherbindOnTimer": {
+        "COOLDOWN": "18000"
+    },
+    "AddSearingLightOnTimer": {
+        "COOLDOWN": "30000",
+        "CARDID": "307"
+    },
+    "CastMechSuitMiniBossHookOnTargetedEnemy": {
+        "HOOKCARDINDEX": "394",
+        "SLOTINDEX": "3",
+        "MANACOSTREDUCTIONDELAY": "5000"
+    },
+    "GiveFriendlyMinionsTrueDamageAndSpamMountainGale": {
+        "MOUNTAIN_GALE_CARDID": "305",
+        "MIN_DELAY": "10000"
+    },
+    "PassiveSkillCast5SpellsOutOfAPoolEvery20Seconds": {
+        "DELAY": "20000",
+        "NUMBEROFSPELLSTOCAST": "5"
+    },
+    "PassiveSkillCastGorRakkSacrificeToAllMinions": {
+        "GORRAK_SACRIFICE_CARD_ID": "135"
+    },
+    "PassiveSkillChangingFactionBasedCostReductionAndGainHaste": {
+        "DELAY": "10000"
+    },
+    "PassiveSkillDealDamageToAllMinionsAndGiveThemFear": {
+        "DAMAGE_AMOUNT": "666",
+        "RANDOM_CARD_COST_DEBUFF_LOOP_COUNT": "6",
+        "DELAY": "2000"
+    },
+    "PassiveSkillFireRocketsOnRandomEnemiesCloseToFriendlyUnits": {
+        "DELAY": "10000",
+        "NUMBEROFROCKETSTOFIRE": "6",
+        "ROCKET_INIT_LAUNCH_DELAY": "1750",
+        "ROCKET_POST_LAUNCH_DELAY": "200",
+        "ROCKET_LAUNCH_DELAY": "100",
+        "ROCKET_HIT_DELAY": "1700",
+        "ROCKET_DAMAGE": "35"
+    },
+    "PassiveSkillGiveNearestEnemyFearIfPlayedCardAffectedByOverkill": {
+        "RANGE": "50000"
+    },
+    "PassiveSkillHealHealthAndAbsorbAllFriendlyMinionDamage": {
+        "HEAL_AMOUNT": "1000",
+        "PROTECTION_TIME_MASTER": "30000"
+    },
+    "PassiveSkillCastEmpyeanSummoningSpellsOnUnitEmpyreanCards": {
+        "CALLTOARMSINDEX": "53",
+        "ARDENTAEGISINDEX": "278",
+        "DELAY": "700",
+        "CARDCOST": "5",
+        "DELAY_BETWEEN_ACTIVATIONS": "12000"
+    },
+    "PassiveSkillMechsuitMiniBossAsMaster": {
+        "FLAME_TICKRATE": "100",
+        "FLAME_DURATION": "2000"
+    },
+    "PassiveSkillRandomCardCostLessAfterOverkill": {
+        "MIN_DELAY": "4000"
+    },
+    "PassiveSkillSpawnCrystalArchersOnEachSideOfMasterTower": {
+        "AMOUNTOFSPAWNS": "10",
+        "OFFSET": "10000"
+    },
+    "PassiveSkillSpawnMasterOnFieldEveryXSeconds": {
+        "DELAY": "90000"
+    },
+    "PassiveSkillSpawnWavesOfZeppelinBomber": {
+        "SPAWNDELAY": "1700",
+        "AMOUNTOFWAVES": "3",
+        "OFFSET": "10000"
+    },
+    "PassiveSkillAssignMainCannonToFourthCard": {
+        "MAIN_CANNON_CARD_INDEX": "345",
+        "MAX_MANA_COST_COUNT": "4",
+        "MANA_COST_TO_REDUCE": "4",
+        "INITIAL_COST_REDUCE_COUNT": "2"
+    },
+    "PassiveSkillFireMainCannonAtEnemyEveryHalfSecond": {
+        "DELAY": "500",
+        "MAIN_CANNON_CARD_INDEX": "345"
+    },
+    "FerventWarriorOnTimer": {
+        "COOLDOWN": "28000",
+        "CARD_ID": "424"
+    },
+    "CloudCoverOnTimer": {
+        "COOLDOWN": "10000",
+        "CARD_ID": "415"
+    },
+    "ArcaneMissilesOnTimer": {
+        "COOLDOWN": "22000",
+        "SHORT_COOLDOWN": "20000",
+        "CARD_ID": "103"
+    },
+    "GainSwapForPerkAirStrike": {
+        "_thisCardIndex": "416",
+        "BLAST_ENTRY_CARD_INDEX": "89"
+    },
+    "RitesOfTheDead": {
+        "COOLDOWN": "13000"
+    },
+    "RuneStoneOnManaSpent": {
+        "MINION_MANA_SPEND_DELTA": "17",
+        "SPELL_MANA_SPEND_DELTA": "14",
+        "BUILDING_MANA_SPEND_DELTA": "14"
+    },
+    "GunKataOnTimer": {
+        "COOLDOWN": "23000",
+        "SHORT_COOLDOWN": "18000",
+        "CARD_ID": "423",
+        "ONE_PUNCH_BLAST_CARD_ID": "126"
+    },
+    "TombstoneOfTheDeathlessOnTimer": {
+        "COOLDOWN": "38000"
+    },
+    "TransferBuffsOnDamage": {
+        "COOLDOWN": "500"
+    },
+    "GainRageOnHeal": {
+        "HEAL": "25"
+    },
+    "PassiveSkillGetEmpoweredAttackOnHighCostMelee": {
+        "MIN_COST": "4"
+    },
+    "PassiveSkillSummonRatOnSummon": {
+        "THRESHOLD": "5",
+        "PERK_THREE_SPAWN_COUNT": "2"
+    },
+    "ShadowDanceOnTimer": {
+        "COOLDOWN": "23000",
+        "SHORT_COOLDOWN": "18000",
+        "CARD_ID": "126",
+        "ONE_PUNCH_BLAST_CARD_ID": "126"
+    },
+    "BlastEntryOnTimer": {
+        "COOLDOWN": "100",
+        "MIN_COOLDOWN": "4100"
+    },
+    "DionaTrapsOnTimer": {
+        "COOLDOWN": "25000"
+    },
+    "PassiveSkillAddRandom2ManaCheaperCyclingCardToDeck": {
+        "DELAY": "25000",
+        "UPGRADED_DELAY": "15000",
+        "MAX_CYCLE_CARDS": "5"
+    },
+    "PassiveSkillAddRandomCyclingCardToDeckBase": {
+        "DELAY": "33000",
+        "MAX_CYCLE_CARDS": "7"
+    },
+    "PassiveSkillAddRandomFree2ManaCyclingCardToDeck": {
+        "COST": "2",
+        "DELAY": "35000",
+        "MAX_CYCLE_CARDS": "7"
+    },
+    "PassiveSkillAddRandomFree4ManaCyclingCardToDeck": {
+        "COST": "4",
+        "DELAY": "35000",
+        "MAX_CYCLE_CARDS": "7"
+    },
+    "PassiveSkillGiveNextRangedCardMarksmanShip": {
+        "COOLDOWN": "10000"
+    },
+    "RuneStoneOnTimer": {
+        "COOLDOWN": "30000",
+        "POWERUP_COOLDOWN": "25000"
+    },
+    "ScratAffinityManager": {
+        "THRESHOLD": "5",
+        "BUFFERTIME": "5000"
+    },
+    "OutlanderAffinityTechManager": {
+        "TECH_PER_MANA": "5",
+        "TECH_PER_HEALTH": "1",
+        "TECH_HEALTH_SEGMENT": "5"
+    },
+    "ScrapPickUp": {
+        "DURATION": "30000",
+        "PICK_UP_RADIUS": "2000"
+    },
+    "PassiveSkillChangeSlitheringSummonsMasterOverTime": {
+        "DELAY": "50000"
+    },
+    "PassiveSkillDoomPocalypsePortals": {
+        "WAVE_DELAY": "8000"
+    },
+    "RagePickUp": {
+        "PICKUP_RADIUS": "1500",
+        "PICKUP_DURATION": "2000000"
+    },
+    "PassiveSkillApepAsMaster": {
+        "MANACOUNT": "2"
+    },
+    "PassiveSkillSlitherBeastAsMaster": {
+        "RINGTHEBIGGERGONGINDEX": "316",
+        "SLOTINDEX": "3",
+        "StacksPerKill": "2",
+        "DELAY": "500",
+        "GONG_RANGE": "9999999"
+    },
+    "PassiveSkillPoisonMortar": {
+        "DELAY": "6500",
+        "MORTARINDEX": "317"
+    },
+    "PassiveSkillHealOnSacrifice": {
+        "HEALONSACRIFICE": "30"
+    },
+    "PassiveSkillPlayBridgeBuddiesEveryXSeconds": {
+        "DELAY": "5000",
+        "BRIDGEBUDDIESID": "138"
+    },
+    "PassiveSkillSpawnDivineShieldTotemWithRespawnOnSacrifice": {
+        "SACRIFICESNEEDED": "10",
+        "TOTEMCOUNT": "2",
+        "SLAVESPAWNDELAY": "7500"
+    },
+    "PassiveSkillSpawnHarbingerOnXSacrifices": {
+        "SACRIFICEAMOUNT": "10"
+    },
+    "PassiveSkillSpawnMasterOnFieldTwiceEveryXSeconds": {
+        "DELAY": "90000"
+    },
+    "PassiveSkillSpawnProwlers": {
+        "COUNT": "5"
+    },
+    "PassiveSkillSpawnScratHordeEveryXSecondinDifferentLane": {
+        "DELAY": "20000",
+        "SCRATHORDEID": "25"
+    },
+    "PassiveSkillSpawnSlavesOnDeathPerMaxHealth": {
+        "MAXHEALTHSEGMENTS": "200"
+    },
+    "PassiveSkillSpawnSlitheringsummonsUnitOverTime": {
+        "DELAY": "45000"
+    },
+    "PassiveSkillSpawnWavesOfSlaves": {
+        "WAVESIZE": "10",
+        "DELAY": "20000"
+    },
+    "PassiveSkillUncageIfCagedGiveRageAndFrenzyToProwlersIfUncaged": {
+        "COUNT": "4"
+    },
+    "PassiveSkillAddCardOfCostOfFActionCountInDeck": {
+        "COSTREDUCTION": "5"
+    },
+    "PassiveSkillAddFreeMountainShaperToDeck": {
+        "CARDINDEX": "268"
+    },
+    "PassiveSkillDealDamageInOwnArenaExtreme": {
+        "PINCER_COUNT": "15",
+        "DELAY_BETWEEN_PINCERS": "200",
+        "START_DELAY": "1000"
+    },
+    "PassiveSkillDealDamageInOwnArenaOnTimer": {
+        "DAMAGE": "150"
+    },
+    "SummonLegionnairesIfQuestIsCompleted": {
+        "SUMMON_AMOUNT": "4"
+    },
+    "AddColossusAndReduceCostPerBossDefeat": {
+        "COLOSSUSINDEX": "211"
+    },
+    "CastShockRocksOnZenChiTrigger": {
+        "DELAY": "500",
+        "SHOCKROCKCOUNT": "6",
+        "SHOCKROCKINDEX": "30"
+    },
+    "CastSquirePuffOnBridgeCapture": {
+        "SQUIREPUFFINDEX": "214"
+    },
+    "HealMinionsFirstTimeTheyDropBelowHalfHealth": {
+        "HEAL_AMOUNT": "100"
+    },
+    "GiveRageBuffOnDoubleSpellCast": {
+        "SPELLCOUNT": "2"
+    },
+    "PlayArcaneRingOnCrystalElfPlayNearCrystalElf": {
+        "ARCANERINGINDEX": "263",
+        "RADIUS": "4000"
+    },
+    "SummonHighlanderOnRevelryTrigger": {
+        "COOLDOWN": "500",
+        "MAX_COST": "6"
+    },
+    "PassiveSkillHealFriendlyOnCooldown": {
+        "HEAL_AMOUNT": "20",
+        "HEAL_AMOUNT_EMPOWERED": "40",
+        "HEAL_COOLDOWN": "6000",
+        "HEAL_TARGETS": "5"
+    },
+    "AddSunderCardToDeck": {
+        "ADD_CARD_INDEX": "284"
+    },
+    "SpeedAdjustAndHeal": {
+        "SPEED_MODIFIER": "2",
+        "SPEED_CAP": "7",
+        "TOTAL_HEAL_AMOUNT": "150",
+        "HEAL_TICK_DURATION": "200"
+    },
+    "SummonArcanistOnSpellCast": {
+        "AMOUNT": "1",
+        "SPAWN_THRESHOLD": "3"
+    },
+    "PassiveSkillOn5CostEmpyreanResetArmorsAndShieldsOfLight": {
+        "SMITEINDEX": "277",
+        "DELAY": "30000",
+        "CARDCOST": "5"
+    },
+    "PassiveSkillCastSmiteOnSpellCast": {
+        "SMITEINDEX": "277",
+        "DELAY": "100"
+    },
+    "CurseFireAndGroundMinions": {
+        "TICK_DURATION": "1000",
+        "PERCENT_PER_TICK": "3",
+        "ACTIVATED_PERCENT_PER_TICK": "10"
+    },
+    "DealDamageConnected": {
+        "OVERLOAD_AMOUNT": "1",
+        "FIRST_EXPLOSION_DELAY": "600",
+        "CRYSTAL_DAMAGE": "120",
+        "CRYSTAL_TOWER_DAMAGE": "60"
+    },
+    "ExplodeUndyingCorpsesTrigger": {
+        "ACTIVATOR_CARD_ID": "293",
+        "DELAY_BETWEEN_EXPLOSIONS": "200"
+    },
+    "ExplodeUndyingCorpses": {
+        "DELAY_BETWEEN_EXPLOSIONS": "100"
+    },
+    "GroundMinionsAndSummonSkeletons": {
+        "SKELETON_AMOUNT": "5",
+        "SKELETON_AMOUNT_ASCENSION": "3",
+        "SKELETON_PRODUCTION_SPEED": "800"
+    },
+    "MultipleSidedCard": {
+        "MAX_SIDES": "2"
+    },
+    "VoidSoul": {
+        "RADIUS": "2000",
+        "PICK_UP_TRAVEL_TIME": "500",
+        "DELAY_BEFORE_SUMMON": "500"
+    },
+    "HolyFire": {
+        "DURATION": "3000",
+        "TICK_COOLDOWN": "200",
+        "DELAY": "200",
+        "DAMAGE": "75",
+        "RADIUS": "4500"
+    },
+    "PassiveSkillSummonMountedElfLords": {
+        "AMOUNT": "1"
+    },
+    "LifeBurstBerry": {
+        "BERRY_RADIUS": "1500",
+        "BERRY_LIFE_TIME": "45000",
+        "BERRY_MATURE_TIME": "0",
+        "BERRY_SPAWN_RADIUS": "3000"
+    },
+    "MysteriousEgg": {
+        "RADIUS": "3500",
+        "LIFE_TIME": "30000",
+        "ACTIVATION_TIME": "0",
+        "EGG_SPAWN_RADIUS": "3000"
+    },
+    "PlayCrystalBlastOnKill": {
+        "PLAY_CARD_ID": "295",
+        "COOLDOWN": "16000"
+    },
+    "SpellDamageAndHolyFire": {
+        "HOLY_FIRE_DELAY": "0"
+    },
+    "AddZenChiFlowThatCastsHealingFireballAndChainLightning": {
+        "HEALING_FIREBALL_CARD_ID": "29",
+        "CHAIN_LIGHTNING_CARD_ID": "30"
+    },
+    "AllCardsInHandCost3OnceOnLevelUp": {
+        "COST_TARGET": "3"
+    },
+    "ReduceCostOfHighestCostCardsOnLevelUp": {
+        "REDUCE_AMOUNT": "10"
+    },
+    "EveryOtherSpellIsFree": {
+        "REDUCE_AMOUNT": "10"
+    },
+    "SummonStormysOnEnemyControlBridgesFor5Seconds": {
+        "HOLD_BRIDGES_TIME_REQUIREMENT": "15000"
+    },
+    "BlinkFriendlyMinionsOnTwoMinionCardPlaysInARow": {
+        "CARD_CASTS_NEEDED": "3"
+    },
+    "CastSpawnOfFuryOnSummonedMinions": {
+        "SPAWN_OF_FURY_CARD_ID": "242"
+    },
+    "CapCardCostsAt5Mana": {
+        "CAPPED_CARD_COST": "6"
+    },
+    "AddBrothersOfLightAndTriggerArmorOnSpellPlayed": {
+        "CARD_ID": "212",
+        "CARD_AMOUNT": "1",
+        "MANA_COST_REDUCTION": "5"
+    },
+    "CopyEnemySpellsAsOneUseCheap": {
+        "MANACOSTREDUCTION": "3"
+    },
+    "AddZenChiFlowThatCastsHealingFireball": {
+        "HEALING_FIREBALL_CARD_ID": "29"
+    },
+    "SpellShootMultipleShockRocks": {
+        "MAX_CHARGES": "4",
+        "CHARGE_PER_BERRY": "2",
+        "SEPERATION_DELAY": "250",
+        "AIM_AREA": "2000",
+        "SHOCK_ROCK_CARD_ID": "30"
+    },
+    "SpellSlowAndDealDamageInArea": {
+        "TICK_TIME": "200",
+        "REDUCE_SPEED_TO": "2",
+        "MAX_SKELETONS": "4"
+    },
+    "SpellSummonReinforcements": {
+        "HEALING": "275",
+        "Minion1Count": "2",
+        "Minion2Count": "2"
+    },
+    "SummonWardancerOnSpellCast": {
+        "AMOUNT": "1"
+    },
+    "WitchHunterBearClawTrap": {
+        "LIFE_TIME": "15000",
+        "TRAP_SETUP_TIME": "500",
+        "TRAP_RADIUS": "2500",
+        "TRAP_DAMAGE": "50",
+        "TRAP_TIME": "4000",
+        "ANIMATION_DELAY": "400"
+    },
+    "UndyingCorpse": {
+        "LIFE_TIME": "25000",
+        "RADIUS": "2000"
+    },
+    "CastScrattileryOnClosestEnemyGroundUnityEvery30Seconds": {
+        "SCRATTILERYINDEX": "257",
+        "DELAY": "30000"
+    },
+    "CastMagmaStormOnClosestEnemyGroundUnityEvery30Seconds": {
+        "MAGMASTORNINDEX": "99",
+        "DELAY": "30000"
+    },
+    "CastSmiteOnClosestEnemyGroundUnityEvery30Seconds": {
+        "SMITEINDEX": "277",
+        "DELAY": "20000"
+    },
+    "OnBerryUseGiveGiantGrowthWithinRange": {
+        "RANGE": "5000"
+    },
+    "PassiveSkillCastShensStormStaffOnXOrMoreEnemiesInArea": {
+        "DELAY": "20000",
+        "SHENSSTORMSTAFFINDEX": "280"
+    },
+    "PassiveSkillCastSunBurnOnFurthestMinionEvery15Seconds": {
+        "DELAY": "15000",
+        "SUNBURNINDEX": "178"
+    },
+    "OnDeathGiveDivineShieldThenKill": {
+        "MIN_DELAY": "3000"
+    },
+    "OnMinionDeathGiveHeroDivineShield": {
+        "DELAY": "1000"
+    },
+    "PassiveSkillCastSpawnOfFureOnAllSummonedMinions": {
+        "SPAWN_OF_FURY_CARD_ID": "242"
+    },
+    "PassiveSkillDragonNestAsMaster": {
+        "DAMAGE_AMOUNT": "400",
+        "DAMAGE_DURATION": "5000"
+    },
+    "PassiveSkillGraspingThornsAsMaster": {
+        "MINDELAY": "5000"
+    },
+    "PassiveSkillVoidPortal": {
+        "WAVE_DELAY": "15000"
+    },
+    "PlantBerryEvery8Seconds": {
+        "DELAY": "10000",
+        "MIN_CONVERT_DELAY": "10000",
+        "BERRY_COUNT": "1",
+        "BERRY_CONVERT_COUNT": "1"
+    },
+    "PassiveSkillGiveHasteOnRage": {
+        "MINIMUMCOST": "5",
+        "SUNBURNINDEX": "178"
+    },
+    "PassiveSkillGiveMinionsPoisonPerAttack": {
+        "POISON_DURATION": "2000"
+    },
+    "PassiveSkillCastSunBurnOnFurthestMinionOnPlay5CostMinion": {
+        "MINIMUMCOST": "5",
+        "POCKETSHIELDINDEX": "124",
+        "SUNBURNINDEX": "178"
+    },
+    "PassiveSkillGaxAsMaster": {
+        "POISONSTRIKEINDEX": "224"
+    },
+    "PassiveSkillAddArcaneMissilesForSpellsInDeck": {
+        "CARD_ID": "348"
+    },
+    "PassiveSkillOnCost6OrGreaterMinionPlayedGiveNearbyMinionsFrenzyAndSlow": {
+        "HEALING_FIREBALL_CARD_ID": "29"
+    },
+    "PassiveSkillOnFriendlyGroundMinionBuffGainSpawnHolyFire": {
+        "MIN_DELAY": "3000"
+    },
+    "PassiveSkillOnMinionDeathCastBlackHole": {
+        "HEALINGBLACKHOLEINDEX": "281",
+        "DUPLICATINGHEALINGBLACKHOLEINDEX": "282"
+    },
+    "PassiveSkillPlayGraspingthornsOnBridgeEvery30Seconds": {
+        "DELAY": "30000"
+    },
+    "PassiveSkillSummonScratPackOnGraspingThornsDeath": {
+        "SPAWNCOUNT": "1"
+    },
+    "PassiveSkillSummonSwarmersOnRepeatCostPlay": {
+        "UNITYTOSUMMONCOUNT": "4",
+        "ACTIVATIONCOUNT": "2"
+    },
+    "PassiveSkillSummonHighlanderForEachCost6OrGreaterCardInDeck": {
+        "CARD_COST": "5"
+    },
+    "PassiveSkillMinionsSpawnUndyingCorpseOnDeath": {
+        "OWNFIELD_COOLDOWN": "10000",
+        "EVERYWHERE_COOLDOWN": "5000"
+    },
+    "PassiveSkillAddCheapCopyOfOpponentCard": {
+        "CARD_COST_REDUCTION": "3",
+        "GAIN_CARD_INTERVAL": "15"
+    },
+    "PassiveSkillSummon4SuccubiAnd4Incubi": {
+        "COUNT": "4"
+    },
+    "PassiveSkillSwitchToWerewolfFriendlyMeleeGainLycanthropy": {
+        "HEALTH_THRESHOLD": "150"
+    },
+    "PassiveSkillGainThreeCardsCrakgulFree": {
+        "CRAKGUL_CARD_INDEX": "216",
+        "CARD_AMOUNT": "1"
+    },
+    "PassiveSkillPlayLightningBoltEveryXSecond": {
+        "LIGHTNING_BOLT_CARD_INDEX": "4"
+    },
+    "PlayFireballsOn4ManaCardsCastInARow": {
+        "FIREBALL_COUNT": "3",
+        "CARD_CASTS_NEEDED": "3",
+        "FIREBALL_CARD_ID": "9"
+    },
+    "DuplicateCastOf2ManaCards": {
+        "DAMAGE_AMOUNT": "50"
+    },
+    "DamageOpponentWhileAt10Mana": {
+        "DAMAGE_AMOUNT": "10"
+    },
+    "BaseTakesLessDamageWhenBothBridgesOwned": {
+        "PERCENTAGE_DAMAGE_REMOVED": "100"
+    },
+    "ChanceToGetManaOnSpellPlay": {
+        "MANA_GAINED": "3",
+        "PERCENTAGE_CHANCE": "33"
+    },
+    "HealNearbyMinionsOnMinionPlayed": {
+        "SPIRIT_INFUSION_CARD_ID": "100"
+    },
+    "SummonStormysOnLevel3": {
+        "LEVEL_REQUIRED": "3",
+        "SUMMON_AMOUNT": "10"
+    },
+    "GainXpOnEnemyMasterHit": {
+        "DAMAGE_AMOUNT": "50",
+        "DAMAGE_DURATION": "5000"
+    },
+    "SummonWarriorOnDamageTaken": {
+        "DAMAGE_AMOUNT": "200",
+        "DAMAGE_DURATION": "5000"
+    },
+    "SummonBlindDatesOnLevelUp": {
+        "SUMMON_AMOUNT": "2"
+    },
+    "ReduceCostOfCrystalCardsOnLevelUp": {
+        "REDUCE_AMOUNT": "10"
+    },
+    "DrainEnemyMinions": {
+        "DRAIN_TARGETS": "1",
+        "PERK2_DRAIN_TARGETS": "2",
+        "HEAL_DELAY": "1000"
+    },
+    "GiveFriendlyMinionFrenzyAndSpirit": {
+        "COUNT": "1"
+    },
+    "GiveFriendlyMinionsSpirit": {
+        "PERK1_COUNT": "1",
+        "PERK2_COUNT": "2",
+        "SPIRIT_DELAY": "2000"
+    },
+    "ReduceCostOfSpellCardsInDeck": {
+        "REDUCTION_AMOUNT": "1",
+        "PERK1_REDUCTION_COUNT": "1",
+        "PERK2_REDUCTION_COUNT": "3",
+        "CARD_COST_THRESHOLD": "4"
+    },
+    "SacrificeAndGainSlitherCard": {
+        "RANDOM_CARD_COST": "5",
+        "COHORT_AMOUNT": "3"
+    },
+    "SpellStormbolt": {
+        "AOE_DAMAGE": "50",
+        "AOE_RADIUS": "3000"
+    },
+    "SpellStormbow": {
+        "NUMBER_OF_SHOTS": "3",
+        "NUMBER_OF_JUMPS": "3",
+        "DELAY_BETWEEN_JUMPS": "300"
+    },
+    "SpellBarrier": {
+        "OVERLOAD_AMOUNT": "2"
+    },
+    "SpellCirclingProjectiles": {
+        "PROJECTILES": "8",
+        "PROJECTILES_RADIUS": "500",
+        "PROJECTILE_RADIUS_OFFSET": "4000",
+        "PROJECTILES_TIME_FOR_FULL_REVOLUTION": "2400"
+    },
+    "SpellDealDamageInVerticalLine": {
+        "MAX_CHARGES": "10",
+        "TIME_PER_CHARGE": "3500",
+        "VERTICAL_LINE_KNOCKBACK_DISTANCE": "4200",
+        "VERTICAL_LINE_WIDTH": "10000",
+        "HORIZONTAL_WIDTH_BUFFER": "500",
+        "DELAY_BETWEEN_VERTICAL_LINES": "200"
+    },
+    "SpellHealAndDisappear": {
+        "HEAL_AMOUNT": "150",
+        "HEALTH_GAIN_AMOUNT": "100"
+    },
+    "SpellOwlsAttack": {
+        "NUMBER_OF_OWLS": "11",
+        "SPEED_ADDED": "9"
+    },
+    "SpellVortex": {
+        "PULL_POWER": "10",
+        "TICK_TIME": "200",
+        "DEAD_ZONE_RADIUS": "200",
+        "FULL_DAMAGE_ZONE": "1500",
+        "DAMAGE_DELAY": "200"
+    },
+    "PassiveSkillSpawnLightArmyAtBasePerCardInDeck": {
+        "SPAWNDELAY": "1600",
+        "AMOUNT_OF_EACH_UNIT": "6"
+    },
+    "PassiveskillSpawnEggPerPerkMax3Every10Seconds": {
+        "DELAY": "20000"
+    },
+    "ArcaneGolemOnTimer": {
+        "COOLDOWN": "25000",
+        "SHORT_COOLDOWN": "20000",
+        "CARD_ID": "104"
+    },
+    "PassiveSkillOnSpiritHealAndGainXp": {
+        "ADDED_XP": "0",
+        "ADDED_HEALTH": "50"
+    },
+    "PassiveSkillBurnTheBridgesOnSameCostCardPlay": {
+        "BURN_THE_BRIDGES_CARD_INDEX": "58",
+        "MIN_DELAY": "20000"
+    },
+    "EmpowerBookOfTheDead": {
+        "REDUCTION_COST_THESHOLD": "4",
+        "REDUCTION_AMOUNT": "10000"
+    },
+    "BookOfTheDead": {
+        "COOLDOWN": "27000"
+    },
+    "GainCardSkillStormbolt": {
+        "NUMBER_OF_ATTACKS": "8"
+    },
+    "PassiveSkillLoggerAsMaster": {
+        "RELOAD_TIME": "40"
+    },
+    "PassiveSkillInstantKillAnyMinionBelow40PercentHealth": {
+        "DELAY": "500"
+    },
+    "SummonBuffPickUpsOnTimer": {
+        "DISTANCE_FROM_TOWER": "9000",
+        "GET_CARD_OF_VALUE": "2",
+        "RAGE_BUFF_AMOUNT": "5",
+        "SINGLESHIELD_BUFF_AMOUNT": "5",
+        "SPIRIT_BUFF_AMOUNT": "1",
+        "A_BUFF_AMOUNT": "5",
+        "B_BUFF_AMOUNT": "5",
+        "B_DEBUFF_DAMAGE": "50",
+        "B_DEBUFF_AMOUNT": "1",
+        "BUFF_RADIUS": "8000",
+        "PICKUP_RADIUS": "4000"
+    },
+    "SummonSkeletonWithBasicAttack": {
+        "TIME_TO_SPAWN": "5000"
+    },
+    "SummonUndyingOnLifeCollected": {
+        "LIFE_POOL_TRIGGER": "1000"
+    },
+    "SummonCrystalArchersOnSpawnIfSpellsInDeck": {
+        "DECK_SPELLS_REQUIREMENT": "4",
+        "SUMMON_AMOUNT": "6"
+    },
+    "DamageEnemiesOnSpellPlayed": {
+        "MANA_THRESHOLD": "4",
+        "DRAIN_PERCENT": "5"
+    },
+    "SlitherCohordCardBuff": {
+        "AMOUNT_PER_BUFF": "1"
+    },
+    "GiveSpiritOnSpellPlayed": {
+        "MANA_THRESHOLD": "4"
+    },
+    "GainSoulOnPlay": {
+        "AMOUNT": "1"
+    },
+    "NyrvirsBreath": {
+        "WIDTH": "3000",
+        "MINIMUM_BURN_TIME": "1000",
+        "TICKS": "10"
+    },
+    "SpellWitchQueensDragon": {
+        "NYRVIRS_BREATH_ID": "236",
+        "NYRVIRS_BREATH_DELAY": "500",
+        "NYRVIR_ID": "233",
+        "NYRVIR_ID_DELAY": "2500"
+    },
+    "SpellGiveSpiritsSimple": {
+        "SPIRIT_AMOUNT": "4",
+        "ASCENSION_SPIRIT_AMOUNT": "2",
+        "SPIRIT_DELAY": "2000"
+    },
+    "SpellAllMinionsFallToHalfHealth": {
+        "AMOUNT_OF_LYCANS": "2"
+    },
+    "SpellChainLightningSuperCharged": {
+        "SUPERCHARGED_MANA_REQUIREMENT": "10",
+        "SUPERCHARGED_TRIGGER_AMOUNTS": "5",
+        "SUPERCHARGED_TRIGGER_INTERVAL": "500",
+        "BOUNCEDELAY": "275"
+    },
+    "SpellGorrakkGate": {
+        "SPAWNDELAY": "800",
+        "BETWEENDELAY": "100",
+        "SWARMER_AMOUNT": "3",
+        "DRAGON_AMOUNT": "2",
+        "CLEAVER_AMOUNT": "1"
+    },
+    "DragonFlameLine": {
+        "BALL_SPAWN_COUNT": "4",
+        "BALL_SPAWN_DISTANCE": "3000",
+        "BALL_SPAWN_DELAY": "2500",
+        "BALL_SPAWN_INTERVAL": "0",
+        "BALL_RADIUS": "5000",
+        "BALL_AMOUNT_OF_TICKS": "10",
+        "BALL_TICK_DAMAGE": "20",
+        "BALL_TICK_INTERVAL": "400"
+    },
+    "SpellMultipleRockets": {
+        "MIN_DELAY": "100",
+        "MAX_DELAY": "300",
+        "NUMBER_OF_EXPLOSIONS": "5",
+        "EXPLOSION_DELAY": "1500",
+        "EXPLOSION_RADIUS": "3500",
+        "MASTER_DAMAGE_PERCENT": "50"
+    },
+    "SpellNyrvirsBreath": {
+        "MASTER_DAMAGER_PERCENT": "10",
+        "SKELETONS": "0",
+        "ASCENSION_BONUS_SKELETONS": "10",
+        "ATTACK_RECOVER_TIME": "2000",
+        "TICKS": "10"
+    },
+    "SpellSlitherPowerSummon": {
+        "DELAY": "500",
+        "MIN_COST": "7",
+        "CHEAP_SPAWN_COST": "6",
+        "EXPENSIVE_SPAWN_COST": "8"
+    },
+    "SpellReplaceWithCardsToDeck": {
+        "MANA_COST": "0",
+        "CARD_AMOUNT": "3",
+        "MUSHROOMS_PER_CARD": "1"
+    },
+    "SpellSpawnOfFury": {
+        "FLY_TIME": "600",
+        "DAMAGE_REDUCTION_PERCENT": "25",
+        "HEALTH_DIVIDER": "4"
+    },
+    "SpellSummonRandomSlitherReinforcements": {
+        "DAMAGE_INCREASE_MULTIPLIER": "2",
+        "AMOUNT_OF_DUDES": "4",
+        "SUMMON_DELAY": "500"
+    },
+    "SpellVoidGlyph": {
+        "DELAY": "1000"
+    },
+    "SpellSpawnManaPuffsForBothSides": {
+        "SPAWN_AMOUNT": "4"
+    },
+    "SpellStunSuperCharged": {
+        "SUPERCHARGED_MANA_REQUIREMENT": "10",
+        "SUPERCHARGED_TRIGGER_AMOUNTS": "5",
+        "SUPERCHARGED_TRIGGER_INTERVAL": "500",
+        "DELAY": "1000"
+    },
+    "ReduceNextCardCostDuration": {
+        "DURATION": "10000"
+    },
+    "SpellStunHighestHealthKillIfLowHealth": {
+        "STUN_DURATION": "400",
+        "KILL_HEALTH_MAX": "450"
+    },
+    "SpellSummonBatsOnManaSpend": {
+        "BATS_PER_MANA": "1"
+    },
+    "EmpyreanAffinityBuff": {
+        "CARDS_REQUIRED": "7"
+    },
+    "SlitherPerSlave": {
+        "PAY_WITH_SLAVES_AMOUNT": "3"
+    },
+    "GiveSpiritAndRageForSlavesBuff": {
+        "COST": "3"
+    },
+    "AccursedAffinityBuff": {
+        "ACCURSED_SOUL_AMOUNT": "80"
+    },
+    "SummonEnemyStatuesOnFirstPlay": {
+        "COST_DECREASE": "1",
+        "AMOUNT_OF_ENEMY_MINIONS": "1"
+    },
+    "SummonEnemyLancersOnFirstPlay": {
+        "COST_DECREASE": "1",
+        "AMOUNT_OF_ENEMY_MINIONS": "5"
+    },
+    "SummonGiveEmpyreansMiniDivineShield": {
+        "DURATION": "2000"
+    },
+    "SummonMinionWithDivineShield": {
+        "DURATION": "5000"
+    },
+    "SummonWithLoneRangerLogic": {
+        "SummonTimeBuffer": "200",
+        "MANA_GEN_AMOUNT": "1"
+    },
+    "SummonWithLoneWolfLogic": {
+        "SummonTimeBuffer": "200"
+    },
+    "SpellGoThroughProjectileInDirectionFromHero": {
+        "PROJECTILE_HIT_TO_DAMAGE_DELAY": "200",
+        "KNOCKBACK_DISTANCE": "3000",
+        "KNOCKBACK_DURATION": "500",
+        "PROJECTILE_SPEED": "800",
+        "HIT_COUNT": "2",
+        "SPELL_DURATION": "4000"
+    },
+    "ReduceCostWhenMinionGainsFrenzy": {
+        "MINIMUM_COST": "8"
+    },
+    "SpellFocusSingleTargetBoost": {
+        "DAMAGE": "40",
+        "WIND_UP_TIME": "1000",
+        "LOCK_IN_TIME": "500",
+        "BURST_DURATION": "500",
+        "COOLDOWN": "300",
+        "BASE_DAMAGE_DIVIDER": "3"
+    },
+    "SpellBlinkMinionsForward": {
+        "RANGE": "6000"
+    },
+    "SpellCheeseDate": {
+        "DELAY": "1350",
+        "MANA_COST": "3",
+        "CYCLE_SIZE": "7"
+    },
+    "SpellDealDamageAndEnrage": {
+        "TICKS": "10"
+    },
+    "SpellExplodeSpawnDragonWhelp": {
+        "PREVIOUS_CARD_TRIGGER_COST": "5",
+        "FIREBALL_CARD_INDEX": "9"
+    },
+    "SpellFutureCheese": {
+        "SCRAT_MOUNT": "2",
+        "MANA_COST": "1"
+    },
+    "SpellFuturePastBig": {
+        "MANA_COST": "2"
+    },
+    "SpellGamblersBall": {
+        "SACRIFICE_COUNT": "3"
+    },
+    "SpellHealAllMinionsAndMasters": {
+        "HEAL_AMOUNT": "250",
+        "BASE_HEAL_AMOUNT": "125",
+        "HEAL_DURATION": "2000"
+    },
+    "SpellMassRecall": {
+        "XPOSITIONOFFSET": "1000",
+        "YPOSITIONOFFSET": "5000"
+    },
+    "SpellPowerSkillShot": {
+        "SHOT_RADIUS": "1500",
+        "PROJECTILE_SPEED": "3000",
+        "PROJECTILE_DISTANCE": "8000"
+    },
+    "SpellRitualCleaver": {
+        "RITUAL_DURATION": "4000",
+        "FLY_TIME": "600"
+    },
+    "SpellShadowDance": {
+        "FLY_TIME": "1000",
+        "IMPACT_TIME": "167"
+    },
+    "SpellMultipleExplosionsControlled": {
+        "MIN_DELAY": "90",
+        "MAX_DELAY": "110",
+        "NUMBER_OF_EXPLOSIONS": "7",
+        "EXPLOSION_DELAY": "2000",
+        "EXPLOSION_RADIUS": "3500",
+        "EXPLOSION_SEPERATION": "0",
+        "MASTER_DAMAGE_DIVIDER": "10"
+    },
+    "SpellShootProjectilesInMultipleDirections": {
+        "ATTACK_WAVES": "5",
+        "COOLDOWN": "100",
+        "NUMBER_OF_SHOTS": "25"
+    },
+    "SpellSummonArmoredScrats": {
+        "AmountToSummon": "4",
+        "AmountToSummonIfBehindOnXP": "6"
+    },
+    "SpellTimeBomb": {
+        "DELAY_BETWEEN_EXPLOSIONS": "200",
+        "EXPLOSION_RADIUS": "8000"
+    },
+    "SpellBridgeImmunity": {
+        "DURATION": "8000",
+        "DISTANCE_TO_BRIDGE": "5000",
+        "DELAY": "1000"
+    },
+    "SpellCloneMinion": {
+        "HEALTH_REDUCTION_AMOUNT": "2",
+        "SUMMONING_SICKNESS_DURATION": "3000"
+    },
+    "SpellGiveSpirits": {
+        "HEALTH": "100",
+        "FLY_TIME": "500",
+        "SPIRIT_AMOUNT": "3",
+        "SPIRIT_DELAY": "2000"
+    },
+    "SpellMultipleExplosion": {
+        "MIN_DELAY": "200",
+        "MAX_DELAY": "600",
+        "NUMBER_OF_EXPLOSIONS": "13",
+        "EXPLOSION_DELAY": "2000",
+        "EXPLOSION_RADIUS": "3500",
+        "MASTER_DAMAGE_DIVIDER": "10"
+    },
+    "SpellProjectilesInDirectionFromHero": {
+        "PROJECTILES": "5",
+        "PROJECTILE_SEPERATION": "100",
+        "CAST_RADIUS": "4500",
+        "PROJECTILE_HIT_TO_DAMAGE_DELAY": "200"
+    },
+    "SpellSacrificeAndDealDamage": {
+        "DELAY_BETWEEN_EXPLOSIONS": "200",
+        "EXPLOSION_RADIUS": "6000",
+        "MASTER_DAMAGE_DIVIDER": "10"
+    },
+    "SpellSettsuBlastEntry": {
+        "FLY_TIME": "4000",
+        "IMPACT_TIME": "167",
+        "HEALTH_UP_PER_LEVEL": "100",
+        "CARDINDEX": "89"
+    },
+    "SpellShrinkingHealAreaOverTime": {
+        "TRIGGER_AMOUNT": "75",
+        "SMALLEST_AREA": "1000"
+    },
+    "SpellAggroNearbyEnemies": {
+        "RANGE": "8000"
+    },
+    "SummonWithSoulStealerLogic": {
+        "MAX_SOULS": "10",
+        "SOUL_PER_SACRIFICE": "3"
+    },
+    "SwapToDormantDragon": {
+        "REPLACE_WITH_ID": "232"
+    },
+    "SwapToWokeDragonIfAffinity": {
+        "REPLACE_WITH_ID": "233",
+        "SOULS_PER_TARGET": "1",
+        "TARGETS": "2"
+    },
+    "ActivateRufflesOnEnemyUnitDeath": {
+        "RUFFLES_COOLDOWN": "10000",
+        "RUFFLES_SPAWN_DELAY": "2000"
+    },
+    "GainCardRatboSuperCharge": {
+        "CARD_ID": "116"
+    },
+    "GainCardSkillSettsuBlastEntry": {
+        "CARD_ID": "89"
+    },
+    "PassiveSkillAddRandom4ManaCardToDeck": {
+        "GET_CARD_OF_VALUE": "4"
+    },
+    "SpellBurnTheBridges": {
+        "DAMAGE_TICKS": "25",
+        "DAMAGE": "8",
+        "DELAY": "200",
+        "INTERVAL": "200",
+        "SINGLE_TARGET_MULTIPLIER": "1000"
+    },
+    "SpellButchersShop": {
+        "AMOUNTTOSUMMON": "8"
+    },
+    "SpellChainLightning": {
+        "BOUNCEDELAY": "300",
+        "STUN_DURATION": "2000",
+        "MAX_BOUNCES": "5"
+    },
+    "PassiveSkillAddRandom2ManaCardToDeck": {
+        "GET_CARD_OF_VALUE": "2"
+    },
+    "SpellRampage": {
+        "DELAY": "1000",
+        "DAMAGE_INCREASE_MULTIPLIER": "2"
+    },
+    "SpellFuturePast": {
+        "MANA_COST": "1"
+    },
+    "SpellCallToArms": {
+        "PERCENTAGE_HEALING": "15"
+    },
+    "SpellSummonInfiltrators": {
+        "AMOUNT": "4",
+        "SPAWNDELAY": "1500",
+        "BETWEENDELAY": "100",
+        "DELAY": "800"
+    },
+    "SpellSummonRandomRagingReinforcements": {
+        "DAMAGE_INCREASE_MULTIPLIER": "2",
+        "AMOUNT_OF_BROTHERS": "1",
+        "AMOUNT_OF_WARRIORS": "2",
+        "AMOUNT_OF_SPEARTHROWERS": "6"
+    },
+    "SpellTrickSwap": {
+        "DELAY": "500",
+        "MAX_SPAWNS": "4"
+    },
+    "GainCardSkillTrickSwap": {
+        "CARD_ID": "55"
+    },
+    "PassiveSkillAttackSpeedForDamagedMinions": {
+        "THRESHOLD": "50"
+    },
+    "PassiveSkillDecreasePowerSkillShotManaCost": {
+        "MANA_COST_THRESHOLD": "5"
+    },
+    "PassiveSkillDivineShieldAllMinionsAndMaster": {
+        "DURATION": "8000"
+    },
+    "PassiveSkillDropBurningPumpkinsAtInterval": {
+        "INTERVAL": "15000"
+    },
+    "PassiveSkillDropMineAtInterval": {
+        "INTERVAL": "10000"
+    },
+    "PassiveSkillGainFreeStyxi": {
+        "DELAY": "60000"
+    },
+    "PassiveSkillGainBlindDate": {
+        "FINAL_CARD_COST": "1"
+    },
+    "PassiveSkillGainFreeZeppelinBomber": {
+        "DELAY": "45000"
+    },
+    "PassiveSkillLongerMasterRange": {
+        "NEW_RANGE": "20000"
+    },
+    "PassiveSkillGiveRandomBuffToCertainManaCards": {
+        "MANA_TARGET": "4",
+        "MANA_TARGET_MAX": "5"
+    },
+    "PassiveSkillGiveShieldWhenMinionIsPlayed": {
+        "NUMBER_OF_SHIELDS": "2"
+    },
+    "PassiveSkillGunKata": {
+        "AMOUNT_OF_SHOTS": "5",
+        "DURATION": "2000",
+        "DAMAGE": "50",
+        "DAMAGE_ADDED": "10"
+    },
+    "PassiveSkillChainLightningOnOpponentBridgeTakeOver": {
+        "COOLDOWN": "500"
+    },
+    "PassiveSkillLightningBoltOnBridgeTakeOver": {
+        "COOLDOWN": "500"
+    },
+    "PassiveSkillPiercingStunShot": {
+        "PIERCE_LENGTH": "5000",
+        "SHOT_RADIUS": "1000",
+        "STUN_TIME": "3000"
+    },
+    "PassiveSkillRessurectEnemiesAsSpiritVessels": {
+        "DELAY": "2000",
+        "CHANCE": "100"
+    },
+    "PassiveSkillSpawnCloneWithManaSpent": {
+        "MANA_PER_CLONE": "3",
+        "MANA_PER_CLONE_LEVEL2": "3",
+        "R3KT_CHANCE": "25",
+        "MAX_SPAWNS_BEFORE_ACTUAL_R3KT": "4"
+    },
+    "PassiveSkillSpawnBiomeTombstoneAtInterval": {
+        "DELAY": "60000"
+    },
+    "PassiveSkillSpawnCounterGhost": {
+        "MANA_THRESHOLD": "5"
+    },
+    "PassiveSkillSpawnWalkingPumpkinsAtInterval": {
+        "DELAY": "30000"
+    },
+    "PassiveSkillSpawnTroubadoursAtInterval": {
+        "DELAY": "60000"
+    },
+    "PassiveSkillSpawnPowerShrinesAtInterval": {
+        "DELAY": "32500",
+        "VISUAL_DELAY": "30"
+    },
+    "PassiveSkillSummonCrossbowmenBehindSalty": {
+        "SUMMON_AMOUNT": "2"
+    },
+    "PassiveSkillSummonGuardHouses": {
+        "SUMMON_AMOUNT": "2"
+    },
+    "PassiveSkillSummonScratLaunchers": {
+        "SUMMON_AMOUNT": "2"
+    },
+    "PassiveSkillSummonCrossbowGuilds": {
+        "SUMMON_AMOUNT": "2"
+    },
+    "PassiveSkillSummonScratTurrets": {
+        "SPAWN_DELAY": "30000"
+    },
+    "PassiveSkillSummonBazookaScrats": {
+        "SUMMON_AMOUNT": "4"
+    },
+    "PassiveSkillSummonReboomers": {
+        "SUMMON_AMOUNT": "6"
+    },
+    "PassiveSkillSummonUndyings": {
+        "SUMMON_AMOUNT": "3"
+    },
+    "PassiveSkillSummonWarriors": {
+        "SUMMON_AMOUNT": "3"
+    },
+    "GainCardSkillBurnTheBridges": {
+        "CARD_ID": "58"
+    },
+    "PassiveSkillLeftMostDiscountWithXPToOpponent": {
+        "DISCOUNT": "1",
+        "XP": "2"
+    },
+    "PassiveSkillAttackAndMoveSpeedIncrease": {
+        "ADDED_FRACTION": "5"
+    },
+    "TombstoneOnTimer": {
+        "COOLDOWN": "35000"
+    },
+    "TrickSwapOnTimer": {
+        "COOLDOWN": "30000",
+        "CARD_ID": "55"
+    },
+    "PassiveSkillSpawnScratpackOnMinionCardPlay": {
+        "SCRATPACKID": "7"
+    },
+    "SpellStun": {
+        "DELAY": "1000"
+    },
+    "SpellHeal": {
+        "HEAL": "350",
+        "DELAY": "1500"
+    },
+    "SpellPowerSummon": {
+        "DELAY": "1350",
+        "MANA_COST": "5",
+        "CYCLE_SIZE": "7"
+    },
+    "SpellAllIn": {
+        "HealthPercent": "50"
+    },
+    "SpellSummonBridgeGuards": {
+        "AmountToSummon": "5",
+        "AmountToSummonIfBridgeControl": "7"
+    },
+    "ActiveSkillShield": {
+        "RANGE": "6000"
+    },
+    "PassiveSkillDiscountWithXPToOpponent": {
+        "DISCOUNT": "1",
+        "XP": "2"
+    },
+    "PassiveSkillDamageOpponent": {
+        "FLY_TIME": "500",
+        "DAMAGE": "500"
+    },
+    "PassiveSkillDealDamageOnPuffDeath": {
+        "FLY_TIME": "500",
+        "DAMAGE": "75"
+    },
+    "PassiveSkillGlobalRangeFriendlyOnUnitCount": {
+        "UNIT_COUNT_CUTOFF": "10"
+    },
+    "PassiveSkillSummonThreeWizardPuffs": {
+        "SPAWN_AMOUNT": "3"
+    },
+    "PassiveSkillStealthSummonRatOnSummon": {
+        "DAMAGE_INCREASE": "10",
+        "COOLDOWN": "7000"
+    },
+    "PassiveSkillSummonFiveNextDeadUnits": {
+        "MAX_USES": "3",
+        "RESPAWN_TIME": "500"
+    },
+    "PassiveSkillSummonThreeNextDeadUnits": {
+        "MAX_USES": "2"
+    },
+    "PassiveSkillSummonBrutus": {
+        "DELAY": "100000",
+        "CD_ALTER_PER_DEATH": "1000"
+    },
+    "PassiveSkillFireboltOnCardPlay": {
+        "FLY_TIME": "500",
+        "DAMAGE": "60",
+        "CARD_COST_CUTOFF": "3"
+    },
+    "PassiveSkillExpensiveCardsDiscount": {
+        "DISCOUNT_CARD_COST_CUTOFF": "5"
+    },
+    "PassiveSkillDamageIncrease": {
+        "DAMAGE_INCREASE_MULTIPLIER": "2"
+    },
+    "PassiveSkillRangeIncrease": {
+        "RANGE_INCREASE": "2000"
+    },
+    "ActiveSkillBarrier": {
+        "RANGE": "6000",
+        "TICKS": "8",
+        "DAMAGE": "5"
+    },
+    "SpellLightningBolt": {
+        "DAMAGE": "10000",
+        "DELAY": "499"
+    },
+    "ReduceCostOfSpellCardsOnFirstPlay": {
+        "REDUCE_AMOUNT": "10"
+    },
+    "EmpyrianMinionsMoreHealth": {
+        "HEALTH_ADDED": "100"
+    },
+    "SpawnCrystalArcherOnCrystalCardPlayed": {
+        "SPAWN_POSITION_X_OFFSET": "1000"
+    },
+    "ForwardScoutsBuffController": {
+        "MANA_GEN_AMOUNT": "1"
+    },
+    "WheelOfDoomBuffController": {
+        "COST_REDUCTION": "1"
+    },
+    "ApepSplitAttack": {
+        "TARGETS": "2"
+    },
+    "AttachToEnemies": {
+        "AGGRO_RANGE": "8000",
+        "ATTACHMENT_DELAY": "100",
+        "EXPLOSION_DELAY": "0",
+        "SPEED_DELAY": "700"
+    },
+    "EmpoweredAttackVSMinions": {
+        "DAMAGE_INCREASE": "80"
+    },
+    "TargetHighestHealthEnemyIfInRange": {
+        "HEAL_AMOUNT": "200",
+        "HEALTH_THRESHOLD": "300",
+        "AGGRO_RADIUS": "8000",
+        "BUFFER_TIME": "2000"
+    },
+    "PoisonAndSpiderlingsOnBasicAttack": {
+        "POISON_DURATION": "3500"
+    },
+    "RegeneratingShield": {
+        "NO_DAMAGE_TIME": "2000",
+        "SHIELD_AMOUNT": "75",
+        "SHIELD_REGEN_PER_TICK": "2"
+    },
+    "SkillGunKataOnTrigger": {
+        "MAX_JUMP_RANGE": "12000",
+        "JUMP_RANGE": "4000",
+        "DEATH_DELAY": "1000"
+    },
+    "TripleDamageEveryXSeconds": {
+        "COOLDOWN": "8000",
+        "BIG_HIT_DAMAGE": "200"
+    },
+    "TripleAttack": {
+        "DELAY_FIRST": "200",
+        "DELAY_SECOND": "200",
+        "DELAY_THIRD": "200"
+    },
+    "KarmaShield": {
+        "COOLDOWN": "6000",
+        "DAMAGE_DELAY": "1200"
+    },
+    "EmpoweredAttack": {
+        "DAMAGE_INCREASE": "70"
+    },
+    "LichCurseRessurectOnNextDeaths": {
+        "DAMAGE_PERCENT": "20",
+        "DEPLOY_TIME": "10000"
+    },
+    "PoisonAndAOEOnBasicAttack": {
+        "POISON_DURATION": "3000",
+        "RANGE": "5000"
+    },
+    "GiveVampiricOnPossessionAndResummonOnDeath": {
+        "FROST_NOVA_CARD_ID": "405"
+    },
+    "DashThroughEnemies": {
+        "DASH_DISTANCE": "8000",
+        "DASH_COOLDOWN": "8000",
+        "DASH_DELAY": "1000",
+        "POST_DASH_DELAY": "900",
+        "DASH_DURATION": "100",
+        "DASH_WIDTH": "3000",
+        "DASH_DAMAGE": "150"
+    },
+    "ReceiveReducedRangedDamage": {
+        "DAMAGE_PROMILE": "650"
+    },
+    "SetWeaponsBasedOnPerkLevel": {
+        "SCRATTILERY_DELAY": "5000",
+        "SCRATTILERY_RADIUS": "10000",
+        "EXPLOSION_DELAY": "1500",
+        "EXPLOSION_RADIUS": "3500",
+        "MINION_DAMAGE": "40",
+        "TOWER_DAMAGE": "20",
+        "EXTRA_HP_PERK_2": "150",
+        "EXTRA_HP_PERK_3": "350"
+    },
+    "SlamIntoLocation": {
+        "DISTANCE": "500",
+        "RADIUS": "5000"
+    },
+    "BuffNearbyLowHPUnitsFrenzy": {
+        "RANGE": "8000",
+        "HEALTH_THRESHOLD": "150"
+    },
+    "CastResonatingBlastCrystalOnDeath": {
+        "CARD_INDEX": "295"
+    },
+    "ChargeAndKnockupAttack": {
+        "CHARGE_COOLDOWN": "2000",
+        "CHARGE_CLEAR_RANGE": "4000",
+        "CHARGE_DAMAGE_RANGE_BUFFER": "500",
+        "CHARGE_DAMAGE": "100",
+        "CHARGE_SPEED_BONUS": "6",
+        "DAMAGE_DELAY": "500",
+        "KNOCKBACK_DURATION": "500"
+    },
+    "ChargeAttackWithKnockBack": {
+        "CHARGE_COOLDOWN": "2000",
+        "CHARGE_CLEAR_RANGE": "4000",
+        "CHARGE_SPEED_BONUS": "5",
+        "CHARGE_DAMAGE": "150",
+        "CHARGE_DELAY": "100",
+        "CHARGE_FINISH": "400",
+        "START_DELAY": "1400",
+        "KNOCKBACK_DISTANCE": "10000",
+        "KNOCKBACK_DURATION": "500"
+    },
+    "CycloneAttack": {
+        "CYCLONE_INAIRDURATION": "4800",
+        "CYCLONE_DELAY": "500",
+        "CYCLONE_COOLDOWN": "1400",
+        "CYCLONE_PUTDOWNDURATION": "200",
+        "CYCLONE_DAMAGE_DELAY": "200",
+        "SECOND_ATTACK_DELAY": "600",
+        "NUMBER_OF_ATTACKS": "2"
+    },
+    "DealRangedLineAOEDamage": {
+        "LINE_ATTACK_DELAY": "500",
+        "LINE_ATTACK_WIDTH": "3000",
+        "LINE_ATTACK_LENGTH": "5000",
+        "LINE_ATTACK_OFFSET": "1000"
+    },
+    "DoompocalypseMultiAttack": {
+        "ATTACK_SEQUENCE": "4",
+        "DELAY_BETWEEN_DAMAGE": "100",
+        "DELAY_AFTER_IMPACT": "200",
+        "RANGE_BUFFER": "2000"
+    },
+    "EarthElementalRespawnAttack": {
+        "RESPAWN_DELAY": "5000"
+    },
+    "FearSelfAfterNearbyDeath": {
+        "DISTANCE": "6000"
+    },
+    "FireRocketsIfPilotedInStarterDeck": {
+        "PILOTED_REQUIRED": "3",
+        "ROCKET_INIT_LAUNCH_DELAY": "1750",
+        "ROCKET_POST_LAUNCH_DELAY": "200",
+        "ROCKET_LAUNCH_DELAY": "100",
+        "ROCKET_HIT_DELAY": "1700",
+        "ROCKET_DAMAGE": "35",
+        "ROCKET_COUNT": "6",
+        "ROCKET_RANGE": "20000",
+        "ROCKET_RADIUS": "2000"
+    },
+    "FlameThrowerOrGrapplingHook": {
+        "HOOK_MIN_RANGE": "4000",
+        "HOOK_DELAY": "1000",
+        "HOOK_CATCH_DELAY": "500",
+        "HOOK_DURATION": "600",
+        "HOOK_ROOT": "750",
+        "FLAME_TICKRATE": "100",
+        "FLAME_DURATION": "3000"
+    },
+    "GiveShieldAndFreezeOnShieldBreak": {
+        "SHIELD": "200",
+        "SHIELD_FREEZE_RANGE": "8000"
+    },
+    "GlobalArmorOfFire": {
+        "COOLDOWN_SECONDS": "5",
+        "DAMAGE": "75",
+        "PREACTIVATE_DURATION": "1000",
+        "TRIGGER_DELAY": "300"
+    },
+    "GroundTargetOnHit": {
+        "DURATION": "3000",
+        "PROJECTILE_DELAY": "300"
+    },
+    "KnockUpAttack": {
+        "AOE_RADIUS": "2000",
+        "KNOCKBACK_DISTANCE": "9000",
+        "KNOCKBACK_DURATION": "600"
+    },
+    "HealBarrelTwice": {
+        "GLENNS_BREW_CARD_ID": "264",
+        "MAX_DISTANCE": "10000",
+        "HEAL_AMOUNT": "100",
+        "DELAY": "500"
+    },
+    "KorrrgothHammerThrow": {
+        "THROWINCREASERANGE": "13000",
+        "PULLBACKDELAY": "2000",
+        "ENDPOINTRADIUS": "1000",
+        "WIDTH": "2000",
+        "PULLBACKDAMAGE": "150",
+        "PULLBACKDISTANCE": "2000"
+    },
+    "MeleeAOEMinionDoubleAttack": {
+        "FIRST_DELAY": "1000",
+        "SECOND_DELAY": "1000"
+    },
+    "OutlanderPiloted": {
+        "EJECT_RADIUS": "8000",
+        "EJECT_AMOUNT": "1",
+        "BEFORE_SPAWN_DELAY": "500",
+        "SPAWN_DELAY": "700",
+        "BETWEEN_DELAY": "100"
+    },
+    "PassiveSkillReload": {
+        "RELOAD_TIME": "2000",
+        "WAIT_BEFORE_RELOAD": "500"
+    },
+    "RaiseSkeletonOnNearbyEnemyDeath": {
+        "COOLDOWN": "1000",
+        "RAISE_DELAY": "700",
+        "WALK_DELAY": "700",
+        "RES_RANGE": "8000"
+    },
+    "ShotgunAttack": {
+        "PROJECTILES": "9",
+        "SPREAD": "2000",
+        "ADDED_RANGE": "4000"
+    },
+    "SpawnCrossbowDudesOnDeath": {
+        "AMOUNT": "3"
+    },
+    "DragonFlameSweepAttack": {
+        "TICKS": "10",
+        "ATTACK_RECOVER_TIME": "2000",
+        "LENGTH": "4000",
+        "MINIMUM_BURN_TIME": "1000",
+        "TIME_PER_TICK": "200",
+        "TIME_PER_SWEEP": "4000",
+        "MAX_OFFSET": "5",
+        "FREEZE_DELAY": "2000"
+    },
+    "DroneTankSideGunsAttack": {
+        "SIDE_GUN_RANGE": "6000",
+        "BASE_BONUS_SIDE_GUN_RANGE": "4000",
+        "MIN_PROXIMITY": "3000"
+    },
+    "FreezeOnFirstAttackOnMinion": {
+        "DAMAGE_MULTIPLIER": "200"
+    },
+    "SpitPoisonOnPlay": {
+        "DAMAGE": "20",
+        "RANGE": "12000",
+        "DELAY": "500",
+        "RECOVERY": "500",
+        "POISON_DURATION": "4000"
+    },
+    "SplitOnBuff": {
+        "DAMAGE__PERCENT": "100",
+        "HEALTH__PERCENT": "100"
+    },
+    "SplitOnBuffRepeating": {
+        "SPLIT_PERCENTAGE": "70"
+    },
+    "SplitOnNoNearEnemies": {
+        "DELAY": "1500",
+        "POST_SPLIT_DELAY": "500",
+        "ALONE_TIME": "5000",
+        "SPLIT_PERCENT": "80",
+        "RADIUS": "8000"
+    },
+    "StartWithArcaneringBalls": {
+        "ARCANERING_CARD_ID": "263"
+    },
+    "StunEnemiesInAOE": {
+        "STUN_DURATION": "500",
+        "STUN_RADIUS": "5000"
+    },
+    "HalfHPRemoveCCAndresetTripleDamageEveryXSeconds": {
+        "FEAR_RANGE": "6000"
+    },
+    "WindRuneAttack": {
+        "EXTRA_DAMAGE": "50",
+        "RANGE": "3000",
+        "KNOCKBACK": "4000"
+    },
+    "Summon2Ancestors": {
+        "DELAY": "500",
+        "COUNT": "2"
+    },
+    "IceDragonKnockbackEnemiesOnSpawn": {
+        "DELAY": "2000",
+        "BECOME_TARGETABLE_DELAY": "700",
+        "BECOME_GROUNDED_DELAY": "1500"
+    },
+    "LightningAttack": {
+        "BONUS_BOLT_BUFFER": "1000",
+        "STUN_DURATION": "2000"
+    },
+    "RemoveSpearsOnSpawn": {
+        "MELEERANGE": "600",
+        "ADDEDCOOLDOWN": "500"
+    },
+    "BoostDamageByEmpyreanCards": {
+        "BONUS_DAMAGE_PER_CARD": "3"
+    },
+    "DealDamageOnSpellCast": {
+        "AMOUNT_OF_TRIGGERS": "2",
+        "TARGETS_PER_TRIGGER": "3",
+        "DAMAGE_PER_TARGET": "100",
+        "DAMAGE_DELAY": "500",
+        "RANGE": "16000"
+    },
+    "DoubleBouncingRangedAttack": {
+        "SECOND_ATTACK_DELAY": "200",
+        "NUMBER_OF_ATTACKS": "2"
+    },
+    "FireMissilesInAllDirections": {
+        "ROCKET_AMOUNT": "8",
+        "ROCKET_DURATION": "1000",
+        "ROCKET_SIZE": "1000",
+        "ROCKET_EXPLOSSION_RADIUS": "5000",
+        "ROCKET_WAVE_DELAY": "500"
+    },
+    "ImageActor": {
+        "HEALTH": "2",
+        "DAMAGE": "33"
+    },
+    "MeleeMinionDoubleAttack": {
+        "DELAY": "100"
+    },
+    "PerkCooldownTracker": {
+        "COOLDOWN": "20000",
+        "REDUCTION": "2000",
+        "MIN_REDUCTION_COST": "4",
+        "MAX_REDUCTION_COST": "7"
+    },
+    "LaunchSelfAtEnemy": {
+        "GET_UP_TIME": "1000"
+    },
+    "RatbosBasicAttack": {
+        "START_ATTACK_COOLDOWN": "1000",
+        "WIND_UP_DURATION": "2000"
+    },
+    "HypnotizeOnAttack": {
+        "HYPNOTIZE_DURATION": "5000",
+        "RANGE_BUFFER": "2000"
+    },
+    "PlantAsGrowthburstShroom": {
+        "PLANT_DELAY": "2000",
+        "UNACTIVATED_MUSHROOMES": "1",
+        "BRIDGE_OFFSET": "2000"
+    },
+    "DodgeWhenCastSpell": {
+        "BLINK_DELAY": "200",
+        "BLINK_DURATION": "2000",
+        "BLINK_COOLDOWN": "2500"
+    },
+    "SelfBurn": {
+        "SELF_DAMAGE_PERCENT": "10",
+        "BUFF_TARGETS": "1"
+    },
+    "StunWhenOpponentCastSpell": {
+        "STUN_DURATION": "2000",
+        "STUN_RADIUS": "6000",
+        "STUN_DAMAGE": "25"
+    },
+    "SummonDragonAtInterval": {
+        "SUMMON_DELAY": "8700",
+        "SPAWN_COUNT": "1"
+    },
+    "SummonMinionsOnScrapsCollected": {
+        "SpawnThreshold": "26",
+        "MIN_COST": "2",
+        "MAX_COST": "5",
+        "SCRAPS_PER_TICK": "0",
+        "TIME_PER_TICK": "5000",
+        "GENERATIONTIME": "25000",
+        "_TICKCOUNT": "5",
+        "SCRAPMULTIPLIER": "1500"
+    },
+    "SummonScratsAtInterval": {
+        "SUMMON_DELAY": "4000",
+        "SUMMON_AMOUNT": "4"
+    },
+    "ReturnPercentageMeleeDamage": {
+        "PERCENTAGE_RETURN": "50"
+    },
+    "TakeDamageOverTimeIfNoScraps": {
+        "TAX": "5",
+        "HEALTH_LOSS_PER_TICK": "10",
+        "TICK_TIME": "1000"
+    },
+    "WarBearRoar": {
+        "RANGE": "5000",
+        "KNOCKBACK_DISTANCE": "4000",
+        "KNOCKBACK_DURATION": "300",
+        "KNOCK_BACK_RANGE": "5000",
+        "STUN_DURATION": "3000",
+        "ROAR_DELAY": "300",
+        "ROAR_DELAY2": "500",
+        "SMASH_DELAY": "1400",
+        "ROAR_DAMAGE": "100"
+    },
+    "UseMeleeAttackOnBuildings": {
+        "ADDED_RANGE": "4000",
+        "MELEE_DAMAGE": "100"
+    },
+    "ConvertIfPebbleMultiple": {
+        "THRESHOLD": "3"
+    },
+    "GeneratePowerOverTime": {
+        "POWER_DELAY": "2500",
+        "POWER_GAIN_ON_PLAY": "3"
+    },
+    "ArmorOfFire": {
+        "RANGE": "4000",
+        "COOLDOWN_SECONDS": "14",
+        "DAMAGE": "75",
+        "PREACTIVATE_DURATION": "1000",
+        "TRIGGER_DELAY": "300"
+    },
+    "AttackChainLightning": {
+        "BOUNCEDELAY": "300",
+        "STUN_DURATION": "2000",
+        "MAX_BOUNCES": "5"
+    },
+    "AOEHealOnArmorOfLightTrigger": {
+        "HEAL_AMOUNT": "100"
+    },
+    "BecomeActiveOnManaSurge": {
+        "ARCANERING_CARD_ID": "263"
+    },
+    "BecomeActiveOnSpellCard": {
+        "ACTIVATION_DURATION": "10000"
+    },
+    "ChanceToSurviveKillingBlow": {
+        "CHANCE_TO_SURVIVE": "100",
+        "REDUCTION_PER_DODGE": "15"
+    },
+    "ChancePoisonOnBasicAttack": {
+        "POISON_CHANCE": "50",
+        "POISON_DURATION": "2000"
+    },
+    "ChargeAttack": {
+        "CHARGE_COOLDOWN": "2000",
+        "CHARGE_CLEAR_RANGE": "4000",
+        "CHARGE_DAMAGE_RANGE_BUFFER": "500",
+        "CHARGE_DAMAGE": "120",
+        "CHARGE_SPEED_BONUS": "6",
+        "KNOCKBACK_DISTANCE": "500",
+        "KNOCKBACK_DURATION": "100"
+    },
+    "HealAndTriggerRevelry": {
+        "HEAL_AMOUNT": "100",
+        "DELAY": "500"
+    },
+    "PiercingShot": {
+        "SHOTS_PER_CYCLE": "3",
+        "PIERCING_DAMAGE_MULTIPLIER": "3",
+        "PIERCING_RADIUS": "2000",
+        "ATTACK_SPEED_MODIFIER": "1000"
+    },
+    "KillInjuredTargetAndProduceFear": {
+        "FEAR_RANGE": "8000",
+        "KILL_THRESHOLD": "40",
+        "ATTACK_SEQUENCE": "4",
+        "DELAY_BETWEEN_DAMAGE": "100",
+        "DELAY_AFTER_IMPACT": "200",
+        "RANGE_BUFFER": "2000"
+    },
+    "RangedMinionDoubleAttack": {
+        "SECOND_ATTACK_DELAY": "200",
+        "NUMBER_OF_ATTACKS": "2"
+    },
+    "BarrelShield": {
+        "SHIELD_HEALTH": "60",
+        "SPEED_REDUCTION": "2"
+    },
+    "ShieldOfLight": {
+        "COOLDOWN": "10000",
+        "HEAL_RADIUS": "8000",
+        "SHIELD_COUNT": "4"
+    },
+    "RearAreaAttack": {
+        "COOLDOWN": "10000",
+        "RANGE": "3000",
+        "DAMAGE": "100",
+        "DAMAGE_DELAY": "100"
+    },
+    "StealthAssassinationAttack": {
+        "JUMP_RANGE": "6000",
+        "TELEPORT_DELAY": "300",
+        "TELEPORT_DAMAGE_DELAY": "300",
+        "TELEPORT_RECOVER_DELAY": "500",
+        "TELEPORT_DAMAGE": "100",
+        "TELEPORT_DAMAGE_RADIUS": "6000",
+        "STEALTH_SPEED": "2",
+        "STEALTH_ATTACK_COOLDOWN": "2000",
+        "OVERLOAD_PER_JUMP": "1"
+    },
+    "SelfBurnAndBuffOtherZealots": {
+        "HEAL_AMMOUNT": "140",
+        "SELF_DAMAGE_PERCENT": "10",
+        "BUFF_TARGETS": "1"
+    },
+    "SpawnDemonOnPickUp": {
+        "PICK_UP_DELAY": "10000"
+    },
+    "StoneLineAttack": {
+        "ROCK_RADIUS": "1000",
+        "ROCK_EXTRA_RADIUS": "200",
+        "ROCK_DELAY": "500",
+        "ROCK_SEPERATION_DELAY": "100",
+        "ROCK_HANGTIME": "2000",
+        "ROCK_KNOCKBACK_DISTANCE": "750",
+        "ROCK_KNOCKBACK_DURATION": "100",
+        "ROCK_LINE_RANGE": "10000",
+        "BERRIES_ON_DEATH_AMOUNT": "0",
+        "BERRIES_ON_DEATH_DROP_RADIUS": "2000"
+    },
+    "ChannelStoneRainAttack": {
+        "CHANNEL_THRESHOLD": "600",
+        "CHANNEL_DAMAGE_PER_TICK": "75",
+        "CHANNEL_DAMAGE_TICK_DURATION": "1000",
+        "ROCK_RANGE": "20000",
+        "ROCK_RADIUS": "2000",
+        "ROCK_DELAY": "500",
+        "ROCK_DAMAGE": "200",
+        "ROCK_SEPERATION_DELAY": "2000",
+        "ROCK_HANGTIME": "2000",
+        "ROCK_KNOCKBACK_DISTANCE": "750",
+        "ROCK_KNOCKBACK_DURATION": "100"
+    },
+    "CollectManaToEmpowerShot": {
+        "MANA_PER_EMPOWERED_SHOT": "3",
+        "AOE_RADIUS": "6000",
+        "AOE_DAMAGE": "200"
+    },
+    "StealthFriendlyVoidborneOnKill": {
+        "SELF_STEALTH_TIME": "2000",
+        "STEALTH_DELAY": "1000",
+        "BLINK_DISTANCE": "8000",
+        "BLINK_DURATION": "500"
+    },
+    "DamageSelfOnAttack": {
+        "SELF_DAMAGE_PERCENT": "2",
+        "BUFF_RADIUS": "8000",
+        "BUFF_TARGETS": "5"
+    },
+    "ReduceArmorOfFireCooldown": {
+        "ARMOR_COOLDOWN_REDUCTION": "3000"
+    },
+    "JumpTowardOpponentMasterOnSpawn": {
+        "JUMP_DELAY": "500",
+        "JUMP_DISTANCE": "12000",
+        "JUMP_DURATION": "1000"
+    },
+    "ProximityStealth": {
+        "DISTANCE": "16000"
+    },
+    "SmallKnockbackEnnemyOnAttack": {
+        "KNOCKBACK_DISTANCE": "2000",
+        "KNOCKBACK_DURATION": "100"
+    },
+    "SeveralMonkeysInOneAttackPattern": {
+        "STUN_DURATION": "2000",
+        "MAX_ATTACK_STAGES": "3"
+    },
+    "StunKiller": {
+        "STUN_DURATION": "2000"
+    },
+    "StunAttackers": {
+        "STUN_DURATION": "3000"
+    },
+    "GainHealthOnFriendlyRevelry": {
+        "HEAL_AMOUNT": "100"
+    },
+    "HighlandRevelry": {
+        "RADIUS": "4000"
+    },
+    "ReturnFireOnRangedAttackers": {
+        "REDUCTION_PERCENT": "50"
+    },
+    "HighlandRevelryDealRangedLineAOEDamageOnce": {
+        "LINE_ATTACK_DELAY": "500",
+        "LINE_ATTACK_ADDED_RANGE": "5000",
+        "LINE_ATTACK_WIDTH": "4000",
+        "LINE_ATTACK_LENGTH": "5000",
+        "LINE_ATTACK_DAMAGE": "150",
+        "RELOAD_DURATION": "1000",
+        "TARGET_LOCK_DELAY": "500",
+        "LOG_PROJECTILE_DELAY": "100"
+    },
+    "DragonFlameLineAttack": {
+        "TICKS": "10",
+        "ATTACK_RECOVER_TIME": "2000",
+        "LENGTH": "8000",
+        "WIDTH": "3000",
+        "MINIMUM_BURN_TIME": "1000"
+    },
+    "FireMissilesAtEnemies": {
+        "AMOUNT_OF_MISSILES": "6",
+        "BUFFER_RANGE": "1000",
+        "MISSILE_FLY_TIME": "1000",
+        "MISSILE_DAMAGE_DELAY": "500",
+        "MISSILE_RADIUS": "1000",
+        "MISSILE_FLY_BUFFER_RANGE": "200"
+    },
+    "SpinAttackAndDisarmSelf": {
+        "SPIN_DURATION": "5000",
+        "DAZE_DURATION": "5000",
+        "DAZE_END_DURATION": "1000",
+        "REVELRY_DURATION": "500",
+        "ADDED_SPIN_RADIUS": "1800",
+        "SPEED_MULITPLIER_DURING_SPIN": "500"
+    },
+    "SummonBearsIfLessThanHP": {
+        "TRIGGER_PERCENT": "50",
+        "SUMMON_AMOUNT": "3"
+    },
+    "GainFrenzyOnInjured": {
+        "TRIGGER_PERCENT": "50"
+    },
+    "GivePoisonToAttackers": {
+        "POISON_DURATION": "2500"
+    },
+    "KillAllSlavesAndGainHealth": {
+        "RITUAL_DURATION": "1000",
+        "MAX_HEALTH_PER_SLAVE": "75",
+        "MAX_SACRIFICE_AMOUNT": "10"
+    },
+    "KnockbackEnemiesOnSpawn": {
+        "DELAY": "500",
+        "RADIUS": "8000",
+        "DAMAGE": "100"
+    },
+    "GainDoubleHealthOnAffinity": {
+        "ADDED_HEALTH": "100"
+    },
+    "GainDivineShieldOnArmorOfLightTrigger": {
+        "DURATION": "5000"
+    },
+    "ChargeEnemyWithinRange": {
+        "ADDEDSPEED": "50",
+        "MAXADDEDSPEED": "50",
+        "MAXJUMPRANGE": "7000",
+        "JUMPRANGE": "5000",
+        "MINJUMPRANGE": "3000",
+        "MAXJUMPDURATION": "2000",
+        "JUMPCOOLDOWN": "2000",
+        "ADDEDRANGE": "400",
+        "PAUSEBEFOREJUMP": "250",
+        "PAUSEAFTERJUMP": "500"
+    },
+    "LineAttack": {
+        "WHIP_RANGE": "6000",
+        "WHIP_RADIUS": "2000",
+        "KNOCKBACK_DISTANCE": "0",
+        "KNOCKBACK_DURATION": "0",
+        "DAMAGE_DELAY": "100",
+        "LASH_OF_AHMUN_MASTER_DAMAGE_PERCENT": "10"
+    },
+    "MultipleProjectilesPerAttack": {
+        "DELAY_PER_PROJECTILE": "200",
+        "ADDITIONAL_PROJECTILES": "2"
+    },
+    "MythicCreatureLogic": {
+        "LEAVE_FIELD_THRESHOLD": "0",
+        "DESTROY_DAMAGE": "1000",
+        "STUN_TIME_ON_TEAM_SWITCH": "5000"
+    },
+    "KillTargetIfLessThanHP": {
+        "THRESHOLD_PERCENT": "33"
+    },
+    "PoisonOnBasicAttack": {
+        "POISON_CHANCE": "100",
+        "DARTER_POISON_DURATION": "1500",
+        "LANCER_POISON_DURATION": "1500",
+        "RAMMINGBEAST_POISON_DURATION": "4000",
+        "RAMMINGBEAST_POISON_RADIUS": "4000",
+        "RAMMINGBEAST_SUMMONING_SICKNESS": "1500",
+        "SEWER_SCRAT_POISON_DURATION": "2500",
+        "SPIDERLING_POISON_DURATION": "1300"
+    },
+    "ReduceIncomingDamage": {
+        "DAMAGE_REDUCTION": "7",
+        "MINIMUM_DAMAGE": "1"
+    },
+    "ShredderAttackingPattern": {
+        "KNOCKBACK_HIT_COOLDOWN": "4000",
+        "KNOCKBACK_HIT_RECOVER": "1000",
+        "KNOCKBACK_HIT_DELAY": "1000",
+        "KNOCKBACK_HIT_RANGE": "3000",
+        "KNOCKBACK_HIT_DISTANCE": "4000",
+        "KNOCKBACK_HIT_DAMAGE": "150",
+        "ADDED_RANGE": "1000"
+    },
+    "SlowTargetToSpeed": {
+        "REDUCE_SPEED_TO": "4"
+    },
+    "RocketScratLogic": {
+        "GOING_UP_DURATION": "500",
+        "COMING_DOWN_DURATION": "500"
+    },
+    "SelfDestructionMalfunction": {
+        "HEALTH_THRESHOLD": "350",
+        "SELF_DESTROY_DELAY": "5000",
+        "SELF_DESTROY_RANGE": "5000",
+        "SELF_DESTROY_DAMAGE": "300",
+        "SPEED_BOOST": "0"
+    },
+    "SlitherWonderLogic": {
+        "HEALTH_PER_LEVEL": "1000",
+        "SUMMON_COOLDOWN": "15000",
+        "SLAVE_PER_LEVEL": "2",
+        "MAX_LEVEL": "4"
+    },
+    "SlowTargetMovementSpeed": {
+        "SLOW_SPEED": "4"
+    },
+    "SoulCarrier": {
+        "AMOUNT": "1"
+    },
+    "StunAllMinionsInRangeOnAffinity": {
+        "STUN_DURATION": "2000",
+        "STUN_DELAY": "1000",
+        "SUMMONING_SICKNESS": "1000",
+        "SUMMONING_ACTIVE_SICKNESS": "1800",
+        "THUNDER_SHIHOU_STUN_RADIUS": "6000"
+    },
+    "StunOnDamageDealMoreDamageOnStun": {
+        "STUN_DURATION": "2000"
+    },
+    "StunClosestTargetWithinRange": {
+        "STUN_DURATION": "3000"
+    },
+    "StunRandomTargetWithinRange": {
+        "STUN_DURATION": "2000",
+        "STUN_COOLDOWN": "3000",
+        "VFX_DELAY": "400"
+    },
+    "SummonCrossbowDudesOnArmorOfLightTrigger": {
+        "SPAWN_AMOUNT": "2",
+        "SPAWN_DELAY": "500"
+    },
+    "BlinkTowardRandomTargetAfterTime": {
+        "BLINK_DISTANCE": "8000",
+        "BLINK_DURATION": "500",
+        "MIN_BLINK_WAIT": "3000",
+        "MAX_BLINK_WAIT": "5000",
+        "ATTACK_BLINK_WAIT": "2000"
+    },
+    "ArmorOfLight": {
+        "RANGE": "4000",
+        "COOLDOWN_SECONDS": "14",
+        "DAMAGE": "75",
+        "PREACTIVATE_DURATION": "1000",
+        "TRIGGER_DELAY": "300"
+    },
+    "TeleportBetweenBridges": {
+        "TELEPORT_DELAY": "2000",
+        "STUN_DURATION": "1000",
+        "TELEPORT_COOLDOWN": "4000"
+    },
+    "VolcoBridgeMark": {
+        "ACTIVATE_MARK_AT_LEVEL": "2"
+    },
+    "SummonProwlerAfterTime": {
+        "OPENCAGE_DELAY": "1500",
+        "SPAWN_DELAY": "22000",
+        "SPAWN_DISTANCE": "4000"
+    },
+    "TrippleDamageInInvisibility": {
+        "DAMAGE_MULTIPLIER": "3"
+    },
+    "ReduceVoidbornCardCostOnKillOrHitBase": {
+        "REDUCE_AMOUNT": "1"
+    },
+    "HypnoBoomerExplode": {
+        "RANGE": "6000"
+    },
+    "BuildingInvisibility": {
+        "INVISIBILITY_SET_UP": "0",
+        "INVISIBILITY_COOLDOWN": "2000"
+    },
+    "DamageOverTimeInAreaFlying": {
+        "BEAM_DURATION": "2000",
+        "DELAY_BETWEEN_ATTACKS": "100",
+        "BEAM_DELAY": "0",
+        "AMOUNT_OF_TICKS": "20"
+    },
+    "DigForTreasureWhenInMiddle": {
+        "MANA_INTERVAL": "10000",
+        "MANA_GEN_AMOUNT": "1",
+        "XP_GEN_AMOUNT": "5",
+        "HEAL_GEN_AMOUNT": "100"
+    },
+    "GiveRageAndEmpyreanShieldAndDestroyWhenInMiddle": {
+        "AMOUNT": "5"
+    },
+    "GetTreasureFromDeadEnemies": {
+        "TREAURE_DURATION": "30000",
+        "PICK_UP_DISTANCE": "1500",
+        "PICK_UP_DURATION": "3000",
+        "COOLDOWN": "10000",
+        "HEAL_VALUE": "250",
+        "XP_VALUE": "4",
+        "MANA_VALUE": "2"
+    },
+    "PassiveRootOnCooldown": {
+        "COOLDOWN_TIME": "10000",
+        "ROOT_TIME": "3000"
+    },
+    "PassiveSkillPlaceTrapsInLane": {
+        "TRAP_COOLDOWN": "20000",
+        "TRAP_DISTANCE": "8000"
+    },
+    "RootEnemiesOnSummon": {
+        "ROOT_DELAY": "1000",
+        "ROOT_DURATION": "6000",
+        "WAVE_RADIUS": "60000",
+        "AMOUNT_OF_WAVES": "20",
+        "WAIT_BETWEEN_WAVES": "100"
+    },
+    "StunOnSpell": {
+        "STUN_DURATION": "1000"
+    },
+    "BlinkOnSpell": {
+        "BLINK_DISTANCE": "5000",
+        "BLINK_DURATION": "500"
+    },
+    "SlowAndDealDamageOverTime": {
+        "DAMAGE_PER_TICK": "4",
+        "TIME_PER_TICK": "200",
+        "REDUCE_SPEED_TO": "2",
+        "SLOW_RADIUS": "2700"
+    },
+    "AggroNearbyEnemies": {
+        "RANGE": "5000"
+    },
+    "Give2ManaOnSpawn": {
+        "GIVE_MANA": "1",
+        "MANA_DELAY": "600",
+        "MANA_TIME_BETWEEN": "200"
+    },
+    "StartAsEgg": {
+        "EGG_HEALTH": "40",
+        "GAX_EGG_HEALTH": "50",
+        "DELAY": "3600"
+    },
+    "BuffNearbyUnitsShields": {
+        "RANGE": "8000",
+        "MAX_AMOUNT": "8"
+    },
+    "KnockbackEnnemyOnAttack": {
+        "KNOCKBACK_DISTANCE": "6000",
+        "KNOCKBACK_DURATION": "100"
+    },
+    "EnergizeOnMana": {
+        "MANA_THRESHOLD": "6",
+        "ATTACK_SPEED_BUFF_PERCENT": "33"
+    },
+    "GenerateShieldsWhenInMiddle": {
+        "COOLDOWN": "10000",
+        "SHIELD_AMOUNT": "3",
+        "EMPYREAN_ARMY_SHIELDS": "2"
+    },
+    "PassiveSkillStackBasedAttack": {
+        "STACKS_PER_TRIGGER": "5",
+        "STACKS_PER_MANA": "1",
+        "RANGE": "5000"
+    },
+    "R3KTIncreaseAttackSpeed": {
+        "ATTACK_SPEED_INCREASE_PERCENT": "50",
+        "ATTACK_SPEED_UP_THRESHOLD": "4"
+    },
+    "AttackMultipleTargetsWithProjectiles": {
+        "PROJECTILE_ADD_RANGE": "2000",
+        "PROJECTILE_DELAY": "50",
+        "PROJECTILE_DURATION": "200",
+        "MAXIMUM_AMOUNT_OF_SHOTS": "8"
+    },
+    "ArcaneSparksBasicAttack": {
+        "SPARK_DELAY": "100",
+        "SPARK_DURATION": "1000",
+        "SPARK_ADDITIONAL_RANGE": "5000",
+        "BASE_SPARK_COUNT": "3",
+        "MAX_EXTRA_SPARK_COUNT": "5",
+        "ARCANE_GOLEM_CARDID": "104"
+    },
+    "GiveShieldWhenTakingBridge": {
+        "RANGE": "10000",
+        "MAX_SHIELDS": "7"
+    },
+    "BattleCryGiveShield": {
+        "RANGE": "5000"
+    },
+    "BecomeMeleeAfterFirstAttack": {
+        "MELEERANGE": "600",
+        "ADDEDCOOLDOWN": "500"
+    },
+    "DamageAndKnockbackEnemiesOnSpawn": {
+        "DELAY": "500",
+        "RADIUS": "5000",
+        "DAMAGE": "50",
+        "AMOUNT_OF_SWARMERS": "3"
+    },
+    "DamageNearestEnemyOnSpawn": {
+        "DAMAGE": "100"
+    },
+    "DamageOverTimeInArea": {
+        "AMOUNT_OF_TICKS": "10",
+        "DELAY_BETWEEN_ATTACKS": "400"
+    },
+    "DeactivateWhenBelowHealth": {
+        "THRESHOLD": "50",
+        "TAUNT_RANGE": "5000",
+        "ACTIVATION_DELAY": "1000",
+        "DURATION": "5000"
+    },
+    "DealDamageWhenOpponentCastSpell": {
+        "DAMAGE": "250"
+    },
+    "DodgeAndJumpAttack": {
+        "MOVE_DISTANCE": "3000",
+        "DODGEDURATION": "400",
+        "JUMPBACKCOOLDOWN": "3000",
+        "ADDEDSPEED": "25",
+        "JUMPRANGE": "7000",
+        "MINJUMPRANGE": "2000",
+        "MAXJUMPDURATION": "1000",
+        "CANDAMAGEDELAY": "200",
+        "DELAYBEFOREJUMP": "100",
+        "PAUSEBEFOREJUMP": "0",
+        "PAUSEAFTERJUMP": "700",
+        "MULTIPLIER": "2"
+    },
+    "ExplodeOnProximity": {
+        "ACTIVATION_DELAY": "500",
+        "TRIGGER_DELAY": "1000",
+        "RADIUS": "4000",
+        "DAMAGE": "100"
+    },
+    "GainRageAndShieldOnDeath": {
+        "DURATION": "3000",
+        "STARTING_HEALTH": "200"
+    },
+    "GiveManaToOpponentOnDeath": {
+        "GIVE_MANA": "5"
+    },
+    "GuardAllies": {
+        "PROTECTIONRANGE": "9000",
+        "PROTECTION_RANGE_MASTER": "40000",
+        "PROTECTIONRATE": "660"
+    },
+    "HealAreaOverTime": {
+        "HEALPERTICK": "10",
+        "TIMEPERTICK": "200",
+        "HEALRANGE": "8000"
+    },
+    "IncreaseAttackSpeedPerTargetInRange": {
+        "RANGE": "8000",
+        "REDUCTION_PER_TARGET": "500",
+        "REDUCTION_DIMINSH": "110",
+        "ATTACK_DELAY_REDUCTION": "250",
+        "DELAY_DIMINSH": "45",
+        "MAX_LEVEL": "6"
+    },
+    "HealSelfIfNoTarget": {
+        "RANGE": "8000",
+        "BUFF_COOLDOWN": "400",
+        "HEALTH": "20"
+    },
+    "DecreaseCostOfMeleeMinionCards": {
+        "COST_DECREASE": "2"
+    },
+    "IncreaseHealthRandomOnDeath": {
+        "HEALTH": "100",
+        "RANGE": "12000"
+    },
+    "IncreaseHealthRandomOnKill": {
+        "HEALTH": "100",
+        "FLY_TIME": "500",
+        "RANGE": "14000"
+    },
+    "JumpToEnemyWithinRange": {
+        "ADDEDSPEED": "50",
+        "JUMPRANGE": "8000",
+        "MINJUMPRANGE": "3000",
+        "MAXJUMPDURATION": "500",
+        "JUMPCOOLDOWN": "2000",
+        "ADDEDRANGE": "400",
+        "PAUSEBEFOREJUMP": "250",
+        "PAUSEAFTERJUMP": "250"
+    },
+    "GaxExplode": {
+        "RANGE": "6000"
+    },
+    "DamageHeroHalfOnDamage": {
+        "RETURN_DAMAGE_PERCENT": "85"
+    },
+    "HealMasterWhenInMiddle": {
+        "HEAL_INTERVAL": "1000",
+        "HEAL_AMOUNT": "12"
+    },
+    "GenerateManaWhenInMiddle": {
+        "FIRST_MANA_INTERVAL": "15000",
+        "MANA_INTERVAL": "10000",
+        "MANA_GEN_AMOUNT": "1"
+    },
+    "ApepIncreaseAttackSpeed": {
+        "ATTACK_SPEED_INCREASE_PERCENT": "350",
+        "ATTACK_SPEED_UP_THRESHOLD": "5"
+    },
+    "KillSelfWhenCloseToOpponentTower": {
+        "THRESHOLD": "7500"
+    },
+    "PassiveSkillAddHealthAndDamageOnSpellCast": {
+        "HEALTH_BOOST": "30",
+        "DAMAGE_BOOST": "5"
+    },
+    "PassiveSkillCurseGoundMinionsInArea": {
+        "CURSE_RANGE": "6000",
+        "DEATH_CURSE_DURATION": "8000"
+    },
+    "PassiveSkillJumpToRangedAttacker": {
+        "DELAY": "300",
+        "COOLDOWN_AFTER_ATTACK": "100",
+        "RANGE": "12000",
+        "MIN_JUMP_RANGE": "400",
+        "MIN_RANGE": "500"
+    },
+    "PassiveSkillMinionPiercingStunShot": {
+        "PIERCE_LENGTH": "5000",
+        "SHOT_RADIUS": "2000",
+        "STUN_TIME": "3000",
+        "STUN_SHOT_DELAY": "5",
+        "DAMAGE": "60"
+    },
+    "PassiveSkillSettsuMinionInstantReload": {
+        "DAMAGE": "60"
+    },
+    "ReduceAttackSpeedIfNoKill": {
+        "DECREASED_ATTACK_SPEED": "5000",
+        "ATTACK_SPEED_DECREASED": "4000",
+        "DECREASED_ATTACK_DELAY": "3000"
+    },
+    "IncreaseCostOfEnemyCard": {
+        "COST_INCREASE": "2"
+    },
+    "Illusion": {
+        "RANGE": "2000",
+        "DAMAGE": "50"
+    },
+    "ProximityShield": {
+        "SHIELD_TOGGLE_OFF_DELAY": "200",
+        "SHIELD_TOGGLE_ON_DELAY": "200"
+    },
+    "RessurectUndyingAfterTime": {
+        "DEPLOY_TIME": "20000"
+    },
+    "SettsuPassiveSkillReload": {
+        "SHOTS_IN_MAGAZINE": "5",
+        "RELOAD_TIME": "5000"
+    },
+    "ShotInOneDirectionAtInterval": {
+        "KNOCKBACK_DISTANCE": "2",
+        "KNOCKBACK_DURATION": "400",
+        "SELF_TERMINATE_TIME": "3000",
+        "PROJECTILE_RADIUS": "500"
+    },
+    "ExplodeAndSpawnRandomCreatureOnDeath": {
+        "DELAY": "1300",
+        "MANA_COST": "3",
+        "EXPLOSION_RANGE": "5000",
+        "EXPLOSION_DAMAGE": "50"
+    },
+    "SkillShadowDanceOnTrigger": {
+        "JUMP_RANGE": "4000",
+        "DEATH_DELAY": "1000"
+    },
+    "SpawnGaxOnceAfterTime": {
+        "DELAY": "3500"
+    },
+    "StealthNearbyFriendlyMinions": {
+        "RANGE": "8000",
+        "INVISIBILITY_COOLDOWN": "2000"
+    },
+    "SummonDeathVinesOnAttack": {
+        "MAX_SPAWN_WIDTH": "5000"
+    },
+    "SummonSpearThrowerAtInterval": {
+        "SUMMON_DELAY": "4800",
+        "SPAWN_COUNT": "1"
+    },
+    "TakeDamageOverTimeExtraDuringManaFrenzy": {
+        "DAMAGE": "2",
+        "OVERHEAT_MULTIPLIER": "3"
+    },
+    "TauntAndExplodeAfterDelay": {
+        "BLOW_UP_DELAY": "4000",
+        "BLOW_UP_DAMAGE": "100"
+    },
+    "DealDamageAndRoot": {
+        "TRAP_SETUP_TIME": "500",
+        "TRAP_RADIUS": "2500",
+        "TRAP_DAMAGE": "50",
+        "TRAP_TIME": "4000"
+    },
+    "WrathGlobalAreaDamage": {
+        "GLOBAL_DAMAGE": "26",
+        "RANGE": "14000"
+    },
+    "RessurectNextDeadUnitAfterTime": {
+        "DEPLOY_TIME": "10000"
+    },
+    "StunDamage": {
+        "STUN_DURATION": "4000"
+    },
+    "EntangleTargetOnHit": {
+        "DURATION": "2000"
+    },
+    "KnockbackSelfOnAttack": {
+        "MOVE_DISTANCE": "2500",
+        "DURATION": "1000"
+    },
+    "SummonDragonOnSpellCast": {
+        "MANA_THRESHOLD": "5"
+    },
+    "SummonCrossbowAtInterval": {
+        "SUMMON_DELAY": "3700",
+        "SPAWN_COUNT": "1"
+    },
+    "BlackHoleTargetOnHit": {
+        "BLACKHOLE_DURATION": "5000"
+    },
+    "SpawnRandomCreatureOnDeath": {
+        "DELAY": "1300",
+        "MANA_COST_MIN": "3",
+        "MANA_COST_MAX": "4"
+    },
+    "LifeSteal": {
+        "HEAL_AMOUNT": "50"
+    },
+    "DealIncreasingDamageOnSameTarget": {
+        "ATTACK_COOLDOWN_REDUCTION": "200",
+        "MIN_ATTACK_COOLDOWN": "200"
+    },
+    "SpawnPhoenixBoomerOnceAfterTime": {
+        "DELAY": "3500"
+    },
+    "HealNearestUnit": {
+        "RANGE": "9000",
+        "BUFF_COOLDOWN": "300",
+        "HEALTH": "10"
+    },
+    "DamageRandomOnDeath": {
+        "DELAY_BEFORE_FIRE": "100",
+        "PROPABLE_TARGET_TIME": "500",
+        "FLY_TIME": "400"
+    },
+    "StayOnBridge": {
+        "MOVE_INTERVAL": "10000"
+    },
+    "BuffNearbyUnits": {
+        "RANGE": "8000"
+    },
+    "DamageAttackers": {
+        "DAMAGE": "75",
+        "STUN_DURATION": "3000"
+    },
+    "DivineShield": {
+        "DURATION": "6000"
+    },
+    "MordarsDecayAttack": {
+        "DAMAGE": "10",
+        "WAVE_RADIUS": "20000",
+        "AMOUNT_OF_WAVES": "5",
+        "WAIT_BETWEEN_WAVES": "100"
+    },
+    "DarkHunterInvisibility": {
+        "INVISIBILITY_COOLDOWN": "2000",
+        "DAMAGE_MULTIPLIER": "3"
+    },
+    "DealDamagePossession": {
+        "STUN_DURATION": "12000"
+    },
+    "IncreaseAttackSpeedOnKill": {
+        "EXPLOSION_DAMAGE": "150",
+        "ATTACK_COOLDOWN_REDUCTION_MAX": "2500",
+        "ATTACK_COOLDOWN_REDUCTION": "150",
+        "ATTACK_DELAY_REDUCTION": "50",
+        "BASE_MAX_LEVEL": "10"
+    },
+    "DemonWarriorGrowOnCardPlay": {
+        "HealthOnGrowth": "300",
+        "DamageOnGrowth": "100",
+        "MAX_LEVEL": "4"
+    },
+    "BoomerExplode": {
+        "RANGE": "6000"
+    },
+    "SuccubusTeleportBackward": {
+        "COOLDOWN": "1000",
+        "RANGE": "8000"
+    },
+    "SummonRatAtInterval": {
+        "SUMMON_DELAY": "6000",
+        "SUMMON_AMOUNT": "4"
+    },
+    "SpawnBoomerOnceAfterTime": {
+        "DELAY": "3500"
+    },
+    "TakeDamageOverTime": {
+        "DAMAGE": "2"
+    },
+    "SummonSwarmerAtInterval": {
+        "SUMMON_DELAY": "7000"
+    },
+    "Dropdown": {
+        "kHighSortingLayer": "30000"
+    },
+    "InputField": {
+        "k_MaxTextLength": "16382"
+    },
+    "GameVariables": {
+        "DailyQuestUnlockItemId": "75",
+        "DraftUnlockItemId": "155",
+        "DailyQuestUnlockLevel": "12",
+        "DeckSize": "10",
+        "TempOwnedItemsGracePeriodInMinutes": "30",
+        "WinXp": "1250",
+        "DefaultMaxCurrencySafety": "100000",
+        "DraftMaxLoseCount": "3",
+        "DraftMaxWinCount": "12",
+        "CurrentDraftEventPeriodId": "4",
+        "START_DECK_SLOTS": "6",
+        "SECONDS_IN_MATCH_MAX_SUPPLY": "20",
+        "WINNER_BONUS_GOLD": "20"
+    },
+    "GuildValues": {
+        "MaxMemberCount": "50",
+        "MaxNameLength": "32",
+        "MaxDescriptionLength": "200",
+        "CurrentGuildLeaderboardSize": "150"
+    },
+    "GuildPassValues": {
+        "GuildMatchMaxWins": "6",
+        "GuildMatchMaxLosses": "3",
+        "GloryContributionMaxMembers": "15",
+        "GuildMatchGuildCardGloryBonus": "400"
+    },
+    "SharedUtility": {
+        "MaxWildcards": "2"
+    },
+    "LevelHelpers": {
+        "LegendaryRatingPointsLevelSplit": "750",
+        "WinStreakForDoubleXp": "3",
+        "WinStreakMultiplierUpUntilLevel": "1",
+        "MaxRankPoints": "120",
+        "MinRankPoints": "40",
+        "RankDifferenceMultiplier": "5",
+        "EqualRankPoints": "80",
+        "MinRank": "40",
+        "MinRating": "0"
+    },
+    "UniTaskSynchronizationContext": {
+        "MaxArrayLength": "2146435071",
+        "InitialSize": "16"
+    },
+    "MinimumQueue": {
+        "MinimumGrow": "4",
+        "GrowFactor": "200"
+    },
+    "AssetBundleResource": {
+        "k_WaitForWebRequestMainThreadSleep": "1"
+    },
+    "GroupOperation": {
+        "k_MaxDisplayedLocationLength": "45"
+    },
+    "ResourceManagerDiagnostics": {
+        "k_NumberOfCompletedOpResultEntriesToShow": "4",
+        "k_MaximumCompletedOpResultEntryLength": "30"
+    },
+    "ContentCatalogData": {
+        "kBytesPerInt32": "4",
+        "k_EntryDataItemPerEntry": "7"
+    },
+    "InputDevice": {
+        "InvalidDeviceId": "0",
+        "kLocalParticipantId": "0"
+    },
+    "Keyboard": {
+        "KeyCount": "110"
+    },
+    "InputSettings": {
+        "s_OldUnsupportedFixedAndDynamicUpdateSetting": "0"
+    },
+    "InputStateHistory": {
+        "kDefaultHistorySize": "128"
+    },
+    "JsonSerializerSettings": {
+        "DefaultMaxDepth": "64"
+    },
+    "DynamicResolutionHandler": {
+        "CameraDictionaryMaxcCapacity": "32"
+    },
+    "TextureCurve": {
+        "k_Precision": "128"
+    },
+    "BacktraceConfiguration": {
+        "DefaultAnrWatchdogTimeout": "5000",
+        "DefaultRetryLimit": "3",
+        "DefaultReportPerMin": "50",
+        "DefaultNumberOfLogs": "10",
+        "DefaultMaxRecordCount": "8",
+        "DefaultMaxDatabaseSize": "0",
+        "DefaultRetryInterval": "60"
+    },
+    "EncryptionService": {
+        "KeySizeInBytes": "32",
+        "BlockSizeInBytes": "16"
+    },
+    "IpEndPoint": {
+        "IpV4ByteCount": "4",
+        "IpV6ByteCount": "16"
+    },
+    "UniversalRenderPipelineAsset": {
+        "k_MinLutSize": "16",
+        "k_MaxLutSize": "65",
+        "k_ShadowCascadeMinCount": "1",
+        "k_ShadowCascadeMaxCount": "4"
+    },
+    "AdditionalLightsShadowCasterPass": {
+        "k_ShadowmapBufferBits": "16"
+    },
+    "DepthNormalOnlyPass": {
+        "k_DepthBufferBits": "32"
+    },
+    "MainLightShadowCasterPass": {
+        "k_MaxCascades": "4",
+        "k_ShadowmapBufferBits": "16"
+    },
+    "PostProcessPass": {
+        "k_MaxPyramidSize": "16"
+    },
+    "CapitalizationObscenityFilter": {
+        "_capitalizationCharacterNumber": "4"
+    },
+    "PunctuationObscenityFilter": {
+        "_punctuationCharacterNumber": "3"
+    },
+    "TimelineClip": {
+        "k_LatestVersion": "1"
+    },
+    "TimelineAsset": {
+        "k_LatestVersion": "0"
+    },
+    "ChunkedRequestStream": {
+        "_bufferLength": "8192"
+    },
+    "QuestPlaySpellsInARow": {
+        "REQUIRED_SPELLS_IN_A_ROW": "5"
+    },
+    "QuestReachBronzeLeague": {
+        "RANK_REQUIRED": "30"
+    },
+    "QuestReachDiamondLeague": {
+        "RANK_REQUIRED": "10"
+    },
+    "QuestReachGoldLeague": {
+        "RANK_REQUIRED": "20"
+    },
+    "QuestReachGrandMasterLeague": {
+        "RANK_REQUIRED": "0"
+    },
+    "QuestReachMasterLeague": {
+        "RANK_REQUIRED": "5"
+    },
+    "QuestReachPlatinumLeague": {
+        "RANK_REQUIRED": "15"
+    },
+    "QuestReachProfileLevel7": {
+        "LEVEL_REQUIRED": "7"
+    },
+    "QuestReachSilverLeague": {
+        "RANK_REQUIRED": "25"
+    },
+    "QuestReachStoneLeague": {
+        "RANK_REQUIRED": "35"
+    },
+    "QuestWinCloseMatch": {
+        "REMAINING_HEALTH_THRESHOLD": "100"
+    },
+    "PlayerTagInputValidator": {
+        "MAX_LENGTH_CORE": "20",
+        "MAX_LENGTH_NUMBERS": "4"
+    },
+    "BattlePing": {
+        "PING_COUNT": "4",
+        "PING_HISTORY_COUNT": "3"
+    },
+    "MetaTutorialFreeToExploreStateHandler": {
+        "_levelThreshold": "5"
+    },
+    "MetaTutorialStartDraftStateHandler": {
+        "_levelThreshold": "14"
+    },
+    "OneTimeLoginRewardService": {
+        "_keepCount": "1"
+    },
+    "ServerShutdownService": {
+        "AUTO_SHUTDOWN_CLIENT_ERROR_WINDOW_DURATION_MILLISECONDS": "5000"
+    },
+    "AccursedAffinitySoulVFX": {
+        "_soulsToParticlesRatio": "5"
+    },
+    "SlamIntoLocationVisual": {
+        "DISTANCE": "5000"
+    },
+    "AiController": {
+        "TimeUnitsPerTick": "300"
+    },
+    "TextSharpener": {
+        "ScaleValue": "10"
+    },
+    "HealthSlider": {
+        "MAX_HEALTH_INDICATOR_INTERVAL": "100"
+    },
+    "CycloneVFX": {
+        "_targetRotations": "10"
+    },
+    "SoundCuePlayer": {
+        "minAudioSources": "3",
+        "maxAudioSources": "10"
+    },
+    "PassiveSkillLowerPriceOnSpellsIfOwnsTopBridgeVisual": {
+        "CONTROLLED_BRIDGE": "1"
+    },
+    "AdventureService": {
+        "SELECTABLE_BUCKETS_COUNT": "3",
+        "SELECTABLE_BUCKET_CARDS_COUNT": "2",
+        "SELECTABLE_ADVENTURE_BOON_COUNT": "3"
+    },
+    "AdventureConstants": {
+        "ENEMY_BASE_HEALTH": "2000",
+        "PLAYER_BASE_HEALTH": "3000",
+        "ENEMY_HEALTH_INCREASE_PER_FIGHT": "375",
+        "HEAL_AMOUNT_AFTER_EACH_FIGHT": "1000",
+        "WINS_NEEDED_PER_AFFINITY_CARD_INDEX_UNLOCK": "15"
+    },
+    "FloatingPopUpViewBehaviour": {
+        "REFERENCE_X": "2436",
+        "REFERENCE_Y": "1125"
+    },
+    "AdventureDeckViewModel": {
+        "CARD_ITEMS_PER_PAGE": "10"
+    },
+    "BattlepassOverviewViewModel": {
+        "SEASON_LEFT_UPDATE_FREQUENCY": "600"
+    },
+    "CardCollectionViewModel": {
+        "DECK_ITEMS_PER_PAGE": "8"
+    },
+    "LeaderboardsViewModel": {
+        "MAX_ITEMS": "50",
+        "MAX_ITEMS_PAST_SEASON": "20"
+    },
+    "ProfileJourneyViewModel": {
+        "REPEATABLE_COUNT": "10",
+        "REPEATABLE_START_INDEX": "50"
+    },
+    "AiExtrapolation": {
+        "SuggestedPlayDelayInTicks": "5"
+    },
+    "DeckService": {
+        "MAX_DECK_SIZE": "10",
+        "MAX_WILDCARDS": "2"
+    },
+    "GameSimulationService": {
+        "LOCAL_INPUT_DELAY": "500",
+        "TARGET_STACKED_TURNS": "1",
+        "TARGET_STACKED_TURNS_HIGH_END": "6"
+    },
+    "GuildService": {
+        "CREATE_GUILD_COST": "3000"
+    },
+    "LobbyService": {
+        "INVITE_EXPIRE_DURATION": "30"
+    },
+    "MetaTutorialBattlePassStateHandler": {
+        "_levelThreshold": "6"
+    },
+    "MetaTutorialStartAdventureStateHandler": {
+        "_levelThreshold": "12"
+    },
+    "MetaTutorialSwitchModesReminderStateHandler": {
+        "_levelThreshold": "7"
+    },
+    "TutorialArrowService": {
+        "ARROW_OFFSET": "200"
+    },
+    "TutorialService": {
+        "TUTORIAL_REWARD_QUEST_ID": "211050017"
+    },
+    "TwitchAudienceService": {
+        "MAX_NAME_LENGTH": "12",
+        "TIME_SINCE_LAST_MESSAGE_BEFORE_INACTIVE": "1200",
+        "TIME_SINCE_LAST_PICK_ME_BEFORE_INACTIVE": "1200",
+        "MAX_AUDIENCE_COUNT": "21"
+    },
+    "AdventureContext": {
+        "PlayerInfosCount": "2",
+        "LocalPlayerIndex": "0",
+        "AllyPlayerIndex": "1"
+    },
+    "DraftConstants": {
+        "START_REDRAFT_COUNT": "1",
+        "TICKET_COST_GOLD": "750",
+        "TICKET_COST_RUBIES": "50"
+    },
+    "TwitchAudienceMemberBehaviour": {
+        "DEFAULT_THROW_ANGLE": "0",
+        "DEFAULT_THROW_STRENGTH": "75",
+        "MAX_THROW_ANGLE": "45",
+        "MAX_THROW_STRENGTH": "100",
+        "MIN_THROW_STRENGTH": "25",
+        "MAX_THROWS": "3"
+    },
+    "MayhemBattleViewModel": {
+        "_maxMayhemListCount": "3"
+    },
+    "ChatService": {
+        "StartInputBehaviourDelayInMs": "100"
+    },
+    "DefaultModeSceneManager": {
+        "MaxQueueSize": "5"
+    },
+    "DefaultReplayServiceSettings": {
+        "_maxReplays": "10"
+    },
+    "SteamReplayServiceSettings": {
+        "_maxReplays": "500"
+    },
+    "MasteryCampaignService": {
+        "PLAYER_MAX_HEALTH": "3000"
+    },
+    "MessageService": {
+        "TimeoutInSeconds": "30"
+    },
+    "QuestManager": {
+        "FIRST_INTRO_QUEST_ID": "3000"
+    },
+    "LoginQueueService": {
+        "UpdateDelayInSeconds": "5"
+    },
+    "StaticArenaService": {
+        "_staticImageScaleModifier": "5"
+    },
+    "EnterLoginQueueAndWaitForTurnCommand": {
+        "MaxDurationBeforeQueueViewInSeconds": "2",
+        "MinDurationQueueViewInSeconds": "4"
+    },
+    "PolyfewRuntime": {
+        "MAX_LOD_COUNT": "8"
+    }
+}

@@ -28,6 +28,8 @@ initializeApp({
   storageBucket: "minionmastersmanager.appspot.com",
 });
 
+const {getSeasonStartDate} = require("../src/page/public-stats/stats-functions");
+
 const db = getFirestore();
 const bucket = getStorage().bucket();
 const storage = getStorage();
@@ -46,10 +48,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
   // Seasons start at the last saturday of the month (usually)
-  const seasonStartDate = new Date();
-  seasonStartDate.setHours(22,0,0,0)
-  seasonStartDate.setDate(date.getDate() + (6 - date.getDay()));  //next Saturday
-  seasonStartDate.setDate(seasonStartDate.getDate() - 7*Math.ceil(seasonStartDate.getDate()/7))   //go back full weeks to previous month (last saturday of month)
+  const seasonStartDate = getSeasonStartDate();
   const inactivityDate = new Date(seasonStartDate)
   inactivityDate.setDate(seasonStartDate.getDate() + 1);
   const totalResults = [];

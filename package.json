@@ -70,9 +70,11 @@
     "use-react-screenshot": "1.0.2"
   },
   "scripts": {
+    "updateCardData": "npm-run-all parseCardData generateData",
+    "parseCardData": "node batch_jobs/card_data/jobParseCardData",
     "eloDeploy": "npm-run-all fetchElo deploy",
     "fetchElo": "node batch_jobs/fetch_elo",
-    "updateData": "npm-run-all generateData compressImages",
+    "updateData": "npm-run-all parseCardData generateData compressImages",
     "compressImages": "node batch_jobs/jobCompressImages",
     "predeploy": "npm-run-all build",
     "moveToFunctions": "mvy --force build/index.html functions/index2.html",

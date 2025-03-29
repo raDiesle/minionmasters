@@ -113,7 +113,7 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
               Switch to game, paste <code>/gaoc</code> anywhere in chat and send it by{" "}
               <code>Enter</code>
             </div>
-            - all your cards will be copied to clipboard.
+            - all your cards will be copied to clipboard. <div style={{ color: 'yellow' }}>(Commands do not work at the moment)</div>
           </li>
           <li>
             Paste results here by <code>right click mouse - insert</code> or <code>CTRL+V</code>:
@@ -121,6 +121,12 @@ export function MyProfile({ yourAvailableCardIds, setAvailableCards }) {
               <input type="text" placeholder="paste here" onChange={(e) => handlePastedGaoc(e)} />
             </div>
           </li>
+          <button className={classnames(cssButton.ButtonInGroupStyle)}
+          onClick={() => {localStorage(AVAILABLE_CARDS_LOCALSTORAGE_KEY, []); setAvailableCards([]); mToast("All available cards have been reset");}}>
+                  <div>
+                    Reset cards
+                  </div>
+            </button>
         </ol>
       </div>
     </div>
