@@ -3,13 +3,16 @@
 - cd functions && npm install
 - npm install -g firebase-tools
 - firebase login
+<br>
 
 # run app
 1. `npm install`
 3. `npm start` 
+<br>
 
 # deployment
 - `npm run deploy`
+<br>
 
 # update game data
 1. use AssetStudio to get Actors, Cards and Spell files  
@@ -23,6 +26,7 @@ from `C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters
 5. `npm run updateCardData`
 6. test changes on run app by `npm start`
 7. `npm run deploy`
+<br>
 
 # update images from game
 
@@ -50,20 +54,22 @@ from `C:\Program Files (x86)\Steam\steamapps\common\Minion Masters\MinionMasters
 - say "override all" to get updated images  
 - run 'npm run compressImages' and test app if all images are correct. commit all original and compressed new images to git
 - delete old folder you created
+<br>
 
 # another tool from another guy:
  https://github.com/Cadrach/mm-builder
+<br>
 
 # history
 - previous there was jobCardTemplate.js to parse text from wiki
-
+<br>
 
 # find gamelogs
 
 %appdata%\..\LocalLow\BetaDwarf ApS\Minion Masters
 
 TeamWon. Team: 0 Matchmade: None Online Game: False I won: True
-
+<br>
 
 # elo Bucket: update
 
@@ -76,3 +82,10 @@ gsutil cors set cors.json gs://minionmastersmanager.appspot.com
 
 ## add batch job command
 go to package.json -> scripts
+<br>
+
+# Getting New svg icons
+  
+  - find free svg icon
+  - if necessary edit it e.g. with ``https://boxy-svg.com/``
+  - convert to jsx with ``https://svg2jsx.com/``
