@@ -1,0 +1,22 @@
+
+.ButtonActive {
+    background-color: #111;
+}
+
+.ButtonInactive {
+    background-color: #444;
+}
+
+.ButtonInclude {
+    background-color: #161
+}
+
+.ButtonExclude {
+    background-color: #711;
+}
+
+.ButtonDisabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
