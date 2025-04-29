@@ -102,7 +102,7 @@
         "speed": 5,
         "Weight": 1000,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 3,
@@ -197,7 +197,7 @@
         "speed": 3,
         "Weight": 1800,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 6,
@@ -232,7 +232,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 7,
@@ -433,7 +433,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 13,
@@ -574,7 +574,7 @@
         "speed": 5,
         "Weight": 700,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 17,
@@ -634,7 +634,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 20,
@@ -669,7 +669,7 @@
         "speed": 6,
         "Weight": 650,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 21,
@@ -1050,7 +1050,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 33,
@@ -1085,7 +1085,7 @@
         "speed": 2,
         "Weight": 1000,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 34,
@@ -1216,7 +1216,7 @@
         "speed": 0,
         "Weight": 2100,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 38,
@@ -1321,7 +1321,7 @@
         "speed": 3,
         "Weight": 2000,
         "faction": "Stoutheart",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 41,
@@ -1391,7 +1391,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 43,
@@ -1427,7 +1427,7 @@
         "speed": 0,
         "Weight": 2700,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 44,
@@ -1462,7 +1462,7 @@
         "speed": 5,
         "Weight": 1500,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 45,
@@ -1532,7 +1532,7 @@
         "speed": 5,
         "Weight": 1400,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 47,
@@ -1567,7 +1567,7 @@
         "speed": 5,
         "Weight": 1500,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 48,
@@ -1848,7 +1848,7 @@
         "speed": 5,
         "Weight": 900,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 57,
@@ -2018,7 +2018,7 @@
         "speed": 5,
         "Weight": 1500,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 63,
@@ -2053,7 +2053,7 @@
         "speed": 5,
         "Weight": 1250,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 64,
@@ -2088,7 +2088,7 @@
         "speed": 5,
         "Weight": 1500,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 65,
@@ -2123,7 +2123,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 66,
@@ -2158,7 +2158,7 @@
         "speed": 10,
         "Weight": 2000,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 67,
@@ -2193,7 +2193,7 @@
         "speed": 7,
         "Weight": 1400,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 68,
@@ -2454,7 +2454,7 @@
         "speed": 5,
         "Weight": 1300,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 77,
@@ -2559,7 +2559,7 @@
         "speed": 9,
         "Weight": 600,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 80,
@@ -2689,7 +2689,7 @@
         "speed": 5,
         "Weight": 900,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 87,
@@ -2854,7 +2854,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 93,
@@ -2889,7 +2889,7 @@
         "speed": 5,
         "Weight": 1000,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 96,
@@ -3119,7 +3119,7 @@
         "speed": 5,
         "Weight": 900,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 109,
@@ -3249,7 +3249,7 @@
         "speed": 7,
         "Weight": 1250,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 114,
@@ -3284,7 +3284,7 @@
         "speed": 7,
         "Weight": 800,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 115,
@@ -3662,7 +3662,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 135,
@@ -3819,7 +3819,7 @@
         "speed": 0,
         "Weight": 2700,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 142,
@@ -3984,7 +3984,7 @@
         "speed": 10,
         "Weight": 2000,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 162,
@@ -4079,7 +4079,7 @@
         "speed": 10,
         "Weight": 2000,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 169,
@@ -4174,7 +4174,7 @@
         "speed": 5,
         "Weight": 1500,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 173,
@@ -4209,7 +4209,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 175,
@@ -4354,7 +4354,7 @@
         "speed": 5,
         "Weight": 900,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 184,
@@ -4389,7 +4389,7 @@
         "speed": 9,
         "Weight": 600,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 185,
@@ -4424,7 +4424,7 @@
         "speed": 6,
         "Weight": 650,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 186,
@@ -4459,7 +4459,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 187,
@@ -4494,7 +4494,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 188,
@@ -4552,7 +4552,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 192,
@@ -4728,7 +4728,7 @@
         "speed": 10,
         "Weight": 600,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 199,
@@ -4908,7 +4908,7 @@
         "speed": 0,
         "Weight": 1000,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 208,
@@ -5004,7 +5004,7 @@
         "speed": 4,
         "Weight": 1000,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 211,
@@ -5239,7 +5239,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 220,
@@ -5309,7 +5309,7 @@
         "speed": 5,
         "Weight": 1400,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 222,
@@ -5430,7 +5430,7 @@
         "speed": 0,
         "Weight": 1500,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 229,
@@ -5525,7 +5525,7 @@
         "speed": 4,
         "Weight": 3000,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 234,
@@ -5680,7 +5680,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 239,
@@ -5715,7 +5715,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 240,
@@ -5750,7 +5750,7 @@
         "speed": 5,
         "Weight": 700,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 241,
@@ -5785,7 +5785,7 @@
         "speed": 4,
         "Weight": 3000,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 242,
@@ -6004,7 +6004,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 251,
@@ -6134,7 +6134,7 @@
         "speed": 4,
         "Weight": 1400,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 255,
@@ -6229,7 +6229,7 @@
         "speed": 4,
         "Weight": 2000,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 259,
@@ -6324,7 +6324,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 262,
@@ -6467,7 +6467,7 @@
         "speed": 7,
         "Weight": 700,
         "faction": "Stoutheart",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 267,
@@ -6622,7 +6622,7 @@
         "speed": 7,
         "Weight": 800,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 272,
@@ -6657,7 +6657,7 @@
         "speed": 7,
         "Weight": 1000,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 273,
@@ -6692,7 +6692,7 @@
         "speed": 4,
         "Weight": 1000,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 274,
@@ -6762,7 +6762,7 @@
         "speed": 3,
         "Weight": 2000,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 276,
@@ -6797,7 +6797,7 @@
         "speed": 7,
         "Weight": 1500,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 277,
@@ -7051,7 +7051,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 287,
@@ -7352,7 +7352,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 298,
@@ -7458,7 +7458,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 301,
@@ -7757,7 +7757,7 @@
         "speed": 5,
         "Weight": 2500,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 313,
@@ -7816,7 +7816,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 315,
@@ -7996,7 +7996,7 @@
         "speed": 7,
         "Weight": 1000,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 321,
@@ -8031,7 +8031,7 @@
         "speed": 7,
         "Weight": 1200,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 322,
@@ -8186,7 +8186,7 @@
         "speed": 5,
         "Weight": 1250,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 327,
@@ -8221,7 +8221,7 @@
         "speed": 5,
         "Weight": 1200,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 328,
@@ -8281,7 +8281,7 @@
         "speed": 3,
         "Weight": 1800,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 330,
@@ -8316,7 +8316,7 @@
         "speed": 5,
         "Weight": 1500,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 331,
@@ -8471,7 +8471,7 @@
         "speed": 7,
         "Weight": 800,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 338,
@@ -8542,7 +8542,7 @@
         "speed": 0,
         "Weight": 1200,
         "faction": "ZenChi",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 341,
@@ -8840,7 +8840,7 @@
         "speed": 5,
         "Weight": 1000,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 352,
@@ -9066,7 +9066,7 @@
         "speed": 3,
         "Weight": 1800,
         "faction": "Slither",
-        "targets": "Ground"
+        "targets": "Building"
     },
     {
         "iD": 359,
@@ -9194,7 +9194,7 @@
         "speed": 4,
         "Weight": 2000,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 363,
@@ -9250,7 +9250,7 @@
         "speed": 6,
         "Weight": 900,
         "faction": "Voidborne",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 366,
@@ -9356,7 +9356,7 @@
         "speed": 4,
         "Weight": 800,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 371,
@@ -9391,7 +9391,7 @@
         "speed": 5,
         "Weight": 850,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 372,
@@ -9521,7 +9521,7 @@
         "speed": 7,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 376,
@@ -9591,7 +9591,7 @@
         "speed": 5,
         "Weight": 1850,
         "faction": "Scrat",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 378,
@@ -9626,7 +9626,7 @@
         "speed": 4,
         "Weight": 900,
         "faction": "CrystalElf",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 379,
@@ -10002,7 +10002,7 @@
         "speed": 5,
         "Weight": 1000,
         "faction": "Stoutheart",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 391,
@@ -10037,7 +10037,7 @@
         "speed": 5,
         "Weight": 1000,
         "faction": "Outlander",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 392,
@@ -10268,7 +10268,7 @@
         "speed": 6,
         "Weight": 1500,
         "faction": "Stoutheart",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 400,
@@ -10339,7 +10339,7 @@
         "speed": 0,
         "Weight": 2700,
         "faction": "Empyrean",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 402,
@@ -10626,7 +10626,7 @@
         "speed": 10,
         "Weight": 700,
         "faction": "Accursed",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 411,
@@ -10945,7 +10945,7 @@
         "speed": 6,
         "Weight": 1500,
         "faction": "Stoutheart",
-        "targets": "Ground"
+        "targets": "Ground & Air"
     },
     {
         "iD": 422,

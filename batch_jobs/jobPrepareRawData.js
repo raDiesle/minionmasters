@@ -27,8 +27,8 @@ function normalizeGameCardData(propsAsMap) {
     }
   }
 
-  propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
-  propsAsMap.targets = propsAsMap.attackOnlyStationary === "True" ? "Building" : propsAsMap.targets;
+  propsAsMap.targets = propsAsMap.hitsFlying ? "Ground & Air" : "Ground";
+  propsAsMap.targets = propsAsMap.attackOnlyStationary ? "Building" : propsAsMap.targets;
   if (propsAsMap.type === "Spell") {
     propsAsMap.targets = "Is Spell";
   }
