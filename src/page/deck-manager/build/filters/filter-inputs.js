@@ -157,7 +157,7 @@ export function FilterInputs({
         <FilterButton btnkey="type" filters={filters.type} setFilters={setFilters}>
           {Object.keys(typeMapping).map((type) => (
             <div key={type}>
-              <FontAwesomeIcon icon={typeMapping[type]} size="xs" />
+              {typeMapping[type]}
             </div>
           ))}
         </FilterButton>

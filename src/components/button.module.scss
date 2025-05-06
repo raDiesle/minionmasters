@@ -58,6 +58,22 @@
   }
 }
 
+%ButtonInline {
+
+  display: inline;
+  border-radius: 10px;
+  // min-height: 0px;
+  // padding: 0px;
+  // margin-left: 4px;
+  // margin-right: 4px;
+  // &:first-child{
+  //   margin-left: 0px;
+  // }
+  // &:last-child{
+  //   margin-right: 0px;
+  // } 
+}
+
 .isButtonActive {
   background-color: #111;
 }
@@ -73,6 +89,13 @@
 .ButtonInGroupStyle {
   @extend %ButtonInGroup;
   @extend .isButtonInactive;
+}
+
+.ButtonInlineStyle {
+  @extend %ButtonInGroup;
+  @extend %ButtonInline;
+  background-color: #444;
+
 }
 
 .fixedWidth {

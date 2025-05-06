@@ -14,5 +14,5 @@ export const targetsMapping = {
   Building: <BuildingTargetIcon />,
   // "Air":  <GroundAndAirIcon/> switched icons
   [TARGET_IS_SPELL]: <FontAwesomeIcon icon={faMagic} />,
-  undefined : null
+  // undefined : null
 };

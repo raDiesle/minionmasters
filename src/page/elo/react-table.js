@@ -3,7 +3,6 @@ import css from "./elo-ranking-table.module.scss";
 import { useTable, useBlockLayout, useSortBy, useGlobalFilter, useFilters, useAsyncDebounce } from "react-table";
 import { FixedSizeList } from "react-window";
 import {matchSorter} from 'match-sorter';
-import { color } from "html2canvas";
 
 const scrollbarWidth = () => {
   // thanks too https://davidwalsh.name/detect-scrollbar-width
@@ -21,7 +20,7 @@ function GlobalFilter({
                         globalFilter,
                         setGlobalFilter,
                       }) {
-  console.log(preGlobalFilteredRows);
+  // console.log(preGlobalFilteredRows);
   const count = preGlobalFilteredRows.length || 0;
   const [value, setValue] = React.useState(globalFilter);
   const onChange = useAsyncDebounce(value => {
@@ -101,6 +100,7 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    footerGroups,
     rows,
     totalColumnsWidth,
     prepareRow,
@@ -114,7 +114,8 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
       data,
       defaultColumn,
       initialState: {sortBy,  hiddenColumns},
-      filterTypes
+      filterTypes,
+      autoResetSortBy: false
     },
     useFilters,
     useGlobalFilter,
@@ -133,23 +134,26 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
           })}
           className={css.tr}
         >
-          {row.cells.map(cell => {
-            const align = cell.column.align || 'right';
-            const bgColor = cell.column.getColor;
-            return (
-              <div{...cell.getCellProps({
-                style: {
-                    ...cell.getCellProps().style,
-                    ...cell.column.getCellProps?.(cell).style,
-                    textAlign: align,
-                    // backgroundColor: bgColor
-                }
-            })} className={css.td}>
-                {cell.render("Cell")}
-              </div>
-              
-            );
-          })}
+        {row.cells.map(cell => {
+          const { column } = cell;
+          const align = column.align || 'right';
+          const baseProps = cell.getCellProps();
+          const customStyle = column.getCellProps?.(cell)?.style || {};
+
+          return (
+            <div
+              {...baseProps}
+              style={{
+                ...baseProps.style,
+                ...customStyle,
+                textAlign: align,
+              }}
+              className={css.td}
+            >
+              {cell.render('Cell')}
+            </div>
+          );
+        })}
         </div>
       );
     },
@@ -195,6 +199,52 @@ export const ReactTable = ({ columns, data, sortBy, minTableHeight, hiddenColumn
           {RenderRow}
         </FixedSizeList>
       </div>
+
+        {/* {columns.some(col => !!col.Footer) && footerGroups.map(footerGroup => (
+          <>
+            <div {...footerGroup.getFooterGroupProps()} className={`${css.tr} ${css.footerRow}`}>
+                {footerGroup.headers.map((column, index) => {
+                  const footerProps = column.getFooterProps();
+                  return (
+                    <div {...footerProps} style={{...footerProps.style, backgroundColor: column.getFooterColor?.()} } className={css.td}>
+                      {column.Footer && column.render('Footer')}
+                    </div>
+                  );
+              })}
+            </div>
+          </>
+        ))} */}
+
+      <div>
+        {columns.some(col => !!col.Footer) && footerGroups.map(footerGroup => {
+          let footerRows
+          if (Array.isArray(footerGroup.headers[0].Footer)) footerRows = footerGroup.headers[0].Footer;
+          else footerRows = [0];
+          return (
+            footerRows.map((_, rowIndex) =>
+            <div {...footerGroup.getFooterGroupProps()} className={`${css.tr} ${css.footerRow}`} key = {`footer-row-`+rowIndex}>
+                {footerGroup.headers.map((column, colIndex) => {
+                  const footerProps = column.getFooterProps();
+                  const footerVal = Array.isArray(column.Footer) ? column.Footer[rowIndex] : column.Footer
+                  return (
+                    <div 
+                      {...footerProps} 
+                      style={{
+                        ...footerProps.style,
+                        backgroundColor: column.getFooterColor?.(rowIndex),
+                        textAlign: column.footerAlign || "left",
+                      }}
+                      className={css.td}>
+                        {footerVal && footerVal}
+                    </div>
+                  );
+              })}
+            </div>
+            )
+          )
+        })}
+      </div>
+
     </div>
   </div>;
 }

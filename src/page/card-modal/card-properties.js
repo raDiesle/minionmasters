@@ -12,7 +12,6 @@ import {
   CardDamage,
   CardSingleDps,
   cardTotalDps,
-  CardRange,
   CardFlying,
   CardRarity,
   cardSingleDps,
@@ -38,7 +37,11 @@ export default function CardProperties({
     targets,
     type,
     radius,
-    Weight
+    Weight,
+    stationary,
+    lifeTime,
+    duration,
+    delay,
   },
 }) {
   const isAttacking = !isNaN(damage) && !isNaN(attackspeed) && ![damage, attackspeed].includes(0);
@@ -108,10 +111,10 @@ export default function CardProperties({
         </li>
       )}
 
-      {!isNaN(attackDelay) && (
+      {!isNaN(attackDelay) && isAttacking && (
         <li className={css.CardPropertyLiStyle}>
           <div className={css.CardPropertyKeyStyle}>Attack Delay</div>
-          <div className={css.CardProperyValue}>{attackDelay}</div>
+          <div className={css.CardProperyValue}>{attackDelay/1000 + " s"}</div>
         </li>
       )}
       {!isNaN(radius) && (
@@ -148,13 +151,13 @@ export default function CardProperties({
           <div className={css.CardProperyValue}>{cardRange({range})}</div>
         </li>
       )}
-      {speed && (
+      {(speed !== 0 && speed) && (
         <li className={css.CardPropertyLiStyle}>
           <div className={css.CardPropertyKeyStyle}>Speed</div>
           <div className={css.CardProperyValue}>{speed}</div>
         </li>
       )}
-      {[true, false].includes(flying) && (
+      {([true, false].includes(flying) && !stationary) && (
         <li className={css.CardPropertyLiStyle}>
           <div className={css.CardPropertyKeyStyle}>Flying</div>
           <div className={css.CardProperyValue}>
@@ -162,6 +165,24 @@ export default function CardProperties({
           </div>
         </li>
       )}
+      {stationary && (
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Duration</div>
+          <div className={css.CardProperyValue}>{lifeTime + " s"}</div>
+        </li>
+      )}
+      {!isNaN(delay) &&
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Cast Delay</div>
+          <div className={css.CardProperyValue}>{delay/1000 + " s"}</div>
+        </li>
+      }
+      {duration !== 0 && duration &&
+        <li className={css.CardPropertyLiStyle}>
+          <div className={css.CardPropertyKeyStyle}>Duration</div>
+          <div className={css.CardProperyValue}>{duration/1000 + " s"}</div>
+        </li>
+      }
       {Weight &&
         <li className={css.CardPropertyLiStyle}>
           <div className={css.CardPropertyKeyStyle}>Weight</div>

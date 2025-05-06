@@ -46,14 +46,14 @@
       margin: 0;
       padding: 0.5rem;
       border-right: 1px solid black;
-
+      
       position: relative;
 
 
-
-      :last-child {
-        border-right: 0;
-      }
+      // not sure why this was here, but it broke buttons inside headers
+      // :last-child {
+      //   border-right: 0;
+      // }
 
       .resizer {
         right: 0;
@@ -70,8 +70,37 @@
         }
       }
     }
+    .footerRow {
+
+      background-color: hsl(210, 69%, 14%);
+      border-top: 1px solid black;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      font-weight: bold;
+      
+      // Only the first footer row gets the top border
+      &:first-of-type {
+        border-top: 3px solid black;
+      }
+
+      // Only the last footer row gets the bottom border
+      &:last-of-type {
+        border-bottom: 1px solid black;
+      }
+
+      .td {
+        
+        text-align: left;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        padding: 6px;
+        
+      }
+
+    }
   }
 }
+
+
 
 .sortingInactive{
 

@@ -1,4 +1,4 @@
-import { faHatWizard } from "@fortawesome/free-solid-svg-icons/faHatWizard";
+// import { faHatWizard } from "@fortawesome/free-solid-svg-icons/faHatWizard";
 import { faYinYang } from "@fortawesome/free-solid-svg-icons/faYinYang";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AccursedIcon from "components/faction/accursed-icon";
@@ -16,7 +16,7 @@ export const factionMapping = {
   Accursed: <AccursedIcon />,
   Scrat: <ScratIcon />,
   CrystalElf: <CrystalElfIcon />,
-  Puff: <FontAwesomeIcon icon={faHatWizard} size={"xs"} />,
+  // Puff: <FontAwesomeIcon icon={faHatWizard} size={"xs"} />,
   ZenChi: <FontAwesomeIcon icon={faYinYang} size={"xs"} />,
   Slither: <SlitherIcon />,
   Outlander: <OutlanderIcon />,

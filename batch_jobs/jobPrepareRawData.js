@@ -14,12 +14,12 @@ const gameData = loadAllParsedGameData();
 const errorList = [];
 
 function normalizeGameCardData(propsAsMap) {
-  propsAsMap.faction = propsAsMap.Faction === "Highlander" ? "Stoutheart" : propsAsMap.Faction;
+  propsAsMap.faction = propsAsMap.faction === "Highlander" ? "Stoutheart" : propsAsMap.faction;
 
   if (["Spell", "SummonSpell", "DefensiveSpell"].includes(propsAsMap.type)) {
     propsAsMap.typeSpell = propsAsMap.type;
     propsAsMap.type = "Spell";
-  } else if (["Minion", "MultiMinion"].includes(propsAsMap.type)) {
+  } else if (["Minion", "MultiMinion", "BaseMinion"].includes(propsAsMap.type)) {
     if (propsAsMap.flying == true) {
       propsAsMap.type = "Flying Minion";
     } else {
@@ -27,11 +27,18 @@ function normalizeGameCardData(propsAsMap) {
     }
   }
 
-  propsAsMap.targets = propsAsMap.hitsFlying === "True" ? "Ground & Air" : "Ground";
-  propsAsMap.targets = propsAsMap.attackOnlyStationary === "True" ? "Building" : propsAsMap.targets;
-  if (propsAsMap.type === "Spell") {
+  propsAsMap.targets = propsAsMap.hitsFlying ? "Ground & Air" : "Ground";
+  propsAsMap.targets = propsAsMap.attackOnlyStationary ? "Building" : propsAsMap.targets;
+  if (propsAsMap.type === "Spell" || propsAsMap.type === "Ability") {
     propsAsMap.targets = "Is Spell";
+    propsAsMap.attackType = propsAsMap.type
   }
+  
+  propsAsMap.attackType = propsAsMap.isMelee ? "Melee":
+  propsAsMap.isRanged ? "Ranged": 
+    propsAsMap.isSpecial ? "Special": 
+    propsAsMap.cantAttack ? "None":
+    propsAsMap.attackType;
 
   const iDsMasterAbilitySpells = [
     104, // arcane golem
