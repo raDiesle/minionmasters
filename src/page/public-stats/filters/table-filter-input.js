@@ -4,16 +4,18 @@ import css from "./table-filter-input.module.scss"
 import React, { useEffect, useState } from 'react';
 import { factionMapping, typeMapping, targetsMapping, RarityMappingConfig, attackTypesMapping } from "components/propMappings";
 import Tooltip from "rc-tooltip";
-import { FilterButton, BUTTON_STATES } from "./filter-button";
+import { FilterButton, BUTTON_STATES } from "./filterButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PerkMasterIcon from "components/rarity/perk-master-icon";
 import { faSquare } from "@fortawesome/free-solid-svg-icons/faSquare";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons/faTrashAlt";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import ReverseIcon from "components/reverse-icon";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-// import { AdvancedFilterModal } from "./advanced-filter-modal";
-import {PopoverButton} from "./popover-button";
+import { PopoverButton } from "./popover-button";
 import { FilterOperators, FilterAttributes } from "./advanced-filters-config";
+import { Tag } from "./tag";
+
 
 // import * as classnames from "classnames";
 
@@ -30,6 +32,12 @@ export function TableFilterInput({
     const [initialized, setInitialized] = useState(false);
     const [reset, setReset] = useState(false)
     const [isAdvancedFilterOpen, setIsAdvancedFilterOpen] = useState(false);
+    const [newAdvancedFilter, setNewAdvancedFilter] = useState(
+        {
+            attribute: FilterAttributes.WINRATE_OVERALL,
+            operator: FilterOperators.GREATER_EQ,
+            value: 0.5,
+        });
     // const [isAdvancedFiltersModalOpen, setIsAdvancedFiltersModalOpen] = useState(false);
 
     useEffect(() => {
@@ -261,16 +269,6 @@ export function TableFilterInput({
                 </div>
             </div>
 
-            {/* <div className={cssButton.ButtonGroupStyle}>
-                <Tooltip overlay={<span>{"Advanced Filters"}</span>} placement ="bottomLeft"> 
-                    <button
-                        className = {filters.inverted ? BUTTON_STATES.ACTIVE : BUTTON_STATES.INACTIVE}
-                        onClick={() => setIsAdvancedFilterOpen(true)}
-                        >   
-                        {<div> <FontAwesomeIcon icon={faPlus}/> </div>}
-                    </button>
-                </Tooltip> 
-            </div> */}
 
             <div className={cssButton.ButtonGroupStyle}>
                 <FilterButton
@@ -286,49 +284,125 @@ export function TableFilterInput({
 
             <div className={cssButton.ButtonGroupStyle}>
                 <button
-                    className={cssButton.ButtonInGroupStyle}
-                    onClick={() => {
-                        setReset(true);
-                    }}
+                className={cssButton.ButtonInGroupStyle}
+                onClick={() => {
+                    setReset(true);
+                }}
                 >
-                    <FontAwesomeIcon icon={faTrashAlt} /> &nbsp;Reset
+                <FontAwesomeIcon icon={faTrashAlt} /> &nbsp;Reset
                 </button>
             </div>
 
             <div className={cssButton.ButtonGroupStyle}>
                 <PopoverButton className={cssButton.ButtonInGroupStyle} buttonContent={"Advanced Filters"}>
-                    <div style={{marginBottom: "8px"}}>Select Filter Options: </div>
-                    <div className={cssButton.ButtonGroupStyle}>
+                    <div style={{marginBottom: "8px", fontSize: "14px"}}>Add Filter:</div>
+                    <div className={cssButton.ButtonGroupStyle} style={{marginBottom: "8px"}}>
 
-                        <select>
+                        <select 
+                            value={newAdvancedFilter.attribute}
+                            onChange={e => setNewAdvancedFilter({...newAdvancedFilter, attribute : e.target.value})}
+                        >
                         {
-                            Object.values(FilterAttributes).map((attribute) => 
-                                <option>{attribute}</option>
+                            Object.values(FilterAttributes).map((attribute, index) => 
+                                <option key={"attribute-option-"+index}>{attribute}</option>
                             )
                         }
                         </select>
-                        <select>
-                        {
-                            Object.values(FilterOperators).map((operator) => 
-                                <option>{operator}</option>
-                            )
-                        }
-                        </select>
-                        <input style={{width: "50px",}} ></input>
-                        <button>
+                        <button 
+                            style={{
+                                minWidth: 30
+                            }}
+                            onClick={() => 
+                                {
+                                    const operators = Object.values(FilterOperators)
+                                    const newIndex = (operators.indexOf(newAdvancedFilter.operator) + 1) % operators.length;
+                                    setNewAdvancedFilter({...newAdvancedFilter, operator : operators[newIndex]});
+                                }
+                            }
+                        >
+                            {newAdvancedFilter.operator}
+                        </button>
+                        <input 
+                            onChange={(e) => {setNewAdvancedFilter({...newAdvancedFilter, value: e.target.value})}}
+                            value={newAdvancedFilter.value}
+                            style={{width: "50px",}} 
+                            // onChange={e => setNewAdvancedFilter({...newAdvancedFilter, value : e.value})}>
+                            >
+                        </input>
+                        <button
+                            onClick={() => 
+                                {
+                                    let newAdvancedFilters = [new Object(newAdvancedFilter)];
+                                    if(filters.advanced) newAdvancedFilters.push(...filters.advanced);
+                                    newAdvancedFilters = new Set(newAdvancedFilters);
+                                    setFilters({...filters, advanced: [...newAdvancedFilters]});
+                                    // console.log(filters.advanced)
+                                }
+                            }
+                        >
                             <FontAwesomeIcon icon = {faPlus}/>
                         </button>
+
+                    </div>
+                    <div>
+                        <div style={{fontSize: "14px"}}>Active Filters:</div>
+                        {(!filters.advanced || filters.advanced.length === 0) && <div style={{color: "#BBB"}}>None active</div>}
+                        {filters.advanced && filters.advanced.map((options, index) => (
+                                <div key={index}>
+                                    <Tag 
+                                        onRemove={() => {filters.advanced = filters.advanced.filter((_, i) => i !== index); setFilters({...filters, advanced: [...filters.advanced]})}}
+                                    >
+                                        {options.attribute + " " + options.operator + " " + options.value}
+                                    </Tag>
+                                </div>
+                            )
+                        )}
+                    </div>
+
+                </PopoverButton>
+
+                {
+                    (filters.advanced && filters.advanced.length !== 0) && filters.advanced.map((options, index) => (
+                        <Tag key={index}
+                            tagStyle={{margin: "-1px 1px", border: "1px solid black"}}
+                            onRemove={() => {filters.advanced = filters.advanced.filter((_, i) => i !== index); setFilters({...filters, advanced: [...filters.advanced]})}}
+                        >
+                            {options.attribute + " " + options.operator + " " + options.value}
+                        </Tag>
+                        
+                    )
+                )}
+            </div>
+
+            <div className={cssButton.ButtonGroupStyle}>
+                <PopoverButton
+                    className={cssButton.ButtonInGroupStyle}
+                    buttonContent={<FontAwesomeIcon icon={faInfoCircle}/>}
+                >
+                    <div style={{margin: "0px 10px 10px 15px"}}>
+                        <h2>Useful Information:</h2>
+                        <li>
+                            You can right click a filter button to select it alone.
+                        </li>
+                        <li>
+                            The dominance score is calculated from a card's play- and winrate.<br/>
+                            For <b>average</b> playrate and winrate, the score is 0. <br/>
+                            It gets larger positive for <b>high</b> play- and winrates and negative for <b>low</b> play-/winrates.
+                        </li>
                     </div>
                 </PopoverButton>
             </div>
 
-            <div>
-                {
-                    React.Children.map(children, (child, index) => (
-                        <div  className={cssButton.ButtonGroupStyle} key={index}>{child}</div>
-                    ))
-                }
-            </div>
+            
+            {
+                React.Children.map(children, (child, index) => (
+                    <div className={cssButton.ButtonGroupStyle}>
+                        {/* <div  className={cssButton.ButtonGroupStyle} key={index}>{child}</div> */}
+                        {child}
+                    </div>
+                ))
+            }
+            
 
         </div>
 
@@ -336,3 +410,4 @@ export function TableFilterInput({
         
     );
 }
+

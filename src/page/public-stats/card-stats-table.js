@@ -5,9 +5,13 @@ import { API_KEY, SHEET_ID } from "./public-stats-config";
 import { getCellColorWinrate, getCellColorPlayrate, calculateAverage, calculateSum, calculateDominanceScore } from './stats-functions';
 import cardData from "generated/jobCardProps.json";
 import { TableFilterInput } from './filters/table-filter-input';
-import Tooltip from 'rc-tooltip';
+// import Tooltip from 'rc-tooltip';
 import css from "./card-stats-table.module.scss"
+import cssButton from "components/button.module.scss";
 import { FilterAttributes, FilterOperators } from './filters/advanced-filters-config';
+import { PopoverButton } from './filters/popover-button';
+import ReverseIcon from 'components/reverse-icon';
+
 
 export function CardStatsTable({showPlayrates = false})
 {
@@ -32,20 +36,49 @@ export function CardStatsTable({showPlayrates = false})
     };
 
 
-    const [selectedBonusAttribute, setSelectedBonusAttribute] = useState(attributeChoices.DOMINANCE_SCORE_1V1);
+    const [selectedBonusAttribute, setSelectedBonusAttribute] = useState(attributeChoices.CARD_ID);
 
     function selectAttributeDropdown(){
-        
         return(
-            <select key="selectAttribute" value={selectedBonusAttribute} onChange={(event) => setSelectedBonusAttribute(event.target.value)}>
+            <>
+                <div style={{marginBottom: "8px", fontSize: "14px"}}>Select Column Attribute:</div>
+                <div className={cssButton.ButtonGroupStyle}>
                 {
                     Object.entries(attributeChoices).map(([key, value]) => (
-                        <option key={key} value={value}>{value}</option>
+                        <button 
+                            className={value === selectedBonusAttribute ? cssButton.isButtonActive : cssButton.ButtonInGroupStyle} 
+                            key={key} 
+                            value={value} 
+                            onClick={(event) => setSelectedBonusAttribute(event.target.value)}
+                            >
+                                {value}
+                        </button>
                     ))
                 }
-            </select>
+                </div>
+            </>
         )
     }
+
+
+    function selectAttributePopover(){
+        return(
+            <span style={{display: "inline"}}>
+
+                {selectedBonusAttribute}
+                {" "}
+                <PopoverButton
+                    buttonContent={<ReverseIcon/>}
+                    className={cssButton.ButtonInlineStyle}
+                    buttonStyle={{ minHeight: "0px" }}
+                >
+                    {selectAttributeDropdown()}
+                </PopoverButton>
+
+            </span>
+        )
+    }
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -109,7 +142,7 @@ export function CardStatsTable({showPlayrates = false})
     const totalMatchesOverall = calculateSum(preparedData, indexes.gamesOverall)/10;
     if (totalMatchesOverall !== totalMatches1v1 + totalMatches2v2) console.log("Error in total match counts!");
 
-    let totalMatches = new Object()
+    let totalMatches = {}
     totalMatches[indexes.games1v1] = totalMatches1v1;
     totalMatches[indexes.games2v2] = totalMatches2v2;
     totalMatches[indexes.gamesOverall] = totalMatchesOverall;
@@ -237,6 +270,9 @@ export function CardStatsTable({showPlayrates = false})
                     return compare(row[indexes.winrate2v2], value);
                 case FilterAttributes.WINRATE_OVERALL:
                     return compare(row[indexes.winrateOverall], value);
+                default:
+                    console.error(`Attribute ${attribute} not found for advanced filtering!`);
+                    return false;
             }
         });
     }
@@ -429,9 +465,9 @@ export function CardStatsTable({showPlayrates = false})
             }   
         }
         return {  
-            // id: col-${n},
+            id: `col-${n}`,
             accessor: (row, i) => row[n],
-            Header: title,
+            Header: n === indexes.cardID ? selectAttributePopover : title,
             Footer: footerRows.map(row => row[n]),//footerRow[n],//(averageRow[n]*100).toFixed(2) +" %",
             // Footer: footerRow[n],
             width: n === indexes.cardName ? 225 : 120,
@@ -451,7 +487,7 @@ export function CardStatsTable({showPlayrates = false})
         }
     });
 
-    const additionalElements = [selectAttributeDropdown()]
+    const additionalElements = []
 
     return (
         <>
@@ -469,8 +505,6 @@ export function CardStatsTable({showPlayrates = false})
             sortBy={[{ id: "winrateTotal", desc: true }]}
             minTableHeight={450}
             />
-
         </>
     )
-
 };

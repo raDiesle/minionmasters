@@ -92,6 +92,7 @@ export function calculateDominanceScore(matches, totalMatches, winrate, cardCoun
     const playrateAverage = 10/cardCount
     winrate = (winrate*matches + neutralMatches/2)/(matches+neutralMatches)
     const sign = Math.sign(winrate-0.5);
+    const sign_factor = Math.tanh(Math.cosh(100*(winrate-0.5)))     //for smooth transition between positive and negative winrate
 
-    return 10*((playrate/playrateAverage)**(sign*Math.abs(2*winrate-1)**0.01) * ((winrate/(1-winrate))**sign-1)*sign)+0.2*(playrate-playrateAverage)/playrateAverage
+    return 10*((playrate/playrateAverage)**(sign * sign_factor) * ((winrate/(1-winrate))**sign-1)*sign)+0.2*(playrate-playrateAverage)/playrateAverage
 }

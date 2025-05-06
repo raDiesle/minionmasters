@@ -66,7 +66,7 @@ return(
       </TabPanel> 
     </Tabs>
     
-    <p  style={{marginLeft: 2 + 'em'}}>
+    <div  style={{marginLeft: 2 + 'em'}}>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span>      
@@ -92,7 +92,7 @@ return(
       <br/>
       Last Update: <b>{modifiedDate.toLocaleDateString()}</b> 
       {" - " + timeDifferenceInDays(getSeasonStartDate(modifiedDate), modifiedDate) + " days since Season start."}
-    </p>
+    </div>
   </>
 
 
