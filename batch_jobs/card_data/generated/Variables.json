@@ -1776,7 +1776,7 @@
     },
     "SummonWithSoulStealerLogic": {
         "MAX_SOULS": "10",
-        "SOUL_PER_SACRIFICE": "3"
+        "SOUL_PER_SACRIFICE": "2"
     },
     "SwapToDormantDragon": {
         "REPLACE_WITH_ID": "232"
@@ -2232,7 +2232,7 @@
         "TRIGGER_DELAY": "300"
     },
     "GroundTargetOnHit": {
-        "DURATION": "3000",
+        "DURATION": "3500",
         "PROJECTILE_DELAY": "300"
     },
     "KnockUpAttack": {
@@ -2468,7 +2468,7 @@
     },
     "ArmorOfFire": {
         "RANGE": "4000",
-        "COOLDOWN_SECONDS": "14",
+        "COOLDOWN_SECONDS": "12",
         "DAMAGE": "75",
         "PREACTIVATE_DURATION": "1000",
         "TRIGGER_DELAY": "300"
@@ -3162,7 +3162,7 @@
         "TRAP_TIME": "4000"
     },
     "WrathGlobalAreaDamage": {
-        "GLOBAL_DAMAGE": "26",
+        "GLOBAL_DAMAGE": "20",
         "RANGE": "14000"
     },
     "RessurectNextDeadUnitAfterTime": {
@@ -3190,7 +3190,7 @@
     },
     "SpawnRandomCreatureOnDeath": {
         "DELAY": "1300",
-        "MANA_COST_MIN": "3",
+        "MANA_COST_MIN": "4",
         "MANA_COST_MAX": "4"
     },
     "LifeSteal": {

@@ -136,6 +136,8 @@
     <MainUnitsToSummon>MeleeScrat</MainUnitsToSummon>
     <MainUnitsToSummon>MeleeScrat</MainUnitsToSummon>
     <MainUnitsToSummon>MeleeScrat</MainUnitsToSummon>
+    <LogicScriptName>SummonActivateScratAffinityAbilities</LogicScriptName>
+    <ComboCardTrigger>TriggerOnScratAffinity</ComboCardTrigger>
     <ImageName>GangOfRats</ImageName>
     <Rarity>Common</Rarity>
     <Buckets>Swarm</Buckets>
@@ -1372,12 +1374,13 @@
     <PreviewAssetPath>RedGolemVisual</PreviewAssetPath>
     <FilterTag>HighDamageFilterTag</FilterTag>
     <Type>Minion</Type>
-    <MainUnitsToSummon>BlueGolem</MainUnitsToSummon>
-    <ExtraUnitsToSummon>RedGolem</ExtraUnitsToSummon>
+    <MainUnitsToSummon>RedGolem</MainUnitsToSummon>
     <ImageName>RedGolem</ImageName>
     <Rarity>Supreme</Rarity>
     <RankRequirement>stone</RankRequirement>
-    <ComboCardTrigger>ReplaceOnMasterBelowHalfHealth</ComboCardTrigger>
+    <LogicScriptName>GiveRageIfMasterBelowHalfHealth</LogicScriptName>
+    <LogicScriptName>GiveSpiritIfMasterBelowHalfHealth</LogicScriptName>
+    <ComboCardTrigger>TriggerOnMasterBelowHalfHealth</ComboCardTrigger>
     <Buckets>BigDudes</Buckets>
   </Cards>
   <Cards>

@@ -215,6 +215,7 @@
     <Radius>800</Radius>
     <Range>320</Range>
     <Speed>7</Speed>
+    <ActorSkill>GainFrenzyOnAffinity</ActorSkill>
     <DescriptionLink>MeleeScratDescription</DescriptionLink>
     <OverwriteName>ThiizlaxTheWorthless</OverwriteName>
     <IsMelee>true</IsMelee>
@@ -1125,7 +1126,7 @@
     <Faction>Outlander</Faction>
     <MaxHealth>150</MaxHealth>
     <Damage>40</Damage>
-    <AttackCooldown>1500</AttackCooldown>
+    <AttackCooldown>1300</AttackCooldown>
     <AttackDelay>200</AttackDelay>
     <Radius>1500</Radius>
     <Range>8000</Range>
@@ -1179,12 +1180,12 @@
     <VisualPrefabPath>BlastmancerVisual</VisualPrefabPath>
     <Faction>Accursed</Faction>
     <MaxHealth>170</MaxHealth>
-    <Damage>4</Damage>
+    <Damage>6</Damage>
     <AttackCooldown>300</AttackCooldown>
     <OverwritePicturePath>Blastmancer</OverwritePicturePath>
     <AttackDelay>100</AttackDelay>
     <Radius>1250</Radius>
-    <Range>10000</Range>
+    <Range>6000</Range>
     <Speed>5</Speed>
     <HitsFlying>true</HitsFlying>
     <OverwriteName>KervuDeathblower</OverwriteName>
@@ -1338,8 +1339,8 @@
     <Id>71</Id>
     <InheritFromId>67</InheritFromId>
     <VisualPrefabPath>RedGolemVisual</VisualPrefabPath>
-    <MaxHealth>1200</MaxHealth>
-    <Damage>300</Damage>
+    <MaxHealth>850</MaxHealth>
+    <Damage>200</Damage>
     <Faction>ZenChi</Faction>
   </Actors>
   <Actors>
@@ -2545,7 +2546,7 @@
     <Id>139</Id>
     <VisualPrefabPath>BlinkBatVisual</VisualPrefabPath>
     <Faction>Voidborne</Faction>
-    <MaxHealth>30</MaxHealth>
+    <MaxHealth>25</MaxHealth>
     <Damage>20</Damage>
     <AttackCooldown>1300</AttackCooldown>
     <AttackDelay>600</AttackDelay>
@@ -4377,17 +4378,17 @@
     <Faction>Scrat</Faction>
     <MaxHealth>140</MaxHealth>
     <Damage>90</Damage>
-    <AttackCooldown>4500</AttackCooldown>
+    <AttackCooldown>5000</AttackCooldown>
     <AttackDelay>2700</AttackDelay>
     <Radius>1850</Radius>
-    <AOERange>4500</AOERange>
+    <AOERange>5000</AOERange>
     <Range>10000</Range>
     <Speed>5</Speed>
     <HitsFlying>true</HitsFlying>
     <ProjectileFlySpeed>6000</ProjectileFlySpeed>
     <IsRanged>true</IsRanged>
     <FromMasterCard>false</FromMasterCard>
-    <ActorSkill>GroundTargetOnHit</ActorSkill>
+    <ActorSkill>GroundTargetOnHit</ActorSkill> 
     <BaseAttackDontDamage>true</BaseAttackDontDamage>
   </Actors>
   <Actors>
@@ -4465,8 +4466,8 @@
     <Id>252</Id>
     <VisualPrefabPath>TeenMushroomVisual</VisualPrefabPath>
     <Faction>ZenChi</Faction>
-    <MaxHealth>250</MaxHealth>
-    <Damage>40</Damage>
+    <MaxHealth>275</MaxHealth>
+    <Damage>50</Damage>
     <AttackCooldown>2000</AttackCooldown>
     <AttackDelay>800</AttackDelay>
     <Radius>1100</Radius>
@@ -4766,7 +4767,7 @@
     <Faction>CrystalElf</Faction>
     <MaxHealth>400</MaxHealth>
     <Damage>35</Damage>
-    <AttackCooldown>1000</AttackCooldown>
+    <AttackCooldown>1100</AttackCooldown>
     <AttackDelay>900</AttackDelay>
     <Radius>2500</Radius>
     <Range>2000</Range>

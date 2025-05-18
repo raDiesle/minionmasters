@@ -369,7 +369,7 @@
     "DragonWhelp": "Dragon Whelp",
     "DragonWhelpDescription": "\"Can fly, which is good against melee ground Minions.\\n\\n[actorskillinfo:VoidborneWound,[mec:[r:VoidborneWound]]]: Gain [actorskillinfo:RageBuff,[mec:[r:RageBuff]]]",
     "ScratPack": "Scrat Pack",
-    "ScratPackDescription": "Good for taking bridges and as cheap targets.",
+    "ScratPackDescription": "Good for taking bridges and as cheap targets.\\n\\n[actorskillinfo:ScratSwarm,[mec:[r:ScratSwarm]]]: gain [actorskillinfo:FrenzyBuff,[mec:[r:FrenzyBuff]]].",
     "GhostTurret": "Ghost Turret",
     "GhostTurretDescription": "Defensive Building with good damage and attack speed.\\n\\nOn death, give a random friendly Minion [actorskillinfo:SpiritBuff,[mec:[r:SpiritBuff]]].",
     "Fireball": "Fireball",
@@ -518,7 +518,7 @@
     "UndyingSkeleton": "Undying Skeleton",
     "UndyingSkeletonDescription": "Leaves an [actorskillinfo:UndyingCorpse,[mec:[r:UndyingCorpse]]] the first time it dies.",
     "WalkingBlindDate": "Walking Blind Date",
-    "WalkingBlindDateDescription": "[actorskillinfo:TauntBuff,[mec:[r:TauntBuff]]], [actorskillinfo:RushBuff,[mec:[r:RushBuff]]].\\n\\nWhen killed, it summons a random [v:SpawnRandomCreatureOnDeath.MANA_COST_MIN]-[v:SpawnRandomCreatureOnDeath.MANA_COST_MAX] mana [actorskillinfo:WalkingBlindDateMinion,[r:Minion]] card.",
+    "WalkingBlindDateDescription": "[actorskillinfo:TauntBuff,[mec:[r:TauntBuff]]], [actorskillinfo:RushBuff,[mec:[r:RushBuff]]].\\n\\nWhen killed, it summons a random [v:SpawnRandomCreatureOnDeath.MANA_COST_MAX] mana [actorskillinfo:WalkingBlindDateMinion,[r:Minion]] card.",
     "PropellerScrats": "Propeller Scrats",
     "PropellerScratsDescription": "Quick and weak flying melee Minions.",
     "TranquilShihou": "Tranquil Shi-Hou",
@@ -1332,7 +1332,7 @@
     "RatboSupercharge": "More Dakka!",
     "RatboSuperchargeDescription": "Ratbo fires a minigun salvo at the nearest enemy. It deals more damage for each friendly Minion in the arena.\\n\\nDamage per Minion: [v:SpellFocusSingleTargetBoost.DAMAGE]\\nDelay: [math:[v:SpellFocusSingleTargetBoost.WIND_UP_TIME]/1000] seconds\\nOnly deals 1/[v:SpellFocusSingleTargetBoost.BASE_DAMAGE_DIVIDER] damage to Masters.",
     "RatboSuperchargeAbilityDescription": "Add the card [mec:[r:RatboSupercharge]] to Ratbo's Deck\\n\\n[mec:[r:RatboSupercharge]]\\n[r:RatboSuperchargeDescription]",
-    "RedGolemDescription2": "Summon a [actorskillinfo:BlueGolem,[mec:[r:BlueGolem]]].\\n\\nIf you have 50% or less health, summon a [actorskillinfo:RedGolem,[mec:[r:RedGolem]]] instead.",
+    "RedGolemDescription2": "If you have 50% or less health, gain [actorskillinfo:RageBuff,[r:RageBuff]] and [actorskillinfo:SpiritBuff,[mec:[r:SpiritBuff]]].",
     "TeamPlay": "Team Play",
     "InDevelopment": "This feature is currently in development.",
     "TheTreasureVault": "The Treasure Vault",
@@ -7616,5 +7616,6 @@
     "BP45Title": "Scratpocalypse",
     "BP46Title": "STR1K3 F0RC3",
     "BP47Title": "Monkey Business",
-    "BP48Title": "Shackles of the Serpent"
+    "BP48Title": "Shackles of the Serpent",
+    "BP49Title": "Court of the Swarmer King"
 }

@@ -67,7 +67,7 @@ function parseAndSaveGameData(parseTextDataCompletely = false){
         if(!inheritId) return;
         baseUnit = actorsIdMap.get(inheritId);
         for(let key of Object.keys(baseUnit)){
-            if(!unit[key]){
+            if(unit[key] === undefined){
                 unit[key] = baseUnit[key];
             }
         }

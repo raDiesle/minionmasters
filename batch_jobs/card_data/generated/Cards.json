@@ -156,6 +156,8 @@
             "MeleeScrat",
             "MeleeScrat"
         ],
+        "LogicScriptName": "SummonActivateScratAffinityAbilities",
+        "ComboCardTrigger": "TriggerOnScratAffinity",
         "ImageName": "GangOfRats",
         "Rarity": "Common",
         "Buckets": "Swarm",
@@ -1607,18 +1609,19 @@
         "PreviewAssetPath": "RedGolemVisual",
         "FilterTag": "HighDamageFilterTag",
         "Type": "Minion",
-        "MainUnitsToSummon": "BlueGolem",
-        "ExtraUnitsToSummon": "RedGolem",
+        "MainUnitsToSummon": "RedGolem",
         "ImageName": "RedGolem",
         "Rarity": "Supreme",
         "RankRequirement": "stone",
-        "ComboCardTrigger": "ReplaceOnMasterBelowHalfHealth",
+        "LogicScriptName": [
+            "GiveRageIfMasterBelowHalfHealth",
+            "GiveSpiritIfMasterBelowHalfHealth"
+        ],
+        "ComboCardTrigger": "TriggerOnMasterBelowHalfHealth",
         "Buckets": "BigDudes",
         "ManaCost": 9,
         "MainSummonAmounts*0": 1,
-        "MainSummonAmount": 1,
-        "ExtraSummonAmounts*0": 1,
-        "ExtraSummonAmount": 1
+        "MainSummonAmount": 1
     },
     "ScratTank": {
         "ValueItemRarityId": 92,
