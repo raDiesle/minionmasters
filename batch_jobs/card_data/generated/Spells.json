@@ -299,7 +299,7 @@
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
     },
     "ArcaneMissiles": {
-        "Damage": 30,
+        "Damage": 35,
         "TowerDamage": 3,
         "Radius": 500,
         "Duration": 4000,
@@ -701,6 +701,7 @@
     },
     "SpellDealDamageInVerticalLine": {
         "Damage": 60,
+        "TowerDamage": 60,
         "Radius": 2000,
         "Duration": 0,
         "EffectDelay": 250,
@@ -912,7 +913,7 @@
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
     },
     "DealDamageConnected": {
-        "Damage": 80,
+        "Damage": 100,
         "TowerDamage": 40,
         "Radius": 6500,
         "Duration": 0,
@@ -1020,7 +1021,7 @@
         "Radius": 8000,
         "Duration": 0,
         "EffectDelay": 1100,
-        "Delay": 900,
+        "Delay": 600,
         "TravelSpeed": 0,
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemies"
     },
@@ -1075,7 +1076,7 @@
         "AIPlayHints": "Target_In_Front_Of_Group_Of_Enemy_Minions"
     },
     "SpinningProjectileFromHero": {
-        "Damage": 110,
+        "Damage": 80,
         "TowerDamage": 11,
         "Radius": 2000,
         "Duration": 5000,
@@ -1130,7 +1131,7 @@
         "EffectDelay": 0,
         "Delay": 0,
         "TravelSpeed": 0,
-        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Minions"
+        "AIPlayHints": "Target_In_Front_Of_Group_Of_Friendly_Ground_Minions"
     },
     "SpellMultipleMissiles": {
         "Damage": 60,
@@ -1306,7 +1307,7 @@
         "AIPlayHints": "None"
     },
     "SpellMakeflyingAndGiveMarksmanShip": {
-        "Delay": 500,
+        "Delay": 250,
         "Duration": 5000,
         "Radius": 2500,
         "AIPlayHints": "None"

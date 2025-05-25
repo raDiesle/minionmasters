@@ -1,6 +1,6 @@
 import { clamp } from "lodash";
 
-export function getSeasonStartDate(date){
+export function getSeasonStartDate(date = new Date()){
     // last Saturday of a month - does not match the actual schedule
     // const seasonStartDate = new Date(date)
     // seasonStartDate.setHours(10,0,0,0)      // 
@@ -13,6 +13,7 @@ export function getSeasonStartDate(date){
         new Date("2025-02-22T10:00Z"),
         new Date("2025-03-22T10:00Z"),
         new Date("2025-04-26T10:00Z"),
+        new Date("2025-05-24T10:00Z"),
     ]
     let seasonStartDate = seasonDates[0];
     for (let sDate of seasonDates) {

@@ -332,7 +332,7 @@
   </Spells>
   <Spells>
     <Identifier>ArcaneMissiles</Identifier>
-    <Damage>30</Damage>
+    <Damage>35</Damage>
     <TowerDamage>3</TowerDamage>
     <Radius>500</Radius>
     <Duration>4000</Duration>
@@ -778,6 +778,7 @@
   <Spells>
     <Identifier>SpellDealDamageInVerticalLine</Identifier>
     <Damage>60</Damage>
+    <TowerDamage>60</TowerDamage>
     <Radius>2000</Radius>
     <Duration>0</Duration>
     <EffectDelay>250</EffectDelay>
@@ -1011,7 +1012,7 @@
   </Spells>
   <Spells>
     <Identifier>DealDamageConnected</Identifier>
-    <Damage>80</Damage>
+    <Damage>100</Damage>
     <TowerDamage>40</TowerDamage>
     <Radius>6500</Radius>
     <Duration>0</Duration>
@@ -1128,7 +1129,7 @@
     <Radius>8000</Radius>
     <Duration>0</Duration>
     <EffectDelay>1100</EffectDelay>
-    <Delay>900</Delay>
+    <Delay>600</Delay>
     <TravelSpeed>0</TravelSpeed>
     <AIPlayHints>Target_In_Front_Of_Group_Of_Enemies</AIPlayHints>
   </Spells>
@@ -1189,7 +1190,7 @@
   </Spells>
   <Spells>
     <Identifier>SpinningProjectileFromHero</Identifier>
-    <Damage>110</Damage>
+    <Damage>80</Damage>
     <TowerDamage>11</TowerDamage>
     <Radius>2000</Radius>
     <Duration>5000</Duration>
@@ -1249,7 +1250,7 @@
     <EffectDelay>0</EffectDelay>
     <Delay>0</Delay>
     <TravelSpeed>0</TravelSpeed>
-    <AIPlayHints>Target_In_Front_Of_Group_Of_Friendly_Minions</AIPlayHints>
+    <AIPlayHints>Target_In_Front_Of_Group_Of_Friendly_Ground_Minions</AIPlayHints>
   </Spells>
   <Spells>
     <Identifier>SpellMultipleMissiles</Identifier>
@@ -1446,7 +1447,7 @@
 	</Spells>
 	<Spells>
 		<Identifier>SpellMakeflyingAndGiveMarksmanShip</Identifier>
-		<Delay>500</Delay>
+		<Delay>250</Delay>
     <Duration>5000</Duration>
     <Radius>2500</Radius>
 		<AIPlayHints>None</AIPlayHints>
