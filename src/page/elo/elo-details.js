@@ -15,6 +15,7 @@ import { ChartFilters } from "page/elo/chart-filters";
 import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
 import { db } from "mm-firestore";
+import { getSeasonStartDate } from "page/public-stats/stats-functions";
 
 const renderCellFn = ({ params, isUpGood, userData }) => {
   const currentRowPos = params.row.index;
@@ -124,6 +125,7 @@ export function EloDetails() {
     }
   ];
 
+  const seasonStartDate = getSeasonStartDate();
   const FILTER_CONFIG = {
     // "2022-02-27"
     // "2022-02-20"
@@ -132,8 +134,12 @@ export function EloDetails() {
     // "2022-08-04"
     // "2023-05-18"
     // "2023-07-22"
-    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2023-05-28").getTime())})),
-    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date("2024-07-20").getTime() )})),
+    
+    [FILTER_CURRENT_SEASON] : () => propsData.map(props => 
+        ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > seasonStartDate.getTime())})),
+    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => 
+        ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < seasonStartDate.getTime() && 
+                                                                    new Date(date).getTime() > getSeasonStartDate(seasonStartDate).getTime())})),
     [FILTER_ALL] : () => propsData
   }
 

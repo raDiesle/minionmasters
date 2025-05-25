@@ -725,7 +725,7 @@
     "Priestess": {
         "Id": 39,
         "Faction": "Empyrean",
-        "MaxHealth": 150,
+        "MaxHealth": 120,
         "Damage": 5,
         "AttackCooldown": 500,
         "AttackDelay": 100,
@@ -737,7 +737,7 @@
         "ExtraStats": {
             "Stat": {
                 "Identifier": "HealPerSecond",
-                "Value": 33,
+                "Value": 20,
                 "OverrideIconPath": "HealOverTime"
             }
         },
@@ -1170,7 +1170,7 @@
         "OverwritePicturePath": "Blastmancer",
         "AttackDelay": 100,
         "Radius": 1250,
-        "Range": 6000,
+        "Range": 10000,
         "Speed": 5,
         "HitsFlying": true,
         "OverwriteName": "KervuDeathblower",
@@ -1239,7 +1239,7 @@
         "Faction": "Scrat",
         "MaxHealth": 85,
         "Damage": 50,
-        "AttackCooldown": 1400,
+        "AttackCooldown": 1000,
         "AttackDelay": 1400,
         "Radius": 1400,
         "Range": 600,
@@ -1260,7 +1260,7 @@
             "RemoveBarrelShieldOnAffinity"
         ],
         "ProjectileFlyTime": 500,
-        "AOERange": 5000,
+        "AOERange": 6000,
         "ActorsToPreload": 11
     },
     "BlueGolem": {
@@ -1511,7 +1511,7 @@
     "BattleShiHou": {
         "Id": 80,
         "Faction": "ZenChi",
-        "MaxHealth": 350,
+        "MaxHealth": 420,
         "Damage": 70,
         "AttackCooldown": 1800,
         "AttackDelay": 900,
@@ -1898,7 +1898,7 @@
         "Faction": "Outlander",
         "MaxHealth": 222,
         "Damage": 64,
-        "AttackCooldown": 900,
+        "AttackCooldown": 800,
         "AttackDelay": 400,
         "Radius": 1100,
         "Range": 4000,
@@ -2569,7 +2569,7 @@
     "CrossbowTrap": {
         "Id": 144,
         "Faction": "Empyrean",
-        "MaxHealth": 100,
+        "MaxHealth": 85,
         "Damage": 20,
         "AttackCooldown": 500,
         "OverwritePicturePath": "",
@@ -2593,7 +2593,7 @@
     "DecoyTrap": {
         "Id": 145,
         "Faction": "Empyrean",
-        "MaxHealth": 400,
+        "MaxHealth": 375,
         "Damage": 0,
         "AttackCooldown": 0,
         "AttackDelay": 0,
@@ -3934,7 +3934,7 @@
         "AttackCooldown": 300,
         "AttackDelay": 100,
         "Radius": 1250,
-        "Range": 6000,
+        "Range": 10000,
         "Speed": 5,
         "HitsFlying": true,
         "OverwriteName": "KervuDeathblower",
@@ -4193,7 +4193,7 @@
         "MaxHealth": 300,
         "Damage": 25,
         "DPS": 50,
-        "AttackCooldown": 1000,
+        "AttackCooldown": 800,
         "AttackDelay": 300,
         "Radius": 2200,
         "Range": 400,
@@ -4634,6 +4634,7 @@
         "Speed": 4,
         "AOERange": 5500,
         "IsMelee": true,
+        "IsMythic": true,
         "CenterAOEOnSelf": true,
         "ActorSkill": "MeleeAOEMinionDoubleAttack",
         "BaseAttackDontDamage": true,
@@ -4687,8 +4688,8 @@
     "Denver": {
         "Id": 254,
         "Faction": "Slither",
-        "MaxHealth": 1125,
-        "Damage": 150,
+        "MaxHealth": 1100,
+        "Damage": 140,
         "AttackCooldown": 3000,
         "AttackDelay": 900,
         "Radius": 2500,
@@ -5100,7 +5101,7 @@
         "Catagory": "Disabled",
         "FromMasterCard": false,
         "ProjectileFlyTime": 500,
-        "AOERange": 5000,
+        "AOERange": 6000,
         "ActorsToPreload": 11
     },
     "Scratat": {
@@ -5182,7 +5183,7 @@
     "MonkDragon": {
         "Id": 278,
         "Faction": "ZenChi",
-        "MaxHealth": 270,
+        "MaxHealth": 300,
         "Damage": 24,
         "AttackCooldown": 800,
         "AttackDelay": 400,
@@ -5218,7 +5219,7 @@
         "Id": 280,
         "DescriptionLink": "AnkaheshDescription",
         "Faction": "Slither",
-        "MaxHealth": 600,
+        "MaxHealth": 550,
         "Damage": 60,
         "AttackCooldown": 1800,
         "AttackDelay": 600,

@@ -634,7 +634,7 @@
   <Cards>
     <ValueItemRarityId>34</ValueItemRarityId>
     <CardIndex>33</CardIndex>
-    <Cost>4</Cost>
+    <Cost>3</Cost>
     <Faction>Empyrean</Faction>
     <Title>Priestess</Title>
     <Description>PriestessDescription</Description>
@@ -1289,7 +1289,7 @@
   <Cards>
     <ValueItemRarityId>83</ValueItemRarityId>
     <CardIndex>67</CardIndex>
-    <Cost>3</Cost>
+    <Cost>4</Cost>
     <Faction>Scrat</Faction>
     <Title>ZeppelinBomber</Title>
     <Description>ZeppelinBomberDescription</Description>
@@ -1621,7 +1621,7 @@
     <ImageName>Guardian</ImageName>
     <Rarity>Supreme</Rarity>
     <RankRequirement>none</RankRequirement>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Crystalized</Buckets>
 	<PreviewAssetPath>GuardianVisual</PreviewAssetPath>
   </Cards>
@@ -2648,7 +2648,7 @@
     <LogicScriptName>SummonBruteBrotherIllusion</LogicScriptName>
     <LogicScriptName>MultiSidedCardLogic</LogicScriptName>
     <RankRequirement>stone</RankRequirement>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <RankRequirement>none</RankRequirement>
     <Buckets>Sixes</Buckets>
 	<PreviewAssetPath>DynamicDemonDuoPreview</PreviewAssetPath>
@@ -2758,7 +2758,7 @@
     <ImageName>SharsrakkTwins</ImageName>
     <Rarity>Supreme</Rarity>
     <RankRequirement>stone</RankRequirement>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <RankRequirement>none</RankRequirement>
     <Buckets>Sixes</Buckets>
 	<PreviewAssetPath>DeadlyTwinsPreview</PreviewAssetPath>
@@ -2785,7 +2785,7 @@
     <LogicScriptName>SpellExplodeSpawnDragonWhelp</LogicScriptName>
     <ComboCardTrigger>TriggerForDragonBall</ComboCardTrigger>
     <GridSnap>BothWithRiver</GridSnap>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Sixes</Buckets>
 	<PreviewAssetPath>DragonBallPreview</PreviewAssetPath>
     <IndicatorCursorRules>Default</IndicatorCursorRules>
@@ -2966,7 +2966,7 @@
     <LogicScriptName>SummonMinionRagedIfSacrifice</LogicScriptName>
     <ComboCardTrigger>TriggerOnEnoughSlavesToSacrifice</ComboCardTrigger>
     <ComboCardVariable>1</ComboCardVariable>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Slitherbound</Buckets>
 	<PreviewAssetPath>ParticularProwlerPreview</PreviewAssetPath>
   </Cards>
@@ -3017,7 +3017,7 @@
     <ImageName>PropellerHorde</ImageName>
     <Rarity>Rare</Rarity>
     <ComboCardTrigger>TriggerOnRage</ComboCardTrigger>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Rage</Buckets>
   </Cards>
   <Cards>
@@ -3036,7 +3036,7 @@
     <RankRequirement>stone</RankRequirement>
     <LogicScriptName>SummonWithSoulStealerLogic</LogicScriptName>
     <LogicScriptName>SummonMinionEnraged</LogicScriptName>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Slitherbound</Buckets>
   </Cards>
   <Cards>
@@ -3826,7 +3826,7 @@
     <ImageName>GolemInTrouble</ImageName>
     <Rarity>Supreme</Rarity>
     <RankRequirement>stone</RankRequirement>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
   </Cards>
   <Cards>
     <ValueItemRarityId>70001</ValueItemRarityId>
@@ -4419,7 +4419,7 @@
     <Rarity>Legendary</Rarity>
     <RankRequirement>stone</RankRequirement>
     <LogicScriptName>SpellSlitherPowerSummon</LogicScriptName>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <GridSnap>Defensive</GridSnap>
 	<PreviewAssetPath>SpellScrollPreviewSlitherPowerSummonPrefab</PreviewAssetPath>
     <IndicatorCursorRules>Default</IndicatorCursorRules>
@@ -5420,7 +5420,7 @@
     <FilterTag>SummonFilterTag</FilterTag>
     <FilterTag>BufferFilterTag</FilterTag>
     <Search>ShieldCaptainAvea</Search>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Sixes</Buckets>
   </Cards>
   <Cards>
@@ -6098,7 +6098,7 @@
     <ImageName>EarthElementalPebble</ImageName>
     <PreviewAssetPath>EarthElementalPebblePreview</PreviewAssetPath>
     <Rarity>Rare</Rarity>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
     <Buckets>Building</Buckets>
 	<PreviewAssetPath></PreviewAssetPath>
   </Cards>
@@ -6169,10 +6169,14 @@
     <CursorSize>2.5</CursorSize>
     <Rarity>Rare</Rarity>
     <Buckets>Flying</Buckets>
-	<PreviewAssetPath>SpellScrollPreviewDroneEscortPrefab</PreviewAssetPath>
-  <HighlightCursorRules>AllyPositive</HighlightCursorRules>
-  <HighlightCursorRules>InRange</HighlightCursorRules>
-  <HighlightCursorRules>IgnoreAllyBuildings</HighlightCursorRules>
+  	<PreviewAssetPath>SpellScrollPreviewDroneEscortPrefab</PreviewAssetPath>
+    <CursorLogic>FriendlyGroundMinionPostive</CursorLogic>
+    <HighlightCursorRules>AllyPositive</HighlightCursorRules>
+    <HighlightCursorRules>InRange</HighlightCursorRules>
+    <HighlightCursorRules>IgnoreBuildings</HighlightCursorRules>
+    <HighlightCursorRules>IgnoreFlying</HighlightCursorRules>
+    <HighlightCursorRules>IgnoreMaster</HighlightCursorRules>
+
   </Cards>
   <Cards>
     <ValueItemRarityId>2496</ValueItemRarityId>
@@ -6746,7 +6750,7 @@
     </VisualScriptName>
     <ComboCardTrigger>TriggerOnEmpyreanAffinity</ComboCardTrigger>
     <Buckets>EmpyreanArmy</Buckets>
-    <ExcludeFromRandom>true</ExcludeFromRandom>
+    <ExcludeFromRandom>false</ExcludeFromRandom>
 	<PreviewAssetPath></PreviewAssetPath>
   </Cards>
   <Cards>
@@ -7687,6 +7691,8 @@
     <Description>SpiderlingsDescription</Description>
     <Type>Minion</Type>
     <!--<PreviewAssetPath>SpiderlingsPreview</PreviewAssetPath>-->
+    <MainUnitsToSummon>Spiderling</MainUnitsToSummon>
+    <MainUnitsToSummon>Spiderling</MainUnitsToSummon>
     <MainUnitsToSummon>Spiderling</MainUnitsToSummon>
     <MainUnitsToSummon>Spiderling</MainUnitsToSummon>
     <MainUnitsToSummon>Spiderling</MainUnitsToSummon>
