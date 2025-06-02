@@ -33,6 +33,9 @@ export function CardStatsTable({showPlayrates = false})
         DOMINANCE_SCORE_1V1: "Dominance Score 1v1",
         DOMINANCE_SCORE_2V2: "Dominance Score 2v2",
         DOMINANCE_SCORE_OVERALL: "Dominance Score Overall",
+        MOVE_SPEED: "Move Speed",
+        HEALTH: "Health",
+        TOTAL_DPS: "Total Dps",
     };
 
 
@@ -397,6 +400,7 @@ export function CardStatsTable({showPlayrates = false})
     }
 
     function getBonusAttribute(row, attribute){
+        const card = cardMap.get(row[indexes.cardID]);
         switch (attribute){
             case attributeChoices.CARD_ID:
                 return row[indexes.cardID]
@@ -406,6 +410,16 @@ export function CardStatsTable({showPlayrates = false})
                 return calculateDominanceScore(row[indexes.games2v2], totalMatches2v2, row[indexes.winrate2v2], numberOfCards).toFixed(2)
             case attributeChoices.DOMINANCE_SCORE_OVERALL:
                 return calculateDominanceScore(row[indexes.gamesOverall], totalMatchesOverall, row[indexes.winrateOverall], numberOfCards).toFixed(2)
+            case attributeChoices.MOVE_SPEED:
+                let speed = card.speed;
+                if (Array.isArray(speed)) speed = speed[0];
+                return speed ? speed : 0;
+            case attributeChoices.HEALTH:
+                let health = card.health;
+                return health ? health : "-";
+            case attributeChoices.TOTAL_DPS:
+                let totalDps = card.totalDps;
+                return totalDps ? totalDps : "-";
             default:
                 return row[indexes.cardID]
         }

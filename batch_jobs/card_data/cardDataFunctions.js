@@ -67,7 +67,7 @@ function parseAndSaveGameData(parseTextDataCompletely = false){
         if(!inheritId) return;
         baseUnit = actorsIdMap.get(inheritId);
         for(let key of Object.keys(baseUnit)){
-            if(!unit[key]){
+            if(unit[key] === undefined){
                 unit[key] = baseUnit[key];
             }
         }
@@ -277,7 +277,7 @@ function insertVariables(rawText, variableMaps){
         }
     );
     text = text.replaceAll(
-        /\[v:([ \w]+?)\.([ \w]+?)\]/gm,
+        /\[v(?:ariable)?:([ \w]+?)\.([ \w]+?)\]/gm,
         (match, className, variable) => {
             if (!variablesMap.has(className)) {
                 console.log("WARNING! Undefined class: " + className);
@@ -288,6 +288,9 @@ function insertVariables(rawText, variableMaps){
             return value;
         }
     );
+
+    // let matches = text.matchAll(/\A[^\[]*\[(.*?):.*?\]/gm);
+    // [...matches].forEach((m) => console.log("WARNING! Unhandled tag '" + m[1] + "' in string '" + m.input +"'\n"));
     return text;
 }
 

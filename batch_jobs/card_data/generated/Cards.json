@@ -156,6 +156,8 @@
             "MeleeScrat",
             "MeleeScrat"
         ],
+        "LogicScriptName": "SummonActivateScratAffinityAbilities",
+        "ComboCardTrigger": "TriggerOnScratAffinity",
         "ImageName": "GangOfRats",
         "Rarity": "Common",
         "Buckets": "Swarm",
@@ -737,7 +739,7 @@
     "Priestess": {
         "ValueItemRarityId": 34,
         "CardIndex": 33,
-        "Cost": 4,
+        "Cost": 3,
         "Faction": "Empyrean",
         "Description": "PriestessDescription",
         "FilterTag": "HealingFilterTag",
@@ -748,7 +750,7 @@
         "RankRequirement": "none",
         "Buckets": "BigDudes",
         "PreviewAssetPath": "PriestessVisual",
-        "ManaCost": 4,
+        "ManaCost": 3,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },
@@ -1507,7 +1509,7 @@
     "ZeppelinBomber": {
         "ValueItemRarityId": 83,
         "CardIndex": 67,
-        "Cost": 3,
+        "Cost": 4,
         "Faction": "Scrat",
         "Description": "ZeppelinBomberDescription",
         "FilterTag": [
@@ -1523,7 +1525,7 @@
         "RankRequirement": "stone",
         "Buckets": "ScratSwarm",
         "PreviewAssetPath": "",
-        "ManaCost": 3,
+        "ManaCost": 4,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
     },
@@ -1607,18 +1609,19 @@
         "PreviewAssetPath": "RedGolemVisual",
         "FilterTag": "HighDamageFilterTag",
         "Type": "Minion",
-        "MainUnitsToSummon": "BlueGolem",
-        "ExtraUnitsToSummon": "RedGolem",
+        "MainUnitsToSummon": "RedGolem",
         "ImageName": "RedGolem",
         "Rarity": "Supreme",
         "RankRequirement": "stone",
-        "ComboCardTrigger": "ReplaceOnMasterBelowHalfHealth",
+        "LogicScriptName": [
+            "GiveRageIfMasterBelowHalfHealth",
+            "GiveSpiritIfMasterBelowHalfHealth"
+        ],
+        "ComboCardTrigger": "TriggerOnMasterBelowHalfHealth",
         "Buckets": "BigDudes",
         "ManaCost": 9,
         "MainSummonAmounts*0": 1,
-        "MainSummonAmount": 1,
-        "ExtraSummonAmounts*0": 1,
-        "ExtraSummonAmount": 1
+        "MainSummonAmount": 1
     },
     "ScratTank": {
         "ValueItemRarityId": 92,
@@ -1877,7 +1880,7 @@
         "ImageName": "Guardian",
         "Rarity": "Supreme",
         "RankRequirement": "none",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Crystalized",
         "PreviewAssetPath": "GuardianVisual",
         "ManaCost": 5,
@@ -2897,7 +2900,7 @@
             "stone",
             "none"
         ],
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Sixes",
         "ManaCost": 6,
         "MainSummonAmounts*0": 1,
@@ -3009,7 +3012,7 @@
             "stone",
             "none"
         ],
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Sixes",
         "ManaCost": 6,
         "MainSummonAmounts*0": 1,
@@ -3043,7 +3046,7 @@
         "LogicScriptName": "SpellExplodeSpawnDragonWhelp",
         "ComboCardTrigger": "TriggerForDragonBall",
         "GridSnap": "BothWithRiver",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Sixes",
         "IndicatorCursorRules": [
             "Default",
@@ -3225,7 +3228,7 @@
         "LogicScriptName": "SummonMinionRagedIfSacrifice",
         "ComboCardTrigger": "TriggerOnEnoughSlavesToSacrifice",
         "ComboCardVariable": 1,
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Slitherbound",
         "ManaCost": 6,
         "MainSummonAmounts*0": 1,
@@ -3286,7 +3289,7 @@
         "ImageName": "PropellerHorde",
         "Rarity": "Rare",
         "ComboCardTrigger": "TriggerOnRage",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Rage",
         "ManaCost": 4,
         "MainSummonAmounts*0": 6,
@@ -3311,7 +3314,7 @@
             "SummonWithSoulStealerLogic",
             "SummonMinionEnraged"
         ],
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Slitherbound",
         "ManaCost": 7,
         "MainSummonAmounts*0": 1,
@@ -4183,7 +4186,7 @@
         "ImageName": "GolemInTrouble",
         "Rarity": "Supreme",
         "RankRequirement": "stone",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "ManaCost": 4,
         "MainSummonAmounts*0": 1,
         "MainSummonAmount": 1
@@ -4848,7 +4851,7 @@
         "Rarity": "Legendary",
         "RankRequirement": "stone",
         "LogicScriptName": "SpellSlitherPowerSummon",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "GridSnap": "Defensive",
         "PreviewAssetPath": "SpellScrollPreviewSlitherPowerSummonPrefab",
         "IndicatorCursorRules": "Default",
@@ -6060,7 +6063,7 @@
             "BufferFilterTag"
         ],
         "Search": "ShieldCaptainAvea",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Sixes",
         "ManaCost": 6,
         "MainSummonAmounts*0": 1,
@@ -6847,7 +6850,7 @@
             ""
         ],
         "Rarity": "Rare",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "Buckets": "Building",
         "ManaCost": 1,
         "MainSummonAmounts*0": 1,
@@ -6932,10 +6935,13 @@
         "Rarity": "Rare",
         "Buckets": "Flying",
         "PreviewAssetPath": "SpellScrollPreviewDroneEscortPrefab",
+        "CursorLogic": "FriendlyGroundMinionPostive",
         "HighlightCursorRules": [
             "AllyPositive",
             "InRange",
-            "IgnoreAllyBuildings"
+            "IgnoreBuildings",
+            "IgnoreFlying",
+            "IgnoreMaster"
         ],
         "ManaCost": 3
     },
@@ -7631,7 +7637,7 @@
         },
         "ComboCardTrigger": "TriggerOnEmpyreanAffinity",
         "Buckets": "EmpyreanArmy",
-        "ExcludeFromRandom": true,
+        "ExcludeFromRandom": false,
         "ManaCost": 4,
         "MainSummonAmounts*0": 1,
         "MainSummonAmounts*1": 2,
@@ -8738,14 +8744,16 @@
             "Spiderling",
             "Spiderling",
             "Spiderling",
+            "Spiderling",
+            "Spiderling",
             "Spiderling"
         ],
         "ImageName": "Spiderling",
         "Rarity": "Common",
         "Buckets": "Swarm",
         "ManaCost": 3,
-        "MainSummonAmounts*0": 6,
-        "MainSummonAmount": 6
+        "MainSummonAmounts*0": 8,
+        "MainSummonAmount": 8
     },
     "Ankahesh": {
         "ValueItemRarityId": 2715,

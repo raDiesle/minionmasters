@@ -10,11 +10,12 @@ import { ReactTable } from "page/elo/react-table";
 import { EloChart } from "page/elo/elo-chart";
 import css from "./elo-details.module.scss";
 import axios from "axios";
-import { STORAGE_URL_PREFIX, FILTER_CURRENT_SEASON, FILTER_PREVIOUS_SEASON, FILTER_ALL } from "page/elo/elo-config";
+import { STORAGE_URL_PREFIX, FILTER_CURRENT_SEASON, FILTER_PREVIOUS_SEASON, FILTER_ALL, FILTER_PAST_MONTH } from "page/elo/elo-config";
 import { ChartFilters } from "page/elo/chart-filters";
 import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
 import { db } from "mm-firestore";
+import { getSeasonStartDate } from "page/public-stats/stats-functions";
 
 const renderCellFn = ({ params, isUpGood, userData }) => {
   const currentRowPos = params.row.index;
@@ -124,6 +125,7 @@ export function EloDetails() {
     }
   ];
 
+  const seasonStartDate = getSeasonStartDate();
   const FILTER_CONFIG = {
     // "2022-02-27"
     // "2022-02-20"
@@ -132,8 +134,13 @@ export function EloDetails() {
     // "2022-08-04"
     // "2023-05-18"
     // "2023-07-22"
-    [FILTER_CURRENT_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > new Date("2023-05-28").getTime())})),
-    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < new Date("2024-07-20").getTime() )})),
+    [FILTER_PAST_MONTH] : () => propsData.map(props => 
+        ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date) > new Date().setDate(new Date().getDate()-30))})),
+    [FILTER_CURRENT_SEASON] : () => propsData.map(props => 
+        ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() > seasonStartDate.getTime())})),
+    [FILTER_PREVIOUS_SEASON] : () => propsData.map(props => 
+        ({propKey: props.propKey, data : props.data.filter(({date}) => new Date(date).getTime() < seasonStartDate.getTime() && 
+                                                                    new Date(date).getTime() > getSeasonStartDate(seasonStartDate).getTime())})),
     [FILTER_ALL] : () => propsData
   }
 

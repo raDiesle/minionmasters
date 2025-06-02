@@ -215,6 +215,7 @@
     <Radius>800</Radius>
     <Range>320</Range>
     <Speed>7</Speed>
+    <ActorSkill>GainFrenzyOnAffinity</ActorSkill>
     <DescriptionLink>MeleeScratDescription</DescriptionLink>
     <OverwriteName>ThiizlaxTheWorthless</OverwriteName>
     <IsMelee>true</IsMelee>
@@ -743,7 +744,7 @@
     <Id>39</Id>
     <VisualPrefabPath>PriestessVisual</VisualPrefabPath>
     <Faction>Empyrean</Faction>
-    <MaxHealth>150</MaxHealth>
+    <MaxHealth>120</MaxHealth>
     <Damage>5</Damage>
     <AttackCooldown>500</AttackCooldown>
     <AttackDelay>100</AttackDelay>
@@ -755,7 +756,7 @@
     <ExtraStats>
       <Stat>
         <Identifier>HealPerSecond</Identifier>
-        <Value>33</Value>
+        <Value>20</Value>
         <OverrideIconPath>HealOverTime</OverrideIconPath>
       </Stat>
     </ExtraStats>
@@ -1125,7 +1126,7 @@
     <Faction>Outlander</Faction>
     <MaxHealth>150</MaxHealth>
     <Damage>40</Damage>
-    <AttackCooldown>1500</AttackCooldown>
+    <AttackCooldown>1300</AttackCooldown>
     <AttackDelay>200</AttackDelay>
     <Radius>1500</Radius>
     <Range>8000</Range>
@@ -1179,7 +1180,7 @@
     <VisualPrefabPath>BlastmancerVisual</VisualPrefabPath>
     <Faction>Accursed</Faction>
     <MaxHealth>170</MaxHealth>
-    <Damage>4</Damage>
+    <Damage>6</Damage>
     <AttackCooldown>300</AttackCooldown>
     <OverwritePicturePath>Blastmancer</OverwritePicturePath>
     <AttackDelay>100</AttackDelay>
@@ -1254,7 +1255,7 @@
     <Faction>Scrat</Faction>
     <MaxHealth>85</MaxHealth>
     <Damage>50</Damage>
-    <AttackCooldown>1400</AttackCooldown>
+    <AttackCooldown>1000</AttackCooldown>
     <AttackDelay>1400</AttackDelay>
     <Radius>1400</Radius>
     <Range>600</Range>
@@ -1269,7 +1270,7 @@
     <ActorSkill>BombPositionOnTimer</ActorSkill>
     <ActorSkill>SpawnScratOnDeath</ActorSkill>
     <ProjectileFlyTime>500</ProjectileFlyTime>
-    <AOERange>5000</AOERange>
+    <AOERange>6000</AOERange>
     <ActorSkill>BarrelShield</ActorSkill>
     <ActorSkill>GainFrenzyOnAffinity</ActorSkill>
     <ActorSkill>GainRageOnAffinity</ActorSkill>
@@ -1338,8 +1339,8 @@
     <Id>71</Id>
     <InheritFromId>67</InheritFromId>
     <VisualPrefabPath>RedGolemVisual</VisualPrefabPath>
-    <MaxHealth>1200</MaxHealth>
-    <Damage>300</Damage>
+    <MaxHealth>850</MaxHealth>
+    <Damage>200</Damage>
     <Faction>ZenChi</Faction>
   </Actors>
   <Actors>
@@ -1500,7 +1501,7 @@
     <Id>80</Id>
     <VisualPrefabPath>BattleShiHouVisual</VisualPrefabPath>
     <Faction>ZenChi</Faction>
-    <MaxHealth>350</MaxHealth>
+    <MaxHealth>420</MaxHealth>
     <Damage>70</Damage>
     <AttackCooldown>1800</AttackCooldown>
     <AttackDelay>900</AttackDelay>
@@ -1916,7 +1917,7 @@
     <Faction>Outlander</Faction>
     <MaxHealth>222</MaxHealth>
     <Damage>64</Damage>
-    <AttackCooldown>900</AttackCooldown>
+    <AttackCooldown>800</AttackCooldown>
     <AttackDelay>400</AttackDelay>
     <Radius>1100</Radius>
     <Range>4000</Range>
@@ -2545,7 +2546,7 @@
     <Id>139</Id>
     <VisualPrefabPath>BlinkBatVisual</VisualPrefabPath>
     <Faction>Voidborne</Faction>
-    <MaxHealth>30</MaxHealth>
+    <MaxHealth>25</MaxHealth>
     <Damage>20</Damage>
     <AttackCooldown>1300</AttackCooldown>
     <AttackDelay>600</AttackDelay>
@@ -2655,7 +2656,7 @@
     <Id>144</Id>
     <VisualPrefabPath>CrossbowTrapVisual</VisualPrefabPath>
     <Faction>Empyrean</Faction>
-    <MaxHealth>100</MaxHealth>
+    <MaxHealth>85</MaxHealth>
     <Damage>20</Damage>
     <AttackCooldown>500</AttackCooldown>
     <OverwritePicturePath />
@@ -2678,7 +2679,7 @@
     <Id>145</Id>
     <VisualPrefabPath>DecoyTrapVisual</VisualPrefabPath>
     <Faction>Empyrean</Faction>
-    <MaxHealth>400</MaxHealth>
+    <MaxHealth>375</MaxHealth>
     <Damage>0</Damage>
     <AttackCooldown>0</AttackCooldown>
     <AttackDelay>0</AttackDelay>
@@ -4081,7 +4082,7 @@
     <MaxHealth>300</MaxHealth>
     <Damage>25</Damage>
     <DPS>50</DPS>
-    <AttackCooldown>1000</AttackCooldown>
+    <AttackCooldown>800</AttackCooldown>
     <AttackDelay>300</AttackDelay>
     <Radius>2200</Radius>
     <Range>400</Range>
@@ -4377,17 +4378,17 @@
     <Faction>Scrat</Faction>
     <MaxHealth>140</MaxHealth>
     <Damage>90</Damage>
-    <AttackCooldown>4500</AttackCooldown>
+    <AttackCooldown>5000</AttackCooldown>
     <AttackDelay>2700</AttackDelay>
     <Radius>1850</Radius>
-    <AOERange>4500</AOERange>
+    <AOERange>5000</AOERange>
     <Range>10000</Range>
     <Speed>5</Speed>
     <HitsFlying>true</HitsFlying>
     <ProjectileFlySpeed>6000</ProjectileFlySpeed>
     <IsRanged>true</IsRanged>
     <FromMasterCard>false</FromMasterCard>
-    <ActorSkill>GroundTargetOnHit</ActorSkill>
+    <ActorSkill>GroundTargetOnHit</ActorSkill> 
     <BaseAttackDontDamage>true</BaseAttackDontDamage>
   </Actors>
   <Actors>
@@ -4453,6 +4454,7 @@
     <Speed>4</Speed>
     <AOERange>5500</AOERange>
     <IsMelee>true</IsMelee>
+    <IsMythic>true</IsMythic>
     <CenterAOEOnSelf>true</CenterAOEOnSelf>
     <ActorSkill>MeleeAOEMinionDoubleAttack</ActorSkill>
     <BaseAttackDontDamage>true</BaseAttackDontDamage>
@@ -4465,8 +4467,8 @@
     <Id>252</Id>
     <VisualPrefabPath>TeenMushroomVisual</VisualPrefabPath>
     <Faction>ZenChi</Faction>
-    <MaxHealth>250</MaxHealth>
-    <Damage>40</Damage>
+    <MaxHealth>275</MaxHealth>
+    <Damage>50</Damage>
     <AttackCooldown>2000</AttackCooldown>
     <AttackDelay>800</AttackDelay>
     <Radius>1100</Radius>
@@ -4507,8 +4509,8 @@
     <Id>254</Id>
     <VisualPrefabPath>DenverVisual</VisualPrefabPath>
     <Faction>Slither</Faction>
-    <MaxHealth>1125</MaxHealth>
-    <Damage>150</Damage>
+    <MaxHealth>1100</MaxHealth>
+    <Damage>140</Damage>
     <AttackCooldown>3000</AttackCooldown>
     <AttackDelay>900</AttackDelay>
     <Radius>2500</Radius>
@@ -4766,7 +4768,7 @@
     <Faction>CrystalElf</Faction>
     <MaxHealth>400</MaxHealth>
     <Damage>35</Damage>
-    <AttackCooldown>1000</AttackCooldown>
+    <AttackCooldown>1100</AttackCooldown>
     <AttackDelay>900</AttackDelay>
     <Radius>2500</Radius>
     <Range>2000</Range>
@@ -4910,7 +4912,7 @@
     <Id>278</Id>
     <VisualPrefabPath>MonkDragonVisual</VisualPrefabPath>
     <Faction>ZenChi</Faction>
-    <MaxHealth>270</MaxHealth>
+    <MaxHealth>300</MaxHealth>
     <Damage>24</Damage>
     <AttackCooldown>800</AttackCooldown>
     <AttackDelay>400</AttackDelay>
@@ -4946,7 +4948,7 @@
     <VisualPrefabPath>AnkaheshVisual</VisualPrefabPath>
     <DescriptionLink>AnkaheshDescription</DescriptionLink>
     <Faction>Slither</Faction>
-    <MaxHealth>600</MaxHealth>
+    <MaxHealth>550</MaxHealth>
     <Damage>60</Damage>
     <AttackCooldown>1800</AttackCooldown>
     <AttackDelay>600</AttackDelay>

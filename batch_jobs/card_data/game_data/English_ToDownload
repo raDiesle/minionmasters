@@ -1482,7 +1482,7 @@
     },
     {
       "Id": "ScratPackDescription",
-      "Text": "Good for taking bridges and as cheap targets."
+      "Text": "Good for taking bridges and as cheap targets.\\n\\n[actorskillinfo:ScratSwarm,[mec:[r:ScratSwarm]]]: gain [actorskillinfo:FrenzyBuff,[mec:[r:FrenzyBuff]]]."
     },
     {
       "Id": "GhostTurret",
@@ -1694,7 +1694,7 @@
     },
     {
       "Id": "PriestessDescription",
-      "Text": "If there are damaged friendly Minions nearby she will constantly [actorskillinfo:HealKeyword,[mec:[r:HealKeyword]]] instead of attacking"
+      "Text": "If there are damaged friendly Minions nearby she will constantly [actorskillinfo:HealKeyword,[mec:[r:HealKeyword]]]."
     },
     {
       "Id": "Re-boomer",
@@ -2078,7 +2078,7 @@
     },
     {
       "Id": "WalkingBlindDateDescription",
-      "Text": "[actorskillinfo:TauntBuff,[mec:[r:TauntBuff]]], [actorskillinfo:RushBuff,[mec:[r:RushBuff]]].\\n\\nWhen killed, it summons a random [v:SpawnRandomCreatureOnDeath.MANA_COST_MIN]-[v:SpawnRandomCreatureOnDeath.MANA_COST_MAX] mana [actorskillinfo:WalkingBlindDateMinion,[r:Minion]] card."
+      "Text": "[actorskillinfo:TauntBuff,[mec:[r:TauntBuff]]], [actorskillinfo:RushBuff,[mec:[r:RushBuff]]].\\n\\nWhen killed, it summons a random [v:SpawnRandomCreatureOnDeath.MANA_COST_MAX] mana [actorskillinfo:WalkingBlindDateMinion,[r:Minion]] card."
     },
     {
       "Id": "PropellerScrats",
@@ -2502,7 +2502,7 @@
     },
     {
       "Id": "Scrats!Description",
-      "Text": "Summons a [mec:[r:MeleeScrat]] every time a friendly Minion card is played. Give it [mec:[r:BarrelShield]] if it cost 5+ mana.\\n\\n[mec:[r:MeleeScrat]]\\nDPS: [dps:MeleeScrat]\\nHealth: [av:MeleeScrat.MaxHealth]\\n\\n[mec:[r:BarrelShield]]\\n+[v:BarrelShield.SHIELD_HEALTH] Health"
+      "Text": "Summons a [mec:[r:MeleeScrat]] every time you play a Minion card. Give it [mec:[r:BarrelShield]] if it cost 5+ mana.\\n\\n[mec:[r:MeleeScrat]]\\nDPS: [dps:MeleeScrat]\\nHealth: [av:MeleeScrat.MaxHealth]\\n\\n[mec:[r:BarrelShield]]\\n+[v:BarrelShield.SHIELD_HEALTH] Health"
     },
     {
       "Id": "Showoff",
@@ -2518,7 +2518,7 @@
     },
     {
       "Id": "ScratsScratsDescription",
-      "Text": "Now summons 2 [mec:[r:MeleeScrat]] every time a friendly Minion card is played. Give them [mec:[r:BarrelShield]] if it cost 5+ mana."
+      "Text": "Now summons 2 [mec:[r:MeleeScrat]] every time you play a Minion card. Give them [mec:[r:BarrelShield]] if it cost 5+ mana."
     },
     {
       "Id": "Inspiration",
@@ -5334,7 +5334,7 @@
     },
     {
       "Id": "RedGolemDescription2",
-      "Text": "Summon a [actorskillinfo:BlueGolem,[mec:[r:BlueGolem]]].\\n\\nIf you have 50% or less health, summon a [actorskillinfo:RedGolem,[mec:[r:RedGolem]]] instead."
+      "Text": "If you have 50% or less health, gain [actorskillinfo:RageBuff,[r:RageBuff]] and [actorskillinfo:SpiritBuff,[mec:[r:SpiritBuff]]]."
     },
     {
       "Id": "TeamPlay",
@@ -28314,7 +28314,7 @@
     },
     {
       "Id": "VoidClericDescription",
-      "Text": "[actorskillinfo:AbilityCard,[r:AbilityCard]] - [mec:[spellinfo:NetherReach,[r:NetherReach]]].\\n\\nIf [r:VoidClericFirst]'s attack kills a Minion, reduce the Mana cost of [r:NetherReach] by 1."
+      "Text": "[actorskillinfo:AbilityCard,[r:AbilityCard]] - [mec:[spellinfo:NetherReach,[r:NetherReach]]].\\n\\nIf [r:VoidClericFirst]'s attack kills a Minion, reduce the Mana cost of [r:NetherReach] by 1.\\n\\n[actorskillinfo:MythicBuff,[mec:[r:MythicBuff]]]"
     },
     {
       "Id": "NetherReach",
@@ -30471,6 +30471,14 @@
     {
       "Id": "BP48Title",
       "Text": "Shackles of the Serpent"
+    },
+    {
+      "Id": "BP49Title",
+      "Text": "Court of the Swarmer King"
+    },
+    {
+      "Id": "BP50Title",
+      "Text": "Mountainshaper Awakens"
     }
   ]
 }
