@@ -1,5 +1,5 @@
 import React from "react";
-import { FILTER_CURRENT_SEASON, FILTER_PREVIOUS_SEASON, FILTER_ALL } from "page/elo/elo-config";
+import { FILTER_CURRENT_SEASON, FILTER_PREVIOUS_SEASON, FILTER_ALL, FILTER_PAST_MONTH } from "page/elo/elo-config";
 
 import css from "./chart-filters.module.scss";
 
@@ -17,6 +17,7 @@ export function ChartFilters({filter, setFilter, isBiggerCharts, setIsBiggerChar
           value={filter}
           style={{ width: "200px" }}
         >
+          {/* <option value={FILTER_PAST_MONTH}>Past Month</option> */}
           <option value={FILTER_CURRENT_SEASON}>Current Season</option>
           <option value={FILTER_PREVIOUS_SEASON}>Previous Season</option>
           <option value={FILTER_ALL}>All data</option>

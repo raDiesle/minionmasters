@@ -7,7 +7,7 @@ const {
 const { forEach, max, sum, round } = require("lodash");
 
 const DATA_TARGET_DIRECTORY = "batch_jobs/";
-const parseTextDataCompletely = false;
+const parseTextDataCompletely = true;
 
 parseAndSaveGameData(parseTextDataCompletely);
 const dataMaps = loadAllParsedGameData();
@@ -86,12 +86,3 @@ function getCardData(card){
     return object;
 }
 
-    
-function insertReferences(rawText){
-    if(!rawText) return undefined;
-    let text = rawText.replaceAll(
-        /\[r:(.+?)\]/gm,
-        (match, group1) => insertReferences(textMap.get(group1))
-    );
-    return text;
-}
