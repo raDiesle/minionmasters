@@ -2,7 +2,7 @@ import * as React from 'react';
 // import css from "./advanced-filter-modal.module.scss";
 import Popover from '@mui/material/Popover';
 
-function PopoverButton({className = "", children, buttonContent, buttonStyle}) {
+function PopoverButton({className = "", children, buttonContent, buttonStyle, popoverStyle}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -26,7 +26,6 @@ function PopoverButton({className = "", children, buttonContent, buttonStyle}) {
       </button>
       <Popover
         disableScrollLock={true}
-        style={{padding: "10px"}}
         id={id}
         open={open}
         anchorEl={anchorEl}
@@ -36,12 +35,15 @@ function PopoverButton({className = "", children, buttonContent, buttonStyle}) {
         slotProps={{
           paper: {
             style: {
+              // minWidth: "300px",
               padding: "12px",
               border: "medium solid #44C",
               borderRadius: "8px",
               backgroundColor: "#444",
-              color: "#FFF"
+              color: "#FFF",
+              ...popoverStyle,
             },
+            
 
           }
       }}  
