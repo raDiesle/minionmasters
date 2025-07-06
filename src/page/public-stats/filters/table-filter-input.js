@@ -13,7 +13,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle";
 import ReverseIcon from "components/reverse-icon";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { PopoverButton } from "./popover-button";
-import { FilterOperators, FilterAttributes } from "./advanced-filters-config";
+import { FilterOperators, FilterAttributes, FilterCategories } from "./advanced-filters-config";
 import { Tag } from "./tag";
 
 
@@ -31,14 +31,14 @@ export function TableFilterInput({
     //initialize values
     const [initialized, setInitialized] = useState(false);
     const [reset, setReset] = useState(false)
-    const [isAdvancedFilterOpen, setIsAdvancedFilterOpen] = useState(false);
     const [newAdvancedFilter, setNewAdvancedFilter] = useState(
         {
-            attribute: FilterAttributes.WINRATE_OVERALL,
+            attribute: FilterAttributes.winrateOverall,
             operator: FilterOperators.GREATER_EQ,
             value: 0.5,
         });
-    // const [isAdvancedFiltersModalOpen, setIsAdvancedFiltersModalOpen] = useState(false);
+    const [decimalInput, setDecimalInput] = useState((newAdvancedFilter.value * (newAdvancedFilter.attribute.factor)).toString());
+    const [advancedFilterCategory, setAdvancedFilterCategory] = useState(newAdvancedFilter.attribute.category);
 
     useEffect(() => {
         if (!initialized || reset){
@@ -74,10 +74,33 @@ export function TableFilterInput({
                 count,
             });
         }
-    }, [initialized, reset, setFilters])
+        
+        setDecimalInput(newAdvancedFilter.value*(newAdvancedFilter.attribute.factor).toString());
+    }, [initialized, reset, setFilters, newAdvancedFilter.value, newAdvancedFilter.attribute.factor, advancedFilterCategory])
 
     if(!initialized){
         return <div></div>
+    }
+
+    function getFilterTagString(filterOptions){
+        // returns the text to be shown on Filter Tags
+        const attribute = filterOptions.attribute;
+        // console.log(attribute.label+attribute.isPercent)
+        if(attribute.category === FilterCategories.KEYWORDS){
+            return "Keyword: " + attribute.label;
+        }
+        if (attribute.category === FilterCategories.UNITS) {
+            return "Unit: " + attribute.label;
+        }
+        return attribute.label + " " + filterOptions.operator + " " + (Math.round(filterOptions.value*attribute.factor*100)/100 + (attribute.isPercent ? " %" : ""))
+        
+    }
+
+    const filterInputDefaultProps = {
+        className: cssButton.ButtonGroupStyle,
+        onChange: (e) => {setDecimalInput(e.target.value)},
+        onFocus: (e) => e.target.select(),
+        onBlur: () => {setNewAdvancedFilter({...newAdvancedFilter, value: parseFloat(decimalInput)})},
     }
     
     function handleButtonClick(filterCategory, key){
@@ -292,53 +315,126 @@ export function TableFilterInput({
                 <FontAwesomeIcon icon={faTrashAlt} /> &nbsp;Reset
                 </button>
             </div>
-
+            
+            {/* Advanced Filters */}
             <div className={cssButton.ButtonGroupStyle}>
-                <PopoverButton className={cssButton.ButtonInGroupStyle} buttonContent={"Advanced Filters"}>
+                <PopoverButton className={cssButton.ButtonInGroupStyle} buttonContent={"Advanced Filters"} popoverStyle={{minWidth: "250px"}}>
                     <div style={{marginBottom: "8px", fontSize: "14px"}}>Add Filter:</div>
-                    <div className={cssButton.ButtonGroupStyle} style={{marginBottom: "8px"}}>
-
+                    <div className={cssButton.ButtonGroupStyle}>
                         <select 
-                            value={newAdvancedFilter.attribute}
-                            onChange={e => setNewAdvancedFilter({...newAdvancedFilter, attribute : e.target.value})}
+                            style={{marginBottom: "8px"}} className={cssButton.ButtonGroupStyle}
+                            onChange={e => {
+                                const newCategory = e.target.value;
+                                setAdvancedFilterCategory(newCategory);
+
+                                // Find first matching attribute in the new category
+                                const attributesInCategory = Object.values(FilterAttributes).filter(attr => attr.category === newCategory);
+                                const firstAttribute = attributesInCategory[0];
+
+                                // Set new attribute and default value
+                                setNewAdvancedFilter({
+                                    ...newAdvancedFilter,
+                                    attribute: firstAttribute,
+                                    value: firstAttribute.defaultValue,
+                                });
+                            }}                        >
+                            {
+                                Object.values(FilterCategories).map((category, index) => {
+                                    return (
+                                        <option key={`category-${index}`}>
+                                            {category}
+                                        </option>
+                                    );
+                                })
+                            }
+                        </select>
+                    </div>
+                    <div className={cssButton.ButtonGroupStyle} style={{marginBottom: "8px"}}>
+                        <select 
+                            className={cssButton.ButtonGroupStyle}
+                            value={newAdvancedFilter.attribute.key}
+                            onChange={e => {
+                                let newAttribute = FilterAttributes[e.target.value]
+                                let newValue = newAdvancedFilter.value
+                                if(newAttribute.category !== FilterCategories.MATCH_STATS ||
+                                    newAttribute.getSubCategory(0) !== newAdvancedFilter.attribute.getSubCategory(0) ||
+                                    isNaN(newAdvancedFilter.value)){
+                                    newValue = newAttribute.defaultValue
+                                }
+                                setNewAdvancedFilter({...newAdvancedFilter, attribute : newAttribute, value: newValue});
+                            }}
                         >
-                        {
-                            Object.values(FilterAttributes).map((attribute, index) => 
-                                <option key={"attribute-option-"+index}>{attribute}</option>
+                        {   
+                            Object.values(FilterAttributes).filter(attr => attr.category === advancedFilterCategory).map((attribute, index) =>
+                                <option key={"attribute-option-"+index} value={attribute.key}>{attribute.label}</option>
                             )
                         }
                         </select>
-                        <button 
-                            style={{
-                                minWidth: 30
-                            }}
-                            onClick={() => 
-                                {
-                                    const operators = Object.values(FilterOperators)
-                                    const newIndex = (operators.indexOf(newAdvancedFilter.operator) + 1) % operators.length;
-                                    setNewAdvancedFilter({...newAdvancedFilter, operator : operators[newIndex]});
-                                }
-                            }
-                        >
-                            {newAdvancedFilter.operator}
-                        </button>
-                        <input 
-                            onChange={(e) => {setNewAdvancedFilter({...newAdvancedFilter, value: e.target.value})}}
-                            value={newAdvancedFilter.value}
-                            style={{width: "50px",}} 
-                            // onChange={e => setNewAdvancedFilter({...newAdvancedFilter, value : e.value})}>
+                        {
+                            [FilterCategories.MATCH_STATS, FilterCategories.CARD_STATS].includes(advancedFilterCategory) && (
+                                <>
+                                <button 
+                                    className={cssButton.ButtonGroupStyle}
+                                    style={{
+                                        minWidth: 30
+                                    }}
+                                    onClick={() => 
+                                        {
+                                            const operators = Object.values(FilterOperators)
+                                            const newIndex = (operators.indexOf(newAdvancedFilter.operator) + 1) % operators.length;
+                                            setNewAdvancedFilter({...newAdvancedFilter, operator : operators[newIndex]});
+                                        }
+                                    }
+                                >
+                                    {newAdvancedFilter.operator}
+                                </button>   
+    
+                                <input 
+                                    {...filterInputDefaultProps}
+                                    id="filter-value-input"
+                                    className={cssButton.ButtonGroupStyle}
+                                    value={decimalInput}
+                                    style={{width: "45px", textAlign:"right", borderRight: "0px", paddingRight: "2px"}}
+                                    onBlur={() => {setNewAdvancedFilter({...newAdvancedFilter, value: parseFloat(decimalInput) / newAdvancedFilter.attribute.factor})}}
+                                    // onChange={e => setNewAdvancedFilter({...newAdvancedFilter, value : e.value})}>
+                                    >
+                                </input>
+                                </>
+                            )
+                        }
+                        {/* conditionally add a percent sign behind the input */}
+                        {newAdvancedFilter.attribute.isPercent && (
+                            <button
+                                style={{borderLeft: "0px", paddingLeft: "2px"}}
+                                onClick={()=> {
+                                    let input = document.getElementById("filter-value-input");
+                                    input.focus();
+                                    input.select();
+                                }}
                             >
-                        </input>
+                                %
+                            </button>
+                        )}
                         <button
                             onClick={() => 
                                 {
-                                    let newAdvancedFilters = [new Object(newAdvancedFilter)];
+                                    let newAdvancedFilters = [];
                                     if(filters.advanced) newAdvancedFilters.push(...filters.advanced);
-                                    newAdvancedFilters = new Set(newAdvancedFilters);
+                                    for(let i = 0; i <= newAdvancedFilters.length; i++){
+                                        // console.log(i);
+                                        if (i >= newAdvancedFilters.length) {
+                                            newAdvancedFilters.push({...newAdvancedFilter})
+                                            break;
+                                        }
+                                        let filter = newAdvancedFilters[i]
+                                        if (newAdvancedFilter.attribute.key === filter.attribute.key && newAdvancedFilter.operator === filter.operator){
+                                            filter.value = newAdvancedFilter.value
+                                            break;
+                                        }
+                                    }
                                     setFilters({...filters, advanced: [...newAdvancedFilters]});
-                                    // console.log(filters.advanced)
                                 }
-                            }
+                                }
                         >
                             <FontAwesomeIcon icon = {faPlus}/>
                         </button>
@@ -352,7 +448,7 @@ export function TableFilterInput({
                                     <Tag 
                                         onRemove={() => {filters.advanced = filters.advanced.filter((_, i) => i !== index); setFilters({...filters, advanced: [...filters.advanced]})}}
                                     >
-                                        {options.attribute + " " + options.operator + " " + options.value}
+                                        {getFilterTagString(options)}
                                     </Tag>
                                 </div>
                             )
@@ -367,7 +463,7 @@ export function TableFilterInput({
                             tagStyle={{margin: "-1px 1px", border: "1px solid black"}}
                             onRemove={() => {filters.advanced = filters.advanced.filter((_, i) => i !== index); setFilters({...filters, advanced: [...filters.advanced]})}}
                         >
-                            {options.attribute + " " + options.operator + " " + options.value}
+                            {getFilterTagString(options)}
                         </Tag>
                         
                     )
