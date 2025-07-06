@@ -4426,7 +4426,7 @@
     "CealethPerk2CardBuff": "Caeleth's Blessing",
     "CealethPerk2CardBuffDescription": "Casts Sun Burn on the friendly minion that is farthest away.",
     "SoulStealBuff": "Soul Steal",
-    "SoulStealBuffDescription": "Steals his enemies' souls when he kills them. Decreasing his Attack Cooldown with each soul he collects (Min NaN Attack Cooldown).",
+    "SoulStealBuffDescription": "Steals his enemies' souls when he kills them. Decreasing his Attack Cooldown with each soul he collects (Min 0.7 Attack Cooldown).",
     "JCSupremeEmote": "Puff Unmasked",
     "JCCommonEmote": "Silly Mu-Hou",
     "JCRareEmote": "Oh No Mu-Hou!",
