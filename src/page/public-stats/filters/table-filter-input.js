@@ -473,17 +473,27 @@ export function TableFilterInput({
             <div className={cssButton.ButtonGroupStyle}>
                 <PopoverButton
                     className={cssButton.ButtonInGroupStyle}
-                    buttonContent={<FontAwesomeIcon icon={faInfoCircle}/>}
+                    buttonContent={<><FontAwesomeIcon icon={faInfoCircle}/> <div style={{marginLeft: 3}}>Help</div></>}
                 >
                     <div style={{margin: "0px 10px 10px 15px"}}>
                         <h2>Useful Information:</h2>
                         <li>
-                            You can right click a filter button to select it alone.
+                            You can right click a filter button to select it exclusively.
                         </li>
+                        <li>
+                            You can choose different card stats in the second column!
+                        </li>
+                        {/* <br/> */}
+                        <h4>Calculations:</h4>
                         <li>
                             The dominance score is calculated from a card's play- and winrate.<br/>
                             For <b>average</b> playrate and winrate, the score is 0. <br/>
                             It gets larger positive for <b>high</b> play- and winrates and negative for <b>low</b> play-/winrates.
+                        </li>
+                        <li>
+                            The winrate average is weighted by the amount of matches played. <br/>
+                            This way, cards with low playrate affect the result less and we should get a better <br/>
+                            idea about the strength of the given selection of cards. 
                         </li>
                     </div>
                 </PopoverButton>
