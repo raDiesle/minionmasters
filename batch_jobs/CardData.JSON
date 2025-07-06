@@ -30,7 +30,10 @@
         "totalHealth": 550,
         "range": 1500,
         "speed": 10,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Cleaver"
+        ]
     },
     {
         "iD": 1,
@@ -63,7 +66,10 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Warrior"
+        ]
     },
     {
         "iD": 2,
@@ -96,7 +102,10 @@
         "totalHealth": 100,
         "range": 8000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Plasma Marine"
+        ]
     },
     {
         "iD": 3,
@@ -129,7 +138,10 @@
         "totalHealth": 50,
         "range": 8000,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Grenadier"
+        ]
     },
     {
         "iD": 4,
@@ -151,7 +163,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Destroy"
+        ]
     },
     {
         "iD": 5,
@@ -184,7 +199,13 @@
         "totalHealth": 900,
         "range": 2500,
         "speed": 3,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Living Statue"
+        ],
+        "keywords": [
+            "Slitherbind"
+        ]
     },
     {
         "iD": 6,
@@ -217,7 +238,14 @@
         "totalHealth": 100,
         "range": 479,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Dragon Whelp"
+        ],
+        "keywords": [
+            "Voidborne Wound",
+            "Rage"
+        ]
     },
     {
         "iD": 7,
@@ -250,7 +278,14 @@
         "totalHealth": 60,
         "range": 320,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "Scrat"
+        ],
+        "keywords": [
+            "Scrat Swarm",
+            "Haste"
+        ]
     },
     {
         "iD": 8,
@@ -284,7 +319,13 @@
         "totalHealth": 350,
         "range": 6000,
         "speed": 0,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Ghost Turret"
+        ],
+        "keywords": [
+            "Spirit"
+        ]
     },
     {
         "iD": 9,
@@ -339,7 +380,14 @@
         "totalHealth": 25,
         "range": 450,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Boomer",
+            "Boomer Egg"
+        ],
+        "keywords": [
+            "Voidborne Wound"
+        ]
     },
     {
         "iD": 11,
@@ -372,7 +420,10 @@
         "totalHealth": 90,
         "range": 400,
         "speed": 10,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Swarmers"
+        ]
     },
     {
         "iD": 12,
@@ -405,7 +456,13 @@
         "totalHealth": 200,
         "range": 6000,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Succubus"
+        ],
+        "keywords": [
+            "Netherstep"
+        ]
     },
     {
         "iD": 13,
@@ -440,7 +497,11 @@
         "totalHealth": 250,
         "range": 0,
         "speed": 0,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "SpawnerShrine",
+            "Swarmers"
+        ]
     },
     {
         "iD": 14,
@@ -473,7 +534,10 @@
         "totalHealth": 350,
         "range": 1000,
         "speed": 4,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Demon Warrior"
+        ]
     },
     {
         "iD": 15,
@@ -506,7 +570,13 @@
         "totalHealth": 135,
         "range": 6000,
         "speed": 5,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Cannon Roller"
+        ],
+        "keywords": [
+            "Piloted"
+        ]
     },
     {
         "iD": 16,
@@ -539,7 +609,15 @@
         "totalHealth": 100,
         "range": 1000,
         "speed": 5,
-        "Weight": 700
+        "Weight": 700,
+        "unitNames": [
+            "Ghost"
+        ],
+        "keywords": [
+            "Spirit",
+            "Cursed",
+            "Mythic"
+        ]
     },
     {
         "iD": 17,
@@ -561,7 +639,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Legionnaire"
+        ]
     },
     {
         "iD": 19,
@@ -594,7 +675,10 @@
         "totalHealth": 50,
         "range": 16000,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Sniper"
+        ]
     },
     {
         "iD": 20,
@@ -627,7 +711,14 @@
         "totalHealth": 180,
         "range": 8000,
         "speed": 6,
-        "Weight": 650
+        "Weight": 650,
+        "unitNames": [
+            "Soul Stealer"
+        ],
+        "keywords": [
+            "Vampiric",
+            "Soul Steal"
+        ]
     },
     {
         "iD": 21,
@@ -662,7 +753,10 @@
         "totalHealth": 500,
         "range": 0,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Bridge Shrine"
+        ]
     },
     {
         "iD": 22,
@@ -695,7 +789,14 @@
         "totalHealth": 150,
         "range": 400,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Assassin"
+        ],
+        "keywords": [
+            "Stealth",
+            "Invisible"
+        ]
     },
     {
         "iD": 23,
@@ -750,7 +851,14 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Warrior"
+        ],
+        "keywords": [
+            "Taunt",
+            "Divine Shield"
+        ]
     },
     {
         "iD": 25,
@@ -783,7 +891,10 @@
         "totalHealth": 120,
         "range": 320,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "Scrat"
+        ]
     },
     {
         "iD": 26,
@@ -817,7 +928,13 @@
         "totalHealth": 10,
         "range": 0,
         "speed": 6,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "Mana Puff"
+        ],
+        "keywords": [
+            "Bridge Hugger"
+        ]
     },
     {
         "iD": 27,
@@ -850,7 +967,14 @@
         "totalHealth": 450,
         "range": 2000,
         "speed": 4,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Defenso Chopper"
+        ],
+        "keywords": [
+            "Piloted",
+            "Stun"
+        ]
     },
     {
         "iD": 28,
@@ -883,7 +1007,13 @@
         "totalHealth": 250,
         "range": 400,
         "speed": 5,
-        "Weight": 1250
+        "Weight": 1250,
+        "unitNames": [
+            "Banner Man"
+        ],
+        "keywords": [
+            "Shield"
+        ]
     },
     {
         "iD": 29,
@@ -905,7 +1035,10 @@
         "towerDamage": 0,
         "delay": 500,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Heal"
+        ]
     },
     {
         "iD": 30,
@@ -927,7 +1060,10 @@
         "towerDamage": 25,
         "delay": 1000,
         "duration": 2000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Stun"
+        ]
     },
     {
         "iD": 31,
@@ -949,7 +1085,11 @@
         "towerDamage": 0,
         "delay": 500,
         "duration": 4000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Stun",
+            "Marked"
+        ]
     },
     {
         "iD": 32,
@@ -982,7 +1122,14 @@
         "totalHealth": 130,
         "range": 8000,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Wizard Puff",
+            "Mana Puff"
+        ],
+        "keywords": [
+            "Transform"
+        ]
     },
     {
         "iD": 33,
@@ -1015,7 +1162,13 @@
         "totalHealth": 120,
         "range": 10000,
         "speed": 2,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Priestess"
+        ],
+        "keywords": [
+            "Heal"
+        ]
     },
     {
         "iD": 34,
@@ -1048,7 +1201,11 @@
         "totalHealth": 25,
         "range": 450,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "ReBoomer",
+            "Re-Boomer Egg"
+        ]
     },
     {
         "iD": 35,
@@ -1081,7 +1238,10 @@
         "totalHealth": 1000,
         "range": 2600,
         "speed": 3,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Colossus"
+        ]
     },
     {
         "iD": 36,
@@ -1137,7 +1297,10 @@
         "totalHealth": 300,
         "range": 11000,
         "speed": 0,
-        "Weight": 2100
+        "Weight": 2100,
+        "unitNames": [
+            "Laser Turret"
+        ]
     },
     {
         "iD": 38,
@@ -1170,7 +1333,10 @@
         "totalHealth": 325,
         "range": 1600,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Whirly Scrat"
+        ]
     },
     {
         "iD": 39,
@@ -1203,7 +1369,14 @@
         "totalHealth": 2,
         "range": 1500,
         "speed": 10,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Illusory Cleaver",
+            "Cleaver"
+        ],
+        "keywords": [
+            "Illusion"
+        ]
     },
     {
         "iD": 40,
@@ -1236,7 +1409,15 @@
         "totalHealth": 1500,
         "range": 1499,
         "speed": 3,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Troubadour"
+        ],
+        "keywords": [
+            "Taunt",
+            "Revelry",
+            "Slow"
+        ]
     },
     {
         "iD": 41,
@@ -1269,7 +1450,13 @@
         "totalHealth": 80,
         "range": 8000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Snake Druid"
+        ],
+        "keywords": [
+            "Slitherbind"
+        ]
     },
     {
         "iD": 42,
@@ -1302,7 +1489,13 @@
         "totalHealth": 300,
         "range": 479,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Dragon Whelp"
+        ],
+        "keywords": [
+            "Voidborne Wound"
+        ]
     },
     {
         "iD": 43,
@@ -1336,7 +1529,10 @@
         "totalHealth": 150,
         "range": 26000,
         "speed": 0,
-        "Weight": 2700
+        "Weight": 2700,
+        "unitNames": [
+            "Scrat Launcher"
+        ]
     },
     {
         "iD": 44,
@@ -1369,7 +1565,11 @@
         "totalHealth": 150,
         "range": 8000,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Drone Walker",
+            "Gn4t"
+        ]
     },
     {
         "iD": 45,
@@ -1402,7 +1602,14 @@
         "totalHealth": 300,
         "range": 479,
         "speed": 5,
-        "Weight": 850
+        "Weight": 850,
+        "unitNames": [
+            "Legionnaire"
+        ],
+        "keywords": [
+            "Legion",
+            "Empyrean Army"
+        ]
     },
     {
         "iD": 46,
@@ -1435,7 +1642,10 @@
         "totalHealth": 250,
         "range": 12000,
         "speed": 5,
-        "Weight": 1400
+        "Weight": 1400,
+        "unitNames": [
+            "Harbinger"
+        ]
     },
     {
         "iD": 47,
@@ -1468,7 +1678,10 @@
         "totalHealth": 150,
         "range": 8000,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Annihilator"
+        ]
     },
     {
         "iD": 48,
@@ -1501,7 +1714,13 @@
         "totalHealth": 260,
         "range": 3499,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "StunLancer"
+        ],
+        "keywords": [
+            "Stun"
+        ]
     },
     {
         "iD": 49,
@@ -1535,7 +1754,14 @@
         "totalHealth": 10,
         "range": 0,
         "speed": 10,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "DisruptorPuff"
+        ],
+        "keywords": [
+            "Bridge Hugger",
+            "Stun"
+        ]
     },
     {
         "iD": 50,
@@ -1566,7 +1792,14 @@
         "totalDps": null,
         "health": 350,
         "totalHealth": 350,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Dragon Nest",
+            "Flightless Dragon"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 51,
@@ -1601,7 +1834,11 @@
         "totalHealth": 300,
         "range": 0,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Crossbow Guild",
+            "Crossbow Dude"
+        ]
     },
     {
         "iD": 52,
@@ -1645,7 +1882,11 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Warrior",
+            "Crossbow Dude"
+        ]
     },
     {
         "iD": 54,
@@ -1678,7 +1919,13 @@
         "totalHealth": 150,
         "range": 400,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "BloodImp"
+        ],
+        "keywords": [
+            "Blood Pact"
+        ]
     },
     {
         "iD": 55,
@@ -1733,7 +1980,10 @@
         "totalHealth": 50,
         "range": 8000,
         "speed": 5,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crossbow Dude"
+        ]
     },
     {
         "iD": 57,
@@ -1812,7 +2062,10 @@
         "totalHealth": 500,
         "range": 0,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Tombstone"
+        ]
     },
     {
         "iD": 60,
@@ -1834,7 +2087,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Plasma Marine"
+        ]
     },
     {
         "iD": 61,
@@ -1889,7 +2145,13 @@
         "totalHealth": 50,
         "range": 16000,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Bounty Sniper"
+        ],
+        "keywords": [
+            "Shield"
+        ]
     },
     {
         "iD": 63,
@@ -1922,7 +2184,13 @@
         "totalHealth": 170,
         "range": 10000,
         "speed": 5,
-        "Weight": 1250
+        "Weight": 1250,
+        "unitNames": [
+            "Blastmancer"
+        ],
+        "keywords": [
+            "Soul Detonate"
+        ]
     },
     {
         "iD": 64,
@@ -1955,7 +2223,13 @@
         "totalHealth": 140,
         "range": 22000,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Styxi"
+        ],
+        "keywords": [
+            "Stealth"
+        ]
     },
     {
         "iD": 65,
@@ -1988,7 +2262,11 @@
         "totalHealth": 25,
         "range": 450,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Gax",
+            "Gax Egg"
+        ]
     },
     {
         "iD": 66,
@@ -2021,7 +2299,10 @@
         "totalHealth": 350,
         "range": 1600,
         "speed": 10,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Rammer"
+        ]
     },
     {
         "iD": 67,
@@ -2054,7 +2335,17 @@
         "totalHealth": 85,
         "range": 600,
         "speed": 7,
-        "Weight": 1400
+        "Weight": 1400,
+        "unitNames": [
+            "Zeppelin Bomber"
+        ],
+        "keywords": [
+            "Piloted",
+            "Barrel Shield",
+            "Scrat Swarm",
+            "Haste",
+            "Rage"
+        ]
     },
     {
         "iD": 68,
@@ -2087,7 +2378,10 @@
         "totalHealth": 750,
         "range": 1500,
         "speed": 3,
-        "Weight": 2100
+        "Weight": 2100,
+        "unitNames": [
+            "Blue Golem"
+        ]
     },
     {
         "iD": 69,
@@ -2109,7 +2403,10 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 70,
@@ -2143,7 +2440,14 @@
         "totalHealth": 10,
         "range": 0,
         "speed": 6,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "Heal Puff"
+        ],
+        "keywords": [
+            "Bridge Hugger",
+            "Heal"
+        ]
     },
     {
         "iD": 71,
@@ -2176,7 +2480,14 @@
         "totalHealth": 850,
         "range": 1500,
         "speed": 3,
-        "Weight": 2100
+        "Weight": 2100,
+        "unitNames": [
+            "Red Golem"
+        ],
+        "keywords": [
+            "Rage",
+            "Spirit"
+        ]
     },
     {
         "iD": 72,
@@ -2209,7 +2520,13 @@
         "totalHealth": 600,
         "range": 400,
         "speed": 4,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Scrat Tank"
+        ],
+        "keywords": [
+            "Piloted"
+        ]
     },
     {
         "iD": 73,
@@ -2231,7 +2548,15 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Brothers Of Light",
+            "Warrior",
+            "Spear Throwers"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 74,
@@ -2266,7 +2591,10 @@
         "totalHealth": 375,
         "range": 0,
         "speed": 0,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Wall"
+        ]
     },
     {
         "iD": 76,
@@ -2299,7 +2627,13 @@
         "totalHealth": 170,
         "range": 10000,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Spiritmancer"
+        ],
+        "keywords": [
+            "Soul Rip"
+        ]
     },
     {
         "iD": 77,
@@ -2332,7 +2666,13 @@
         "totalHealth": 300,
         "range": 700,
         "speed": 4,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Undying Skeleton"
+        ],
+        "keywords": [
+            "Undying Corpse"
+        ]
     },
     {
         "iD": 78,
@@ -2365,7 +2705,15 @@
         "totalHealth": 2,
         "range": 450,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Walking Blind Date"
+        ],
+        "keywords": [
+            "Taunt",
+            "Rush",
+            "Minion"
+        ]
     },
     {
         "iD": 79,
@@ -2398,7 +2746,10 @@
         "totalHealth": 60,
         "range": 400,
         "speed": 9,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "PropellerScrat"
+        ]
     },
     {
         "iD": 80,
@@ -2431,7 +2782,13 @@
         "totalHealth": 400,
         "range": 1499,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "TranquilShiHou"
+        ],
+        "keywords": [
+            "Heal"
+        ]
     },
     {
         "iD": 81,
@@ -2464,7 +2821,10 @@
         "totalHealth": 420,
         "range": 400,
         "speed": 7,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "BattleShiHou"
+        ]
     },
     {
         "iD": 83,
@@ -2486,7 +2846,10 @@
         "towerDamage": 100,
         "delay": 1000,
         "duration": 2000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Stun"
+        ]
     },
     {
         "iD": 84,
@@ -2519,7 +2882,10 @@
         "totalHealth": 360,
         "range": 9000,
         "speed": 5,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Spear Throwers"
+        ]
     },
     {
         "iD": 87,
@@ -2552,7 +2918,10 @@
         "totalHealth": 800,
         "range": 800,
         "speed": 4,
-        "Weight": 2200
+        "Weight": 2200,
+        "unitNames": [
+            "Guardian"
+        ]
     },
     {
         "iD": 88,
@@ -2587,7 +2956,10 @@
         "totalHealth": 350,
         "range": 0,
         "speed": 0,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Shield Totem"
+        ]
     },
     {
         "iD": 89,
@@ -2642,7 +3014,13 @@
         "totalHealth": 50,
         "range": 400,
         "speed": 4,
-        "Weight": 1100
+        "Weight": 1100,
+        "unitNames": [
+            "Spirit Vessel"
+        ],
+        "keywords": [
+            "Spirit"
+        ]
     },
     {
         "iD": 91,
@@ -2675,7 +3053,14 @@
         "totalHealth": 80,
         "range": 8000,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Xiao Long"
+        ],
+        "keywords": [
+            "Rage",
+            "Haste"
+        ]
     },
     {
         "iD": 93,
@@ -2708,7 +3093,10 @@
         "totalHealth": 100,
         "range": 12000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Bazooka Scrat"
+        ]
     },
     {
         "iD": 96,
@@ -2774,7 +3162,11 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Spirit",
+            "Accursed Ascension"
+        ]
     },
     {
         "iD": 103,
@@ -2829,7 +3221,10 @@
         "totalHealth": 300,
         "range": 4000,
         "speed": 4,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Arcane Golem"
+        ]
     },
     {
         "iD": 105,
@@ -2862,7 +3257,13 @@
         "totalHealth": 130,
         "range": 8000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Fire Imp"
+        ],
+        "keywords": [
+            "Damage Over Time"
+        ]
     },
     {
         "iD": 106,
@@ -2917,7 +3318,13 @@
         "totalHealth": 75,
         "range": 8000,
         "speed": 5,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crossbow Dude"
+        ],
+        "keywords": [
+            "Shield"
+        ]
     },
     {
         "iD": 109,
@@ -2939,7 +3346,10 @@
         "towerDamage": 100,
         "delay": 2000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Cursed"
+        ]
     },
     {
         "iD": 111,
@@ -2972,7 +3382,13 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 7,
-        "Weight": 1700
+        "Weight": 1700,
+        "unitNames": [
+            "Prowler"
+        ],
+        "keywords": [
+            "Prowl"
+        ]
     },
     {
         "iD": 112,
@@ -3005,7 +3421,10 @@
         "totalHealth": 175,
         "range": 400,
         "speed": 7,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Elite Swarmer"
+        ]
     },
     {
         "iD": 113,
@@ -3038,7 +3457,13 @@
         "totalHealth": 80,
         "range": 6000,
         "speed": 7,
-        "Weight": 1250
+        "Weight": 1250,
+        "unitNames": [
+            "Stint"
+        ],
+        "keywords": [
+            "Outlander Tech"
+        ]
     },
     {
         "iD": 114,
@@ -3071,7 +3496,10 @@
         "totalHealth": 120,
         "range": 8000,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "DroneBuzzer"
+        ]
     },
     {
         "iD": 115,
@@ -3104,7 +3532,13 @@
         "totalHealth": 45,
         "range": 320,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "\"Armored\" Scrat"
+        ],
+        "keywords": [
+            "Barrel Shield"
+        ]
     },
     {
         "iD": 116,
@@ -3159,7 +3593,13 @@
         "totalHealth": 650,
         "range": 1000,
         "speed": 3,
-        "Weight": 2200
+        "Weight": 2200,
+        "unitNames": [
+            "DemonCommanderShield"
+        ],
+        "keywords": [
+            "Shield"
+        ]
     },
     {
         "iD": 119,
@@ -3192,7 +3632,10 @@
         "totalHealth": 222,
         "range": 4000,
         "speed": 4,
-        "Weight": 1100
+        "Weight": 1100,
+        "unitNames": [
+            "Ufo"
+        ]
     },
     {
         "iD": 122,
@@ -3227,7 +3670,10 @@
         "totalHealth": 100,
         "range": 0,
         "speed": 0,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Healing Shrine"
+        ]
     },
     {
         "iD": 123,
@@ -3249,7 +3695,11 @@
         "towerDamage": 10,
         "delay": 500,
         "duration": 2500,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "True Damage",
+            "Invoke"
+        ]
     },
     {
         "iD": 125,
@@ -3282,7 +3732,13 @@
         "totalHealth": 200,
         "range": 1499,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Musketeer"
+        ],
+        "keywords": [
+            "Slitherbind"
+        ]
     },
     {
         "iD": 126,
@@ -3359,7 +3815,11 @@
         "totalHealth": 300,
         "range": 400,
         "speed": 7,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Morgrul",
+            "Swarmers"
+        ]
     },
     {
         "iD": 129,
@@ -3392,7 +3852,13 @@
         "totalHealth": 600,
         "range": 600,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Scott the Sensitive Savage"
+        ],
+        "keywords": [
+            "Cry"
+        ]
     },
     {
         "iD": 133,
@@ -3425,7 +3891,13 @@
         "totalHealth": 300,
         "range": 600,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Flightless Dragon"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 135,
@@ -3447,7 +3919,15 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Cleaver"
+        ],
+        "keywords": [
+            "Stun",
+            "Transform",
+            "Mythic"
+        ]
     },
     {
         "iD": 136,
@@ -3481,7 +3961,10 @@
         "totalHealth": 150,
         "range": 8000,
         "speed": 0,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Scrat Turret"
+        ]
     },
     {
         "iD": 138,
@@ -3503,7 +3986,14 @@
         "towerDamage": 0,
         "delay": 750,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Scrat"
+        ],
+        "keywords": [
+            "Scrat Swarm",
+            "Barrel Shield"
+        ]
     },
     {
         "iD": 139,
@@ -3536,7 +4026,13 @@
         "totalHealth": 300,
         "range": 700,
         "speed": 4,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "CursedSkeleton"
+        ],
+        "keywords": [
+            "Cursed Aura"
+        ]
     },
     {
         "iD": 140,
@@ -3570,7 +4066,10 @@
         "totalHealth": 450,
         "range": 8000,
         "speed": 0,
-        "Weight": 2700
+        "Weight": 2700,
+        "unitNames": [
+            "MagmaCannon"
+        ]
     },
     {
         "iD": 142,
@@ -3603,7 +4102,14 @@
         "totalHealth": 150,
         "range": 479,
         "speed": 5,
-        "Weight": 850
+        "Weight": 850,
+        "unitNames": [
+            "Legionnaire"
+        ],
+        "keywords": [
+            "Shield",
+            "Legion"
+        ]
     },
     {
         "iD": 143,
@@ -3625,7 +4131,12 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Healing Fireball",
+            "Fireball",
+            "Sacrifice"
+        ]
     },
     {
         "iD": 149,
@@ -3658,7 +4169,14 @@
         "totalHealth": 120,
         "range": 400,
         "speed": 10,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Swarmers"
+        ],
+        "keywords": [
+            "Rage",
+            "Haste"
+        ]
     },
     {
         "iD": 158,
@@ -3691,7 +4209,16 @@
         "totalHealth": 15,
         "range": 400,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Screaming Scrat"
+        ],
+        "keywords": [
+            "Barrel Shield",
+            "Taunt",
+            "Rush",
+            "Explodes"
+        ]
     },
     {
         "iD": 161,
@@ -3724,7 +4251,14 @@
         "totalHealth": 350,
         "range": 1600,
         "speed": 10,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Rammer",
+            "Cleaver"
+        ],
+        "keywords": [
+            "Illusion"
+        ]
     },
     {
         "iD": 162,
@@ -3746,7 +4280,13 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Swarmers"
+        ],
+        "keywords": [
+            "Rush"
+        ]
     },
     {
         "iD": 163,
@@ -3779,7 +4319,13 @@
         "totalHealth": 300,
         "range": 400,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Incubus"
+        ],
+        "keywords": [
+            "Netherstep"
+        ]
     },
     {
         "iD": 164,
@@ -3812,7 +4358,13 @@
         "totalHealth": 350,
         "range": 1600,
         "speed": 10,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Rammer"
+        ],
+        "keywords": [
+            "Blood Pact"
+        ]
     },
     {
         "iD": 169,
@@ -3845,7 +4397,14 @@
         "totalHealth": 300,
         "range": 400,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Incubus",
+            "Succubus"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 170,
@@ -3867,7 +4426,11 @@
         "towerDamage": 100,
         "delay": 2000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Flightless Dragon",
+            "Dragon Whelp"
+        ]
     },
     {
         "iD": 172,
@@ -3900,7 +4463,17 @@
         "totalHealth": 150,
         "range": 8000,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Drone Walker",
+            "Gn4t"
+        ],
+        "keywords": [
+            "Shield",
+            "Marked",
+            "Outlander Tech",
+            "Marksmanship"
+        ]
     },
     {
         "iD": 173,
@@ -3933,7 +4506,13 @@
         "totalHealth": 100,
         "range": 16000,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Sniper"
+        ],
+        "keywords": [
+            "Sneaky"
+        ]
     },
     {
         "iD": 175,
@@ -3955,7 +4534,11 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Scrat Swarm",
+            "Rage"
+        ]
     },
     {
         "iD": 178,
@@ -3977,7 +4560,12 @@
         "towerDamage": 80,
         "delay": 1000,
         "duration": 1000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Rage",
+            "Frozen",
+            "Slow"
+        ]
     },
     {
         "iD": 180,
@@ -3999,7 +4587,14 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Heal",
+            "Shield",
+            "Rage",
+            "Poison",
+            "Cursed"
+        ]
     },
     {
         "iD": 182,
@@ -4032,7 +4627,15 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 7,
-        "Weight": 1700
+        "Weight": 1700,
+        "unitNames": [
+            "Prowler"
+        ],
+        "keywords": [
+            "Prowl",
+            "Sacrifice",
+            "Rage"
+        ]
     },
     {
         "iD": 183,
@@ -4065,7 +4668,13 @@
         "totalHealth": 270,
         "range": 9000,
         "speed": 5,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Spear Throwers"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 184,
@@ -4098,7 +4707,13 @@
         "totalHealth": 90,
         "range": 400,
         "speed": 9,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "PropellerScrat"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 185,
@@ -4131,7 +4746,16 @@
         "totalHealth": 180,
         "range": 8000,
         "speed": 6,
-        "Weight": 650
+        "Weight": 650,
+        "unitNames": [
+            "Soul Stealer"
+        ],
+        "keywords": [
+            "Vampiric",
+            "Soul Steal",
+            "Rage",
+            "Sacrifice"
+        ]
     },
     {
         "iD": 186,
@@ -4164,7 +4788,13 @@
         "totalHealth": 80,
         "range": 10000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crystal Archers"
+        ],
+        "keywords": [
+            "Mana Surge"
+        ]
     },
     {
         "iD": 187,
@@ -4197,7 +4827,13 @@
         "totalHealth": 40,
         "range": 10000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crystal Arcanist"
+        ],
+        "keywords": [
+            "Mana Surge"
+        ]
     },
     {
         "iD": 188,
@@ -4217,7 +4853,12 @@
         "radius": 4500,
         "delay": 1000,
         "duration": 5000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Stun",
+            "Destroy",
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 191,
@@ -4250,7 +4891,10 @@
         "totalHealth": 300,
         "range": 4000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crystal Sentry"
+        ]
     },
     {
         "iD": 192,
@@ -4268,7 +4912,14 @@
         "ExcludeFromRandom": false,
         "count": 0,
         "radius": 4500,
-        "duration": 0
+        "duration": 0,
+        "unitNames": [
+            "Crystal Sentry"
+        ],
+        "keywords": [
+            "Shield",
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 193,
@@ -4301,7 +4952,13 @@
         "totalHealth": 800,
         "range": 800,
         "speed": 4,
-        "Weight": 2200
+        "Weight": 2200,
+        "unitNames": [
+            "Crystal Construct"
+        ],
+        "keywords": [
+            "Haste"
+        ]
     },
     {
         "iD": 194,
@@ -4334,7 +4991,14 @@
         "totalHealth": 650,
         "range": 800,
         "speed": 4,
-        "Weight": 1400
+        "Weight": 1400,
+        "unitNames": [
+            "Lord-Sentinel Thelec",
+            "Crystal Archers"
+        ],
+        "keywords": [
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 195,
@@ -4356,7 +5020,13 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Mana Puff"
+        ],
+        "keywords": [
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 196,
@@ -4411,7 +5081,13 @@
         "totalHealth": 75,
         "range": 400,
         "speed": 10,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "BlinkBat"
+        ],
+        "keywords": [
+            "Netherstep"
+        ]
     },
     {
         "iD": 199,
@@ -4444,7 +5120,14 @@
         "totalHealth": 450,
         "range": 479,
         "speed": 5,
-        "Weight": 850
+        "Weight": 850,
+        "unitNames": [
+            "Legionnaire"
+        ],
+        "keywords": [
+            "Lycanthropy",
+            "Rage"
+        ]
     },
     {
         "iD": 201,
@@ -4465,7 +5148,11 @@
         "damage": 0,
         "towerDamage": 0,
         "delay": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Lycanthropy",
+            "Rage"
+        ]
     },
     {
         "iD": 202,
@@ -4487,7 +5174,13 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 5000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "BlinkBat"
+        ],
+        "keywords": [
+            "Netherstep"
+        ]
     },
     {
         "iD": 203,
@@ -4509,7 +5202,10 @@
         "towerDamage": 150,
         "delay": 500,
         "duration": 10000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Skeleton"
+        ]
     },
     {
         "iD": 204,
@@ -4542,7 +5238,14 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Warrior",
+            "Werewolf"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 207,
@@ -4576,7 +5279,10 @@
         "totalHealth": 85,
         "range": 8000,
         "speed": 0,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "CrossbowTrap"
+        ]
     },
     {
         "iD": 208,
@@ -4611,7 +5317,10 @@
         "totalHealth": 375,
         "range": 0,
         "speed": 0,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "DecoyTrap"
+        ]
     },
     {
         "iD": 209,
@@ -4633,7 +5342,10 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Werewolf"
+        ]
     },
     {
         "iD": 210,
@@ -4666,7 +5378,13 @@
         "totalHealth": 300,
         "range": 8000,
         "speed": 4,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Bahra the Witchwolf"
+        ],
+        "keywords": [
+            "Damage Over Time"
+        ]
     },
     {
         "iD": 211,
@@ -4699,7 +5417,14 @@
         "totalHealth": 750,
         "range": 1000,
         "speed": 4,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Shieldguard Of Light"
+        ],
+        "keywords": [
+            "Armor of Light",
+            "Shield Slam"
+        ]
     },
     {
         "iD": 212,
@@ -4732,7 +5457,13 @@
         "totalHealth": 1200,
         "range": 1600,
         "speed": 4,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Brother of Light"
+        ],
+        "keywords": [
+            "Armor of Light"
+        ]
     },
     {
         "iD": 214,
@@ -4766,7 +5497,15 @@
         "totalHealth": 10,
         "range": 0,
         "speed": 6,
-        "Weight": 700
+        "Weight": 700,
+        "unitNames": [
+            "Squire Puff"
+        ],
+        "keywords": [
+            "Bridge Hugger",
+            "Shield",
+            "Empyrean Army"
+        ]
     },
     {
         "iD": 215,
@@ -4788,7 +5527,16 @@
         "towerDamage": 0,
         "delay": 750,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Flightless Dragon",
+            "Dragon Whelp",
+            "Cleaver"
+        ],
+        "keywords": [
+            "Blood Pact",
+            "Voidborne Wound"
+        ]
     },
     {
         "iD": 216,
@@ -4821,7 +5569,10 @@
         "totalHealth": 550,
         "range": 1500,
         "speed": 10,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Crakgul Doomcleaver"
+        ]
     },
     {
         "iD": 218,
@@ -4854,7 +5605,14 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 7,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Elite Swarmer"
+        ],
+        "keywords": [
+            "Rage",
+            "Voidborne Wound"
+        ]
     },
     {
         "iD": 219,
@@ -4887,7 +5645,14 @@
         "totalHealth": 100,
         "range": 479,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Shadow Whelp"
+        ],
+        "keywords": [
+            "Stealth",
+            "Invisible"
+        ]
     },
     {
         "iD": 220,
@@ -4920,7 +5685,16 @@
         "totalHealth": 625,
         "range": 1600,
         "speed": 4,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Caeleth Dawnhammer"
+        ],
+        "keywords": [
+            "Armor of Light",
+            "Divine Shield",
+            "Empyrean Army",
+            "Taunt"
+        ]
     },
     {
         "iD": 221,
@@ -4953,7 +5727,14 @@
         "totalHealth": 200,
         "range": 6000,
         "speed": 5,
-        "Weight": 1400
+        "Weight": 1400,
+        "unitNames": [
+            "Stormy"
+        ],
+        "keywords": [
+            "Chain Lightning",
+            "Zen-Chi Flow"
+        ]
     },
     {
         "iD": 222,
@@ -4986,7 +5767,14 @@
         "totalHealth": 400,
         "range": 4000,
         "speed": 5,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Shen Stormstrike"
+        ],
+        "keywords": [
+            "Stun",
+            "Zen-Chi Flow"
+        ]
     },
     {
         "iD": 224,
@@ -5008,7 +5796,11 @@
         "towerDamage": 0,
         "delay": 1500,
         "duration": 8000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Poison",
+            "Sacrifice"
+        ]
     },
     {
         "iD": 226,
@@ -5030,7 +5822,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Growthburst Shroom"
+        ]
     },
     {
         "iD": 228,
@@ -5064,7 +5859,14 @@
         "totalHealth": 100,
         "range": 18000,
         "speed": 0,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "ThunderShrineClose"
+        ],
+        "keywords": [
+            "Stun",
+            "Zen-Chi Flow"
+        ]
     },
     {
         "iD": 229,
@@ -5097,7 +5899,14 @@
         "totalHealth": 750,
         "range": 1500,
         "speed": 3,
-        "Weight": 2100
+        "Weight": 2100,
+        "unitNames": [
+            "Blue Golem",
+            "Living Statue"
+        ],
+        "keywords": [
+            "Taunt"
+        ]
     },
     {
         "iD": 232,
@@ -5119,7 +5928,10 @@
         "towerDamage": 120,
         "delay": 500,
         "duration": 4000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Accursed Ascension"
+        ]
     },
     {
         "iD": 233,
@@ -5152,7 +5964,15 @@
         "totalHealth": 1800,
         "range": 4000,
         "speed": 4,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Nyrvir"
+        ],
+        "keywords": [
+            "Impactful Entry",
+            "Mythic",
+            "Spiritfire"
+        ]
     },
     {
         "iD": 234,
@@ -5185,7 +6005,10 @@
         "totalHealth": 400,
         "range": 400,
         "speed": 4,
-        "Weight": 1100
+        "Weight": 1100,
+        "unitNames": [
+            "Skeleton"
+        ]
     },
     {
         "iD": 235,
@@ -5218,7 +6041,13 @@
         "totalHealth": 90,
         "range": 320,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "Jolo the Hero Scrat"
+        ],
+        "keywords": [
+            "Haste"
+        ]
     },
     {
         "iD": 236,
@@ -5240,7 +6069,13 @@
         "towerDamage": 15,
         "delay": 2000,
         "duration": 3000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Skeleton"
+        ],
+        "keywords": [
+            "Accursed Ascension"
+        ]
     },
     {
         "iD": 237,
@@ -5262,7 +6097,14 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Undying Skeleton"
+        ],
+        "keywords": [
+            "Accursed Ascension",
+            "Undying Corpse"
+        ]
     },
     {
         "iD": 238,
@@ -5295,7 +6137,13 @@
         "totalHealth": 40,
         "range": 10000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crystal Archers"
+        ],
+        "keywords": [
+            "Mana Surge"
+        ]
     },
     {
         "iD": 239,
@@ -5328,7 +6176,14 @@
         "totalHealth": 340,
         "range": 4000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Crystal Sentry",
+            "Crystal Arcanist"
+        ],
+        "keywords": [
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 240,
@@ -5361,7 +6216,14 @@
         "totalHealth": 75,
         "range": 1000,
         "speed": 5,
-        "Weight": 700
+        "Weight": 700,
+        "unitNames": [
+            "Haunting Hugger"
+        ],
+        "keywords": [
+            "Cursed",
+            "Stun"
+        ]
     },
     {
         "iD": 241,
@@ -5394,7 +6256,16 @@
         "totalHealth": 1800,
         "range": 4000,
         "speed": 4,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Nyrvir"
+        ],
+        "keywords": [
+            "Nyrvir Slumbers",
+            "Impactful Entry",
+            "Mythic",
+            "Spiritfire"
+        ]
     },
     {
         "iD": 242,
@@ -5416,7 +6287,11 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 3000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Stun",
+            "Mythic"
+        ]
     },
     {
         "iD": 243,
@@ -5515,7 +6390,10 @@
         "totalHealth": 150,
         "range": 400,
         "speed": 4,
-        "Weight": 1100
+        "Weight": 1100,
+        "unitNames": [
+            "Skeleton"
+        ]
     },
     {
         "iD": 247,
@@ -5592,7 +6470,14 @@
         "totalHealth": 70,
         "range": 3500,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Slitherbound Lancer",
+            "Slitherbound Darter"
+        ],
+        "keywords": [
+            "Poison"
+        ]
     },
     {
         "iD": 251,
@@ -5625,7 +6510,16 @@
         "totalHealth": 900,
         "range": 1500,
         "speed": 4,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Wreckinator 9000"
+        ],
+        "keywords": [
+            "Piloted",
+            "slice and dice",
+            "slam and bam",
+            "Self-Destruct"
+        ]
     },
     {
         "iD": 252,
@@ -5659,7 +6553,11 @@
         "totalHealth": 100,
         "range": 0,
         "speed": 0,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Caged Prowler",
+            "Prowler"
+        ]
     },
     {
         "iD": 253,
@@ -5681,7 +6579,17 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Living Statue",
+            "Prowler",
+            "Soul Stealer"
+        ],
+        "keywords": [
+            "Sacrifice",
+            "Spirit",
+            "Rage"
+        ]
     },
     {
         "iD": 254,
@@ -5714,7 +6622,15 @@
         "totalHealth": 250,
         "range": 4000,
         "speed": 4,
-        "Weight": 1400
+        "Weight": 1400,
+        "unitNames": [
+            "PlagueHeraldAhmun"
+        ],
+        "keywords": [
+            "Slitherbind",
+            "Shatter Whip",
+            "Sacrifice"
+        ]
     },
     {
         "iD": 255,
@@ -5747,7 +6663,14 @@
         "totalHealth": 15,
         "range": 320,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "Sewer Scrat"
+        ],
+        "keywords": [
+            "Barrel Shield",
+            "Poison"
+        ]
     },
     {
         "iD": 257,
@@ -5769,7 +6692,14 @@
         "towerDamage": 20,
         "delay": 500,
         "duration": 3000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Scrat"
+        ],
+        "keywords": [
+            "Scrat Swarm",
+            "Haste"
+        ]
     },
     {
         "iD": 258,
@@ -5802,7 +6732,15 @@
         "totalHealth": 180,
         "range": 10000,
         "speed": 4,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Boom Buggy"
+        ],
+        "keywords": [
+            "Piloted",
+            "Scrat Swarm",
+            "Marksmanship"
+        ]
     },
     {
         "iD": 259,
@@ -5857,7 +6795,15 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Woodsman"
+        ],
+        "keywords": [
+            "Revelry",
+            "Rage",
+            "Slow"
+        ]
     },
     {
         "iD": 261,
@@ -5890,7 +6836,14 @@
         "totalHealth": 180,
         "range": 10000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "HighMageLeiliel"
+        ],
+        "keywords": [
+            "Mana Freeze",
+            "Mana Surge"
+        ]
     },
     {
         "iD": 262,
@@ -5912,7 +6865,10 @@
         "towerDamage": 65,
         "delay": 0,
         "duration": 5000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 263,
@@ -5934,7 +6890,10 @@
         "towerDamage": 15,
         "delay": 2000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 264,
@@ -5954,7 +6913,12 @@
         "radius": 4500,
         "delay": 0,
         "duration": 3000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Frozen",
+            "Heal",
+            "Revelry"
+        ]
     },
     {
         "iD": 265,
@@ -5987,7 +6951,16 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "CaberTosser"
+        ],
+        "keywords": [
+            "Caber",
+            "Revelry",
+            "Rage",
+            "Slow"
+        ]
     },
     {
         "iD": 266,
@@ -6020,7 +6993,13 @@
         "totalHealth": 60,
         "range": 4000,
         "speed": 7,
-        "Weight": 700
+        "Weight": 700,
+        "unitNames": [
+            "Frostfeather"
+        ],
+        "keywords": [
+            "Slow"
+        ]
     },
     {
         "iD": 267,
@@ -6053,7 +7032,13 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "FergusFlagonFighter"
+        ],
+        "keywords": [
+            "Fergus Spin"
+        ]
     },
     {
         "iD": 268,
@@ -6075,7 +7060,10 @@
         "towerDamage": 60,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Ground Rupture"
+        ]
     },
     {
         "iD": 269,
@@ -6097,7 +7085,13 @@
         "towerDamage": 77,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Frostfeather"
+        ],
+        "keywords": [
+            "Slow"
+        ]
     },
     {
         "iD": 270,
@@ -6130,7 +7124,15 @@
         "totalHealth": 150,
         "range": 400,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Mal'Shar Shadowfork"
+        ],
+        "keywords": [
+            "Stealth",
+            "Nether Strike",
+            "Invisible"
+        ]
     },
     {
         "iD": 271,
@@ -6163,7 +7165,10 @@
         "totalHealth": 250,
         "range": 6000,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "Mu-Hou"
+        ]
     },
     {
         "iD": 272,
@@ -6196,7 +7201,13 @@
         "totalHealth": 300,
         "range": 6000,
         "speed": 7,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Ting, Teng & Tung"
+        ],
+        "keywords": [
+            "Bounce Berries"
+        ]
     },
     {
         "iD": 273,
@@ -6229,7 +7240,14 @@
         "totalHealth": 250,
         "range": 8000,
         "speed": 4,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "High Inquisitor Ardera"
+        ],
+        "keywords": [
+            "Rage",
+            "Divine Shield"
+        ]
     },
     {
         "iD": 274,
@@ -6262,7 +7280,13 @@
         "totalHealth": 600,
         "range": 1600,
         "speed": 4,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Brother of the Burning Fist"
+        ],
+        "keywords": [
+            "Armor of Holy Fire"
+        ]
     },
     {
         "iD": 275,
@@ -6295,7 +7319,14 @@
         "totalHealth": 1000,
         "range": 4000,
         "speed": 3,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Jahun"
+        ],
+        "keywords": [
+            "Sunder",
+            "Mythic"
+        ]
     },
     {
         "iD": 276,
@@ -6328,7 +7359,14 @@
         "totalHealth": 1050,
         "range": 400,
         "speed": 7,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Shi-Hou",
+            "Mu-Hou"
+        ],
+        "keywords": [
+            "Growthburst Shroom"
+        ]
     },
     {
         "iD": 277,
@@ -6350,7 +7388,11 @@
         "towerDamage": 150,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Empyrean Army",
+            "Holy Fire"
+        ]
     },
     {
         "iD": 278,
@@ -6371,7 +7413,14 @@
         "damage": 0,
         "towerDamage": 0,
         "delay": 3500,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Legionnaire",
+            "Crossbow Dude"
+        ],
+        "keywords": [
+            "Heal"
+        ]
     },
     {
         "iD": 279,
@@ -6404,7 +7453,13 @@
         "totalHealth": 400,
         "range": 400,
         "speed": 7,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Windwalker Shi-Hou"
+        ],
+        "keywords": [
+            "Jump"
+        ]
     },
     {
         "iD": 280,
@@ -6426,7 +7481,11 @@
         "towerDamage": 25,
         "delay": 1000,
         "duration": 2000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Growthburst Shroom",
+            "Shock Rock"
+        ]
     },
     {
         "iD": 281,
@@ -6525,7 +7584,14 @@
         "totalHealth": 700,
         "range": 400,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "MilitiaKnightBurningFist"
+        ],
+        "keywords": [
+            "Rage",
+            "Haste"
+        ]
     },
     {
         "iD": 286,
@@ -6558,7 +7624,13 @@
         "totalHealth": 260,
         "range": 4000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Wardancer"
+        ],
+        "keywords": [
+            "Mana Surge"
+        ]
     },
     {
         "iD": 287,
@@ -6591,7 +7663,16 @@
         "totalHealth": 180,
         "range": 400,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "The Veilstalker"
+        ],
+        "keywords": [
+            "Mana Surge",
+            "Stealth",
+            "Invisible",
+            "Crystalline Sweep"
+        ]
     },
     {
         "iD": 288,
@@ -6624,7 +7705,14 @@
         "totalHealth": 800,
         "range": 2000,
         "speed": 4,
-        "Weight": 2500
+        "Weight": 2500,
+        "unitNames": [
+            "Lord Fanriel the Stormcharger"
+        ],
+        "keywords": [
+            "True Damage",
+            "Stormcharge"
+        ]
     },
     {
         "iD": 289,
@@ -6658,7 +7746,14 @@
         "totalHealth": 1600,
         "range": 800,
         "speed": 4,
-        "Weight": 2200
+        "Weight": 2200,
+        "unitNames": [
+            "InactiveCrystalConstruct",
+            "Crystal Construct"
+        ],
+        "keywords": [
+            "Arcane Spheres"
+        ]
     },
     {
         "iD": 290,
@@ -6702,7 +7797,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Undying Corpse"
+        ]
     },
     {
         "iD": 292,
@@ -6724,7 +7822,13 @@
         "towerDamage": 0,
         "delay": 1000,
         "duration": 6000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Skeleton"
+        ],
+        "keywords": [
+            "Accursed Ascension"
+        ]
     },
     {
         "iD": 293,
@@ -6746,7 +7850,10 @@
         "towerDamage": 80,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Undying Corpse"
+        ]
     },
     {
         "iD": 294,
@@ -6779,7 +7886,13 @@
         "totalHealth": 150,
         "range": 400,
         "speed": 4,
-        "Weight": 1100
+        "Weight": 1100,
+        "unitNames": [
+            "Skeleton"
+        ],
+        "keywords": [
+            "Accursed Ascension"
+        ]
     },
     {
         "iD": 295,
@@ -6801,7 +7914,11 @@
         "towerDamage": 40,
         "delay": 1200,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Mana Freeze",
+            "Blast Crystal"
+        ]
     },
     {
         "iD": 297,
@@ -6834,7 +7951,14 @@
         "totalHealth": 150,
         "range": 10000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Lady Infray the Spire Warden"
+        ],
+        "keywords": [
+            "Mana Surge",
+            "Piercing Shot"
+        ]
     },
     {
         "iD": 298,
@@ -6869,7 +7993,13 @@
         "totalHealth": 350,
         "range": 0,
         "speed": 0,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Void Altar",
+            "Incubus",
+            "Succubus",
+            "Shadow Whelp"
+        ]
     },
     {
         "iD": 299,
@@ -6902,7 +8032,15 @@
         "totalHealth": 1000,
         "range": 2600,
         "speed": 3,
-        "Weight": 2500
+        "Weight": 2500,
+        "unitNames": [
+            "Mar'Dred, Prince of Nightmares"
+        ],
+        "keywords": [
+            "Mythic",
+            "Destroy",
+            "Fear"
+        ]
     },
     {
         "iD": 300,
@@ -6935,7 +8073,15 @@
         "totalHealth": 2,
         "range": 479,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Illusory Dragon Whelp",
+            "Dragon Whelp"
+        ],
+        "keywords": [
+            "Illusion",
+            "Voidborne Wound"
+        ]
     },
     {
         "iD": 301,
@@ -6957,7 +8103,11 @@
         "towerDamage": 140,
         "delay": 500,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "True Damage",
+            "Fear"
+        ]
     },
     {
         "iD": 302,
@@ -6990,7 +8140,14 @@
         "totalHealth": 150,
         "range": 400,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Assassin",
+            "Fire Imp"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 303,
@@ -7023,7 +8180,15 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Woodsman"
+        ],
+        "keywords": [
+            "Slow",
+            "Revelry",
+            "Rage"
+        ]
     },
     {
         "iD": 305,
@@ -7045,7 +8210,11 @@
         "towerDamage": 0,
         "delay": 800,
         "duration": 6000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Heal",
+            "Revelry"
+        ]
     },
     {
         "iD": 306,
@@ -7078,7 +8247,16 @@
         "totalHealth": 450,
         "range": 400,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Shield-Captain Avea"
+        ],
+        "keywords": [
+            "Shield",
+            "Bulwark",
+            "Shield of Light",
+            "Legion"
+        ]
     },
     {
         "iD": 307,
@@ -7122,7 +8300,10 @@
         "towerDamage": 300,
         "delay": 500,
         "duration": 2000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Blue Golem"
+        ]
     },
     {
         "iD": 309,
@@ -7144,7 +8325,10 @@
         "towerDamage": 20,
         "delay": 1000,
         "duration": 7000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Slitherbind"
+        ]
     },
     {
         "iD": 310,
@@ -7178,7 +8362,14 @@
         "totalHealth": 10,
         "range": 0,
         "speed": 6,
-        "Weight": 600
+        "Weight": 600,
+        "unitNames": [
+            "Shroom Puff"
+        ],
+        "keywords": [
+            "Bridge Hugger",
+            "Growthburst Shroom"
+        ]
     },
     {
         "iD": 312,
@@ -7211,7 +8402,16 @@
         "totalHealth": 800,
         "range": 6000,
         "speed": 5,
-        "Weight": 2500
+        "Weight": 2500,
+        "unitNames": [
+            "Akinlep's Gong of Pestilence"
+        ],
+        "keywords": [
+            "Poison Spit",
+            "Slam Attack",
+            "Ability",
+            "Ring The Gong"
+        ]
     },
     {
         "iD": 313,
@@ -7266,7 +8466,14 @@
         "totalHealth": 80,
         "range": 8000,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Jing Long"
+        ],
+        "keywords": [
+            "Shocking Re-entry",
+            "Zen-Chi Flow"
+        ]
     },
     {
         "iD": 315,
@@ -7299,7 +8506,11 @@
         "totalHealth": 140,
         "range": 3500,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Slitherbound Lancer",
+            "Slitherbound Darter"
+        ]
     },
     {
         "iD": 316,
@@ -7365,7 +8576,10 @@
         "towerDamage": 25,
         "delay": 500,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Outlander Tech"
+        ]
     },
     {
         "iD": 319,
@@ -7400,7 +8614,13 @@
         "totalHealth": 300,
         "range": 0,
         "speed": 0,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Scrap Yard"
+        ],
+        "keywords": [
+            "Outlander Tech"
+        ]
     },
     {
         "iD": 320,
@@ -7433,7 +8653,13 @@
         "totalHealth": 60,
         "range": 8000,
         "speed": 7,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Vulture Prime A83"
+        ],
+        "keywords": [
+            "Marked"
+        ]
     },
     {
         "iD": 321,
@@ -7466,7 +8692,14 @@
         "totalHealth": 200,
         "range": 8000,
         "speed": 7,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "R4Z:0R Squadron"
+        ],
+        "keywords": [
+            "Piloted",
+            "Outlander Tech"
+        ]
     },
     {
         "iD": 322,
@@ -7501,7 +8734,17 @@
         "totalHealth": 300,
         "range": 25000,
         "speed": 0,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "T.A.A.S.",
+            "Gn4t"
+        ],
+        "keywords": [
+            "Marked",
+            "Ability",
+            "H3LL-F1R3",
+            "Outlander Tech"
+        ]
     },
     {
         "iD": 323,
@@ -7558,7 +8801,15 @@
         "totalHealth": 150,
         "range": 0,
         "speed": 0,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Scrat Tunnels",
+            "Scrat"
+        ],
+        "keywords": [
+            "Ability",
+            "Emergency Tunneling"
+        ]
     },
     {
         "iD": 325,
@@ -7580,7 +8831,10 @@
         "towerDamage": 0,
         "delay": 500,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Scrat"
+        ]
     },
     {
         "iD": 326,
@@ -7613,7 +8867,13 @@
         "totalHealth": 300,
         "range": 10000,
         "speed": 5,
-        "Weight": 1250
+        "Weight": 1250,
+        "unitNames": [
+            "Coax The Diplomancer"
+        ],
+        "keywords": [
+            "Hypnotize"
+        ]
     },
     {
         "iD": 327,
@@ -7646,7 +8906,14 @@
         "totalHealth": 90,
         "range": 8000,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Chisma BOOMSTICK"
+        ],
+        "keywords": [
+            "Fear",
+            "Scrat Swarm"
+        ]
     },
     {
         "iD": 328,
@@ -7668,7 +8935,10 @@
         "towerDamage": 80,
         "delay": 1500,
         "duration": 3000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Accursed Ascension"
+        ]
     },
     {
         "iD": 329,
@@ -7701,7 +8971,15 @@
         "totalHealth": 900,
         "range": 2500,
         "speed": 3,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Living Statue"
+        ],
+        "keywords": [
+            "Slitherbind",
+            "Impatient",
+            "Haste"
+        ]
     },
     {
         "iD": 330,
@@ -7734,7 +9012,14 @@
         "totalHealth": 150,
         "range": 0,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Wrecked Walker",
+            "Gn4t"
+        ],
+        "keywords": [
+            "Outlander Tech"
+        ]
     },
     {
         "iD": 331,
@@ -7811,7 +9096,13 @@
         "totalHealth": 15,
         "range": 6000,
         "speed": 7,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Rocket Scrat"
+        ],
+        "keywords": [
+            "Barrel Shield"
+        ]
     },
     {
         "iD": 335,
@@ -7844,7 +9135,13 @@
         "totalHealth": 350,
         "range": 500,
         "speed": 6,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Wild Stonebjorn"
+        ],
+        "keywords": [
+            "Thick Hide"
+        ]
     },
     {
         "iD": 336,
@@ -7877,7 +9174,15 @@
         "totalHealth": 90,
         "range": 6000,
         "speed": 7,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "RangedMonkeyAOE"
+        ],
+        "keywords": [
+            "Growthburst Shroom",
+            "Myriad",
+            "Bounce Berries"
+        ]
     },
     {
         "iD": 338,
@@ -7910,7 +9215,10 @@
         "totalHealth": 325,
         "range": 500,
         "speed": 7,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Kurrrnath Crystalback"
+        ]
     },
     {
         "iD": 339,
@@ -7944,7 +9252,13 @@
         "totalHealth": 50,
         "range": 8000,
         "speed": 0,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "EarthElementalPebble"
+        ],
+        "keywords": [
+            "Myriad"
+        ]
     },
     {
         "iD": 341,
@@ -7977,7 +9291,16 @@
         "totalHealth": 350,
         "range": 500,
         "speed": 4,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Frostberry Bearer"
+        ],
+        "keywords": [
+            "Thick Hide",
+            "Frozen",
+            "Heal",
+            "Revelry"
+        ]
     },
     {
         "iD": 342,
@@ -8010,7 +9333,16 @@
         "totalHealth": 700,
         "range": 700,
         "speed": 6,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Urclaw, Protector of the Peaks"
+        ],
+        "keywords": [
+            "Taunt",
+            "Thick Hide",
+            "Berserker's Rage",
+            "Haste"
+        ]
     },
     {
         "iD": 343,
@@ -8032,7 +9364,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Gn4t"
+        ]
     },
     {
         "iD": 344,
@@ -8065,7 +9400,16 @@
         "totalHealth": 800,
         "range": 6000,
         "speed": 3,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Siege Imperator Ruby"
+        ],
+        "keywords": [
+            "Mythic",
+            "Side Cannons",
+            "Ability",
+            "Plasma Blast"
+        ]
     },
     {
         "iD": 345,
@@ -8120,7 +9464,14 @@
         "totalHealth": 300,
         "range": 400,
         "speed": 10,
-        "Weight": 2200
+        "Weight": 2200,
+        "unitNames": [
+            "A'Zog, Voidfiend of Shars'Rakk"
+        ],
+        "keywords": [
+            "Ability",
+            "Shadow Dash"
+        ]
     },
     {
         "iD": 347,
@@ -8164,7 +9515,10 @@
         "towerDamage": 10,
         "delay": 1000,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 349,
@@ -8219,7 +9573,14 @@
         "totalHealth": 50,
         "range": 8000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Plasma Marine"
+        ],
+        "keywords": [
+            "Outlander Tech",
+            "Haste"
+        ]
     },
     {
         "iD": 352,
@@ -8252,7 +9613,17 @@
         "totalHealth": 1600,
         "range": 4000,
         "speed": 4,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Rimargaal, Scourge of the Summit"
+        ],
+        "keywords": [
+            "Defrost",
+            "Icebreaker",
+            "Impactful Entry",
+            "Mythic",
+            "Rimefyre"
+        ]
     },
     {
         "iD": 353,
@@ -8285,7 +9656,14 @@
         "totalHealth": 300,
         "range": 700,
         "speed": 4,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Frostbearer"
+        ],
+        "keywords": [
+            "Frozen",
+            "Frozen Aura"
+        ]
     },
     {
         "iD": 354,
@@ -8318,7 +9696,14 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Chief Ice Breaker Bolf"
+        ],
+        "keywords": [
+            "Icebreaker",
+            "Frozen"
+        ]
     },
     {
         "iD": 355,
@@ -8351,7 +9736,15 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Woodsman",
+            "Priestess",
+            "Crystal Arcanist"
+        ],
+        "keywords": [
+            "Groggy Woodsman"
+        ]
     },
     {
         "iD": 356,
@@ -8373,7 +9766,11 @@
         "towerDamage": 35,
         "delay": 500,
         "duration": 3000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Slow",
+            "Frozen"
+        ]
     },
     {
         "iD": 357,
@@ -8395,7 +9792,10 @@
         "towerDamage": 20,
         "delay": 2000,
         "duration": 5000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Frozen"
+        ]
     },
     {
         "iD": 358,
@@ -8429,7 +9829,13 @@
         "totalHealth": 900,
         "range": 2500,
         "speed": 3,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Idol of Sacrifice"
+        ],
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 359,
@@ -8462,7 +9868,10 @@
         "totalHealth": 210,
         "range": 3500,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Taloc, the Vessel"
+        ]
     },
     {
         "iD": 360,
@@ -8482,7 +9891,11 @@
         "radius": 6000,
         "delay": 500,
         "duration": 2000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Growthburst Shroom",
+            "Stun"
+        ]
     },
     {
         "iD": 361,
@@ -8515,7 +9928,13 @@
         "totalHealth": 375,
         "range": 400,
         "speed": 7,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Feng the Wanderer"
+        ],
+        "keywords": [
+            "Positive Effect"
+        ]
     },
     {
         "iD": 362,
@@ -8548,7 +9967,16 @@
         "totalHealth": 450,
         "range": 8000,
         "speed": 4,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "Zipp's Zappinator"
+        ],
+        "keywords": [
+            "Piloted",
+            "Stun",
+            "Ability",
+            "Power Up"
+        ]
     },
     {
         "iD": 363,
@@ -8600,7 +10028,13 @@
         "totalHealth": 120,
         "range": 10000,
         "speed": 6,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Cowardly Imps"
+        ],
+        "keywords": [
+            "Fear"
+        ]
     },
     {
         "iD": 366,
@@ -8633,7 +10067,16 @@
         "totalHealth": 1200,
         "range": 4000,
         "speed": 3,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Korrrgoth, Tyrant of Gor'Rakk"
+        ],
+        "keywords": [
+            "Seal of Korrrgoth",
+            "Doom Hammer",
+            "Mythic",
+            "Invoke"
+        ]
     },
     {
         "iD": 367,
@@ -8668,7 +10111,13 @@
         "totalHealth": 400,
         "range": 20000,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Sanctum of the Cleansing Fire"
+        ],
+        "keywords": [
+            "Holy Fire"
+        ]
     },
     {
         "iD": 369,
@@ -8701,7 +10150,10 @@
         "totalHealth": 240,
         "range": 400,
         "speed": 4,
-        "Weight": 800
+        "Weight": 800,
+        "unitNames": [
+            "MagneticBomb"
+        ]
     },
     {
         "iD": 371,
@@ -8734,7 +10186,15 @@
         "totalHealth": 200,
         "range": 479,
         "speed": 5,
-        "Weight": 850
+        "Weight": 850,
+        "unitNames": [
+            "Legionnaire",
+            "Crossbow Dude"
+        ],
+        "keywords": [
+            "Empyrean Army",
+            "Legion"
+        ]
     },
     {
         "iD": 372,
@@ -8767,7 +10227,10 @@
         "totalHealth": 150,
         "range": 479,
         "speed": 5,
-        "Weight": 850
+        "Weight": 850,
+        "unitNames": [
+            "Legionnaire"
+        ]
     },
     {
         "iD": 373,
@@ -8800,7 +10263,13 @@
         "totalHealth": 625,
         "range": 6000,
         "speed": 4,
-        "Weight": 1850
+        "Weight": 1850,
+        "unitNames": [
+            "S1ege Br3aker MKI"
+        ],
+        "keywords": [
+            "Piloted"
+        ]
     },
     {
         "iD": 374,
@@ -8855,7 +10324,14 @@
         "totalHealth": 50,
         "range": 6000,
         "speed": 7,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Mana Chaser"
+        ],
+        "keywords": [
+            "Stealth",
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 376,
@@ -8888,7 +10364,16 @@
         "totalHealth": 450,
         "range": 12000,
         "speed": 5,
-        "Weight": 1850
+        "Weight": 1850,
+        "unitNames": [
+            "Vuk's Clutchcooker"
+        ],
+        "keywords": [
+            "Flamethrower",
+            "Grappling Claw",
+            "Piloted",
+            "Bombard"
+        ]
     },
     {
         "iD": 377,
@@ -8921,7 +10406,13 @@
         "totalHealth": 140,
         "range": 10000,
         "speed": 5,
-        "Weight": 1850
+        "Weight": 1850,
+        "unitNames": [
+            "Net Blaster"
+        ],
+        "keywords": [
+            "Grounded"
+        ]
     },
     {
         "iD": 378,
@@ -8954,7 +10445,16 @@
         "totalHealth": 130,
         "range": 4000,
         "speed": 4,
-        "Weight": 900
+        "Weight": 900,
+        "unitNames": [
+            "Wardancer"
+        ],
+        "keywords": [
+            "Mana Surge",
+            "Arcane Spheres",
+            "Arcane Spark",
+            "Mana Freeze"
+        ]
     },
     {
         "iD": 379,
@@ -8989,7 +10489,10 @@
         "totalHealth": 1500,
         "range": 0,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "BigTombstone"
+        ]
     },
     {
         "iD": 380,
@@ -9022,7 +10525,14 @@
         "totalHealth": 550,
         "range": 2000,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Ghast",
+            "Skeleton"
+        ],
+        "keywords": [
+            "Rush"
+        ]
     },
     {
         "iD": 381,
@@ -9055,7 +10565,13 @@
         "totalHealth": 800,
         "range": 2000,
         "speed": 5,
-        "Weight": 1800
+        "Weight": 1800,
+        "unitNames": [
+            "Rendrath the Deathless"
+        ],
+        "keywords": [
+            "Rendrath's Mark"
+        ]
     },
     {
         "iD": 382,
@@ -9077,7 +10593,14 @@
         "towerDamage": 0,
         "delay": 500,
         "duration": 4000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Swarmers"
+        ],
+        "keywords": [
+            "Taunt",
+            "Rush"
+        ]
     },
     {
         "iD": 383,
@@ -9110,7 +10633,13 @@
         "totalHealth": 275,
         "range": 400,
         "speed": 4,
-        "Weight": 1100
+        "Weight": 1100,
+        "unitNames": [
+            "Shroomer"
+        ],
+        "keywords": [
+            "Growthburst Shroom"
+        ]
     },
     {
         "iD": 384,
@@ -9143,7 +10672,13 @@
         "totalHealth": 550,
         "range": 200,
         "speed": 4,
-        "Weight": 3000
+        "Weight": 3000,
+        "unitNames": [
+            "Shroomama Shumi"
+        ],
+        "keywords": [
+            "Positive Effect"
+        ]
     },
     {
         "iD": 385,
@@ -9176,7 +10711,15 @@
         "totalHealth": 750,
         "range": 2100,
         "speed": 4,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Jez'Ra, the Voidmother"
+        ],
+        "keywords": [
+            "Ability",
+            "Void Tear",
+            "Mythic"
+        ]
     },
     {
         "iD": 386,
@@ -9209,7 +10752,10 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 7,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Elite Swarmer"
+        ]
     },
     {
         "iD": 388,
@@ -9242,7 +10788,13 @@
         "totalHealth": 350,
         "range": 1000,
         "speed": 4,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "SlitherRammingBeastMini"
+        ],
+        "keywords": [
+            "Spit Poison"
+        ]
     },
     {
         "iD": 389,
@@ -9275,7 +10827,13 @@
         "totalHealth": 1100,
         "range": 1000,
         "speed": 4,
-        "Weight": 2500
+        "Weight": 2500,
+        "unitNames": [
+            "Denver, the Last King"
+        ],
+        "keywords": [
+            "Mythic"
+        ]
     },
     {
         "iD": 390,
@@ -9308,7 +10866,10 @@
         "totalHealth": 200,
         "range": 6000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Stormtamer"
+        ]
     },
     {
         "iD": 391,
@@ -9341,7 +10902,14 @@
         "totalHealth": 550,
         "range": 6000,
         "speed": 5,
-        "Weight": 1000
+        "Weight": 1000,
+        "unitNames": [
+            "Prime Sergeant Raddick"
+        ],
+        "keywords": [
+            "Ability",
+            "Rocket Jump"
+        ]
     },
     {
         "iD": 392,
@@ -9385,7 +10953,12 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Plasma Marine",
+            "Drone Buzzers",
+            "S1ege Br3aker MKI"
+        ]
     },
     {
         "iD": 394,
@@ -9434,7 +11007,10 @@
         "health": 150,
         "totalHealth": 150,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Rune of Ancestry"
+        ]
     },
     {
         "iD": 396,
@@ -9466,7 +11042,10 @@
         "health": 150,
         "totalHealth": 150,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Rune of Wind"
+        ]
     },
     {
         "iD": 397,
@@ -9498,7 +11077,10 @@
         "health": 150,
         "totalHealth": 150,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Rune of Frost"
+        ]
     },
     {
         "iD": 398,
@@ -9530,7 +11112,10 @@
         "health": 150,
         "totalHealth": 150,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Wyrdstone"
+        ]
     },
     {
         "iD": 399,
@@ -9563,7 +11148,13 @@
         "totalHealth": 300,
         "range": 6000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "HighlanderAxeJuggler"
+        ],
+        "keywords": [
+            "Vicious Strike"
+        ]
     },
     {
         "iD": 400,
@@ -9596,7 +11187,14 @@
         "totalHealth": 600,
         "range": 1000,
         "speed": 4,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "High Marshal Rystar"
+        ],
+        "keywords": [
+            "Legion",
+            "Centurions"
+        ]
     },
     {
         "iD": 401,
@@ -9630,7 +11228,11 @@
         "totalHealth": 400,
         "range": 10000,
         "speed": 0,
-        "Weight": 2700
+        "Weight": 2700,
+        "unitNames": [
+            "Crossbow Club House",
+            "Crossbow Dude"
+        ]
     },
     {
         "iD": 402,
@@ -9663,7 +11265,10 @@
         "totalHealth": 400,
         "range": 2000,
         "speed": 5,
-        "Weight": 2500
+        "Weight": 2500,
+        "unitNames": [
+            "Spire Stag"
+        ]
     },
     {
         "iD": 403,
@@ -9696,7 +11301,14 @@
         "totalHealth": 800,
         "range": 800,
         "speed": 4,
-        "Weight": 2200
+        "Weight": 2200,
+        "unitNames": [
+            "Resonating Construct"
+        ],
+        "keywords": [
+            "Mana Freeze",
+            "Blast Crystal"
+        ]
     },
     {
         "iD": 404,
@@ -9729,7 +11341,16 @@
         "totalHealth": 480,
         "range": 400,
         "speed": 5,
-        "Weight": 1200
+        "Weight": 1200,
+        "unitNames": [
+            "Nezara the Cold Countess"
+        ],
+        "keywords": [
+            "Cold Blood Vampiric",
+            "Icebreaker",
+            "Ability",
+            "Frost Nova"
+        ]
     },
     {
         "iD": 405,
@@ -9773,7 +11394,13 @@
         "towerDamage": 80,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Kamikazeppelin"
+        ],
+        "keywords": [
+            "Piloted"
+        ]
     },
     {
         "iD": 407,
@@ -9809,7 +11436,15 @@
             5,
             12
         ],
-        "Weight": 2500
+        "Weight": 2500,
+        "unitNames": [
+            "Wartrack Dreadnaught"
+        ],
+        "keywords": [
+            "Mythic",
+            "Piloted",
+            "Missile Scrats"
+        ]
     },
     {
         "iD": 408,
@@ -9842,7 +11477,13 @@
         "totalHealth": 419,
         "range": 2000,
         "speed": 8,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Protocol 45.54.55-1N"
+        ],
+        "keywords": [
+            "Arc Slash"
+        ]
     },
     {
         "iD": 409,
@@ -9897,7 +11538,14 @@
         "totalHealth": 75,
         "range": 1000,
         "speed": 10,
-        "Weight": 700
+        "Weight": 700,
+        "unitNames": [
+            "Frostfang Familiar"
+        ],
+        "keywords": [
+            "Vampiric",
+            "Frost Nova"
+        ]
     },
     {
         "iD": 411,
@@ -9949,7 +11597,10 @@
         "totalHealth": 400,
         "range": 0,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "Tomb of the Deathless"
+        ]
     },
     {
         "iD": 413,
@@ -9984,7 +11635,10 @@
         "totalHealth": 1000,
         "range": 0,
         "speed": 0,
-        "Weight": 1750
+        "Weight": 1750,
+        "unitNames": [
+            "BigTombOfTheDeathless"
+        ]
     },
     {
         "iD": 414,
@@ -10020,7 +11674,10 @@
         "count": 0,
         "radius": 2500,
         "delay": 250,
-        "duration": 5000
+        "duration": 5000,
+        "keywords": [
+            "Shield"
+        ]
     },
     {
         "iD": 416,
@@ -10042,7 +11699,10 @@
         "towerDamage": 90,
         "delay": 500,
         "duration": 2000,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "unitNames": [
+            "Gn4t"
+        ]
     },
     {
         "iD": 417,
@@ -10097,7 +11757,10 @@
         "totalHealth": 300,
         "range": 3000,
         "speed": 5,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Karmic"
+        ]
     },
     {
         "iD": 419,
@@ -10130,7 +11793,13 @@
         "totalHealth": 80,
         "range": 320,
         "speed": 9,
-        "Weight": 550
+        "Weight": 550,
+        "unitNames": [
+            "Spiderling"
+        ],
+        "keywords": [
+            "Poison"
+        ]
     },
     {
         "iD": 420,
@@ -10163,7 +11832,17 @@
         "totalHealth": 550,
         "range": 500,
         "speed": 7,
-        "Weight": 2000
+        "Weight": 2000,
+        "unitNames": [
+            "An'kahesh, Desert's Doom",
+            "Spiderlings"
+        ],
+        "keywords": [
+            "Thick Hide",
+            "Poison",
+            "Mother's Gift",
+            "Sacrifice"
+        ]
     },
     {
         "iD": 421,
@@ -10196,7 +11875,17 @@
         "totalHealth": 420,
         "range": 6000,
         "speed": 6,
-        "Weight": 1500
+        "Weight": 1500,
+        "unitNames": [
+            "Bearzerker"
+        ],
+        "keywords": [
+            "Vicious Strike",
+            "Stun",
+            "Frozen",
+            "Fear",
+            "Haste"
+        ]
     },
     {
         "iD": 422,
@@ -10218,7 +11907,16 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Spirit",
+            "Sacrifice",
+            "Rage",
+            "Taunt",
+            "Marked",
+            "Slow",
+            "Poison"
+        ]
     },
     {
         "iD": 423,
@@ -10240,7 +11938,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 200,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Haste"
+        ]
     },
     {
         "iD": 424,
@@ -10273,7 +11974,14 @@
         "totalHealth": 350,
         "range": 400,
         "speed": 5,
-        "Weight": 1300
+        "Weight": 1300,
+        "unitNames": [
+            "Fervent Warrior"
+        ],
+        "keywords": [
+            "Shield",
+            "Armor of Holy Fire"
+        ]
     },
     {
         "iD": 425,
@@ -10306,7 +12014,16 @@
         "totalHealth": 475,
         "range": 600,
         "speed": 10,
-        "Weight": 1600
+        "Weight": 1600,
+        "unitNames": [
+            "The Revenant"
+        ],
+        "keywords": [
+            "Taunt",
+            "Fear",
+            "Rage",
+            "Haste"
+        ]
     },
     {
         "iD": 426,
@@ -10328,7 +12045,10 @@
         "towerDamage": 0,
         "delay": 0,
         "duration": 0,
-        "travelSpeed": 0
+        "travelSpeed": 0,
+        "keywords": [
+            "Rage"
+        ]
     },
     {
         "iD": 427,

@@ -3,6 +3,7 @@ const fs = require("fs");
 const {
     parseAndSaveGameData, loadSingleParsedGameData, loadAllParsedGameData, mapToArray,
     getText, makeArray, getUnitDps, getMax, getSum,
+    getDescriptionKeywords,
 } = require("./cardDataFunctions");
 const { forEach, max, sum, round } = require("lodash");
 
@@ -19,6 +20,7 @@ const {
 } = dataMaps;
 
 let cardData = [];
+console.log("Creating CardData.json...")
 cardsMap.forEach((cardProps, cardTitle) => {
     //only select cards from standard category (no ability/disabled cards)
     const card = {Title: cardTitle, ...cardProps}
@@ -44,6 +46,7 @@ function getCardData(card){
     object.imageName = makeArray(card.ImageName)[0];
     object.isAOE = makeArray(card.FilterTag).includes("AoEFilterTag");
     object.ExcludeFromRandom = card.ExcludeFromRandom ? card.ExcludeFromRandom : false;
+
     let unitNames = makeArray(card.MainUnitsToSummon)
     if(unitNames[0] && unitNames.every(name => actorsMap.has(name))){
         //Minion/Building stats
@@ -68,7 +71,6 @@ function getCardData(card){
         object.range = units[0].Range;
         object.speed = units[0].Speed;
         object.Weight = units[0].Radius;
-
     }
     else if(card.SpellIdentifier){
         //Spell stats
@@ -83,6 +85,17 @@ function getCardData(card){
 
     }
     else console.log("Error classifying card. ID: " + object.iD + " " + unitNames[0])
+
+    let {actorNames, keywords} = getDescriptionKeywords(object.description, dataMaps);
+    if(actorNames) unitNames.push(...actorNames);
+    const OverrideKeys = new Map([
+        ["UndyingSkeletonResummon", "UndyingSkeleton"],
+        ["HealsKeyword", "HealKeyword"],
+        // ["UndyingSkeleton", "UndyingSkeleton"]
+    ]);
+    if (unitNames[0]) object.unitNames = [...new Set(unitNames)].map(name => getText(name, dataMaps, showLogs = false, overrideIDs = OverrideKeys));
+    if (keywords[0]) object.keywords = [...new Set(keywords.map(keyword => getText(keyword, dataMaps, showLogs = false, overrideIDs = OverrideKeys)))];
+
     return object;
 }
 

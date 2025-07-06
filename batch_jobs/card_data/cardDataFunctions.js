@@ -1,12 +1,12 @@
 module.exports = { 
     parseAndSaveGameData, loadSingleParsedGameData, loadAllParsedGameData, 
-    getText, makeArray, getUnitDps, getMax, getSum
+    getText, makeArray, getUnitDps, getMax, getSum, getDescriptionKeywords,
 }
 
 const fs = require("fs");
 const SOURCE_DIRECTORY = "batch_jobs/card_data/game_data/"
 const GENERATED_TARGET_DIRECTORY = "batch_jobs/card_data/generated/";
-const { max, sum, round } = require("lodash");
+const { max, sum, round, ceil } = require("lodash");
 const { XMLParser } = require("fast-xml-parser");
 
 
@@ -161,6 +161,7 @@ function parseAndSaveGameData(parseTextDataCompletely = false){
             variablesMap: variablesMap,
         }
         let parsedEnglishJson = new Map();
+        console.log("Parsing all entries in English_ToDownload -> ParsedEnglish.json...")
         englishJson.forEach(entry => {
             let {Id, Text} = entry;
             parsedEnglishJson.set(Id, getText(Id, dataMaps))
@@ -193,8 +194,12 @@ function loadAllParsedGameData(){
     }
 }
 
-function getText(iD, dataMaps){
+function getText(iD, dataMaps, showLogs = true, overrideIDs = undefined){
     const {textMap, ...variableMaps} = dataMaps;
+    if (overrideIDs && overrideIDs.has(iD)) {
+        iD = overrideIDs.get(iD);
+    }
+    
     text = textMap.get(iD);
     if (text){
         text = insertReferences(text, textMap);
@@ -202,7 +207,7 @@ function getText(iD, dataMaps){
         text = evaluateMath(text);
         return text;
     }
-    console.log("Text info not found. Key: " + iD)
+    if(showLogs) console.log("Text info not found. Key: " + iD)
     return iD;
 }
     
@@ -214,6 +219,8 @@ function insertReferences(rawText, textMap){
     );
     return text
 }
+
+const undefinedClasses = new Set();
 
 function insertVariables(rawText, variableMaps){
     const {actorsMap, cardsMap, spellsMap, variablesMap} = variableMaps;
@@ -280,7 +287,10 @@ function insertVariables(rawText, variableMaps){
         /\[v(?:ariable)?:([ \w]+?)\.([ \w]+?)\]/gm,
         (match, className, variable) => {
             if (!variablesMap.has(className)) {
-                console.log("WARNING! Undefined class: " + className);
+                if(!undefinedClasses.has(className)){
+                    undefinedClasses.add(className)
+                    console.log("WARNING! Undefined class: " + className);
+                }
                 return undefined
             }
             value = (variablesMap.get(className))[variable];
@@ -294,6 +304,33 @@ function insertVariables(rawText, variableMaps){
     return text;
 }
 
+function getDescriptionKeywords(description, variableMaps){
+    const {actorsMap, cardsMap, spellsMap, variablesMap} = variableMaps;
+
+    // matches actorskillinfo, actorinfo, spellinfo
+    let matches = [...String(description).matchAll(/\[[^\[]*?info:([^\[\]]+?),/g)]
+    let actorNames = [];
+    let keywords = [];
+
+    if(matches) matches.forEach(match => {
+        let infoKey = match[1]
+        // console.log("MATCH: " + infoKey)
+        let PluralSRemoved = infoKey.replace(/(s)(?=[A-Z]|$)/, "")
+        if(actorsMap.has(infoKey)){
+            actorNames.push(infoKey);
+        }
+        else if(actorsMap.has(PluralSRemoved)){
+            // console.log(`removed 's' from ${infoKey}: ${PluralSRemoved}`)
+            actorNames.push(infoKey)
+        }
+        else {
+            keywords.push(infoKey);
+            
+        }
+    });
+    return {actorNames, keywords}
+}
+
 function evaluateMath(rawText){
     // console.log("raw: "+rawText)
     let text = rawText.replaceAll(
@@ -301,7 +338,9 @@ function evaluateMath(rawText){
         (match, mathExpression) => {
             let value;
             try {
-                value = eval(mathExpression);
+                let match = mathExpression.match(/([0-9.]*)#([0-9])/);
+                if (match) return ceil(match[1], match[2]);
+                else value = eval(mathExpression);
             }
             catch {
                 console.log("WARNING! Could not evaluate math expression " + mathExpression);
@@ -324,7 +363,8 @@ function makeArray(value){
     if (Array.isArray(value)){
         return value
     }
-    return Array(value)
+    else if (value !== undefined) return Array(value)
+    return []
 }
 
 function getMax(array, func){
