@@ -1,4 +1,4 @@
-import { getCellColorPlayrate, getCellColorWinrate, getCardCount, calculateAverage, round } from "./stats-functions";
+import { getCellColorPlayrate, getCellColorWinrate, getCardCount, calculateAverage, round } from "./stats-functions.mjs";
 
 const cardCount = getCardCount();
 const averagePlayRate = 10/cardCount;
@@ -109,7 +109,6 @@ class WinrateAttribute extends TableAttribute{
     }
 
     getWeight(card){
-        console.log(card[this.category])
         return card[this.category][this.weightKey]
     }
 

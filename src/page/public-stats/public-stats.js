@@ -7,10 +7,11 @@ import { Link, useLocation } from "react-router-dom";
 import "react-tabs/style/react-tabs.css";  // Optional default styling
 
 import React, { useEffect, useState, useMemo } from "react";
-import { getSeasonDates, getSeasonStartDate, timeDifferenceInDays } from "./stats-functions"
+import { timeDifferenceInDays } from "./stats-functions.mjs"
+import { getSeasonDates, getSeasonStartDate } from "./stats-cloud-functions.mjs"
 import { ROUTE_PATH_CARD_STATS, ROUTE_PATH_MASTER_STATS } from "./public-stats-config"
 import { API_KEY, SHEET_ID } from "./public-stats-config";
-
+import { getStorage } from "firebase/storage";
 
 
 export function PublicStats() {
@@ -27,10 +28,11 @@ export function PublicStats() {
 
   const [modifiedTime, setModifiedTime] = useState(null);
   const [showPlayrates, setShowPlayrates] = useState(false);
-  const [seasonStartDates, setSeasonStartDates] = useState([new Date()]);
+  const [seasonStartDates, setSeasonStartDates] = useState([new Date(0), new Date()]);
   
   useEffect(() => {
       const fetchData = async () => {
+        const storage = getStorage()
         try {
           const modifiedTime = await fetchSheetMetaData(SHEET_ID, API_KEY);
           setModifiedTime(modifiedTime);
@@ -39,8 +41,9 @@ export function PublicStats() {
           setModifiedTime(null);
         }
         try {
-          const seasonData = await getSeasonDates();
+          const seasonData = await getSeasonDates(storage);
           setSeasonStartDates(seasonData);
+          console.log("STARTDATES", seasonStartDates)
         }
         catch (error) {
           console.error('Error loading season start date:', error);
@@ -48,6 +51,7 @@ export function PublicStats() {
       };
       fetchData();
   }, []);
+
 
   const modifiedDate = new Date(modifiedTime)
 

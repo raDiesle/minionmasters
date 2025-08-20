@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { ReactTable } from '../elo/react-table';
 import { fetchGoogleSheetData } from './fetch-google-sheet-data';
 import { API_KEY, SHEET_ID } from "./public-stats-config";
-import { getCellColorWinrate, getCellColorPlayrate } from './stats-functions';
+import { getCellColorWinrate, getCellColorPlayrate } from './stats-functions.mjs';
 import { isString } from 'lodash';
-import { round } from './stats-functions';
+import { round } from './stats-functions.mjs';
 // import { color } from 'html2canvas';
 
 export function MasterStatsTable({showPlayrates = false})
