@@ -1,4 +1,4 @@
-import { getCardCount } from "../stats-functions";
+import { getCardCount } from "../stats-functions.mjs";
 import cardData from "generated/jobCardProps.json";
 
 const cardCount = getCardCount();

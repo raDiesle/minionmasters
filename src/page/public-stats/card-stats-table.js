@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ReactTable } from '../elo/react-table';
 import { fetchGoogleSheetData } from './fetch-google-sheet-data';
 import { API_KEY, SHEET_ID } from "./public-stats-config";
-import { getCellColorWinrate, getCellColorPlayrate, calculateAverage, calculateSum, calculateDominanceScore, getCardCount } from './stats-functions';
+import { getCellColorWinrate, getCellColorPlayrate, calculateAverage, calculateSum, calculateDominanceScore, getCardCount } from './stats-functions.mjs';
 import cardData from "generated/jobCardProps.json";
 import { TableFilterInput } from './filters/table-filter-input';
 // import Tooltip from 'rc-tooltip';

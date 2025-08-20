@@ -1,5 +1,11 @@
 const RESET_ACTIVITY = false;
 
+// Make it possible to use "require" in this module
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+
+
 const orderBy = require("lodash/orderBy");
 
 
@@ -9,7 +15,7 @@ const fetch = require("node-fetch-retry");
 // const functions = require("firebase-functions");
 const functions = require('@google-cloud/functions-framework');
 
-const { getStorage, getDownloadURL, ref } = require("firebase-admin/storage");
+const { getStorage } = require("firebase-admin/storage");
 
 const { initializeApp, applicationDefault, cert } = require("firebase-admin/app");
 const { getFirestore, Timestamp, FieldValue } = require("firebase-admin/firestore");
@@ -19,8 +25,6 @@ const {onSchedule} = require("firebase-functions/v2/scheduler");
 const serviceAccount = require("./key.json");
 
 const {setGlobalOptions} = require("firebase-functions/v2");
-const { last } = require("lodash");
-const { startOfToday } = require("date-fns");
 setGlobalOptions({maxInstances: 1, });
 
 initializeApp({
@@ -28,7 +32,7 @@ initializeApp({
   storageBucket: "minionmastersmanager.appspot.com",
 });
 
-const {getSeasonStartDate} = require("../src/page/public-stats/stats-functions");
+import { getSeasonStartDate, addSeasonStartDate, getSeasonDatesAdmin } from "../src/page/public-stats/stats-cloud-functions.mjs" 
 
 const db = getFirestore();
 const bucket = getStorage().bucket();
@@ -36,7 +40,18 @@ const storage = getStorage();
 // const storageRef = admin.storage().bucket()
 // Run once a day at midnight, to clean up the users
 // Manually run the task here https://console.cloud.google.com/cloudscheduler
-exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory: "512MB", timeoutSeconds: 540}, async (event) => {
+
+// export const testFunction = onSchedule({schedule : "never", memory: "512MB", timeoutSeconds: 540}, async (event) => {
+//   console.log("Test is running...");
+//   // await addSeasonStartDate(new Date(), bucket);
+//   const D = await getSeasonDates(bucket);
+//   // console.log(d)
+//   // console.log("SUCCESS?");
+//   const d2 = getSeasonStartDate(new Date(), D);
+//   console.log(d2, D);
+// });
+
+export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory: "512MB", timeoutSeconds: 540}, async (event) => {
 //functions.cloudEvent('refreshEloV2', async(cloudEvent) => {
 // http('scheduledFunctionGen2', (req, res) => {
 // onSchedule("every day 00:00", async (event) => {
@@ -48,9 +63,9 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   const ELO_GENERATED_ROOT_PATH = "elo/";
 
   // Seasons start at the last saturday of the month (usually)
-  const seasonStartDate = getSeasonStartDate();
-  const inactivityDate = new Date(seasonStartDate)
-  inactivityDate.setDate(seasonStartDate.getDate() + 1);
+
+  let newEloResetCount = 0;
+
   const totalResults = [];
   const activeResults = [];
   let continueLoop = true;
@@ -63,7 +78,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
 
   const oldPlayerData = {};
     try{
-      result = await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).download();
+      const result = await bucket.file(`${ELO_GENERATED_ROOT_PATH}all.json`).download();
       // const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}all.json`));
       const oldAllJson = JSON.parse(result);
     
@@ -75,14 +90,24 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           lastActivity: lastActivity
         }; 
       });
+    }catch(e){
+      console.error("Fetching old data failed:", e);
+    }
+  let seasonDates = [];
+  let inactivityDate = new Date(0)
+  try{
+    seasonDates = await getSeasonDatesAdmin(bucket);
+    // console.log(seasonDates)
+    const seasonStartDate = getSeasonStartDate(new Date(), seasonDates);
+    inactivityDate = new Date(seasonStartDate)
+    inactivityDate.setDate(seasonStartDate.getDate() + 1);
   }catch(e){
-    console.error("Fetching old data failed:", e);
+    console.error("Fetching season data failed:", e)
   }
 
   const requestHeader = { gzip: true, contentType: "application/json" };
 
   /* eslint-disable */
-
   async function loop() {
     if (continueLoop) {
       const url = `http://fdmfdm.nl/GetAllUserElo.php?limitStart=${limitStart}&limitStep=${limitStep}`;
@@ -111,17 +136,54 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
       );
 
       data = null;
-
-      console.log("prepare to attach data about player activity")
+      console.log("prepare to attach data about player activity, check for season resets")
       prevLimited.forEach(
         ( newData ) => {
           let { User_id, Elo1v1, Elo2v2Team, Elo2v2Solo } = newData
           let oldData = oldPlayerData[User_id];
+          let eloChanged = false;
           if (oldData == undefined || oldData.Elo1v1 != Elo1v1 || oldData.Elo2v2Team != Elo2v2Team || oldData.Elo2v2Solo != Elo2v2Solo){
+            // console.log(oldData, "1v1: ", Elo1v1, "2v2Solo: ", Elo2v2Solo, "2v2Team: ", Elo2v2Team)
             newData.lastActivity = new Date();
+            // Elo has changed -> check for new reset
+            eloChanged = true;
           }
           else{
             newData.lastActivity = RESET_ACTIVITY ? new Date("2024-08-01T00:00:00.000Z") : oldData.lastActivity;
+          }
+          
+          if(eloChanged && oldData){
+            let seasonResetCount = 0;
+            for (let i = seasonDates.length-1; i >= 0; i--){
+              if (oldData.lastActivity < seasonDates[i]) seasonResetCount += 1;
+              else break;
+            }
+            let Elo1v1Reset = oldData.Elo1v1;
+            let Elo2v2SoloReset = oldData.Elo2v2Solo;
+            let Elo2v2TeamReset = oldData.Elo2v2Team;
+
+            for (let i = 0; i < seasonResetCount+1; i++){
+              Elo1v1Reset = 1000 + Math.floor((Elo1v1Reset-1000)*0.9);
+              Elo2v2SoloReset = 1000 + Math.floor((Elo2v2SoloReset-1000)*0.9);
+              Elo2v2TeamReset = 1000 + Math.floor((Elo2v2TeamReset-1000)*0.9);
+            }
+
+            function checkEloReset(resetElo, newElo, oldElo){
+              const eloChange = oldElo - resetElo;
+              let resetScore = 0;
+              if (resetElo === newElo)
+                resetScore = 1;
+              if (eloChange <= 20)
+                resetScore *= 0.5
+              return resetScore
+            }
+            let totalResetScore = 0;
+            totalResetScore += checkEloReset(Elo1v1Reset, newData.Elo1v1, oldData.Elo1v1)
+            totalResetScore += checkEloReset(Elo2v2SoloReset, newData.Elo2v2Solo, oldData.Elo2v2Solo)
+            totalResetScore += checkEloReset(Elo2v2TeamReset, newData.Elo2v2Team, oldData.Elo2v2Team)
+
+            if (totalResetScore >= 2) newEloResetCount += 1;
+            else if (totalResetScore >= 1) newEloResetCount += 0.5;
           }
         }
       )
@@ -130,7 +192,6 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
 
       console.log("used data to proceed: " + prevLimited.length + " (" + filteredActive.length + " active)");
       // const limited = sortedByElo2v2Solo.slice(0, 50000);
-
       
       totalResults.push(...prevLimited);
       activeResults.push(...filteredActive);
@@ -298,6 +359,7 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
           console.log("Finished player details.");
 
           console.log("Not found total players:" + JSON.stringify(notFoundPlayers));
+          console.log(`Approximated Elo reset count for new Season: ${newEloResetCount}`);
           return Promise.resolve();
         }
         }catch(error){
@@ -334,6 +396,9 @@ exports.scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", memory
   }catch(e) {
     console.error(e)
   }
+
+  console.log(`Approximated Elo reset count for new Season: ${newEloResetCount}`);
+  // if (newEloResetCount >= activeResults.length*0.1) //new season has started
 
   console.log("Finished everything successfully!");
   return Promise.resolve();
