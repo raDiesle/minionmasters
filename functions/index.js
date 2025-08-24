@@ -32,7 +32,7 @@ initializeApp({
   storageBucket: "minionmastersmanager.appspot.com",
 });
 
-import { getSeasonStartDate, addSeasonStartDate, getSeasonDatesAdmin } from "../src/page/public-stats/stats-cloud-functions.mjs" 
+import { getSeasonStartDate, addSeasonStartDate, getSeasonDatesAdmin } from "./stats-cloud-functions.mjs" 
 
 const db = getFirestore();
 const bucket = getStorage().bucket();
@@ -65,6 +65,7 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
   // Seasons start at the last saturday of the month (usually)
 
   let newEloResetCount = 0;
+  let eloChangedCount = 0;
 
   const totalResults = [];
   const activeResults = [];
@@ -153,6 +154,7 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
           }
           
           if(eloChanged && oldData){
+            eloChangedCount += 1;
             let seasonResetCount = 0;
             for (let i = seasonDates.length-1; i >= 0; i--){
               if (oldData.lastActivity < seasonDates[i]) seasonResetCount += 1;
@@ -359,7 +361,7 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
           console.log("Finished player details.");
 
           console.log("Not found total players:" + JSON.stringify(notFoundPlayers));
-          console.log(`Approximated Elo reset count for new Season: ${newEloResetCount}`);
+          console.log(`Approximated number of new-season-elo-resets: ${newEloResetCount}\n Number of changed player elos: ${eloChangedCount}`);
           return Promise.resolve();
         }
         }catch(error){
