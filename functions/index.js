@@ -293,84 +293,96 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
         });
 
       const players = Object.keys(playersObject);
-      let pos = 0;
 
       const notFoundPlayers = [];
 
-      async function loopSingles() {
-        try{
-          const isContinueLoop = pos < players.length;
-          console.log("Continue with next player: " + String(isContinueLoop));
-        if (isContinueLoop) {
-          /* const response = await fetch(`http://fdmfdm.nl/GetUserElo.php?userID=${players[pos]}`);
-        const playerResponse = await response.json();
-        const singlePlayer = playerResponse[0];*/
-          console.log("next data mapping of " + players[pos]);
-          const currentPlayerId = Number(players[pos]);
-          console.log("Current playerId: " + currentPlayerId);
-          const singlePlayer = allEloRankingData.find(
-            ({ User_id }) => User_id === currentPlayerId
-          );
-          if (typeof singlePlayer === "undefined") {
-            console.log("Player could not be found: " + currentPlayerId);
-            notFoundPlayers.push(currentPlayerId);
-            pos = pos + 1;
-            await loopSingles();
-            return Promise.resolve();
+      async function processSinglePlayer(playerId){
+        const singlePlayer = allEloRankingData.find(
+          ({ User_id }) => User_id === playerId
+        );
+        if (typeof singlePlayer === "undefined") {
+          console.log("Player could not be found: " + playerId);
+          process.stdout.write("", () => {}); // ensures flush before exit
+          notFoundPlayers.push(playerId);
+          return playerId + " not found";
+        }
+        const playerFilePath = `${ELO_GENERATED_ROOT_PATH}details/${singlePlayer.User_id}.json`;
+
+        let playerFileContent = null;
+        try {
+          const file = bucket.file(playerFilePath);
+          const data = await file.download();
+          playerFileContent = JSON.parse(data);
+        } catch (error) {
+          playerFileContent = [];
+        }
+
+        const date =
+          new Date().getFullYear() +
+          "-" +
+          (1 + new Date().getMonth()) +
+          "-" +
+          new Date().getDate();
+
+        if (playerFileContent.length !== 0) {
+          const lastEntryDate = playerFileContent[playerFileContent.length - 1].date;
+          const todayDataWasAlreadyWritten = lastEntryDate === date;
+          if (todayDataWasAlreadyWritten) {
+            console.log("for date there was already data. Will update.");
+            playerFileContent.pop();
           }
-          const playerFilePath = `${ELO_GENERATED_ROOT_PATH}details/${singlePlayer.User_id}.json`;
+        }
+        const newPlayerHistory = { ...singlePlayer, ...{ date } };
+        playerFileContent.push(newPlayerHistory);
 
-          let playerFileContent = null;
-          try {
-            const file = bucket.file(playerFilePath);
-            const data = await file.download();
-            playerFileContent = JSON.parse(data);
-          } catch (error) {
-            playerFileContent = [];
-          }
+        const finalPlayerDetailsDataContent = JSON.stringify(playerFileContent, null, "\t");
 
-          const date =
-            new Date().getFullYear() +
-            "-" +
-            (1 + new Date().getMonth()) +
-            "-" +
-            new Date().getDate();
+        async function uploadFromMemory() {
+          await bucket.file(playerFilePath).save(finalPlayerDetailsDataContent, requestHeader);
+        }
+        await uploadFromMemory().catch(console.error);
+        return playerId + " updated successfully";
+      }
 
-          if (playerFileContent.length !== 0) {
-            const lastEntryDate = playerFileContent[playerFileContent.length - 1].date;
-            const todayDataWasAlreadyWritten = lastEntryDate === date;
-            if (todayDataWasAlreadyWritten) {
-              console.log("for date there was already data. Will update.");
-              playerFileContent.pop();
+      async function runAll() {
+        const concurrency = 5; // max number of players processed in parallel
+        let index = 0;
+        const results = [];
+
+        async function worker() {
+          while (index < players.length) {
+            const currentIndex = index++;
+            const playerId = Number(players[currentIndex]);
+
+            try {
+              const result = await processSinglePlayer(playerId);
+              results[currentIndex] = result;
+            } catch (error) {
+              console.error("Error processing player:", playerId, error);
+              results[currentIndex] = null;
             }
           }
-          const newPlayerHistory = { ...singlePlayer, ...{ date } };
-          playerFileContent.push(newPlayerHistory);
-
-          const finalPlayerDetailsDataContent = JSON.stringify(playerFileContent, null, "\t");
-
-          async function uploadFromMemory() {
-            await bucket.file(playerFilePath).save(finalPlayerDetailsDataContent, requestHeader);
-          }
-          await uploadFromMemory().catch(console.error);
-
-          pos = pos + 1;
-          await loopSingles();
-          return Promise.resolve();
-        }else{
-          console.log("Finished player details.");
-
-          console.log("Not found total players:" + JSON.stringify(notFoundPlayers));
-          console.log(`Approximated number of new-season-elo-resets: ${newEloResetCount}\n Number of changed player elos: ${eloChangedCount}`);
-          return Promise.resolve();
         }
-        }catch(error){
-          console.error(error);
-          console.error("of player:" + players[pos])
+
+        try {
+          // create "concurrency" number of workers
+          const workers = Array.from({ length: concurrency }, () => worker());
+          await Promise.all(workers);
+
+          console.log("Finished all players.");
+          console.log("Not found total players:", JSON.stringify(notFoundPlayers));
+          console.log(results);
+          console.log(
+            `Approximated number of new-season-elo-resets: ${newEloResetCount}\nNumber of changed player elos: ${eloChangedCount}`
+          );
+
+        } catch (error) {
+          console.error("Error in runAll:", error);
         }
       }
 
-      await loopSingles();
+      runAll();
+
     })
     .catch(e => console.error(e));
 
@@ -399,7 +411,7 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
     console.error(e)
   }
 
-  console.log(`Approximated Elo reset count for new Season: ${newEloResetCount}`);
+  console.log(`Approximated number of new-season-elo-resets: ${newEloResetCount}\n Number of changed player elos: ${eloChangedCount}`);
   // if (newEloResetCount >= activeResults.length*0.1) //new season has started
 
   console.log("Finished everything successfully!");
