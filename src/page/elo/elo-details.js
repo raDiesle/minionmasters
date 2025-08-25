@@ -15,7 +15,7 @@ import { ChartFilters } from "page/elo/chart-filters";
 import * as classnames from "classnames";
 import cssButton from "components/button.module.scss";
 import { db } from "mm-firestore";
-import { getSeasonStartDate } from "page/public-stats/stats-cloud-functions.mjs";
+import { getSeasonStartDate, getSeasonDates } from "page/public-stats/stats-cloud-functions.mjs";
 
 const renderCellFn = ({ params, isUpGood, userData }) => {
   const currentRowPos = params.row.index;
@@ -52,6 +52,8 @@ export function EloDetails() {
   useEffect(async() => {
   
     const storage = getStorage();
+    // initialize season start dates for getSeasonStartDate()
+    await getSeasonDates(storage);
     const url = await getDownloadURL(ref(storage, `${STORAGE_URL_PREFIX}details/${userId}.json`));
     const { data } = await axios.get(url);
 

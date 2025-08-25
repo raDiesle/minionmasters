@@ -4,7 +4,7 @@ import axios from "axios";
 const STATS_ROOT_PATH = ""
 const SEASON_DATA_FILENAME = "seasonData.json"
 
-const seasonDates = [
+let seasonDates = [
     new Date(0),
     new Date("2025-02-22T10:00Z"),
     new Date("2025-03-22T10:00Z"),
@@ -12,6 +12,8 @@ const seasonDates = [
     new Date("2025-05-24T10:00Z"),
     new Date("2025-06-23T10:00Z"),
 ]
+
+let seasonDatesDownloaded = false;
 
 /**
  * @param {import('@google-cloud/storage').Bucket} bucket
@@ -51,7 +53,15 @@ export async function getSeasonDatesAdmin(bucket){
     return seasonData
 }
 
-export async function getSeasonDates(storage){
+export async function getSeasonDates(storage = undefined){
+    // call this to initialize the seasonDates list
+    if (seasonDatesDownloaded){
+        return seasonDates;
+    }
+
+    if (storage === undefined){
+        storage = getStorage()
+    }
     let seasonData = [];
 
     try{
@@ -66,16 +76,18 @@ export async function getSeasonDates(storage){
     catch(e){
         console.warn("Error while getting seasonData.json:", e);
     }
+    seasonDates = seasonData;
+    seasonDatesDownloaded = true;
     return seasonData
 }
 
-export function getSeasonStartDate(date = new Date(), startDates = seasonDates){
-    // last Saturday of a month - does not match the actual schedule
-    // const seasonStartDate = new Date(date)
-    // seasonStartDate.setHours(10,0,0,0)      // 
-    // seasonStartDate.setDate(date.getDate() + (6 - date.getDay()));  //next Saturday
-    // seasonStartDate.setDate(seasonStartDate.getDate() - 7*Math.ceil(seasonStartDate.getDate()/7))   //go back full weeks to previous month (last saturday of month)
-    
+export function getSeasonStartDate(date = new Date(), startDates = undefined){
+    if (startDates === undefined) {
+        if (!seasonDatesDownloaded) {
+            console.warn("Season start dates have not been initialized! Using default values.")
+        }
+        startDates = seasonDates;
+    }
     // the plan is to detect season start dates by elo reset
     let seasonStartDate = startDates[0];
     for (let sDate of startDates) {
