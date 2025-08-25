@@ -9,7 +9,7 @@ import "react-tabs/style/react-tabs.css";  // Optional default styling
 import React, { useEffect, useState, useMemo } from "react";
 import { timeDifferenceInDays } from "./stats-functions.mjs"
 import { getSeasonDates, getSeasonStartDate } from "./stats-cloud-functions.mjs"
-import { ROUTE_PATH_CARD_STATS, ROUTE_PATH_MASTER_STATS } from "./public-stats-config"
+import { END_OF_SEASON_PATH_SUFFIX, EOS_PATH_SUFFIX, ROUTE_PATH_CARD_STATS, ROUTE_PATH_MASTER_STATS } from "./public-stats-config"
 import { API_KEY, SHEET_ID } from "./public-stats-config";
 import { getStorage } from "firebase/storage";
 
@@ -21,6 +21,8 @@ export function PublicStats() {
   const PAGE_TABS_CONFIG = [
     ROUTE_PATH_CARD_STATS,
     ROUTE_PATH_MASTER_STATS,
+    ROUTE_PATH_CARD_STATS + EOS_PATH_SUFFIX,
+    ROUTE_PATH_MASTER_STATS + EOS_PATH_SUFFIX,
   ];
 
   const initialSelectedTab = PAGE_TABS_CONFIG.findIndex((tab) => tab === window.location.pathname);
@@ -65,6 +67,12 @@ export function PublicStats() {
           <Tab>
             <Link to={ROUTE_PATH_MASTER_STATS}>Master Stats</Link>
           </Tab>
+          <Tab>
+            <Link to={ROUTE_PATH_CARD_STATS + EOS_PATH_SUFFIX}>Card Stats - EOS</Link>
+          </Tab>
+          <Tab>
+            <Link to={ROUTE_PATH_MASTER_STATS + EOS_PATH_SUFFIX}>Master Stats - EOS</Link>
+          </Tab>
         </TabList>
         <TabPanel>
           <CardStatsTable
@@ -74,6 +82,18 @@ export function PublicStats() {
         <TabPanel>
           <MasterStatsTable
             showPlayrates= {showPlayrates}
+          />
+        </TabPanel> 
+        <TabPanel>
+          <CardStatsTable
+            showPlayrates= {showPlayrates}
+            endOfSeason = {true}
+          />
+        </TabPanel>
+        <TabPanel>
+          <MasterStatsTable
+            showPlayrates= {showPlayrates}
+            endOfSeason = {true}
           />
         </TabPanel> 
       </Tabs>

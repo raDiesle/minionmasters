@@ -7,7 +7,7 @@ import { isString } from 'lodash';
 import { round } from './stats-functions.mjs';
 // import { color } from 'html2canvas';
 
-export function MasterStatsTable({showPlayrates = false})
+export function MasterStatsTable({showPlayrates = false, endOfSeason = false})
 {
 
     const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ export function MasterStatsTable({showPlayrates = false})
 
     useEffect(() => {
         const fetchData = async () => {
-            const range = 'Masters';  //Sheet tab name
+            const range = 'Masters' + (endOfSeason ? ' - EOS' : '');  //Sheet tab name
 
             try {
                 const data = await fetchGoogleSheetData(SHEET_ID, API_KEY, range);

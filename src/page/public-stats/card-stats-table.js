@@ -14,7 +14,7 @@ import { PopoverButton } from './filters/popover-button';
 import ReverseIcon from 'components/reverse-icon';
 
 
-export function CardStatsTable({showPlayrates = false})
+export function CardStatsTable({showPlayrates = false, endOfSeason = false})
 {
     let [data, setData] = useState([]);
     const [filters, setFilters] = useState({});
@@ -85,7 +85,8 @@ export function CardStatsTable({showPlayrates = false})
 
     useEffect(() => {
         const fetchData = async () => {
-            const range = 'Cards';  //sheet tab name
+            const range = 'Cards' + (endOfSeason ? ' - EOS' : '');  //sheet tab name
+            console.log("range: " + range)
             try {
                 const data = await fetchGoogleSheetData(SHEET_ID, API_KEY, range);
                 setData(data);
