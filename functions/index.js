@@ -165,9 +165,9 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
             let Elo2v2TeamReset = oldData.Elo2v2Team;
 
             for (let i = 0; i < seasonResetCount+1; i++){
-              Elo1v1Reset = 1000 + Math.floor((Elo1v1Reset-1000)*0.9);
-              Elo2v2SoloReset = 1000 + Math.floor((Elo2v2SoloReset-1000)*0.9);
-              Elo2v2TeamReset = 1000 + Math.floor((Elo2v2TeamReset-1000)*0.9);
+              Elo1v1Reset = 1000 + Math.round((Elo1v1Reset-1000)*0.9);
+              Elo2v2SoloReset = 1000 + Math.round((Elo2v2SoloReset-1000)*0.9);
+              Elo2v2TeamReset = 1000 + Math.round((Elo2v2TeamReset-1000)*0.9);
             }
 
             function checkEloReset(resetElo, newElo, oldElo){
@@ -412,7 +412,9 @@ export const scheduledFunctionGen2 = onSchedule({schedule : "every day 00:00", m
   }
 
   console.log(`Approximated number of new-season-elo-resets: ${newEloResetCount}\n Number of changed player elos: ${eloChangedCount}`);
-  // if (newEloResetCount >= activeResults.length*0.1) //new season has started
+  if (newEloResetCount >= activeResults.length*0.06) {
+    console.log("New Season detected! New Season start date should be added...");
+  }//new season has started
 
   console.log("Finished everything successfully!");
   return Promise.resolve();
