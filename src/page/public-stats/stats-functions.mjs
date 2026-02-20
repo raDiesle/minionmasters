@@ -67,12 +67,20 @@ export function calculateAverage(values, weights = undefined){
     if(weights){
         if (values.length !== weights.length) throw(Error("Value and weight arrays must be of the same length!")) 
     }
+    else{
+        weights = Array.from(values.values()).fill(1);
+    }
     let sum = values.reduce((previousValue, currentValue, currentIndex) => {
+        if(isNaN(currentValue)){
+            weights[currentIndex] = 0;
+            return previousValue;
+        }
         if (weights) currentValue *= weights[currentIndex];
         previousValue += currentValue;
         return previousValue;
     }, 0);
-    const divisor = weights ? calculateSum(weights) : values.length;
+
+    let divisor = weights ? calculateSum(weights) : values.length;    
     return sum / divisor;
 }
 
@@ -87,6 +95,7 @@ export function calculateDominanceScore(matches, totalMatches, winrate, cardCoun
     const sign_factor = Math.tanh(Math.cosh(100*(winrate-0.5)))     //for smooth transition between positive and negative winrate
 
     return 10*((playrate/playrateAverage)**(sign * sign_factor) * ((winrate/(1-winrate))**sign-1)*sign)+0.2*(playrate-playrateAverage)/playrateAverage
+    // return 10*((playrate/playrateAverage)**(sign * sign_factor) * (2*winrate - 1)) + 0.2*(playrate-playrateAverage)/playrateAverage
 }
 
 export function round(value, digits){
