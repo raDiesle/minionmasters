@@ -19,7 +19,6 @@ class TableAttribute{
     }
 
     getFooterColor(value, footerType){
-        console.log("BASE COLOR")
         return this.getCellColor(value)
     }
 
@@ -161,7 +160,7 @@ class StatAttribute extends TableAttribute{
     formatValue(value){
         //specifically for Wartrack Dreadnaught, which has two speed values
         if (Array.isArray(value)) value = value[0];
-        if (value === 0) value =  this.defaultZeroValue;
+        if (value === 0) value = this.defaultZeroValue;
         else if(!value) value = this.defaultUndefinedValue
         return super.formatValue(value)
     }

@@ -318,11 +318,17 @@ export function TableFilterInput({
             
             {/* Advanced Filters */}
             <div className={cssButton.ButtonGroupStyle}>
-                <PopoverButton className={cssButton.ButtonInGroupStyle} buttonContent={"Advanced Filters"} popoverStyle={{minWidth: "250px"}}>
+                <PopoverButton 
+                    className={cssButton.ButtonInGroupStyle} 
+                    buttonContent={"Advanced Filters"} 
+                    popoverStyle={{minWidth: "250px"}}
+                >
                     <div style={{marginBottom: "8px", fontSize: "14px"}}>Add Filter:</div>
                     <div className={cssButton.ButtonGroupStyle}>
                         <select 
-                            style={{marginBottom: "8px"}} className={cssButton.ButtonGroupStyle}
+                            style={{marginBottom: "8px"}} 
+                            className={cssButton.ButtonGroupStyle}
+                            value={advancedFilterCategory}
                             onChange={e => {
                                 const newCategory = e.target.value;
                                 setAdvancedFilterCategory(newCategory);
