@@ -31,7 +31,7 @@ export function MasterStatsTable({showPlayrates = false, endOfSeason = false})
         };
 
         fetchData();
-    }, []);
+    }, [endOfSeason]);
 
     if (loading) {
         return <p>Loading data...</p>;
@@ -109,8 +109,15 @@ export function MasterStatsTable({showPlayrates = false, endOfSeason = false})
                 id: n,
                 accessor: (row, i) => row[n].formattedValue,
                 Header: title,
-                width: n == 0 ? 105 : n >= 6 ? 128 : 115,
-                align: n == 0 ? "left" : "right",
+                width: n === 0 ? 105 : n >= 6 ? 128 : 115,
+                align: n === 0 ? "left" : "right",
+                sortType: (rowA, rowB, columnId) => {
+                    const originalA = rowA.original[n].value;
+                    const originalB = rowB.original[n].value;
+                    if (isNaN(originalA)) return -1;
+                    if (isNaN(originalB)) return 1;
+                    return originalA > originalB ? 1 : -1;
+                },
                 getCellProps: (cell) => {
                     let bgColor = ""
                     switch (n){

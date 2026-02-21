@@ -357,6 +357,13 @@ export function CardStatsTable({showPlayrates = false, endOfSeason = false})
                         },
                     };
                 },
+                sortType: (rowA, rowB, columnId) => {
+                    const originalA = rowA.original[n].value;
+                    const originalB = rowB.original[n].value;
+                    if (isNaN(originalA)) return -1;
+                    if (isNaN(originalB)) return 1;
+                    return originalA > originalB ? 1 : -1;
+                },
 
             }
         });
