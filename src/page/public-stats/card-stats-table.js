@@ -357,6 +357,7 @@ export function CardStatsTable({showPlayrates = false, endOfSeason = false})
                         },
                     };
                 },
+                // sort by exact values, not formatted (rounded) values
                 sortType: (rowA, rowB, columnId) => {
                     const originalA = rowA.original[n].value;
                     const originalB = rowB.original[n].value;
