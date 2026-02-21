@@ -30,7 +30,7 @@ function PopoverButton({className = "", children, buttonContent, buttonStyle, po
         open={open}
         anchorEl={anchorEl}
         onClick={(e) => e.stopPropagation()}
-        onContextMenu={(e) => { e.preventDefault(); setAnchorEl(null); }}
+        onContextMenu={(e) => { e.preventDefault(); }}
         onClose={handleClose}
         slotProps={{
           paper: {
